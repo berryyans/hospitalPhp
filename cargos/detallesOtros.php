@@ -130,12 +130,12 @@ $col = "";
 	   
 	   
 	   <?php //DEBE
-           if($myrow['tipoTransaccion']=='totros' ){ 
+           if($myrow['tipoTransaccion']=='totros' or $myrow['tipoTransaccion']=='devotr' or $myrow['tipoTransaccion']=='AJOXINCDEV'){ 
                
-               echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
+           echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
 	   $debe[0]+=$myrow['precioVenta']*$myrow['cantidad'];
 	   }else{
-               
+               //echo '$ 0.00';
            }
            
            ?>
@@ -148,21 +148,20 @@ $col = "";
 	   <div align="center">
 	   <?php //HABER
            
-        if($myrow['tipoTransaccion']!='totros' ){ 
-           if($myrow['tipoTransaccion']='HLCAJOTR' || $myrow['tipoTransaccion']='AJOXINCDEV' || $myrow['tipoTransaccion']=='devotr' ){ 
+        
+           if($myrow['tipoTransaccion']=='HLCAJOTR' or $myrow['tipoTransaccion']=='abotros' ){ 
 
-           if( $myrow['tipoTransaccion']='HLCAJOTR'){
+
                
 	   $haber[0]+=$myrow['precioVenta']*$myrow['cantidad'];$signo=NULL;
+           echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
            }else{
-               $signo='-';
-           $dev[0]+=$myrow['precioVenta']*$myrow['cantidad'];    
-           
+               //echo '$ 0.00';
            }
            
-           echo $signo.'$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
-	   }
-        }
+           
+	   
+        
            ?>
 	   </div>	   </td>
      </tr>
