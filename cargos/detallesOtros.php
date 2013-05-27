@@ -68,7 +68,7 @@ $estilo->styles();
    <table width="500" class="table table-striped">
 
      <tr >
-       <th width="82"  align="center">#</th>
+       <th width="82"  align="center">#Recibo</th>
        <th width="82"  align="center">Fecha  </th>
        <th width="385" >Concepto</th>
        <th width="118" align="center" >Debe</th>

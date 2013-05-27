@@ -346,7 +346,7 @@ and
 statusCuenta='cerrada'
 and
 ventasDirectas!='si'
-group by almacenDestino 
+group by medico 
 order by folioVenta ASC
 ";
 $resultg=mysql_db_query($basedatos,$sSQLg); 
@@ -354,6 +354,39 @@ while($myrowg = mysql_fetch_array($resultg)){
 
 
 //****************************
+//DEVOLUCIONES    
+$sSQLd="SELECT 
+sum((precioVenta*cantidad)+(iva*cantidad)) as debe
+
+FROM
+cargosCuentaPaciente
+WHERE
+entidad='".$_GET['entidad']."'
+and
+fechaCierre='".$fecha1."'
+and
+medico='".trim($myrowg['medico'])."'
+and
+gpoProducto='".$myrow6['codigoGP']."'
+
+and
+naturaleza='A'
+and
+tipoPaciente='externo' 
+and
+
+ventasDirectas!='si'
+and
+almacenIngreso='".trim($myrow['almacenIngreso'])."' 
+    and
+    statusDevolucion='si'
+";
+$resultd=mysql_db_query($basedatos,$sSQLd);
+$myrowd = mysql_fetch_array($resultd);     
+    
+    
+    
+//CREDITOS    
 $sSQLc="SELECT sum((precioVenta*cantidad)+(iva*cantidad)) as haber
 
 FROM
@@ -362,7 +395,7 @@ WHERE
 entidad='".$_GET['entidad']."'
 and
 
-almacenDestino='".trim($myrowg['almacenDestino'])."'
+medico='".trim($myrowg['medico'])."'
 and
 gpoProducto='".$myrow6['codigoGP']."'
 and
@@ -373,8 +406,7 @@ naturaleza='C'
 and
 tipoPaciente='externo' 
 and
-statusCuenta='cerrada'
-and
+
 ventasDirectas!='si'
 and
 almacenIngreso='".trim($myrow['almacenIngreso'])."' 
@@ -382,34 +414,7 @@ almacenIngreso='".trim($myrow['almacenIngreso'])."'
 $resultc=mysql_db_query($basedatos,$sSQLc);
 $myrowc = mysql_fetch_array($resultc);
 
-  $sSQLd="SELECT 
-sum((precioVenta*cantidad)+(iva*cantidad)) as debe
 
-FROM
-cargosCuentaPaciente
-WHERE
-entidad='".$_GET['entidad']."'
-and
-
-almacenDestino='".trim($myrowg['almacenDestino'])."'
-and
-fechaCierre='".$fecha1."'
-and
-gpoProducto='".$myrow6['codigoGP']."'
-
-and
-naturaleza='A'
-and
-tipoPaciente='externo' 
-and
-statusCuenta='cerrada'
-and
-ventasDirectas!='si'
-and
-almacenIngreso='".trim($myrow['almacenIngreso'])."' 
-";
-$resultd=mysql_db_query($basedatos,$sSQLd);
-$myrowd = mysql_fetch_array($resultd); 
 //****************************************************************************
 
 
@@ -431,7 +436,7 @@ $myrow1b = mysql_fetch_array($result1b);
 //********************
 
 $pdf->SetX('15');
-$pdf->Cell(0,0,$myrow1b['descripcion'],0,0,M);
+$pdf->Cell(0,0,$myrowg['descripcionMedico'],0,0,M);
 
 
 

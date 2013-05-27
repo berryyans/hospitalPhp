@@ -1078,7 +1078,7 @@ echo mysql_error();
 
 
 //conversion2
-for($j=0;$j<=$limit;$j++){
+for($j=0;$j<$limit;$j++){
 
 //INSERT
 $agrega = "INSERT INTO articulosExistencias (
@@ -1104,6 +1104,92 @@ codigo='".$myrowy['codigo']."'
 ";
 $result8ac=mysql_db_query($basedatos,$sSQL8ac);
 $myrow8ac = mysql_fetch_array($result8ac);
+
+
+
+
+
+
+
+#ACTUALIZAR ORDENES DE SOLICITUDES
+$sSQLmv= "SELECT *
+FROM
+
+movSolicitudes
+where
+entidad='".$entidad."'
+    and
+    codigo='".$myrowy['codigo']."'
+        and
+   tipoVenta='Granel'     
+and
+        status='request'
+    and
+    almacen='".$_GET['almacen']."'
+limit 0,$cantidad[$i]
+
+";
+$resultmv=mysql_db_query($basedatos,$sSQLmv);
+while($myrowmv = mysql_fetch_array($resultmv)){
+$qmv = "UPDATE movSolicitudes set 
+status='transferido'
+
+
+WHERE 
+keyMS='".$myrowmv['keyMS']."'
+";
+mysql_db_query($basedatos,$qmv);
+echo mysql_error();
+
+
+}
+
+
+
+
+
+
+
+
+/*
+$sSQLy= "
+SELECT * 
+FROM
+articulosExistencias
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$myrowy['codigo']."'
+and
+   almacen='".$_GET['almacen']."'
+    and
+status='ready' 
+
+
+order by keyAE ASC
+limit 0,$cantidad[$i]
+";
+
+
+$resulty=mysql_db_query($basedatos,$sSQLy);
+while($myrowy = mysql_fetch_array($resulty)){
+###BAJA A EXISTENCIAS
+$qbe = "DELETE FROM 
+
+WHERE 
+keyAE='".$myrowy['keyAE']."'
+";
+mysql_db_query($basedatos,$qbe);
+echo mysql_error();
+}*/
+
+
+
+
+
+
+
+
 
 
 
@@ -1189,7 +1275,7 @@ echo mysql_error();
 //window.alert("SE SURTIERON ARTICULOS");
 ventanaSecundaria8('../ventanas/printTraspasosGranel.php?numSolicitud=<?php echo $numSolicitud;?>&nOrden=<?php echo $_GET['nOrden'];?>&departamentoSolicitante=<?php echo $_GET['almacen'];?>&entidad=<?php echo $entidad;?>&random=<?php echo $rand; ?>&usuarioCargo=<?php echo $usuario;?>&usuarioSolicitante=<?php echo $myrow['usuario'];?>&fecha=<?php echo $fecha1;?>&hora=<?php echo $hora1;?>&fechaSolicitud=<?php echo $myrow['fecha'];?>&horaSolicitud=<?php echo $myrow['hora'];?>','ventana7','800','600','yes');
 window.opener.document.forms["form1"].submit();
-//window.close();
+window.close();
 </script>
 <?php
 }//cierra surtir
@@ -1254,20 +1340,21 @@ WHERE entidad='".$entidad."' AND almacen = '".$_GET['almacen']."'
 ?>
 
   <table width="900" class="table table-striped">
-        <tr >
+
+<tr >
       <th >#</th>
 
       <th  align="left">Descripcion</th>
       <th   align="left">ExCenDis</th>
-<th   >ExBotiq</th>
-            <th  >topeSurtir</th>
+      <th   >ExBotiq</th>
+
             
-             <th  >ExActual</th>
+             <th  >Cargado</th>
       
 
 
             <th >Cantidad</th>
-    </tr>
+</tr>
 
 
 
@@ -1280,7 +1367,7 @@ WHERE entidad='".$entidad."' AND almacen = '".$_GET['almacen']."'
 <?php
 
 
- $sSQL= "SELECT *
+$sSQL= "SELECT *
 FROM
 
 existencias
@@ -1290,6 +1377,8 @@ and
 almacen='".$_GET['almacen']."'
     and
     ventaGranel='si'
+    and 
+    cantidadSurtir>0
 ";
 $result=mysql_db_query($basedatos,$sSQL);
 while($myrow = mysql_fetch_array($result)){
@@ -1436,6 +1525,9 @@ echo '<span class="error"><blink>'. $myrow['informacion'].'</blink></span>';
 }
 }
 
+echo '<br>';
+echo '1 = '.$myrow['cantidadSurtir'];
+
 
 
 
@@ -1538,7 +1630,7 @@ and
 $result8ac1s=mysql_db_query($basedatos,$sSQL8ac1s);
 $myrow8ac1s = mysql_fetch_array($result8ac1s);
 */
-echo $eB=$myrow8ac1e['entrada']-$myrow8ac1s['salida'];
+echo $eB=$myrow8ac1e['entrada'];
 ?>
 </td>
 
@@ -1549,16 +1641,11 @@ echo $eB=$myrow8ac1e['entrada']-$myrow8ac1s['salida'];
                 
                 
 
-<td  >
-
-<label>
 <?php 
 //surtido
-echo $myrow['cantidadSurtir'];
+//echo $myrow['cantidadSurtir'];
 $cS=$myrow['cantidadSurtir'];
-?></label>
-</td>                
-                
+?>                
                 
                 
                 
