@@ -172,7 +172,7 @@ $estilos->styles();
 
 
              <th width="45" ></th>
-                   <th width="54" >P.Manual</th>
+                   
     </tr>
 <?php	
 
@@ -377,16 +377,7 @@ $myrow8a = mysql_fetch_array($result8a);
  
  
 
-       <td >
-           
-<?php if($myrow['status']=='sent'){ ?>           
- <a href="#" onclick="javascript:ventanaSecundaria('../ventanas/afectarPrecioManual.php?&proveedor=<?php echo $myrow['proveedor'];?>&id_factura=<?php echo $myrow['factura'];?>&descripcionProveedor=<?php echo $myrow['descripcionProveedor'];?>')">
-Cargar
- </a>
-          <?php }else{ ?>
-           ---
-           <?php }?>
-      </td>
+       
  
  
     </tr>
