@@ -104,7 +104,7 @@ $estilos-> styles();
 
 $sSQL= "Select * From proveedores where entidad='".$entidad."' order by id_proveedor ASC";
 $result=mysql_db_query($basedatos,$sSQL); 
-while($myrow = pg_fetch_array($result)){
+while($myrow = mysql_fetch_array($result)){
 	   $a+=1;
 if($col){
 $color = '#FFCCFF';
