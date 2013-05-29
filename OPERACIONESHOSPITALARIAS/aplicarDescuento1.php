@@ -143,11 +143,11 @@ echo $myrow['usuario'];
 
 
 <td width="31" >
-<?php if($myrow['descuento']==''){ ?>
+
     <a href="javascript:ventanaSecundaria('/sima/cargos/aplicarDescuentos.php?keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&amp;nT=<?php echo $myrow['keyClientesInternos'];?>&entidad=<?php echo $myrow['entidad'];?>')">
     Aplicar
     </a>
-    <?php }else{echo '---';}?>    </td>
+    </td>
     </tr> 
     <?php  }}?>
     <input name="menu" type="hidden" value="<?php echo $menu;?>" />
