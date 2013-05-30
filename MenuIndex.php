@@ -2,7 +2,7 @@
 
 <?php 
 $ip = $_SERVER['REMOTE_ADDR']; 
-if($ip=='127.0.0.1'){
+if($ip=='127.0.0.1' or $usuario=='omorales'){
 
 
 
@@ -23,7 +23,8 @@ $url='http://hlc.um.edu.mx/sima/movil/principal.php/';
 	//require("/configuracion/MenuPrincipal/menup.php"); 
 	} else {
 	//require("/configuracion/MenuPrincipal/menup.php");
-        require("/configuracion/MenuPrincipal/menuPrincipal.php");    
+        //require("/configuracion/MenuPrincipal/menuPrincipal.php");    
+        require("/configuracion/MenuPrincipal/menuPrincipalv4.php");    
 	require("/configuracion/MenuPrincipal/menuAyuda.php");
 
 }
