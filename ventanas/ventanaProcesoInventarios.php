@@ -157,6 +157,16 @@ existencia='".$existencia[$i]."'
 WHERE keyE='".$keyE[$i]."'";
 mysql_db_query($basedatos,$q1);
 echo mysql_error();
+
+$agrega = "INSERT INTO logs (
+descripcion,almacenSolicitante,almacenDestino,usuario,hora,fecha,entidad,folioVenta,cuartoIngreso,cuartoTransferido,codigo,cantidad)
+values
+('Ajuste a Existencias','".$_GET['almacen']."','".$_GET['almacen']."',
+'".$usuario."','".$hora1."','".$fecha1."','".$entidad."','',
+'','','".$keyE[$i]."','".$existencia[$i]."')";
+mysql_db_query($basedatos,$agrega);
+echo mysql_error();
+
 }
 }
 $tipoMensaje='registrosAgregados';
@@ -196,7 +206,7 @@ $estilos-> styles();
 <h1 align="center" >
     <br />
 <font size="1" face="Comic Sans MS,arial,verdana">
-PROCESO DE INVENTARIOS
+CONFIGURACION DE EXISTENCIAS
 </font>
 <br />
 
@@ -219,7 +229,7 @@ PROCESO DE INVENTARIOS
     
 <form name="form10" method="post" >
  
-  <table width="500" class="table-forma">
+  <table width="300" class="table-forma">
       
       
       
@@ -268,7 +278,7 @@ PROCESO DE INVENTARIOS
 
 
 <div id="divContainer">
-  <table width="500" class="formatHTML5" >
+  <table width="300" class="formatHTML5" >
 
       
       
@@ -446,11 +456,12 @@ Editar
     </tr>
   </table>
 </div>    
-
+<br>
+    <br>
 <p align="center">&nbsp;</p>
   <div align="center" class="informativo"><strong>
-    <?php if(!$codigo){ echo "No se encontraron datos..!!"; }?>
-	<?php if($_POST['porArticulo'] AND $a>0){
+   
+	<?php if($a>0){
 	echo "Se encontraron $a registros..!"; 
 	}
 	?>

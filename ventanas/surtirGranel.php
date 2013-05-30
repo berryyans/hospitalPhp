@@ -26,6 +26,88 @@ if(win.window.focus){win.window.focus();}
 }
 
 </script>
+
+
+
+
+
+
+<?php  
+if($_GET['codigo'] AND ($_GET['inactiva'] or $_GET['activa'])){
+
+	if($_GET['inactiva']=="inactiva"){
+ $agrega = "DELETE FROM movSolicitudes
+      where
+      entidad='".$entidad."'
+    and
+    almacen='".$_GET['almacen']."'
+and
+keyPA='".$_GET['keyPA']."'
+
+
+";
+mysql_db_query($basedatos,$agrega);
+echo mysql_error();
+
+
+
+
+$agrega1 = "DELETE FROM articulosExistencias
+      where
+      entidad='".$entidad."'
+    and
+    almacen='".$_GET['almacen']."'
+and
+keyPA='".$_GET['keyPA']."'
+
+
+";
+mysql_db_query($basedatos,$agrega1);
+echo mysql_error();
+
+$agrega = "INSERT INTO logs (
+descripcion,almacenSolicitante,almacenDestino,usuario,hora,fecha,entidad,folioVenta,cuartoIngreso,cuartoTransferido)
+values
+('El usuario reseteo este articulo','".$_GET['almacenDestino']."','".$_GET['almacenDestino']."',
+'".$usuario."','".$hora1."','".$fecha1."','".$entidad."','',
+'','')";
+mysql_db_query($basedatos,$agrega);
+echo mysql_error();
+
+echo '<script>';
+echo 'window.alert("ARTICULO EN RESET, POR SEGURIDAD ESTA VENTANA SE CERRARA!");';
+echo 'window.close();';
+echo '</script>';
+
+
+
+        }
+
+
+
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php  
 $cendis=new whoisCendis();
 $aP=$centroDistribucion=$cendis->cendis($entidad,$basedatos);  
@@ -1309,6 +1391,27 @@ $estilo->styles();
  <?php require("/configuracion/componentes/comboAlmacen.php");  ?>
 <form id="form1" name="form1" method="post" action="#">
 <br>
+    
+    <h1>   <p>
+<?php 
+$sSQL12= "
+SELECT descripcion
+FROM
+almacenes
+WHERE 
+entidad='".$entidad."'
+    and
+almacen='".$_GET['almacen']."'
+";
+$result12=mysql_db_query($basedatos,$sSQL12);
+$myrow12 = mysql_fetch_array($result12);
+echo $myrow12['descripcion'];
+?>
+    </p>    
+    </h1>    
+        
+        
+        
   <h1 align="center">Surtir Solicitudes a Granel</h1>
     <h5 align="center">
         
@@ -1354,6 +1457,7 @@ WHERE entidad='".$entidad."' AND almacen = '".$_GET['almacen']."'
 
 
             <th >Cantidad</th>
+            <th >Reset</th>
 </tr>
 
 
@@ -1760,7 +1864,18 @@ $ttt=$cS-$eB;
 
 
 
+<td>
+    
+    <span>
 
+<a href="surtirGranel.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&gpoProductos=<?php echo $_GET['gpoProductos'];?>&codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $myrow['codigo']; ?>&almacen=<?php echo $_GET["almacen"];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas reset este articulo?') == false){return false;}">
+    
+Reset
+</a>        
+        
+    </span>    
+    
+</td>
 
 
 
