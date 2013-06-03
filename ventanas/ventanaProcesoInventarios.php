@@ -151,7 +151,7 @@ for($i=0;$i<=$_POST['pasoBandera'];$i++){
 if($existencia[$i]>0){
   
 $q1 = "UPDATE existencias set 
-existencia='".$existencia[$i]."'
+existencia='".$existencia[$i]."',status='standby'
 
 
 WHERE keyE='".$keyE[$i]."'";
@@ -202,14 +202,18 @@ $estilos-> styles();
 ?>
 
 </head>
-
+    <br>
+   
 <h1 align="center" >
     <br />
-<font size="1" face="Comic Sans MS,arial,verdana">
-CONFIGURACION DE EXISTENCIAS
-</font>
-<br />
+    
 
+CONFIGURACION DE EXISTENCIAS
+
+<br />
+ <h2>
+        <?php echo $_GET['descripcionAlmacen'];?>
+    </h2>
    <label>
    <?php
     if($texto!=NULL){
@@ -219,61 +223,17 @@ CONFIGURACION DE EXISTENCIAS
     ?>
   </label>
 
-&nbsp;
-<br>
+
+
 
 </h1>
     
     
-    <h4><font size="1" face="Comic Sans MS,arial,verdana">*En la cantidad de existencia son cajas unicamente que se ajustan!</font></h4>
+    
     
 <form name="form10" method="post" >
  
-  <table width="300" class="table-forma">
-      
-      
-      
-   
-      
-     
-      
-      
-      
-      
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    <tr>
-        
-      <td height="41" scope="col">&nbsp;</td>
-      <td scope="col"><label>
-          <div align="left">
-            <!--<input name="buscar" type="submit" src="../imagenes/btns/searchbutton.png" id="buscar" value="buscar" />-->
-            <?php
-	  if($_POST['porArticulo']=='*'){ echo "Este proceso puede demorar varios minutos..";}?>
-          </div>
-        </label></td>
-    </tr>
-  </table>
-
-<p>&nbsp;</p>
-
+  
 
 
 
@@ -403,16 +363,9 @@ if($myrow8ac['activo']=='A'){
 <font size="1" face="Comic Sans MS,arial,verdana">
     <?php 
 
-		echo ltrim($myrow1['descripcion']);
-echo '<br>';
-echo $myrow8ac['sustancia'].'  '.$myrow8ac['sustancia'];
-echo '<br>';
-echo '<span class="precio1">'.$myrow8ac['gpoProducto'].'</span>';
+echo $myrow1['descripcion'].', '.$myrow8ac['sustancia'].', '.'<span class="precio1">'.$myrow8ac['gpoProducto'].'</span>
+    <span >, Anaquel: '.$myrow1['anaquel'].'</span>';
 
-if($myrow1['anaquel']!=NULL){
-//echo '<br>';
-echo '<span >Anaquel: '.$myrow1['anaquel'].'</span>';
-}
 
           
 /*          
@@ -425,10 +378,15 @@ Editar
       </td>
         
        
-        
+<?php
+
+$sSQL3= "Select * From existencias WHERE entidad='".$entidad."' and codigo='".$myrow1['codigo']."' and almacen='".$myrow1['almacen']."' and status='standby' ";
+$result3=mysql_db_query($basedatos,$sSQL3);
+$myrow3 = mysql_fetch_array($result3);  
+?>
         
 <td ><font size="1" face="Comic Sans MS,arial,verdana">
-<input name="cantidadTotal[]" type="text" size="3"  value="<?php echo (int) $myrow1['existencia'];?>" autocomplete="off"></input>
+<input name="cantidadTotal[]" type="text" size="3"  value="<?php echo (int) $myrow3['existencia'];?>" autocomplete="off"></input>
       </font></td>
         
         

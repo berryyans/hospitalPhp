@@ -65,14 +65,98 @@ keyPA='".$_GET['keyPA']."'
 mysql_db_query($basedatos,$agrega1);
 echo mysql_error();
 
-$agrega = "INSERT INTO logs (
+$agrega = "INSERT INTO logs (cantidad,codigo,
 descripcion,almacenSolicitante,almacenDestino,usuario,hora,fecha,entidad,folioVenta,cuartoIngreso,cuartoTransferido)
 values
-('El usuario reseteo este articulo','".$_GET['almacenDestino']."','".$_GET['almacenDestino']."',
+('".$_GET['cantidad']."','".$_GET['keyPA']."','El usuario reseteo este articulo','".$_GET['almacenDestino']."','".$_GET['almacenDestino']."',
 '".$usuario."','".$hora1."','".$fecha1."','".$entidad."','',
 '','')";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
+
+
+##AFECTAR AL KARDEX
+//**********GENERO EL NUMERO DE SOLICITUD ************//
+    
+        $q = "
+
+    INSERT INTO solicitudes(numSolicitud,usuario,fecha,entidad,keyClientesInternos,hora)
+    SELECT(IFNULL((SELECT MAX(numSolicitud)+1 from solicitudes where entidad='".$entidad."'), 1)), '".$usuario."',
+    '".$fecha1."','".$entidad."','".$_GET['keyClientesInternos']."','".$hora1."' ";
+    mysql_db_query($basedatos,$q);
+    echo mysql_error();
+    
+    
+    $sSQL333= "SELECT
+    numSolicitud
+    FROM solicitudes
+    WHERE
+    entidad='".$entidad."'
+    and
+    usuario ='".$usuario."'
+    order by keySolicitudes DESC
+    ";
+
+    $result333=mysql_db_query($basedatos,$sSQL333);
+    $myrow333 = mysql_fetch_array($result333);
+    $myrow333['NS']=$myrow333['numSolicitud'];
+    if(!$myrow333['NS']){
+    $myrow333['NS']=1;
+    }
+    
+    //************************************
+    
+$sSQL8ac= "
+SELECT * 
+FROM
+articulos
+WHERE
+keyPA='".$_GET['keyPA']."'
+";
+$result8ac=mysql_db_query($basedatos,$sSQL8ac);
+$myrow8ac = mysql_fetch_array($result8ac);
+$codigoInv='02';
+$sSQL8acd= "
+SELECT * 
+FROM
+conceptoinventarios
+WHERE
+
+codigo='".$codigoInv."'
+";
+$result8acd=mysql_db_query($basedatos,$sSQL8acd);
+$myrow8acd = mysql_fetch_array($result8acd);
+
+  $q1ab = "INSERT INTO kardex 
+(kc,evento,descripcion,descripcionevento,naturaleza,usuario,fecha,hora,entidad,
+keyPA,almacenSolicitante,almacenDestino,costo,cantidad,cantidadtotal,
+descripcionArticulo,existencia,existenciaTotal,otro,gpoProducto,tipoMovimiento,
+almacenConsumo,io,cajaCon,status,cbarra,numSolicitud)
+values
+('".$myrow8ac['codigo']."','".$codigoInv."',
+    '".$myrow8acd['tipoMovimiento']."',
+    '".$myrow8acd['descripcion']."','".$myrow8acd['naturaleza']."',
+        '".$usuario."','".$fecha1."',
+        '".$hora1."',
+    '".$entidad."','".$myrow8ac['keyPA']."','".$myrowd2['almacen']."',
+        '".$myrowd2['almacen']."',
+        '".$myrowd2['costo']."',
+        '".$_GET['cantidad']."',1,'".$myrow8ac['descripcion']."','".$myrow8ac1e['entrada']."',
+            '".$myrow8ac1e['entrada']."',
+        '".$myrow8acd['otro']."','".$myrow8acd['descripcion']."',
+            '".$myrow8acd['tipoMovimiento']."',
+            '".$myrowk['almacenConsumo']."','SALIDA',
+                '".$myrow8ac['cajaCon']."','final','".$myrow8ac['cbarra']."',
+                '".$myrow333['NS']."'
+         )";
+
+mysql_db_query($basedatos,$q1ab);
+echo mysql_error();
+//CIERRO AFECTACION DE KARDEX************************************************
+
+
+
+
 
 echo '<script>';
 echo 'window.alert("ARTICULO EN RESET, POR SEGURIDAD ESTA VENTANA SE CERRARA!");';
@@ -1867,12 +1951,12 @@ $ttt=$cS-$eB;
 <td>
     
     <span>
-
-<a href="surtirGranel.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&gpoProductos=<?php echo $_GET['gpoProductos'];?>&codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $myrow['codigo']; ?>&almacen=<?php echo $_GET["almacen"];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas reset este articulo?') == false){return false;}">
+<?php if( $eB>0){?>
+<a href="surtirGranel.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&gpoProductos=<?php echo $_GET['gpoProductos'];?>&codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&cantidad=<?php echo $eB; ?>&amp;codigo=<?php echo $myrow['codigo']; ?>&almacen=<?php echo $_GET["almacen"];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas reset este articulo?') == false){return false;}">
     
 Reset
 </a>        
-        
+<?php }else {echo '---';}?>        
     </span>    
     
 </td>

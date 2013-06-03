@@ -205,7 +205,7 @@ where
 and
 convenios.numCliente='".$myrow['numCliente']."'
 and
-convenios.fechaFinal<'".$fecha1."'
+convenios.fechaFinal<='".$fecha1."'
 and
 convenios.departamento!='')
 AND
