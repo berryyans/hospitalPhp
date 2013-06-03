@@ -100,8 +100,10 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
 .sf-menu li
 {
     margin-left: 5px;
-    /*arreglar el height a 25px*/
+    /*arreglar el height a 25px
     height: 45px;
+    */
+    height: 25px;
 }
 .sf-menu li:first-child
 {
@@ -174,7 +176,10 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
 }
 .sf-menu li:hover ul, .sf-menu li.sfHover ul
 {
-    top: 44px;
+    /*top: 44px;
+    cambiar la posicion del menu
+    */
+    top: 24px;
 }
 .sf-menu li ul li
 {
@@ -225,10 +230,10 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
     color: #000;    
     border-bottom: 1px solid #42B3E5;
     /*de esta seccion sale el 14*/
-/*
-    border-bottom: 2px solid #42B3E5;
     /*
-    padding-bottom: 14px;
+        border-bottom: 2px solid #42B3E5;
+        /*
+        padding-bottom: 14px;
     */
 }
 .sf-menu li.submenu:hover ul li.selected ul li a
@@ -380,83 +385,143 @@ ul.sf-menu li li li.sfHover ul {
 
 /* --- links --- */
 /*--menu-lateral acordion header--*/
+.accordion li ul li a{
+    display: block;
+}
+.page_left
+{
+	float: left;
+	width: 630px;
+}
+.page_margin_top
+{
+	margin-top: 30px;
+}
+.accordion .ui-accordion-header h3 a{
+	color: #666;    
+}
+.accordion .ui-accordion-header h3
+{
+	background: url('../images/accordion_plus.png') no-repeat right center;
+	padding-right: 13px;
+}
+.accordion .ui-accordion-header
+{
+	cursor: pointer;
+	padding: 12px 13px 12px 0;
+	border-bottom: 1px solid #E0E0E0;
+	color: #666;
+}
+.accordion .ui-accordion-header.ui-state-hover h3 a
+{
+	color: #3156A3;
+}
+.accordion .ui-accordion-header.ui-state-active
+{
+	border-bottom: 1px solid #3156A3;
+	background: #3156A3;
+	padding: 10px 12px;
+	margin-top: -1px;
+}
+.accordion .ui-accordion-header.ui-state-active h3 a{
+	color: #FFF;    
+}
+.accordion .ui-accordion-header.ui-state-active h3
+{
+	background: url('../images/accordion_minus.png') no-repeat right center;
+}
+/*
 .menu-lateral {
+    margin-left: 5px;
     float: left;
-    border: 1px solid #000;
+    border: 1px solid #000;    
+    /*
     padding: 5px 40px;
+    float: left;
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     -webkit-box-shadow:1px 1px 3px #888;
     -moz-box-shadow:1px 1px 3px #888;
     border-radius:5px;
-    /*
-    */
+*/
+/*
 }
 .menu-lateral li{
-    /*
-    */
-    border-bottom:1px solid #FFF;
+border: 1px solid #25C838;
+/*
+border-bottom:1px solid #FFF;
+*/
+/*
 }
 .menu-lateral ul li, .menu-lateral li:last-child{
-    /*
-    */
-    border:none
+/*
+border:none
+*/
+/*
 }
 .menu-lateral ul li li{
-    /*
-    */
-    padding-left: 10px;
+/*
+padding-left: 10px;
+*/
+/*
 }
 .menu-lateral a{
-    display:block;
-    font-family:'Helvetica', Arial, sans-serif;
-    color:#FFF;
-    text-decoration:none;
-    font-size:13px;
-    padding:3px 5px;
-    text-shadow:1px 1px 1px #325179;
-    /*
-    */
+display:block;
+border: 1px solid #9725C8;
+/*
+font-family:'Helvetica', Arial, sans-serif;
+color:#FFF;
+text-decoration:none;
+font-size:13px;
+padding:3px 5px;
+text-shadow:1px 1px 1px #325179;
+*/
+/*
 }
 .menu-lateral a:hover{
-    color:#F9B855;
-    -webkit-transition: color 0.2s linear;
-    /*
-    */
+/*
+color:#F9B855;
+-webkit-transition: color 0.2s linear;
+*/
+/*
 }
 .menu-lateral ul a{
-    background-color:#6594D1;
-    /*
-    */
+/*
+background-color:#6594D1;
+*/
+/*
 }
 .menu-lateral ul a:hover{
-    background-color:#FFF;
-    color:#2961A9;
-    text-shadow:none;
-    -webkit-transition: color, background-color 0.2s linear;
-    /*
-    */
+/*
+background-color:#FFF;
+color:#2961A9;
+text-shadow:none;
+-webkit-transition: color, background-color 0.2s linear;
+*/
+/*
 }
 .menu-lateral ul{
-    background-color:#6594D1;
-    /*
-    */
+/*
+background-color:#6594D1;
+*/
+/*
 }
 
 ul.menu-lateral, ul.menu-lateral ul, ul.menu-lateral ul li {
-    background-color:#2961A9;
-    margin:0;
-    padding:0;
-    width:130px;
-    /*
-    */
-    display:block;
-    list-style:none;
+/*
+background-color:#2961A9;
+margin:0;
+padding:0;
+width:130px;
+display:block;
+*/
+/*
+list-style:none;
 }
-.menu-lateral li ul {
-    /*
-    */    
-    display:none;
+*/
+/*
+.menu-lateral li ul {        
+display:none;
 }
-
+*/
 /*el color es #3156A3*/
