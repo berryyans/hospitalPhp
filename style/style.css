@@ -404,7 +404,10 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
 .page_left
 {
     float: left;
+    /*
     width: 630px;
+    */
+    width: 200px;
 }
 .left_sidebar .page_left
 {
@@ -1734,18 +1737,20 @@ a.social_icon:hover
     padding: 8px 9px;
 }
 /* --- departments --- */
+.accordion .ui-accordion-header h3 a{
+    color: #666;    
+}
 .accordion .ui-accordion-header h3
 {
-    color: #666;
     background: url('../images/accordion_plus.png') no-repeat right center;
     padding-right: 13px;
 }
 .accordion .ui-accordion-header
 {
     cursor: pointer;
-    padding: 12px 13px 12px 0;
     border-bottom: 1px solid #E0E0E0;
     color: #666;
+    padding: 6px 12px;
 }
 .accordion .ui-accordion-header.ui-state-hover h3
 {
@@ -1753,22 +1758,40 @@ a.social_icon:hover
 }
 .accordion .ui-accordion-header.ui-state-active
 {
-    border-bottom: 1px solid #3156A3;
+
     background: #3156A3;
-    padding: 10px 12px;
+    border-bottom: 1px solid #3156A3;
     margin-top: -1px;
+    padding: 5px 6px;
+    /*
+    */
+}
+.accordion .ui-accordion-header.ui-state-active h3 a{
+    color: #FFF;    
 }
 .accordion .ui-accordion-header.ui-state-active h3
 {
     background: url('../images/accordion_minus.png') no-repeat right center;
-    color: #FFF;
 }
 
 .accordion .ui-accordion-content
 {
+    height: auto;
+    /*
     padding: 20px 0;
     color: #666;
-    line-height: 150%;
+    line-height: 150%;   
+    */
+}
+
+.menu-lateral li ul li a {
+    color:#fff;
+    background: #6594D1;
+    display: block;
+    padding:6px 0;
+    /*
+    border: 1px solid #AA2DB1;
+    */
 }
 .accordion.medium .ui-accordion-content
 {
@@ -1780,7 +1803,7 @@ a.social_icon:hover
 }
 .accordion.wide .tabs_navigation
 {
-    margin-bottom: 30px;
+    margin-bottom: 30px;    
 }
 .item_footer
 {
@@ -2569,7 +2592,7 @@ ul.gallery_item_details_list
 }
 .page_left .gallery_item_details_list .gallery_box
 {
-    width: 630px;
+    width: 630px;    
     margin-right: 0;
 }
 .page_left .gallery_item_details_list .column_right
