@@ -258,12 +258,14 @@ h1.not_found
 }
 .sf-menu li a, .sf-menu li a:visited
 {
+    text-align: left;
     font-family: 'arial';
     color: #888;
     border: 1px solid #FFF;
     /*
      padding: 15px;
     */
+    font-size: 13px;
     padding: 5px;
 }
 .sf-menu li:hover a, .sf-menu li.selected a
@@ -350,7 +352,7 @@ h1.not_found
 .sf-menu li ul li a
 {
     padding: 15px 0;
-    font-size: 12px;
+    font-size: 12px;    
 }
 .sf-menu li ul li a:hover, .sf-menu li ul li.selected a,
 .sf-menu li.submenu ul li a:hover, .sf-menu li.submenu:hover ul li.selected a,
@@ -1738,10 +1740,13 @@ a.social_icon:hover
 }
 /* --- departments --- */
 .accordion .ui-accordion-header h3 a{
-    color: #666;    
+    font-size: 12px;
+    font-family: 'arial';
+    color: #666;
 }
 .accordion .ui-accordion-header h3
 {
+    text-align: left;
     background: url('../images/accordion_plus.png') no-repeat right center;
     padding-right: 13px;
 }
@@ -1776,17 +1781,22 @@ a.social_icon:hover
 
 .accordion .ui-accordion-content
 {
-    height: auto;
-    /*
-    padding: 20px 0;
     color: #666;
+    /*
+    height: auto;
+    padding: 20px 0;
     line-height: 150%;   
     */
 }
 
 .menu-lateral li ul li a {
+    text-align: left;
+    margin: 5px;
+    color:#888;
+    /*
     color:#fff;
     background: #6594D1;
+    background: #6594D1;*/
     display: block;
     padding:6px 0;
     /*
@@ -2914,4 +2924,21 @@ a.social_icon,
 .gmnoprint a
 {
     border: none;
+}
+.aviso_ubicacion{
+    /*
+    color:#6594D1;
+    color:#3156A3;
+    
+    
+    float: left;
+    width: 60px;
+    background-color: #3156A3;
+    */
+    width: 190px;
+    background-color: #42B3E5;
+    color: #FFF;
+    padding: 9px 5px;
+    font-size: 11px;
+    text-align: center;
 }
