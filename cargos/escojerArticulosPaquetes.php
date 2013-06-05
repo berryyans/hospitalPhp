@@ -252,21 +252,21 @@ horaSolicitud,fechaSolicitud,clientePrincipal,folioVenta,codigoCaja,numRecibo,nu
 ivaAseguradora,descripcionArticulo,numMovimiento,tipoCuenta,
 almacenIngreso,descripcionAlmacen,descripcionGrupoProducto,diaNumerico,mes,year,descripcionClientePrincipal,descripcionMedico,codigoPaquete,
 descripcionpaquete,
-medico)
+medico,fechaCargo,horaCargo)
 values 
 ('".$myrow4a['numeroE']."','".$myrow4a['nCuenta']."','paquete',
 '".$usuario."','".$fecha1."','".$dia."','".$myrow1['cantidad']."','".$_POST['tipoTransaccion']."','".$myrow1['codigo']."',
 '".$hora1."','C','".$ID_EJERCICIOM."','','".$myrow52['almacenPadre']."','".$usuario."',
 '".$myrow1['precioPaquete1']."','".$myrow4a['seguro']."','standby','".$tipoCliente."','".$myrow4a['tipoPaciente']."',
 '".$cantidadParticular."','".$cantidadAseguradora."','".$entidad."','paquete','standby'
-,'paquete','cargadoR','".$_POST['porcentaje']."','".$_POST['cargosHospitalarios']."','".$myrow52['almacenPadre']."','".$myrow1['almacen']."',
+,'paquete','cargado','".$_POST['porcentaje']."','".$_POST['cargosHospitalarios']."','".$myrow52['almacenPadre']."','".$myrow1['almacen']."',
     '".$_GET['keyClientesInternos']."','pagado','".$_POST['descripcion']."','standby',
 '".$iva->iva($entidad,$cantidad,$myrow1['codigo'],$myrow1['precioPaquete1'],$basedatos)."','".$hora1."','".$fecha1."','".$myrow455['clientePrincipal']."',
 '".$FV."','".$myrowC['keyCatC']."','".$myrowC['numRecibo']."','".$numCorte."','si','".$keyE[$i]."','".trim($myrow1a['gpoProducto'])."',
 '".$ivaP."','".$ivaA."','".$myrow1a['descripcion']."' ,'".$myrow333['CVI']."','D','".$almacenIngreso."',
 '".$descripcionAlmacen."','".$descripcionGP."','".$diaNumerico."','".$mes."','".$year."','".$myrow455a['nomCliente']."',
     '".$descripcionMedico."','".$_GET['codigoPaquete']."','".$_GET['descripcionPaquete']."',
-        '".$myrow6abc['id_medico']."')";
+        '".$myrow6abc['id_medico']."','".$fecha1."','".$hora1."')";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
 
