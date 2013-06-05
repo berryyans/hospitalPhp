@@ -266,6 +266,27 @@ tipoConvenio='cantidad'
 $result5=mysql_db_query($basedatos,$sql5);
 $myrow5= mysql_fetch_array($result5);
 
+$sSQL40= "
+SELECT gpoProducto
+FROM
+articulos
+where 
+entidad='".$entidad."'
+and
+codigo='".$myrow['codigo']."'";
+$result40=mysql_db_query($basedatos,$sSQL40);
+$myrow40 = mysql_fetch_array($result40);
+
+
+$sSQL40b= "
+SELECT *
+FROM
+gpoProductos
+where 
+codigoGP='".$myrow40['gpoProducto']."'";
+$result40b=mysql_db_query($basedatos,$sSQL40b);
+$myrow40b = mysql_fetch_array($result40b);
+
 ?>
       
       
@@ -307,6 +328,9 @@ $myrow5= mysql_fetch_array($result5);
 	  } else {
 	  echo "El articulo existe en los convenios pero no en el inventario!!!";
 	  }
+          
+          echo '<br>';
+          echo $myrow40b['descripcionGP'];
 	  ?>
 
                 <br></br>

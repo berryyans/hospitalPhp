@@ -771,17 +771,37 @@ $totalPrecio[0]+=$myrow['precioPaquete1'];
 
 
 
+$sSQL40= "
+SELECT gpoProducto
+FROM
+articulos
+where 
+entidad='".$entidad."'
+and
+codigo='".$myrow['codigo']."'";
+$result40=mysql_db_query($basedatos,$sSQL40);
+$myrow40 = mysql_fetch_array($result40);
+
+
+$sSQL40b= "
+SELECT *
+FROM
+gpoProductos
+where 
+codigoGP='".$myrow40['gpoProducto']."'";
+$result40b=mysql_db_query($basedatos,$sSQL40b);
+$myrow40b = mysql_fetch_array($result40b);
 
 ?>
     <tr >
         
         
          <td ><?php echo $a;?></td>
-      <td height="48" ><span >
+      <td  ><span >
         <input name="coder[]" type="hidden"  id="flag" value="<?php echo $myrow['codigo'];?>" />
         <?php 
 echo $myrow['keyE'];
-
+//echo $myrow40b['descripcionGP'];
 	  ?>
       </span></span></td>
       <td ><span >

@@ -274,7 +274,7 @@ $comboAlmacen1->despliegaMiniAlmacenSS($entidad,'style12',$almacenDestino,$almac
 if($_POST['buscar'] or $_POST['almacenDestino1']){ ?>
 <table width="800" class="table table-striped">
       <tr >
-        <th width="51"  scope="col"><div align="left"><span >C&oacute;digo</span></div></th>
+        <th width="51"  scope="col"><div align="left"><span >#</span></div></th>
         <th width="314"  scope="col"><div align="left"><span >Descripci&oacute;n</span></div></th>
         <th width="67"  scope="col"><div align="left"><span >Fecha Inicial </span></div></th>
         <th width="55"  scope="col"><span >Fecha Final</span></th>
@@ -305,7 +305,7 @@ $result=mysql_db_query($basedatos,$sSQL);
 
 if($result!=NULL){
 while($myrow = mysql_fetch_array($result)){ 
-
+$a+=1;
 
 
 if($col){
@@ -344,16 +344,37 @@ almacen='".$_POST['almacenDestino1']."'
 $result3=mysql_db_query($basedatos,$sSQL3);
 $myrow3 = mysql_fetch_array($result3);
 
+
+$sSQL40= "
+SELECT gpoProducto
+FROM
+articulos
+where 
+entidad='".$entidad."'
+and
+codigo='".$myrow['codigo1']."'";
+$result40=mysql_db_query($basedatos,$sSQL40);
+$myrow40 = mysql_fetch_array($result40);
+
+
+$sSQL40b= "
+SELECT *
+FROM
+gpoProductos
+where 
+codigoGP='".$myrow40['gpoProducto']."'";
+$result40b=mysql_db_query($basedatos,$sSQL40b);
+$myrow40b = mysql_fetch_array($result40b);
 ?>
       <td  bgcolor="<?php echo $color?>" ><span >
           <label> <span >
           <?php 
 	
-		  $C=$myrow['codigo1'];
+		  $a;
          
 		  ?>
 		  </span>
-		  <?php  echo $myrow39['prefijo'].$myrow['codigo1']; ?>
+		  <?php  echo $a; ?>
         </label>
         </span></td>
         <td bgcolor="<?php echo $color?>" ><span >
@@ -389,8 +410,11 @@ $myrow3 = mysql_fetch_array($result3);
 		} else {
 		?>
 		
-		
+		<?php 
+                
+                if($myrow40b['afectaExistencias']!='si'){?>
           <input name="codigo[]" type="checkbox" id="paquete" value="<?php echo $myrow['codigo1'];?>" />
+                <?php }else{ echo '---';}?>
 		  <?php } ?>
 		  
         </label></td>
