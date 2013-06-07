@@ -97,6 +97,8 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="contenido_pagina">       
+        
 <p align="center">
   <label>Datos del Usuario <?php echo $usuario; ?></label>
 </p>
@@ -156,5 +158,12 @@ $estilos->styles();
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-</body>
-</html>
+    </div>  
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+
+?>
+
+<!--</body>
+</html>-->
