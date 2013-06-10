@@ -40,7 +40,19 @@ function valida(F) {
 </script> 
 
 
+<script>
 
+var win = null;
+function nueva(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+if(win.window.focus){win.window.focus();}
+}
+
+</script>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -118,7 +130,17 @@ $col = "";
 
 ?>
      <tr  >
-       <td  align="center"><?php echo $myrow['numRecibo'];?></td>
+       <td  align="center">
+<?php           
+if($myrow['numRecibo']){ ?>
+
+	  <a href="javascript:nueva('/sima/INGRESOS HLC/caja/imprimirNumeroRecibo.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>','ventana7','800','600','yes');">
+<?php echo $myrow['numRecibo'];?></a>
+
+<?php 
+}  ?>         
+           
+       </td>
 
        <td height="55"  align="center"><?php echo cambia_a_normal($myrow['fecha1']);?></td>
        <td ><span ><?php echo $myrow['descripcionArticulo'];?></span></td>

@@ -101,8 +101,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?>
  </p>
  <form id="form2" name="form2" method="post" action="">
-
-   <table width="750" class="table table-striped">
+<div id="divContainer">
+   <table width="500" class="formatHTML5">
      <tr >
        <th width="5"  scope="col"><div align="left" >#</div></th>
        <th width="258"  scope="col"><div align="left" >Descripci&oacute;n</div></th>
@@ -175,7 +175,7 @@ almacen='".$myrow7."'
      </tr>
      <?php }?>
    </table>
-
+</div>
 </form>
  <p align="center">
    <input name="nuevo" type="button" src="../imagenes/btns/activpaq.png" id="nuevo" value="NuevoPaquete"

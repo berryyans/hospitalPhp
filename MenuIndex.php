@@ -2,7 +2,7 @@
 
 <?php 
 $ip = $_SERVER['REMOTE_ADDR']; 
-if($ip=='127.0.0.1'){
+if($ip=='127.0.0.1' or $ip=='localhost'){
 
 
 

@@ -1,4 +1,4 @@
-<?PHP require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); ?>
+<?PHP require("menuOperaciones.php"); ?>
 
 
 <script language="javascript" type="text/javascript">

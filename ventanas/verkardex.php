@@ -290,15 +290,17 @@ Ultima Actualizacion:   <?php echo cambia_a_normal($myrowf['fecha']);?>
 $sSQLy= "
 SELECT sum(cantidad) as entradas 
 FROM
-articulosExistencias
+kardex
 WHERE
 entidad='".$entidad."'
 and
-codigo='".$myrowf['codigo']."'
+kc='".$myrowf['codigo']."'
     and
-status='sold'
+status='final'
 and
 fecha<'".$_GET['fechaInicial']."'
+    and
+    io='ENTRADA'
 ";
 
 

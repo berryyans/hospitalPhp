@@ -375,10 +375,12 @@ $result8ac=mysql_db_query($basedatos,$sSQL8ac);
 $myrow8ac = mysql_fetch_array($result8ac);
     
 if($myrow8ac['cajaCon']>0){
-    $ct=$cantidad[$i]*$myrow8ac['cajaCon'];
+    //$ct=$cantidad[$i]*$myrow8ac['cajaCon'];
 }else{
-    $ct=$cantidad[$i];
+    //$ct=$cantidad[$i];
 }
+
+$ct=$cantidad[$i];
 //****************************************************************
 
 
@@ -403,6 +405,99 @@ $myrow3ae = mysql_fetch_array($result3ae);
 //DEPRECATED
 //$karticulos=new kardex();
 //$karticulos-> movimientoskardex('entrada',$ct,'ENTRADA POR COMPRAS',$tipoEntrada[$i],$usuario,$fecha1,$hora1,$myrow3ae['almacen'],$_GET['departamento'],$keyPA[$i],$myrow3a['codigo'],$entidad,$basedatos);
+
+
+
+
+
+
+
+
+
+
+
+###########AJUSTE MANUAL DE KARDEX#############
+$sSQL8acd= "
+SELECT * 
+FROM
+conceptoinventarios
+WHERE
+
+codigo='01'
+";
+$result8acd=mysql_db_query($basedatos,$sSQL8acd);
+$myrow8acd = mysql_fetch_array($result8acd);
+
+//******************CUANTO HABIA EN EXISTENCIAS***********
+     $sSQL8ac1e= "
+SELECT sum( cantidad) as entrada
+FROM
+articulosExistencias
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$myrow3a['codigo']."'
+    and
+      status='ready'
+  
+";
+$result8ac1e=mysql_db_query($basedatos,$sSQL8ac1e);
+$myrow8ac1e = mysql_fetch_array($result8ac1e);
+echo mysql_error();
+
+    $sSQL8acb= "
+SELECT * 
+FROM
+precioArticulos
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$myrow3a['codigo']."'
+    order by keyC DESC
+";
+$result8acb=mysql_db_query($basedatos,$sSQL8acb);
+$myrow8acb = mysql_fetch_array($result8acb);
+
+
+  $q1ab = "INSERT INTO kardex 
+(kc,evento,descripcion,descripcionevento,naturaleza,usuario,fecha,hora,entidad,
+keyPA,almacenSolicitante,almacenDestino,costo,cantidad,cantidadtotal,
+descripcionArticulo,existencia,existenciaTotal,otro,gpoProducto,tipoMovimiento,
+almacenConsumo,io,cajaCon,status,cbarra,numSolicitud)
+values
+('".$myrow3a['codigo']."','".$myrow8acd['evento']."',
+    '".$myrow8acd['tipoMovimiento']."',
+    '".$myrow8acd['descripcion']."','".$myrow8acd['naturaleza']."',
+        '".$usuario."','".$fecha1."',
+        '".$hora1."',
+    '".$entidad."','".$myrow8ac['keyPA']."','".$_POST['almacenDestino1']."',
+        '".$_POST['almacenDestino1']."',
+        '".$myrow8acb['costo']."',
+        '".$ca."','".$ca."','".$myrow8ac['descripcion']."','".$myrow8ac1e['entrada']."',
+            '".$myrow8ac1e['entrada']."',
+        '".$myrow8acd['otro']."','".$myrow8acd['descripcion']."',
+            '".$myrow8acd['tipoMovimiento']."',
+            '".$myrowk['almacenConsumo']."','ENTRADA',
+                '".$myrow8ac['cajaCon']."','final','".$myrow8ac['cbarra']."',
+                '".$numSolicitud."'
+         )";
+
+mysql_db_query($basedatos,$q1ab);
+echo mysql_error();
+//CIERRO AFECTACION DE KARDEX*******
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if($myrowrd['notaCredito']!='si'){
