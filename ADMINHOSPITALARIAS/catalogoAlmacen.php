@@ -1,4 +1,6 @@
-<?PHP require("menuOperaciones.php"); $ventana1='ventanaCatalogoAlmacen.php';
+<?PHP 
+require("menuOperaciones.php"); 
+$ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
 
