@@ -1,8 +1,4 @@
-<?PHP //require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php");
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
-$mostrarmenu=new menus();
-$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+<?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php");  
 
 
 

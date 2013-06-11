@@ -1,4 +1,10 @@
-<?php require("menuOperaciones.php");?>
+<?php //require("menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
@@ -333,7 +339,10 @@ $(document).ready(function() {
 
 
 
-
+<?php
+$estilos=new muestraEstilos();
+$estilos->styles();
+?>
 
 </head>
 <body>
@@ -827,7 +836,10 @@ echo $myrow['usuario'];
 </div>
 
         
-        
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>        
 
  
 </body>

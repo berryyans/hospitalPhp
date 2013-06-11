@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
@@ -22,6 +29,7 @@ $estilos->styles();
 </head>
 
 <body>
+     <div class="contenido_pagina">   
  <h1 >&nbsp;</h1>
  <h1 >Cat&aacute;logo de Clasificaciones de Equipos de Sistemas
    <?php   
@@ -73,5 +81,10 @@ onclick="javascript:ventanaSecundaria1('ventanaCatalogoCEM.php?almacen=<?php ech
    </div>
  </form>
  <p align="center">&nbsp;</p>
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>

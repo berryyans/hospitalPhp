@@ -1,8 +1,4 @@
-<?PHP //require("menuOperaciones.php");  
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
-$mostrarmenu=new menus();
-$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+<?PHP require("menuOperaciones.php");  
 
 
 
@@ -62,6 +58,7 @@ msgbox "VERIFICA TU IMAGEN, NO SE PUDO ANEXAR ESTE CODIGO DE BARRAS!"
 
 }
 }
+
 
 
 
@@ -148,8 +145,7 @@ $estilos->styles();
 
 
 <body>
-<!--<p>&nbsp;</p>-->
-<div class="contenido_pagina">
+<p>&nbsp;</p>
 <div align="center"></div>
 <?php
 $checaModuloScript= "Select * From CB WHERE entidad='".$entidad."' AND codigoCB='".$_POST['codigoCB']."'";
@@ -215,12 +211,7 @@ echo $myrow['ruta'];
   </table>
   
 </form>
-</div>
-<p>&nbsp;</p>
-<?php
 
-$mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
-?>
+<p>&nbsp;</p>
 </body>
 </html>
