@@ -1,4 +1,14 @@
-<?php require("menuOperaciones.php");?>
+<?php 
+//require("menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+$estilos=new muestraEstilos();
+$estilos->styles();
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
@@ -235,12 +245,13 @@ if($totaldone>0 || $totalRequest>0 || $totalontransit>0){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+<!--
 <link href="../js/styleTabs.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui-personalized-1.5.2.packed.js"></script>
 <script type="text/javascript" src="../js/sprinkle.js"></script>
 <script src="../js/jquery-1.7.2.min.js"></script>
+-->
 <script>
 $(document).ready(function() {
     $("#content div").hide(); // Initially hide all content
@@ -303,17 +314,25 @@ $(document).ready(function() {
 <?php     
 $q=mysql_real_escape_string($q);
 ?>
-   <div id="moving_tab">
-
- <ul id="tabs" >
-    
-    <li ><a href="#1" name="tab1">Nueva Orden +</a></li>
-    <li ><a href="#2" name="tab2">Pendientes</a></li>
-    <li ><a href="#3" name="tab3">En Proceso</a></li>
-    <li ><a href="#4" name="tab4">Terminadas</a></li>  
-    
-</ul>
+    <div class="contenido_pagina">
+        <div class="clearfix tabs">
+            <ul id="tabs" class="tabs_navigation clearfix">
+                <li ><a href="#1" name="tab1">Nueva Orden +</a></li>
+                <li ><a href="#2" name="tab2">Pendientes</a></li>
+                <li ><a href="#3" name="tab3">En Proceso</a></li>
+                <li ><a href="#4" name="tab4">Terminadas</a></li>
+            </ul>
         </div>
+       <!--
+        <div id="moving_tab">
+            <ul id="tabs" >
+                <li ><a href="#1" name="tab1">Nueva Orden +</a></li>
+                <li ><a href="#2" name="tab2">Pendientes</a></li>
+                <li ><a href="#3" name="tab3">En Proceso</a></li>
+                <li ><a href="#4" name="tab4">Terminadas</a></li>  
+            </ul>
+        </div>
+       -->
     
     
     
@@ -354,6 +373,7 @@ $q=mysql_real_escape_string($q);
 
 <div id="content"> 
     <div id="tab1">
+        <!--
 <style>
     
 
@@ -542,7 +562,7 @@ body
 
     </style>         
         
-        
+  -->      
         
         
         
@@ -1469,10 +1489,10 @@ echo $myrow['usuario'];
         
 </div>
 </div>
-
-        
-        
-
- 
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?> 
 </body>
 </html>
