@@ -1800,6 +1800,7 @@ a.social_icon:hover
     text-align: left;
     margin: 5px;
     color:#888;
+    font-size: 11px;
     /*
     color:#fff;
     background: #6594D1;
@@ -2955,7 +2956,95 @@ a.social_icon,
 }
 
 .contenido_pagina{
+    font-family: 'Arial';
     width: 75%;
     float: left;    
     padding: 15px;
 }
+
+.table-template{
+    /*
+    border: 1px solid #000000;
+    */
+    font-family: 'Arial';
+    width: 100%;
+    font-size: 12px;
+    color: #666;    
+    margin-top: 30px;
+}
+
+.table-template .table{
+    font-family: 'Arial';
+    border-color: gray;
+}
+.table-template table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-template tbody tr{
+    background: url('../images/dotted_line.png') left top repeat-x;
+}
+.table-template th,
+.table-template td:first-child
+{    
+    color: #666;    
+    text-align: center;
+    vertical-align: middle;
+}
+.table-template th, .table-template td
+{
+    width: 12.5%;
+    padding: 10px 15px 12px;
+}
+.table-template td
+{
+    vertical-align: top;
+}
+.table-template .last
+{
+    padding-right: 0;
+}
+.table-template .hours
+{
+    color: #A6C3FF;
+}
+.table-template .event
+{
+    background-color: #3156A3;
+    color: #FFF;
+    border-bottom: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    line-height: 140%;
+}
+.table-template .event a
+{
+    display: block;
+    color: #FFF;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+.table-template .row_gray
+{
+    background-color: #F0F0F0;
+}
+.table-template .event:hover
+{
+    background-color: #42B3E5;
+}
+.table-template .event:hover .hours
+{
+    color: #FFF;
+}
+.table-template.small
+{
+    display: none;
+    font-size: 13px;
+}
+/*
+----NOTA---
+El estilo de la tabla que es generada automaticamente se encuentra en /configuracion/clases/valida.php
+en la seccion table.formatHTML5
+se comento la parte referente a la tabla html5 en valida.php
+----NOTA---
+*/

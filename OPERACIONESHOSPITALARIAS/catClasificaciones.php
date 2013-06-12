@@ -30,6 +30,7 @@ $estilos->styles();
 
 <body>
      <div class="contenido_pagina">   
+     <div class="table-template">   
  <h1 >&nbsp;</h1>
  <h1 >Cat&aacute;logo de Clasificaciones de Equipos de Sistemas
    <?php   
@@ -41,7 +42,8 @@ $result=mysql_db_query($basedatos,$sSQL);
  <form id="form1" name="form1" method="post" action="">
    <p align="center">&nbsp;</p>
 
-   <table width="400" class="table table-striped">
+   <!--<table width="400" class="table table-striped">-->
+   <table width="400">
      <tr >
        <th width="64" scope="col"><div align="left" ><span >C&oacute;digo </span></div></th>
        <th width="280" scope="col"><div align="left" ><span >Descripci&oacute;n </span></div></th>
@@ -81,6 +83,7 @@ onclick="javascript:ventanaSecundaria1('ventanaCatalogoCEM.php?almacen=<?php ech
    </div>
  </form>
  <p align="center">&nbsp;</p>
+</div>
 </div>
 <?php
 $mostrarFooter=new menus();

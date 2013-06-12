@@ -1,4 +1,12 @@
-<?php require("menuOperaciones.php");?>
+<?php 
+//require("menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+$estilos=new muestraEstilos();
+$estilos->styles();
+?>
 
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
@@ -279,11 +287,13 @@ echo mysql_error();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+<!--
 <link href="../js/styleTabs.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui-personalized-1.5.2.packed.js"></script>
 <script type="text/javascript" src="../js/sprinkle.js"></script>
 <script src="../js/jquery-1.7.2.min.js"></script>
+-->
 <script>
 $(document).ready(function() {
     $("#content div").hide(); // Initially hide all content
@@ -340,7 +350,7 @@ $(document).ready(function() {
 
 
     
-    
+<!--    
 <style>
     
 
@@ -511,7 +521,7 @@ body
     
     
 </style>          
-    
+-->    
     
     
     
@@ -524,6 +534,9 @@ body
 <?php     
 $q=mysql_real_escape_string($q);
 ?>
+    
+    
+    <!--
    <div id="moving_tab">
 
  <ul id="tabs" >
@@ -536,11 +549,20 @@ $q=mysql_real_escape_string($q);
     <li ><a href="#6" name="tab6">Tipo Equipo +</a></li>
 </ul>
         </div>
+    -->
     
     
-    
-    
-    
+    <div class="contenido_pagina">
+        <div class="clearfix tabs">
+            <ul id="tabs" class="tabs_navigation clearfix">
+                <li ><a href="#1" name="tab1">Software +</a></li>
+                <li ><a href="#2" name="tab2">Procesador +</a></li>
+                <li ><a href="#3" name="tab3">Sistema Operativo +</a></li>
+                <li ><a href="#4" name="tab4">Marca Monitor +</a></li>
+                <li ><a href="#5" name="tab5">Marca PC +</a></li>
+                <li ><a href="#6" name="tab6">Tipo Equipo +</a></li>
+            </ul>  
+        </div> 
     
     
 
@@ -808,10 +830,14 @@ $q=mysql_real_escape_string($q);
    
 
 </div>
+</div>
 
         
         
 
- 
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?> 
 </body>
 </html>
