@@ -29,8 +29,11 @@ $estilos->styles();
 </head>
 
 <body>
-     <div class="contenido_pagina">   
-     <div class="table-template">   
+    <!--
+    <div class="contenido_pagina">   
+    --> 
+    <div class="page_right">
+        <div class="table-template">   
  <h1 >&nbsp;</h1>
  <h1 >Cat&aacute;logo de Clasificaciones de Equipos de Sistemas
    <?php   

@@ -138,7 +138,8 @@ window.alert("Se quitaron articulos de este almacen");
 ?>
 
 </head>
-<div class="contenido_pagina">
+<!--<div class="contenido_pagina">-->
+<div class="page_right">
 <h1 align="center" class="titulos"><br /> 
 Eliminar Articulos
 <br />

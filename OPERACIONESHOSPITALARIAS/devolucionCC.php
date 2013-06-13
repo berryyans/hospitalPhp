@@ -76,7 +76,8 @@ $estilos->styles();
 </head>
 
 <body>
-    <div class="contenido_pagina">
+    <!--<div class="contenido_pagina">-->
+    <div class="page_right">
 <form id="form1" name="form1" method="post" >
   <h1 align="center" class="titulos">Devolucion de Cargos de Cuentas Cerradas (Px. Internos Solamente) </h1>
   <p align="center" class="titulos">&nbsp;</p>

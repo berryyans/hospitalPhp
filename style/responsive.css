@@ -104,11 +104,17 @@
 	}
 	.page_left
 	{
-		width: 475px;
+            /*
+            width: 475px;
+            */
+            width: 200px;
 	}
 	.page_right
 	{
-		width: 250px;
+		/*
+                width: 250px;
+                */
+                width: 450px;
 	}
 	.page_margin_top
 	{

@@ -167,16 +167,6 @@ function wopen(url, name, w, h)
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
 <?php
 /*
 $alturaMinima=400;
@@ -224,9 +214,6 @@ if($totaldone>0 || $totalRequest>0 || $totalontransit>0){
 ?>
 
 
-
-
-
 <?php  
 if($_GET['codigo'] AND ($_GET['inactiva'] or $_GET['activa'])){
 
@@ -240,9 +227,6 @@ $q = "DELETE FROM sis_inventarioEqComputo WHERE solicitud='".$_GET['solicitud'].
 
 }
 ?>
-
-
-
 
 <?php 
 $sSQL8aa3= "
@@ -271,11 +255,6 @@ echo mysql_error();
 
 
 ?>
-
-
-
-
-
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -308,36 +287,6 @@ $(document).ready(function() {
     });
 });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </head>
 <body>
@@ -400,14 +349,6 @@ body
     -webkit-box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
     box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
 }
-
-
-
-
-
-
-
-
 
 
 #tabs a{
@@ -483,17 +424,6 @@ body
 
 /* ------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
 #content h2, #content h3, #content p
 {
     margin: 0 0 15px 0;
@@ -528,7 +458,8 @@ body
 <?php     
 $q=mysql_real_escape_string($q);
 ?>
-    <div class="contenido_pagina"> 
+    <!--<div class="contenido_pagina"> -->
+    <div class="page_right">
         <div class="clearfix tabs">
             <ul id="tabs" class="tabs_navigation clearfix">
                 <li ><a href="#2" name="tab2">Lista de PC</a></li>
@@ -541,44 +472,6 @@ $q=mysql_real_escape_string($q);
             <li ><a href="#2" name="tab2">Lista de PC</a></li>
         </ul>
     </div>-->
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--<div class="contenido_pagina"> -->
 <div class="table-template">
 <div id="content"> 
@@ -614,7 +507,8 @@ $q=mysql_real_escape_string($q);
 
 <form name="request">
 <br>
-  <table width="700"  cellspacing="0" cellpadding="0" align="center" >
+  <!--<table width="700"  cellspacing="0" cellpadding="0" align="center" >-->
+ <table width="500"  cellspacing="0" cellpadding="0" align="center" >
  
     <tr >
         <td ><p>#</p></td>
@@ -756,82 +650,8 @@ echo $myrow['usuario'];
 
  
     </div>
-
-              
-              
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
 
 </div>
 </div>

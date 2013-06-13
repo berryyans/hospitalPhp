@@ -523,7 +523,8 @@ body
 <?php     
 $q=mysql_real_escape_string($q);
 ?>
-    <div class="contenido_pagina"> 
+    <!--<div class="contenido_pagina">--> 
+    <div class="page_right"> 
     <div class="clearfix tabs">
         <ul id="tabs" class="tabs_navigation clearfix">
             <li ><a href="#1" name="tab1">Marca</a></li>

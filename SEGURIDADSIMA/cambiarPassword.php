@@ -97,8 +97,14 @@ $estilos->styles();
 </head>
 
 <body>
-    <div class="contenido_pagina">       
-        
+    
+    <!--
+    -->
+        <!--
+        <div class="sidebar_box first">        
+    <div class="contenido_pagina">
+        -->
+    <div class="page_right">    
 <p align="center">
   <label>Datos del Usuario <?php echo $usuario; ?></label>
 </p>
@@ -158,6 +164,10 @@ $estilos->styles();
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+    <!--
+    </div>
+    </div>
+    -->
     </div>  
 <?php
 $mostrarFooter=new menus();
