@@ -50,12 +50,18 @@
 	/* --- menu --- */
 	.sf-menu li
 	{
-		height: 39px;
+		/*
+                height: 39px;
+                */
+                height: 25px;
 		margin-left: 5px;
 	}
 	.sf-menu li a, .sf-menu li a:visited
 	{
-		padding: 12px 7px;
+                padding: 5px 7px;
+		/*
+                padding: 12px 7px;
+                */
 	}
 	.sf-menu li ul
 	{
@@ -63,7 +69,10 @@
 	}
 	.sf-menu li:hover ul, .sf-menu li.sfHover ul
 	{
-		top: 38px;
+            /*
+            top: 38px;
+            */
+            top: 24px;
 	}
 	.sf-menu li ul li
 	{
@@ -72,13 +81,18 @@
 	.sf-menu li ul li a,
 	.sf-menu li:hover ul a, .sf-menu li.submenu:hover ul a
 	{
-		padding: 12px 0;
+            /*
+            padding: 12px 0;
+            */
+            padding: 5px 0;
 	}
 	.sf-menu li ul li a:hover, .sf-menu li ul li.selected a,
 	.sf-menu li.submenu ul li a:hover, .sf-menu li.submenu:hover ul li.selected a,
 	.sf-menu li.submenu:hover ul li.selected ul li a:hover, .sf-menu li.submenu:hover ul li ul li.selected a, .sf-menu li.submenu:hover ul li.selected ul li.selected a
 	{
-		padding-bottom: 11px;
+            /*
+            padding-bottom: 11px;
+            */
 	}
 	ul.sf-menu li li:hover ul, ul.sf-menu li li.sfHover ul
 	{
@@ -115,6 +129,7 @@
                 width: 250px;
                 */
                 width: 450px;
+                
 	}
 	.page_margin_top
 	{

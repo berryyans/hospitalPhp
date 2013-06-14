@@ -22,7 +22,7 @@ body
 
 .site_container
 {
-    border:1px solid #000000;
+    border:1px solid #E71111;
     max-width: 1590px;
     margin-left: auto;
     margin-right: auto;
@@ -418,10 +418,16 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
 }
 .page_right
 {
-    float: right;
-    width: auto;
-    border:1px solid #000000;
+    float: left;
     /*
+    width: auto;
+    */
+    width:60%;
+    border:1px solid #000000;
+    margin-left: 5%;
+    margin-right:5%;
+    /*
+    float: right;
     width: 330px;
     */
 }
