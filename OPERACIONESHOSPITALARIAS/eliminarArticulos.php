@@ -148,12 +148,18 @@ Eliminar Articulos
 <?php echo $leyenda; ?>&nbsp;</h1>
 <form id="form1" name="form1" method="post" action="">
     <div class="table-template">  
-  <!--<table width="583" class="table-forma">-->
+  <!--
+  <table width="583" class="table-forma">
+  <table width="583" >
+  -->
   <table width="583" >
     <tr>
       <td width="146"  scope="col"><div align="left" >
         <div align="right" ><span >Datos Articulo </span></div>
       </div></td>
+        <!--
+      <td width="373"  scope="col"><div align="left"><span >
+        -->
       <td width="373"  scope="col"><div align="left"><span >
           <input name="porArticulo" type="text"  id="porArticulo" size="60" 
 		  value="<?php if($_POST['porArticulo']) echo $_POST['porArticulo']; ?>"
@@ -184,7 +190,16 @@ $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenSolicitante,$almacenDe
   <p>&nbsp;</p>
   <!--<table width="718" class="table table-striped">-->
   <div class="table-template">
-      
+  <table width="660" >
+    <tr >
+      <th width="40" >Clave</th>
+      <th width="395" >Descripcion</th>
+      <th width="155" >CBarra</th>
+      <th width="80" >Status</th>
+      <th width="85" >Existencias</th>
+      <th width="60" >Eliminar</th>
+    </tr >
+  <!--    
   <table width="718" >
 
     <tr >
@@ -196,6 +211,7 @@ $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenSolicitante,$almacenDe
       <th width="87" >Existencias</th>
       <th width="64" >Eliminar</th>
     </tr>
+  -->
 <?php	
 
 

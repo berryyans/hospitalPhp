@@ -394,7 +394,11 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
 /* --- page --- */
 .page
 {
+    /*
+    width: auto;
     width: 990px;
+    */
+    width: auto;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 50px;
@@ -409,8 +413,9 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
     float: left;
     /*
     width: 630px;
+    width: 100px;
     */
-    width: 200px;
+    width: 200px;    
 }
 .left_sidebar .page_left
 {
@@ -421,12 +426,13 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
     float: left;
     /*
     width: auto;
-    */
     width:60%;
+    */
+    width:75%;
     border:1px solid #000000;
     margin-left: 5%;
-    margin-right:5%;
     /*
+    margin-right:5%;
     float: right;
     width: 330px;
     */
@@ -1759,7 +1765,10 @@ a.social_icon:hover
 }
 /* --- departments --- */
 .accordion .ui-accordion-header h3 a{
+    /*
     font-size: 12px;
+    */
+    font-size: 10px;
     font-family: 'arial';
     color: #666;
 }
@@ -1812,7 +1821,7 @@ a.social_icon:hover
     text-align: left;
     margin: 5px;
     color:#888;
-    font-size: 11px;
+    font-size: 10px;
     /*
     color:#fff;
     background: #6594D1;
@@ -2994,6 +3003,10 @@ a.social_icon,
     vertical-align: middle;
 }
 
+.table-template table td p{
+    padding: 0;
+}
+
 .table-template tbody tr{
     background: url('../images/dotted_line.png') left top repeat-x;
 }
@@ -3007,7 +3020,10 @@ a.social_icon,
 .table-template th, .table-template td
 {
     width: 12.5%;
+    /*
+    padding: 3px;
     padding: 10px 15px 12px;
+    */
 }
 .table-template td
 {

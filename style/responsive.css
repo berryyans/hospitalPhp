@@ -113,31 +113,43 @@
 	/* --- page --- */
 	.page
 	{
-		width: 750px;
-		padding-bottom: 40px;
+            width: 95%;
+            /*
+            width: 750px;
+            padding-bottom: 40px;
+            */
 	}
 	.page_left
 	{
             /*
             width: 475px;
-            */
             width: 200px;
+            */
+            width: 150px;
 	}
 	.page_right
 	{
 		/*
                 width: 250px;
-                */
                 width: 450px;
+                width: auto;
+                */
+                width: 75%;
                 
 	}
 	.page_margin_top
 	{
+            /*
 		margin-top: 23px;
+            */
+		margin-top: 0px;
 	}
 	.page_margin_top_section
 	{
+            /*
 		margin-top: 40px;
+            */
+		margin-top: 0px;
 	}
 	.top_hint
 	{
@@ -348,8 +360,11 @@
 	/* --- sidebar box --- */
 	.sidebar_box
 	{
-		width: 250px;
-		margin-top: 40px;
+            /*
+            width: 250px;
+            */
+            width: 150px;
+            margin-top: 40px;
 	}
 	.sidebar_box .header_left, .footer_box.last .header_left
 	{
@@ -631,6 +646,82 @@
 	{
 		margin-top: 7px;
 	}
+        
+        /*accordion*/
+        .accordion .ui-accordion-header h3 a{
+            /*
+            font-size: 12px;
+            */
+            font-size: 9px;
+            font-family: 'arial';
+            color: #666;
+        }
+        .accordion .ui-accordion-header h3
+        {
+            text-align: left;
+            background: url('../images/accordion_plus.png') no-repeat right center;
+            padding-right: 8px;
+        }
+        .accordion .ui-accordion-header
+        {
+            cursor: pointer;
+            border-bottom: 1px solid #E0E0E0;
+            color: #666;
+            padding: 6px 12px;
+        }
+        .accordion .ui-accordion-header.ui-state-hover h3
+        {
+            color: #3156A3;
+        }
+        .accordion .ui-accordion-header.ui-state-active
+        {
+
+            background: #3156A3;
+            border-bottom: 1px solid #3156A3;
+            margin-top: -1px;
+            padding: 5px 6px;
+            /*
+            */
+        }
+        .accordion .ui-accordion-header.ui-state-active h3 a{
+            color: #FFF;    
+        }
+        .accordion .ui-accordion-header.ui-state-active h3
+        {
+            background: url('../images/accordion_minus.png') no-repeat right center;
+        }
+        .menu-lateral li ul li a {
+            text-align: left;
+            margin: 5px;
+            color:#888;
+            font-size: 9px;
+            /*
+            color:#fff;
+            background: #6594D1;
+            background: #6594D1;*/
+            display: block;
+            padding:6px 0;
+            /*
+            border: 1px solid #AA2DB1;
+            */
+        }
+        .aviso_ubicacion{
+            /*
+            color:#6594D1;
+            color:#3156A3;
+            
+            
+            float: left;
+            width: 60px;
+            background-color: #3156A3;
+            */
+            width: 140px;
+            background-color: #42B3E5;
+            color: #FFF;
+            padding: 9px 5px;
+            font-size: 9px;
+            text-align: center;
+        }
 }
 @media screen and (max-width:767px)
 {
