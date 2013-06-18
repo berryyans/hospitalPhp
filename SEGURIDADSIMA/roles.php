@@ -1,7 +1,19 @@
 <?php require("menuOperaciones.php"); ?>
 
-<?php //require('/configuracion/funciones.php');?>
+<?php /*require("menuOperaciones.php"); 
+##EJEMPLO##
+/*require("/configuracion/ventanasEmergentes.php");
+#########CONFIGURACION DE LA TABLA##############
+//require("/configuracion/funciones.php");
+$nombreTabla='roles';
+$limiteRegistros=30;
+$titulo='Catalogo de Roles';
 
+
+$catSoftware=new catalogos();    
+$catSoftware-> crearTabla($reservado1,$reservado2,$reservado3,$limiteRegistros,$nombreTabla,$webPage,$titulo,$entidad,$basedatos);
+*/   
+?>
 
 <script language=javascript> 
 function ventanaSecundaria3 (URL){ 

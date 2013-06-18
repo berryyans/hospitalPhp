@@ -359,7 +359,7 @@ $myrowdev = mysql_fetch_array($resultdev);
 $devoluciones= $myrowdev['devoluciones'];
 	   
 if($devoluciones>0){
-    echo number_format($consultas);
+    echo number_format($devoluciones);
     $totalDevoluciones[0]+=$myrowdev['devoluciones'];
 }else{
     echo '0';

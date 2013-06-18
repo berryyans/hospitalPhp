@@ -184,7 +184,7 @@ $texto=$d;
 	//onClick="uncheckAll(document.myform.list)">
 // -->
 
-<!-- Begin
+
 function checkAll(field)
 {
 for (i = 0; i < field.length; i++)
