@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php");  ?>
+<?PHP 
+//require("menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 <?php
 
@@ -85,7 +93,7 @@ $estilo->styles();
 </head>
 
 <body>
-	
+    <div class="page_right">
 	<?php 
 if(!$_POST['nuevo'] and $_GET['edit']=='si' and $_GET['keyANA']!=NULL){
 	$sSQL= "SELECT 
@@ -105,7 +113,8 @@ $_GET['edit']=NULL;
 <h1 align="center" >&nbsp;</h1>
 <form id="form1" name="form1" method="post" >
 
-  <table width="648"  class="table-forma">
+  <!--<table width="648"  class="table-forma">-->
+  <table width="648"  class="table-template">
 
                <tr>
         <th align="center" ><p align="center">Anaqueles</strong></p></th>
@@ -232,7 +241,8 @@ $myrow12 = mysql_fetch_array($result12);
 <form id="form2" name="form2" method="post" >
   <input name="almacen" type="hidden" id="almacen" value="<?php echo $_POST['almacen']; ?>" />
 
-  <table width="360" class="table table-striped">
+  <!--<table width="360" class="table table-striped">-->
+  <table width="360" class="table-template">
     <tr>
       <th width="4" ><span >#</span></th>
       <th width="188" ><span >Tipo de Anaquel </span></th>
@@ -302,5 +312,10 @@ $myrow12 = mysql_fetch_array($result12);
 
 </form>
 <p align="center">&nbsp;</p>
+    </div>
+    <?php
+    $mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+    ?>
 </body>
 </html>

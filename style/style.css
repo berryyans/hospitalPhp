@@ -22,7 +22,7 @@ body
 
 .site_container
 {
-    border:1px solid #E71111;
+    /*border:1px solid #E71111;*/
     max-width: 1590px;
     margin-left: auto;
     margin-right: auto;
@@ -398,7 +398,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
     width: auto;
     width: 990px;
     */
-    width: auto;
+    width: 1100px;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 50px;
@@ -426,11 +426,12 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
     float: left;
     /*
     width: auto;
-    width:60%;
-    */
     width:75%;
     border:1px solid #000000;
+    */
+    width:60%;
     margin-left: 5%;
+    height: auto;
     /*
     margin-right:5%;
     float: right;
@@ -3025,10 +3026,14 @@ a.social_icon,
     padding: 10px 15px 12px;
     */
 }
+
 .table-template td
 {
-    vertical-align: top;
+    /*vertical-align: top;*/
+    text-align: center;
+    vertical-align: middle;
 }
+
 .table-template .last
 {
     padding-right: 0;
@@ -3069,6 +3074,99 @@ a.social_icon,
     display: none;
     font-size: 13px;
 }
+
+
+.table-template-left{
+    /*
+    border: 1px solid #000000;
+    */
+    font-family: 'Arial';
+    width: 100%;
+    font-size: 12px;
+    color: #666;    
+    margin-top: 30px;
+}
+
+.table-template-left .table{
+    font-family: 'Arial';
+    border-color: gray;
+}
+.table-template-left table td {
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table-template-left table td p{
+    padding: 0;
+}
+
+.table-template-left tbody tr{
+    background: url('../images/dotted_line.png') left top repeat-x;
+}
+.table-template-left th,
+.table-template-left td:first-child
+{    
+    color: #666;    
+    text-align: left;
+    vertical-align: middle;
+}
+.table-template-left th, .table-template-left td
+{
+    width: 12.5%;
+    /*
+    padding: 3px;
+    padding: 10px 15px 12px;
+    */
+}
+
+.table-template-left td
+{
+    /*vertical-align: top;*/
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table-template-left .last
+{
+    padding-right: 0;
+}
+.table-template-left .hours
+{
+    color: #A6C3FF;
+}
+.table-template-left .event
+{
+    background-color: #3156A3;
+    color: #FFF;
+    border-bottom: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    line-height: 140%;
+}
+.table-template-left .event a
+{
+    display: block;
+    color: #FFF;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+.table-template-left .row_gray
+{
+    background-color: #F0F0F0;
+}
+.table-template-left .event:hover
+{
+    background-color: #42B3E5;
+}
+.table-template-left .event:hover .hours
+{
+    color: #FFF;
+}
+.table-template-left.small
+{
+    display: none;
+    font-size: 13px;
+}
+
 /*
 ----NOTA---
 El estilo de la tabla que es generada automaticamente se encuentra en /configuracion/clases/valida.php

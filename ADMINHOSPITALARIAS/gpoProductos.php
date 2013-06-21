@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP 
+//require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 
 
@@ -50,6 +58,7 @@ $estilos->styles();
 <br>
 <br>
 <body>
+    <div class="page_right">
  <h1 align="center" >Cat&aacute;logo de Grupo de Productos <?php   
  $sSQL= "Select distinct * From gpoProductos  ORDER BY activo='activo' DESC";
 $result=mysql_db_query($basedatos,$sSQL); 
@@ -57,7 +66,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?>
  </h1>
  <form id="form1" name="form1" method="post" >
-   <table width="500" class="table table-striped">
+   <!--<table width="500" class="table table-striped">-->
+   <table width="500" class="table-template">
 
      <tr>
        <th width="256"  >Descripcion</th>
@@ -118,5 +128,10 @@ $C=$myrow['codigoGP'];
 </form>
 
  <p align="center">&nbsp;</p>
+ </div>
+    <?php
+    $mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+    ?>
 </body>
 </html>
