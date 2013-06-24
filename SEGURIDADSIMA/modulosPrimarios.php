@@ -1,4 +1,10 @@
-<?php require("menuOperaciones.php");
+<?php //require("menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 
 
 if($_POST['actualizar']!=NULL AND $_POST['name']!=NULL and $_POST['menuname']!=NULL ){
@@ -99,6 +105,7 @@ $estilo->styles();
     
 
 <body>
+    <div class="page_right">
  <h1 align="center">Catalogo Modulos Primarios </h1>
  <br></br>
     <?php
@@ -130,7 +137,8 @@ $estilo->styles();
      <label></label>
    </p>
   
-   <table width="644" class="table-forma">
+   <!--<table width="644" class="table-forma">-->
+   <table width="644" class="table-template-left">
 
      <tr >
        <td  scope="col">&nbsp;</td>
@@ -280,7 +288,8 @@ $result=mysql_db_query($basedatos,$sSQL);
  </p>
  <form id="form2" name="form2" method="post" action="">
 
-   <table width="519" class="table table-striped">
+   <table width="519" class="table-template-left">
+   <!--<table width="519" class="table table-striped">-->
       
       <tr >
           <th width="5" align="left" >#</th>
@@ -292,13 +301,14 @@ $result=mysql_db_query($basedatos,$sSQL);
     </tr>
      
        <?php	while($myrow = mysql_fetch_array($result)){$b+=1;
+       /*
 if($col){
 $color = '#FFFF99';
 $col = "";
 } else {
 $color = '#FFFFFF';
 $col = 1;
-}
+}*/
 $C=$myrow['keySM'];
 ?>
        <tr>
@@ -372,5 +382,10 @@ $rNombre11a=mysql_fetch_array($resultaNombre11a);
 </form>
       <?php }?>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+ $mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+ ?>
 </body>
 </html>
