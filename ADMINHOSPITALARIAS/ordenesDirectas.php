@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php");  ?>
+<?PHP 
+//require("menuOperaciones.php");  
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 
 <script language=javascript> 
@@ -186,11 +194,13 @@ $estilos=new muestraEstilos();
 $estilos->styles();
 ?>
 </head>
-
+    <body>
+        <div class="page_right">
 <h1 align="center">Ordenes x Reorden </h1>
 <form id="form2" name="form2" method="post" action="">
 
-  <table width="684" class="table-forma">
+  <!--<table width="684" class="table-forma">-->
+  <table width="684" class="table-template-left">
     <tr>
       <td width="22"  scope="col">&nbsp;</td>
       <td width="66"   scope="col"><div align="left">Proveedor</div></td>
@@ -257,7 +267,8 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 <form id="form1" name="form1" method="post" action="">
   <div align="center"></div>
  
-  <table width="645" class="table table-striped">
+  <!--<table width="645" class="table table-striped">-->
+  <table width="645" class="table-template-left">
     <tr>
       <th width="54"  scope="col"><span >C&oacute;digo</span></th>
       <th width="322"  scope="col"><span >Descripci&oacute;n</span></th>
@@ -344,7 +355,7 @@ order by existencias.codigo ASC
 ";
 $result8=mysql_db_query($basedatos,$sSQL8);
 $myrow8 = mysql_fetch_array($result8);
-
+/*
 if($col){
 $color = '#FFCCFF';
 $col = "";
@@ -353,7 +364,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
-
+*/
 ?>
       <td height="24" bgcolor="<?php echo $color?>" ><span ><span ><?php echo $code1?></span></span></td>
       <td bgcolor="<?php echo $color?>" ><span ><span class="<?php echo $estilo;?>">
@@ -457,5 +468,10 @@ $col = 1;
     <input name="nomPoveedor" type="hidden" id="nomPoveedor" value="<?php echo $_POST['nomProveedor']; ?>" />
   </p>
 </form>
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>

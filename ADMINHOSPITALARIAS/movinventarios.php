@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
@@ -38,7 +45,6 @@ function checkIt(evt) {
     return true
 }
 </script>
-
 <?php 
 
 
@@ -109,7 +115,8 @@ $estilos-> styles();
 ?>
 
 </head>
-
+    <body>
+        <div class="page_right">
 <h1 align="center" >
     <br />
 INVENTARIOS<br />
@@ -126,7 +133,8 @@ INVENTARIOS<br />
 &nbsp;</h1>
 <form id="form1" name="form1" method="post" action="">
 
-  <table width="600" class="table-forma">
+  <!--<table width="600" class="table-forma">-->
+  <table width="600" class="table-template-left">
       
       
       
@@ -266,7 +274,10 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
   
 </form>
 
-
-
+        </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>
