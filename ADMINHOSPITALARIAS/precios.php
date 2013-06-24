@@ -18,6 +18,6 @@ require("/configuracion/clases/listadoServiciosPrecio.php");
 $consultarArticulos=new consultaArticulosPrecio();
 $consultarArticulos->consultarArticulos($ALMACEN,$entidad,$basedatos);
 
-//$mostrarFooter=new menus();
-//$mostrarFooter->footerTemplate();
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
 ?>
