@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -68,6 +75,7 @@ $estilos->styles();
 </head>
 <br></br>
 <body>
+    <div class="page_right">
 <form id="form1" name="form1" method="post" >
   <h1 align="center" >
       Facturas Enviadas</h1>
@@ -113,7 +121,8 @@ Surtir faltantes
   <?php } ?>
 
  
-  <table width="400" class="table table-striped">
+  <!--<table width="400" class="table table-striped">-->
+  <table width="400" class="table-template-left">
     <tr >
 
               <th   width="14"  scope="col"><div align="left" >
@@ -221,5 +230,10 @@ Ver
   </table>
 
 </form>
+    </div>
+    <?php
+    $mostrarFooter=new menus();
+    $mostrarFooter->footerTemplate();
+    ?>
 </body>
 </html>
