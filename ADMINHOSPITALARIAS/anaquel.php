@@ -114,7 +114,7 @@ $_GET['edit']=NULL;
 <form id="form1" name="form1" method="post" >
 
   <!--<table width="648"  class="table-forma">-->
-  <table width="648"  class="table-template">
+  <table width="648"  class="table-template-left">
 
                <tr>
         <th align="center" ><p align="center">Anaqueles</strong></p></th>
