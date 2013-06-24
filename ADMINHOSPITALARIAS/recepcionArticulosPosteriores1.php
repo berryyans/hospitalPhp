@@ -1,15 +1,22 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -21,7 +28,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -39,6 +46,8 @@ $estilos=new muestraEstilos();
 $estilos->styles();
 ?>
 </head>
+    <body>
+        <div class="page_right">
 <br>
 <META HTTP-EQUIV="Refresh"
 CONTENT="30"> 
@@ -59,7 +68,8 @@ CONTENT="30">
 <p align="center">&nbsp;</p>
 <form id="form1" name="form1" method="post" action="recepcionArticulosPosteriores2.php">
  
-  <table width="383" class="table table-striped">
+  <!--<table width="383" class="table table-striped">-->
+  <table width="383" class="table-template">
     <tr>
       <th width="142"  scope="col"><span ># REQUISICION </span></th>
       <th width="231"  scope="col"><span >PROVEEDOR</span></th>
@@ -99,7 +109,7 @@ $code1=$myrow18['codigo'];
 $descripcion=descripcion($code=$code1,$basedatos);
 
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $a=$myrow18['id_almacen'];
@@ -149,8 +159,13 @@ $myrow2 = mysql_fetch_array($result2);
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
-</script> 
+</script>
+</div>
+<?php
+$mostrarFooter = new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>
