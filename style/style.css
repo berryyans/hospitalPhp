@@ -22,7 +22,9 @@ body
 
 .site_container
 {
-    /*border:1px solid #E71111;*/
+    /*
+    border:1px solid #E71111;
+    */
     max-width: 1590px;
     margin-left: auto;
     margin-right: auto;

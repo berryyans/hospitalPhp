@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php if($MEDICO!=NULL){ ?>
 
 
@@ -84,6 +91,7 @@ $encabezado='Administrador: ';
 </head>
 
 <body>
+    <div class="page_right">
 <?php 
 $estilos=new muestraEstilos();
 $estilos->styles(); 
@@ -387,8 +395,7 @@ if($myrow142['keyDiagnostico']){ echo '<span class="style1">'.'  (Revisado)'.'</
 });
     </script> 
 
-
-
+    </div>
 </body>
 </html>
 <?php
@@ -401,4 +408,8 @@ echo 'Lo sentimos, existe algun problema con su cuenta, no tiene cuenta de medic
 }
 
 
+?>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
 ?>

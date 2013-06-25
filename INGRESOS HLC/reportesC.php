@@ -1,4 +1,13 @@
-<?PHP require("menuOperaciones.php"); 
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+
+
 require("/configuracion/clases/listaClientes.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -108,9 +117,11 @@ $estilo->styles();
 </head>
 
 <body onLoad="inicio();">
+    <div class="page_right">
  <p align="center" class="titulos">Lista de Convenios  </p>
  <form id="form2" name="form2" method="post" action="">
-    <table width="775" class="table table-striped" >
+    <!--<table width="775" class="table table-striped" >-->
+    <table width="775" class="table-template-left" >
 
       <tr>
         <th width="57" height="25" >#</th>
@@ -245,6 +256,10 @@ if($myrowa['numCliente']){
     <p>&nbsp;</p>
 
 </form>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>
