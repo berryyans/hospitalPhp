@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript>
 function ventanaSecundaria10 (URL){
@@ -71,7 +78,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
 
 
 
@@ -84,9 +91,11 @@ $estilos->styles();
         Aplicadas y No Aplicadas
     </h3>
 
-<table width="200" class="table-forma">
+<!--<table width="200" class="table-forma">-->
+<table width="200" class="table-template-left">
    <tr>
-     <td><table width="250" >
+     <!--<td><table width="250" >-->
+       <td><table width="250"  class="page_right">
        <tr></tr>
        <tr>
          <td scope="col"><div align="left">De:</div></td>
@@ -138,7 +147,8 @@ echo $date2;
     <br>
     <br>
     <?php if($_POST['send']!=NULL and $_POST['escoje']!=NULL){?>
-  <table width="562" class="table table-striped">
+  <!--<table width="562" class="table table-striped">-->
+  <table width="562" class="table-template-left">
     <tr>
          <th width="10"  scope="col"><div align="left">#</div></th>
       <th width="74"  scope="col"><div align="left">Fecha</div></th>
@@ -418,5 +428,10 @@ echo 'Importe: $'.number_format($importe[0],2).', Iva: $'.number_format($iva[0],
      button     :    "lanzador2"     // el id del bot�n que lanzar� el calendario
 });
 </script>
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+ ?>
 </body>
 </html>

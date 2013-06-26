@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php 
 $ventana='ventanaModificaClientes.php';
 $ventana1='despliegaSubClientes.php';
@@ -122,6 +129,7 @@ $estilo->styles();
 </head>
 
 <body onLoad="inicio();">
+    <div class="page_right">
  <h1 align="center" >Editar Clientes</h1>
 
   <form id="form2" name="form2" method="post" action="">
@@ -141,7 +149,8 @@ $estilo->styles();
      </label>
    </p>
 
-   <table width="666" class="table table-striped" >
+   <!--<table width="666" class="table table-striped" >-->
+   <table width="666" class="table-template-left" >
      <tr >
        <th width="72"  scope="col"><div align="left" >
          <div align="center">Codigo </div>
@@ -239,5 +248,10 @@ while($myrow = mysql_fetch_array($result)){
    </p>
 </form>
  <br>
+    </div>
+     <?php
+        $mostrarFooter=new menus();
+        $mostrarFooter->footerTemplate();
+     ?>
 </body>
 </html>

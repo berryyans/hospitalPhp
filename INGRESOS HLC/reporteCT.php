@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=700,height=600,scrollbars=YES") 
@@ -7,6 +14,7 @@ function ventanaSecundaria (URL){
 <?php
 $numeroE=$_GET['numeroE'];
 $nCuenta=$_GET['nCuenta'];
+$color=FFFFFF;
 ?>
 
 
@@ -64,6 +72,7 @@ $estilo-> styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >Folios Transferidos CxC</h1>
  <form id="form2" name="form2" method="post" >
  <p align="center">
@@ -98,7 +107,8 @@ $result=mysql_db_query($basedatos,$sSQL);
    </label>
  </p>
 
- <table width="756" class="table table-striped" >
+ <!--<table width="756" class="table table-striped" >-->
+ <table width="756" class="table-template-left" >
      <tr >
        <th width="59"   scope="col"><div align="left" >
          <div align="center">Folio</div>
@@ -180,6 +190,11 @@ $myrow22b = mysql_fetch_array($result22b);
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
 }); 
-</script> 
+</script>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+ ?>
 </body>
 </html>

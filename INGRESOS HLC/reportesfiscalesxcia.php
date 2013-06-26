@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 
 <script language=javascript>
@@ -65,6 +72,7 @@ $estilo->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" class="titulos">Estado de Cuenta<label></label>
  </h1>
     
@@ -112,7 +120,8 @@ $estilo->styles();
 
    
    
-<table>     
+<!--<table>-->     
+   <table class="table-template-left">     
     <tr >
         <td height="45" >&nbsp;</td>
         <td >Seguro
@@ -163,7 +172,8 @@ $myrow2 = mysql_fetch_array($result2);
 
    
 
-   <table width="500" class="table table-striped">
+   <!--<table width="500" class="table table-striped">-->
+   <table width="500" class="table-template-left">
 
 
      <tr >
@@ -670,5 +680,10 @@ statusPago='pagado'
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+ ?>
 </body>
 </html>

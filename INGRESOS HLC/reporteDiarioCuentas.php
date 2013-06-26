@@ -1,4 +1,13 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -46,6 +55,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
     <br>
     <br>
  <br>
@@ -132,7 +142,8 @@ if(!$_POST['fechaInicial']){$_POST['fechaInicial']=$fecha1;}if(!$_POST['fechaFin
     
     
 
-  <table  width="522" class="table-forma" >
+  <!--<table  width="522" class="table-forma" >-->
+  <table  width="522" class="table-template" >
     <tr>
       <td >Fecha Inicial</td>
       <td><span >
@@ -193,7 +204,8 @@ if(!$_POST['fechaInicial']){$_POST['fechaInicial']=$fecha1;}if(!$_POST['fechaFin
 
   <?php if($_POST['buscar'] ){ ?>
 
-  <table  width="613" class="table table-striped">
+  <!--<table  width="613" class="table table-striped">-->
+  <table  width="613" class="table-template-left">
     <tr>
      <th width="15"   ><div align="left">#</div></th>
        <th width="15"   ><div align="left">FechaCierre</div></th>
@@ -438,6 +450,11 @@ echo $myrow['usuario'];
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador2"     // el id del bot�n que lanzar� el calendario 
 }); 
-    </script> 
+    </script>
+    </div>
+    <?php
+    $mostrarFooter=new menus();
+    $mostrarFooter->footerTemplate();
+    ?>
 </body>
 </html>

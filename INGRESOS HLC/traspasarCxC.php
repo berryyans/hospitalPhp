@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=700,height=600,scrollbars=YES") 
@@ -56,10 +63,12 @@ $estilo->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >Cuentas Transferidas Otros<label></label></h1>
  <form id="form1" name="form1" method="post" action="">
 
-   <table width="829" height="57" class="table table-striped">
+   <!--<table width="829" height="57" class="table table-striped">-->
+   <table width="829" height="57" class="table-template-left">
      <tr >
        <th width="74"  scope="col"><div align="left" >
          <div align="center">Folio</div>
@@ -187,5 +196,10 @@ if($b>0)
 echo 'Se encontraron '.$b.' registros...!';?></p>
  </form>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+ ?>
 </body>
 </html>

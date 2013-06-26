@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -777,14 +784,15 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
 
 
 
 
 <form id="form10" name="form10" method="post" action="#">
   <h1 align="center" >FOLIOS *NO* FACTURADOS</h1>
-  <table width="275" class="table-forma">
+  <!--<table width="275" class="table-forma">-->
+  <table width="275" class="table-template-left">
 
     <tr>
       <td width="94" height="45"><label>
@@ -844,9 +852,10 @@ $estilos->styles();
      
      <?php if($_POST['buscar'] ){ ?>
 
-  <p align="center" >&nbsp;</p>
+  <!--<p align="center" >&nbsp;</p>-->
 
-  <table width="716" class="table table-striped" >
+  <!--<table width="716" class="table table-striped" >-->
+  <table width="716" class="table-template-left" >
     <tr >
       <th width="10"  scope="col"><div align="left">#</div></th>
      <th width="20"  scope="col"><div align="left">Fecha</div></th>
@@ -893,6 +902,7 @@ order by folioVenta ASC
 if($result=mysql_db_query($basedatos,$sSQL)){
 while($myrow = mysql_fetch_array($result)){ 
 $a+=1;
+/*
 if($col){
 $color = '#FFFF99';
 $col = "";
@@ -900,6 +910,8 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
+ * */
+
 
 $nT=$myrow['keyClientesInternos'];
 
@@ -1114,6 +1126,11 @@ echo '$'.number_format($myrow['iva']*$myrow['cantidad'],2);
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario
 });
 </script>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 
 </html>
