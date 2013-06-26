@@ -20,7 +20,8 @@
     <br />
     <span  align="center">Para aplicar una Nota de Venta, presiona el nombre del Paciente</span>
   </p>
-  <table width="537" class="table table-striped">
+ <!-- <table width="537" class="table table-striped">-->
+  <table width="537" class="table-template-left">
 
     <tr >
       <th width="53" > F Venta</th>

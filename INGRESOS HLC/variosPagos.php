@@ -1,4 +1,10 @@
-<?PHP require("menuOperaciones.php"); 
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
 $descripcionTransaccion="paquetes";
 
 $sSQLC= "Select * From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";
@@ -98,6 +104,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 
 
 
@@ -121,9 +128,9 @@ $estilos->styles();
     </label>
     <input name="button" type="button"  id="lanzador" value="..." />
 </p>
-      <div id="contentLoading" class="contentLoading">
+      <!--<div id="contentLoading" class="contentLoading">
 <img src="/sima/imagenes/barras/loading30.gif" alt="Loading data, please wait...">
-</div>
+</div>-->
 <div id="contentArea">
 </div>
 
@@ -143,21 +150,28 @@ $estilos->styles();
 }); 
     </script> 
 <script type="text/javascript">
-<!--
-jQuery(function($) {
-$("#contentArea").load("listaPxPaquetes.php?warehouse=<?php echo $_GET['warehouse'];?>&almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&fecha2=<?php echo $fecha2;?>&fecha1=<?php echo $date;?>&almacen=<?php echo $ALMACEN;?>&tipoOrden=<?php echo $_GET['tipoOrden'];?>&descripcionTransaccion=paquetes");
+//<!--
+//jQuery(function($) {
+var $j = jQuery.noConflict();
+$j(function($j) {
+$j("#contentArea").load("listaPxPaquetes.php?warehouse=<?php echo $_GET['warehouse'];?>&almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&fecha2=<?php echo $fecha2;?>&fecha1=<?php echo $date;?>&almacen=<?php echo $ALMACEN;?>&tipoOrden=<?php echo $_GET['tipoOrden'];?>&descripcionTransaccion=paquetes");
 });
 
-$().ajaxSend(function(r,s){
-$("#contentLoading").show();
-});
+//$j().ajaxSend(function(r,s){
+//$j("#contentLoading").show();
+//});
 
-$().ajaxStop(function(r,s){
-$("#contentLoading").fadeOut("fast");
-});
+//$j().ajaxStop(function(r,s){
+//$j("#contentLoading").fadeOut("fast");
+//});
 
 //-->
 </script>
+</div>
+        <?php
+        $mostrarFooter = new menus();
+        $mostrarFooter->footerTemplate();
+        ?>
 </body>
 </html>
 
