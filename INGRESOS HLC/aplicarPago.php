@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript>
 function ventanaSecundaria10 (URL){
@@ -163,7 +170,7 @@ $estilos->styles();
 
 
 <body>
-
+    <div class="page_right">
                 
                 
                 
@@ -189,7 +196,8 @@ $estilos->styles();
         
     </h3>
     
-<table width="200" class="table-forma">
+<!--<table width="200" class="table-forma">-->
+<table width="200" class="table-template-left">
    <tr>
      <td>
        <tr></tr>
@@ -311,7 +319,8 @@ clientePrincipal='".$clientePrincipal."'
     <?php }?>
     
     
-  <table width="562" class="table table-striped">
+  <!--<table width="562" class="table table-striped">-->
+  <table width="562" class="table-template-left">
     <tr>
          <th width="10"  scope="col"><div align="left">#</div></th>
       <th width="74"  scope="col"><div align="left">Fecha</div></th>
@@ -349,6 +358,7 @@ transaccion='si'
 if($result=mysql_db_query($basedatos,$sSQL)){
 while($myrow = mysql_fetch_array($result)){ 
 $a+=1;
+/*
 if($col){
 $color = '#FFFF99';
 $col = "";
@@ -356,7 +366,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
-
+*/
 
 ?>
 
@@ -489,7 +499,8 @@ $i=$myrow['importe']*$myrow['cantidad'];
 
 <?php if($importe>0){?>
  
-    <table>
+    <!--<table>-->
+    <table class="table-template">
         <tr>
         <th width="600">
         <div class="success" align="center">
@@ -540,5 +551,10 @@ $i=$myrow['importe']*$myrow['cantidad'];
      button     :    "lanzador2"     // el id del bot�n que lanzar� el calendario
 });
 </script>
+    </div>
+<?php
+$mostrarFooter = new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>

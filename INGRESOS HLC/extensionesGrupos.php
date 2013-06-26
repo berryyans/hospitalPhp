@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 
 
@@ -131,6 +139,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <h1 align="center" >Facturar x Extensiones Grupos </h1>
 <?php echo $leyenda; ?>
 <form id="form1" name="form1" method="post" action="#" >
@@ -153,7 +162,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?>
 <p>&nbsp;</p>
 
-<table width="385" class="table table-striped">
+<!--<table width="385" class="table table-striped">-->
+<table width="385" class="table-template">
   <tr>
         <th width="96" height="19"  scope="col"><div align="left" >Folio Venta </div></th>
       <th width="234"  scope="col"><div align="left" >Paciente</div></th>
@@ -168,7 +178,7 @@ $bandera+="1";
 
 
 //cierro descuento
-
+/*
 if($col){
 $color = '#FFFF99';
 $col = "";
@@ -176,7 +186,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
-
+*/
 
 
 $sSQL1= "
@@ -219,7 +229,11 @@ $myrow1 = mysql_fetch_array($result1);
 		value="<?php echo $nombrePaciente;?>"  />
     </p>
   </form>
-  <p>&nbsp;</p>
-
+  <!--<p>&nbsp;</p>-->
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>
