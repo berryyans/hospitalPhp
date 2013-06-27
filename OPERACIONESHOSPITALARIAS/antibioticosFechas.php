@@ -1,4 +1,12 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php"); ?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -67,7 +75,7 @@ $estilos-> styles();
 </head>
 
 <body>
-
+    <div class="page_right">
   <h1 align="center" >Antibioticos</h1>
 
 <form id="form2" name="form2" method="get" >
@@ -76,7 +84,8 @@ $estilos-> styles();
     
     
     
-  <table width="300" class="table-forma">
+  <!--<table width="300" class="table-forma">-->
+  <table width="300" class="table-template-left">
     
           
     <tr>
@@ -135,7 +144,8 @@ $estilos-> styles();
   
   
   
-  <table width="900" class="table table-striped">
+  <!--<table width="900" class="table table-striped">-->
+  <table width="900" class="table-template-left">
      
       
 
@@ -396,7 +406,8 @@ echo '<b> Devolucion: </b>'; print $myrow7p['folioDevolucion'];
   
   
   
-  <table width="271" >
+  <!--<table width="271" >-->
+  <table width="271" class="table-template">
     <tr>
       <th width="126"  scope="col"><div align="left" >Total Antibioticos</div></th>
       <th width="135"  scope="col"><div align="left" >
@@ -408,19 +419,21 @@ echo '<b> Devolucion: </b>'; print $myrow7p['folioDevolucion'];
       <td>&nbsp;</td>
     </tr>
   </table>
-  <p align="center" >&nbsp;</p>
+  <!--<p align="center" >&nbsp;</p>-->
   <p align="center" ><em>Total de Ventas de Antibioticos <?php print $a;?></em></p>
+  <!--
   <p align="center">&nbsp;</p>
   <p align="center">&nbsp;</p>
+  -->
   <p>
     <?php  }?>
   </p>
-  <p>&nbsp;</p>
+  <!--<p>&nbsp;</p>-->
   <input type="hidden" name="main"  value="<?php echo $_GET['main'];?>">
   <input type="hidden" name="warehouse"  value="<?php echo $_GET['warehouse'];?>">
   <input type="hidden" name="datawarehouse"  value="<?php echo $_GET['datawarehouse'];?>">
 </form>
-<p>&nbsp; </p>
+<!--<p>&nbsp; </p>-->
   <script type="text/javascript"> 
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
@@ -434,6 +447,11 @@ echo '<b> Devolucion: </b>'; print $myrow7p['folioDevolucion'];
      ifFormat     :     "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario 
 }); 
-</script> 
+</script>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>
