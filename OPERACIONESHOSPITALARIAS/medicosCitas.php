@@ -1,4 +1,12 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php");$ALMACEN=$_GET['datawarehouse'];
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+$ALMACEN=$_GET['datawarehouse'];
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 <script language="javascript" type="text/javascript">   
@@ -70,6 +78,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" class="titulos">Ausencia de M&eacute;dicos </h1>
  <form id="form2" name="form2" method="post" action="">
 
@@ -86,7 +95,7 @@ $medicos->despliegaMiniAlmacenMedicos($entidad,'combos',$ALMACEN,$almacenDestino
 </div></p>
     
 
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
    
    	    <?php   
 
@@ -102,7 +111,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?> 
    
   
-   <table class="table table-striped" width="737" >
+   <!--<table class="table table-striped" width="737" >-->
+   <table class="table-template-left" width="737" >
      <tr >
 <th width="89" height="24" scope="col"><div align="left" class="none">Fecha Cap</div></th>
        <th width="317" scope="col"><div align="left" class="none">Descripcion</div></th>
@@ -164,5 +174,10 @@ $A=$myrow['keySCC'];
    </p>
  </form>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>

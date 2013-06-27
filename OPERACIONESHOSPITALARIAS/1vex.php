@@ -1,4 +1,10 @@
-<?php require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 $almacenDestino=$almacen;
 $forma=$_GET['forma'];
 $campoDespliega=$_GET['campoDespliega'];
@@ -66,6 +72,7 @@ $estilos->styles();
 
 </head>
 <body>
+    <div class="page_right">
 <form id="form1" name="form1" method="GET" action="#">
 
   <h1 align="center">
@@ -111,9 +118,10 @@ echo $myrow6['descripcion'];
         <p>
           <input name="Desplegar" type="submit"  id="Desplegar" value="Desplegar Registros" />
       </p>
-<br /><br />
+<!--<br /><br />-->
 
-  <table class="table table-striped" width="775" >
+  <!--<table class="table table-striped" width="775" >-->
+  <table class="table-template-left" width="775" >
     <tr >
         <th width="5"  scope="col"><div align="left"><span >#</span></div></th>
       <th width="85"  scope="col"><div align="left"><span >FechaCrea</span></div></th>
@@ -209,5 +217,11 @@ $myrow1 = mysql_fetch_array($result1);
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario 
 }); 
 </script>
+</table>
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>
