@@ -1,4 +1,10 @@
-<?php require("menuOperaciones.php");
+<?php //require("menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -162,6 +168,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <h1 align="center" >&nbsp;</h1>
 <h1 align="center" >
 POLIZA DE DIARIO
@@ -409,6 +416,11 @@ Detalles</a><br />
      button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
 }); 
      </script>
+    </div>
+    <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate();
+    ?>
 </body>
 </html>
 

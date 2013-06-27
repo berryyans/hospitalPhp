@@ -1,4 +1,10 @@
-<?php require("menuOperaciones.php"); 
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -150,6 +156,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 
  <h1 align="center" class="titulos">
 Ventas x Volumen
@@ -164,7 +171,8 @@ Ventas x Volumen
 
 
 
-   <table widtd="335" class="table-forma">
+   <!--<table widtd="335" class="table-forma">-->
+   <table widtd="335" class="table-template-left">
 
 
 
@@ -201,7 +209,8 @@ Ventas x Volumen
    </table>
    <p>&nbsp;</p>
    
-   <table widtd="683" class="table-forma">
+   <!--<table widtd="683" class="table-forma">-->
+   <table widtd="683" class="table-template-left">
 
    <tr>
      <td widtd="87"  scope="col"><div align="right"><span > Grupo </span></div></td>
@@ -348,6 +357,10 @@ Ver
 			// return "completeEmpName.php?q=" + tdis.value;
 		});
 	</script>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>

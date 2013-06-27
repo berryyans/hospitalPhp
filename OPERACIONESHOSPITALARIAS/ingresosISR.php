@@ -1,4 +1,10 @@
-<?php require("menuOperaciones.php");
+<?php //require("menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -150,7 +156,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
  <h1 align="center" >Hoja de Auditoria </h1>
  <form id="form1" name="form1" method="post" >
  <!--
@@ -247,7 +253,7 @@ if($myrow3['numPoliza']!=''){?>
   
 </div> 
    
-      </div>
+      <!--</div>-->
 
    
    
@@ -374,5 +380,11 @@ echo '</script>';
      button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
 }); 
      </script>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+
+?>
 </body>
 </html>

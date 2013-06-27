@@ -1,4 +1,10 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php"); 
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 
 $articulo = $_GET['nomArticulo']; ?>
 
@@ -164,6 +170,7 @@ $estilos-> styles();
 </head>
 
 <body>
+    <div class="page_right">
 <h1 align="center" class="titulos">Listado por GPO </h1>
 
 
@@ -276,7 +283,8 @@ echo mysql_error();
   
   
   
-  <table class="table table-striped" >
+  <!--<table class="table table-striped" >-->
+  <table class="table-template-left" >
     <tr >
   
         
@@ -485,5 +493,10 @@ $bandera=+1;
 <p align="center" ><strong><em>Se encontraron  <?php echo $totalRegistros?> registros</em></strong></p></a>
 <?php } ?>
 <p>&nbsp;</p>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>

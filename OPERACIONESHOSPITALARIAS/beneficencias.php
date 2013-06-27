@@ -1,4 +1,10 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php"); 
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 $ventana1='ventanaCatalogoAlmacen.php';
  ?>
 
@@ -162,7 +168,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
 
  <h1 align="center" >RESUMEN DE BENEFICENCIAS X FOLIO DE VENTA </h1>
 
@@ -175,7 +181,8 @@ $estilos->styles();
 
 
 
-   <table width="399" class="table-forma">
+   <!--<table width="399" class="table-forma">-->
+   <table width="399" class="table-template">
 
 
 
@@ -210,7 +217,7 @@ $estilos->styles();
        </div></td>
      </tr>
    </table>
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
 
 
 
@@ -224,10 +231,10 @@ $estilos->styles();
          <label>
          </label>
 
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
      <?php
 	  if($_POST['buscar'] and $_POST['fechaInicial'] and $_POST['fechaFinal']){ ?>
-   <p align="center">&nbsp;</p>
+   <!--<p align="center">&nbsp;</p>-->
    <p align="center">
 <a href="javascript:ventanaSecundaria5111('../ventanas/imprimirBeneficencias.php?nombreCompleto=<?php echo $_POST['nombreCompleto'];?>&numMedico=<?php echo $_POST['numMedico'];?>
    &entidad=<?php echo $entidad;?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>
@@ -276,6 +283,10 @@ Ver
 			// return "completeEmpName.php?q=" + this.value;
 		});
 	</script>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>
