@@ -1,4 +1,12 @@
-<?php require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");$almacen=$ALMACEN=$_GET['datawarehouse']; ?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+$almacen=$ALMACEN=$_GET['datawarehouse']; ?>
 <?php
 $almacenDestino=$almacen;
 $forma=$_GET['forma'];
@@ -177,12 +185,14 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <h1 align="center">Eliminar  Expedientes </h1>
 <?php echo $leyenda; ?>
 <div align="center"></div>
 <form name="form2" id="form2" method="post" action="">
 
-  <table width="435" class="table-forma">
+  <!--<table width="435" class="table-forma">-->
+  <table width="435" class="table-template-left">
     <tr valign="middle"   >
       <th colspan="2" ><div align="center" class="style13">Datos del Paciente </div></th>
     </tr>
@@ -238,7 +248,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 <input name="nombrePaciente12" type="hidden" id="nombrePaciente122" value="<?php echo $_POST['numPaciente'];?>"/>
   <input name="nCuenta" type="hidden"  id="nCuenta3" onKeyPress="return checkIt(event)" value="<?php echo $nCuenta; ?>" readonly=""/>
   <input name="numeroE" type="hidden"  id="numeroE3" value="<?php echo $numeroEs= $_POST['numeroE']; ?>" readonly="" />
-  <table width="531" border="0" align="center" cellpadding="4" cellspacing="0" class="enlace">
+  <!--<table width="531" border="0" align="center" cellpadding="4" cellspacing="0" class="enlace">-->
+  <table width="531" border="0" align="center" cellpadding="4" cellspacing="0" class="table-template-left">
     <tr>
       <th width="75" height="19"  class="style13" scope="col"><div align="left"><span class="style111">Exp</span></div></th>
       <th width="373"  class="style13" scope="col"><div align="left"><span class="style111">Paciente</span></div></th>
@@ -296,10 +307,15 @@ $NC=$myrow['numCliente'];
       <?php }}?>
   </table>
 </form>
-  <p>&nbsp;</p>
+  <!--<p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
     <p>&nbsp;</p>
-	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>-->
+    </div>
 </body>
 </html>
+          <?php
+            $mostrarFooter=new menus();
+            $mostrarFooter->footerTemplate();
+          ?>
