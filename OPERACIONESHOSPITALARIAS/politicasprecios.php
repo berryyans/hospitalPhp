@@ -1,4 +1,12 @@
-<?php require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -58,6 +66,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
     <p>&nbsp;</p>
  <h1 align="center" >Politicas de Precios</h1>
  <form id="form1" name="form2" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
@@ -66,7 +75,8 @@ $estilos->styles();
 
    
 
-   <table width="478" class="table table-striped" >
+   <!--<table width="478" class="table table-striped" >-->
+   <table width="478" class="table-template-left" >
      <tr >
        <th width="26" scope="col"><div align="left" >
          <div align="left"># </div>
@@ -185,5 +195,10 @@ echo mysql_error();
    </p>
  </form>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+ ?>
 </body>
 </html>
