@@ -1,4 +1,12 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -55,7 +63,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
 
 
 <?php
@@ -69,7 +77,8 @@ $estilos->styles();
 
 <form id="form10" name="form10" method="post" action="#">
   <h1 > REPORTE DE VENTAS</h1>
-  <table width="454" class="table-forma">
+  <!--<table width="454" class="table-forma">-->
+  <table width="454" class="table-template">
     
     <?php if($_POST['decide']=='cerrado'){?>
     <?php } ?>
@@ -142,7 +151,8 @@ $result=mysql_db_query($basedatos,$sSQL);
   <p align="center">    <br />
   PACIENTES EXTERNOS </p>
  
-  <table width="875" class="table table-striped">
+  <!--<table width="875" class="table table-striped">-->
+  <table width="875" class="table-template-left">
     <tr >
         <th width="5" >#</th>
       <th width="45" >Folio</th>
@@ -392,7 +402,8 @@ echo $myrow19d['numRecibo'];
   PACIENTES INTERNOS
 </p>
 
-<table width="875" class="table table-striped">
+<!--<table width="875" class="table table-striped">-->
+<table width="875" class="table-template-left">
   <tr >
       <th width="45" >#</th>
     <th width="45" >Folio</th>
@@ -629,7 +640,8 @@ echo $myrow18['fechaRecepcion'];
 <p align="center"> <br /> 
   VENTAS DIRECTAS
 </p>
-<table width="875" class="table table-striped">
+<!--<table width="875" class="table table-striped">-->
+<table width="875" class="table-template-left">
 
   <tr >
     <th width="45" >Folio</th>
@@ -830,6 +842,11 @@ echo $myrow18['fechaRecepcion'];
      button     :    "lanzador1"     // el id del botón que lanzará el calendario 
 }); 
 </script>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 
 </html>
