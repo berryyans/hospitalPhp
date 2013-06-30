@@ -1,4 +1,10 @@
-<?php require("menuOperaciones.php"); 
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -160,14 +166,16 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" class="titulos">Reporte de Honorarios</h1>
  <form id="form2" name="form2" method="post" action="">
    <div align="center"></div>
    <p align="center">
      <label></label>
      Escojer Fechas</p>
-   <p align="center">&nbsp;</p>
-   <table width="200" class="table-forma">
+   <!--<p align="center">&nbsp;</p>-->
+   <!--<table width="200" class="table-forma">-->
+   <table width="200" class="table-template-left">
      <tr>
        <td scope="col"><div align="left">De:</div></td>
        <td scope="col"><div align="left">
@@ -218,7 +226,7 @@ $estilos->styles();
      </tr>
 
    </table>
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
    <p align="center">
      <label></label>
      <?php } ?>
@@ -233,7 +241,7 @@ $estilos->styles();
 <a href="javascript:ventanaSecundaria5111('resumenGlobalCerradas.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $myrow7ab['random'];?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>')" ></a>   </p>
 </form>
 
-<p align="center">&nbsp;</p>
+<!--<p align="center">&nbsp;</p>-->
   <script type="text/javascript">
    Calendar.setup({
     inputField     :    "campo_fecha1",     // id del campo de texto
@@ -248,5 +256,10 @@ $estilos->styles();
      button     :    "lanzador2"     // el id del bot�n que lanzar� el calendario
 });
 </script>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>

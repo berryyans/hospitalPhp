@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php");?> 
+<?php //require("menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?> 
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -33,11 +40,11 @@ if(win.window.focus){win.window.focus();}
 
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
   
   
@@ -56,7 +63,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
 
 
 <?php
@@ -80,7 +87,8 @@ $estilos->styles();
   </span> </p>
   
   
-   <table width="200" class="table-forma">
+   <!--<table width="200" class="table-forma">-->
+   <table width="200" class="table-template-left">
      <tr>
        <td scope="col"><div align="left">De la fecha</div></td>
        <td scope="col">         <div align="left">
@@ -129,7 +137,8 @@ $estilos->styles();
     <?php if($_POST['show'] ){?>
   </p>
 
-  <table width="756" class="table table-striped">
+  <!--<table width="756" class="table table-striped">-->
+  <table width="756" class="table-template-left">
     <tr>
       <th width="44"   scope="col"><div align="left">Folio</div></th>
       <th width= "134"   scope="col"><div align="left">Paciente</div></th>
@@ -166,6 +175,7 @@ if($result=mysql_db_query($basedatos,$sSQL)){
 while($myrow = mysql_fetch_array($result)){ 
 $numeroE=$myrow['numeroE'];
 $nCuenta=$myrow['nCuenta'];
+/*
 if($col){
 $color = '#FFCCFF';
 $col = "";
@@ -173,6 +183,8 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
+ *
+ */
 $a+=1;
 $nT=$myrow['keyClientesInternos'];
 	  ?>
@@ -267,17 +279,21 @@ print ' No hay registros para mostrar!';
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
   <script type="text/javascript"> 
    Calendar.setup({ 
     inputField     :    "campo_fecha1",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador1"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador1"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 
 </html>

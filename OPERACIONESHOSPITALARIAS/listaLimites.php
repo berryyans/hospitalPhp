@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
    window.open(URL,"ventana1","width=900,height=800,scrollbars=YES") 
@@ -51,13 +58,17 @@ function ventanaSecundaria11 (URL){
 .style8 { background-color:#990033;font-size: 9px; color:#FFFFFF; border-bottom-color:#0000FF; display:block}
 -->
 </style>
+<div class="page_right">
 <div align="center">
 
-  <p>
+  <!--<p>-->
   <?php //echo $ALMACEN;?>
-  &nbsp;</p>
+  <!--
+    &nbsp;</p>
   <p>&nbsp;</p>
+  -->
   <p>CONSULTAR SALDOS DE ASEGURADORAS CON LIMITE DE CREDITO </p>
+  <!--
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -66,7 +77,9 @@ function ventanaSecundaria11 (URL){
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <table width="37%" border="0" align="center" cellpadding="0" cellspacing="0">
+  -->
+  <!--<table width="37%" border="0" align="center" cellpadding="0" cellspacing="0">-->
+  <table width="37%" border="0" align="center" cellpadding="0" cellspacing="0" class="table-template">
     <tr valign="middle">
       <td width="36%"><div align="center"></div></td>
       <td width="46%"><div align="center">
@@ -86,3 +99,8 @@ function ventanaSecundaria11 (URL){
   
   <p> 
 </div>
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
