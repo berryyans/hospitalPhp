@@ -1,6 +1,9 @@
 <?php require('/configuracion/ventanasEmergentes.php'); ?>
 
-<?php 
+<?php
+if($_GET['codigo']){
+    $_POST['codigoCuarto']=$_GET['codigo'];
+}
 if($_POST['actualizar'] AND $_POST['codigoCuarto']){
 
 $sSQL1= "Select * From cuartos WHERE entidad='".$entidad."' AND codigoCuarto = '".$_POST['codigoCuarto']."' and departamento='".$_POST['almacen']."' ";
