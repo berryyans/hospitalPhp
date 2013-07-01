@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php require("/configuracion/clases/internarPaciente.php"); ?>
 
   <script language=javascript> 
@@ -134,13 +141,15 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
     
     <br><br>    
     
 <h1>CONSULTA DE ESTUDIANTES</h1>
 <?php echo $leyenda; ?>
   <form id="form1" name="form1" method="post" action="#" >
-<table width="500" class="table-forma">
+<!--<table width="500" class="table-forma">-->
+<table width="500" class="table-template-left">
 
   <tr valign="middle"   >
         <th colspan="2" ><div align="center" >Datos</div></th>
@@ -176,7 +185,8 @@ entidad='".$entidad."'
 ?>
 <p>&nbsp;</p>
 
-<table width="385" class="table table-striped">
+<!--<table width="385" class="table table-striped">-->
+<table width="385" class="table-template-left">
   <tr>
         <th width="96"   scope="col"><div align="left" >Matricula</div></th>
       <th width="234"  scope="col"><div align="left" >Paciente</div></th>
@@ -253,12 +263,12 @@ $NUMEROE=$myrow['numCliente'];
 <p>&nbsp;    </p>
 	<p>&nbsp;</p>
   </form>
-  <p>&nbsp;</p>
+  <!--<p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
     <p>&nbsp;</p>
-	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>-->
       
      
 <script>
@@ -303,5 +313,10 @@ $NUMEROE=$myrow['numCliente'];
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
+          </div>
+    <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate();
+    ?>
 </body>
 </html>

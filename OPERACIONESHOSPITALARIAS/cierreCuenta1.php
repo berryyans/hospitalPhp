@@ -1,4 +1,12 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
  <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -164,11 +172,13 @@ $estilos->styles();
 <META HTTP-EQUIV="Refresh"
 CONTENT="300"> 
 <body>
+    <div class="page_right">
 <form id="form1" name="form1" method="post">
   <h1 align="center" >Revisar Cuenta</h1>
   <p align="center" ><div id="dhtmltooltip"></div>
 
-<table width="440" class="table-forma">
+<!--<table width="440" class="table-forma">-->
+<table width="440" class="table-template">
      
    
      <tr >
@@ -234,7 +244,8 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
   </p>
  
   <p><span class="error" align="center">(Para ver los Cargos del Paciente, presiona sobre el Folio de Venta...)</span></p>
-  <table  align="center" class="table table-striped">
+  <!--<table  align="center" class="table table-striped">-->
+  <table  align="center" class="table-template-left">
 
     <tr>
       <th width="57"  align="center" >FolioV</th>
@@ -424,5 +435,10 @@ onmouseout="hideddrivetip()"> Falta Surtir </a>
   </span></span>
 
 </form>
+    </div>
+    <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate();
+    ?>
 </body>
 </html>

@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -40,7 +47,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right"> 
 
 
 <?php
@@ -58,7 +65,8 @@ $estilos->styles();
   Pacientes Internos</h2>
     <br></br>
     <h1>Aplica solamente para pacientes particulares!</h1>
-  <table   class="table table-striped" >
+  <!--<table   class="table table-striped" >-->
+  <table   class="table-template-left" >
     <tr >
       <th width="75" ><div align="left">Referencia</div></th>
       <th width= "233"><div align="left">Nombre del paciente:</div></th>
@@ -155,8 +163,10 @@ echo $myrow['usuario'];
 
   <p>&nbsp;</p>
 </form>
-
-
-
+    </div>
+<?php
+$mostrarFooter = new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>
