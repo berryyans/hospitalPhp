@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php");$ALMACEN=$_GET['datawarehouse']; ?>
+<?php //require("menuOperaciones.php");
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+$ALMACEN=$_GET['datawarehouse']; ?>
 
 <script language="javascript" type="text/javascript">
 
@@ -167,10 +174,12 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <h1>Agregar Beneficencia - Pacientes </h1>
 <?php echo $leyenda; ?>
   <form id="form1" name="form1" method="post" action="#" >
-<table width="547" class="table-forma">
+<!--<table width="547" class="table-forma">-->
+<table width="547" class="table-template-left">
   <tr  >
         <td colspan="3">Nuevo Paciente <span ><span >
 <a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="24" height="24" border="0" /></a></td>
@@ -236,7 +245,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 <p><a href="javascript:ventanaSecundaria1(
 		'../cargos/busquedaAvanzada.php?campoDespliega=<?php echo "descripcionPaquete"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "numeroEx"; ?>&amp;seguro=<?php echo "paciente"; ?>')" class="style1"></a></p>
 <br />
-<table width="553" class="table table-striped">
+<!--<table width="553" class="table table-striped">-->
+<table width="553" class="table-template-left">
 <tr >
         <th width="17"   scope="col"><div align="left" >
           <div align="center">#</div>
@@ -261,7 +271,7 @@ $bandera+="1";
 
 
 //cierro descuento
-
+/*
 if($col){
 $color = '#FFFF99';
 $col = "";
@@ -269,6 +279,8 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
+ * 
+ */
 $NUMEROE=$myrow['numCliente'];
 
 $sSQL33= "Select  * From porcentajeJubilados WHERE keyPacientes = '".$myrow['keyPacientes']."'";
@@ -332,5 +344,10 @@ $myrow33 = mysql_fetch_array($result33);
     </p>
   </form>
   <p>&nbsp;</p>
+    </div>
+  <?php
+    $mostrarFooter=new menus();
+    $mostrarFooter->footerTemplate();
+  ?>
 </body>
 </html>
