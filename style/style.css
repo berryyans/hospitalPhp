@@ -240,8 +240,11 @@ h1.not_found
 /* --- menu --- */
 .sf-menu
 {
+    margin-top: 60px;
     padding: 0;
+    /*
     margin: 0;
+    */
 }
 .sf-menu li
 {
