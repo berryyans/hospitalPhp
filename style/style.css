@@ -1719,9 +1719,10 @@ a.social_icon:hover
     float: left;
     /*
     width: 330px;
+    margin-top: 50px;
     */
     width: 200px;
-    margin-top: 50px;
+    margin-top: 15px;
     overflow: hidden;
 }
 .sidebar_box.first

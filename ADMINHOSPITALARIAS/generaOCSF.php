@@ -78,9 +78,9 @@ if(win.window.focus){win.window.focus();}
 
 </script>
 
- 
+ <div class="page_right">
   <!--<table width="37%" class="table-forma">-->
-  <table width="37%" class="table-forma">
+  <table width="37%" class="table-template">
       <br></br>
     <tr valign="middle">
       <td width="34%"><div align="center">
@@ -125,7 +125,7 @@ $estilos->styles();
 
 </head>
     <body>
-        <div class="page_right">
+        
 
 <?php
 
