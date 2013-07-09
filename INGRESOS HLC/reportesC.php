@@ -121,6 +121,8 @@ $estilo->styles();
         <th width="75" align="center" >Especiales </th>
         <th width="60" align="center" >Vencidos</th>
         <th width="89" align="center" >DConvenios</th>
+        <th width="89" align="center" >FechaInicial</th>
+        <th width="89" align="center" >FechaFinal</th>
       </tr>
       <?php   
 
@@ -146,7 +148,7 @@ $N=$myrow['numCliente'];
       
       <tr  >
         <td height="25" ><?php echo $a[0]+=1;?></span></td>
-        <td ><?php echo $myrow['nomCliente'];?></td>
+        <td ><?php echo $myrow['nomCliente'];echo '<br>';echo $myrow['numCliente'];?></td>
         <td align="center">
           <?php
 $sSQL2= "Select tipoConvenio From convenios WHERE entidad='".$entidad."' AND numCliente = '".$myrow['numCliente']."' and tipoConvenio='grupoProducto'";
@@ -199,31 +201,23 @@ $myrow2 = mysql_fetch_array($result2);
 <td align="center">
 <?php        
 $sSQLa= "SELECT 
-convenios.numCliente from convenios,articulos
+numCliente from convenios
 where
-(convenios.entidad='".$entidad."'
+(entidad='".$entidad."'
 and
-convenios.numCliente='".$myrow['numCliente']."'
+numCliente='".$myrow['numCliente']."'
 and
-convenios.fechaFinal<='".$fecha1."'
+('".$fecha1."' >= '".$myrow['fechaInicial']."' and '".$fecha1."' <= '".$myrow['fechaFinal']."')
 and
 convenios.departamento!='')
-AND
-(
-articulos.entidad='".$entidad."'
-    and
-    convenios.codigo=articulos.codigo
-    and
-    articulos.activo='A'
-)
 
 order by 
-convenios.departamento ASC
+departamento ASC
  ";
 $resulta=mysql_db_query($basedatos,$sSQLa);
 $myrowa = mysql_fetch_array($resulta);
 
-if($myrowa['numCliente']){
+if(!$myrowa['numCliente']){
 ?>
           <a href="#" onMouseOver="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Lista de convenios de: '.$myrow['nomCliente'].' por CONVENIOS VENCIDOS...';?>&lt;/div&gt;')" onMouseOut="UnTip()" onClick="ventanaSecundaria2('conveniosVencidos.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')"> <img src="../imagenes/btns/cancelabtn.png"   width="20" height="20" border="0" /></a>
         <?php } else { 
@@ -237,6 +231,15 @@ if($myrowa['numCliente']){
 	   echo '---';
 	   }
 	   ?>
+        </span></td>
+        
+        
+        <td align="center">
+          <?php echo cambia_a_normal($myrow['fechaInicial']);?>
+        </span></td>
+        
+        <td align="center">
+          <?php echo cambia_a_normal($myrow['fechaFinal']);?>
         </span></td>
       </tr>
 	  <?php }?>

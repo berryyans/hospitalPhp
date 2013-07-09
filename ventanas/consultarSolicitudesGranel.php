@@ -94,6 +94,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 
       <th width="171"  align="left">Descripcion</th>
       <th   align="left">Disponible [CenDis]</th>
+      <th   align="left">Disponible [Botx]</th>
       <th   align="left">Cargado a Px</th>
       <th   align="left">Cant. p/ Surtir</th>
             <th   align="left">Faltante</th>
@@ -108,7 +109,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 
 
 
- $sSQL= "SELECT *
+$sSQL= "SELECT *
 FROM
 
 existencias
@@ -221,6 +222,27 @@ almacen='".$_POST['almacenDestino']."'
 ";
 $result12=mysql_db_query($basedatos,$sSQL12);
 $myrow12 = mysql_fetch_array($result12);
+
+
+
+//ENtRADAS
+     $sSQL8ac1e= "
+SELECT sum( cantidad) as entrada
+FROM
+articulosExistencias
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$myrow['codigo']."'
+    and
+    almacen='".$_POST['almacenDestino']."'
+        and
+        status='ready'
+  
+";
+$result8ac1e=mysql_db_query($basedatos,$sSQL8ac1e);
+$myrow8ac1e = mysql_fetch_array($result8ac1e);
+echo mysql_error();
 ?>
 
 
@@ -275,7 +297,27 @@ echo $informacionExistencias->informacionExistencias($myrow3115s['tipoPaciente']
 	  
 	  <input name="keyPA[]" type="hidden" value="<?php echo $myrow['keyPA'];?>" />
                   
-                  
+      
+          
+          
+          
+      <td width="54" bgcolor="<?php echo $color?>" >
+<?php
+if($myrow8ac1e['entrada']>0){
+echo $myrow8ac1e['entrada'];
+}else{
+    echo 0;
+}
+?>
+      </td>          
+          
+          
+         
+          
+          
+          
+          
+          
       <td width="54" bgcolor="<?php echo $color?>" >
 <?php
 if($myrowa['s']>0){

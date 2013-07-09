@@ -112,7 +112,13 @@ echo mysql_error();
 $encabezado='Exitoso';
 $texto=$d;
     
-    
+$q = "UPDATE usuarios set 
+roles='si'
+WHERE entidad='".$_GET['entidades']."' AND
+usuario='".$_GET['usuario']."' 
+";
+mysql_db_query($basedatos,$q);
+echo mysql_error();
 }
 
 

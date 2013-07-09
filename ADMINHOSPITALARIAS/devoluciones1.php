@@ -95,7 +95,7 @@ $estilos->styles();
 <br>
 <br>
  <form id="form1" name="form1" method="post" action="#">
-  <h1 align="center">GENERAR SOLICITUD DE DEVOLUCION A PROVEEDORES</h1>
+  <h1 align="center">DEVOLUCION DE FACTURAS</h1>
 
   
       <p align="center" class="titulo">
@@ -116,7 +116,7 @@ $estilos->styles();
     <tr >
       <th width="17" >#</th>
       <th width="17" >Hora</th>
-      <th width="37" >Solicitud</th>
+  
       <th width="114" >Proveedor</th>
       <th width="78" >Importe</th>
       <th width="47" >IVA</th>
@@ -125,7 +125,7 @@ $estilos->styles();
       <th width="54" >Usuario</th>
 
       
-      <th width="54" >Cargar</th>
+      <th width="54" >Devolucion</th>
       <th width="54" >Status</th>
       
 
@@ -147,7 +147,7 @@ entidad='".$entidad."'
     and
 fecha='".$dates."'
 and
-statusDevolucion='si'
+status='sent'
 ORDER BY factura DESC";
 
 $result=mysql_db_query($basedatos,$sSQL);
@@ -216,7 +216,7 @@ $myrow8a = mysql_fetch_array($result8a);
 <tr  >
 <td  ><?php echo $a;?></td>              
   <td  ><?php echo $myrow['hora'];?></td>              
-      <td  ><?php echo $myrow['numSolicitud'];?></td>
+
       <td >
 
                         <span >
@@ -275,9 +275,9 @@ $myrow8a = mysql_fetch_array($result8a);
  
  
   <td >
-       <?php if($myrow['status']!='sent'){?>
+       <?php if($myrow['statusDevolucion']!='si'){?>
         <a href="#" onclick="javascript:ventanaSecundaria('../ventanas/listaArticulosDevoluciones.php?proveedor=<?php echo $myrow['proveedor'];?>&id_factura=<?php echo $myrow['factura'];?>&descripcionProveedor=<?php echo $myrow['descripcionProveedor'];?>&numSolicitud=<?php echo $myrow['numSolicitud'];?>')">
-        Cargar
+        Aplicar
         </a>
   <?php }else{ 
      
@@ -304,8 +304,10 @@ $myrow8a = mysql_fetch_array($result8a);
  
  
        <td ><?php if($myrow['status']!='sent'){ ?>
-        <span > <a  href="generaOCSF.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&id_factura=<?php echo $myrow['factura'];?>&keyCO=<?php echo $myrow['keyCO'];?>&dates=<?php echo $dates;?>&delete=si"> 
-                <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onMouseover="showhint('Presiona aqui para cambiar el status del articulo..', this, event, '150px')" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar esta factura?') == false){return false;}" /></a>
+        <span > 
+<a  href="generaOCSF.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&id_factura=<?php echo $myrow['factura'];?>&keyCO=<?php echo $myrow['keyCO'];?>&dates=<?php echo $dates;?>&delete=si"> 
+<img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onMouseover="showhint('Presiona aqui para cambiar el status del articulo..', this, event, '150px')" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar esta factura?') == false){return false;}" />
+</a>
         <?php }else{ echo '---';} ?>
         </span></td>
  
@@ -341,7 +343,7 @@ Cargar
 
 
 
-
+<!--
 <p>&nbsp;</p>
   <p align="center"><span class="style7">
      <table width="37%" class="table-forma">
@@ -356,6 +358,8 @@ Cargar
 
     </tr>
   </table> 
+-->
+
   </span></p>
 </form>
 

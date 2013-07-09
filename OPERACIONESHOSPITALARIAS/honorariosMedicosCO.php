@@ -43,7 +43,19 @@ function valida(F) {
   <script type="text/javascript" src="../calendario/calendar-setup.js"></script> 
 
 
+<script>
 
+var win = null;
+function nueva(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+if(win.window.focus){win.window.focus();}
+}
+
+</script>
 
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
@@ -177,11 +189,14 @@ $estilos-> styles();
        
        
        
-   <h3>PACIENTES EXTERNOS</h3>       
-       
        
        
 <?php if($_POST['mostrar']!=NULL){ ?>
+       
+
+   <h3>PACIENTES EXTERNOS</h3>       
+              
+       
    <table width="930" class="table table-striped">
      <tr >
          
@@ -495,6 +510,7 @@ $devs[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cant
  
  </table>
 <?php 
+$PM=$imp[0];$DEVM=$devs[0];
 $imp[0]=NULL;
 $devs[0]=NULL;
 ?>
@@ -554,7 +570,10 @@ $devs[0]=NULL;
                   <th width="2" >
          <div align="left">#</div>
     </th>
-         
+
+      <th width="2" >
+         <div align="left">MovSis</div>
+    </th>         
          
          <th width="60" >
          <div align="left">FechaCargo</div>
@@ -573,8 +592,10 @@ $devs[0]=NULL;
     <th width="60" ><div align="left" >Rec/Mov</div></th>
    
  <th width="60" ><div align="right" >Importe</div></th>   
-   
-      </tr>
+ <th width="60" ><div align="right" >StatusCuenta</div></th> 
+ <th width="60" ><div align="right" >StatusPago</div></th>     
+<th width="60" ><div align="right" >FechaPago</div></th>      
+     </tr>
 <?php 	
 
 
@@ -595,7 +616,7 @@ and
 
 
 
-order by folioVenta,fechaCargo,fechaCierre ASC";
+order by folioVenta,fechaCargo ASC";
 
 
 $result = mysql_db_query($basedatos,$ssql);
@@ -636,6 +657,14 @@ $myrow1a = mysql_fetch_array($result1a);
 	echo $totalRegistros;
 	  ?>
 </td>
+   
+              
+
+<td align="left" >
+<?php 
+	echo $myrow['keyCAP'];
+	  ?>
+</td>              
               
               
               
@@ -740,6 +769,8 @@ echo 'Particular';
     
 <td   align="left" >
 <?php
+
+//echo $myrow['naturaleza'];
 if($myrow['naturaleza']=='C'){
 echo 'Normal';
 }elseif($myrow['naturaleza']=='A'){
@@ -789,22 +820,192 @@ $devs[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cant
 }
 
 ?>	   
-            </div>
+       
 	</td>        
         
 
+    
+    
+<td align="right" >
+<?php
+
+
+
+        echo $myrow1['statusCuenta'];
+
+?>	  
+	</td>  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     
+    
+<td align="center" >
+<?php
+
+
+if($myrow1['seguro']!='' and $myrow1['seguro']!='0'){
+$sSQLap= "
+SELECT *
+FROM
+facturasAplicadas
+WHERE
+entidad='".$entidad."'
+    and
+folioVenta='".$myrow['folioVenta']."'
+    
+";
+
+
+$resultap=mysql_db_query($basedatos,$sSQLap);
+$myrowap = mysql_fetch_array($resultap); 
+
+  if($myrowap['statusPago']=='pagado'){
+     // echo '<p style="color:blue;margin-left:20px;">Pagado</p> ';
+if($myrow['naturaleza']=='C'){
+$imp1[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+
+echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
+}elseif($myrow['naturaleza']=='A'){
+    //echo '<div class="error">$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2).'</div>';
+$devs1[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+}   
+    }elseif($myrowap['statusPago']){
+        echo $myrowap['statusPago'];
+    }else{
+        echo '---';
+    }
+    $tipoPago='seguro';
+    
+    
+    
+}else{
+    if($myrow1['statusCuenta']=='cerrada'){
+ //echo '<p style="color:green;margin-left:20px;">Pagado</p> ';
+ 
+ if($myrow['naturaleza']=='C'){
+$imp1[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+
+echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
+}elseif($myrow['naturaleza']=='A'){
+   // echo '<div class="error">$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2).'</div>';
+$devs1[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+}
+ 
+ 
+    }elseif($myrow1['statusCuenta']){
+        echo $myrow1['statusCuenta'];
+    }else{
+        echo '---';
+    }
+    $tipoPago='particular';
+}
+?>	  
+    
+	</td>       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<td align="center" >
+<?php     
+if($tipoPago=='seguro'){
+    if($myrowap['fechaPago']){
+echo cambia_a_normal($myrowap['fechaPago']);
+    }else{
+        echo '---';
+    }
+}else{
+    if($myrow1['fechaCierre']){
+    echo cambia_a_normal($myrow1['fechaCierre']);
+    }else{
+        echo '---';
+    }
+}
+?>
+    </td>  
+    
+    
+    
+    
+    
       </tr>
-     <?php }}?>
+     <?php }?>
    </table>
       <br />
       
+       <br />  
       
       
-      
- <table width="200" class="table table-striped">
-    <tr >
+ <table width="500" class="table table-striped">
+    
+     
+     
+     
+     
+     
+     
+   <tr >
+       
+    <th width="2" >
+    <div align="left">Usted debe pagar al medico </div>
+    </th>
+        
+    
+    <th width="2" >
+    <div align="right"><?php 
+
+	 echo '$'.number_format(($PM-$DEVM)+($imp1[0]-$devs[0]),2);
+
+	  ?></div>
+    </th>    
+   
+ </tr>
+     
+     
+     <tr >
+       
+    <th width="2" >
+    <div align="left"></div>
+    </th>
+        
+    
+    <th width="2" >
+    <div align="right"></div>
+    </th>    
+   
+ </tr>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <tr >
        
     <th width="2" >
     <div align="left">Cargos</div>
@@ -864,7 +1065,8 @@ $devs[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cant
  
  
  </table>      
- </div>
+      <?php }?>
+ 
 </form>
 
    <script type="text/javascript"> 

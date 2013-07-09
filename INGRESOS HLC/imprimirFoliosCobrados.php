@@ -649,7 +649,7 @@ $pdf->Ln(20); //salto de linea
 
 
 
-include('/configuracion/clases/desplegarResumenTransacciones.php');
+require('/configuracion/clases/desplegarResumenTransacciones.php');
 
 
 

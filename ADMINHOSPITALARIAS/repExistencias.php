@@ -226,7 +226,7 @@ order by existencias.descripcion ASC
     
 }   else{ 
 
-$sSQL1= "SELECT 
+ $sSQL1= "SELECT 
 *
 FROM 
 

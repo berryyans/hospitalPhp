@@ -28,10 +28,10 @@ function checkIt(evt) {
 }
 </script>
 <?php
-
+   ini_set("memory_limit",'256M');   
 $hoy = date("d/m/Y");
 $hora = date("g:i a");
-
+$myrow=null;
 
 $sSQL3= "Select * From listas WHERE keylistas='".$_GET['keylistas']."' ";
 $result3=mysql_db_query($basedatos,$sSQL3);
@@ -189,7 +189,10 @@ function confirmReset() {
 }
 </script>
 
-
+        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.js"></script>
+        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.ui.js"></script>
+        <script type="text/javascript" src="/sima/js/editp/lib/jquery.editinplace.js"></script>
+        
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -238,19 +241,36 @@ CONFIGURACION DE EXISTENCIAS
 
 
 <div id="divContainer">
-  <table width="300" class="formatHTML5" >
+  <table width="400" class="formatHTML5" >
 
       
       
     <tr >
 <th width="10"  align="left"><font size="1" face="Comic Sans MS,arial,verdana">#</font></th>
-      <th width="200"  align="left"><font size="1" face="Comic Sans MS,arial,verdana">Descripcion</font></th>
-            <th width="10"  align="left"><font size="1" face="Comic Sans MS,arial,verdana">Cantidad</font></th>
+      <th width="100"  align="left"><font size="1" face="Comic Sans MS,arial,verdana">Descripcion</font></th>
+            <th width="150"  align="left"><font size="1" face="Comic Sans MS,arial,verdana">Cantidad</font></th>
  
       
 
       <th width="10"  align="left"></th>
     </tr>
+      
+      
+      
+    
+        
+        
+        
+        
+     
+        
+        
+
+	 
+        
+        
+      
+      
       
       
       
@@ -352,7 +372,7 @@ if($myrow8ac['activo']=='A'){
 <?php if($myrow['cbarra']){ echo ltrim($myrow['cbarra']);} ?>
     <tr >
       
-        <td  ><font size="1" face="Comic Sans MS,arial,verdana"><?php echo $a;?></font></td>
+        <td ><font size="1" face="Comic Sans MS,arial,verdana"><?php echo $a;?></font></td>
         
         
 
@@ -363,10 +383,11 @@ if($myrow8ac['activo']=='A'){
 <font size="1" face="Comic Sans MS,arial,verdana">
     <?php 
 
-echo $myrow1['descripcion'].', '.$myrow8ac['sustancia'].', '.'<span class="precio1">'.$myrow8ac['gpoProducto'].'</span>
-    <span >, Anaquel: '.$myrow1['anaquel'].'</span>';
-
-
+echo $myrow8ac['descripcion'].', '.$myrow8ac['descripcion1'].','.$myrow8ac['sustancia'].'
+    '.'<span class="precio1">'.$myrow8ac['gpoProducto'].'</span>';
+if($myrow1['anaquel']!=null){
+echo     '<span >, Anaquel: '.$myrow1['anaquel'].'</span>';
+}
           
 /*          
           
@@ -377,17 +398,35 @@ Editar
 
       </td>
         
-       
-<?php
+     
+<td id="<?php echo $myrow1['keyE']; ?>"><font size="1" face="Comic Sans MS,arial,verdana">
 
-$sSQL3= "Select * From existencias WHERE entidad='".$entidad."' and codigo='".$myrow1['codigo']."' and almacen='".$myrow1['almacen']."' and status='standby' ";
-$result3=mysql_db_query($basedatos,$sSQL3);
-$myrow3 = mysql_fetch_array($result3);  
+
+    <script type="text/javascript">
+
+
+
+
+	// A select input field so we can limit our options
+	$("#<?php echo $myrow1['keyE']; ?>").editInPlace({
+		//callback: function(unused, enteredText) { return enteredText; },
+                url: "/sima/cargos/server2.php",
+		field_type: "text"});
+	
+</script>
+    <div align="left">
+<?php 
+if($myrow1['existencia']>0){
+echo (int) $myrow1['existencia'];
+}else{
+    echo 'Editar';
+}
 ?>
-        
-<td ><font size="1" face="Comic Sans MS,arial,verdana">
-<input name="cantidadTotal[]" type="text" size="3"  value="<?php echo (int) $myrow3['existencia'];?>" autocomplete="off"></input>
-      </font></td>
+    </div>
+    </font>
+</td>
+
+      
         
         
         
@@ -420,7 +459,7 @@ $myrow3 = mysql_fetch_array($result3);
   <div align="center" class="informativo"><strong>
    
 	<?php if($a>0){
-	echo "Se encontraron $a registros..!"; 
+	//echo "Se encontraron $a registros..!"; 
 	}
 	?>
 	</strong></div>
@@ -431,13 +470,13 @@ $myrow3 = mysql_fetch_array($result3);
 
     
    
-    <?php if($a>0){?>
+    <?php /*if($a>0){?>
  <font size="1" face="Comic Sans MS,arial,verdana">
 <input  name="ajustarExistencias" type="submit" value="Ajustar Existencias"	/>
 
 
 </font>
-    <?php }
+    <?php }*/
 	?>
 
     </label>
@@ -445,8 +484,20 @@ $myrow3 = mysql_fetch_array($result3);
     <input name="anaquel1" type="hidden" id="anaquel1" value="<?php echo $_POST['anaquel']; ?>" />
   </p>
 </form>
-    <br>
-
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 </body>
 </html>

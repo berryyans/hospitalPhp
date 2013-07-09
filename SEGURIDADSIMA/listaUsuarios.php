@@ -47,6 +47,13 @@ usuario='".$_GET['usuario']."'";
 
 if($_GET['usuario'] AND $_GET['erase']=='yes'){
 
+    $q = "UPDATE usuarios set 
+roles=''
+WHERE entidad='".$_GET['entidades']."' AND
+usuario='".$_POST['usuario']."' 
+";
+mysql_db_query($basedatos,$q);
+echo mysql_error();
 
 $q = "DELETE FROM usersmodules
 

@@ -683,7 +683,7 @@ $pdf->SetX('2');
 $pdf->Cell(0,0,$myrow1b1['almacen'],0,0,M);
 
 $pdf->SetX('15');
-$pdf->Cell(0,0,'[ '.$myrow['descripcionMedico'].' ]',0,0,M);
+$pdf->Cell(0,0,'[ '.$myrow1b1['descripcion'].' ]',0,0,M);
 $pdf->Ln(3); //salto de linea
 
 

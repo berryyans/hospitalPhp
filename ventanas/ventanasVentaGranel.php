@@ -65,9 +65,9 @@ $estilo->styles();
   <table width="700" border="0.2" align="center" cellpadding="4" cellspacing="0">
         <tr bgcolor="#FFFF00">
   <th width="5" class="negromid">#</th>            
-      <th width="5" class="negromid">Folio</th>
+      <th width="5" class="negromid">nOrden</th>
 
-      <th width="171" class="negromid" align="left">Paciente</th>
+   
       <th class="negromid" align="left">Cantidad</th>
       <th  class="negromid" align="left">Fecha</th>
       <th  class="negromid" align="left">Hora</th>
@@ -95,6 +95,8 @@ keyPA='".$_GET['keyPA']."'
     tipoVenta='Granel'
 and
 status='request'
+group by nOrden
+order by nOrden ASC
 ";
 $result=mysql_db_query($basedatos,$sSQL);
 while($myrow = mysql_fetch_array($result)){
@@ -121,16 +123,27 @@ $myrow8ac = mysql_fetch_array($result8ac);
 
 
 $sSQL8ad= "
-SELECT * 
+SELECT sum(cantidad) as c
 FROM
-cargosCuentaPaciente
-WHERE
-keyCAP='".$myrow['keyCAP']."'
+
+movSolicitudes
+where
+entidad='".$entidad."'
+and
+almacen='".$_GET['almacen']."'
+and    
+keyPA='".$_GET['keyPA']."'
+    and
+    tipoVenta='Granel'
+and
+status='request'
+and
+nOrden='".$myrow['nOrden']."'
 ";
 $result8ad=mysql_db_query($basedatos,$sSQL8ad);
 $myrow8ad = mysql_fetch_array($result8ad);
 
- $sSQLf= "
+/* $sSQLf= "
 SELECT *
 FROM
 clientesInternos
@@ -141,7 +154,7 @@ folioVenta='".$myrow8ad['folioVenta']."'
 ";
 $resultf=mysql_db_query($basedatos,$sSQLf);
 $myrowf = mysql_fetch_array($resultf);
-
+*/
 
  $sSQL12= "
 SELECT *
@@ -154,6 +167,18 @@ almacen='".$myrow['almacen']."'
 ";
 $result12=mysql_db_query($basedatos,$sSQL12);
 $myrow12 = mysql_fetch_array($result12);
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
 
 
@@ -167,33 +192,33 @@ echo $a;
 ?>
 </td>    
     
-<td bgcolor="<?php echo $color?>" class="normal"><?php echo $myrow8ad['folioVenta'];?></td>
+<td bgcolor="<?php echo $color?>" class="normal"><?php echo $myrow['nOrden'];?></td>
 
 
 
 
 
-<td height="24" bgcolor="<?php echo $color?>" class="normal">
-<?php
-echo $myrowf['paciente'];
-?>
-</td>
+
                 
                 
  <td width="79" bgcolor="<?php echo $color?>" class="normal">                
 <?php 
-echo $myrow8ad['cantidad'];
-$totalCantidad[0]+=$myrow8ad['cantidad'];
+echo $myrow8ad['c'];
+$totalCantidad[0]+=$myrow8ad['c'];
 ?>     
      
 </td>             
                 
                 
+
+
+
+
                 
                 
        <td width="79" bgcolor="<?php echo $color?>" class="normal">
 <?php 
-echo cambia_a_normal($myrow8ad['fechaCargo']);
+echo cambia_a_normal($myrow['fecha']);
 ?>
 </td>
 	  
@@ -202,7 +227,7 @@ echo cambia_a_normal($myrow8ad['fechaCargo']);
                   
 <td width="70" bgcolor="<?php echo $color?>" class="normal">
 <?php 
-echo $myrow8ad['horaCargo'];
+echo $myrow['hora'];
 ?>
 </td>
 
@@ -211,7 +236,7 @@ echo $myrow8ad['horaCargo'];
 
 <td width="50" bgcolor="<?php echo $color?>" class="normal">
 <?php 
-echo $myrow8ad['usuarioCargo'];
+echo $myrow['usuario'];
 ?>
 </td>
 
@@ -280,7 +305,7 @@ echo cambia_a_normal($myrow['fecha']);
     
     
   <div align="center">
-Total pendiente: <?php echo $totalCantidad[0];?>
+Total Cargos: <?php echo $totalCantidad[0];?>
   </div>    
     
 </body>

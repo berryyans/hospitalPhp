@@ -4,7 +4,7 @@
 $_POST['numeroE']=$_POST['numeroEx'];
 //***************ELIMINAR RASTRO
 $agrega = "DELETE FROM citasCandado where entidad='".$entidad."' and  usuario='".$usuario."'";
-mysql_db_query($basedatos,$agrega);
+//mysql_db_query($basedatos,$agrega);
 echo mysql_error();
 //**************************
 
@@ -25,24 +25,43 @@ $status='pendiente';
 }
 
 
-if($_POST['paciente'] and $_POST['actualizarCita'] ){
 
 
 
 
-//*************CITAS CANDADO
-$agrega = "INSERT INTO citasCandado ( 
-almacenSolicitud,horaSolicitud,fechaSolicitud,entidad,keyClientesInternos,paciente,usuario
-) values (
-'".$_POST['almacenDestino1']."',
-'".$_POST['codHora']."',
-'".$_POST['fechaSolicitud']."','".$entidad."','".$myrow1['keyClientesInternos']."','".strtoupper($_POST['paciente'])."',
-'".$usuario."')";
-mysql_db_query($basedatos,$agrega);
+
+//********************
+if($_GET['modificar']=='si' AND ($_POST['paciente'] and $_POST['actualizarCita'] )){
+$q1 = "UPDATE clientesInternos set 
+medico='".$_GET['id_medico']."',
+horaSolicitud = '".$_POST['codHora']."',
+fechaSolicitud='".$_POST['fechaSolicitud']."',
+almacenSolicitud='".$_POST['almacenDestino1']."'
+WHERE 
+keyClientesInternos='".$_POST['keyClientesInternos']."'
+";
+mysql_db_query($basedatos,$q1);
 echo mysql_error();
+echo '<script>
+window.alert( "SE MODIFICO LA CITA PARA ESTE PACIENTE");
+window.opener.document.forms["form1"].submit();
+window.close();
+</script>';
+}
+
+//*******************
 
 
-//********************************
+
+
+
+
+
+
+
+if($_GET['modificar']!='si' AND ($_POST['paciente'] and $_POST['actualizarCita']) ){
+
+
 
 
 
@@ -51,51 +70,38 @@ echo mysql_error();
 
 
 //**************************
-if($_GET['keyClientesInternos']){
-
- $keyCT=$_GET['keyClientesInternos'];
- }else{
+//verificar que no existe
  $sSQLd= "SELECT *
  FROM
- citasTemporales
+ clientesInternos
  WHERE 
  entidad='".$entidad."' and
- almacenSolicitud='".$_POST['almacenDestino1']."'
+ medico='".$_GET['id_medico']."'
  and
- horaSolicitud='".$_POST['codHora']."'
+ guiaHora='".$_POST['guiaHora']."'
  and
- fechaSolicitud='".$_POST['fechaSolicitud']."'";
+ fechaSolicitud='".$_POST['fechaSolicitud']."'
+and
+almacen='".$_GET['almacen']."'
+";
 
  $resultd=mysql_db_query($basedatos,$sSQLd);
  $myrowd = mysql_fetch_array($resultd);
- $keyCT=$myrowd['keyCT'];
- }
 //********************************************
 
 
-if(!$keyCT){
+if($myrowd['paciente']!=NULL){
 
 
 
- $sSQLd= "SELECT *
- FROM
- citasCandado
- WHERE 
- entidad='".$entidad."' and
- almacenSolicitud='".$_POST['almacenDestino1']."'
- and
- horaSolicitud='".$_POST['codHora']."'
- and
- fechaSolicitud='".$_POST['fechaSolicitud']."'
- ";
+echo '<script>
+alert("Ya existe esta cita!");
+</script>';
 
- $resultd=mysql_db_query($basedatos,$sSQLd);
- $myrowd = mysql_fetch_array($resultd);
-
-
-
-if($usuario==$myrowd['usuario']){
     
+    
+    
+}else{    
 //BENEFICENCIAS
 
                 $sSQLa= "Select * From porcentajeBeneficencias
@@ -134,7 +140,7 @@ statusExpediente,dependencia,entidad,almacenSolicitud,horaSolicitud,fechaSolicit
 porcentaje
 ) values (
 '".$_POST['numeroE']."','".$nCuenta."',
-'".$_POST['medico']."',
+'".$_GET['id_medico']."',
 '".strtoupper($_POST['paciente'])."',
 '".$_GET['seguro']."',
 '".$_GET['autoriza']."',
@@ -155,44 +161,23 @@ porcentaje
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
 
-$sSQL1= "SELECT 
-* 
-FROM clientesInternos
-WHERE entidad='".$entidad."' AND
-usuario='".$usuario."'
-order by keyClientesInternos Desc
-";
-$result1=mysql_db_query($basedatos,$sSQL1);
-$myrow1 = mysql_fetch_array($result1); 
-$keyClientesI=$myrow1['keyClientesInternos']; 
 
-$agrega = "INSERT INTO citasTemporales ( 
-almacenSolicitud,horaSolicitud,fechaSolicitud,entidad,keyClientesInternos,paciente,status,statusExpediente,expediente,guiaHora
-) values (
-'".$_POST['almacenDestino1']."',
-'".$_POST['codHora']."',
-'".$_POST['fechaSolicitud']."','".$entidad."','".$myrow1['keyClientesInternos']."','".strtoupper($_POST['paciente'])."','reservar','reservar','".$expediente."','".$_POST['guiaHora']."')";
-mysql_db_query($basedatos,$agrega);
-echo mysql_error();
-?>
-<script>
-alert("El paciente: <?php echo $_POST['paciente'];?> fue agregado");
-//window.close();
-</script>
-<?php }else{ ?>
-<script>
-alert("El paciente: <?php echo $_POST['paciente'];?> no se puede agregar porque la cita ya fue tomada...");
-//window.close();
-</script>
-<?php 
+echo   '<script>
+alert("El paciente: '.$_POST['paciente'].' fue agregado");
+window.opener.document.forms["form1"].submit();
+window.close();
+</script>';
 }
 ?>
 
 
-<?php } else { //es modificar?>
+
+
+
 
 
 <?php 
+/*
   $sSQLd2= "SELECT keyClientesInternos
  FROM
  citasTemporales
@@ -221,21 +206,6 @@ mysql_db_query($basedatos,$agrega);
 echo mysql_error();
 
 
-
-$q1 = "UPDATE clientesInternos set 
-horaSolicitud = '".$_POST['codHora']."',
-fechaSolicitud='".$_POST['fechaSolicitud']."',
-almacenSolicitud='".$_POST['almacenDestino1']."'
-WHERE 
-keyClientesInternos='".$_POST['keyClientesInternos']."'
-";
-mysql_db_query($basedatos,$q1);
-echo mysql_error();
-?>
-<script>
-window.alert( "SE MODIFICO LA CITA PARA ESTE PACIENTE");
-//window.close();
-</script>
 <?php 
 } else{ //ya esta tomado
 ?>
@@ -245,21 +215,23 @@ window.alert( "Esta cita esta ya reservada ");
 </script>
 <?php 
 }
+ * 
+ */
 }//cerrar la opcion modificar
 
 
 
 
 
- 
+/* 
 echo '<script language="JavaScript" type="text/javascript">
   <!--
    //window.opener.document.forms["form1"].submit();
-  close();
+  //close();
   // -->
 </script>';
 }
-
+*/
 
 
 
