@@ -196,7 +196,10 @@ h1.not_found
 }
 .header
 {
+    /*
     width: 990px;
+    */
+    width: 1100px;
     margin-left: auto;
     margin-right: auto;
     padding: 38px 0;
@@ -243,9 +246,9 @@ h1.not_found
 {
     float: left;
     padding: 0;    
-    margin: 0;
+    margin-top: 48px;
     /*
-    margin-top: 60px;
+    margin: 0;
     */
 }
 .sf-menu .bottom{

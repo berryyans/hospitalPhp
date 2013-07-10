@@ -33,7 +33,10 @@
 	/* --- header --- */
 	.header
 	{
-		width: 750px;
+            /*
+            width: 750px;
+            */
+            width: 95%;
 	}
 	.header_left
 	{

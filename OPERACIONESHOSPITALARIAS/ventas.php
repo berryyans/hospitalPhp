@@ -109,6 +109,7 @@ if($result=mysql_db_query($basedatos,$sSQL)){
 while($myrow = mysql_fetch_array($result)){ 
 $numeroE=$myrow['numeroE'];
 $nCuenta=$myrow['nCuenta'];
+/*
 if($col){
 $color = '#FFFFCC';
 $col = "";
@@ -116,7 +117,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
-
+*/
 $nT=$myrow['keyClientesInternos'];
 	  ?>
       <td height="24" bgcolor="<?php echo $color?>" ><?php echo $myrow['folioVenta'];
