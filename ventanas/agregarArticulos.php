@@ -49,7 +49,7 @@ function checkIt(evt) {
 
 if($_POST['actualizar']){
 
-if($_POST['fechaInicial'] and $_POST['fechaFinal']){
+
 
 $cantidad=$_POST['cantidad'];
 $code=$_POST['codigo'];
@@ -121,9 +121,7 @@ echo mysql_error();
 
 
 
-} else {
-echo '<blink>'.'Te falta poner las fechas'.'</blink>';
-}
+
 
 }
 ?>
@@ -162,14 +160,6 @@ echo '<script language="JavaScript" type="text/javascript">
 ?>
 
 
- <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
   
   
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -197,7 +187,10 @@ echo $nombreSeguro=$rNombre23['nomCliente'];
 ?> </span><span ><?php echo $leyenda; ?></span></p>
 <form id="form2" name="form2" method="post" action="" >
  
-<table width="482" class="table-forma">
+    
+    
+    <div id="container">
+<table width="400" class="formatHTML5">
   <tr >
     <td height="37" scope="col">&nbsp;</td>
     <td width="75" scope="col"><div align="left" >Departamento</div></td>
@@ -227,34 +220,7 @@ $comboAlmacen1->despliegaMiniAlmacenSS($entidad,'style12',$almacenDestino,$almac
     </div></td>
     <?php } ?>
   </tr>
-  <tr >
-    <td width="1" scope="col">&nbsp;</td>
-    <td><div align="left" >Fecha Inicial :</div></td>
-    <td><div align="left">
-      <label>
-        <input name="fechaInicial" type="text"  id="campo_fecha" size="9" maxlength="9" readonly=""
-		value="<?php
-		 if($_POST['fechaInicial']){
-		 echo $_POST['fechaInicial'];
-		 }
-		 ?>"/>
-        </label>
-      <input name="button" type="image"  id="lanzador" value="..." src="/sima/imagenes/btns/fecha.png" />
-    </div></td>
-  </tr>
-  <tr >
-    <td scope="col">&nbsp;</td>
-    <td><div align="left" >Fecha Final </div></td>
-    <td><label>
-      <input name="fechaFinal" type="text"  id="campo_fecha1" size="9" maxlength="9" readonly=""
-		  value="<?php
-		 if($_POST['fechaFinal']){
-		 echo $_POST['fechaFinal'];
-		 }
-		 ?>"/>
-    </label>
-      <input name="button1" type="image"  id="lanzador1" value="..." src="/sima/imagenes/btns/fechadate.png"/></td>
-  </tr>
+  
   <tr >
     <td width="1" scope="col">&nbsp;</td>
     <td>&nbsp;</td>
@@ -272,13 +238,15 @@ $comboAlmacen1->despliegaMiniAlmacenSS($entidad,'style12',$almacenDestino,$almac
 <?php 
 
 if($_POST['buscar'] or $_POST['almacenDestino1']){ ?>
-<table width="800" class="table table-striped">
+
+    <div id="divContainer">
+    <table width="750"  class="formatHTML5">
+
       <tr >
-        <th width="51"  scope="col"><div align="left"><span >#</span></div></th>
+        <th width="10"  scope="col"><div align="left"><span >#</span></div></th>
         <th width="314"  scope="col"><div align="left"><span >Descripci&oacute;n</span></div></th>
-        <th width="67"  scope="col"><div align="left"><span >Fecha Inicial </span></div></th>
-        <th width="55"  scope="col"><span >Fecha Final</span></th>
-        <th width="71"  scope="col"><div align="left"><span >P. Particular </span></div></th>
+
+        <th width="71"  scope="col"><div align="left"><span >Precio</span></div></th>
         <th width="56"  scope="col"><div align="left"><span >IVA</span></div></th>
         <th width="34"  scope="col"><div align="left"><span >Paquete</span></div></th>
         <th width="30"  scope="col"><div align="left"><span >Quitar</span></div></th>
@@ -437,6 +405,14 @@ $myrow40b = mysql_fetch_array($result40b);
 	  $bandera+='1';
 	  }  //cierra while?>
   </table>
+    </div>
+    
+    
+    
+    
+
+
+
   <p align="center"><em> <?php if($bandera){ ?>Se encontraron <?php echo $bandera; ?> Registros <?php }
 	else {
 	echo "No se encontraron registros..!";
@@ -468,19 +444,6 @@ $myrow40b = mysql_fetch_array($result40b);
   <br>
   
 </body>
-    <script type="text/javascript"> 
-   Calendar.setup({ 
-    inputField     :    "campo_fecha",     // id del campo de texto 
-     ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
-}); 
-    </script> 
-    <script type="text/javascript"> 
-   Calendar.setup({ 
-    inputField     :    "campo_fecha1",     // id del campo de texto 
-     ifFormat     :     "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario 
-}); 
-    </script> 
+
 	<?php } ?>
 </html>

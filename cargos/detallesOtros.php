@@ -97,10 +97,10 @@ $estilo->styles();
  AND 
 (folioVenta='".$_GET['folioVenta']."' or folioVentaOtros='".$_GET['folioVenta']."')
 AND
-( tipoTransaccion='totros' or tipoTransaccion='abotros' or tipoTransaccion='devotr'
+( tipoTransaccion='totros' or tipoTransaccion='abotros' or tipoTransaccion='devotr' or tipoTransaccion='devtotros')
 or
-tipoTransaccion='HLCAJOTR' or tipoTransaccion='AJOXINCDEV'
-)
+(tipoTransaccion='HLCAJOTR' or tipoTransaccion='AJOXINCDEV')
+
   
  and
  gpoProducto=''
@@ -152,7 +152,7 @@ if($myrow['numRecibo']){ ?>
 	   
 	   
 	   <?php //DEBE
-           if($myrow['tipoTransaccion']=='totros' or $myrow['tipoTransaccion']=='devotr' or $myrow['tipoTransaccion']=='AJOXINCDEV'){ 
+           if($myrow['tipoTransaccion']=='totros'  or $myrow['tipoTransaccion']=='devotr' or $myrow['tipoTransaccion']=='AJOXINCDEV'){ 
                
            echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
 	   $debe[0]+=$myrow['precioVenta']*$myrow['cantidad'];
@@ -171,7 +171,7 @@ if($myrow['numRecibo']){ ?>
 	   <?php //HABER
            
         
-           if($myrow['tipoTransaccion']=='HLCAJOTR' or $myrow['tipoTransaccion']=='abotros' ){ 
+           if($myrow['tipoTransaccion']=='HLCAJOTR' or $myrow['tipoTransaccion']=='abotros' or $myrow['tipoTransaccion']=='devtotros'){ 
 
 
                

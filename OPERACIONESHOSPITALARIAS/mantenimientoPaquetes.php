@@ -166,7 +166,7 @@ almacen='".$myrow7."'
        </td>
        <td  ><div align="center"><span >
 	   
-<a href="#" onClick="wopen('../ventanas/agregarArticulos.php?codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $A; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>','popup',800,800)"> 
+<a href="#" onClick="wopen('../ventanas/agregarArticulos.php?codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $A; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>','popup',900,900)"> 
 		<img src="../imagenes/btns/addbtn2.png" alt="Listado de Art&iacute;culos" width="22" height="22" border="0" /> </a> </span></div></td>
        <td bgcolor="<?php echo $color;  ?>" ><div align="center">
 	   
@@ -179,7 +179,7 @@ almacen='".$myrow7."'
 </form>
  <p align="center">
    <input name="nuevo" type="button" src="../imagenes/btns/activpaq.png" id="nuevo" value="NuevoPaquete"
-	  onclick="wopen('../ventanas/ventanaCatalogoPaquetes.php','popup',600,200);" />
+	  onclick="wopen('../ventanas/ventanaCatalogoPaquetes.php','popup',600,400);" />
  </p>
  <p>&nbsp;</p>
  <p>&nbsp;</p>

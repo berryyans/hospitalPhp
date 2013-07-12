@@ -380,7 +380,7 @@ if(!$_POST['descripcion'] and $_POST['codigo']!=NULL){
       
 
             
-                        <td>
+          <td>
           <tr>
 
               <th width="1"  scope="col">

@@ -54,13 +54,7 @@ $estilos-> styles();
 
 <h1 align="center" >
     <br />
-
-EVALUACION DEL INVENTARIO<br />
-
-
-
-
-
+CONVERTIR EXISTENCIAS DE ARTICULOS EN STOCK<br />
 
    <label>
    <?php
@@ -72,11 +66,6 @@ EVALUACION DEL INVENTARIO<br />
   </label>
 
 &nbsp;</h1>
-    
-    
-    <h4><?php echo cambia_a_normal($fecha1);?></h4>    
-    
-    
 <form id="form1" name="form1" method="post" action="">
 
   <table width="600" class="table-forma">
@@ -106,7 +95,7 @@ EVALUACION DEL INVENTARIO<br />
 activo='A' and stock='si' order by descripcion ASC";
 $rCombo=mysql_db_query($basedatos,$aCombo); ?>
         <select name="almacenDestino"  id="almacenDestino" onChange="this.form.submit();"/>        
-     <option value="*">Todos</option>
+     <option value="">---</option>
   
         <?php while($resCombo = mysql_fetch_array($rCombo)){ 
 		
@@ -138,19 +127,12 @@ $aCombo= "Select * From anaqueles where
 entidad='".$entidad."' AND
  almacen='".$_POST['almacenDestino']."' order  by anaquel ASC";
 $rCombo=mysql_db_query($basedatos,$aCombo); ?>
-        <select name="anaquel"  id="almacenDestino" />        
+        <select name="anaquel"  id="almacenDestino" onChange="this.form.submit();"/>        
     
   <option
       <?php  if($_POST['anaquel']=='*'){echo 'selected=""';}?>
       
       value="*" >Todos</option>
-        
-        
-          <option
-      <?php  if($_POST['anaquel']=='sa'){echo 'selected=""';}?>
-      
-      value="sa" >Sin Anaquel</option>
-        
         <?php while($resCombo = mysql_fetch_array($rCombo)){ 
 		
 		
@@ -177,10 +159,12 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
           <label>
           
             <input name="buscar" type="submit" src="../../imagenes/btns/searchbutton.png" id="buscar" value="buscar" />
-            
+            <?php
+	  if($_POST['porArticulo']=='*'){ echo "Este proceso puede demorar varios minutos..";}?>
          
         </label>
              <span >                                                                                                                                                                                                                                                                                                                  
+<input type="button" name="Print" id="mostrar" value="Print" onClick="javascript:ventanaSecundaria1('../ventanas/printExistencias.php?almacen=<?php echo $_POST['almacenDestino'];?>&anaquel=<?php echo $_POST['anaquel'];?>&porArticulo=<?php echo $_POST['porArticulo'];?>&buscar=<?php echo $_POST['buscar'];?>')"/>
        </span>     
        </div>
       </td>
@@ -189,21 +173,20 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
   
 <p>&nbsp;</p>
 
-  <table width="800" class="table table-striped" >
+  <table width="600" class="table table-striped" >
     <tr>
     
     </tr>
       
       
     <tr >
-      <th width="50"  align="left">#</th>
+      <th width="50"  align="left">Clave</th>
       <th width="200"  align="left">Descripcion</th>
-      <th width="50"  align="left">Caja</th>
-      <th width="50"  align="left">CostoBase</th>
-      <th width="50"  align="left">CostoUnitario</th>
+      <th width="50"  align="left">Costo</th>
+
       <th width="50"  align="left">Existencia</th>
     
-      <th width="50"  align="left">TotalCosto</th>
+      
 
 
     </tr>
@@ -211,9 +194,9 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 
 
 $articulo=$_POST['porArticulo'];
-if( $_POST['buscar'] and ($_POST['porArticulo'] or $_POST['anaquel']!=NULL or $_POST['almacen']=='*')){ 
+if( $_POST['buscar'] and ($_POST['porArticulo'] or $_POST['anaquel']!=NULL)){
 
-if($_POST['porArticulo']!='*' and $_POST['almacen']!='*'){
+if($_POST['porArticulo']!='*'){
 
     
     //filtrar por anaquel
@@ -227,7 +210,7 @@ FROM
 
 existencias,articulos
 WHERE
-(existencias.entidad='".$entidad."' and articulos.entidad='".$entidad."')
+existencias.entidad='".$entidad."' 
         AND
 (articulos.descripcion like '%$articulo%' or articulos.descripcion1 like '%$articulo%' or articulos.sustancia like '%$articulo%')
 and
@@ -239,29 +222,7 @@ articulos.codigo=existencias.codigo
 order by existencias.descripcion ASC
 ";
 
-  }   elseif($_POST['anaquel']=='sa'){
- 
- $sSQL1= "SELECT 
-*
-FROM 
-
-articulos,existencias
-WHERE
-(existencias.entidad='".$entidad."' and articulos.entidad='".$entidad."')
-        AND
-(articulos.descripcion like '%$articulo%' or articulos.descripcion1 like '%$articulo%' or articulos.sustancia like '%$articulo%')
-and
-existencias.almacen='".$_POST['almacenDestino']."'
-and
-existencias.anaquel=''
-and
-existencias.descripcion!=''
-and
-articulos.codigo=existencias.codigo
-
-order by existencias.descripcion ASC
-";      
-      
+    
     
 }   else{ 
 
@@ -271,7 +232,7 @@ FROM
 
 articulos,existencias
 WHERE
-(existencias.entidad='".$entidad."' and articulos.entidad='".$entidad."')
+existencias.entidad='".$entidad."' 
         AND
 (articulos.descripcion like '%$articulo%' or articulos.descripcion1 like '%$articulo%' or articulos.sustancia like '%$articulo%')
 and
@@ -294,34 +255,20 @@ order by existencias.descripcion ASC
 
 
 
-}elseif($_POST['porArticulo']=='*' and $_POST['almacenDestino']=='*'){
- $sSQL1= "
-     select * FROM articulos
-     where
-     entidad='".$entidad."'
-         and
-         activo='A'
 
 
-
-             order by descripcion ASC
-";
 
 } else {
-
+    
     
     
     //filtrado por anaquel
   if($_POST['anaquel']=='*'){
  
       $sSQL1= "
-          SELECT
-      *
-FROM 
-
-articulos,existencias
-WHERE
-      (existencias.entidad='".$entidad."' and articulos.entidad='".$entidad."')
+     select * from existencias,articulos
+     where
+     existencias.entidad='".$entidad."'
          and
          existencias.almacen='".$_POST['almacenDestino']."'
              and
@@ -332,32 +279,13 @@ articulos.codigo=existencias.codigo
              order by existencias.descripcion ASC
 ";
 
-  }  elseif($_POST['anaquel']=='sa'){      
-         $sSQL1= "
-          SELECT
-      *
-FROM 
-
-articulos,existencias
-WHERE
-      (existencias.entidad='".$entidad."' and articulos.entidad='".$entidad."')
-         and
-         existencias.almacen='".$_POST['almacenDestino']."'
-             and
-existencias.descripcion!=''
-and
-articulos.codigo=existencias.codigo
-and
-existencias.anaquel=''
-             order by existencias.descripcion ASC
-";   
   }  else{
  
  
        $sSQL1= "
      select * from existencias,articulos
      where
-     (existencias.entidad='".$entidad."' and articulos.entidad='".$entidad."')
+     existencias.entidad='".$entidad."'
          and
          existencias.almacen='".$_POST['almacenDestino']."'
              and
@@ -414,7 +342,6 @@ WHERE
 entidad='".$entidad."'
 and
 codigo='".$myrow1['codigo']."'
-    order by keyC DESC
 ";
 $result8acb=mysql_db_query($basedatos,$sSQL8acb);
 $myrow8acb = mysql_fetch_array($result8acb);
@@ -422,27 +349,10 @@ $myrow8acb = mysql_fetch_array($result8acb);
 
 
 
-if($_POST['porArticulo']=='*' and $_POST['almacenDestino']=='*'){
- //ENtRADAS
-     $sSQL8ac1e= "
-SELECT sum( cantidad) as entrada
-FROM
-articulosExistencias
-WHERE
-entidad='".$entidad."'
-and
-codigo='".$myrow1['codigo']."'
-    and
 
-        status='ready'
-  
-";
-$result8ac1e=mysql_db_query($basedatos,$sSQL8ac1e);
-$myrow8ac1e = mysql_fetch_array($result8ac1e);
-echo mysql_error();   
-}else{
+
 //ENtRADAS
- $sSQL8ac1e= "
+     $sSQL8ac1e= "
 SELECT sum( cantidad) as entrada
 FROM
 articulosExistencias
@@ -459,7 +369,7 @@ codigo='".$myrow1['codigo']."'
 $result8ac1e=mysql_db_query($basedatos,$sSQL8ac1e);
 $myrow8ac1e = mysql_fetch_array($result8ac1e);
 echo mysql_error();
-}
+
 
 
 
@@ -496,7 +406,7 @@ $myrow8ac1s = mysql_fetch_array($result8ac1s);
         
         
         <td  ><span >
-<?php echo $a; 
+<?php echo $myrow1['keyPA']; 
 
    
 ?>
@@ -532,8 +442,6 @@ if($myrow8ac['cbarra']!=NULL){
     echo $myrow8ac['cbarra'];
 
 }
-echo '<br>';
-echo $myrow1['modoventa'];echo '<br>';
 ?>
           
           
@@ -549,43 +457,8 @@ Editar
         
         
         
-
-<td ><span >
-      
-<?php ##COSTO TOTAL
-  if($centroDistribucion!=$_POST['almacenDestino'] ){
-      
-  
-if($myrow8ac['cajaCon']>0){
-    echo $myrow8ac['cajaCon'];
-}else{
-    echo '---';
-}
-  }else{
-     echo '---'; 
-  }
-		?>
-      </span></td>         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-         <td ><span >
-        
-<?php ##COSTO BASE
-
-  echo '$'.number_format($myrow8acb['costo'],2);
-
-		?>
-      </span></td> 
               
         
         
@@ -593,44 +466,13 @@ if($myrow8ac['cajaCon']>0){
         
         <td ><span >
         
-<?php ##COSTO O GRANEL
-
-//echo $myrow8ac['cajaCon'];
-//echo '<br>';
-//echo $myrow1['modoventa'];
-
-
-$cendis=new whoisCendis();
-$centroDistribucion=$cendis->cendis($entidad,$basedatos);  
-
-        if($centroDistribucion!=$_POST['almacenDestino'] ){
-                
-                if($myrow8ac['cajaCon']>0 or $myrow1['modoventa']=='Granel'){
-            
-            if($myrow1['modoventa']=='Granel' and $myrow8acb['costo']>0 and $myrow1['cantidadSurtir']>0){ 
-                echo '$'.number_format($myrow8acb['costo']/$myrow1['cantidadSurtir'],2); 
-                $costo=$myrow8acb['costo']/$myrow1['cantidadSurtir'];
-            }else{
-                if($myrow8acb['costo']>0 and $myrow8ac['cajaCon']>0){ 
-                 echo '$'.number_format($myrow8acb['costo']/$myrow8ac['cajaCon'],2);
-                 $costo=$myrow8acb['costo']/$myrow8ac['cajaCon'];
-                }else{
-                    //NO TRAE COSTO
-                    $costo=$myrow8acb['costo'];
-                }
-            }
-            
-        }else{   
+<?php 
 	if($myrow8acb['costo']>0){
 	  echo '$'.number_format($myrow8acb['costo'],2);
-          $costo=$myrow8acb['costo'];
         }else{
             echo '<span class="notice"><blink>???</blink></span>';
         }
-        }}else{
-            $costo=$myrow8acb['costo'];
-            echo '$'.number_format($myrow8acb['costo'],2);
-        }
+	 
 		?>
       </span></td>
         
@@ -655,25 +497,13 @@ $centroDistribucion=$cendis->cendis($entidad,$basedatos);
       <td ><span >
      
 <?php 
- echo $myrow8ac1e['entrada'];
+ echo $myrow8ac1e['entrada']-$myrow8ac1s['salida'];
 	 
 		?>
       </span></td>
 
 
-      <td ><span >
-     
-<?php 
-if($myrow8acb['costo']>0){
-        $r[0]+=($myrow8ac1e['entrada']*$costo);
-	  echo '$'.number_format($myrow8ac1e['entrada']*$costo,2);
-        }else{
-            echo '<span class="notice"><blink>???</blink></span>';
-        }
 
-	 
-		?>
-      </span></td>
         
         
         
@@ -685,7 +515,7 @@ if($myrow8acb['costo']>0){
      
     </tr>
   </table>
-<p><?php echo 'TOTAL DE INVERSION: $'.number_format($r[0],2);?></p>
+  
 <p align="center">&nbsp;</p>
   <span align="center" ><strong>
     <?php if(!$codigo){ echo "No se encontraron datos..!!"; }?>
@@ -694,7 +524,6 @@ if($myrow8acb['costo']>0){
 	}
 	?>
 	</strong></span>
-
   <p align="center">
     <label>
 

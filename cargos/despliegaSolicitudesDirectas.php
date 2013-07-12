@@ -462,20 +462,7 @@ $karticulos-> movimientoskardex('entrada',$cantidad[$i],'ENTRADA POR DEVOLUCION'
 //*************************************************************
 */
 
-
-
-}elseif(  $existenciasAjuste>0){ //aqui van los maximos y minimos
-
-$ajusteExistencias=new existencias();
-$error=$ajusteExistencias->ajusteExistencias('si','02',$numSolicitud,$myrow29['folioVenta'],$myrow29['keyClientesInternos'],$myrow29['almacenSolicitante'],$myrow29['keyCAP'],$entidad,$myrow29['gpoProducto'],$myrow29['cantidad'],$myrow29['codProcedimiento'],$myrow29['almacenDestino'],$usuario,$fecha1,$error,$basedatos);
-
-
-
-
-
-
-
-
+//DEVOLUCION POR VENTA
 ###########AJUSTE MANUAL DE KARDEX NO DEBE DE IRSE 1 A 1#############
 ###CLAVE VENTAS    
 $sSQL8acd= "
@@ -484,7 +471,7 @@ FROM
 conceptoinventarios
 WHERE
 
-codigo='01'
+codigo='03'
 ";
 $result8acd=mysql_db_query($basedatos,$sSQL8acd);
 $myrow8acd = mysql_fetch_array($result8acd);
@@ -538,7 +525,89 @@ values
             '".$myrow8ac1e['entrada']."',
         '".$myrow8acd['otro']."','".$myrow8ac['gpoProducto']."',
             '".$myrow8acd['tipoMovimiento']."',
-            '".$myrowk['almacenConsumo']."','ENTRADA',
+            '".$myrowk['almacenConsumo']."','entrada',
+                '".$myrow8ac['cajaCon']."','final','".$myrow8ac['cbarra']."',
+                '".$numSolicitud."'
+         )";
+
+mysql_db_query($basedatos,$q1ab);
+echo mysql_error();
+//CIERRO AFECTACION DE KARDEX*******  
+}elseif(  $existenciasAjuste>0){ //aqui van los maximos y minimos
+
+$ajusteExistencias=new existencias();
+$error=$ajusteExistencias->ajusteExistencias('si','02',$numSolicitud,$myrow29['folioVenta'],$myrow29['keyClientesInternos'],$myrow29['almacenSolicitante'],$myrow29['keyCAP'],$entidad,$myrow29['gpoProducto'],$myrow29['cantidad'],$myrow29['codProcedimiento'],$myrow29['almacenDestino'],$usuario,$fecha1,$error,$basedatos);
+
+
+
+
+
+
+
+
+###########AJUSTE MANUAL DE KARDEX NO DEBE DE IRSE 1 A 1#############
+###CLAVE VENTAS    
+$sSQL8acd= "
+SELECT * 
+FROM
+conceptoinventarios
+WHERE
+
+codigo='02'
+";
+$result8acd=mysql_db_query($basedatos,$sSQL8acd);
+$myrow8acd = mysql_fetch_array($result8acd);
+
+//******************CUANTO HABIA EN EXISTENCIAS***********
+     $sSQL8ac1e= "
+SELECT sum( cantidad) as entrada
+FROM
+articulosExistencias
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$codigo[$i]."'
+    and
+      status='ready'
+  
+";
+$result8ac1e=mysql_db_query($basedatos,$sSQL8ac1e);
+$myrow8ac1e = mysql_fetch_array($result8ac1e);
+echo mysql_error();
+
+    $sSQL8acb= "
+SELECT * 
+FROM
+precioArticulos
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$codigo[$i]."'
+    order by keyC DESC
+";
+$result8acb=mysql_db_query($basedatos,$sSQL8acb);
+$myrow8acb = mysql_fetch_array($result8acb);
+
+
+  $q1ab = "INSERT INTO kardex 
+(kc,evento,descripcion,descripcionevento,naturaleza,usuario,fecha,hora,entidad,
+keyPA,almacenSolicitante,almacenDestino,costo,cantidad,cantidadtotal,
+descripcionArticulo,existencia,existenciaTotal,otro,gpoProducto,tipoMovimiento,
+almacenConsumo,io,cajaCon,status,cbarra,numSolicitud)
+values
+('".$codigo[$i]."','".$myrow8acd['codigo']."',
+    '".$myrow8acd['tipoMovimiento']."',
+    '".$myrow8acd['descripcion']."','".$myrow8acd['naturaleza']."',
+        '".$usuario."','".$fecha1."',
+        '".$hora1."',
+    '".$entidad."','".$myrow8ac['keyPA']."','".$myrow29['almacenSolicitante']."',
+        '".$myrow29['almacenDestino']."',
+        '".$myrow8acb['costo']."',
+        '".$cantidad[$i]."','".$cantidad[$i]."','".$myrow29['descripcionArticulo']."','".$myrow8ac1e['entrada']."',
+            '".$myrow8ac1e['entrada']."',
+        '".$myrow8acd['otro']."','".$myrow8ac['gpoProducto']."',
+            '".$myrow8acd['tipoMovimiento']."',
+            '".$myrowk['almacenConsumo']."','SALIDA',
                 '".$myrow8ac['cajaCon']."','final','".$myrow8ac['cbarra']."',
                 '".$numSolicitud."'
          )";

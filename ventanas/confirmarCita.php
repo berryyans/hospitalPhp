@@ -283,9 +283,10 @@ $a+=1;
 	  
 	  
       <td class="normalmid" align="center"><span class="normal">
-        <?php if($myrow11['statusCaja']!='pagado'){ ?>
+        <?php if(!$myrow11['folioVenta']){ ?>
         <a href="#" onclick="javascript:ventanaSecundaria9('../ventanas/actualizaPagos.php?numeroE=<?php echo $myrow['numeroE']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow11['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')">Cambia Responsable</a>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow11['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')">
+            Cambia Responsable</a>
         <?php } else { echo '---';}?>
       </span></td>
       <td class="normalmid" align="center"><span class="normal">
@@ -400,8 +401,10 @@ $myrowj2a = mysql_fetch_array($resultj2a);
 	  ?>      </td>
       
       <td align="center"><?php if($myrow11['paquete']=='no'){ 
-	   if($myrow11['statusCaja']!='pagado'){ ?>
-        <a href="confirmarCita.php?keyClientesInternos=<?php echo $myrow11['keyClientesInternos']; ?>&seguro=<?php echo $_POST['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&almacen=<?php echo $_GET['almacen']; ?>&codigo=<?php echo $C; ?>&almacenDestino=<?php echo $_GET['almacenDestino'];?>"><img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="22" height="22" border="0" onclick="if(confirm('&iquest;Est&aacute;s seguro que deseas cancelar la cita?') == false){return false;}" /></a>
+	   if(!$myrow11['folioVenta']){ ?>
+        <a href="confirmarCita.php?keyClientesInternos=<?php echo $myrow11['keyClientesInternos']; ?>&seguro=<?php echo $_POST['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&almacen=<?php echo $_GET['almacen']; ?>&codigo=<?php echo $C; ?>&almacenDestino=<?php echo $_GET['almacenDestino'];?>">
+            <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="22" height="22" border="0" onclick="if(confirm('&iquest;Est&aacute;s seguro que deseas cancelar la cita?') == false){return false;}" />
+        </a>
       <?php } else {
 	  echo '---';
 	  }}
