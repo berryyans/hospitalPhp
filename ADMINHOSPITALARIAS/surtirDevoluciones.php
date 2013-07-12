@@ -114,7 +114,8 @@ and
 (folioVenta!='' and folioVenta!='0')
 and
 statusDevolucion='si'
-
+and
+naturaleza='A'
 group by numSolicitud
 order by horaSolicitud DESC";
 

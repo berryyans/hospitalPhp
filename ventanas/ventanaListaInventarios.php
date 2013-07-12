@@ -329,6 +329,28 @@ $estilos-> styles();
     <br />
 LISTA DE INVENTARIOS<br />
 
+<br></br>
+<h1>
+
+    <?php 
+    //DETERMINAR EL COSTO				
+$sSQLu="SELECT *
+FROM
+usuarios
+WHERE 
+entidad='".$entidad."'
+and
+usuario='".$usuario."'
+
+  ";
+  $resultu=mysql_db_query($basedatos,$sSQLu);
+  $myrowu = mysql_fetch_array($resultu);
+ echo $myrowu['nombre'].' '.$myrowu['aPaterno'].' '.$myrowu['aMaterno'];
+    ?>
+    
+</h1>
+
+
    <label>
    <?php
     if($texto!=NULL){

@@ -78,7 +78,7 @@ if($_POST['definitivo']!=NULL){
 
     //ACTUALIZA TRANSACCIONES
             $q = "UPDATE facturasAplicadas set
-statusPago='pagado',usuarioPago='".$usuario."',fechaPago='".$fecha1."'
+statusPago='pagado',usuarioPago='".$usuario."',fechaPago='".$fecha1."',numFactura='".$_GET['numFactura']."'
 
 		WHERE 
 entidad='".$entidad."'
@@ -152,16 +152,14 @@ $myrow = mysql_fetch_array($result);
     
 if($myrow['numFactura']!=''){
 	if($_GET['accion']=="enabled"){
-       $q = "UPDATE facturasAplicadas set
+      $q = "UPDATE facturasAplicadas set
 statusPago='step1'
 
 		WHERE 
 entidad='".$entidad."'
     and
     numFactura='".$_GET['numFactura']."'
-        and
-        transaccion!='si'
-
+        
 ";
 		mysql_db_query($basedatos,$q);
 		echo mysql_error();
@@ -177,8 +175,7 @@ statusPago=''
         
 and
     numFactura='".$_GET['numFactura']."'    
-        and
-        transaccion!='si'
+    
 
 ";
 		mysql_db_query($basedatos,$q);

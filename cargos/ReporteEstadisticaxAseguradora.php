@@ -1054,6 +1054,6 @@ $tft[0]+=$tpv;
    <p >&nbsp;</p>
  </div>
 </form>
-<iframe name="webs" src="../gd/estadisticasTipo.php?entidades=<?php echo $_GET['entidades'];?>&almacenIngreso=<?php echo $_GET['almacen'];?>&mes=<?php echo $_GET['mes'];?>&year=<?php echo $_GET['year'];?>&gpoProducto=<?php echo $_GET['gpoProducto'];?>" marginwidth="1" marginheight="0" width="800" height="800" border="0" frameborder="0"></iframe> 
+<iframe name="webs" src="../gd/estadisticasTipo.php?entidades=<?php echo $_GET['entidades'];?>&almacenIngreso=<?php echo $_GET['almacen'];?>&mes=<?php echo $_GET['mes'];?>&year=<?php echo $_GET['year'];?>&gpoProducto=<?php echo $_GET['gpoProducto'];?>" marginwidth="1" marginheight="0" width="850" height="800" border="0" frameborder="0"></iframe> 
 </body>
 </html>

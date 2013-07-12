@@ -7,6 +7,7 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 ?>
 
 
+
 <script language="javascript" type="text/javascript">
 
 var win = null;

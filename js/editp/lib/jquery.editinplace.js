@@ -49,8 +49,8 @@ $.fn.editInPlace.defaults = {
 	bg_out:				"transparent", // string: background color on restore from hover
 	hover_class:		"",  // string: class added to root element during hover. Will override bg_over and bg_out
 	show_buttons:		false, // boolean: will show the buttons: cancel or save; will automatically cancel out the onBlur functionality
-	save_button:		'<button class="inplace_save">Save</button>', // string: image button tag to use as “Save” button
-	cancel_button:		'<button class="inplace_cancel">Cancel</button>', // string: image button tag to use as “Cancel” button
+	save_button:		'<button class="inplace_save">Guardar</button>', // string: image button tag to use as “Save” button
+	cancel_button:		'<button class="inplace_cancel">Cancelar</button>', // string: image button tag to use as “Cancel” button
 	params:				"", // string: example: first_name=dave&last_name=hauenstein extra paramters sent via the post request to the server
 	field_type:			"text", // string: "text", "textarea", or "select";  The type of form field that will appear on instantiation
 	default_text:		"(Click here to add text)", // string: text to show up if the element that has this functionality is empty
@@ -59,7 +59,7 @@ $.fn.editInPlace.defaults = {
 	textarea_cols:		25, // integer: set cols attribute of textarea, if field_type is set to textarea. Use CSS if possible though
 	select_text:		"Choose new value", // string: default text to show up in select box
 	select_options:		"", // string or array: Used if field_type is set to 'select'. Can be comma delimited list of options 'textandValue,text:value', Array of options ['textAndValue', 'text:value'] or array of arrays ['textAndValue', ['text', 'value']]. The last form is especially usefull if your labels or values contain colons)
-	text_size:			null, // integer: set cols attribute of text input, if field_type is set to text. Use CSS if possible though
+	text_size:			4, // integer: set cols attribute of text input, if field_type is set to text. Use CSS if possible though
 	
 	// Specifying callback_skip_dom_reset will disable all saving_* options
 	saving_text:		undefined, // string: text to be used when server is saving information. Example "Saving..."

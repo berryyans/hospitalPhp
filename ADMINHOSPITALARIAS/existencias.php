@@ -193,7 +193,7 @@ $myrow3 = mysql_fetch_array($result3);
        
        <td ><span >
 <?php if( $myrow['status']=='open'){?>       
- <a href="#" onClick="javascript:ventanaSecundaria('../ventanas/ventanaProcesoInventarios.php?keylistas=<?php echo $myrow['keylistas']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPaciente=<?php echo "interno"; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>')">
+ <a href="#" onClick="javascript:ventanaSecundaria('../ventanas/ventanaProcesoInventarios.php?keylistas=<?php echo $myrow['keylistas']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPaciente=<?php echo "interno"; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&descripcionAlmacen=<?php echo $myrow3['descripcion'];?>')">
  Cargar           
  </a>
 <?php }else{ echo '---';}?>          

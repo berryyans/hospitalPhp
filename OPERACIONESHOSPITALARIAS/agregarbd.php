@@ -14,7 +14,7 @@ function ventanaSecundaria5 (URL){
 
 
 
-if($_POST['actualizar'] and $_POST['porcentaje'] and $_POST['almacenDestino1']){
+if($_POST['actualizar'] and $_POST['porcentaje'] and $_POST['almacenDestino']){
 
 
 
@@ -22,14 +22,14 @@ if($_POST['actualizar'] and $_POST['porcentaje'] and $_POST['almacenDestino1']){
 //**************************************SI NO EXISTE EN EXISTENCIAS DALOS DE ALTA********************
 
 $sSQL3= "Select * From catalogoBD WHERE
-    entidad='".$entidad."' and departamento='".$_POST['almacenDestino1']."' and gpoProducto='".$_POST['gpoProducto']."' ";
+    entidad='".$entidad."' and departamento='".$_POST['almacenDestino']."' and gpoProducto='".$_POST['gpoProducto']."' ";
 $result3=mysql_db_query($basedatos,$sSQL3);
 $myrow3 = mysql_fetch_array($result3);
 
 
 
 if(!$myrow3['departamento'] ){
-$sSQL3d= "Select * From almacenes WHERE   entidad='".$entidad."' and almacen='".$_POST['almacenDestino1']."' ";
+$sSQL3d= "Select * From almacenes WHERE   entidad='".$entidad."' and almacen='".$_POST['almacenDestino']."' ";
 $result3d=mysql_db_query($basedatos,$sSQL3d);
 $myrow3d = mysql_fetch_array($result3d);
 
@@ -37,7 +37,7 @@ $myrow3d = mysql_fetch_array($result3d);
 $agrega = "INSERT INTO catalogoBD (
 departamento,usuario,porcentaje,fecha,entidad,gpoProducto,descripcionDepartamento,almacenPrincipal
 ) values (
-'".$_POST['almacenDestino1']."',
+'".$_POST['almacenDestino']."',
 '".$usuario."',
     '".$_POST['porcentaje']."',
         '".$fecha1."',
@@ -54,7 +54,7 @@ echo mysql_error();
 //*********************************************
 
 echo '<script>
-//window.alert( "REGISTRO AGREGADO ");
+window.alert( "REGISTRO AGREGADO ");
    window.opener.document.forms["form2"].submit();
     self.close();
 </script>';
@@ -73,7 +73,7 @@ usuario='".$usuario."',fecha='".$fecha1."'
 WHERE 
 entidad='".$entidad."'
     and
-departamento='".$_POST['almacenDestino1']."'
+departamento='".$_POST['almacenDestino']."'
     and
     gpoProducto='".$_POST['gpoProducto']."'
 
@@ -176,9 +176,9 @@ $estilos->styles();
 entidad='".$entidad."' AND
 activo='A'
 and
-stock='si'
-and
 beneficencia='si'
+and
+miniAlmacen='No'
 order by descripcion ASC";
 $rCombo=mysql_db_query($basedatos,$aCombo); ?>
         <select name="almacenDestino1"  id="almacenDestino" onChange="this.form.submit();"/>

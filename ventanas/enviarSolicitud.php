@@ -162,7 +162,41 @@ $keyPA=$_POST['keyPA'];
 $precioSugerido=$_POST['precioSugerido'];
 $tipoEntrada=$_POST['tipoEntrada'];
 
+        $q4 = "
 
+    INSERT INTO contadorTransaccionesKardex(contador, usuario,entidad)
+    SELECT(IFNULL((SELECT MAX(contador)+1 from contadorTransaccionesKardex where entidad='".$entidad."'), 1)), '".$usuario."','".$entidad."'
+
+    ";
+    mysql_db_query($basedatos,$q4);
+    echo mysql_error();
+
+    $sSQL= "SELECT max(contador) as topeMaximo from contadorTransaccionesKardex where entidad='".$entidad."' and usuario='".$usuario."'";
+    $result=mysql_db_query($basedatos,$sSQL);
+    $myrow = mysql_fetch_array($result);
+    $numSolicitud=$myrow['topeMaximo'];
+
+
+    
+    
+    
+
+$sSQL3ae= "
+	SELECT 
+almacen
+FROM
+almacenes
+where
+entidad='".$entidad."'
+    and
+    centroDistribucion='si'  ";
+$result3ae=mysql_db_query($basedatos,$sSQL3ae);
+$myrow3ae = mysql_fetch_array($result3ae);    
+    
+    
+    
+    
+    
 
 $q1 = "UPDATE compras
     set 
@@ -220,6 +254,9 @@ $porcentajeParticular=($costo[$i]*$myrow3['porcentajeParticular'])/100;
 $porcentajeAseguradora=($costo[$i]*$myrow3['porcentajeAseguradora'])/100;
 
 
+
+
+
 if($keyPA[$i]!=NULL){
 $q1a = "INSERT INTO precioArticulos 
 (codigo,costo,usuario,fecha,hora,entidad,keyPA,ID_EJERCICIO,status,
@@ -238,6 +275,8 @@ echo mysql_error();
 
 
 //*******************ACTUALIZO EXISTENCIAS***********************
+
+############DEPRECATED##########
 $sSQL8ac= "
 SELECT * 
 FROM
@@ -255,30 +294,112 @@ if($myrow8ac['cajaCon']>0){
 }else{
     $ct=$cantidad[$i];
 }
+################################
+$ct=$cantidad[$i];
 //****************************************************************
 
 
 
 
 
-$sSQL3ae= "
-	SELECT 
-almacen
-FROM
-almacenes
-where
-entidad='".$entidad."'
-    and
-    centroDistribucion='si'  ";
-$result3ae=mysql_db_query($basedatos,$sSQL3ae);
-$myrow3ae = mysql_fetch_array($result3ae);
 
 
-
-
-
+####DEPRECATED######
+/*
 $karticulos=new kardex();
 $karticulos-> movimientoskardex('entrada',$ct,'ENTRADA POR COMPRAS',$tipoEntrada[$i],$usuario,$fecha1,$hora1,$myrow3ae['almacen'],$_GET['departamento'],$keyPA[$i],$myrow3a['codigo'],$entidad,$basedatos);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+###########AJUSTE MANUAL DE KARDEX#############
+$sSQL8acd= "
+SELECT * 
+FROM
+conceptoinventarios
+WHERE
+
+codigo='01'
+";
+$result8acd=mysql_db_query($basedatos,$sSQL8acd);
+$myrow8acd = mysql_fetch_array($result8acd);
+
+//******************CUANTO HABIA EN EXISTENCIAS***********
+     $sSQL8ac1e= "
+SELECT sum( cantidad) as entrada
+FROM
+articulosExistencias
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$myrow3a['codigo']."'
+    and
+      status='ready'
+  
+";
+$result8ac1e=mysql_db_query($basedatos,$sSQL8ac1e);
+$myrow8ac1e = mysql_fetch_array($result8ac1e);
+echo mysql_error();
+
+    $sSQL8acb= "
+SELECT * 
+FROM
+precioArticulos
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$myrow3a['codigo']."'
+    order by keyC DESC
+";
+$result8acb=mysql_db_query($basedatos,$sSQL8acb);
+$myrow8acb = mysql_fetch_array($result8acb);
+
+
+  $q1ab = "INSERT INTO kardex 
+(kc,evento,descripcion,descripcionevento,naturaleza,usuario,fecha,hora,entidad,
+keyPA,almacenSolicitante,almacenDestino,costo,cantidad,cantidadtotal,
+descripcionArticulo,existencia,existenciaTotal,otro,gpoProducto,tipoMovimiento,
+almacenConsumo,io,cajaCon,status,cbarra,numSolicitud)
+values
+('".$myrow3a['codigo']."','".$myrow8acd['codigo']."',
+    '".$myrow8acd['tipoMovimiento']."',
+    '".$myrow8acd['descripcion']."','".$myrow8acd['naturaleza']."',
+        '".$usuario."','".$fecha1."',
+        '".$hora1."',
+    '".$entidad."','".$myrow8ac['keyPA']."','".$myrow3ae['almacen']."',
+        '".$myrow3ae['almacen']."',
+        '".$myrow8acb['costo']."',
+        '".$cantidad[$i]."','".$cantidad[$i]."','".$myrow8ac['descripcion']."','".$myrow8ac1e['entrada']."',
+            '".$myrow8ac1e['entrada']."',
+        '".$myrow8acd['otro']."','".$myrow8ac['gpoProducto']."',
+            '".$myrow8acd['tipoMovimiento']."',
+            '".$myrowk['almacenConsumo']."','ENTRADA',
+                '".$myrow8ac['cajaCon']."','final','".$myrow8ac['cbarra']."',
+                '".$numSolicitud."'
+         )";
+
+mysql_db_query($basedatos,$q1ab);
+echo mysql_error();
+//CIERRO AFECTACION DE KARDEX*******
+
+
+
+
+
+
+
+
+
 
 
 
@@ -320,26 +441,279 @@ echo mysql_error();
 
 //**********conversion a unidades***********
 $entrance=new entradas();
-$entrance=$entrance->entradaInventarios($almacen,$fecha1,$hora1,$_GET['id_factura'],$usuario,$entidad,$basedatos);
+$entrance=$entrance->entradaInventarios($costo,$numSolicitud,'01','si',$almacen,$fecha1,$hora1,$_GET['id_factura'],$usuario,$entidad,$basedatos);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ACTUALIZA PRECIOS
+
+    
+    
+//TODOS articulos en request
+ $sSQL1= "SELECT
+* 
+FROM 
+precioArticulos
+where
+entidad='".$entidad."'
+   and
+    status='request'
+
+";
+
+$result1=mysql_db_query($basedatos,$sSQL1);
+while($myrow1 = mysql_fetch_array($result1)){
+$codigo+=1;
+$a+=1;
+
+
+if($col){
+$color = '#FFCCFF';
+$col = "";
+} else {
+$color = '#FFFFFF';
+$col = 1;
+}
+
+//QUIERO SABER EL GRUPO
+$sSQL1a= "SELECT
+* 
+FROM 
+articulos
+where
+entidad='".$entidad."'
+    and
+codigo='".$myrow1['codigo']."'
+";
+
+$result1a=mysql_db_query($basedatos,$sSQL1a);
+$myrow1a = mysql_fetch_array($result1a);
+$grupo=$myrow1a['gpoProducto'];
+
+$sSQL1act= "SELECT
+* 
+FROM 
+gpoProductos
+where
+
+codigoGP='".$grupo."'
+";
+
+$result1act=mysql_db_query($basedatos,$sSQL1act);
+$myrow1act = mysql_fetch_array($result1act);
+
+//SI TRAE PRECIO SUGERIDO LO RESPETO
+if( $myrow1act['afectaPS']=='si' and $myrow1['precioSugerido']>0  ){
+
+
+$sSQL7a= "Select * From articulosPrecioNivel where entidad='".$entidad."' 
+and
+codigo='".$myrow1['codigo']."'
+";
+$result7a=mysql_db_query($basedatos,$sSQL7a); 
+while($myrow7a = mysql_fetch_array($result7a)){
+    
+    //actualizar todo************************************
+
+
+$porcentajePS=1-round(($myrow7a['nivel1']/$myrow7a['nivel3']),2);
+$nivel1=$myrow1['precioSugerido'];
+$nivel3=$nivel1+($nivel1*$porcentajePS);
+
+
+$agrega = "UPDATE precioArticulos set
+status='final'
+where
+entidad='".$entidad."'
+    and
+codigo='".$myrow7a['codigo']."'
+and
+status='request'
+order by  keyC DESC
+";
+
+mysql_db_query($basedatos,$agrega);
+echo mysql_error();
+
+
+
+    $q = "insert into historialPrecios
+(
+codigo,precioPaquete1,
+precioPaquete3,
+nivel1,
+nivel3,
+id_medico,
+keyPA,almacen,usuario,fecha,hora,entidad)
+values
+('".$_GET['codigo']."','".$precioPaquete1[$i]."','".$precioPaquete3[$i]."',
+    '".$nivel1."','".$nivel3."', '".$id_medico[$i]."','".$_GET['keyPA']."','".$myrow7a['almacen']."','".$usuario."','".$fecha."','".$hora."','".$entidad."')";
+mysql_db_query($basedatos,$q);
+echo mysql_error();
+
+$agrega1 = "UPDATE articulosPrecioNivel set
+nivel1='".$nivel1."',
+    nivel3='".$nivel3."'
+where
+entidad='".$entidad."'
+    and
+codigo='".$myrow7a['codigo']."' 
+and
+almacen='".$myrow7a['almacen']."'
+";
+
+mysql_db_query($basedatos,$agrega1);
+echo mysql_error();
+//****************************************************
+}
+
+
+
+}else{ //NO TRAE PRECIO SUGERIDO
+    
+
+//verificar si tiene politicas de precio
+$sSQL1b= "SELECT
+* 
+FROM 
+politicasPrecios
+where 
+entidad='".$entidad."'    
+and
+gpoProducto='".$grupo."' 
+";
+
+$result1b=mysql_db_query($basedatos,$sSQL1b);
+$myrow1b = mysql_fetch_array($result1b);
+
+
+
+
+
+
+if( $myrow1b['rangoInicial']>0){
+//AHORA ME TRAIGO EL CODIGO QUE ESTA EN LOS ALMACENES
+
+    $sSQL7a= "Select * From articulosPrecioNivel where entidad='".$entidad."' 
+and
+codigo='".$myrow1['codigo']."'
+
+";
+$result7a=mysql_db_query($basedatos,$sSQL7a); 
+while($myrow7a = mysql_fetch_array($result7a)){
+    
+
+    
+    
+
+
+$sSQL1bd= "SELECT
+* 
+FROM 
+politicasPrecios
+where 
+entidad='".$entidad."'    
+and
+gpoProducto='".$grupo."' 
+    and
+     '".$myrow1['costo']."' 
+         between rangoInicial and rangoFinal
+        
+";
+
+$result1bd=mysql_db_query($basedatos,$sSQL1bd);
+$myrow1bd = mysql_fetch_array($result1bd);
+    
+
+    
+    //actualizar todo************************************
+    if($myrow1bd['porcentaje']>0 and $myrow1['costo']>0){
+
+
+
+        
+        
+$porcentajePS=0.100;
+$nivel1=($myrow1['costo']+($myrow1['costo']*$myrow1bd['porcentaje'])/100);
+//echo '<br>';
+$nivel3=$nivel1+($nivel1*$porcentajePS);
+//echo '<br>';
+
+
+$agrega = "UPDATE precioArticulos set
+status='final'
+where
+entidad='".$entidad."'
+    and
+codigo='".$myrow7a['codigo']."'
+and
+status='request'
+order by  keyC DESC
+";
+
+mysql_db_query($basedatos,$agrega);
+echo mysql_error();
+
+
+
+    $q = "insert into historialPrecios
+(
+codigo,precioPaquete1,
+precioPaquete3,
+nivel1,
+nivel3,
+id_medico,
+keyPA,almacen,usuario,fecha,hora,entidad)
+values
+('".$myrow7a['codigo']."','','',
+    '".round($nivel1)."','".round($nivel3)."', '','".$myrow7a['keyPA']."','".$myrow7a['almacen']."','".$usuario."','".$fecha."','".$hora."','".$entidad."')";
+mysql_db_query($basedatos,$q);
+echo mysql_error();
+
+$agrega1 = "UPDATE articulosPrecioNivel set
+nivel1='".round($nivel1)."',
+    nivel3='".($nivel3)."'
+where
+entidad='".$entidad."'
+    and
+codigo='".$myrow7a['codigo']."' 
+and
+almacen='".$myrow7a['almacen']."'
+";
+
+mysql_db_query($basedatos,$agrega1);
+echo mysql_error();
+//****************************************************
+}
+}  
+}
+
+
+
+}//no trae precio sugerido
+}
+
+
 //******************************************
 } 
 
-
-
-
-
-
-
-
-
-
-echo '
+?>
 <script>
 window.alert("Factura Enviada");
 window.opener.document.forms["form1"].submit();
 window.close();
-</script>';
-
+</script>
+<?php 
 }
 ?>
 
@@ -1174,7 +1548,7 @@ echo '$'.number_format($total,2);
      
 	  if( $TOTAL>-1 and  $TOTAL<1){ ?>
 	  <br>
-      <input name="send" type="submit" src="../imagenes/btns/sendsolicitud.png" id="send" value="Enviar Solicitud" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas enviar la solicitud?') == false){return false;}"  <?php if($total>1 ){ echo 'disabled=""';}?>/>
+      <input name="send" type="Submit" value="Enviar Solicitud" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas enviar la solicitud?') == false){return false;}"  />
        </br>
        <?php } ?>
 	  </label>

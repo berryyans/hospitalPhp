@@ -31,17 +31,32 @@ $estilos->styles();
 <body>
 <p align="center">&nbsp;</p>
 <form id="form1" name="form1" method="post" action="">
-  <table width="442" class="table table-striped">
+    
+    
+    <div id="divContainer">
+    <table width="200"  class="formatHTML5">    
+
     <tr>
-      <th width="436" height="19"  scope="col"><div align="left" >
-        <div align="center">Descripcion del Paquete</div>
+        
+<th width="5"   scope="col"><div align="left" >
+        <div align="left">#</div>
+      </div></th>        
+        
+      <th width="150"   scope="col"><div align="left" >
+        <div align="left">Descripcion del Paquete</div>
+      </div></th>
+
+      <th width="50"  scope="col"><div align="left" >
+        <div align="left">Status</div>
       </div></th>
     </tr>
 
       <?php 
 
 	 
-$sSQL11= "Select * from paquetes where entidad='".$entidad."' ORDER BY descripcionPaquete ASC ";
+$sSQL11= "Select * from paquetes where entidad='".$entidad."'
+    
+ORDER BY descripcionPaquete ASC ";
 
 
 
@@ -49,22 +64,77 @@ $result11=mysql_db_query($basedatos,$sSQL11);
 	
 
 while($myrow11 = mysql_fetch_array($result11)){ 
+$a+=1;
 
 
 
+##VALIDACION DE PAQUETES
+     if($myrow11['fechaInicial']!=null or $myrow11['fechaFinal']!=null or $myrow11['infinito']=='si'){
+         
+         #POR INFINTIO
+         if($myrow11['infinito']=='si'){
+             $on=TRUE;
+         }else{
+          
+          #POR FECHAS
+          if($fecha1>=$myrow11['fechaInicial']   and $myrow11['fechaFinal']>=$fecha1){
+              $on=TRUE;
+          }else{
+              $on=FALSE;
+          }
+             
+             
+         }
+         
+         
+         
+     }else{
+         $on=FALSE;
+     }
 
-//***********traigo cuenta contable
 
 
-//****************************Terminan las validaciones
 ?>
 <tr  >
-      <td height="24" bgcolor="<?php echo $color;?>" >
+    
+    
+    <td><?php echo $a;?></td>    
+    
+    
+    
+      <td  >
+        <label>
+            
+            
+        </label>
+<?php if($on===TRUE){          ?>
+<a href="javascript:regresar('<?php echo $myrow11['codigoPaquete'];  ?>','<?php echo $myrow11['descripcionPaquete']; ?>');">
+    <?php echo $myrow11['descripcionPaquete'];  ?>
+</a>
+<?php }else{
+     echo $myrow11['descripcionPaquete'];  
+}?>
+      </td>
+    
+    
+          <td   >
         <label></label>
-       <a href="javascript:regresar('<?php echo $myrow11['codigoPaquete'];  ?>','<?php echo $myrow11['descripcionPaquete']; ?>');"><?php echo $myrow11['descripcionPaquete'];  ?></a></td>
+
+ <?php if($on===TRUE){        
+     echo 'Activo';
+ } else{
+     echo '---';
+ }
+ 
+ ?>
+
+      </td>
+    
+    
     </tr>
     <?php }?>
   </table>
+    </div>
   <tr>
     <td>
 </form>

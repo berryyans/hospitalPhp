@@ -290,15 +290,17 @@ Ultima Actualizacion:   <?php echo cambia_a_normal($myrowf['fecha']);?>
 $sSQLy= "
 SELECT sum(cantidad) as entradas 
 FROM
-articulosExistencias
+kardex
 WHERE
 entidad='".$entidad."'
 and
-codigo='".$myrowf['codigo']."'
+kc='".$myrowf['codigo']."'
     and
-status='sold'
+status='final'
 and
 fecha<'".$_GET['fechaInicial']."'
+    and
+    io='ENTRADA'
 ";
 
 
@@ -402,6 +404,8 @@ and
 numSolicitud='".$myrow['numSolicitud']."'
 and
 IO='ENTRADA'
+AND
+kc = '".$myrowf['codigo']."' 
   
 ";
 $result1=mysql_db_query($basedatos,$sSQL1);
@@ -419,6 +423,8 @@ and
 numSolicitud='".$myrow['numSolicitud']."'
 and
 (IO='SALIDA' or IO='salida')
+AND
+kc = '".$myrowf['codigo']."' 
   
 ";
 $result1a=mysql_db_query($basedatos,$sSQL1a);
@@ -433,7 +439,8 @@ WHERE
 entidad='".$entidad."'
 and
 numSolicitud='".$myrow['numSolicitud']."'
-      
+AND
+kc = '".$myrowf['codigo']."'       
   
 ";
 $result2=mysql_db_query($basedatos,$sSQL2);

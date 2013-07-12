@@ -208,7 +208,19 @@ $i=0;
 while($myrowy = mysql_fetch_array($resulty)){
 $i+=1;				
 
-	
+       
+
+//CAJA CON ?
+$sSQL3= "
+SELECT *
+FROM
+articulos
+WHERE 
+entidad='".$entidad."'
+and
+codigo='".$myrowy['codigo']."' ";
+$result3=mysql_db_query($basedatos,$sSQL3);
+$myrow3 = mysql_fetch_array($result3);  	
 
 
 
@@ -294,6 +306,51 @@ echo mysql_error();
 
 
 $r+=1;
+
+}elseif($myrow3['cajaCon']>0){
+$q1a = "DELETE FROM articulosExistencias 
+WHERE
+keyAE='".$myrowy['keyAE']."'
+";
+mysql_db_query($basedatos,$q1a); 
+echo mysql_error();  
+
+
+//**********EMPIEZO A HACER CONVERSIONES***********
+
+
+    for($r=0;$r< $myrow3['cajaCon'];$r++){
+        
+$sSQL13= "
+SELECT *
+FROM
+precioArticulos
+WHERE 
+entidad='".$entidad."'
+and
+codigo='".$coder[$j]."' order by keyC DESC";
+$result13=mysql_db_query($basedatos,$sSQL13);
+$myrow13 = mysql_fetch_array($result13);        
+        
+        
+//INSERT
+        $agrega = "INSERT INTO articulosExistencias (
+codigo,keyPA,gpoProducto,cantidad,tipoVenta,entidad,tipoMov,fecha,hora,usuario,almacen,factura,tipo,status,costo,nOrden,keyAEMain,numSolicitud)
+values
+('".$myrowy['codigo']."','".$myrowy['keyPA']."','".$myrowy['gpoProducto']."',1,'Granel','".$entidad."','entrada',
+    '".$fecha1."','".$hora1."','".$usuario."','".$_POST['almacenDestino']."','".$factura."','".$myrowy['tipo']."','ready','".$myrowy['costo']."',
+'".$myrowy['nOrden']."','".$myrowy['keyAE']."','".$myrowy['numSolicitud']."')";
+mysql_db_query($basedatos,$agrega);
+echo mysql_error();
+
+    
+}
+
+//*********TERMINO DE HACER CONVERSIONES***********
+
+
+
+$r+=1;
 }else{
  $q1a = "UPDATE articulosExistencias set 
    almacen='".$_POST['almacenDestino']."',
@@ -334,7 +391,10 @@ echo '<div class="success">Articulos Transferidos!</div>';
 $entrance=new entradas();
 $entrance=$entrance->entradaInventarios($costo,$numSolicitud,$codigoInv,$flag,$_POST['almacenDestino'],$fecha1,$hora1,$_GET['id_factura'],$usuario,$entidad,$basedatos);
 
-
+echo '<script>';
+echo 'window.alert("Inventario Ajustado!");';
+echo 'window.close();';
+echo '</script>';
 }
 ?>
 
@@ -386,12 +446,148 @@ $hora = date("g:i a");
 if($_POST['delete'] ){
 $codigo=$_POST['codec'];
 $c=count($_POST['codec']);
+$ebb=$_POST['ebb'];
+//print_r($ebb);
+
+//**********GENERO EL NUMERO DE SOLICITUD ************//
+    
+        $q = "
+
+    INSERT INTO solicitudes(numSolicitud,usuario,fecha,entidad,keyClientesInternos,hora)
+    SELECT(IFNULL((SELECT MAX(numSolicitud)+1 from solicitudes where entidad='".$entidad."'), 1)), '".$usuario."',
+    '".$fecha1."','".$entidad."','".$_GET['keyClientesInternos']."','".$hora1."' ";
+    mysql_db_query($basedatos,$q);
+    echo mysql_error();
+    
+    
+    $sSQL333= "SELECT
+    numSolicitud
+    FROM solicitudes
+    WHERE
+    entidad='".$entidad."'
+    and
+    usuario ='".$usuario."'
+    order by keySolicitudes DESC
+    ";
+
+    $result333=mysql_db_query($basedatos,$sSQL333);
+    $myrow333 = mysql_fetch_array($result333);
+    $myrow333['NS']=$myrow333['numSolicitud'];
+    if(!$myrow333['NS']){
+    $myrow333['NS']=1;
+    }
+    
+    
+
+        $q4 = "
+
+    INSERT INTO contadorTransaccionesKardex(contador, usuario,entidad)
+    SELECT(IFNULL((SELECT MAX(contador)+1 from contadorTransaccionesKardex where entidad='".$entidad."'), 1)), '".$usuario."','".$entidad."'
+
+    ";
+    mysql_db_query($basedatos,$q4);
+    echo mysql_error();
+
+    $sSQL= "SELECT max(contador) as topeMaximo from contadorTransaccionesKardex where entidad='".$entidad."' and usuario='".$usuario."'";
+    $result=mysql_db_query($basedatos,$sSQL);
+    $myrow = mysql_fetch_array($result);
+    $numSolicitud=$myrow['topeMaximo'];
+
+    
+    
+    //************************************
+
+
+
 if($c>0){
 
 for($i=0;$i<$c;$i++){
 
 
+    
+    
+    
+###########AJUSTE MANUAL DE KARDEX#############
+$sSQL8ac= "
+SELECT * 
+FROM
+articulos
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$codigo[$i]."'
+";
+$result8ac=mysql_db_query($basedatos,$sSQL8ac);
+$myrow8ac = mysql_fetch_array($result8ac);
+    
+$sSQL8acd= "
+SELECT * 
+FROM
+conceptoinventarios
+WHERE
 
+codigo='08'
+";
+$result8acd=mysql_db_query($basedatos,$sSQL8acd);
+$myrow8acd = mysql_fetch_array($result8acd);
+
+//******************CUANTO HABIA EN EXISTENCIAS***********
+     $sSQL8ac1e= "
+SELECT sum( cantidad) as entrada
+FROM
+articulosExistencias
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$codigo[$i]."'
+    and
+      status='ready'
+  
+";
+$result8ac1e=mysql_db_query($basedatos,$sSQL8ac1e);
+$myrow8ac1e = mysql_fetch_array($result8ac1e);
+echo mysql_error();
+
+    $sSQL8acb= "
+SELECT * 
+FROM
+precioArticulos
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$codigo[$i]."'
+    order by keyC DESC
+";
+$result8acb=mysql_db_query($basedatos,$sSQL8acb);
+$myrow8acb = mysql_fetch_array($result8acb);
+
+
+  $q1ab = "INSERT INTO kardex 
+(kc,evento,descripcion,descripcionevento,naturaleza,usuario,fecha,hora,entidad,
+keyPA,almacenSolicitante,almacenDestino,costo,cantidad,cantidadtotal,
+descripcionArticulo,existencia,existenciaTotal,otro,gpoProducto,tipoMovimiento,
+almacenConsumo,io,cajaCon,status,cbarra,numSolicitud)
+values
+('".$codigo[$i]."','".$myrow8acd['codigo']."',
+    '".$myrow8acd['tipoMovimiento']."',
+    '".$myrow8acd['descripcion']."','".$myrow8acd['naturaleza']."',
+        '".$usuario."','".$fecha1."',
+        '".$hora1."',
+    '".$entidad."','".$myrow['keyPA']."','".$_POST['almacenDestino']."',
+        '".$_POST['almacenDestino']."',
+        '".$myrow8acb['costo']."',
+'".$myrow8ac1e['entrada']."','".$ebb[$i]."','".$myrow['descripcionArticulo']."','".$myrow8ac1e['entrada']."',
+            '".$myrow8ac1e['entrada']."',
+        '".$myrow8acd['otro']."','".$myrow['gpoProducto']."',
+            '".$myrow8acd['tipoMovimiento']."',
+            '".$myrowk['almacenConsumo']."','SALIDA',
+                '".$myrow8ac['cajaCon']."','final','".$myrow8ac['cbarra']."',
+                '".$numSolicitud."'
+         )";
+
+mysql_db_query($basedatos,$q1ab);
+echo mysql_error();
+//CIERRO AFECTACION DE KARDEX*******
 
 $q4 = "DELETE FROM articulosExistencias WHERE 
       entidad='".$entidad."'
@@ -457,8 +653,12 @@ echo '<div class="success">Se quitaron articulos de este almacen!</div>';
     echo '<div class="error">Escoje el articulo para remover existencias!</div>';
 }
 
+//REGISTRAR SALIDA A GRANEL
 
-
+echo '<script>';
+echo 'window.alert("Quitado!");';
+echo 'window.close();';
+echo '</script>';
 
 
 }
@@ -642,7 +842,7 @@ if($_POST['almacenDestino']==$resCombo['almacen']){
       <th width="400"  align="left">Descripcion</th>
 
   
-
+      <th width="10"  align="left">CajaCon</th>
       <th width="10"  align="left">ECendis</th>
       <th width="10"  align="left">Cantidad</th>
       <th width="10"  align="left">EBot</th>
@@ -845,7 +1045,17 @@ codigo='".$myrow1['codigo']."'
 $result8acb=mysql_db_query($basedatos,$sSQL8acb);
 $myrow8acb = mysql_fetch_array($result8acb);
 
-
+    $sSQL8ace= "
+SELECT * 
+FROM
+almacenes
+WHERE
+entidad='".$entidad."'
+and
+almacen='".$_POST['almacenDestino']."'
+";
+$result8ace=mysql_db_query($basedatos,$sSQL8ace);
+$myrow8ace = mysql_fetch_array($result8ace);
 
 
 
@@ -904,11 +1114,17 @@ $existenciaCendis=$myrow8ac1e['entrada']-$myrow8ac1s['salida']
         <td  ><?php echo $myrow1['keyE']; ?>
           <input name="codigoAlfa[]" type="hidden"  value="<?php echo $codigo=$myrow1['codigo']; ?>" />
     </td>
+        
+    
+        
+        
       <td >
           <input name="keyPA[]" type="hidden" value="<?php echo $myrow1['keyPA']; ?>" />
           <input name="gpoProducto[]" type="hidden" value="<?php echo $myrow8ac['gpoProducto']; ?>" />
-          <input name="cajaCon[]" type="hidden" value="<?php echo $myrow8ac['cajaCon']; ?>" />
           
+          <?php if( $myrow8ace['medicamentosSueltos']){?>
+          <input name="cajaCon[]" type="hidden" value="<?php echo $myrow8ac['cajaCon']; ?>" />
+          <?php } ?>
           
           
           
@@ -958,7 +1174,17 @@ Editar
         
         
         
+        <td>
+        <?php 
         
+        if( $myrow8ace['medicamentosSueltos']){
+        if($myrow8ac['cajaCon']>0){
+          echo $myrow8ac['cajaCon'];
+        }else{
+            echo '---';
+        }}
+        ?>
+        </td>
         
     
         
@@ -1042,11 +1268,12 @@ echo mysql_error();
 
 
 if($existenciaBotiquinGranel>0){
-echo $existenciaBotiquinGranel/$myrow1['cantidadSurtir'];
+echo $ebb=$existenciaBotiquinGranel/$myrow1['cantidadSurtir'];
 }else{
-    echo $existenciaBotiquin;
+    echo $ebb=$existenciaBotiquin;
 }
 ?>
+            <input name="ebb[]" type="hidden" value="<?php echo $ebb; ?>" />
 </span></td> 
         
 

@@ -50,7 +50,19 @@ function valida(F) {
   <script type="text/javascript" src="../calendario/calendar-setup.js"></script> 
 
 
+<script>
 
+var win = null;
+function nueva(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+if(win.window.focus){win.window.focus();}
+}
+
+</script>
 
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
@@ -94,13 +106,13 @@ $estilos-> styles();
    
    <h1>REPORTE HONORARIOS MEDICOS</h1>
    
-   <h3><?php //echo $_POST['medico'];?></h3>
+
    
 
    <!--<table width="500" class="table-forma">-->
    <table width="500" class="table-template-left">
     <tr >
-       <td><span >Fecha Inicial </span></td>
+       <td><span >Fecha Inicial</span></td>
        <td>
        <input name="fechaInicial" type="text"  id="campo_fecha"
 	  value="<?php 
@@ -177,9 +189,26 @@ $estilos-> styles();
    
    <br>
    <br>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
 <?php if($_POST['mostrar']!=NULL){ ?>
+   <h3>PACIENTES EXTERNOS</h3>       
    <!--<table width="930" class="table table-striped">-->
    <table width="930" class="table-template-left">
+
+       
+             
+       
+   
      <tr >
          
                   <th width="2" >
@@ -188,7 +217,7 @@ $estilos-> styles();
          
          
          <th width="60" >
-         <div align="left">FechaCargo</div>
+         <div align="left">FechaCierre</div>
        </th>
          
        <th width="52" >
@@ -200,42 +229,27 @@ $estilos-> styles();
     
  <th width="400" ><div align="left" >TipoPago</div></th>    
  <!--<th width="60" ><div align="left" >TipoCobro</div></th>-->
- <!--th width="66" ><div align="left" >StatusCuenta</div></th-->
+ <th width="66" ><div align="left" >StatusCuenta</div></th>
     <th width="60" ><div align="left" >Rec/Mov</div></th>
    
  <th width="60" ><div align="right" >Importe</div></th>   
    
       </tr>
 <?php 	
-$medico=$_POST['nomMedico'];
+$medico=$_POST['medico'];
 
     
  
 $ssql = "select * from cargosCuentaPaciente where 
-(   
-entidad='".$entidad."'  
-    
-and
-descripcionMedico like '%$medico%'
-and
-(fechaCargo>= '".$_POST['fechaInicial']."' and fechaCargo<='".$_POST['fechaFinal']."')
-    and
 
-folioVenta!=''
-and
-fechaCargo!=''
-and
-(tipoPaciente='interno' or tipoPaciente='urgencias'))
-OR
-(   
 entidad='".$entidad."'  
     
 and
-descripcionMedico like '%$medico%'
+medico='".$medico."'
 and
 (fechaCierre>= '".$_POST['fechaInicial']."'  and fechaCierre<='".$_POST['fechaFinal']."')
 and
-tipoPaciente='externo' )
+tipoPaciente='externo' 
 
 
 
@@ -265,7 +279,6 @@ group by numRecibo
 ";
 $result1a=mysql_db_query($basedatos,$sSQL1a);
 $myrow1a = mysql_fetch_array($result1a);
-
 
 
 
@@ -381,7 +394,7 @@ echo 'Particular';
    </td-->      
        
        
-    <!--td   align="left" >
+    <td   align="left" >
 <?php
 if($myrow['naturaleza']=='C'){
 echo 'Normal';
@@ -390,7 +403,7 @@ echo 'Devolucion'    ;
 }
 ?>	   
 
-	</td-->        
+	</td>        
         
         
         
@@ -439,7 +452,7 @@ $devs[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cant
 
     
       </tr>
-     <?php }}?>
+     <?php }?>
    </table>
       <br />
       
@@ -508,19 +521,587 @@ $devs[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cant
  
  
  </table>
-      
+<?php 
+$PM=$imp[0];$DEVM=$devs[0];
+$imp[0]=NULL;
+$devs[0]=NULL;
+?>
       
       
       
    
    
    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <br>
+   <br>
+    <br>
+   <br>  
+      
+<h3>PACIENTES INTERNOS</h3>
+   
+
+   
+   
+
  <!--</div>-->
 </form>
 
+   <table width="930" class="table table-striped">
+     <tr >
+         
+                  <th width="2" >
+         <div align="left">#</div>
+    </th>
+
+      <th width="2" >
+         <div align="left">MovSis</div>
+    </th>         
+         
+         <th width="60" >
+         <div align="left">FechaCargo</div>
+       </th>
+         
+       <th width="52" >
+         <div align="left">Folio</div>
+      </th>
+       <th width="490" >
+           <div align="left">Paciente</div>
+    </th>
+    
+ <th width="400" ><div align="left" >TipoPago</div></th>    
+ <!--<th width="60" ><div align="left" >TipoCobro</div></th>-->
+ <th width="66" ><div align="left" >StatusCuenta</div></th>
+    <th width="60" ><div align="left" >Rec/Mov</div></th>
+   
+ <th width="60" ><div align="right" >Importe</div></th>   
+ <th width="60" ><div align="right" >StatusCuenta</div></th> 
+ <th width="60" ><div align="right" >StatusPago</div></th>     
+<th width="60" ><div align="right" >FechaPago</div></th>      
+     </tr>
+<?php 	
+
+
+    
+ 
+$ssql = "select * from cargosCuentaPaciente where 
+  
+entidad='".$entidad."'  
+    
+and
+medico='".$medico."'
+and
+(fechaCargo>= '".$_POST['fechaInicial']."' and fechaCargo<='".$_POST['fechaFinal']."')
+    and
+(tipoPaciente='interno' or tipoPaciente='urgencias')
+
+
+
+
+
+order by folioVenta,fechaCargo ASC";
+
+
+$result = mysql_db_query($basedatos,$ssql);
+
+while($myrow = mysql_fetch_array($result)){
+
+$totalRegistros+=1;
+
+$codigo=$code = $myrow['codigo'];
+
+
+
+  
+$sSQL1= "Select * From clientesInternos WHERE entidad='".$entidad."' and folioVenta='".$myrow['folioVenta']."' ";
+$result1=mysql_db_query($basedatos,$sSQL1);
+$myrow1 = mysql_fetch_array($result1);
+
+$sSQL1a= "Select numRecibo From cargosCuentaPaciente WHERE entidad='".$entidad."' 
+    and folioVenta='".$myrow['folioVenta']."' 
+        and numRecibo!=0
+group by numRecibo        
+";
+$result1a=mysql_db_query($basedatos,$sSQL1a);
+$myrow1a = mysql_fetch_array($result1a);
+
+
+
+
+
+
+?>
+      
+          <tr >
+              
+              
+<td align="left" >
+<?php 
+	echo $totalRegistros;
+	  ?>
+</td>
+   
+              
+
+<td align="left" >
+<?php 
+	echo $myrow['keyCAP'];
+	  ?>
+</td>              
+              
+              
+              
+<td align="left" >
+<?php 
+if($myrow['fechaCargo']!=NULL){
+	echo cambia_a_normal($myrow['fechaCargo']);
+}else{
+    echo '---';
+}
+	  ?>
+</td>
+              
+              
+<td align="left" >
+             
+             <?php 
+	echo $myrow['folioVenta'];
+	  ?></td>
+         
+
+
+
+
+
+<td align="left" >
+           <?php 
+
+
+
+echo utf8_decode($myrow1['paciente']);
+
+
+//echo $myrow['almacenSolicitante'];
+	  ?></td>
+
+       
+       
+<td align="left" >
+        <?php    
+if($myrow['tipoPaciente']=='externo'){        
+  $sSQLtp= "Select tipoPago,numRecibo From cargosCuentaPaciente WHERE entidad='".$entidad."' 
+    and folioVenta='".$myrow['folioVenta']."' 
+        and gpoProducto=''
+        and
+        tipoPago!=''
+group by tipoPago        
+";
+$resulttp=mysql_db_query($basedatos,$sSQLtp);
+$aa=NULL;
+while($myrowtp = mysql_fetch_array($resulttp)){        
+    
+        echo $myrowtp['tipoPago'];
+        echo '<br>';
+}  
+} else {
+    
+    $sSQL30= "Select * From clientes WHERE entidad='".$entidad."' and numCliente='".$myrow['seguro']."' ";
+$result30=mysql_db_query($basedatos,$sSQL30);
+$myrow30 = mysql_fetch_array($result30);
+    
+    if($myrow['cantidadAseguradora']>0 and $myrow['cantidadParticular']>0){
+         echo 'Particular, '.$myrow30['nomCliente'];
+    }else if($myrow['cantidadAseguradora']>0){
+echo $myrow30['nomCliente'];
+}
+else
+if($myrow['cantidadParticular']>0){
+    
+echo 'Particular';
+}
+}
+
+?>
+       </td>
+       
+       
+       
+       
+    <!--    
+<td align="left" >
+<?php
+if($myrow['cantidadAseguradora']>0){
+echo 'CxC';
+}
+
+if($myrow['cantidadParticular']>0){
+    
+
+if($myrow['cantidadAseguradora']>0){    
+echo ','; 
+}
+echo 'Particular';
+}
+?>	   
+
+	</td>       
+   </td-->      
+       
+       
+    
+    
+<td   align="left" >
+<?php
+
+//echo $myrow['naturaleza'];
+if($myrow['naturaleza']=='C'){
+echo 'Normal';
+}elseif($myrow['naturaleza']=='A'){
+echo 'Devolucion'    ;
+}
+?>	   
+
+</td>        
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+       
+<td align="left" >
+<?php 
+if($myrow['tipoPaciente']=='externo'){
+echo 'R'.$myrow1a['numRecibo'];
+}else{
+echo 'M'.$myrow['keyCAP'];    
+}
+?>	   
+
+	</td>
+
+        
+        
+        
+        
+<td align="right" >
+<?php
+
+
+
+if($myrow['naturaleza']=='C'){
+$imp[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+
+echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
+}elseif($myrow['naturaleza']=='A'){
+    echo '<div class="error">$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2).'</div>';
+$devs[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+}
+
+?>	   
+       
+	</td>        
+        
+
+    
+    
+<td align="right" >
+<?php
+
+
+
+        echo $myrow1['statusCuenta'];
+
+?>	  
+	</td>  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+<td align="center" >
+<?php
+
+
+if($myrow1['seguro']!='' and $myrow1['seguro']!='0'){
+$sSQLap= "
+SELECT *
+FROM
+facturasAplicadas
+WHERE
+entidad='".$entidad."'
+    and
+folioVenta='".$myrow['folioVenta']."'
+    
+";
+
+
+$resultap=mysql_db_query($basedatos,$sSQLap);
+$myrowap = mysql_fetch_array($resultap); 
+
+  if($myrowap['statusPago']=='pagado'){
+     // echo '<p style="color:blue;margin-left:20px;">Pagado</p> ';
+if($myrow['naturaleza']=='C'){
+$imp1[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+
+echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
+}elseif($myrow['naturaleza']=='A'){
+    //echo '<div class="error">$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2).'</div>';
+$devs1[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+}   
+    }elseif($myrowap['statusPago']){
+        echo $myrowap['statusPago'];
+    }else{
+        echo '---';
+    }
+    $tipoPago='seguro';
+    
+    
+    
+}else{
+    if($myrow1['statusCuenta']=='cerrada'){
+ //echo '<p style="color:green;margin-left:20px;">Pagado</p> ';
+ 
+ if($myrow['naturaleza']=='C'){
+$imp1[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+
+echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
+}elseif($myrow['naturaleza']=='A'){
+   // echo '<div class="error">$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2).'</div>';
+$devs1[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cantidad']);    
+}
+ 
+ 
+    }elseif($myrow1['statusCuenta']){
+        echo $myrow1['statusCuenta'];
+    }else{
+        echo '---';
+    }
+    $tipoPago='particular';
+}
+?>	  
+    
+	</td>       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<td align="center" >
+<?php     
+if($tipoPago=='seguro'){
+    if($myrowap['fechaPago']){
+echo cambia_a_normal($myrowap['fechaPago']);
+    }else{
+        echo '---';
+    }
+}else{
+    if($myrow1['fechaCierre']){
+    echo cambia_a_normal($myrow1['fechaCierre']);
+    }else{
+        echo '---';
+    }
+}
+?>
+    </td>  
+    
+    
+    
+    
+    
+      </tr>
+     <?php }?>
+   </table>
+      <br />
+      
+       <br />  
+      
+      
+ <table width="500" class="table table-striped">
+    
+     
+     
+     
+     
+     
+     
+   <tr >
+       
+    <th width="2" >
+    <div align="left">Usted debe pagar al medico </div>
+    </th>
+        
+    
+    <th width="2" >
+    <div align="right"><?php 
+
+	 echo '$'.number_format(($PM-$DEVM)+($imp1[0]-$devs[0]),2);
+
+	  ?></div>
+    </th>    
+   
+ </tr>
+     
+     
+     <tr >
+       
+    <th width="2" >
+    <div align="left"></div>
+    </th>
+        
+    
+    <th width="2" >
+    <div align="right"></div>
+    </th>    
+   
+ </tr>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <tr >
+       
+    <th width="2" >
+    <div align="left">Cargos</div>
+    </th>
+        
+    
+    <th width="2" >
+    <div align="right"><?php 
+
+	 echo '$'.number_format($imp[0],2);
+
+	  ?></div>
+    </th>    
+   
+ </tr>
+ 
+ 
+
+ 
+ 
+    <tr >
+       
+    <th width="2" >
+    <div align="left">Devoluciones</div>
+    </th>
+        
+    
+    <th width="2" >
+    <div align="right"><?php 
+
+	 echo '$'.number_format($devs[0],2);
+
+	  ?></div>
+    </th>    
+   
+ </tr> 
+ 
+ 
+ 
+ 
+     <tr >
+       
+    <th width="2" >
+    <div align="left">Totales</div>
+    </th>
+        
+    
+    <th width="2" >
+    <div align="right"><?php 
+
+	 echo '$'.number_format($imp[0]-$devs[0],2);
+
+	  ?></div>
+    </th>    
+   
+ </tr>
+ 
+ 
+ </table>      
+      <?php }?>
+ 
+</form>
+
+   <script type="text/javascript"> 
+    Calendar.setup({ 
+    inputField     :    "campo_fecha",     // id del campo de texto 
+    ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
+    button     :    "lanzador"     // el id del boton que lanzara el calendario 
+}); 
+ </script>
+   <script type="text/javascript"> 
+    Calendar.setup({ 
+    inputField     :    "campo_fecha1",     // id del campo de texto 
+    ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
+    button     :    "lanzador1"     // el id del boton que lanzara el calendario 
+}); 
+ </script>
+ 
+
 <div align="center">
 
-<?php /* ?>
   <script>
 		new Autocomplete("nomMedico", function() { 
 			this.setValue = function( id ) {
@@ -544,7 +1125,7 @@ $devs[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cant
 	</script>
 
 
-<?php */ ?>
+
 
 	<?php 
         echo '<br>';
@@ -552,20 +1133,14 @@ $devs[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cant
 	echo 'Se atendieron '.$totalRegistros.' pacientes!';
 	}
 	?>
-  <script type="text/javascript"> 
-    Calendar.setup({ 
-    inputField     :    "campo_fecha",     // id del campo de texto 
-    ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-    button     :    "lanzador"     // el id del boton que lanzara el calendario 
-}); 
- </script>
-   <script type="text/javascript"> 
-    Calendar.setup({ 
-    inputField     :    "campo_fecha1",     // id del campo de texto 
-    ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-    button     :    "lanzador1"     // el id del boton que lanzara el calendario 
-}); 
- </script>
+    
+     
+ <br>
+     <br>
+         <br>
+             <br
+ 
+
 </div>
 </div>
      <?php

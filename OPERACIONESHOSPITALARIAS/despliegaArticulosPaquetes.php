@@ -46,7 +46,7 @@ for($i=0;$i<=$_POST['flag'];$i++){
 
 
 
-$iva->iva($cantidad[$i],$codigo[$i],$precioPaquete1[$i],$basedatos);
+//$iva->iva($entidad,$cantidad[$i],$codigo[$i],$precioPaquete1[$i],$basedatos);
 
 if($codigo[$i] and $precioPaquete1[$i] ){
 
@@ -55,7 +55,7 @@ if($codigo[$i] and $precioPaquete1[$i] ){
 $sql="Update articulosPaquetes
 set
 precioPaquete1='".$precioPaquete1[$i]."',
-ivaPrecioPaquete1='".$iva->iva($cantidad[$i],$codigo[$i],$precioPaquete1[$i],$basedatos)."',
+ivaPrecioPaquete1='".$iva->iva($entidad,$cantidad[$i],$codigo[$i],$precioPaquete1[$i],$basedatos)."',
 precioPaquete3='".$precioPaquete3[$i]."',
 usuario='".$usuario."',
 fecha='".$fecha1."',
@@ -193,14 +193,15 @@ echo $nombreSeguro=$rNombre23['nomCliente'].'</br>';
 echo '<blink>'.$leyenda.'</blink>';
 ?> </span><span class="success">Nota Importante: Los precios deben estar SIN IVA (En Caso de llevar) </span></p>
 <form id="form2" name="form2" method="post" action="#" >
-  <table width="909" class="table table-striped" >
+  
+    
+    <div id="divContainer">
+    <table width="909"  class="formatHTML5">
       <tr>
         <th width="10"  ><div align="left"><span >#</span></div></th>
         <th width="310"  ><div align="left"><span >Descripcion</span></div></th>
         
-        <th width="50"  ><div align="left"><span >F. ini</span></div></th>
-       
-        <th width="50"  ><div align="left"><span >F. fin</span></div></th>       
+     
         <th width="53" ><div align="left"><span >PV</span></div></th>
         <th width="45"  ><div align="left"><span > Cantidad </span></div></th>
         <th width="47"  ><div align="left"><span > P Venta </span></div></th>
@@ -266,6 +267,27 @@ tipoConvenio='cantidad'
 $result5=mysql_db_query($basedatos,$sql5);
 $myrow5= mysql_fetch_array($result5);
 
+$sSQL40= "
+SELECT gpoProducto
+FROM
+articulos
+where 
+entidad='".$entidad."'
+and
+codigo='".$myrow['codigo']."'";
+$result40=mysql_db_query($basedatos,$sSQL40);
+$myrow40 = mysql_fetch_array($result40);
+
+
+$sSQL40b= "
+SELECT *
+FROM
+gpoProductos
+where 
+codigoGP='".$myrow40['gpoProducto']."'";
+$result40b=mysql_db_query($basedatos,$sSQL40b);
+$myrow40b = mysql_fetch_array($result40b);
+
 ?>
       
       
@@ -307,6 +329,9 @@ $myrow5= mysql_fetch_array($result5);
 	  } else {
 	  echo "El articulo existe en los convenios pero no en el inventario!!!";
 	  }
+          
+          echo '<br>';
+          echo $myrow40b['descripcionGP'];
 	  ?>
 
                 <br></br>
@@ -336,18 +361,7 @@ echo "---";
                
                
                      
-        <td ><?php 
-	  echo $myrow['fechaInicial']; 
-	  
-
-	  ?></td>
-
-               
-        <td ><?php 
-	  echo $myrow['fechaFinal']; 
-	  
-
-	  ?></td>         
+         
                
 
                
@@ -426,7 +440,7 @@ echo "---";
 	  $bandera+='1';
 	  }  //cierra while?>
   </table>
-    
+    </div>
     
     
     

@@ -6,11 +6,11 @@
 <?php require("/configuracion/clases/articulosReferidos.php"); ?>
 <?php
 $numeroPaciente=		$_GET['numeroE'];
-$seguro=				    $_GET['seguro'];
-$medico=					$_GET['medico'];
-$almacenSolicitante= $_GET['almacen'];
-$nCuenta=				$_GET['nCuenta'];
-$tipoCargo=				$_GET['tipoCargo'];
+$seguro=			$_GET['seguro'];
+$medico=			$_GET['medico'];
+$almacenSolicitante=            $_GET['almacen'];
+$nCuenta=			$_GET['nCuenta'];
+$tipoCargo=			$_GET['tipoCargo'];
 $almacenDestino=		$_POST['almacenDestino'];
 $tipoPaciente=			$_GET['tipoPaciente'];
 ?>

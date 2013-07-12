@@ -88,78 +88,7 @@ return false;
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-<script type="text/javascript">
 
-/***********************************************
-* Cool DHTML tooltip script- � Dynamic Drive DHTML code library (www.dynamicdrive.com)
-* This notice MUST stay intact for legal use
-* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-***********************************************/
-
-var offsetxpoint=-60 //Customize x offset of tooltip
-var offsetypoint=20 //Customize y offset of tooltip
-var ie=document.all
-var ns6=document.getElementById && !document.all
-var enabletip=false
-if (ie||ns6)
-var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
-
-function ietruebody(){
-return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
-}
-
-function ddrivetip(thetext, thecolor, thewidth){
-if (ns6||ie){
-if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
-if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
-tipobj.innerHTML=thetext
-enabletip=true
-return false
-}
-}
-
-function positiontip(e){
-if (enabletip){
-var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
-var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
-//Find out how close the mouse is to the corner of the window
-var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20
-var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20
-
-var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000
-
-//if the horizontal distance isn't enough to accomodate the width of the context menu
-if (rightedge<tipobj.offsetWidth)
-//move the horizontal position of the menu to the left by it's width
-tipobj.style.left=ie? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
-else if (curX<leftedge)
-tipobj.style.left="5px"
-else
-//position the horizontal position of the menu where the mouse is positioned
-tipobj.style.left=curX+offsetxpoint+"px"
-
-//same concept with the vertical position
-if (bottomedge<tipobj.offsetHeight)
-tipobj.style.top=ie? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px"
-else
-tipobj.style.top=curY+offsetypoint+"px"
-tipobj.style.visibility="visible"
-}
-}
-
-function hideddrivetip(){
-if (ns6||ie){
-enabletip=false
-tipobj.style.visibility="hidden"
-tipobj.style.left="-1000px"
-tipobj.style.backgroundColor=''
-tipobj.style.width=''
-}
-}
-
-document.onmousemove=positiontip
-
-</script>
 
 <?php
 
@@ -253,6 +182,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
       <th width="235" >Seguro</th>
       <th width="97"  align="center">Cambia Status</th>
       <th width="68" align="center">Coaseguro</th>
+      <th width="68" align="center">Pendientes</th>
     </tr>
     <?php	
 
@@ -352,7 +282,23 @@ and
 numCliente='".$myrow['seguro']."'";
 $result31s=mysql_db_query($basedatos,$sSQL31s);
 $myrow31s = mysql_fetch_array($result31s);
-	  ?>
+
+
+$sSQL31cdd= "SELECT 
+usuario
+FROM
+cargosCuentaPaciente
+WHERE 
+entidad='".$entidad."'
+and
+folioVenta='".$myrow['folioVenta']."' 
+    and
+    statusCargo='standbyR'
+
+";
+$result31cdd=mysql_db_query($basedatos,$sSQL31cdd);
+$myrow31cdd = mysql_fetch_array($result31cdd);
+?>
     
     <tr  > 
       <td  align="center">
@@ -423,6 +369,24 @@ onmouseout="hideddrivetip()"> Falta Surtir </a>
         <a href="#" onClick="javascript:ventanaSecundaria2('../ventanas/aplicarDeducible.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;ali=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')">Cargar Coaseguro</a>
       <?php } else { echo '---';}?></td>
+    
+    
+    
+    
+    
+    
+    
+     <td align="center" > 
+        
+          <?php if($myrow31cdd['usuario']!=''){?>
+        <a href="#" onClick="javascript:ventanaSecundaria2('../ventanas/articulosPendientes.php?folioVenta=<?php echo $myrow['folioVenta'];?>')">Ver</a>
+          <?php }?>        
+      </td>
+    
+    
+    
+    
+    
     </tr>
     <?php  }}}?>
 

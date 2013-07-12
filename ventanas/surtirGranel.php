@@ -26,6 +26,172 @@ if(win.window.focus){win.window.focus();}
 }
 
 </script>
+
+
+
+
+
+
+<?php  
+if($_GET['codigo'] AND ($_GET['inactiva'] or $_GET['activa'])){
+
+	if($_GET['inactiva']=="inactiva"){
+ $agrega = "DELETE FROM movSolicitudes
+      where
+      entidad='".$entidad."'
+    and
+    almacen='".$_GET['almacen']."'
+and
+keyPA='".$_GET['keyPA']."'
+
+
+";
+mysql_db_query($basedatos,$agrega);
+echo mysql_error();
+
+
+
+
+$agrega1 = "DELETE FROM articulosExistencias
+      where
+      entidad='".$entidad."'
+    and
+    almacen='".$_GET['almacen']."'
+and
+keyPA='".$_GET['keyPA']."'
+
+
+";
+mysql_db_query($basedatos,$agrega1);
+echo mysql_error();
+
+$agrega = "INSERT INTO logs (cantidad,codigo,
+descripcion,almacenSolicitante,almacenDestino,usuario,hora,fecha,entidad,folioVenta,cuartoIngreso,cuartoTransferido)
+values
+('".$_GET['cantidad']."','".$_GET['keyPA']."','El usuario reseteo este articulo','".$_GET['almacenDestino']."','".$_GET['almacenDestino']."',
+'".$usuario."','".$hora1."','".$fecha1."','".$entidad."','',
+'','')";
+mysql_db_query($basedatos,$agrega);
+echo mysql_error();
+
+
+##AFECTAR AL KARDEX
+//**********GENERO EL NUMERO DE SOLICITUD ************//
+    
+        $q = "
+
+    INSERT INTO solicitudes(numSolicitud,usuario,fecha,entidad,keyClientesInternos,hora)
+    SELECT(IFNULL((SELECT MAX(numSolicitud)+1 from solicitudes where entidad='".$entidad."'), 1)), '".$usuario."',
+    '".$fecha1."','".$entidad."','".$_GET['keyClientesInternos']."','".$hora1."' ";
+    mysql_db_query($basedatos,$q);
+    echo mysql_error();
+    
+    
+    $sSQL333= "SELECT
+    numSolicitud
+    FROM solicitudes
+    WHERE
+    entidad='".$entidad."'
+    and
+    usuario ='".$usuario."'
+    order by keySolicitudes DESC
+    ";
+
+    $result333=mysql_db_query($basedatos,$sSQL333);
+    $myrow333 = mysql_fetch_array($result333);
+    $myrow333['NS']=$myrow333['numSolicitud'];
+    if(!$myrow333['NS']){
+    $myrow333['NS']=1;
+    }
+    
+    //************************************
+    
+$sSQL8ac= "
+SELECT * 
+FROM
+articulos
+WHERE
+keyPA='".$_GET['keyPA']."'
+";
+$result8ac=mysql_db_query($basedatos,$sSQL8ac);
+$myrow8ac = mysql_fetch_array($result8ac);
+$codigoInv='02';
+$sSQL8acd= "
+SELECT * 
+FROM
+conceptoinventarios
+WHERE
+
+codigo='".$codigoInv."'
+";
+$result8acd=mysql_db_query($basedatos,$sSQL8acd);
+$myrow8acd = mysql_fetch_array($result8acd);
+
+  $q1ab = "INSERT INTO kardex 
+(kc,evento,descripcion,descripcionevento,naturaleza,usuario,fecha,hora,entidad,
+keyPA,almacenSolicitante,almacenDestino,costo,cantidad,cantidadtotal,
+descripcionArticulo,existencia,existenciaTotal,otro,gpoProducto,tipoMovimiento,
+almacenConsumo,io,cajaCon,status,cbarra,numSolicitud)
+values
+('".$myrow8ac['codigo']."','".$codigoInv."',
+    '".$myrow8acd['tipoMovimiento']."',
+    '".$myrow8acd['descripcion']."','".$myrow8acd['naturaleza']."',
+        '".$usuario."','".$fecha1."',
+        '".$hora1."',
+    '".$entidad."','".$myrow8ac['keyPA']."','".$myrowd2['almacen']."',
+        '".$myrowd2['almacen']."',
+        '".$myrowd2['costo']."',
+        '".$_GET['cantidad']."',1,'".$myrow8ac['descripcion']."','".$myrow8ac1e['entrada']."',
+            '".$myrow8ac1e['entrada']."',
+        '".$myrow8acd['otro']."','".$myrow8acd['descripcion']."',
+            '".$myrow8acd['tipoMovimiento']."',
+            '".$myrowk['almacenConsumo']."','SALIDA',
+                '".$myrow8ac['cajaCon']."','final','".$myrow8ac['cbarra']."',
+                '".$myrow333['NS']."'
+         )";
+
+mysql_db_query($basedatos,$q1ab);
+echo mysql_error();
+//CIERRO AFECTACION DE KARDEX************************************************
+
+
+
+
+
+echo '<script>';
+echo 'window.alert("ARTICULO EN RESET, POR SEGURIDAD ESTA VENTANA SE CERRARA!");';
+echo 'window.close();';
+echo '</script>';
+
+
+
+        }
+
+
+
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php  
 $cendis=new whoisCendis();
 $aP=$centroDistribucion=$cendis->cendis($entidad,$basedatos);  
@@ -1078,7 +1244,7 @@ echo mysql_error();
 
 
 //conversion2
-for($j=0;$j<=$limit;$j++){
+for($j=0;$j<$limit;$j++){
 
 //INSERT
 $agrega = "INSERT INTO articulosExistencias (
@@ -1104,6 +1270,92 @@ codigo='".$myrowy['codigo']."'
 ";
 $result8ac=mysql_db_query($basedatos,$sSQL8ac);
 $myrow8ac = mysql_fetch_array($result8ac);
+
+
+
+
+
+
+
+#ACTUALIZAR ORDENES DE SOLICITUDES
+$sSQLmv= "SELECT *
+FROM
+
+movSolicitudes
+where
+entidad='".$entidad."'
+    and
+    codigo='".$myrowy['codigo']."'
+        and
+   tipoVenta='Granel'     
+and
+        status='request'
+    and
+    almacen='".$_GET['almacen']."'
+limit 0,$cantidad[$i]
+
+";
+$resultmv=mysql_db_query($basedatos,$sSQLmv);
+while($myrowmv = mysql_fetch_array($resultmv)){
+$qmv = "UPDATE movSolicitudes set 
+status='transferido'
+
+
+WHERE 
+keyMS='".$myrowmv['keyMS']."'
+";
+mysql_db_query($basedatos,$qmv);
+echo mysql_error();
+
+
+}
+
+
+
+
+
+
+
+
+/*
+$sSQLy= "
+SELECT * 
+FROM
+articulosExistencias
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$myrowy['codigo']."'
+and
+   almacen='".$_GET['almacen']."'
+    and
+status='ready' 
+
+
+order by keyAE ASC
+limit 0,$cantidad[$i]
+";
+
+
+$resulty=mysql_db_query($basedatos,$sSQLy);
+while($myrowy = mysql_fetch_array($resulty)){
+###BAJA A EXISTENCIAS
+$qbe = "DELETE FROM 
+
+WHERE 
+keyAE='".$myrowy['keyAE']."'
+";
+mysql_db_query($basedatos,$qbe);
+echo mysql_error();
+}*/
+
+
+
+
+
+
+
+
 
 
 
@@ -1189,7 +1441,7 @@ echo mysql_error();
 //window.alert("SE SURTIERON ARTICULOS");
 ventanaSecundaria8('../ventanas/printTraspasosGranel.php?numSolicitud=<?php echo $numSolicitud;?>&nOrden=<?php echo $_GET['nOrden'];?>&departamentoSolicitante=<?php echo $_GET['almacen'];?>&entidad=<?php echo $entidad;?>&random=<?php echo $rand; ?>&usuarioCargo=<?php echo $usuario;?>&usuarioSolicitante=<?php echo $myrow['usuario'];?>&fecha=<?php echo $fecha1;?>&hora=<?php echo $hora1;?>&fechaSolicitud=<?php echo $myrow['fecha'];?>&horaSolicitud=<?php echo $myrow['hora'];?>','ventana7','800','600','yes');
 window.opener.document.forms["form1"].submit();
-//window.close();
+window.close();
 </script>
 <?php
 }//cierra surtir
@@ -1223,6 +1475,27 @@ $estilo->styles();
  <?php require("/configuracion/componentes/comboAlmacen.php");  ?>
 <form id="form1" name="form1" method="post" action="#">
 <br>
+    
+    <h1>   <p>
+<?php 
+$sSQL12= "
+SELECT descripcion
+FROM
+almacenes
+WHERE 
+entidad='".$entidad."'
+    and
+almacen='".$_GET['almacen']."'
+";
+$result12=mysql_db_query($basedatos,$sSQL12);
+$myrow12 = mysql_fetch_array($result12);
+echo $myrow12['descripcion'];
+?>
+    </p>    
+    </h1>    
+        
+        
+        
   <h1 align="center">Surtir Solicitudes a Granel</h1>
     <h5 align="center">
         
@@ -1254,20 +1527,22 @@ WHERE entidad='".$entidad."' AND almacen = '".$_GET['almacen']."'
 ?>
 
   <table width="900" class="table table-striped">
-        <tr >
+
+<tr >
       <th >#</th>
 
       <th  align="left">Descripcion</th>
       <th   align="left">ExCenDis</th>
-<th   >ExBotiq</th>
-            <th  >topeSurtir</th>
+      <th   >ExBotiq</th>
+
             
-             <th  >ExActual</th>
+             <th  >Cargado</th>
       
 
 
             <th >Cantidad</th>
-    </tr>
+            <th >Reset</th>
+</tr>
 
 
 
@@ -1280,7 +1555,7 @@ WHERE entidad='".$entidad."' AND almacen = '".$_GET['almacen']."'
 <?php
 
 
- $sSQL= "SELECT *
+$sSQL= "SELECT *
 FROM
 
 existencias
@@ -1290,6 +1565,8 @@ and
 almacen='".$_GET['almacen']."'
     and
     ventaGranel='si'
+    and 
+    cantidadSurtir>0
 ";
 $result=mysql_db_query($basedatos,$sSQL);
 while($myrow = mysql_fetch_array($result)){
@@ -1436,6 +1713,9 @@ echo '<span class="error"><blink>'. $myrow['informacion'].'</blink></span>';
 }
 }
 
+echo '<br>';
+echo '1 = '.$myrow['cantidadSurtir'];
+
 
 
 
@@ -1538,7 +1818,7 @@ and
 $result8ac1s=mysql_db_query($basedatos,$sSQL8ac1s);
 $myrow8ac1s = mysql_fetch_array($result8ac1s);
 */
-echo $eB=$myrow8ac1e['entrada']-$myrow8ac1s['salida'];
+echo $eB=$myrow8ac1e['entrada'];
 ?>
 </td>
 
@@ -1549,16 +1829,11 @@ echo $eB=$myrow8ac1e['entrada']-$myrow8ac1s['salida'];
                 
                 
 
-<td  >
-
-<label>
 <?php 
 //surtido
-echo $myrow['cantidadSurtir'];
+//echo $myrow['cantidadSurtir'];
 $cS=$myrow['cantidadSurtir'];
-?></label>
-</td>                
-                
+?>                
                 
                 
                 
@@ -1673,7 +1948,18 @@ $ttt=$cS-$eB;
 
 
 
-
+<td>
+    
+    <span>
+<?php if( $eB>0){?>
+<a href="surtirGranel.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&gpoProductos=<?php echo $_GET['gpoProductos'];?>&codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&cantidad=<?php echo $eB; ?>&amp;codigo=<?php echo $myrow['codigo']; ?>&almacen=<?php echo $_GET["almacen"];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas reset este articulo?') == false){return false;}">
+    
+Reset
+</a>        
+<?php }else {echo '---';}?>        
+    </span>    
+    
+</td>
 
 
 

@@ -376,7 +376,8 @@ statusTraslado,tipoCliente,tipoPaciente,cantidadParticular,cantidadAseguradora,e
 almacenSolicitante,almacenDestino,keyClientesInternos,statusCaja,descripcion,statusFactura,horaSolicitud,fechaSolicitud,codigoTarjeta,ultimosDigitos,codigoAutorizacion,numeroCheque,bancoTransferencia,bancoCheque,numeroTransferencia,banderaPC,statusPC,clientePrincipal,folioVenta,codigoCaja,numRecibo,numCorte,statusDevolucion,keyE,keyPA,numeroConfirmacion,
 ivaParticular,ivaAseguradora,tipoVentaArticulos,usuarioFactura,
 precioOriginal,ivaOriginal,usuarioDescuento,fechaDescuento,cargoModificable,gpoProducto,folioDevolucion,numSolicitud,tipoCuenta,numMovimiento,
-descripcionArticulo,fechaCargo,horaCargo,usuarioCargo,almacenIngreso,descripcionGrupoProducto,descripcionClientePrincipal,descripcionMedico,almacenTraspaso)
+descripcionArticulo,fechaCargo,horaCargo,usuarioCargo,almacenIngreso,descripcionGrupoProducto,descripcionClientePrincipal,descripcionMedico,almacenTraspaso,medico,
+descripcionAlmacen)
 values 
 ('".$myrow1['numeroE']."','".$myrow1['nCuenta']."','devolucion',
 '".$usuario."','".$fecha1."','".$dia1."','".$cantidad[$i]."','".$myrow1['tipoTransaccion']."','".$myrow1['codProcedimiento']."',
@@ -390,7 +391,8 @@ values
         '".$myrow1['keyCAP']."','".$myrow333['NS']."' ,'H','".$myrow333a['CVI']."' ,'".$myrow1['descripcionArticulo']."' ,
 '".$fechaCargo."','".$hora1."','".$usuario."',
     '".$myrow1['almacenIngreso']."','".$myrow1['descripcionGrupoProducto']."',
-        '".$myrow1['descripcionClientePrincipal']."','".$myrow1['descripcionMedico']."','".$myrow1['almacenTraspaso']."'
+        '".$myrow1['descripcionClientePrincipal']."','".$myrow1['descripcionMedico']."','".$myrow1['almacenTraspaso']."','".$myrow1['medico']."',
+            '".$myrow1['descripcionAlmacen']."'
 
 )";
 mysql_db_query($basedatos,$agrega);

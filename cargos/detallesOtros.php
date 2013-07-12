@@ -40,7 +40,19 @@ function valida(F) {
 </script> 
 
 
+<script>
 
+var win = null;
+function nueva(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+if(win.window.focus){win.window.focus();}
+}
+
+</script>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -68,7 +80,7 @@ $estilo->styles();
    <table width="500" class="table table-striped">
 
      <tr >
-       <th width="82"  align="center">#</th>
+       <th width="82"  align="center">#Recibo</th>
        <th width="82"  align="center">Fecha  </th>
        <th width="385" >Concepto</th>
        <th width="118" align="center" >Debe</th>
@@ -85,10 +97,10 @@ $estilo->styles();
  AND 
 (folioVenta='".$_GET['folioVenta']."' or folioVentaOtros='".$_GET['folioVenta']."')
 AND
-( tipoTransaccion='totros' or tipoTransaccion='abotros' or tipoTransaccion='devotr'
+( tipoTransaccion='totros' or tipoTransaccion='abotros' or tipoTransaccion='devotr' or tipoTransaccion='devtotros')
 or
-tipoTransaccion='HLCAJOTR' or tipoTransaccion='AJOXINCDEV'
-)
+(tipoTransaccion='HLCAJOTR' or tipoTransaccion='AJOXINCDEV')
+
   
  and
  gpoProducto=''
@@ -118,7 +130,17 @@ $col = "";
 
 ?>
      <tr  >
-       <td  align="center"><?php echo $myrow['numRecibo'];?></td>
+       <td  align="center">
+<?php           
+if($myrow['numRecibo']){ ?>
+
+	  <a href="javascript:nueva('/sima/INGRESOS HLC/caja/imprimirNumeroRecibo.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>','ventana7','800','600','yes');">
+<?php echo $myrow['numRecibo'];?></a>
+
+<?php 
+}  ?>         
+           
+       </td>
 
        <td height="55"  align="center"><?php echo cambia_a_normal($myrow['fecha1']);?></td>
        <td ><span ><?php echo $myrow['descripcionArticulo'];?></span></td>
@@ -130,12 +152,12 @@ $col = "";
 	   
 	   
 	   <?php //DEBE
-           if($myrow['tipoTransaccion']=='totros' ){ 
+           if($myrow['tipoTransaccion']=='totros'  or $myrow['tipoTransaccion']=='devotr' or $myrow['tipoTransaccion']=='AJOXINCDEV'){ 
                
-               echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
+           echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
 	   $debe[0]+=$myrow['precioVenta']*$myrow['cantidad'];
 	   }else{
-               
+               //echo '$ 0.00';
            }
            
            ?>
@@ -148,21 +170,20 @@ $col = "";
 	   <div align="center">
 	   <?php //HABER
            
-        if($myrow['tipoTransaccion']!='totros' ){ 
-           if($myrow['tipoTransaccion']='HLCAJOTR' || $myrow['tipoTransaccion']='AJOXINCDEV' || $myrow['tipoTransaccion']=='devotr' ){ 
+        
+           if($myrow['tipoTransaccion']=='HLCAJOTR' or $myrow['tipoTransaccion']=='abotros' or $myrow['tipoTransaccion']=='devtotros'){ 
 
-           if( $myrow['tipoTransaccion']='HLCAJOTR'){
+
                
 	   $haber[0]+=$myrow['precioVenta']*$myrow['cantidad'];$signo=NULL;
+           echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
            }else{
-               $signo='-';
-           $dev[0]+=$myrow['precioVenta']*$myrow['cantidad'];    
-           
+               //echo '$ 0.00';
            }
            
-           echo $signo.'$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
-	   }
-        }
+           
+	   
+        
            ?>
 	   </div>	   </td>
      </tr>

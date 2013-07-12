@@ -209,7 +209,24 @@ $pdf->Cell(0,0,'Hora Cargo: '.$_GET['hora'],0,0,L);
 
 $pdf->SetXY(2,22);
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(0,0,'Departamento: '.$_GET['departamentoSolicitante'],0,0,L);
+   $sSQL3aca="SELECT *
+FROM
+almacenes
+WHERE 
+entidad='".$_GET['entidad']."'
+and
+almacen='".$_GET['departamentoSolicitante']."'
+
+  ";
+  $result3aca=mysql_db_query($basedatos,$sSQL3aca);
+  $myrow3aca = mysql_fetch_array($result3aca);
+if($myrow3aca['descripcion']!=''){
+    $depto=$myrow3aca['descripcion'];
+}  else{
+    $depto=$_GET['departamentoSolicitante'];
+}
+  
+$pdf->Cell(0,0,'Departamento: '.$depto,0,0,L);
 
 
 
@@ -344,7 +361,7 @@ precioArticulos
 WHERE 
 entidad='".$_GET['entidad']."'
 and
-codigo='".$myrow['codProcedimiento']."'
+codigo='".$myrow['codigo']."'
 order by keyC DESC
   ";
   $result3ac=mysql_db_query($basedatos,$sSQL3ac);
@@ -368,7 +385,7 @@ $pdf->Cell(0,0,$a,0,0,M);
 
 
 $pdf->SetX('15');
-$pdf->Cell(0,0,$myrow3ac['descripcion'].'  '.$myrow3ac2['sustancia'],0,0,M);
+$pdf->Cell(0,0,$myrow3ac2['descripcion'].'  '.$myrow3ac2['sustancia'],0,0,M);
 
 
 

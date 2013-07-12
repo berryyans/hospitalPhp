@@ -275,11 +275,11 @@ if($resCombo1['almacen']==$_POST['almacenDestino'] ){
   <table width="632" class="table table-striped">
         <tr >
       <th width="44" >#</th>
-      <th width="43" >KeyPA</th>
+      
       <th width="45"  >Cantidad</th>
       <th width="321" >Descripcion</th>
       <th width="105"  >gpoProducto</th>
-      <th width="48"  >#Mov</th>
+      <th width="105"  >Mov</th>
      
     </tr>
     <tr>
@@ -325,7 +325,8 @@ and
 usuario='".$_GET['usuario']."'
 and
 codigo='".$myrow18['codigo']."' 
-  
+    and
+    nOrden='".$myrow18['nOrden']."'
 ";
 $result1=mysql_db_query($basedatos,$sSQL1);
 $myrow1 = mysql_fetch_array($result1);
@@ -335,8 +336,8 @@ echo mysql_error();
 
     <tr bgcolor="#ffffff" onMouseOver="bgColor='#ffff99'" onMouseOut="bgColor='#ffffff'" >
       <td height="24" bgcolor="<?php echo $color?>" class="normal"><?php echo $a;?></td>
-      <td bgcolor="<?php echo $color?>" class="normal"><?php echo $myrow18['keyPA'];?></td>
       
+        
       
             <td class="normal">
         <?php
@@ -350,23 +351,27 @@ echo $myrow1['can'];
       <td class="normal">
         <?php
 					echo $myrow18['descripcion'];
-                                        
+  
 		?>
 
       </td>
       
       
       
-      <td  class="normal"><?php echo $myrow18['descripcionGrupoProducto'];?></td>
+      <td  class="normal"><?php echo $myrow18['descripcionGrupoProducto'];
+      ?></td>
 
-      <td  class="normal">
-        <label>
-       
-             <?php echo $myrow18['keyCAP'];?>
-        </label>
-          
-    </td>
 
+
+      <td class="normal">
+        <?php
+
+      echo $myrow18['keyCAP'];
+		?>
+      </td>      
+      
+      
+      
        
     </tr>
     

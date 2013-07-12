@@ -220,7 +220,7 @@ $gpoProducto=$myrow40['gpoProducto'];
 
 if($myrow1['fechaCargo']==$fecha1){
 $priceLevel=new articulosDetalles();
-$priceLevel=$priceLevel->precioVenta($paquete,$_POST['generico'],$cantidad[$i],$numeroE,$_GET['keyClientesInternos'],$codigo,$almacen,$basedatos);
+$priceLevel=$priceLevel->precioVenta($entidad,$paquete,$_POST['generico'],$cantidad[$i],$numeroE,$_GET['keyClientesInternos'],$codigo,$almacen,$basedatos);
 }else{
 //no debes de cambiar precios si no es la fecha
 $priceLevel=$myrow1['precioVenta'];

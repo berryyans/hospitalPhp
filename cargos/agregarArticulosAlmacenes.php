@@ -452,6 +452,14 @@ $myrow6f = mysql_fetch_array($result6f);
 $result7a=mysql_db_query($basedatos,$sSQL7a); 
 $myrow7a = mysql_fetch_array($result7a);
 echo mysql_error();
+
+ $sSQLc="SELECT codigo
+FROM
+articulos
+WHERE keyPA='".$_GET['keyPA']."'
+  ";
+  $resultc=mysql_db_query($basedatos,$sSQLc);
+  $myrowc = mysql_fetch_array($resultc);
   ?>
       <tr  >
         <td height="41"><span ><?php echo $bandera;?></span></td>
@@ -536,7 +544,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
        
         <td width="36" align="center" >
            <?php if($myrow61['almacen']!='' ){?>
-     <a   href="listaAlmacenesTodos.php?inactiva=si&keyE=<?php echo $myrow['keyE'];?>&tipoVenta=activado&keyPA=<?php echo $_GET['keyPA'];?>&codigo=<?php echo $_GET['codigo'];?>&gpoProducto=<?php echo $_GET['gpoProducto'];?>">                  
+     <a   href="listaAlmacenesTodos.php?inactiva=si&keyE=<?php echo $myrow['keyE'];?>&tipoVenta=activado&keyPA=<?php echo $_GET['keyPA'];?>&codigo=<?php echo $myrowc['codigo'];?>&gpoProducto=<?php echo $_GET['gpoProducto'];?>">                  
    
     <img src="../imagenes/btns/aprobar.png"width="20" height="20"></img>
      </a>
@@ -554,13 +562,13 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
         
         <td width="36" align="center" >
            <?php if($myrow61['almacen']!='' ){?>
-            <a   href="listaAlmacenesTodos.php?almacen=<?php echo $myrow['id_almacen'];?>&eliminar=si&keyE=<?php echo $myrow['keyE'];?>&tipoVenta=asignarAlmacen&keyPA=<?php echo $_GET['keyPA'];?>&codigo=<?php echo $_GET['codigo'];?>&gpoProducto=<?php echo $_GET['gpoProducto'];?>">               
+            <a   href="listaAlmacenesTodos.php?almacen=<?php echo $myrow['id_almacen'];?>&eliminar=si&keyE=<?php echo $myrow['keyE'];?>&tipoVenta=asignarAlmacen&keyPA=<?php echo $_GET['keyPA'];?>&codigo=<?php echo $myrowc['codigo'];?>&gpoProducto=<?php echo $_GET['gpoProducto'];?>">               
    
      <img src="../imagenes/btns/cancelabtn.png"width="20" height="20"></img>
 </a>      
          
           <?php }else{ ?>
- <a   href="listaAlmacenesTodos.php?almacen=<?php echo $myrow['id_almacen'];?>&activar=si&keyE=<?php echo $myrow['keyE'];?>&tipoVenta=asignarAlmacen&keyPA=<?php echo $_GET['keyPA'];?>&codigo=<?php echo $_GET['codigo'];?>&gpoProducto=<?php echo $_GET['gpoProducto'];?>">               
+ <a   href="listaAlmacenesTodos.php?almacen=<?php echo $myrow['id_almacen'];?>&activar=si&keyE=<?php echo $myrow['keyE'];?>&tipoVenta=asignarAlmacen&keyPA=<?php echo $_GET['keyPA'];?>&codigo=<?php echo $myrowc['codigo'];?>&gpoProducto=<?php echo $_GET['gpoProducto'];?>">               
             
              <img src="../imagenes/btns/addbtn2.png"width="20" height="20"></img>
  </a>            

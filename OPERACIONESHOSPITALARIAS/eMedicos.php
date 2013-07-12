@@ -171,6 +171,7 @@ $estilos-> styles();
        
        
        <th width="5"  ><div align="rigth" >Consultas</div></th>
+           <th width="5"  ><div align="rigth" >Devoluciones</div></th>
        <th width="30" ><div align="rigth" >
           
            Ver
@@ -314,8 +315,7 @@ and
 almacen='".$_GET['datawarehouse']."'
     and
     medico='".$myrow['medico']."'
-         and
- statusDevolucion!='si'
+
 
 ";
 $resultcargos=mysql_db_query($basedatos,$sSQLcargos);
@@ -335,7 +335,46 @@ if($consultas>0){
 	   </td>
            
            
-           
+    
+    
+<td   >
+	   <?php 
+
+$sSQLdev="SELECT 
+    sum(cantidad) as devoluciones
+
+FROM
+cargosCuentaPaciente
+WHERE
+entidad='".$entidad."'
+and
+ (fechaCierre>= '".$_POST['fechaInicial']."'  and fechaCierre<='".$_POST['fechaFinal']."')
+and
+naturaleza='A'
+and
+tipoPaciente='externo'
+and
+almacen='".$_GET['datawarehouse']."'
+    and
+    medico='".$myrow['medico']."'
+
+
+";
+$resultdev=mysql_db_query($basedatos,$sSQLdev);
+$myrowdev = mysql_fetch_array($resultdev);
+
+
+
+$devoluciones= $myrowdev['devoluciones'];
+	   
+if($devoluciones>0){
+    echo number_format($devoluciones);
+    $totalDevoluciones[0]+=$myrowdev['devoluciones'];
+}else{
+    echo '0';
+}
+?>
+	   </td>    
            
            
            
@@ -363,7 +402,7 @@ Detalles
       <br />
    <div align="center" class="precio1">
        <?php 
-       echo 'Total Registros: '.$totalConsultas[0];
+       echo 'Total Registros: '.$totalConsultas[0]-$totalDevoluciones[0];
        ?>
    </div>
    

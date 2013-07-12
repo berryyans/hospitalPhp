@@ -109,6 +109,11 @@ $estilos-> styles();
       </th>
 
        <th width="35" >
+           <div align="left">Cantidad</div>
+       </th>         
+         
+         
+       <th width="35" >
            <div align="left">FechaCargo</div>
        </th>
        
@@ -125,11 +130,23 @@ $estilos-> styles();
        
        </div></th>
 
+            <th width="35" ><div align="left" >
+          
+           Usuario
+       
+       </div></th>  
+       
+       
+                   <th width="35" ><div align="left" >
+          
+           Status
+       
+       </div></th> 
        
       </tr>
 <?php 	
 $medico=$_POST['medico'];
-
+$devoluciones[0]=0;
     
     
 
@@ -142,8 +159,7 @@ $medico=$_POST['medico'];
  and
  (fechaCierre>= '".$_GET['fechaInicial']."'  and fechaCierre<='".$_GET['fechaFinal']."')
  and
- statusDevolucion!='si'
- and
+
  folioVenta!=''
  and
  tipoPaciente='externo'
@@ -192,7 +208,21 @@ $myrow1 = mysql_fetch_array($result1);
               
               
 
-              
+   <td  ><?php 
+
+  
+
+echo $myrow['cantidad'];
+
+
+if($myrow['naturaleza']=='C'){
+$consultas[0]+=$myrow['cantidad'];
+}elseif($myrow['naturaleza']=='A'){
+ $devoluciones[0]+=$myrow['cantidad'];   
+}
+
+?>
+</td>           
               
  
          
@@ -271,9 +301,30 @@ while ($myrow1e = mysql_fetch_array($result1e)){
            
            
            
-           
+ <td  >
+<?php 
+
+ 
+
+echo $myrow1['usuario'];
+	  ?>
+</td>          
            
 
+    
+   <td  ><?php 
+
+  
+
+if($myrow['naturaleza']=='C'){
+print 'Normal';
+}elseif($myrow['naturaleza']=='A'){
+print 'Devolucion';   
+}
+
+?>
+</td>     
+    
         
         
      <?php }?>    
@@ -298,7 +349,7 @@ while ($myrow1e = mysql_fetch_array($result1e)){
 
 	<?php 
 	if($totalRegistros>0){ 
-	echo 'Se atendieron '.$totalRegistros.' pacientes!';
+	echo 'Se atendieron '.$totalRegistros.' pacientes! con '.$consultas[0].' consultas, y '.$devoluciones[0].' devoluciones.' ;
 	}
 	?>
  
