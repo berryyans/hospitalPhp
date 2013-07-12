@@ -292,21 +292,22 @@ echo mysql_error();
 <script src="../js/jquery-1.7.2.min.js"></script>
 -->
 <script>
-$(document).ready(function() {
-    $("#content div").hide(); // Initially hide all content
-    $("#tabs li:first").attr("id","current"); // Activate first tab
-    $("#content div:first").fadeIn(); // Show first tab content
+     var $j = jQuery.noConflict();
+$j(document).ready(function() {
+    $j("#content div").hide(); // Initially hide all content
+    $j("#tabs li:first").attr("id","current"); // Activate first tab
+    $j("#content div:first").fadeIn(); // Show first tab content
     
-    $('#tabs a').mouseover(function(e) {
+    $j('#tabs a').mouseover(function(e) {
         e.preventDefault();
-        if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+        if ($j(this).closest("li").attr("id") == "current"){ //detection for current tab
          return       
         }
         else{             
-        $("#content div").hide(); //Hide all content
-        $("#tabs li").attr("id",""); //Reset id's
-        $(this).parent().attr("id","current"); // Activate this
-        $('#' + $(this).attr('name')).fadeIn(); // Show content for current tab
+        $j("#content div").hide(); //Hide all content
+        $j("#tabs li").attr("id",""); //Reset id's
+        $j(this).parent().attr("id","current"); // Activate this
+        $j('#' + $j(this).attr('name')).fadeIn(); // Show content for current tab
         }
     });
 });
@@ -620,14 +621,20 @@ $q=mysql_real_escape_string($q);
               
               
               
-<div id="tab2">
-  
-        
-  
-        
-        
+<div id="tab2">       
+<?php
+if(isset($_GET['registro'])){
+    echo '<iframe src="resPC.php?main='.$_GET['main'].'&warehouse='.$_GET['warehouse'].'&solicitud='.$_GET['registro'].'&test=10&isUpdate" ';
+        echo 'frameborder="0" width="100%" height="1450">';
+}else{
+    echo '<iframe src="resPC.php?main='.$_GET['main'].'&warehouse='.$_GET['warehouse'].'&solicitud='.$n.'&test=10" ';    
+        echo 'frameborder="0" width="100%" height="1450">';
+}
+?>
+
+<!--
 <iframe src="resPC.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&solicitud=<?php echo $n;?>&test=10"  
-        frameborder="0" width="100%" height="1450">
+-->
     Si ves este mensaje, significa que tu navegador no tiene soporte para marcos o el mismo está deshabilitado.
     </iframe>        
 </div>
