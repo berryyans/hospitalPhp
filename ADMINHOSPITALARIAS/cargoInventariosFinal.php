@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
@@ -94,6 +101,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
     <br>
  <h1 align="center" >Carga Final de Inventario</h1>
  <form id="form2" name="form2" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
@@ -110,7 +118,8 @@ $estilos->styles();
        
    </p>
 
-   <table width="500" class="table table-striped">
+   <!--<table width="500" class="table table-striped">-->
+   <table width="500" class="table-template-left">
      <tr >
        <th width="5" scope="col"><div align="left" >
          <div align="left"># </div>
@@ -227,5 +236,10 @@ $myrow3 = mysql_fetch_array($result3);
 </p>
  </form>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate();
+?>
 </body>
 </html>
