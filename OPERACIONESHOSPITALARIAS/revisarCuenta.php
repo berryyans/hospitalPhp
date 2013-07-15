@@ -17,5 +17,5 @@ print 'Site under construction';
 //$muestraInternos->listaInternos($_GET['datawarehouse'],$entidad,$TITULO,$ventana,$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

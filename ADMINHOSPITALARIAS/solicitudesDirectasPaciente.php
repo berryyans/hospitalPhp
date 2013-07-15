@@ -31,5 +31,5 @@ $solicitudes->despliegaSolicitudes($hora1,$fecha1,$usuario,$entidad,$titulo,$myr
 <?php 
 }
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

@@ -14,5 +14,5 @@ $lista->listaClientes('grupoProducto',$entidad,$ventana,$ventana1,$TITULO,$based
 
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

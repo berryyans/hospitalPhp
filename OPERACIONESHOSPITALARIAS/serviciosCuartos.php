@@ -15,5 +15,5 @@ $listaServicios->listadoServicios($titulo,$ventana,$entidad,$ALMACEN,$codigo,$ba
 ?>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
  ?>

@@ -15,5 +15,5 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 $EC=new ECC();
 $EC->estadoCuenta($entidad,$basedatos);
 $mostrarFooter = new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

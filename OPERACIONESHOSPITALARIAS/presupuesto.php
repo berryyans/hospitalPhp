@@ -8,6 +8,6 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 ?>
 <?php include("/configuracion/clases/presupuestoPaciente.php"); 
 $mostrarFooter = new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 

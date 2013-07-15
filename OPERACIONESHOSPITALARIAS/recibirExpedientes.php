@@ -16,5 +16,5 @@ $despliegaExpedientes=new despliegaExpedientesPendientes();
 $despliegaExpedientes->despliegaExpedientesEnviados($entidad,$ventana,$fecha1,$hora1,$ALMACEN,$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

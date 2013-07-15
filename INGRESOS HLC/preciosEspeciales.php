@@ -14,5 +14,5 @@ $ventana1='despliegaPreciosEspeciales.php';
 $lista->listaClientes('precioEspecial',$entidad,$ventana,$ventana1,$TITULO,$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

@@ -16,5 +16,5 @@ $lista->listaClientes($tipoconvenio,$entidad,$ventana,$ventana1,$TITULO,$basedat
 
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

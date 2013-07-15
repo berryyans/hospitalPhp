@@ -16,5 +16,5 @@ $listaExternosDescuentos=new muestraExternosDescuentos();
 $listaExternosDescuentos->listaExternosDescuentos($ALMACEN,$entidad,$TITULO,$ventana,$basedatos);
 
 $mostrarFooter = new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

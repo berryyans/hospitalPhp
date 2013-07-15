@@ -315,7 +315,7 @@ $myrow12 = mysql_fetch_array($result12);
     </div>
     <?php
     $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
     ?>
 </body>
 </html>

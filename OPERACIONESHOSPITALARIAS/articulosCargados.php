@@ -13,7 +13,7 @@ $aSurtidos=new articulos();
 $aSurtidos->surtidos($fecha1,$usuario,$entidad,$_GET['warehouse'],$codigo,$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
     
 ?>
 

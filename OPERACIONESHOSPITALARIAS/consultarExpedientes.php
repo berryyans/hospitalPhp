@@ -14,5 +14,5 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 $buscarExpediente->expedientesDuplicados($entidad,$usuario,$numeroE,$basedatos); 
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

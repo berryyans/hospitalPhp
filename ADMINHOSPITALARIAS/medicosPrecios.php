@@ -14,5 +14,5 @@ $medicosPrecios=new consultaMedicosPrecios();
 $medicosPrecios->consultarPrecios($almacen,$entidad,$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

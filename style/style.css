@@ -2850,6 +2850,10 @@ ul.gallery_item_details_list
 {
     float: right;
 }
+.copyright_center{
+    font-size: 13px;
+    text-align: center;
+}
 .copyright_right .scroll_top
 {
     font-size: 11px;

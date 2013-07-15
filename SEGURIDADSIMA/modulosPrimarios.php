@@ -385,7 +385,7 @@ $rNombre11a=mysql_fetch_array($resultaNombre11a);
     </div>
  <?php
  $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
  ?>
 </body>
 </html>

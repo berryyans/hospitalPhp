@@ -245,7 +245,7 @@ echo '<span >'.cambia_a_normal($myrow81['fechaSalida']).'</span>';
     </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 </html>

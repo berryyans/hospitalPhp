@@ -12,5 +12,5 @@ $reporteReportes='agregarImagen.php';
 $editarResultados=new  editarResultados();
 $editarResultados->editaResultados($entidad,$reporteReportes,$fecha1,$ventana,$TITULO,$_GET['datawarehouse'],$basedatos);
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

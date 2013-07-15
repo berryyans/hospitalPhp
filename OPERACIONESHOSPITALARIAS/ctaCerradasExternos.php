@@ -292,7 +292,7 @@ Folios de venta</a><br />
     </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 </html>

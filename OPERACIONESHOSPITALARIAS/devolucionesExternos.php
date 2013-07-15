@@ -11,6 +11,6 @@ $tF=new traerFolios();
 $tF->foliosDevolucion($entidad,$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 

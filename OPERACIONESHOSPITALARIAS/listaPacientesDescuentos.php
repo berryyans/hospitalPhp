@@ -370,7 +370,7 @@ onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargos.php?numero
     </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 </html>

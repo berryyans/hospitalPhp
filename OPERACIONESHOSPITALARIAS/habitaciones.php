@@ -91,7 +91,7 @@ onclick="javascript:ventanaSecundaria1('../ventanas/ventanaCatalogoCuartos.php?a
     </div>
  <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
  ?>
 </body>
 </html>

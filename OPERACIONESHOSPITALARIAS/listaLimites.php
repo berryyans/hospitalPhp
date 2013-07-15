@@ -102,5 +102,5 @@ function ventanaSecundaria11 (URL){
 </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

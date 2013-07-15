@@ -21,5 +21,5 @@ $mostrarPacientes=new listaPX();
 $mostrarPacientes->mostrarPacientes($ventana1,$ventana,$entidad,$TITULO,$_GET['datawarehouse'],$usuario,$numeroE,$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

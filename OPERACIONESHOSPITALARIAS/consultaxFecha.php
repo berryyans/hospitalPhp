@@ -845,7 +845,7 @@ echo $myrow18['fechaRecepcion'];
     </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 

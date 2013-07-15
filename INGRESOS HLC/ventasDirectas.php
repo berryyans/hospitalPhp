@@ -105,7 +105,7 @@ window.alert("af"+ovidio);
     </div>
         <?php
         $mostrarFooter = new menus();
-        $mostrarFooter->footerTemplate();
+        $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
         ?>
 </body>
 <script type="text/javascript"> 

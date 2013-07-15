@@ -272,7 +272,7 @@ echo '$'.number_format( $myrow['precioVenta']*$myrow['cantidad'],2);
 </div>
     <?php
     $mostrarFooter=new menus();
-    $mostrarFooter->footerTemplate();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
      ?>
 </body>
 </html>

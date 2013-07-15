@@ -387,7 +387,7 @@ $myrow8a = mysql_fetch_array($result8a);
         </div>
 <?php
 $mostrarFooter = new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 </html>

@@ -402,7 +402,7 @@ onmouseout="hideddrivetip()"> Falta Surtir </a>
     </div>
     <?php
     $mostrarFooter = new menus();
-    $mostrarFooter->footerTemplate();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
     ?>
 </body>
 </html>

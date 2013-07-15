@@ -230,7 +230,7 @@ $myrow8 = mysql_fetch_array($result8);
         </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 </html>

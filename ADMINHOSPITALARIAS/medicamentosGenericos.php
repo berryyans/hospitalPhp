@@ -11,5 +11,5 @@ $catalogoArticulos=new articulos();
 $catalogoArticulos->catalogoArticulos($entidad,$usuario,$codigo,$fecha,$basedatos);
 
 $mostrarFooter = new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

@@ -360,7 +360,7 @@ echo "<a href=".$_SERVER['PHP_SELF']."?main=".$_GET['main']."&warehouse=".$_GET[
     </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 </html>

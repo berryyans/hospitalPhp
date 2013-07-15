@@ -14,5 +14,5 @@ $ventana11='/sima/cargos/listadoPacientes.php';
 require("/configuracion/formas/ventaPublicoMenu.php");
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

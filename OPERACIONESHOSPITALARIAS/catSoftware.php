@@ -839,7 +839,7 @@ $q=mysql_real_escape_string($q);
 
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?> 
 </body>
 </html>

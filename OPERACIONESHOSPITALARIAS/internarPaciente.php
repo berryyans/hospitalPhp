@@ -11,5 +11,5 @@ $ventana1='../ventanas/internarPaciente2.php';
 
 require("/configuracion/formas/menuUrgencias.php"); 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

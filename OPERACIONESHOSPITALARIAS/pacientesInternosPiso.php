@@ -11,5 +11,5 @@ $ventana1='datosAdicionales.php';
 require('/configuracion/clases/cargosPacientesInternos.php');
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

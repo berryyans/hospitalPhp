@@ -411,5 +411,5 @@ echo 'Lo sentimos, existe algun problema con su cuenta, no tiene cuenta de medic
 ?>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

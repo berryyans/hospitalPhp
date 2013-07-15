@@ -13,5 +13,5 @@ $desplegar=new solicitudesAlmacenes();
 $desplegar->despliegaSolicitudes($hora1,$fecha1,$usuario,$entidad,$titulo,$_GET['datawarehouse'],$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

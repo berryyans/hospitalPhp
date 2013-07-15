@@ -1732,5 +1732,5 @@ $graph->DiagramBar($legend_x, $legend_y, $data, $data_title);
 </div>
 <?php
     $mostrarFooter = new menus();
-    $mostrarFooter->footerTemplate();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
     ?>

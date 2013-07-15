@@ -168,7 +168,7 @@ $myrow3 = mysql_fetch_array($result3);
     </div>
  <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
  ?>
 </body>
 </html>

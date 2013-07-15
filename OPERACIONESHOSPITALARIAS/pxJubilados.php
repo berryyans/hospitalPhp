@@ -14,6 +14,6 @@ $pxJubilados=new jubilados();
 $pxJubilados->pacientesJubilados($ventana,$entidad,$usuario,$numeroE,$basedatos);
 
 $mostrarFooter = new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 

@@ -431,7 +431,7 @@ echo 'Importe: $'.number_format($importe[0],2).', Iva: $'.number_format($iva[0],
 </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
  ?>
 </body>
 </html>

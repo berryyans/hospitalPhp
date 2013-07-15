@@ -333,7 +333,7 @@ echo $myrow6['descripcion'].'<br>Atte: '.$myrow6['usuario'] ;
     </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 

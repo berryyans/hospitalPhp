@@ -317,5 +317,5 @@ $NC=$myrow['numCliente'];
 </html>
           <?php
             $mostrarFooter=new menus();
-            $mostrarFooter->footerTemplate();
+            $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
           ?>

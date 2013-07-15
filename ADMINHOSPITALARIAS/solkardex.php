@@ -483,7 +483,7 @@ $myrow39 = mysql_fetch_array($result39);
     </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 

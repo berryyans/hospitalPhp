@@ -347,7 +347,7 @@ $myrow33 = mysql_fetch_array($result33);
     </div>
   <?php
     $mostrarFooter=new menus();
-    $mostrarFooter->footerTemplate();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
   ?>
 </body>
 </html>

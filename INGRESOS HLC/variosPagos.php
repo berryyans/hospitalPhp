@@ -170,7 +170,7 @@ $j("#contentArea").load("listaPxPaquetes.php?warehouse=<?php echo $_GET['warehou
 </div>
         <?php
         $mostrarFooter = new menus();
-        $mostrarFooter->footerTemplate();
+        $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
         ?>
 </body>
 </html>

@@ -10,5 +10,5 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 $catalogoArticulos=new articulos();
 $catalogoArticulos->catalogoArticulos($entidad,$usuario,$codigo,$fecha,$basedatos);
 $mostrarFooter = new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

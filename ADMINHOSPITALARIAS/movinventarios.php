@@ -277,7 +277,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
         </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 </html>

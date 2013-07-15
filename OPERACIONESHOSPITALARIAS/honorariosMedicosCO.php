@@ -1145,7 +1145,7 @@ echo cambia_a_normal($myrowap['fechaPago']);
 </div>
      <?php
     $mostrarFooter = new menus();
-    $mostrarFooter->footerTemplate();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
     ?>
 </body>
 </html>

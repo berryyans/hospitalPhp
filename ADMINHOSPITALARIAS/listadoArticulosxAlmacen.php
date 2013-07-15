@@ -15,5 +15,5 @@ $consultaArticuloxAlmacen=new consultaArticulosPrecioxAlmacen();
 $consultaArticuloxAlmacen->consultarArticulosxAlmacen($almacen,$entidad,$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

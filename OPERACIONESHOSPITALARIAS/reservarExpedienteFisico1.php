@@ -13,5 +13,5 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 $despliegaPx->internarPaciente($TITULO,'/sima/cargos/reservarExpedienteFisico2.php',$ventana2,$keyPacientes,$entidad,$hora,$fecha,$_GET['datawarehouse'],$usuario,$numeroE,$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>

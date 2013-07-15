@@ -194,7 +194,7 @@ $myrow22b = mysql_fetch_array($result22b);
     </div>
  <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
  ?>
 </body>
 </html>

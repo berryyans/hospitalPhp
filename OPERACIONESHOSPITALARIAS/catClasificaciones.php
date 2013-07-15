@@ -90,7 +90,7 @@ onclick="javascript:ventanaSecundaria1('ventanaCatalogoCEM.php?almacen=<?php ech
 </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 </html>

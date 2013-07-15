@@ -691,7 +691,7 @@ $myrow12a = mysql_fetch_array($result12a);
 </div>
 <?php
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
 </body>
 </html>

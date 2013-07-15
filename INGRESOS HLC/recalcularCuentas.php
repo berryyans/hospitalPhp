@@ -216,7 +216,7 @@ onclick="javascript:ventanaSecundaria2('../cargos/despliegaCargos.php?numeroE=<?
     </div>
     <?php
     $mostrarFooter = new menus();
-    $mostrarFooter->footerTemplate();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
     ?>
 </body>
 </html>

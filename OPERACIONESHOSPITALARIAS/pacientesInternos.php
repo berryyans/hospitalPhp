@@ -15,5 +15,5 @@ $muestraPI=new pacientesInternosUrgencias();
 $muestraPI->listadoPI($entidad,$TITULO,$ventana,$ventana1,$_GET['datawarehouse'],$basedatos);
 
 $mostrarFooter=new menus();
-$mostrarFooter->footerTemplate();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
 ?>
