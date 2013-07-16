@@ -23,7 +23,7 @@ $url='http://hlc.um.edu.mx/sima/movil/principal.php/';
 	//require("/configuracion/MenuPrincipal/menup.php");
         //require("/configuracion/MenuPrincipal/menuPrincipal.php");    
         require("/configuracion/MenuPrincipal/menuPrincipalv4.php");    
-	require("/configuracion/MenuPrincipal/menuAyuda.php");
+	//require("/configuracion/MenuPrincipal/menuAyuda.php");
 
 }
 //***************************************************
