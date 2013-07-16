@@ -1,4 +1,4 @@
-<?php include('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php include('../js/pdf/fpdf_js.php');
 
 
 		
@@ -269,13 +269,13 @@ $pdf->Cell(0,0,'Tipo Px: '.$myrow311['statusPaciente'],0,0,R);
 
 //Usuario
 $pdf->SetY(42);
-$pdf->Cell(0,0,'Usuario Autorizó: '.$myrow311['usuario'],0,0,R);
+$pdf->Cell(0,0,'Usuario Autorizï¿½: '.$myrow311['usuario'],0,0,R);
 
 
-//Credencial/Nómina 
+//Credencial/Nï¿½mina 
 if($myrow311['credencial']){
 $pdf->SetY(45);
-$pdf->Cell(0,0,'Credencial/Nómina: '.$myrow311['credencial'],0,0,R);
+$pdf->Cell(0,0,'Credencial/Nï¿½mina: '.$myrow311['credencial'],0,0,R);
 }
 
 
@@ -401,9 +401,9 @@ if($codigoTT and $myrow['status']=='transaccion'){
 
 
 if($myrow['tipoPago']=='Tarjeta de Credito'){
-$descripcion='T.Trans: '.$myrow['tipoPago'].',Banco: '.$myrow['bancoTC'].', CodAut: '.$myrow['codigoAutorizacion'].', U.Dígitos: '.$myrow['ultimosDigitos'];
+$descripcion='T.Trans: '.$myrow['tipoPago'].',Banco: '.$myrow['bancoTC'].', CodAut: '.$myrow['codigoAutorizacion'].', U.Dï¿½gitos: '.$myrow['ultimosDigitos'];
 }else if($myrow['tipoPago']=='Cheque'){
-$descripcion='Transacción: '.$myrow['tipoPago'].',Banco: '.$myrow['bancoCheque'].', #Cheque: '.$myrow['numeroCheque'];
+$descripcion='Transacciï¿½n: '.$myrow['tipoPago'].',Banco: '.$myrow['bancoCheque'].', #Cheque: '.$myrow['numeroCheque'];
 }else{
 $descripcion='Tipo de Pago: '.$myrow['tipoPago'];
 $descripcion= $myrow40['descripcion'];

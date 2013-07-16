@@ -1,4 +1,4 @@
-<?php require('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php require('../pdf/fpdf_js.php');
 //require('fpdf.php');
 
 //Stream handler to read from global variables

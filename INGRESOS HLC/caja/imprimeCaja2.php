@@ -1,4 +1,4 @@
-<?php require('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php require('../../js/pdf/fpdf_js.php');
 
 
 define('FPDF_FONTPATH','font/');
@@ -353,7 +353,7 @@ if(!$myrow3['descripcion']){
 $myrow3['descripcion']=$myrow39['descripcion'];
 } 
 
-if($um=='s' or $um=='S')$myrow3['descripcion']='[Honorarios Médicos por Interpretación de Resultados] '.$myrow3['descripcion'];
+if($um=='s' or $um=='S')$myrow3['descripcion']='[Honorarios Mï¿½dicos por Interpretaciï¿½n de Resultados] '.$myrow3['descripcion'];
 
 
 $cos="$".number_format($myrow['precioVenta'],2);
@@ -422,7 +422,7 @@ $pdf->Cell(0,0,"$".number_format($SUBTOTAL[0]+$iva,2),0,0,R);
 $pdf->SetXY(22,$Y+10);
 $pdf->Cell(0,0,'*** '.$resultado.' '.$formula.' ***',0,0,L);
 $pdf->SetXY(22,$Y+13);
-$pdf->Cell(0,0,'(Este no es un documento fiscal válido)',0,0,L);
+$pdf->Cell(0,0,'(Este no es un documento fiscal vï¿½lido)',0,0,L);
 //Launch the print dialog
 //$pdf->AutoPrint(true);
 $pdf->Output();

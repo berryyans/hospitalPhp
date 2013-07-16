@@ -1,4 +1,4 @@
-<?php include('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php include('../../js/pdf/fpdf_js.php');
 
 
 
@@ -444,7 +444,7 @@ statusCaja='pagado'
   ";
   $resultb=mysql_db_query($basedatos,$sSQLb);
   $myrowb = mysql_fetch_array($resultb);
-  $pdf->Cell(0,0,'Tarjeta de Crédito',0,0,M);
+  $pdf->Cell(0,0,'Tarjeta de Crï¿½dito',0,0,M);
   $pdf->SetX(110);
   $pdf->Cell(0,0,'$'.number_format($myrowb['TC'],2),0,0,M);
   //******************************************
@@ -509,7 +509,7 @@ statusCaja='pagado'
   ";
   $resultd=mysql_db_query($basedatos,$sSQLd);
   $myrowd = mysql_fetch_array($resultd);
-$pdf->Cell(0,0,'Transferencia electrónica',0,0,M);
+$pdf->Cell(0,0,'Transferencia electrï¿½nica',0,0,M);
 $pdf->SetX(110);
 $pdf->Cell(0,0,'$'.number_format($myrowc['TE'],2),0,0,M);
 //************************************

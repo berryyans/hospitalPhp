@@ -1,4 +1,4 @@
-<?php include('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php include('../js/pdf/fpdf_js.php');
 		
     function cambia_a_normal($fecha){ 
     ereg( "([0-9]{2,4})-([0-9]{1,2})-([0-9]{1,2})", $fecha, $mifecha); 
@@ -395,7 +395,7 @@ $pdf->Ln(5); //salto de linea
 //************************************************CARGOS***************************************************
 
 $pdf->SetX('7');
-$pdf->Cell(0,0,'Folio de Devolución: '.$myrow311['folioDevolucion'],0,0,L);
+$pdf->Cell(0,0,'Folio de Devoluciï¿½n: '.$myrow311['folioDevolucion'],0,0,L);
 //**************************************************************************************************
 
 
