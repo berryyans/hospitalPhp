@@ -2,8 +2,7 @@
 
 <?php 
 $ip = $_SERVER['REMOTE_ADDR']; 
-if($ip=='127.0.0.1' or $ip=='localhost'){
-
+//if($ip=='127.0.0.1' or $ip=='localhost'){
 
 
 $agrega = "INSERT INTO logs (
@@ -41,8 +40,8 @@ body {
 }
 -->
 </style>
-<?php }else{
-    echo '<script>window.alert("NO ESTA PERMITIDO");
+<?php //}else{
+    /*echo '<script>window.alert("NO ESTA PERMITIDO");
 window.location.href="index.php?backurl="+window.location.href;
     
 </script>';
