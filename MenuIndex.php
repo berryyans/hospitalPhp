@@ -1,9 +1,8 @@
 <?php require("/configuracion/ventanasEmergentes.php"); ?>
 
 <?php 
-$ip = $_SERVER['REMOTE_ADDR']; 
-if($ip=='127.0.0.1' or $ip=='localhost'){
-
+//echo $ip = $_SERVER['REMOTE_ADDR']; 
+//if($ip=='127.0.0.1' or $ip=='localhost'){
 
 
 $agrega = "INSERT INTO logs (
@@ -23,7 +22,7 @@ $url='http://hlc.um.edu.mx/sima/movil/principal.php/';
 	//require("/configuracion/MenuPrincipal/menup.php");
         //require("/configuracion/MenuPrincipal/menuPrincipal.php");    
         require("/configuracion/MenuPrincipal/menuPrincipalv4.php");    
-	require("/configuracion/MenuPrincipal/menuAyuda.php");
+	//require("/configuracion/MenuPrincipal/menuAyuda.php");
 
 }
 //***************************************************
@@ -41,8 +40,8 @@ body {
 }
 -->
 </style>
-<?php }else{
-    echo '<script>window.alert("NO ESTA PERMITIDO");
+<?php //}else{
+    /*echo '<script>window.alert("NO ESTA PERMITIDO");
 window.location.href="index.php?backurl="+window.location.href;
     
 </script>';
