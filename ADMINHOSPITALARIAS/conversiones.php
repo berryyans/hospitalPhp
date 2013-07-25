@@ -185,7 +185,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
       <th width="50"  align="left">Costo</th>
 
       <th width="50"  align="left">Existencia</th>
-    
+      <th width="50"  align="left">Conversion</th>
       
 
 
@@ -505,7 +505,13 @@ Editar
 
 
         
-        
+      <td ><span >
+     
+<?php 
+ echo $myrow8ac1e['entrada']-$myrow8ac1s['salida'];
+	 
+		?>
+      </span></td>  
         
         
 

@@ -345,16 +345,7 @@ $porcentajeAseguradora=($costo[$i]*$myrow3['porcentajeAseguradora'])/100;
 
 if($keyPA[$i]!=NULL){
     
-$q1a = "INSERT INTO precioArticulos 
-(codigo,costo,usuario,fecha,hora,entidad,keyPA,ID_EJERCICIO,status,
-cantidadParticular,cantidadAseguradora,descripcionArticulo,precioSugerido)
-values
-('".$myrow3a['codigo']."','".$costo[$i]."','".$usuario."','".$fecha1."','".$hora1."',
-    '".$entidad."','".$keyPA[$i]."','".$ID_EJERCICIOM."' ,'request'  ,'".$porcentajeParticular."' ,
-        '".$porcentajeAseguradora."' ,'".$myrow3a['descripcion']."' ,'".$precioSugerido[$i]."' )";
 
-mysql_db_query($basedatos,$q1a);
-echo mysql_error();
 
 
 
@@ -374,14 +365,74 @@ codigo='".$myrow3a['codigo']."'
 $result8ac=mysql_db_query($basedatos,$sSQL8ac);
 $myrow8ac = mysql_fetch_array($result8ac);
     
-if($myrow8ac['cajaCon']>0){
-    //$ct=$cantidad[$i]*$myrow8ac['cajaCon'];
+
+
+
+####CONVERSIONES AUTOMATICAS
+//QUIEN ES CENTRO DE DISTRIBUCION DE ESTA ENTIDAD    
+$cendis=new whoisCendis();
+$centroDistribucion=$cendis->cendis($entidad,$basedatos);  
+
+//VERIFICAR SI ES A GRANEL    
+    $sSQLy3= "
+SELECT * 
+FROM
+existencias
+WHERE
+entidad='".$entidad."'
+and
+codigo='".$myrow3a['codigo']."'
+and
+almacen='".$centroDistribucion."'
+
+";
+
+
+$resulty3=mysql_db_query($basedatos,$sSQLy3);
+$myrowy3 = mysql_fetch_array($resulty3);
+
+if($myrowy3['ventaGranel']=='si' and $myrowy3['cantidadSurtir']>0 ){
+//cantidad a granel
+    $ct=$cantidad[$i]*$myrowy3['cantidadSurtir'];
+    $costo[$i]=$costo[$i]/$myrowy3['cantidadSurtir'];
+}elseif($myrow8ac['cajaCon']>0){
+//caja con
+$ct=$cantidad[$i]*$myrow8ac['cajaCon'];
+   $costo[$i]=$costo[$i]/$$myrow8ac['cajaCon'];
 }else{
-    //$ct=$cantidad[$i];
+    $ct=$cantidad[$i];
 }
 
-$ct=$cantidad[$i];
+
+
+
+
+
+//DEFAULT
+//$ct=$cantidad[$i];
 //****************************************************************
+
+
+
+
+
+
+$q1a = "INSERT INTO precioArticulos 
+(codigo,costo,usuario,fecha,hora,entidad,keyPA,ID_EJERCICIO,status,
+cantidadParticular,cantidadAseguradora,descripcionArticulo,precioSugerido)
+values
+('".$myrow3a['codigo']."','".$costo[$i]."','".$usuario."','".$fecha1."','".$hora1."',
+    '".$entidad."','".$keyPA[$i]."','".$ID_EJERCICIOM."' ,'request'  ,'".$porcentajeParticular."' ,
+        '".$porcentajeAseguradora."' ,'".$myrow3a['descripcion']."' ,'".$precioSugerido[$i]."' )";
+
+mysql_db_query($basedatos,$q1a);
+echo mysql_error();
+
+
+
+
+
+
 
 
 
@@ -473,7 +524,7 @@ values
     '".$entidad."','".$myrow8ac['keyPA']."','".$_POST['almacenDestino1']."',
         '".$_POST['almacenDestino1']."',
         '".$myrow8acb['costo']."',
-        '".$ca."','".$ca."','".$myrow8ac['descripcion']."','".$myrow8ac1e['entrada']."',
+        '".$ct."','".$ct."','".$myrow8ac['descripcion']."','".$myrow8ac1e['entrada']."',
             '".$myrow8ac1e['entrada']."',
         '".$myrow8acd['otro']."','".$myrow8acd['descripcion']."',
             '".$myrow8acd['tipoMovimiento']."',
@@ -1520,10 +1571,10 @@ $nCT[0]+= ($precioDerivado*$myrow['cantidad'])+$ivaNC;
         
 
         <input name="bandera" type="hidden" id="bandera" value="<?php echo $bandera;?>" />
-          <td height="21" bgcolor="<?php echo $color;?>" ><?php echo $bandera;?></td>
+          <td  ><?php echo $bandera;?></td>
         
-        <td height="21" bgcolor="<?php echo $color;?>" ><?php echo $myrow['keyPA'];?></td>
-        <td bgcolor="<?php echo $color;?>" >
+        <td   ><?php echo $myrow['keyPA'];?></td>
+        <td  >
 		<?php 
 		echo $myrow['descripcionArticulo']; 
 		echo '<br>';
@@ -1548,7 +1599,7 @@ if($myrow39e['tasaGP']>0){
           <input type="hidden" name="keyPA[]" value="<?php echo $myrow['keyPA'];?>" /></td>
           
         
-        <td bgcolor="<?php echo $color;?>" >
+        <td  >
 
 
             
@@ -1574,18 +1625,18 @@ if($myrow39e['tasaGP']>0){
 
         
         
-        <td bgcolor="<?php echo $color;?>" >
+        <td  >
 	<input  name="cantidad[]" type="text" size="3" value="<?php echo $myrow['cantidad']; ?>"  autocomplete="off" <?php  if($myrow['status']=='notaCredito')echo 'readonly=""';?>/>		
         </td>
         
-        <td bgcolor="<?php echo $color;?>" >
+        <td  >
         <label>
         <input  name="costo[]" type="text"  size="6" value="<?php echo $myrow['precioUnitario']; ?>" autocomplete="off"  <?php  if($myrow['status']=='notaCredito')echo 'readonly=""';?>/>
 	</label>
         </td>
         
 
-<td bgcolor="<?php echo $color;?>" >
+<td  >
 <?php //aqui va el subtotal
 
 echo '$'.number_format($myrow['precioUnitario']*$myrow['cantidad'],2);
@@ -1596,7 +1647,7 @@ echo '$'.number_format($myrow['precioUnitario']*$myrow['cantidad'],2);
                 
                 
 
-        <td bgcolor="<?php echo $color;?>" >
+        <td  >
 
 
 		<?php if($myrow39e['politicaPrecios']=='si' and $myrow['precioSugerido']<1){
@@ -1635,7 +1686,7 @@ echo '$'.number_format($myrow['precioUnitario']*$myrow['cantidad'],2);
 
 
 
-<td bgcolor="<?php echo $color;?>" >
+<td  >
 	
 <input name="porcentajeOferta[]"  type="text"  size="6" value="<?php echo $myrow['porcentajeOferta']; ?>" autocomplete="off" <?php  if($myrow['status']=='notaCredito')echo 'readonly=""';?>/>		
         
@@ -1654,7 +1705,7 @@ echo number_format($ivaOfertaD,2);
 
 
                 
-<td bgcolor="<?php echo $color;?>" >
+<td  >
 
             
 <input name="descuentoPorcentaje[]"  type="text"  size="6" value="<?php echo $myrow['descuentoPorcentaje']; ?>" autocomplete="off" <?php  if($myrow['status']=='notaCredito')echo 'readonly=""';?>/>		
@@ -1672,7 +1723,7 @@ echo number_format($tivaDescuentoD,2);
         
         
         
-                <!--td bgcolor="<?php echo $color;?>" >
+                <!--td  >
 
 <input name="descuentoPorcentajePP[]"  type="text"  size="6" value="<?php echo $myrow['descuentoPorcentajePP']; ?>" autocomplete="off" <?php  if($myrow['status']=='notaCredito')echo 'readonly=""';?>/>		
 
@@ -1688,7 +1739,7 @@ echo number_format($descuentoPPD+$ivaDescuentoPPD,2);
         
         
         
-                <td bgcolor="<?php echo $color;?>" >
+                <td  >
 <?php //aqui va el descuento en cantidad
 echo '$'.number_format($precioDerivado,2); 
 ?>	
@@ -1696,7 +1747,7 @@ echo '$'.number_format($precioDerivado,2);
         </td>
         
         
-        <td bgcolor="<?php echo $color;?>" >
+        <td  >
             <div align="center">
                 <span > 
 <?php 
@@ -1718,7 +1769,7 @@ echo '$'.number_format("0.00",2);
        
         
         
-      <td bgcolor="<?php echo $color;?>" ><div align="center">
+      <td  ><div align="center">
           <?php if($myrow['notaCredito']=='si'){ ?>
         <span class="Estilo24"> <a   href="enviarSolicitud1.php?proveedor=<?php echo $_GET['proveedor'];?>&id_factura=<?php echo $_GET['id_factura'];?>&descripcionProveedor=<?php echo $_GET['descripcionProveedor'];?>&keyR=<?php echo $myrow['keyR'];?>&inactiva=si&notaCredito=no"> 
                 <img src="../imagenes/btns/checkbtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onMouseover="showhint('Presiona aqui para cambiar el status del articulo..', this, event, '150px')" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
@@ -1730,7 +1781,7 @@ echo '$'.number_format("0.00",2);
       </td>
         
         
-        <td bgcolor="<?php echo $color;?>" ><div align="center">
+        <td  ><div align="center">
                 <a href="<?php echo $_SERVER['PHP_SELF'];?>?keyClientesInternos=<?php echo $myrow112['keyClientesInternos']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&amp;keyR=<?php echo $myrow['keyR'];?>&id_factura=<?php echo $_GET['id_factura'];?>&proveedor=<?php echo $_GET['proveedor'];?>&departamento=<?php echo $_GET['departamento'];?>&req=<?php echo $_GET['req'];?>&id_proveedor=<?php echo $_GET['proveedor'];?>&importeFactura=<?php echo $_GET['importeFactura'];?>&ivaFactura=<?php echo $_GET['ivaFactura'];?>&keyc=<?php echo $_GET['keyc'];?>&descripcionProveedor=<?php echo $_GET['descripcionProveedor'];?>"> <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas activar la nota de credito?') == false){return false;}" /></a></div>
         </td>
         
@@ -2021,6 +2072,9 @@ print '$'.noRound($subt,2);
       //echo '<br>';
       //echo '<span >Diferencia: '.'$'.number_format($totalInvoice-$totalCapturado,2).'</span>';
       $total= noRound($myrow17a['importe'],2)-noRound($tare+$subt+$myrow17a['notaCredito'],2);
+      
+      //echo $myrow17a['importe'].' =>  '.($tare+$subt+$myrow17a['notaCredito']);
+      
 	  if( $total==0){ ?>
 	  <br>
       <input name="send" type="submit" src="../imagenes/btns/sendsolicitud.png" id="send" value="Enviar Solicitud" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas enviar la solicitud?') == false){return false;}"  <?php if($total>1 ){ echo 'disabled=""';}?>/>

@@ -111,9 +111,6 @@ $result17=mysql_db_query($basedatos,$sSQL17);
 $myrow17 = mysql_fetch_array($result17);
 ?>
 <script>
-javascript:ventanaSecundaria('enviarSolicitud.php?keyc=<?php echo $myrow17['keyc'];?>&descripcionProveedor=<?php echo $myrow17['descripcionProveedor']; ?>&nCuenta=<?php echo $myrow45['nCuenta']; ?>&credencial=<?php echo $_POST['credencial']; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&almacenDestino=<?php echo $_GET['almacen']; ?>&almacenSolicitante=<?php echo $almacen; ?>&banderaCXC=<?php echo $_POST['banderaCXC']; ?>&cargoTotal=<?php echo $_POST['cargoTotal']; ?>&fechaSolicitud=<?php echo $_GET['fechaSolicitud']; ?>&id_factura=<?php echo $_POST['id_factura']; ?>&proveedor=<?php echo $_POST['proveedor'];?>&departamento=<?php echo $_POST['departamento'];?>&req=<?php echo $myrow333['NS'];?>&importeFactura=<?php echo $_POST['importeFactura'];?>&ivaFactura=<?php echo $_POST['ivaFactura'];?>');
-//window.alert("SE GENERO EL # DE REQUISICION: <?php echo $myrow17['keyc'];?>");
-window.opener.document.forms["form1"].submit();
 window.close();
 </script>
 

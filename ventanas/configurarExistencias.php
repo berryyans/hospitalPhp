@@ -1050,8 +1050,7 @@ echo '<br>';
   
  $sSQL= "Select * From existencias
 where entidad='".$entidad."' AND codigo='".$_GET['codigo']."'
-and
-almacen!='".$aP."'
+
 group by almacen
 ";
 

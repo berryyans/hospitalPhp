@@ -264,9 +264,9 @@ Ultima Actualizacion:   <?php echo cambia_a_normal($myrowf['fecha']);?>
       <th width= "50"  ><div align="left">Entrada</div></th>
       <th width= "50"  ><div align="left">Salida</div></th>
           <th width= "10"  ><div align="left">Existencia</div></th>
-      <th width= "50"  ><div align="left">CostoUnit</div></th>
+      <th width= "50"  ><div align="left">Costo </div></th>
           <th width= "10"  ><div align="left">CostoMov</div></th>
-
+<th width= "10"  ><div align="left">ValorInv</div></th>
   
   
   
@@ -275,7 +275,10 @@ Ultima Actualizacion:   <?php echo cambia_a_normal($myrowf['fecha']);?>
     </tr>
    
 
- 
+
+    
+    
+<!--    
                <tr >
           <td colspan="3">SALDO INICIAL</td>
                  
@@ -332,6 +335,9 @@ $existenciaInicial=$myrowy['entradas']-$myrowys['salidas'];
               echo $myrowy['entradas']-$myrowys['salidas'];?>
               </div></td>  
                </tr>
+               -->
+               
+               
              <tr >  
 <?php	
 
@@ -535,6 +541,7 @@ echo mysql_error();
     echo (int) $salida;
     }else{
          $salida=NULL;
+         
          }
     $out[0]+=$myrow1a['salida'];
     ?>
@@ -562,7 +569,7 @@ echo mysql_error();
       //$ei=$existenciaInicial-($in[0]-$out[0]);
       
 
-        echo $existenciaInicial-( $out[0]-$in[0]);
+        echo $eee=$existenciaInicial-( $out[0]-$in[0]);
        
     
     
@@ -570,7 +577,12 @@ echo mysql_error();
     ?>
          
   </div>
-</td>
+    
+    
+    
+    
+
+
 
 
 
@@ -580,14 +592,14 @@ echo mysql_error();
 <td>
 
 <?php
- if($myrow1['entrada']>0 and $myrow['evento']!='03'){
+ //if($myrow1['entrada']>0 and $myrow['evento']!='03'){
     if($myrow['costo']>0){
     echo '$'.number_format($myrow['costo'],2);   
     }
      $costo=$myrow['costo'];
- }else{
-     echo '---';
- }
+// }else{
+  //   echo '---';
+ //}
   $cos[0]+=$myrow['costo'];
     
     ?>
@@ -598,37 +610,8 @@ echo mysql_error();
 <td>
 
 <?php  
-    
-
-
-//SACO LA EVALUACION
-//echo $myrow['numSolicitud'];
- /*
-$sSQL8ac1s= "
-SELECT sum( cantidad*costo) as venta
-FROM
-articulosExistencias
-WHERE
-entidad='".$entidad."'
-and
-codigo='".$myrowf['codigo']."'
-    and
-status='sold'
-    and
-   
-        numSolicitud='".$myrow['numSolicitud']."'
-";
-$result8ac1s=mysql_db_query($basedatos,$sSQL8ac1s);
-$myrow8ac1s = mysql_fetch_array($result8ac1s);
-  * 
-  */
-
-
-    print '$'.number_format($myrow2['costo2'],2);
-  
-    
-     
-    ?>
+    print '$'.number_format($costo*$eee,2);
+      ?>
   
 </td>
 
@@ -640,7 +623,19 @@ $myrow8ac1s = mysql_fetch_array($result8ac1s);
 
 
 
+<td>
+    <div align="left">
+    <?php
+   
 
+        //echo $eee=$existenciaInicial-( $out[0]-$in[0]);
+          echo '?';
+    
+    ?>
+         
+  </div>    
+    
+</td>
 
 
 

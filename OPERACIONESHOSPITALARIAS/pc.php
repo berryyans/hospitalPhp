@@ -1,19 +1,22 @@
-<?php require("menuOperaciones.php");?>
-
+<?php require("menuOperaciones.php");
+//require("/configuracion/ventanasEmergentes.php");
+//require('/configuracion/funciones.php');
+//$mostrarmenu=new menus();
+//$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+$estilos=new muestraEstilos();
+$estilos->styles();
+?>
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
    window.open(URL,"ventanaSecundaria2","width=800,height=800,scrollbars=YES") 
 } 
 </script> 
 
-        
-
 <?php  
 
 
 
 if($_GET['keySOP'] AND $_GET['status']=='done'){
-
  $sSQL= "SELECT *
 FROM
 sis_ordenesSOP
@@ -164,16 +167,6 @@ function wopen(url, name, w, h)
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
 <?php
 /*
 $alturaMinima=400;
@@ -221,9 +214,6 @@ if($totaldone>0 || $totalRequest>0 || $totalontransit>0){
 ?>
 
 
-
-
-
 <?php  
 if($_GET['codigo'] AND ($_GET['inactiva'] or $_GET['activa'])){
 
@@ -237,9 +227,6 @@ $q = "DELETE FROM sis_inventarioEqComputo WHERE solicitud='".$_GET['solicitud'].
 
 }
 ?>
-
-
-
 
 <?php 
 $sSQL8aa3= "
@@ -269,11 +256,6 @@ echo mysql_error();
 
 ?>
 
-
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -284,56 +266,28 @@ echo mysql_error();
 <script type="text/javascript" src="../js/jquery-ui-personalized-1.5.2.packed.js"></script>
 <script type="text/javascript" src="../js/sprinkle.js"></script>
 <script src="../js/jquery-1.7.2.min.js"></script>
+
 <script>
-$(document).ready(function() {
-    $("#content div").hide(); // Initially hide all content
-    $("#tabs li:first").attr("id","current"); // Activate first tab
-    $("#content div:first").fadeIn(); // Show first tab content
+    var $j = jQuery.noConflict();
+$j(document).ready(function() {
+    $j("#content div").hide(); // Initially hide all content
+    $j("#tabs li:first").attr("id","current"); // Activate first tab
+    $j("#content div:first").fadeIn(); // Show first tab content
     
-    $('#tabs a').mouseover(function(e) {
+    $j('#tabs a').mouseover(function(e) {
         e.preventDefault();
-        if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+        if ($j(this).closest("li").attr("id") == "current"){ //detection for current tab
          return       
         }
         else{             
-        $("#content div").hide(); //Hide all content
-        $("#tabs li").attr("id",""); //Reset id's
-        $(this).parent().attr("id","current"); // Activate this
-        $('#' + $(this).attr('name')).fadeIn(); // Show content for current tab
+        $j("#content div").hide(); //Hide all content
+        $j("#tabs li").attr("id",""); //Reset id's
+        $j(this).parent().attr("id","current"); // Activate this
+        $j('#' + $j(this).attr('name')).fadeIn(); // Show content for current tab
         }
     });
 });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </head>
 <body>
@@ -396,14 +350,6 @@ body
     -webkit-box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
     box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
 }
-
-
-
-
-
-
-
-
 
 
 #tabs a{
@@ -479,17 +425,6 @@ body
 
 /* ------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
 #content h2, #content h3, #content p
 {
     margin: 0 0 15px 0;
@@ -524,54 +459,22 @@ body
 <?php     
 $q=mysql_real_escape_string($q);
 ?>
-   <div id="moving_tab">
-
- <ul id="tabs" >
-    
-
-    <li ><a href="#2" name="tab2">Lista de PC</a></li>
-    
-    
-</ul>
+    <!--<div class="contenido_pagina"> -->
+    <div class="page_right">
+        <div class="clearfix tabs">
+            <ul id="tabs" class="tabs_navigation clearfix">
+                <li ><a href="#2" name="tab2">Lista de PC</a></li>
+            </ul>
         </div>
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!--
+    </div>
+    <div id="moving_tab">
+        <ul id="tabs" >
+            <li ><a href="#2" name="tab2">Lista de PC</a></li>
+        </ul>
+    </div>-->
+<!--<div class="contenido_pagina"> -->
+<div class="table-template">
 <div id="content"> 
 
               
@@ -605,7 +508,8 @@ $q=mysql_real_escape_string($q);
 
 <form name="request">
 <br>
-  <table width="800"  cellspacing="0" cellpadding="0" align="center" >
+  <!--<table width="700"  cellspacing="0" cellpadding="0" align="center" >-->
+ <table width="500"  cellspacing="0" cellpadding="0" align="center" >
  
     <tr >
         <td ><p>#</p></td>
@@ -696,12 +600,8 @@ echo $myrow['usuario'];
       
       
       <td >
-          <p>
-          <?php 
-	  	 
-	
-		 echo $myrow['registro'];
-	?></p>
+          <a href='/sima/OPERACIONESHOSPITALARIAS/altaEquipos.php?main=<?php echo $_GET['main'];?>warehouse=<?php echo $_GET['warehouse'];?>&registro=<?php echo $myrow['registro']; ?>&tipo=PC'><?php echo $myrow['registro']; ?></a>
+          <!--<p><?php echo $myrow['registro']; ?></p>-->
       </td>
       
       
@@ -747,88 +647,14 @@ echo $myrow['usuario'];
 
  
     </div>
-
-              
-              
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
 
 </div>
-
-        
-        
-
- 
-</body>
+</div>
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?></body>
 </html>
