@@ -69,7 +69,7 @@ if ($_POST['update']) {
         $myrow1 = mysql_fetch_array($result1);
 
 
-        $sSQL1a = "Select * From entidades WHERE codigoEntidad = '" . $entidad . "'";
+        $sSQL1a = "Select * From entidades WHERE codigoEntidad = '" . $_POST['entidad'] . "'";
         $result1a = mysql_db_query($basedatos, $sSQL1a);
         $myrow1a = mysql_fetch_array($result1a);
 
@@ -137,7 +137,8 @@ window.opener.document.forms["form1"].submit();
                 $registro+=1;
             }
 
-            echo '-' . $_POST['almacen'] . '-';
+            //echo '-' . $_POST['almacen'] . '-';
+            //echo '-' . $_POST['entidad'] . '-';
             /*
               $agrega = "INSERT INTO sis_inventarioEqComputo (
               registro,departamento,keyTE,keyMA,motherboard,drives,harddisk,memoriaRam,keyMAM,descripcionUbicacion,monitor,
@@ -158,9 +159,7 @@ window.opener.document.forms["form1"].submit();
 
 
 
-
-
-            $agrega = "INSERT INTO sis_inventarioEqComputo (
+           $agrega = "INSERT INTO sis_inventarioEqComputo (
 registro,departamento,keyTE,keyMA,motherboard,drives,harddisk,memoriaRam,keyMAM,descripcionUbicacion,monitor,
 usuario,fecha,hora,entidad,solicitud,status,descripcionEntidad,descripcionAlmacen,tipoProcesador,velocidadProcesador
 ) values (
@@ -168,7 +167,7 @@ usuario,fecha,hora,entidad,solicitud,status,descripcionEntidad,descripcionAlmace
 '" . $_POST['almacen'] . "',
     '" . $_POST['keyTE'] . "','" . $_POST['keyMA'] . "','" . $_POST['motherboard'] . "','" . $_POST['drives'] . "','" . $_POST['harddisk'] . "',
         '" . $_POST['memoriaRam'] . "','" . $_POST['keyMAM'] . "','" . $_POST['descripcionUbicacion'] . "','" . $_POST['monitor'] . "',
-            '" . $usuario . "','" . $fecha1 . "','" . $hora1 . "','" . $entidad . "','" . $_GET['solicitud'] . "','A',
+            '" . $usuario . "','" . $fecha1 . "','" . $hora1 . "','" . $_POST['entidad'] . "','" . $_GET['solicitud'] . "','A',
                 '" . $myrow1a['descripcionEntidad'] . "','" . $myrow1b['descripcion'] . "','" . $_POST['tipoProcesador'] . "','" . $_POST['velocidadProcesador'] . "'
 )";
             mysql_db_query($basedatos, $agrega);
@@ -245,7 +244,7 @@ if ($_GET['solicitud'] > 0) {
 
 
 if (isset($_GET['isUpdate'])) {
-    $sSQL1 = "Select * From sis_inventarioEqComputo WHERE solicitud = '" . $_GET['solicitud'] . "'";
+    $sSQL1 = "Select * From sis_inventarioEqComputo WHERE registro = '" . $_GET['solicitud'] . "'";
     $result1 = mysql_db_query($basedatos, $sSQL1);
     $myrow1 = mysql_fetch_array($result1);
 
@@ -680,7 +679,7 @@ ORDER BY descripcion ASC";
                     <td width="451" scope="col"><label> </label>
                         <div align="left">
 <?php
-$sqlNombre11 = "SELECT * from catTipoProcesador
+$sqlNombre11 = "SELECT * from sis_catTipoProcesador
 
 ORDER BY descripcion ASC";
 $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
@@ -802,7 +801,7 @@ $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
                     <td width="451" scope="col"><label> </label>
                         <div align="left">
 <?php
-$sqlNombre11 = "SELECT * from marcasm
+$sqlNombre11 = "SELECT * from sis_marcasm
 
 ORDER BY descripcion ASC";
 $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
