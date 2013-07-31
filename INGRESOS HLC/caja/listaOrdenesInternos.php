@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/ingresoshlcmenu/caja/menuCaja.php"); //valida('CAJA','LOPI',$usuario,$basedatos);?>
+<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); //valida('CAJA','LOPI',$usuario,$basedatos);?>
   <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -8,7 +8,7 @@
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 

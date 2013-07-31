@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php");?>
+<?php require("../../configuracion/ventanasEmergentes.php");?>
 
 <?php
 
@@ -88,7 +88,7 @@ function ventanaSecundaria5 (URL){
 
    <p align="center">   Relacionar Campos con Grupos de Producto</p>
    <div align="center">
-<?php echo $leyenda.' del almacén:'.$al;?>
+<?php echo $leyenda.' del almacï¿½n:'.$al;?>
    </div>
    <table width="258" border="0" align="center">
      <tr>

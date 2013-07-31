@@ -1,5 +1,5 @@
 <?php require("menuOperaciones.php"); ?>
-<?php require("/configuracion/clases/internarPaciente.php"); ?>
+<?php require("../configuracion/clases/internarPaciente.php"); ?>
 
   <script language=javascript> 
 function ventanaSecundaria10 (URL){ 

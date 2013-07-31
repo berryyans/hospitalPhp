@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 
 
 <script type="text/javascript">
@@ -11,7 +11,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -48,7 +48,7 @@ codigo = '".$coder[$i]."' and almacen='".$_POST['almacenDestino1']."'
   $myrow52 = mysql_fetch_array($result52);
 
 if($myrow52['codigo']){
-echo 'Se actualizó el registro';
+echo 'Se actualizï¿½ el registro';
   $q = "UPDATE existencias set 
 
 fechaA='".$hoy."', 
@@ -66,7 +66,7 @@ mysql_db_query($basedatos,$q);
 echo mysql_error();
 $leyenda="Se actualizaron existencias";
 } else {//insertar
-echo 'Se insertó en existencias un nuevo registro';
+echo 'Se insertï¿½ en existencias un nuevo registro';
  $agrega = "INSERT INTO existencias (
 codigo,almacen,usuario,hora,fechaA,ID_EJERCICIO,entidad,almacenPrincipal
 ) values (
@@ -129,7 +129,7 @@ Reporte de existencias <br />
     <tr class="style7">
       <th scope="col"><div align="right" class="normalmid">Almac&eacute;n</div></th>
       <th scope="col"> <div align="left">
-          <?php require("/configuracion/componentes/comboAlmacen.php"); 
+          <?php require("../../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenStock($entidad,'style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

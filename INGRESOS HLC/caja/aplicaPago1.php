@@ -1,11 +1,11 @@
-<?PHP include("/configuracion/ingresoshlcmenu/menuingresoshlc.php"); valida('CAJA','LOPI',$usuario,$basedatos);?>
+<?PHP include("../../configuracion/ingresoshlcmenu/menuingresoshlc.php"); valida('CAJA','LOPI',$usuario,$basedatos);?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -49,7 +49,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -111,7 +111,7 @@ $al = $_POST['almacen1'];
 } else if($_POST['almacen3']){
 $al = $_POST['almacen3'];
 } 
-//***********************Cierro validaciones de almacén************************
+//***********************Cierro validaciones de almacï¿½n************************
 
 //*********************************CREAR FUNCIONES******************************************
 function saca_por($can,$por){
@@ -154,7 +154,7 @@ $sSQLC= "Select * From aperturaCaja ";
 $resultC=mysql_db_query($basedatos,$sSQLC);
 $myrowC = mysql_fetch_array($resultC);
 
-if($poliza=$myrowC['numeroPoliza']){ //*******************Comienzo la validación*****************
+if($poliza=$myrowC['numeroPoliza']){ //*******************Comienzo la validaciï¿½n*****************
 //********************Llenado de datos
 $sSQL3= "Select * From clientesInternos WHERE numeroE = '".$_POST['numeroE']."' and status='activa'";
 $result3=mysql_db_query($basedatos,$sSQL3);

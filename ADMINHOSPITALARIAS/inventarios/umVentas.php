@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php");?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php");?>
 
 <?php
 if($_POST['actualizar'] AND $_POST['codigoUM2']){

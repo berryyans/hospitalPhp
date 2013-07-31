@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 <? 
 if($_POST['escoje'] =="poranaquel")
 $_POST['nomArticulo'] ="1";

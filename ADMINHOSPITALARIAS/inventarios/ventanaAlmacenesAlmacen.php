@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php");?>
+<?php require("../../configuracion/ventanasEmergentes.php");?>
    <?php if($_POST['almacen']){
    $al=$_POST['almacen'];
    } else {

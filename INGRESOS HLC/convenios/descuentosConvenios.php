@@ -1,5 +1,5 @@
 <?PHP require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); 
-require("/configuracion/clases/listaClientes.php"); ?>
+require("../../configuracion/clases/listaClientes.php"); ?>
 <?php $lista=new listadoClientes();
 $TITULO='Descuentos sobre Convenios';
 $ventana='agregarDescuentosConvenios.php';

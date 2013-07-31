@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 <?
 $modulo = "INV";
 $checaModuloScript= "Select all distinct * From usuariosModulos WHERE usuario = '".$usuario."' AND modulo LIKE '%$modulo%'";

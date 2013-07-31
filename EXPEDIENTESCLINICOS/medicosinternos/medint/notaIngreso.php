@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php");?>
+<?php require("../../../configuracion/ventanasEmergentes.php");?>
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
    window.open(URL,"ventana1","width=650,height=700,scrollbars=YES") 
@@ -87,7 +87,7 @@ echo mysql_error();
 echo '<script type="text/vbscript">
 msgbox "ALMACEN AGREGADO EXITOSAMENTE "
 </script>';
-echo 'Almacén o mini-Almacén agregado..'; 
+echo 'Almacï¿½n o mini-Almacï¿½n agregado..'; 
 }} else {
 
 $agrega = "INSERT INTO almacenesHistoria (
@@ -125,7 +125,7 @@ WHERE
 almacen='".$_POST['almacen']."'";
 mysql_db_query($basedatos,$q);
 echo mysql_error();
-echo 'Se Modificó el almacén';
+echo 'Se Modificï¿½ el almacï¿½n';
 
 } 
 
@@ -163,7 +163,7 @@ $borrame = "DELETE FROM almacenes WHERE almacen ='".$_POST['almacen']."' and ent
 mysql_db_query($basedatos,$borrame);
 
 echo mysql_error();
-echo 'Almacén Modificado';
+echo 'Almacï¿½n Modificado';
 echo '<script type="text/vbscript">
 msgbox "ALMACEN ELIMINADO "
 </script>';
@@ -228,7 +228,7 @@ $myrow2 = mysql_fetch_array($result2);
      <tr>
        <td width="131" class="style12"><strong>Problema</strong></td>
        <td width="568" class="style12"><label>
-         <textarea name="problema" cols="80" wrap="virtual" class="style12" id="problema">Secundigesta de + cesárea previa + DCP</textarea>
+         <textarea name="problema" cols="80" wrap="virtual" class="style12" id="problema">Secundigesta de + cesï¿½rea previa + DCP</textarea>
        </label></td>
      </tr>
      <tr>
@@ -245,7 +245,7 @@ $myrow2 = mysql_fetch_array($result2);
 
      <tr>
        <td class="style12"><strong>Subjetivo</strong></td>
-       <td class="style12"><textarea name="subjetivo" cols="80" wrap="virtual" class="Estilo24" id="subjetivo">Embarazo de SDG en prodrómodos de trabajo de Parto. Se programa para cesárea por cesárea previa.</textarea></td>
+       <td class="style12"><textarea name="subjetivo" cols="80" wrap="virtual" class="Estilo24" id="subjetivo">Embarazo de SDG en prodrï¿½modos de trabajo de Parto. Se programa para cesï¿½rea por cesï¿½rea previa.</textarea></td>
      </tr>
 		
 

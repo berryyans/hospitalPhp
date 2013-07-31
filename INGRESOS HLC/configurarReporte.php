@@ -1,4 +1,4 @@
-<?PHP require("/configuracion/ventanasEmergentes.php"); 
+<?PHP require("../configuracion/ventanasEmergentes.php"); 
 function noRound($val, $pre = 0) {
     $val = (string) $val;
     if (strpos($val, ".") !== false) {

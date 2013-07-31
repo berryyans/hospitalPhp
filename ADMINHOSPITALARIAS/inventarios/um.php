@@ -1,5 +1,5 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php");?>
-<?php include('/configuracion/clases/validaModulos.php'); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php");?>
+<?php include('../../configuracion/clases/validaModulos.php'); ?>
 <?php
 if($_POST['actualizar'] AND $_POST['codigoUM']){
 $sSQL1= "Select * From unidadMedida WHERE codigoUM = '".$_POST['codigoUM']."' ";

@@ -1,5 +1,5 @@
 <?PHP require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); 
-require("/configuracion/clases/listaClientes.php"); ?>
+require("../configuracion/clases/listaClientes.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=550,height=400,scrollbars=YES") 

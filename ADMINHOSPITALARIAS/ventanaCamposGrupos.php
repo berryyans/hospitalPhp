@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php");
+<?php require("../configuracion/ventanasEmergentes.php");
 
 
 if($_POST['agrega'] AND $_GET['almacen']){

@@ -1,4 +1,4 @@
-<?php include("/configuracion/conf.php"); ?>
+<?php include("../../configuracion/conf.php"); ?>
 <?php
 $modulo = "cierreCuenta.adm";
 $checaModuloScript= "Select * From usuariosModulos WHERE usuario = '".$usuario."' AND modulo = '".$modulo."'";

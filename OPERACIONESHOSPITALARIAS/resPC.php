@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php require("../configuracion/ventanasEmergentes.php"); ?>
 
 <?php
 if ($_POST['ADDOS'] != NULL and $_GET['solicitud'] > 0) {

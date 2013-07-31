@@ -1,4 +1,4 @@
-<?php require("/configuracion/conf.php"); ?>
+<?php require("../../configuracion/conf.php"); ?>
 <?php require("conexion.php");  ?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   

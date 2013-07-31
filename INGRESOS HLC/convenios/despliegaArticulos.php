@@ -1,4 +1,4 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
+<?php include("../../configuracion/ventanasEmergentes.php"); ?>
 <?php
 $numCliente=$_GET['seguro'];
 $seguro=$_GET['seguro'];
@@ -20,7 +20,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.escoje.value) == null ) {   
-                alert("Por Favor, escoje como quieres agregar artículos!")   
+                alert("Por Favor, escoje como quieres agregar artï¿½culos!")   
                 return false   
         }            
 }   
@@ -169,7 +169,7 @@ $col = 1;
 	  if($resulScripModulo2['descripcion']){
 	  echo $resulScripModulo2['descripcion'];
 	  } else {
-	  echo "El artículo existe en los convenios pero no en el inventario!!!";
+	  echo "El artï¿½culo existe en los convenios pero no en el inventario!!!";
 	  }
 	  ?>
         </span></td>

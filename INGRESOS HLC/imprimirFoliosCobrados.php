@@ -151,7 +151,7 @@ $pdf->AddPage();
 
 
 //*****************CONEXION  A SIMA***************
-require('/configuracion/baseDatos.php');
+require('../configuracion/baseDatos.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();
@@ -375,7 +375,7 @@ $result1a=mysql_db_query($basedatos,$sSQL1a);
 while($myrow1a = mysql_fetch_array($result1a)){
 
 
-require('/configuracion/clases/acumuladosCorte.php');
+require('../configuracion/clases/acumuladosCorte.php');
 
 
 
@@ -649,7 +649,7 @@ $pdf->Ln(20); //salto de linea
 
 
 
-require('/configuracion/clases/desplegarResumenTransacciones.php');
+require('../configuracion/clases/desplegarResumenTransacciones.php');
 
 
 

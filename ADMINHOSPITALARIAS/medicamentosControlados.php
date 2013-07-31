@@ -1,11 +1,11 @@
 <?PHP //require("menuOperaciones.php");   
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 ?>
-<?php require('/configuracion/clases/catalogoMedicamentoControlado.php'); ?>
+<?php require('../configuracion/clases/catalogoMedicamentoControlado.php'); ?>
 <?php
 $catalogoArticulos=new articulos();
 $catalogoArticulos->catalogoArticulos($entidad,$usuario,$codigo,$fecha,$basedatos);

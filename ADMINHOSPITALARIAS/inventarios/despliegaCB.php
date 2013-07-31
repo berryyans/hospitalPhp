@@ -1,4 +1,4 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?><?php include("/configuracion/funciones.php"); ?>
+<?php include("../../configuracion/ventanasEmergentes.php"); ?><?php include("../../configuracion/funciones.php"); ?>
 <?php
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];
@@ -131,7 +131,7 @@ $col = 1;
           <input name="codigoBeta[]" type="hidden" id="codigoBeta[]" value="<?php  echo $myrow['codigoCB']; ?>" />
         </span></td>
         <td bgcolor="<?php echo $color;?>" class="Estilo24"><span class="style7"><?php echo $myrow['descripcion']; ?><?php //echo $myrow12['um'].$myrow13['umVentas']; ?></span></td>
-        <td bgcolor="<?php echo $color;?>" class="Estilo24"><a href="despliegaCB.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;usuario=<?php echo $E; ?>"><img src="/sima/imagenes/borrar.png" alt="Bot&oacute;n Eliminar" width="23" height="23" border="0" onclick="if(confirm('Esta seguro que deseas eliminar este código de barras?') == false){return false;}" /></a></td>
+        <td bgcolor="<?php echo $color;?>" class="Estilo24"><a href="despliegaCB.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;usuario=<?php echo $E; ?>"><img src="/sima/imagenes/borrar.png" alt="Bot&oacute;n Eliminar" width="23" height="23" border="0" onclick="if(confirm('Esta seguro que deseas eliminar este cï¿½digo de barras?') == false){return false;}" /></a></td>
         <td bgcolor="<?php echo $color;?>" class="Estilo24"><span class="style7"><label>
         <label><img src="<?php  echo $myrow['ruta']; ?>" width="156" height="43" /> </label>
         </label>
@@ -154,9 +154,9 @@ $col = 1;
         <hr width="600" size="0" />
         <p align="center">
 		<?php if($bandera){ ?>
-		<?php echo "Se encontraron $bandera artículos con la palabra: $nomArticulo"?>
+		<?php echo "Se encontraron $bandera artï¿½culos con la palabra: $nomArticulo"?>
 		<?php } else { ?>
-		<?php echo "No se encontró $articulo"?>
+		<?php echo "No se encontrï¿½ $articulo"?>
 		<?php } ?>
 		&nbsp; </p>
     <?php }} ?>

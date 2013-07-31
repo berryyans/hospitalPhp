@@ -1,4 +1,4 @@
-<?php require("/configuracion/funciones.php");
+<?php require("configuracion/funciones.php");
 function hacer_encabezado()
 
 {

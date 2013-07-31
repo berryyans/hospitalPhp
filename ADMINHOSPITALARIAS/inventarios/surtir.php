@@ -1,4 +1,4 @@
-<?PHP require("/configuracion/ventanasEmergentes.php");  require("/configuracion/funciones.php"); ?>
+<?PHP require("../../configuracion/ventanasEmergentes.php");  require("../../configuracion/funciones.php"); ?>
 
 
 <script language=javascript>
@@ -242,7 +242,7 @@ $estilo->styles();
 
 
 
- <?php require("/configuracion/componentes/comboAlmacen.php");  ?>
+ <?php require("../../configuracion/componentes/comboAlmacen.php");  ?>
 <form id="form1" name="form1" method="post" action="#">
   <h1 align="center">Surtir Solicitudes</h1>
     <h5 align="center">

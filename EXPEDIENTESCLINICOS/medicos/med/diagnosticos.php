@@ -1,10 +1,10 @@
-<?PHP include("/configuracion/expedientesclinicos/medicos/medicosmenu.php"); ?>
+<?PHP include("../../../configuracion/expedientesclinicos/medicos/medicosmenu.php"); ?>
 <SCRIPT LANGUAGE="JavaScript">
 function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -292,7 +292,7 @@ foreach($agregar as $i => $agregar_articulo){
 $borrame = "DELETE FROM cargosCuentaPaciente WHERE numeroE ='".$numPaciente."' AND codArticulo = '".$agregar[$i]."'";
 mysql_db_query($basedatos,$borrame);
 echo mysql_error();
-$leyenda ="se quito materiales o artículos";
+$leyenda ="se quito materiales o artï¿½culos";
 }}}
 
 if($_POST['nuevo']){
@@ -499,7 +499,7 @@ $rNombre18=mysql_fetch_array($resultaNombre18);
 		if($numeroMedico){ ?>
         <option value="<?php echo $numeroMedico; ?>"><?php echo $numeroMedico; ?></option>
         <?php }?>
-		<option value="">Escoje un Médico</option>
+		<option value="">Escoje un Mï¿½dico</option>
 		<?php
 			$sqlNombre11 = "SELECT * From medicos ORDER BY apellido1 ASC";
 $resultaNombre11=mysql_db_query($basedatos,$sqlNombre11);

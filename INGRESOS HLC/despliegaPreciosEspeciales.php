@@ -1,5 +1,5 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
-<?php require("/configuracion/funciones.php"); 
+<?php require("../configuracion/ventanasEmergentes.php"); ?>
+<?php require("../configuracion/funciones.php"); 
 $numCliente=$_GET['numCliente'];
 $seguro=$_GET['seguro'];
 $medico=$_GET['medico'];

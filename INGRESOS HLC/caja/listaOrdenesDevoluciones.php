@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/ingresoshlcmenu/caja/menuCaja.php"); include('/configuracion/funciones.php');?>
+<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); include('../../configuracion/funciones.php');?>
 <?php
 
 $sSQLC= "Select status From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";
@@ -8,7 +8,7 @@ $myrowC = mysql_fetch_array($resultC);
 
 
 
-if($myrowC['status']=='abierta'){ //*******************Comienzo la validación*****************
+if($myrowC['status']=='abierta'){ //*******************Comienzo la validaciï¿½n*****************
 ?>
 <script language=javascript> 
 function ventanaSecundaria11 (URL){ 

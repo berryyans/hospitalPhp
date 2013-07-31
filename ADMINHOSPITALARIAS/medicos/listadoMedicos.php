@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/medicos/medicosmenu.php"); include("/configuracion/funciones.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/medicos/medicosmenu.php"); include("../../configuracion/funciones.php"); ?>
 
 
 

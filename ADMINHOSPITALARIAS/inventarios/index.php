@@ -1,4 +1,4 @@
-<?PHP require("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP require("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 
 <?PHP
 $agrega = "INSERT INTO logs (

@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/medicos/medicosmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/medicos/medicosmenu.php"); ?>
   <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -8,7 +8,7 @@
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -97,14 +97,14 @@ $nombrePaciente =
 	  <?php echo "\n".
 	  "DATOS PERSONALES"."\n".
 	  "fechaNac: ".$myrow['fechaNacimiento']."\n".
-	  "País: ".$myrow['pais']."\n".
-	  "Núm. Teléfono: ".$myrow['telefono']."\n".
-	  "Dirección: ".$myrow['direccion']."\n".
+	  "Paï¿½s: ".$myrow['pais']."\n".
+	  "Nï¿½m. Telï¿½fono: ".$myrow['telefono']."\n".
+	  "Direcciï¿½n: ".$myrow['direccion']."\n".
 	  "CP: ".$myrow['cp']."\n".
 	  "Ciudad: ".$myrow['ciudad']."\n".
 	  "Estado: ".$myrow['estado']."\n".
- 	  "Num. Cédula: ".$myrow['cedula']."\n".
-	  "fecha Titulación: ".$myrow['fechaTitulacion']."\n".
+ 	  "Num. Cï¿½dula: ".$myrow['cedula']."\n".
+	  "fecha Titulaciï¿½n: ".$myrow['fechaTitulacion']."\n".
 	  "RFC: ".$myrow['rfc']."\n"
 	  ;
 	  ?>

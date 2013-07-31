@@ -1,16 +1,16 @@
-<?PHP include("/configuracion/ingresoshlcmenu/caja/menuCaja.php"); ?>
-<?php include('/configuracion/funciones.php'); 
+<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); ?>
+<?php include('../../configuracion/funciones.php'); 
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
 
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
   
 <script language="javascript" type="text/javascript">   
@@ -31,7 +31,7 @@ function valida(F) {
                 alert("Por Favor, escoje el almacen/departamento!")   
                 return false   
         } else if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este almacen!")   
+                alert("Por Favor, escribe la descripciï¿½n de este almacen!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   
@@ -179,7 +179,7 @@ cargosCuentaPaciente.status!='transaccion'
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
 </body>

@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 <?php $articulo = $_GET['nomArticulo']; ?>
 
 

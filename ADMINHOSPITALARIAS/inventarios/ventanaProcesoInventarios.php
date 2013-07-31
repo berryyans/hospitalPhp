@@ -1,4 +1,4 @@
-<?PHP require("/configuracion/ventanasEmergentes.php"); require("/configuracion/funciones.php");?>
+<?PHP require("../../configuracion/ventanasEmergentes.php"); require("../../configuracion/funciones.php");?>
 
 
 <script language=javascript> 

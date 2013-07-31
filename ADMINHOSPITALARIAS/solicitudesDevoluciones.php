@@ -1,4 +1,4 @@
-<?PHP require("menuOperaciones.php"); require("/configuracion/clases/solicitudesAlmacenes.php");
+<?PHP require("menuOperaciones.php"); require("../configuracion/clases/solicitudesAlmacenes.php");
 
 
 $sSQL8a= "

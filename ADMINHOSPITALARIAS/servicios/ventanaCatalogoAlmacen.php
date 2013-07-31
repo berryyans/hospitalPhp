@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php");?>
+<?php require("../../configuracion/ventanasEmergentes.php");?>
 <script language=javascript> 
 function ventanaSecundaria5 (URL){ 
    window.open(URL,"ventana5","width=500,height=860,scrollbars=YES") 
@@ -376,7 +376,7 @@ size="10" <?php if($myrow2['almacen']){ echo 'readonly=""';}?>/>
      <tr>
        <td bgcolor="#CCCCCC" class="negro">Cto Costo[Cta. Mayor]</td>
       <td bgcolor="#CCCCCC" class="style12"><span class="Estilo24">
-         <?php require("/configuracion/componentes/comboAlmacen.php"); 
+         <?php require("../../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenSS($entidad,'style7',$myrow2['almacenPadre'],$almacenDestino,$basedatos);
 ?>
@@ -448,7 +448,7 @@ $comboAlmacen->despliegaAlmacenSS($entidad,'style7',$myrow2['almacenPadre'],$alm
 	   $medico=$_POST['medico'];
 	   }
 	   
-require("/configuracion/componentes/comboMedicos.php");
+require("../../configuracion/componentes/comboMedicos.php");
 $listaMedicos=new despliegaMedicosSS();
 $listaMedicos->listaMedicosSS($entidad,$medico,$basedatos);
 	   ?>

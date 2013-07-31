@@ -1,5 +1,5 @@
-<?php include("/configuracion/operacioneshospitalariasmenu/farmacia/farmacia.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php include("../../configuracion/operacioneshospitalariasmenu/farmacia/farmacia.php"); ?>
+<?php include("../../configuracion/funciones.php"); ?>
           <?php
 		  
 	  	$sqlNombre16= "SELECT * From sesionesAlmacen
@@ -29,12 +29,12 @@ function ventanaSecundaria (URL){
 <!-Hoja de estilos del calendario --> 
 <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-1.css" title="win2k-cold-1" /> 
 
-<!-- librería principal del calendario --> 
+<!-- librerï¿½a principal del calendario --> 
 <script type="text/javascript" src="calendar.js"></script> 
 
-<!-- librería para cargar el lenguaje deseado --> 
+<!-- librerï¿½a para cargar el lenguaje deseado --> 
 <script type="text/javascript" src="lang/calendar-es.js"></script> 
-<!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+<!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
 <script type="text/javascript" src="calendar-setup.js"></script> 
 
 <SCRIPT LANGUAGE="JavaScript">
@@ -42,7 +42,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -361,7 +361,7 @@ $code1=$myrow18['codigo'];
 $descripcion=descripcion($code=$code1,$basedatos);
 
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $sSQL17= "Select * From requisiciones WHERE codigo= '".$code1."' and id_almacen='".$ali."'
@@ -477,7 +477,7 @@ echo "Surtido";
 	  <td bgcolor="<?php echo $color?>" class="style12"><span class="style7">
 	  <?php if(	  $myrow17['id_requisicion'] and $_POST['fechaInicial']==$fecha1){ ?>
 	  <a href="solicitudArticulos.php?id_requisicion=<?php echo $myrow17['id_requisicion']; ?>&amp;almacen=<?php echo $ali; ?>&amp;elimina=<?php echo "yes"; ?>&amp;keyR=<?php echo $myrow17['keyR']; ?>&amp;codigo=<?php echo $myrow17['codigo']; ?>"><img src="borrar.png" alt="Cancelar el pedido" width="23" height="23" border="0"  
-onclick="if(confirm('¿Estás seguro que deseas cancelar el articulo: <?php echo $myrow7['descripcion'];?>?') == false){return false;}" /></a>      </span></td>
+onclick="if(confirm('ï¿½Estï¿½s seguro que deseas cancelar el articulo: <?php echo $myrow7['descripcion'];?>?') == false){return false;}" /></a>      </span></td>
       <?php } else {?>
 	  <?php echo "---"; ?>
 	  <?php } ?>
@@ -540,7 +540,7 @@ onclick="if(confirm('¿Estás seguro que deseas cancelar el articulo: <?php echo $
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
 </body>

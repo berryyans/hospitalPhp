@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php"); 
+<?php require("../../configuracion/ventanasEmergentes.php"); 
 $TOTAL=$_GET['TOTAL'];
 $iva=$_GET['iva'];
 $descuento=$_GET['descuento'];
@@ -15,7 +15,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -44,7 +44,7 @@ $al = $_GET['almacen1'];
 } else if($_GET['almacen3']){
 $al = $_GET['almacen3'];
 } 
-//***********************Cierro validaciones de almacén************************
+//***********************Cierro validaciones de almacï¿½n************************
 
 //*********************************CREAR FUNCIONES******************************************
 function saca_por($can,$por){
@@ -87,7 +87,7 @@ $sSQLC= "Select * From aperturaCaja ";
 $resultC=mysql_db_query($basedatos,$sSQLC);
 $myrowC = mysql_fetch_array($resultC);
 
-if($poliza=$myrowC['numeroPoliza']){ //*******************Comienzo la validación*****************
+if($poliza=$myrowC['numeroPoliza']){ //*******************Comienzo la validaciï¿½n*****************
 //********************Llenado de datos
 $sSQL3= "Select * From clientesInternos WHERE numeroE = '".$_GET['numeroE']."' ";
 $result3=mysql_db_query($basedatos,$sSQL3);

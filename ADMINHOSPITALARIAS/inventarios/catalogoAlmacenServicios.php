@@ -1,5 +1,5 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php include('/configuracion/funciones.php'); 
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php include('../../configuracion/funciones.php'); 
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -73,7 +73,7 @@ $estilos->styles();
        <th scope="col"><div align="center"><span class="style73">Departamento/Medico</span><span class="style12">
          <select name="tipoAlmacen" class="style12" id="tipoAlmacen" onChange="javascript:this.form.submit();"/>
          
-         <option >Selecciona la Opción</option>
+         <option >Selecciona la Opciï¿½n</option>
          <option 
 		   <?php if($_POST['tipoAlmacen']=='ap')echo 'selected'; ?>
 		    value="ap">Almacen Principal</option>

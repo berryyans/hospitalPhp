@@ -1,7 +1,7 @@
 <?PHP 
 //require("menuOperaciones.php"); 
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
@@ -9,7 +9,7 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 
 
 
-require("/configuracion/clases/listadoServiciosGPOProducto.php");?>
+require("../configuracion/clases/listadoServiciosGPOProducto.php");?>
 <?php 
 $consultarArticulos=new consultaArticulosPrecio();
 $consultarArticulos->consultarArticulos($ALMACEN,$entidad,$basedatos);

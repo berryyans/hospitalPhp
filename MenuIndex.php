@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php require("configuracion/ventanasEmergentes.php"); ?>
 
 <?php 
 //echo $ip = $_SERVER['REMOTE_ADDR']; 
@@ -21,7 +21,7 @@ $url='http://hlc.um.edu.mx/sima/movil/principal.php/';
 	} else {
 	//require("/configuracion/MenuPrincipal/menup.php");
         //require("/configuracion/MenuPrincipal/menuPrincipal.php");    
-        require("/configuracion/MenuPrincipal/menuPrincipalv4.php");    
+        require("configuracion/MenuPrincipal/menuPrincipalv4.php");    
 	//require("/configuracion/MenuPrincipal/menuAyuda.php");
 
 }

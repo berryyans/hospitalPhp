@@ -1,5 +1,5 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); 
-require("/configuracion/funciones.php");require("/configuracion/clases/solicitudesAlmacenes.php");
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); 
+require("../../configuracion/funciones.php");require("../../configuracion/clases/solicitudesAlmacenes.php");
 
 
 $sSQL8a= "

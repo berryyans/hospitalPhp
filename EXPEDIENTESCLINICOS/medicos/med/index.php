@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/expedientesclinicos/medicos/medicosmenu.php"); ?>
+<?PHP include("../../../configuracion/expedientesclinicos/medicos/medicosmenu.php"); ?>
 
 <style type="text/css">
 <!--

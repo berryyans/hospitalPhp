@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php");?>
+<?php require("../../configuracion/ventanasEmergentes.php");?>
    <?php if($_POST['almacen']){
    $al=$_POST['almacen'];
    } else {
@@ -95,7 +95,7 @@ function ventanaSecundaria5 (URL){
 
    <p align="center">   Relacionar Campos con Almacenes </p>
    <div align="center">
-<?php echo $leyenda.' del almacén:'.$al;?>
+<?php echo $leyenda.' del almacï¿½n:'.$al;?>
    </div>
    <img src="/sima/imagenes/bordestablas/borde1.png" width="416" height="24" />
    <table width="416" border="0" align="center" cellpadding="4" cellspacing="0">

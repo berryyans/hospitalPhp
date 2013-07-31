@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/expedientesclinicos/expedclinmedi.php"); ?>
+<?PHP include("../../configuracion/expedientesclinicos/expedclinmedi.php"); ?>
 <style type="text/css">
 <!--
 body {

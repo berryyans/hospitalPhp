@@ -1,4 +1,4 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?><?php include("/configuracion/funciones.php"); ?>
+<?php include("../../configuracion/ventanasEmergentes.php"); ?><?php include("../../configuracion/funciones.php"); ?>
 <?php 
 $campo=$_GET['campoSeguro'];
 $forma=$_GET['forma'];

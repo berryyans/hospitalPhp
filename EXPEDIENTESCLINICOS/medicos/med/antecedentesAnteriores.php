@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?><?PHP include("/configuracion/funciones.php"); ?>
+<?PHP include("../../../configuracion/ventanasEmergentes.php"); ?><?PHP include("../../../configuracion/funciones.php"); ?>
 <?php
 
 $sSQL2= "SELECT nombreCompleto

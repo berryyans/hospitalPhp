@@ -22,6 +22,7 @@ body
 
 .site_container
 {
+    min-height: 100%;
     /*
     border:1px solid #E71111;
     */

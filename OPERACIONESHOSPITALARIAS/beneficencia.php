@@ -1,5 +1,5 @@
-<?PHP require("/configuracion/ventanasEmergentes.php"); require('/configuracion/funciones.php'); 
-require ('/configuracion/clases/beneficenciaxAlmacen.php'); 
+<?PHP require("../configuracion/ventanasEmergentes.php"); require('../configuracion/funciones.php'); 
+require ('../configuracion/clases/beneficenciaxAlmacen.php'); 
 
 //$_GET['random']='429928957';
 

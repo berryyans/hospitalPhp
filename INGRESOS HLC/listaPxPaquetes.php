@@ -1,4 +1,4 @@
-  <?php require('/configuracion/ventanasEmergentes.php'); $date=$_GET['fecha1'];require('/configuracion/funciones.php');?>
+  <?php require('../configuracion/ventanasEmergentes.php'); $date=$_GET['fecha1'];require('../configuracion/funciones.php');?>
   
 
   <p align="center" >

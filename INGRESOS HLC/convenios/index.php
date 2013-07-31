@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/ingresoshlcmenu/convenios/menuConvenios.php"); ?>
+<?PHP include("../../configuracion/ingresoshlcmenu/convenios/menuConvenios.php"); ?>
 
 <style type="text/css">
 <!--

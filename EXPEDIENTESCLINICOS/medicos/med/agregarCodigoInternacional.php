@@ -1,4 +1,4 @@
-<?php require('/configuracion/ventanasEmergentes.php'); require('/configuracion/funciones.php');?>
+<?php require('../../../configuracion/ventanasEmergentes.php'); require('../../../configuracion/funciones.php');?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=700,height=700,scrollbars=YES") 
@@ -41,7 +41,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.despliega.value) == false ) {   
-                alert("Por Favor, escribe el Código Internacional!")   
+                alert("Por Favor, escribe el Cï¿½digo Internacional!")   
                 return false   
         }         
 }   
@@ -104,7 +104,7 @@ window.opener.location.reload(true);
 </script>
 <?php 
 } else {
-echo '<blink>'.'Ya existe éste Código Internacional'.'</blink>';
+echo '<blink>'.'Ya existe ï¿½ste Cï¿½digo Internacional'.'</blink>';
 }
 
 
@@ -202,8 +202,8 @@ $nombreMedico= $myrow24['nombre1'].' '.$myrow24['apellido1'];
         <td width="156" height="40" bgcolor="#660066"><span class="style13">DX Codigo Internacional</span></td>
         <td width="514"><span class="style12">
           <input name="M2" type="button" class="style7" id="M2"  onclick="javascript:ventanaSecundaria(
-		'/sima/cargos/despliegaCodigosInternacionales.php?campoDespliega=<?php echo "despliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "ci"; ?>&amp;keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>')" value="CI" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Mostrar la lista de Códigos Internacionales';?></div>')" onMouseOut="UnTip()"/>
-          <input name="despliega" type="text" class="style7" size="80"  readonly="" value="<?php echo $_GET['despliega'];?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Agregar Códigos Internacionales';?></div>')" onMouseOut="UnTip()"/>
+		'/sima/cargos/despliegaCodigosInternacionales.php?campoDespliega=<?php echo "despliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "ci"; ?>&amp;keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>')" value="CI" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Mostrar la lista de Cï¿½digos Internacionales';?></div>')" onMouseOut="UnTip()"/>
+          <input name="despliega" type="text" class="style7" size="80"  readonly="" value="<?php echo $_GET['despliega'];?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Agregar Cï¿½digos Internacionales';?></div>')" onMouseOut="UnTip()"/>
           <span class="style13">
           <input name="ci" type="hidden" class="style7" size="10"  readonly=""/>
         </span></span></td>
@@ -211,7 +211,7 @@ $nombreMedico= $myrow24['nombre1'].' '.$myrow24['apellido1'];
       <tr>
         <td height="33">&nbsp;</td>
         <td><span class="style12">
-          <input name="actualizar" type="submit" class="style7" id="actualizar" value="Aplicar Codigo Internacional" onClick="if(confirm('Esta seguro que deseas aplicar este diagn&oacute;stico?') == false){return false;}" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Aplicar Código Internacionales';?></div>')" onMouseOut="UnTip()"  />
+          <input name="actualizar" type="submit" class="style7" id="actualizar" value="Aplicar Codigo Internacional" onClick="if(confirm('Esta seguro que deseas aplicar este diagn&oacute;stico?') == false){return false;}" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Aplicar Cï¿½digo Internacionales';?></div>')" onMouseOut="UnTip()"  />
         </span>
           <input name="keyClientesInternos" type="hidden" id="keyClientesInternos" value="<?php echo $_GET['keyClientesInternos'];?>" />
             <input name="button" type="button" class="style7"

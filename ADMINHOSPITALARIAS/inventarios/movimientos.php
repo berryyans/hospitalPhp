@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 
 
 <script type="text/javascript">
@@ -11,7 +11,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -48,7 +48,7 @@ codigo = '".$coder[$i]."' and almacen='".$_POST['almacenDestino1']."'
   $myrow52 = mysql_fetch_array($result52);
 
 if($myrow52['codigo']){
-echo 'Se actualizó el registro';
+echo 'Se actualizï¿½ el registro';
   $q = "UPDATE existencias set 
 
 fechaA='".$hoy."', 
@@ -66,7 +66,7 @@ mysql_db_query($basedatos,$q);
 echo mysql_error();
 $leyenda="Se actualizaron existencias";
 } else {//insertar
-echo 'Se insertó en existencias un nuevo registro';
+echo 'Se insertï¿½ en existencias un nuevo registro';
  $agrega = "INSERT INTO existencias (
 codigo,almacen,usuario,hora,fechaA,ID_EJERCICIO,entidad,almacenPrincipal
 ) values (
@@ -106,11 +106,11 @@ echo mysql_error();
 
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
 <script type="text/javascript" src="/sima/js/wz_tooltip.js"></script> 
 
@@ -173,7 +173,7 @@ Reporte de Movimientos <br />
     <tr class="style7">
       <th scope="col"><div align="right" class="normalmid">Almac&eacute;n</div></th>
       <th scope="col"> <div align="left">
-          <?php require("/configuracion/componentes/comboAlmacen.php"); 
+          <?php require("../../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenStock($entidad,'style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>
@@ -328,7 +328,7 @@ fechaCargo='".$_POST['fechaInicial']."'
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
     </script> 
 </body>

@@ -1,12 +1,12 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php include('/configuracion/clases/validaModulos.php'); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php include('../../configuracion/clases/validaModulos.php'); ?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -112,7 +112,7 @@ $estilo->styles();
       <td width="102" bgcolor="#660066"><div align="left" class="style13">Almac&eacute;n</div></td>
       <td colspan="2" bgcolor="#FFCCFF"><div align="left">
           <label><span class="style7">
-          <?php require("/configuracion/componentes/comboAlmacen.php"); 
+          <?php require("../../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'combos',$almacen,$almacenDestino,$basedatos);
 ?>

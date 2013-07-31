@@ -1,11 +1,11 @@
-<?PHP include("/configuracion/administracionhospitalaria/medicos/medicosmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/medicos/medicosmenu.php"); ?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -29,7 +29,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.numMedico.value) == false ) {   
-                alert("Escribe el número de código para el doctor presionando NUEVO, y a HLC agregale su número!")   
+                alert("Escribe el nï¿½mero de cï¿½digo para el doctor presionando NUEVO, y a HLC agregale su nï¿½mero!")   
                 return false   
         } else if( vacio(F.nombre1.value) == false ) {   
                 alert("Escribe el Nombre del Doctor!")   

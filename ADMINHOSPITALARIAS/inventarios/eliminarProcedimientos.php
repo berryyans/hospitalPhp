@@ -1,5 +1,5 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php include('/configuracion/clases/validaModulos.php'); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php include('../../configuracion/clases/validaModulos.php'); ?>
 <?php $articulo = $_POST['nomArticulo']; ?>
 
 <?php 

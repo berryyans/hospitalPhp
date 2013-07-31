@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 
 <?php 
 
@@ -45,7 +45,7 @@ almacen = '".$_POST['almacen']."'
 } */
 mysql_db_query($basedatos,$q);
 echo mysql_error();
-$leyenda = "Se ingresó el anaquel para el artículo: ".$_POST['codigo'];
+$leyenda = "Se ingresï¿½ el anaquel para el artï¿½culo: ".$_POST['codigo'];
 } } 
 }
 //*****************cierro INSERTAR Y ACTUALIZAR **********************************
@@ -69,8 +69,8 @@ echo mysql_error();
       CONTENT="0; URL=listaUsuarios.php">';
 exit;
  */
-}$leyenda = "Se eliminó el almacén ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['usuario']){
-$leyenda = "Por favor, escoja el nombre de almacén que desee quitar.!";
+}$leyenda = "Se eliminï¿½ el almacï¿½n ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['usuario']){
+$leyenda = "Por favor, escoja el nombre de almacï¿½n que desee quitar.!";
 }
 
 
@@ -106,7 +106,7 @@ WHERE
 usuario='".$_POST['usuario']."' AND modulo='".$agregar[$i]."'
 ";
 mysql_db_query($basedatos,$q);
-$leyenda = "Se actualizó el usuario: ".$_POST['usuario'];
+$leyenda = "Se actualizï¿½ el usuario: ".$_POST['usuario'];
 echo mysql_error();
 } else {
 $agrega = "INSERT INTO usuarios-modulos (
@@ -117,7 +117,7 @@ $nCliente,
 '".$agregar[$i]."'
 )";
 mysql_db_query($basedatos,$agrega);
-$leyenda = "Se insertó el usuario: ".$_POST['usuario'];
+$leyenda = "Se insertï¿½ el usuario: ".$_POST['usuario'];
 echo mysql_error();
 //$nCliente-=1;
 //echo '<META HTTP-EQUIV="Refresh"
@@ -134,7 +134,7 @@ if($_POST['borrar'] AND $_POST['nCliente']){
 $borrame = "DELETE FROM usuarios WHERE nCliente ='".$_POST['nCliente']."'";
 mysql_db_query($basedatos,$borrame);
 echo mysql_error();
-$leyenda = "Se eliminó el usuario: ".$_POST['usuario'];
+$leyenda = "Se eliminï¿½ el usuario: ".$_POST['usuario'];
 echo '<META HTTP-EQUIV="Refresh"
       CONTENT="0; URL=listaUsuarios.php">';
 exit;

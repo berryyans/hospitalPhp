@@ -1,5 +1,5 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?><?php include("/configuracion/clases/eCuentaGrafico.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php require("../../configuracion/ventanasEmergentes.php"); ?><?php include("../../configuracion/clases/eCuentaGrafico.php"); ?>
+<?php include("../../configuracion/funciones.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
    window.open(URL,"ventana2","width=630,height=500,scrollbars=YES,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -30,7 +30,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -53,7 +53,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.tipoTransaccion.value) == false ) {   
-                alert("Escoje el Tipo de Transacción que desees hacer!")   
+                alert("Escoje el Tipo de Transacciï¿½n que desees hacer!")   
                 return false   
         }  else if( vacio(F.cantidadRecibida.value) == false ) {   
                 alert("Escribe la cantidad!")   
@@ -107,7 +107,7 @@ $numRecibo=$myrowC['numRecibo'];
 
 
 
-if($myrowC['status']=='abierta' ){ //*******************Comienzo la validación*****************
+if($myrowC['status']=='abierta' ){ //*******************Comienzo la validaciï¿½n*****************
 $numCorte=$myrowC['numCorte'];
 //********************Llenado de datos
 $sSQL3= "Select * From clientesInternos WHERE keyClientesInternos = '".$numeroCuenta."' ";
@@ -321,7 +321,7 @@ $sSQL333= "Select keyCAP From cargosCuentaPaciente WHERE status='transaccion' an
 $result333=mysql_db_query($basedatos,$sSQL333);
 $myrow333 = mysql_fetch_array($result333);
 
-//aqui no imprimes todo, solamente la transacción que hizo
+//aqui no imprimes todo, solamente la transacciï¿½n que hizo
 ?>
 
 <?php if($_GET['tipoMovimiento']=='transaccion'){ //imprimir solo la transaccion?>
@@ -704,7 +704,7 @@ $tipoVenta='interno';
 <?php 
 
 } else {
-echo 'La Caja está cerrada';
+echo 'La Caja estï¿½ cerrada';
 echo '<script type="text/vbscript">
 msgbox "LA CAJA ESTA CERRADA!"
 </script>';
@@ -712,7 +712,7 @@ msgbox "LA CAJA ESTA CERRADA!"
 ?>
 
   <?php } else {
-echo 'La Caja está cerrada';
+echo 'La Caja estï¿½ cerrada';
 echo '<script type="text/vbscript">
 msgbox "LA CAJA ESTA CERRADA!"
 </script>';

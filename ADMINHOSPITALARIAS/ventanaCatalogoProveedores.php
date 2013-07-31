@@ -1,4 +1,4 @@
-<?php include('/configuracion/ventanasEmergentes.php');?>
+<?php include('../configuracion/ventanasEmergentes.php');?>
 <?php 
 
 if(!$_POST['id_proveedor2']){

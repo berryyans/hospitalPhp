@@ -1,5 +1,5 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/clases/acumuladoAlmacenes.php"); ?>
+<?PHP include("../../configuracion/ventanasEmergentes.php"); ?>
+<?php include("../../configuracion/clases/acumuladoAlmacenes.php"); ?>
 
 <?php
 $acumula=new acumuladoAlmacenes();

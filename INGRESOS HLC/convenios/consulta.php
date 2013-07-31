@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
+<?PHP include("../../configuracion/ventanasEmergentes.php"); ?>
 <?php
 $descripcion=$_POST["word"];
 //$descripcion="DOLAC";

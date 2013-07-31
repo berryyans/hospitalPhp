@@ -1,5 +1,5 @@
 <?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
-<?php require('/configuracion/clases/medicosPrecios.php'); ?>
+<?php require('../../configuracion/clases/medicosPrecios.php'); ?>
 
 <?php
 $medicosPrecios=new consultaMedicosPrecios();

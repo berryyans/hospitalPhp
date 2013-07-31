@@ -1,4 +1,4 @@
-<?php include("/configuracion/ventanasEmergentes.php");require("/configuracion/funciones.php") ?>
+<?php include("../../configuracion/ventanasEmergentes.php");require("../../configuracion/funciones.php") ?>
 <?php
 $numCliente=$_GET['seguro'];
 $seguro=$_GET['seguro'];

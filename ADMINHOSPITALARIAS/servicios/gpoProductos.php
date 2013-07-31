@@ -1,5 +1,5 @@
-<?PHP include("/configuracion/administracionhospitalaria/servicios/inventariosmenu.php");?>
-<?php include('/configuracion/clases/validaModulos.php'); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/servicios/inventariosmenu.php");?>
+<?php include('../../configuracion/clases/validaModulos.php'); ?>
 
 
 <script language=javascript> 

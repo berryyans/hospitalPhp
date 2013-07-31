@@ -138,7 +138,7 @@ function AutoPrintToPrinter($server, $printer, $dialog=false)
 
 
 //*****************CONEXION  A SIMA***************
-require('/configuracion/baseDatos.php');
+require('../../configuracion/baseDatos.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

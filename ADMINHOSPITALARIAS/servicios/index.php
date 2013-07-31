@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/servicios/inventariosmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/servicios/inventariosmenu.php"); ?>
 <style type="text/css">
 <!--
 body {

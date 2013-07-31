@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
+<?PHP include("../../configuracion/ventanasEmergentes.php"); ?>
 
 <script language=javascript>
 function ventanaSecundaria8 (URL){
@@ -488,7 +488,7 @@ $estilo->styles();
 
 
 
- <?php require("/configuracion/componentes/comboAlmacen.php"); include("/configuracion/funciones.php"); ?>
+ <?php require("../../configuracion/componentes/comboAlmacen.php"); include("../../configuracion/funciones.php"); ?>
 <form id="form1" name="form1" method="post" >
   <h1 align="center">Surtir Solicitudes a Granel</h1>
   <div align="center">

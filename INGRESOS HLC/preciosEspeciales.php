@@ -1,12 +1,12 @@
 <?PHP //require("menuOperaciones.php"); 
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 
-require("/configuracion/clases/listaClientes.php"); ?>
+require("../configuracion/clases/listaClientes.php"); ?>
 <?php $lista=new listadoClientes();
 $TITULO='Precios Especiales';
 $ventana='agregarPrecioEspecial.php';

@@ -1,4 +1,4 @@
-<?php require('/configuracion/ventanasEmergentes.php'); include('/configuracion/funciones.php');?>
+<?php require('../../configuracion/ventanasEmergentes.php'); include('../../configuracion/funciones.php');?>
 <?php  
 if($_GET['keyR'] AND ($_GET['inactiva'] or $_GET['activa'])){
 
