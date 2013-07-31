@@ -1,6 +1,6 @@
 <?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
@@ -88,7 +88,7 @@ $estilos->styles();
 <p><div align="center">M&eacute;dicos
       
          
-           <?php require("/configuracion/componentes/comboAlmacen.php"); 
+           <?php require("../configuracion/componentes/comboAlmacen.php"); 
 $medicos=new comboAlmacen();
 $medicos->despliegaMiniAlmacenMedicos($entidad,'combos',$ALMACEN,$almacenDestino,$basedatos);
 ?>

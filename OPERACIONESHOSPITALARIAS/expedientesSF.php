@@ -1,18 +1,18 @@
 <?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 ?>
-<?php require("/configuracion/clases/despliegaExpedientesPendientes.php"); 
+<?php require("../configuracion/clases/despliegaExpedientesPendientes.php"); 
 
 $almacenDestino=$_GET['datawarehouse'];
 $forma=$_GET['forma'];
 $campoDespliega=$_GET['campoDespliega'];
 $campoDespliegaFecha=$_GET['campoDespliegaFecha'];
-require("/configuracion/componentes/comboAlmacen.php"); 
+require("../configuracion/componentes/comboAlmacen.php"); 
 ?>
 
 <!-Hoja de estilos del calendario --> 
