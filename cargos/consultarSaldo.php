@@ -1,4 +1,4 @@
-<?php  require('/configuracion/ventanasEmergentes.php'); require('/configuracion/funciones.php');
+<?php  require('../configuracion/ventanasEmergentes.php'); require('../configuracion/funciones.php');
 
 
 $sSQL7n= "Select * from periodoAlumnos where entidad='".$entidad."'  and  '".$fecha1."' between fechaInicial and fechaFinal ";
