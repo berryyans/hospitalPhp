@@ -173,7 +173,7 @@ Reporte de Movimientos <br />
     <tr class="style7">
       <th scope="col"><div align="right" class="normalmid">Almac&eacute;n</div></th>
       <th scope="col"> <div align="left">
-          <?php require("/configuracion/componentes/comboAlmacen.php"); 
+          <?php require("../../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenStock($entidad,'style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

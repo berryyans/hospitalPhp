@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php"); require('/configuracion/funciones.php');?>
+<?php require("../configuracion/ventanasEmergentes.php"); require('../configuracion/funciones.php');?>
 <script language=javascript>
 function ventanaSecundaria20 (URL){
    window.open(URL,"ventanaSecundaria20","width=630,height=800,scrollbars=YES")

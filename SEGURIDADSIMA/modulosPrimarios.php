@@ -1,6 +1,6 @@
 <?php //require("menuOperaciones.php");
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
@@ -124,7 +124,7 @@ $estilo->styles();
     <span >
     <?php
     if(!$_POST['entidades']) {$_POST['entidades']=$_GET['entidades'];}
-    require("/configuracion/componentes/comboEntidades.php");
+    require("../configuracion/componentes/comboEntidades.php");
 	   $entidades=new despliegaEntidades();$entidades->listaEntidades($usuario,$basedatos);
 	   ?>
   </span>
