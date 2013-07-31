@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/recursoshumanos/rrhhmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/recursoshumanos/rrhhmenu.php"); ?>
 <style type="text/css">
 <!--
 body {

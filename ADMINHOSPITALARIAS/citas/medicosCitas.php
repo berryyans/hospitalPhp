@@ -1,4 +1,4 @@
-<?php include("/configuracion/administracionhospitalaria/menufinancieros.php"); ?>
+<?php include("../../configuracion/administracionhospitalaria/menufinancieros.php"); ?>
 <?php 
 
 
@@ -36,7 +36,7 @@ codMedico,codHora,usuario,fecha,status,hora
 )";
 //mysql_db_query($basedatos,$agrega);
 echo mysql_error();
-$leyenda = "Se ingresó el codMedico: ".$_POST['codMedico'];
+$leyenda = "Se ingresï¿½ el codMedico: ".$_POST['codMedico'];
 }
 }}
 
@@ -52,7 +52,7 @@ foreach($quitar as $is => $quitar_articulo){
 AND codHora = '".$quitar[$is]."' ";
 mysql_db_query($basedatos,$borrame);
 echo mysql_error();
-}$leyenda = "Se eliminó el modulo ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['codMedico']){
+}$leyenda = "Se eliminï¿½ el modulo ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['codMedico']){
 $leyenda = "Por favor, escoja el nombre de codMedico que desee eliminar..!";
 }
 
@@ -98,7 +98,7 @@ $myrow1 = mysql_fetch_array($result1);
     <tr>
       <th scope="col">M&eacute;dico: </th>
       <th width="152" scope="col"><?php 
-	  require("/configuracion/componentes/comboAlmacen.php"); 
+	  require("../../configuracion/componentes/comboAlmacen.php"); 
 $entidad='01';
 $almacenDestino='HCEX';
 $comboAlmacen1=new comboAlmacen();

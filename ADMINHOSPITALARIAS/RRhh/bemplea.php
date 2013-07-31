@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/recursoshumanos/rrhhmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/recursoshumanos/rrhhmenu.php"); ?>
 <?php    require("tooltip.php");  //  require("bd/conecta.php");
   $bnnom = $_POST['txtnomi'];   $bnnomem = $_POST['txtnemplea'];
 if ($_POST['btnenv']) {   $varx = "";

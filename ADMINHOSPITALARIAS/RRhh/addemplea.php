@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/recursoshumanos/rrhhmenu.php"); ?>
+<?PHP include("../../configuracion/administracionhospitalaria/recursoshumanos/rrhhmenu.php"); ?>
 <?php    require("tooltip.php"); // require("bd/conecta.php");
 $tipemp = "Selecciona un Tipo de Empleado"; $ndepa = "Seleccion un Depa.";
 $sqlidmax = "Select Max(id) As mid From empleados";

@@ -1,1 +1,1 @@
-<?php include("/configuracion/conf.php"); ?>
+<?php include("../../configuracion/conf.php"); ?>
