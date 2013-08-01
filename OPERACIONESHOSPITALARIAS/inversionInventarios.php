@@ -1,6 +1,6 @@
 <?php  //require("menuOperaciones.php");
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
@@ -82,7 +82,7 @@ value="<?php echo $year;?>"><?php echo $year;?></option>
         <th width="338" scope="col"><div align="left">
           <?php 
 		
-		  require("/configuracion/componentes/comboAlmacen.php"); 
+		  require("../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenDestino,$almacenDestino,$basedatos);
 ?>
