@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php");require("/configuracion/clases/generaFolioVenta.php"); ?>
+<?php require("../configuracion/ventanasEmergentes.php");require("../configuracion/clases/generaFolioVenta.php"); ?>
 
 <script language="javascript" type="text/javascript">   
 

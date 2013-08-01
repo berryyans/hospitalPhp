@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php"); include('/configuracion/funciones.php');?>
+<?php require("../configuracion/ventanasEmergentes.php"); include('../configuracion/funciones.php');?>
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
