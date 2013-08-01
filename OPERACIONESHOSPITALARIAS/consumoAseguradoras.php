@@ -1,15 +1,15 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php"); 
+<?php require("menuOperaciones.php"); 
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
 
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="../calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
   
 <script language="javascript" type="text/javascript">   
@@ -30,7 +30,7 @@ function valida(F) {
                 alert("Por Favor, escoje el almacen/departamento!")   
                 return false   
         } else if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este almacen!")   
+                alert("Por Favor, escribe la descripciï¿½n de este almacen!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   
@@ -239,6 +239,13 @@ $estilos->styles();
 
      
      <label>
+         
+<p>         
+<a href="javascript:ventanaSecundaria51('despliegaAcumuladoGPO.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $_POST['random'];?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>')"></a>     </label>
+   </p>
+         
+         
+<p>         
 <a href="javascript:ventanaSecundaria51('despliegaAcumuladoGPO.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $_POST['random'];?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>')"></a>     </label>
    </p>
    
@@ -265,6 +272,14 @@ $estilos->styles();
 
 <div id="liga2">
 &nbsp; <br />
+<a href="javascript:ventanaSecundariaA1('../ventanas/reporteVentasxAseguradoras.php?entidad=<?php echo $entidad;?>&numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;random=<?php echo $myrow7ab['random'];?>&amp;fechaInicial=<?php echo $_POST['fechaInicial'];?>&amp;fechaFinal=<?php echo $_POST['fechaFinal'];?>&amp;clientePrincipal=<?php echo $_POST['seguro'];?>&amp;nomSeguro=<?php echo $_POST['nomSeguro'];?>');">
+Por Centro de Costo
+</a><br />
+
+
+
+
+
 <a href="javascript:ventanaSecundariaA1('../ventanas/reporteEspecial.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;random=<?php echo $myrow7ab['random'];?>&amp;fechaInicial=<?php echo $_POST['fechaInicial'];?>&amp;fechaFinal=<?php echo $_POST['fechaFinal'];?>&amp;seguro=<?php echo $_POST['seguro'];?>&amp;nomSeguro=<?php echo $_POST['nomSeguro'];?>');">Reporte especial </a><br />
 
 <a href="javascript:ventanaSecundariaA1('../ventanas/cuentasNominas.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;random=<?php echo $myrow7ab['random'];?>&amp;fechaInicial=<?php echo $_POST['fechaInicial'];?>&amp;fechaFinal=<?php echo $_POST['fechaFinal'];?>&seguro=<?php echo $_POST['seguro'];?>&nomSeguro=<?php echo $_POST['nomSeguro'];?>');">Cuentas</a>
@@ -325,14 +340,14 @@ $estilos->styles();
    Calendar.setup({ 
     inputField     :    "campo_fecha1",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador1"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador1"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
   <script type="text/javascript"> 
    Calendar.setup({ 
     inputField     :    "campo_fecha2",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador2"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador2"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
 </body>

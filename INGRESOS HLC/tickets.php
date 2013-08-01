@@ -76,15 +76,15 @@ $estilos->styles();
 
 
 <?php
-		 if($_GET['fechaInicial']){
-		 $date=$_GET['fechaInicial'];
+		 if($_POST['fechaInicial']){
+		 $date=$_POST['fechaInicial'];
 		 } else {
 		 $date= $fecha1;
 		 }
                  
                  
-                 if($_GET['fechaFinal']){
-		 $date1=$_GET['fechaFinal'];
+                 if($_POST['fechaFinal']){
+		 $date1=$_POST['fechaFinal'];
 		 } else {
 		 $date1= $fecha1;
 		 }
