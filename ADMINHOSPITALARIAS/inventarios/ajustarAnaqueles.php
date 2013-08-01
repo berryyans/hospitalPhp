@@ -1,4 +1,6 @@
-<?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
+<?PHP 
+require("/Constantes.php");
+require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
 
 
 <script type="text/javascript">
@@ -301,7 +303,7 @@ Ajuste a Anaqueles/Costos <br />
     <tr class="style7">
       <th bgcolor="#CCCCCC" scope="col"><div align="right" class="normalmid">Almac&eacute;n</div></th>
       <th bgcolor="#CCCCCC" scope="col"> <div align="left">
-          <?php require("../../configuracion/componentes/comboAlmacen.php"); 
+          <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenStock($entidad,'style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

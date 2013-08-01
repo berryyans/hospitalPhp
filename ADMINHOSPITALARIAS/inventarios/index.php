@@ -1,4 +1,6 @@
-<?PHP require("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 
 <?PHP
 $agrega = "INSERT INTO logs (

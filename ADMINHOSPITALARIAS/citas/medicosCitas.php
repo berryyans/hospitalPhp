@@ -1,4 +1,6 @@
-<?php include("../../configuracion/administracionhospitalaria/menufinancieros.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/menufinancieros.php"); ?>
 <?php 
 
 
@@ -98,7 +100,7 @@ $myrow1 = mysql_fetch_array($result1);
     <tr>
       <th scope="col">M&eacute;dico: </th>
       <th width="152" scope="col"><?php 
-	  require("../../configuracion/componentes/comboAlmacen.php"); 
+	  require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $entidad='01';
 $almacenDestino='HCEX';
 $comboAlmacen1=new comboAlmacen();

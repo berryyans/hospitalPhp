@@ -1,4 +1,6 @@
-<?php include("../../configuracion/administracionhospitalaria/menufinancieros.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/menufinancieros.php"); ?>
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="calendar-tas.css" title="win2k-cold-1" /> 
   <script type="text/javascript" src="calendario/calendar.js"></script> 

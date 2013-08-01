@@ -1,5 +1,7 @@
-<?php include("../../configuracion/operacioneshospitalariasmenu/farmacia/farmacia.php"); ?>
-<?php include("../../configuracion/funciones.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/farmacia/farmacia.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
           <?php
 		  
 	  	$sqlNombre16= "SELECT * From sesionesAlmacen

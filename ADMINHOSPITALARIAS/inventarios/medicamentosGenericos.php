@@ -1,5 +1,7 @@
-<?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php");  ?>
-<?php require('../../configuracion/clases/catalogoMedicamentoGenerico.php'); ?>
+<?PHP 
+require("/Constantes.php");
+require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php");  ?>
+<?php require(CONSTANT_PATH_CONFIGURACION.'/clases/catalogoMedicamentoGenerico.php'); ?>
 <?php
 $catalogoArticulos=new articulos();
 $catalogoArticulos->catalogoArticulos($entidad,$usuario,$codigo,$fecha,$basedatos);

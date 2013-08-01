@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 
 
 <script type="text/javascript">
@@ -244,7 +246,7 @@ Ajuste a existencias <br />
     <tr class="style7">
       <th scope="col"><div align="right" class="normalmid">Almac&eacute;n</div></th>
       <th scope="col"> <div align="left">
-          <?php require("/configuracion/componentes/comboAlmacen.php"); 
+          <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenStock($entidad,'style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

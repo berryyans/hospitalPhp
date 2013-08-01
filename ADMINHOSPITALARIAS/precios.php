@@ -1,6 +1,7 @@
 <?PHP //require("menuOperaciones.php"); 
-require("../configuracion/ventanasEmergentes.php");
-require('../configuracion/funciones.php');
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
@@ -9,9 +10,9 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 //$estilos->styles();
 
 if($_GET['warehouse']=='INVENTARIOS'){
-require("../configuracion/clases/listadoArticulosPrecio.php");
+require(CONSTANT_PATH_CONFIGURACION."/clases/listadoArticulosPrecio.php");
 }elseif($_GET['warehouse']=='SERVICIOS'){
-require("../configuracion/clases/listadoServiciosPrecio.php");    
+require(CONSTANT_PATH_CONFIGURACION."/clases/listadoServiciosPrecio.php");    
 }
 ?>
 <?php 

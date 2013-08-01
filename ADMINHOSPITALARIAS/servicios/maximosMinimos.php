@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ventanasEmergentes.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php
 $_POST['codigo']=$_GET['codigo'];
 ?>

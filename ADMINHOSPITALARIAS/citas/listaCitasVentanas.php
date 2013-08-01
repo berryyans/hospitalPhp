@@ -1,4 +1,6 @@
-<?php include("../../configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="calendario/calendar-system.css" title="win2k-cold-1" /> 
 

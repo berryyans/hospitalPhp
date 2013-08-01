@@ -1,4 +1,6 @@
-<?php include('../../configuracion/ventanasEmergentes.php');?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
@@ -191,7 +193,7 @@ $myrow2 = mysql_fetch_array($result2);
     <tr>
       <td height="33"><div align="left"> Especialidad Principal (Si es sub) </div></td>
       <td height="33"><?php 
-include('../../configuracion/componentes/comboEspecialidades.php');
+include(CONSTANT_PATH_CONFIGURACION.'/componentes/comboEspecialidades.php');
 $listaEsp=new especialidades();
 $listaEsp->listaEspecialidadesMedicasSS($entidad,'style12',$myrow2['especialidad'],$_POST['especialidad'],$basedatos);
 ?></td>

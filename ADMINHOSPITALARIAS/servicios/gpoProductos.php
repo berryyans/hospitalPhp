@@ -1,5 +1,7 @@
-<?PHP include("../../configuracion/administracionhospitalaria/servicios/inventariosmenu.php");?>
-<?php include('../../configuracion/clases/validaModulos.php'); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/servicios/inventariosmenu.php");?>
+<?php include(CONSTANT_PATH_CONFIGURACION.'/clases/validaModulos.php'); ?>
 
 
 <script language=javascript> 

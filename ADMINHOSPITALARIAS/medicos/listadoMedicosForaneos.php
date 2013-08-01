@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/administracionhospitalaria/medicos/medicosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/medicos/medicosmenu.php"); ?>
   <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla

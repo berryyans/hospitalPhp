@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/administracionhospitalaria/medicos/medicosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/medicos/medicosmenu.php"); ?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   

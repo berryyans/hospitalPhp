@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 <script type="text/javascript" src="http://www.shawnolson.net/scripts/public_smo_scripts.js"></script>
 
 <?php 

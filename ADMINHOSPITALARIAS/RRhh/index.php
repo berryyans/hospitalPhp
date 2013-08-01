@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/administracionhospitalaria/recursoshumanos/rrhhmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/recursoshumanos/rrhhmenu.php"); ?>
 <style type="text/css">
 <!--
 body {

@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/administracionhospitalaria/servicios/inventariosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/servicios/inventariosmenu.php"); ?>
 <style type="text/css">
 <!--
 body {

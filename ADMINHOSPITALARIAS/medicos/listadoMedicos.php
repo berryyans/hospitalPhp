@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/administracionhospitalaria/medicos/medicosmenu.php"); include("../../configuracion/funciones.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/medicos/medicosmenu.php"); include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 

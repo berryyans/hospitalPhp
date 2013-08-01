@@ -1,5 +1,7 @@
-<?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
-<?php require('../../configuracion/clases/medicosPrecios.php'); ?>
+<?PHP 
+require("/Constantes.php");
+require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
+<?php require(CONSTANT_PATH_CONFIGURACION.'/clases/medicosPrecios.php'); ?>
 
 <?php
 $medicosPrecios=new consultaMedicosPrecios();

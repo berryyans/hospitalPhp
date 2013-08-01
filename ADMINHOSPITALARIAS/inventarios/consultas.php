@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 <?
 $modulo = "INV";
 $checaModuloScript= "Select all distinct * From usuariosModulos WHERE usuario = '".$usuario."' AND modulo LIKE '%$modulo%'";

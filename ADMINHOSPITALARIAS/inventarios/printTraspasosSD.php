@@ -1,4 +1,6 @@
-<?php require('../../js/pdf/fpdf_js.php');
+<?php 
+require("/Constantes.php");
+require('../../js/pdf/fpdf_js.php');
 
 
 
@@ -149,7 +151,7 @@ $pdf->AddPage();
 
 
 
-require('../../configuracion/baseDatos.php');
+require(CONSTANT_PATH_CONFIGURACION.'/baseDatos.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

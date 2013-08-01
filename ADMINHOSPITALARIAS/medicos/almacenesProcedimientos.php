@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/administracionhospitalaria/medicos/medicosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/medicos/medicosmenu.php"); ?>
 <script type="text/javascript" src="public_smo_scripts.js"></script>
 <?php 
 if($_POST['nuevo']){

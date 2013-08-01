@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ventanasEmergentes.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php
 $almacenSolicitante=$_GET['almacen'];
 $_POST['codigo']=$_GET['codigo'];
@@ -206,7 +208,7 @@ codigo = '".$_POST['codigo']."'
         <th width="108" bgcolor="#FFCCFF" class="style12" scope="col">Almac&eacute;n</th>
         <th width="296" bgcolor="#FFCCFF" class="style12" scope="col">
           <div align="left">
-            <?php require("../../configuracion/componentes/comboAlmacen.php"); 
+            <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style12',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>
