@@ -1,7 +1,7 @@
 <?PHP 
 //require("menuOperaciones.php"); 
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 $estilos=new muestraEstilos();
@@ -169,7 +169,7 @@ Eliminar Articulos
     <tr >
       <td scope="col"><div align="right" >Almac&eacute;n</div></td>
       <td scope="col"> <div align="left">
-          <?php require("/configuracion/componentes/comboAlmacen.php"); 
+          <?php require("../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

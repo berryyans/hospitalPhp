@@ -1,6 +1,6 @@
 <?php //require("menuOperaciones.php"); 
-require("/configuracion/ventanasEmergentes.php");
-require('/configuracion/funciones.php');
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
@@ -38,7 +38,7 @@ $result=mysql_db_query($basedatos,$sSQL);
  </h1>
  <form id="form1" name="form1" method="post" action="">
    <p align="center">Escoje el Departamento<span >:
-<?php require("/configuracion/componentes/comboAlmacen.php");
+<?php require("../configuracion/componentes/comboAlmacen.php");
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->almacenesCuartos($entidad,'style7',$myrow2['almacen'],$almacenDestino,$basedatos);
 ?>
