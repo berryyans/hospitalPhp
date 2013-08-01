@@ -1,9 +1,9 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
-<?php require("/configuracion/funciones.php"); ?>
-<?php require("/configuracion/clases/formas.php"); ?>
-<?php require("/configuracion/clases/formasInternos.php"); ?>
-<?php require("/configuracion/clases/formasCapturaPaquetes.php"); ?>
-<?php require("/configuracion/clases/articulosReferidos.php"); ?>
+<?php require("../configuracion/ventanasEmergentes.php"); ?>
+<?php require("../configuracion/funciones.php"); ?>
+<?php require("../configuracion/clases/formas.php"); ?>
+<?php require("../configuracion/clases/formasInternos.php"); ?>
+<?php require("../configuracion/clases/formasCapturaPaquetes.php"); ?>
+<?php require("../configuracion/clases/articulosReferidos.php"); ?>
 <?php
 $numeroPaciente=		$_GET['numeroE'];
 $seguro=			$_GET['seguro'];
