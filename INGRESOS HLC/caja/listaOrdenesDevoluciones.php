@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); include('../../configuracion/funciones.php');?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ingresoshlcmenu/caja/menuCaja.php"); include(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 <?php
 
 $sSQLC= "Select status From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";

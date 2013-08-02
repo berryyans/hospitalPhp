@@ -1,5 +1,7 @@
-<?PHP include("../../../configuracion/expedientesclinicos/medicos/medicosmenu.php"); ?>
-<?php include("../../../configuracion/clases/buscarExpediente.php"); ?><?php include("../../../configuracion/funciones.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/expedientesclinicos/medicos/medicosmenu.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/clases/buscarExpediente.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <?php  $buscarExpediente=new expedientes();

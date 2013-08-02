@@ -1,2 +1,4 @@
-<?php require("../../configuracion/ventanasEmergentes.php");
-require("../../configuracion/clases/corteCaja.php");?>
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION."/clases/corteCaja.php");?>

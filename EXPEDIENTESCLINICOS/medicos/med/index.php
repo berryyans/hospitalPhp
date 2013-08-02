@@ -1,4 +1,6 @@
-<?PHP include("../../../configuracion/expedientesclinicos/medicos/medicosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/expedientesclinicos/medicos/medicosmenu.php"); ?>
 
 <style type="text/css">
 <!--

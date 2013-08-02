@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ventanasEmergentes.php");  ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");  ?>
 
 
 
@@ -13,7 +15,7 @@ $resultC=mysql_db_query($basedatos,$sSQLC);
 $myrowC = mysql_fetch_array($resultC);
 
 if($myrowC['status']=='abierta'){ //*******************Comienzo la validaci�n*****************
-include("/configuracion/clases/variosPagos.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/clases/variosPagos.php"); 
 $TITULO='';
 $pagosDiversos=new variosPagos();
 $pagosDiversos->pagosDiversos($usuario,$fecha1,$hora1,$TITULO,$entidad,$ALMACEN,$basedatos);

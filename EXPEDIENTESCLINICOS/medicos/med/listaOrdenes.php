@@ -1,7 +1,9 @@
-<?PHP include("../../../configuracion/expedientesclinicos/medicos/medicosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/expedientesclinicos/medicos/medicosmenu.php"); ?>
 <?php if($MEDICO!=NULL){ ?>
 
-<?PHP require("../../../configuracion/funciones.php"); ?>
+<?PHP require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 

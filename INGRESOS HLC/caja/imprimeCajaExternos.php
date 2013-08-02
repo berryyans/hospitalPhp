@@ -1,5 +1,7 @@
-<?PHP include("../../configuracion/ventanasEmergentes.php"); ?>
-<?php include("../../configuracion/clases/cierraCuenta3.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/clases/cierraCuenta3.php"); ?>
 
 <?php
 $sSQLC= "Select * From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";

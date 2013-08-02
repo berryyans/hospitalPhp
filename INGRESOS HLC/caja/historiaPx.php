@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); include('../../configuracion/funciones.php');?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ingresoshlcmenu/caja/menuCaja.php"); include(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 

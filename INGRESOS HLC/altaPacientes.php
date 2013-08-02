@@ -1,6 +1,8 @@
-<?PHP //require("menuOperaciones.php"); 
-require("../configuracion/ventanasEmergentes.php");
-require('../configuracion/funciones.php');
+<?PHP 
+require("/Constantes.php");
+//require("menuOperaciones.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
@@ -13,7 +15,7 @@ $myrowC = mysql_fetch_array($resultC);
 
 
 if($myrowC['status']=='abierta'){ //*******************Comienzo la validaci�n*****************
-require("../configuracion/clases/listadoAltaPxInternos.php");
+require(CONSTANT_PATH_CONFIGURACION."/clases/listadoAltaPxInternos.php");
 } else {
 ?>
 <script>

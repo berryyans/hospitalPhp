@@ -1,5 +1,7 @@
-<?php require("../../configuracion/ventanasEmergentes.php"); ?><?php include("../../configuracion/clases/eCuentaGrafico.php"); ?>
-<?php include("../../configuracion/funciones.php"); ?>
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/clases/eCuentaGrafico.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php
 $cargosAseguradora=new acumulados();
 function redondear_dos_decimal($valor) {

@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); valida('CAJA','PA',$usuario,$basedatos); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ingresoshlcmenu/caja/menuCaja.php"); valida('CAJA','PA',$usuario,$basedatos); ?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   

@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); //valida('CAJA','LOPI',$usuario,$basedatos);?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ingresoshlcmenu/caja/menuCaja.php"); //valida('CAJA','LOPI',$usuario,$basedatos);?>
   <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla

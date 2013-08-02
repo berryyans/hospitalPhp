@@ -1,6 +1,8 @@
-<?PHP include("../../../configuracion/ventanasEmergentes.php"); 
-include("../../../configuracion/clases/sql.php");
-include("../../../configuracion/clases/diagnosticos.php");?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/clases/sql.php");
+include(CONSTANT_PATH_CONFIGURACION."/clases/diagnosticos.php");?>
 <?php
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];

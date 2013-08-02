@@ -1,4 +1,6 @@
-<?PHP require('../../configuracion/ventanasEmergentes.php'); ?>
+<?PHP 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); ?>
 
 <script language=javascript> 
 function ventanaSecundaria3 (URL){ 
@@ -57,7 +59,7 @@ $numCorte=$myrowC['numCorte'];
 
 if($myrowC['status']=='abierta'){ //*******************Comienzo la validaci�n*****************
 
-include("../../configuracion/funciones.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 
 
 

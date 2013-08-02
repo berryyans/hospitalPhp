@@ -1,5 +1,7 @@
-<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); 
-include("../../configuracion/funciones.php");
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ingresoshlcmenu/caja/menuCaja.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php");
 //valida('CAJA','CatTCCaja',$usuario,$basedatos); ?>
 
 <script language="javascript" type="text/javascript">   

@@ -1,7 +1,8 @@
 <?PHP 
-include("../../../configuracion/expedientesclinicos/medicos/medicosmenu.php");  
-include("../../../configuracion/clases/despliegaConsultasAnteriores.php"); 
-include("../../../configuracion/funciones.php"); ?>
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/expedientesclinicos/medicos/medicosmenu.php");  
+include(CONSTANT_PATH_CONFIGURACION."/clases/despliegaConsultasAnteriores.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 <?php
 

@@ -1,12 +1,14 @@
-<?PHP //require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); 
-require("../configuracion/ventanasEmergentes.php");
-require('../configuracion/funciones.php');
+<?PHP 
+require("/Constantes.php");
+//require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 ?>
-<?php require("../configuracion/clases/ECOtros.php");?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/clases/ECOtros.php");?>
 <?php
 $EC=new Otros();
 $EC->estadoCuenta($fecha1,$entidad,$basedatos);

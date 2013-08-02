@@ -1,4 +1,6 @@
-<?php require("../../configuracion/ventanasEmergentes.php"); 
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); 
 $TOTAL=$_GET['TOTAL'];
 $iva=$_GET['iva'];
 $descuento=$_GET['descuento'];

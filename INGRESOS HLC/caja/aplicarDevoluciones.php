@@ -1,7 +1,9 @@
-<?php require('../../configuracion/ventanasEmergentes.php');
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');
 
 
-include("../../configuracion/funciones.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 $cargosCia=new acumulados();
 $cargosParticularesCC=new  cierraCuenta();
 $cargosAseguradoraCC=new cierraCuenta();

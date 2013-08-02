@@ -1,5 +1,7 @@
-<?php require("../../configuracion/ventanasEmergentes.php"); ?><?php include("../../configuracion/clases/eCuentaGrafico.php"); ?>
-<?php include("../../configuracion/funciones.php"); ?>
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/clases/eCuentaGrafico.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
    window.open(URL,"ventana2","width=630,height=500,scrollbars=YES,scrollbars=YES,resizable=YES, maximizable=YES") 

@@ -1,5 +1,7 @@
-<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); ?>
-<?php include("../../configuracion/clases/eCuenta.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ingresoshlcmenu/caja/menuCaja.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/clases/eCuenta.php"); ?>
 
 <?php
 $ventana='/sima/INGRESOS%20HLC/caja/liquidarCuenta.php';
