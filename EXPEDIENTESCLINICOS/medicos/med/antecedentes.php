@@ -1,4 +1,6 @@
-<?PHP include("../../../configuracion/ventanasEmergentes.php"); ?><?php include("../../../configuracion/funciones.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
