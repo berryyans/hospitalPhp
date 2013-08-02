@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+<?php require("menuOperaciones.php"); 
+=======
 <?php //require("menuOperaciones.php");
 require("../configuracion/ventanasEmergentes.php");
 require('../configuracion/funciones.php');
@@ -7,6 +10,7 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 
 
 
+>>>>>>> ffca23b146c55951cda977be74fea6569f465f46
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -249,6 +253,13 @@ $estilos->styles();
 
      
      <label>
+         
+<p>         
+<a href="javascript:ventanaSecundaria51('despliegaAcumuladoGPO.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $_POST['random'];?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>')"></a>     </label>
+   </p>
+         
+         
+<p>         
 <a href="javascript:ventanaSecundaria51('despliegaAcumuladoGPO.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $_POST['random'];?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>')"></a>     </label>
    </p>
    
@@ -275,6 +286,14 @@ $estilos->styles();
 
 <div id="liga2">
 &nbsp; <br />
+<a href="javascript:ventanaSecundariaA1('../ventanas/reporteVentasxAseguradoras.php?entidad=<?php echo $entidad;?>&numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;random=<?php echo $myrow7ab['random'];?>&amp;fechaInicial=<?php echo $_POST['fechaInicial'];?>&amp;fechaFinal=<?php echo $_POST['fechaFinal'];?>&amp;clientePrincipal=<?php echo $_POST['seguro'];?>&amp;nomSeguro=<?php echo $_POST['nomSeguro'];?>');">
+Por Centro de Costo
+</a><br />
+
+
+
+
+
 <a href="javascript:ventanaSecundariaA1('../ventanas/reporteEspecial.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;random=<?php echo $myrow7ab['random'];?>&amp;fechaInicial=<?php echo $_POST['fechaInicial'];?>&amp;fechaFinal=<?php echo $_POST['fechaFinal'];?>&amp;seguro=<?php echo $_POST['seguro'];?>&amp;nomSeguro=<?php echo $_POST['nomSeguro'];?>');">Reporte especial </a><br />
 
 <a href="javascript:ventanaSecundariaA1('../ventanas/cuentasNominas.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;random=<?php echo $myrow7ab['random'];?>&amp;fechaInicial=<?php echo $_POST['fechaInicial'];?>&amp;fechaFinal=<?php echo $_POST['fechaFinal'];?>&seguro=<?php echo $_POST['seguro'];?>&nomSeguro=<?php echo $_POST['nomSeguro'];?>');">Cuentas</a>

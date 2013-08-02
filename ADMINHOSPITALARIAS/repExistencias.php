@@ -210,7 +210,8 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
     <tr >
       <th width="50"  align="left">#</th>
       <th width="200"  align="left">Descripcion</th>
-      <th width="50"  align="left">Caja</th>
+      <th width="50"  align="left">CajaCon</th>
+      <th width="50"  align="left">Granel</th>
       <th width="50"  align="left">CostoBase</th>
       <th width="50"  align="left">CostoUnitario</th>
       <th width="50"  align="left">Existencia</th>
@@ -248,6 +249,8 @@ and
 existencias.descripcion!=''
 and
 articulos.codigo=existencias.codigo
+and
+articulos.activo='A'
 order by existencias.descripcion ASC
 ";
 
@@ -270,7 +273,8 @@ and
 existencias.descripcion!=''
 and
 articulos.codigo=existencias.codigo
-
+and
+articulos.activo='A'
 order by existencias.descripcion ASC
 ";      
       
@@ -294,7 +298,8 @@ and
 existencias.descripcion!=''
 and
 articulos.codigo=existencias.codigo
-
+and
+articulos.activo='A'
 order by existencias.descripcion ASC
 ";
 
@@ -340,6 +345,8 @@ WHERE
 existencias.descripcion!=''
 and
 articulos.codigo=existencias.codigo
+and
+articulos.activo='A'
 
              order by existencias.descripcion ASC
 ";
@@ -361,6 +368,8 @@ and
 articulos.codigo=existencias.codigo
 and
 existencias.anaquel=''
+and
+articulos.activo='A'
              order by existencias.descripcion ASC
 ";   
   }  else{
@@ -378,6 +387,8 @@ and
 articulos.descripcion!=''
 and
 articulos.codigo=existencias.codigo
+and
+articulos.activo='A'
              order by existencias.descripcion ASC
 "; 
  
@@ -447,6 +458,8 @@ codigo='".$myrow1['codigo']."'
     and
 
         status='ready'
+            and
+    almacen='".$myrow1['almacen']."'
   
 ";
 $result8ac1e=mysql_db_query($basedatos,$sSQL8ac1e);
@@ -454,7 +467,7 @@ $myrow8ac1e = mysql_fetch_array($result8ac1e);
 echo mysql_error();   
 }else{
 //ENtRADAS
- $sSQL8ac1e= "
+$sSQL8ac1e= "
 SELECT sum( cantidad) as entrada
 FROM
 articulosExistencias
@@ -582,7 +595,21 @@ if($myrow8ac['cajaCon']>0){
         
         
         
-        
+<td ><span >
+      
+<?php ##COSTO TOTAL
+
+
+      
+  
+if($myrow1['ventaGranel']=='si'){
+    echo $myrow1['cantidadSurtir'];
+}else{
+    echo '---';
+}
+ 
+		?>
+      </span></td>        
         
         
         
@@ -615,7 +642,7 @@ if($myrow8ac['cajaCon']>0){
 $cendis=new whoisCendis();
 $centroDistribucion=$cendis->cendis($entidad,$basedatos);  
 
-        if($centroDistribucion!=$_POST['almacenDestino'] ){
+        
                 
                 if($myrow8ac['cajaCon']>0 or $myrow1['modoventa']=='Granel'){
             
@@ -639,9 +666,6 @@ $centroDistribucion=$cendis->cendis($entidad,$basedatos);
         }else{
             echo '<span class="notice"><blink>???</blink></span>';
         }
-        }}else{
-            $costo=$myrow8acb['costo'];
-            echo '$'.number_format($myrow8acb['costo'],2);
         }
 		?>
       </span></td>

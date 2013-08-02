@@ -41,6 +41,25 @@ function valida(F) {
 }
 </script>
 
+
+
+<script>
+
+var win = null;
+function nueva(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+if(win.window.focus){win.window.focus();}
+}
+
+</script>
+
+
+
+
  <!-Hoja de estilos del calendario -->
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario -->
@@ -349,13 +368,11 @@ $saldo=($cargos[0]+$c)-$devoluciones[0]-($abonos[0]+$nC[0]);
        <td  align="center" ><div align="center" ><?php echo $myrow['folioVenta'];?></div></td>
        <td  align="center" ><div align="center" ><?php echo cambia_a_normal($myrow['fecha1']);?></div></td>
        <td >   <div align="center" >
-	   <?php
 
 
-           echo $myrow['numRecibo'];   
-//echo  '<br>';
-//echo $myrow['tipoTransaccion'];
-	   ?>
+<a href="javascript:nueva('/sima/INGRESOS HLC/caja/imprimirNumeroRecibo.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>','ventana7','800','600','yes');">
+<?php echo $myrow['numRecibo'];?></a>
+
 	   </div></td>
 
            

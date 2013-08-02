@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<?php require("menuOperaciones.php"); ?>
+<?php require("/configuracion/clases/listaExternosDescuentos.php"); ?>
+=======
 <?php //require("menuOperaciones.php"); 
 require("../configuracion/ventanasEmergentes.php");
 require('../configuracion/funciones.php');
@@ -7,6 +11,7 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 
 ?>
 <?php require("../configuracion/clases/listaExternosDescuentos.php"); ?>
+>>>>>>> ffca23b146c55951cda977be74fea6569f465f46
 
 <?php
 $ventana='../cargos/aplicarDescuentos.php';

@@ -178,7 +178,10 @@ keyPA = '".$_POST['keyPA']."'
         </p>
       </p>
 
-  <table width="500" class="table table-striped">
+  
+      
+      
+<table width="500" class="table table-striped">
         <tr>
           <th width="33" align="left"  >#</th>
           <th width="136" align="left"  >Descripcion</th>
@@ -190,14 +193,17 @@ keyPA = '".$_POST['keyPA']."'
          <th width="67" align="center"  >Accion</th>
        
         </tr>
+      
+      
+      
+      
 <?php  require("/configuracion/funciones.php");
 $cendis=new whoisCendis();
 $aP=$centroDistribucion=$cendis->cendis($entidad,$basedatos);  
   
 $sSQL= "Select * From existencias
 where entidad='".$entidad."' AND keyPA='".$_GET['keyPA']."' 
-and
-almacen!='".$aP."'
+
 
 ";
 
