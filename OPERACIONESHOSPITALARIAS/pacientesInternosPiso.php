@@ -1,6 +1,8 @@
-<?php //require("menuOperaciones.php"); 
-require("../configuracion/ventanasEmergentes.php");
-require('../configuracion/funciones.php');
+<?php 
+require("/Constantes.php");
+//require("menuOperaciones.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
@@ -8,7 +10,7 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 $TITULO='Cargos a  Pacientes';
 $ventana='/sima/cargos/solicitaArticulos.php';
 $ventana1='datosAdicionales.php';
-require('../configuracion/clases/cargosPacientesInternos.php');
+require(CONSTANT_PATH_CONFIGURACION.'/clases/cargosPacientesInternos.php');
 
 $mostrarFooter=new menus();
 $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);

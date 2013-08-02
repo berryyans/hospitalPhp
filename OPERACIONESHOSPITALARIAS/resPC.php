@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
-=======
-<?php require("../configuracion/ventanasEmergentes.php"); ?>
->>>>>>> ffca23b146c55951cda977be74fea6569f465f46
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+
 
 <?php
 if ($_POST['ADDOS'] != NULL and $_GET['solicitud'] > 0) {
@@ -806,7 +805,6 @@ $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
                         <div align="left">
 <?php
 $sqlNombre11 = "SELECT * from sis_marcasm
-<<<<<<< HEAD
 
 ORDER BY descripcion ASC";
 $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
@@ -848,15 +846,13 @@ $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
 
 
 
-=======
->>>>>>> ffca23b146c55951cda977be74fea6569f465f46
 
 ORDER BY descripcion ASC";
 $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
 ?>
                             <select name="keyMAM" onClick="this.form.submit();">
 
-<<<<<<< HEAD
+
 
 
 
@@ -882,7 +878,7 @@ $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
             <?php } ?>
         </form>
 
-=======
+
                                 <option value="">N/A</option>
                             <?php
                             while ($rNombre11 = mysql_fetch_array($resultaNombre11)) {
@@ -945,7 +941,6 @@ $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
             <?php } ?>
         </form>
 
->>>>>>> ffca23b146c55951cda977be74fea6569f465f46
     </body>
 </html>
 
