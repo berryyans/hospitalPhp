@@ -1,16 +1,15 @@
-<<<<<<< HEAD
-<?php require("menuOperaciones.php"); 
-=======
-<?php //require("menuOperaciones.php");
-require("../configuracion/ventanasEmergentes.php");
-require('../configuracion/funciones.php');
+<?php 
+require("/Constantes.php");
+//require("menuOperaciones.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 
 
->>>>>>> ffca23b146c55951cda977be74fea6569f465f46
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 

@@ -1,7 +1,7 @@
 <?php 
 require("/Constantes.php");
 //*****************CONEXION  A SIMA***************
-require(CONSTANT_PATH_CONFIGURACION.'/baseDatos.php');require('../configuracion/funciones.php');
+require(CONSTANT_PATH_CONFIGURACION.'/baseDatos.php');require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

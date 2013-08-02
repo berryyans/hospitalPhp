@@ -1,17 +1,14 @@
-<<<<<<< HEAD
-<?php require("menuOperaciones.php"); ?>
-<?php require("/configuracion/clases/listaExternosDescuentos.php"); ?>
-=======
-<?php //require("menuOperaciones.php"); 
-require("../configuracion/ventanasEmergentes.php");
-require('../configuracion/funciones.php');
+<?php 
+require("/Constantes.php");
+//require("menuOperaciones.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 ?>
-<?php require("../configuracion/clases/listaExternosDescuentos.php"); ?>
->>>>>>> ffca23b146c55951cda977be74fea6569f465f46
+<?php require(CONSTANT_PATH_CONFIGURACION."/clases/listaExternosDescuentos.php"); ?>
 
 <?php
 $ventana='../cargos/aplicarDescuentos.php';

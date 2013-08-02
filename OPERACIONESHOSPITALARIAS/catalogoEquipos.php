@@ -1,5 +1,7 @@
-<?php include("../configuracion/operacioneshospitalariasmenu/sistemas/menuSistemas.php"); 
-require('../configuracion/funciones.php');?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/sistemas/menuSistemas.php"); 
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 

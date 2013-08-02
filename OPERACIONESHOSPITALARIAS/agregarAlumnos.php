@@ -1,5 +1,7 @@
-<?php require("menuOperaciones.php"); ?>
-<?php require("../configuracion/clases/internarPaciente.php"); ?>
+<?php 
+require("/Constantes.php");
+require("menuOperaciones.php"); ?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/clases/internarPaciente.php"); ?>
 
   <script language=javascript> 
 function ventanaSecundaria10 (URL){ 

@@ -1,4 +1,7 @@
-<?PHP require("../configuracion/ventanasEmergentes.php"); require('../configuracion/funciones.php');require("../configuracion/clases/generaFolioVenta.php");?>
+<?PHP 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+require(CONSTANT_PATH_CONFIGURACION."/clases/generaFolioVenta.php");?>
 <?php 
 
 $sSQLC= "Select status From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";

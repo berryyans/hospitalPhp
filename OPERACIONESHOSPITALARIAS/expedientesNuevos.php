@@ -1,6 +1,8 @@
-<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
-require("../configuracion/ventanasEmergentes.php");
-require('../configuracion/funciones.php');
+<?php 
+require("/Constantes.php");
+//require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
@@ -8,13 +10,13 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 
 
 $almacen=$ALMACEN=$_GET['datawarehouse']; ?>
-<?php require("../configuracion/clases/despliegaExpedientesPendientes.php"); ?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/clases/despliegaExpedientesPendientes.php"); ?>
 <?php 
 $almacenDestino=$almacen;
 $forma=$_GET['forma'];
 $campoDespliega=$_GET['campoDespliega'];
 $campoDespliegaFecha=$_GET['campoDespliegaFecha'];
-require("../configuracion/componentes/comboAlmacen.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 ?>
 
 <!-Hoja de estilos del calendario --> 
