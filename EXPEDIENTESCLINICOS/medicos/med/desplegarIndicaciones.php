@@ -1,4 +1,4 @@
-<?php require('/configuracion/ventanasEmergentes.php');?>
+<?php require('../../../configuracion/ventanasEmergentes.php');?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=700,height=700,scrollbars=YES") 
@@ -26,7 +26,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.observaciones.value) == false ) {   
-                alert("Por Favor, escribe las observaciones del diagnóstico!")   
+                alert("Por Favor, escribe las observaciones del diagnï¿½stico!")   
                 return false   
         } else if( vacio(F.receta.value) == false ) {   
                 alert("Por Favor, escribe la receta!")   

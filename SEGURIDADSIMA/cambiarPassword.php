@@ -1,4 +1,10 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php require("/configuracion/ventanasEmergentes.php");
+require('/configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 
 
@@ -91,6 +97,14 @@ $estilos->styles();
 </head>
 
 <body>
+    
+    <!--
+    -->
+        <!--
+        <div class="sidebar_box first">        
+    <div class="contenido_pagina">
+        -->
+    <div class="page_right">    
 <p align="center">
   <label>Datos del Usuario <?php echo $usuario; ?></label>
 </p>
@@ -150,5 +164,16 @@ $estilos->styles();
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-</body>
-</html>
+    <!--
+    </div>
+    </div>
+    -->
+    </div>  
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+
+?>
+
+<!--</body>
+</html>-->

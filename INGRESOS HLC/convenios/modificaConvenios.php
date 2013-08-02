@@ -1,4 +1,4 @@
-<? include("/configuracion/conf.php"); ?>
+<? include("../../configuracion/conf.php"); ?>
 <?
 $modulo = "CON";
 $checaModuloScript= "Select all distinct * From usuariosModulos WHERE usuario = '".$usuario."' AND modulo LIKE '%$modulo%'";

@@ -1,5 +1,5 @@
-<?PHP include("/configuracion/ingresoshlcmenu/caja/menuCaja.php"); 
-include("/configuracion/funciones.php");
+<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); 
+include("../../configuracion/funciones.php");
 //valida('CAJA','CatTCCaja',$usuario,$basedatos); ?>
 
 <script language="javascript" type="text/javascript">   
@@ -20,7 +20,7 @@ function valida(F) {
                 alert("Por Favor, escoje el codigoTT/departamento!")   
                 return false   
         } else if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este codigoTT!")   
+                alert("Por Favor, escribe la descripciï¿½n de este codigoTT!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   
@@ -58,7 +58,7 @@ codigoTT,descripcion,naturaleza,entidad
 )";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
-echo 'Transacción agregada';
+echo 'Transacciï¿½n agregada';
 echo '<script >
 window.alert( "ESTE TIPO DE TRANSACCION HA SIDO AGREGADO EXITOSAMENTE! ");
 </script>';
@@ -73,7 +73,7 @@ codigoTT='".$_POST['codigoTT']."'
 ";
 mysql_db_query($basedatos,$q);
 echo mysql_error();
-echo 'Transacción modificada';
+echo 'Transacciï¿½n modificada';
 echo '<script>
 window.alert("ESTE TIPO DE TRANSACCION HA SIDO MODIFICADO! ");
 </script>';
@@ -96,7 +96,7 @@ $borrame = "DELETE FROM catTTCaja WHERE codigoTT ='".$_POST['codigoTT']."'";
 
 
 echo mysql_error();
-echo 'La transacción deberá ser removida manualmente!';
+echo 'La transacciï¿½n deberï¿½ ser removida manualmente!';
 echo '<script >
 window.alert( "ESTE TIPO DE TRANSACCION HA SIDO ELIMINADO! ");
 </script>';

@@ -1,14 +1,16 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="calendario/calendar-system.css" title="win2k-cold-1" /> 
 
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="calendario/calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="calendario/lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="calendario/calendar-setup.js"></script> 
 
   <script language="JavaScript" type="text/javascript">
@@ -20,7 +22,7 @@
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -242,7 +244,7 @@ $H=$myrow3['hora'];
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script>
 </body>

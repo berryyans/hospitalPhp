@@ -1,11 +1,20 @@
-<?php require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");$almacen=$ALMACEN=$_GET['datawarehouse']; ?>
-<?php require("/configuracion/clases/despliegaExpedientesPendientes.php"); ?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+
+$almacen=$ALMACEN=$_GET['datawarehouse']; ?>
+<?php require("../configuracion/clases/despliegaExpedientesPendientes.php"); ?>
 <?php 
 $almacenDestino=$almacen;
 $forma=$_GET['forma'];
 $campoDespliega=$_GET['campoDespliega'];
 $campoDespliegaFecha=$_GET['campoDespliegaFecha'];
-require("/configuracion/componentes/comboAlmacen.php"); 
+require("../configuracion/componentes/comboAlmacen.php"); 
 ?>
 
 <!-Hoja de estilos del calendario --> 
@@ -64,16 +73,16 @@ $estilos->styles();
 
 </head>
 
-
+<!--
 <p align="center">&nbsp;</p>
-
+-->
 
 
 
 
 
   <body>
-
+      <div class="page_right">
 <form id="form1" name="form1" method="post" action="#">
   <p align="center" >
   <?php 
@@ -138,7 +147,8 @@ function compara_fechas($fecha1,$fecha2)
     <td><label>
       <div align="center">
        
-        <table width="618" class="table table-striped">
+        <!--<table width="618" class="table table-striped">-->
+        <table width="618" class="table-template-left">
           <tr  >
            
             <th width="52"  scope="col"><div align="left" >
@@ -232,8 +242,12 @@ $class='normal';
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
 }); 
-    </script> 
-
+    </script>
+      </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

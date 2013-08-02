@@ -1,4 +1,4 @@
-<?php include('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php include('../js/pdf/fpdf_js.php');
 		
     function cambia_a_normal($fecha){ 
     ereg( "([0-9]{2,4})-([0-9]{1,2})-([0-9]{1,2})", $fecha, $mifecha); 
@@ -194,7 +194,7 @@ $myrow317 = mysql_fetch_array($result317);
 
 
 
-//Compañia
+//Compaï¿½ia
 
 
 $pdf->SetXY(2,33);
@@ -302,11 +302,11 @@ if($myrow['naturaleza']=='A'){
 
 
 if($myrow['tipoCobro']=='Tarjeta de Credito'){
-$descripcion='T.Trans: '.$myrow['tipoPago'].',Banco: '.$myrow['bancoTC'].', CodAut: '.$myrow['codigoAutorizacion'].', U.Dígitos: '.$myrow['ultimosDigitos'];
+$descripcion='T.Trans: '.$myrow['tipoPago'].',Banco: '.$myrow['bancoTC'].', CodAut: '.$myrow['codigoAutorizacion'].', U.Dï¿½gitos: '.$myrow['ultimosDigitos'];
 }else if($myrow['tipoCobro']=='Cheque'){
-$descripcion='Transacción: '.$myrow['tipoPago'].',Banco: '.$myrow['bancoCheque'].', #Cheque: '.$myrow['numeroCheque'];
+$descripcion='Transacciï¿½n: '.$myrow['tipoPago'].',Banco: '.$myrow['bancoCheque'].', #Cheque: '.$myrow['numeroCheque'];
 }else if($myrow['tipoCobro']=='Transferencia Electronica'){
-$descripcion='Transacción: ['.$myrow['tipoPago'].'], Banco: '.$myrow['bancoTransferencia'].', #'.$myrow['numeroTransferencia'];
+$descripcion='Transacciï¿½n: ['.$myrow['tipoPago'].'], Banco: '.$myrow['bancoTransferencia'].', #'.$myrow['numeroTransferencia'];
 }
 
 

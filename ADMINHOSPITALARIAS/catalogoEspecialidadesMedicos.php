@@ -1,4 +1,12 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php");
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php $ventana1='../ventanas/ventanaModificaEspecialidades.php';?>
 <script language="javascript" type="text/javascript">   
 
@@ -80,6 +88,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >Cat&aacute;logo de Especialidades </h1>
  <?php   
 
@@ -95,7 +104,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?> 
  <form id="form2" name="form2" method="post" action="">
 
-   <table width="537" class="table table-striped">
+   <!--<table width="537" class="table table-striped">-->
+   <table width="537" class="table-template-left">
      <tr >
 <th width="61"  scope="col"><div align="left"><span >C&oacute;digo  </span></div></th>
        <th width="348" scope="col"><div align="left"><span >Descripci&oacute;n</span></div></th>
@@ -104,7 +114,10 @@ $result=mysql_db_query($basedatos,$sSQL);
      </tr>
      <tr>
 
-       <?php	while($myrow = mysql_fetch_array($result)){
+       <?php	
+       
+       while($myrow = mysql_fetch_array($result)){
+           /*
 if($col){
 $color = '#FFFF99';
 $col = "";
@@ -112,6 +125,8 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
+            * 
+            */
 $A=$myrow['codigo'];
 ?>
       <td height="20" bgcolor="<?php echo $color?>" ><span ><span >
@@ -136,5 +151,10 @@ $A=$myrow['codigo'];
    </p>
  </form>
  <p align="center">&nbsp;</p>
+ </div>
+ <?php
+ $mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

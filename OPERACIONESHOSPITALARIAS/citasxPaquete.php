@@ -1,4 +1,12 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php");$ALMACEN=$_GET['datawarehouse'];?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+$ALMACEN=$_GET['datawarehouse'];?>
 
 
 
@@ -39,6 +47,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <h1 align="center" class="titulos">&nbsp;</h1>
 <h1 align="center" class="titulos">Pacientes con Paquetes asignados</h1>
 <?php echo $leyenda; ?>
@@ -68,7 +77,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?></p>
 
 
-    <table class="table table-striped" width="826" >
+    <!--<table class="table table-striped" width="826" >-->
+    <table class="table-template-left" width="826" >
     <tr>
       <th width="55" height="26"  scope="col"><div align="left" class="none">
         <div align="center">Folio</div>
@@ -197,5 +207,10 @@ $myrowj2a = mysql_fetch_array($resultj2a);
   <p>&nbsp;</p>
     <p>&nbsp;</p>
 	  <p>&nbsp;</p>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

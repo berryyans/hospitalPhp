@@ -1,4 +1,9 @@
-<?php require("menuOperaciones.php");
+<?php //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 ?>
 
@@ -55,6 +60,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1  >&nbsp;</h1>
  <h1  >Beneficencias </h1>
  <form id="form2" name="form2" method="post" >
@@ -69,7 +75,8 @@ $estilos->styles();
  <br>	
  	
 
-   <table width="605" class="table table-striped">
+   <!--<table width="605" class="table table-striped">-->
+   <table width="605" class="table-template-left">
      <tr >
        <th width="24"  scope="col"><div align="left" >
          <div align="left"># </div>
@@ -158,5 +165,10 @@ $myrow3 = mysql_fetch_array($result3);
    </p>
 </form>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

@@ -1,11 +1,13 @@
-<?php include('/configuracion/ventanasEmergentes.php');?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -29,7 +31,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.numMedico.value) == false ) {   
-                alert("Escribe el número de código para el doctor presionando NUEVO, y a HLC agregale su número!")   
+                alert("Escribe el nï¿½mero de cï¿½digo para el doctor presionando NUEVO, y a HLC agregale su nï¿½mero!")   
                 return false   
         } else if( vacio(F.nombre1.value) == false ) {   
                 alert("Escribe el Nombre del Doctor!")   
@@ -75,7 +77,7 @@ codigo,descripcion,fecha1,hora1,usuario,entidad,subEspecialidad,especialidadPrin
 )";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
-echo 'Se agregó la especialidad '.$_POST['descripcion'];
+echo 'Se agregï¿½ la especialidad '.$_POST['descripcion'];
 echo '<script type="text/vbscript">
 msgbox "ESPECIALIDAD AGREGADA!"
 </script>';
@@ -96,7 +98,7 @@ codigo = '".$_POST['codigo']."' and entidad='".$entidad."'";
 
 mysql_db_query($basedatos,$q);
 echo mysql_error();
-echo 'Se actualizó la especialidad '.$_POST['descripcion'];
+echo 'Se actualizï¿½ la especialidad '.$_POST['descripcion'];
 echo '<script type="text/vbscript">
 msgbox "SE ACTUALIZO LA ESPECIALIDAD!"
 </script>';
@@ -191,7 +193,7 @@ $myrow2 = mysql_fetch_array($result2);
     <tr>
       <td height="33"><div align="left"> Especialidad Principal (Si es sub) </div></td>
       <td height="33"><?php 
-include('/configuracion/componentes/comboEspecialidades.php');
+include(CONSTANT_PATH_CONFIGURACION.'/componentes/comboEspecialidades.php');
 $listaEsp=new especialidades();
 $listaEsp->listaEspecialidadesMedicasSS($entidad,'style12',$myrow2['especialidad'],$_POST['especialidad'],$basedatos);
 ?></td>

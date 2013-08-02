@@ -1,5 +1,5 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/clases/catalogoClientes.php"); ?>
+<?php require("../configuracion/ventanasEmergentes.php"); ?>
+<?php include("../configuracion/clases/catalogoClientes.php"); ?>
 
 <?php
 

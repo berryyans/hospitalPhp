@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php
 
 
@@ -90,7 +97,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
 
 
 <?php
@@ -113,7 +120,8 @@ $estilos->styles();
     ?>
 
   </h3>
-  <table width="313" class="table-forma">
+  <!--<table width="313" class="table-forma">-->
+  <table width="313" class="table-template">
 
     <tr>
       <td width="82"><label>
@@ -161,7 +169,8 @@ $estilos->styles();
 <br /><br />
 
 
-  <table width="800" class="table table-striped" >
+  <!--<table width="800" class="table table-striped" >-->
+  <table width="800" class="table-template-left" >
     <tr >
       <th width="10"  scope="col"><div align="left">#</div></th>
       <th width="30"  scope="col"><div align="left">Fecha</div></th>
@@ -404,6 +413,11 @@ Cancelar</a>
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario
 });
 </script>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 
 </html>

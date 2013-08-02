@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 
 <script language=javascript> 
@@ -71,13 +78,15 @@ $estilos-> styles();
 ?>
 
 </head>
-
+    <body>
+        <div class="page_right">
 <h1 align="center" class="titulos">Autorizar Ordenes de Compra </h1>
 <p align="center" >  
 </span></span></p>
 <form id="form1" name="form1" method="post" action="">
 
-  <table width="575" class="table table-striped">
+  <!--<table width="575" class="table table-striped">-->
+  <table width="575" class="table-template">
     <tr >
       <th width="107" scope="col"><div align="center" >
         <div align="left"># Req</div>
@@ -125,7 +134,7 @@ $id_proveedor=$myrow18['id_proveedor'];
 
 $a+=1;
 
-
+/*
 if($myrow18['status']=='cancelado'){
 $color='#FF0000';
 $style='style11';
@@ -143,7 +152,7 @@ $col = 1;
 $style='style12';
 }
 }
-
+*/
 $code1=$myrow18['codigo'];
 
 $requisicion=$myrow18['id_requisicion'];
@@ -218,6 +227,10 @@ $myrow8 = mysql_fetch_array($result8);
   <span >  </span></p>
   <p align="center"><a href="javascript:ventanaSecundaria('../ventanas/listadoOrdenesImpresion.php?id_requisicion=<?php echo $myrow1['numeroE']; ?>&amp;traspaso=<?php echo $traspaso; ?>&amp;id_requisicion=<?php echo $requisicion; ?>&amp;usuario=<?php echo $usuario; ?>&amp;almacen=<?php echo $ali; ?>')"></a><a href="javascript:ventanaSecundaria('..ventanas/listadoOrdenesImpresion.php?id_requisicion=<?php echo $_POST['nRequisicion']; ?>&amp;id_proveedor=<?php echo $id_proveedor; ?>&amp;id_requisicion=<?php echo $requisicion; ?>&amp;usuario=<?php echo $usuario; ?>&amp;almacen=<?php echo $ali; ?>')"><img src="../imagenes/btns/printbutton.png" alt="Imprimir " width="34" height="34" border="0" />Imprimir</a></p>
 </form>
-
+        </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

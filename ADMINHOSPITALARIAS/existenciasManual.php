@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php");
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+?>
 
 
 
@@ -529,7 +536,8 @@ text-align:right;
 }
 </style>
 </head>
-
+    <body>
+        <div class="page_right">
 <h1 align="center" ><br />
 Ajuste a existencias Manuales [Arranque de Inventarios]<br />
 
@@ -576,7 +584,8 @@ Ajuste a existencias Manuales [Arranque de Inventarios]<br />
   
   
  
-  <table width="600" class="table-forma">
+  <!--<table width="600" class="table-forma">-->
+  <table width="600" class="table-template-left">
 
      
   
@@ -806,7 +815,8 @@ order by articulos.descripcion ASC";
 }?>
 
 
-<table width="700" class="table table-striped">
+<table width="700" class="table-template-left">
+<!--<table width="700" class="table table-striped">-->
      <tr >
        <th width="5" scope="col"><div align="left" >
          <div align="left"># </div>
@@ -1009,6 +1019,10 @@ order by keyC DESC
 
 <br>
 <br>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

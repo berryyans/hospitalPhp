@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php 
 $ventana='ventanaModificaClientes.php';
 $ventana1='despliegaSubClientes.php';
@@ -85,12 +92,14 @@ $estilo->styles();
 </head>
 
 <body onLoad="inicio();">
+    <div class="page_right">
  <h1 align="center" class="titulos">Editar Saldo Inicial</h1>
 
   <form id="form2" name="form2" method="post" action="">
 
 
-   <table width="666" class="table table-striped">
+   <!--<table width="666" class="table table-striped">-->
+   <table width="666" class="table-template-left">
      <tr >
        <th width="72"  scope="col"><div align="left" >
          <div align="center">Codigo </div>
@@ -154,7 +163,11 @@ $contador+=1;
 	  />
    </p>
 </form>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>
 

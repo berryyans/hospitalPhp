@@ -1,4 +1,12 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php");?>
+<?php 
+//require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+$estilos=new muestraEstilos();
+$estilos->styles();
+?>
 <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -68,6 +76,8 @@ $estilos->styles();
 </head>
 
 <body>
+    <!--<div class="contenido_pagina">-->
+    <div class="page_right">
 <form id="form1" name="form1" method="post" >
   <h1 align="center" class="titulos">Devolucion de Cargos de Cuentas Cerradas (Px. Internos Solamente) </h1>
   <p align="center" class="titulos">&nbsp;</p>
@@ -202,5 +212,10 @@ $myrow31cd = mysql_fetch_array($result31cd);
   </span></span>
 
 </form>
+    </div>
+    <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

@@ -1,4 +1,10 @@
-<?php require("menuOperaciones.php");
+<?php //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -163,7 +169,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
  <h1 align="center" >&nbsp;
 </h1>
  <h1 align="center" >Ventas x Paquetes </h1>
@@ -177,7 +183,8 @@ $estilos->styles();
 
 
 
-   <table widtd="377" class="table-forma">
+   <!--<table widtd="377" class="table-forma">-->
+   <table widtd="377" class="table-template">
 
 
 
@@ -212,7 +219,7 @@ $estilos->styles();
        </div></td>
      </tr>
    </table>
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
 
 
 
@@ -226,7 +233,7 @@ $estilos->styles();
      <?php
 	  if($_POST['buscar']  ){ ?>
    </p>
-   <p align="center">&nbsp;</p>
+   <!--<p align="center">&nbsp;</p>-->
    <p align="center">
 <a href="javascript:ventanaSecundaria5111('../ventanas/imprimirVentasxPaquetes.php?almacenIngreso=<?php echo $_POST['almacenDestino'];?>
    &entidad=<?php echo $entidad;?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>
@@ -275,6 +282,10 @@ Ver
 			// return "completeEmpName.php?q=" + tdis.value;
 		});
 	</script>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

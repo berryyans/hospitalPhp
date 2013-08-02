@@ -1,4 +1,11 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php");?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
  <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -51,7 +58,10 @@ return false;
 -->
 </script>
 
-<?php  
+<?php
+$ALMACEN=$_GET['datawarehouse'];
+if(!$ALMACEN){print '<script>window.alert("Favor de asignar almacen en modulos primarios, gracias!");</script>';}
+
 if(is_numeric($_GET['rand']) AND $_GET['cierre']=='si' ){
 
 if($_GET['tipoCierre']=='revision'){
@@ -96,11 +106,12 @@ $estilos->styles();
 <META HTTP-EQUIV="Refresh"
 CONTENT="20"> 
 <body>
+    <div class="page_right">
 <form id="form1" name="form1" method="get" >
   <div align="left">
     <label></label>
     <div align="center">
-      <p>&nbsp;      </p>
+      <!--<p>&nbsp;      </p>-->
       <p>
       <?php
 		 if($_GET['fechaInicial']){
@@ -123,7 +134,8 @@ CONTENT="20">
   <h1 >Listado de Pacientes </h1>
   <span ></span>
  
-  <table width="628" border="0.2" align="center" cellpadding="4" cellspacing="0">
+  <!--<table width="628" border="0.2" align="center" cellpadding="4" cellspacing="0">-->
+  <table width="628" border="0.2" align="center" cellpadding="4" cellspacing="0" class="table-template-left">
     <tr>
       <th width="67"   scope="col"><div align="left" >
         <div align="center"># Cuenta  </span></div>
@@ -162,7 +174,7 @@ WHERE
 keyClientesInternos='".$myrow['keyClientesInternos']."'";
 $result31=mysql_db_query($basedatos,$sSQL31);
 $myrow31 = mysql_fetch_array($result31);
-
+/*
 if($col){
 $color = '#FFFFCC';
 $col = "";
@@ -170,7 +182,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
-
+*/
 
 	  ?>
 	  
@@ -214,6 +226,11 @@ $col = 1;
   </span></span>
 
 </form>
+    </div>
+    <?php
+    $mostrarFooter=new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
     <script type="text/javascript"> 
    Calendar.setup({ 

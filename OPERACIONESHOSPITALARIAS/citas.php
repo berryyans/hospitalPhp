@@ -1,4 +1,13 @@
-<?php require("menuOperaciones.php"); $ALMACEN=$_GET['datawarehouse'];
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+
+$ALMACEN=$_GET['datawarehouse'];
 
 if(!$ALMACEN){
     echo '<script>';
@@ -86,6 +95,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <form id="form1" name="form1" method="post" >
   <p><span class="titulomedio" align="center">Escoge la Especialidad para agregar la cita</span></p>
   <p>
@@ -120,7 +130,8 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 echo '
 
 
-<table class="table table-striped" width="850"  >
+<!--<table class="table table-striped" width="850"  >-->
+<table class="table-template-left" width="850"  >
 <tr >
 <th  scope="col"><div align="center" class="negromid">#</div></th>
       <th  scope="col"><div align="center" class="negromid">Desc</div></th>
@@ -319,6 +330,11 @@ echo $myrow6['descripcion'].'<br>Atte: '.$myrow6['usuario'] ;
     </blockquote>
   </blockquote>
 </blockquote>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 
 </html>

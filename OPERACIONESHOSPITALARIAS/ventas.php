@@ -1,4 +1,11 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php"); ?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -42,7 +49,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
 
 
 <?php
@@ -66,7 +73,8 @@ $estilos->styles();
     <input name="button" type="image"src="/sima/imagenes/btns/fecha.png" />
 </p>
 
-  <table width="864" class="table table-striped">
+  <!--<table width="864" class="table table-striped">-->
+  <table width="864" class="table-template-left">
     <tr>
       <th width="74"  scope="col"><div align="left">Referencia</div></th>
       <th width= "214"  scope="col"><div align="left">Nombre del paciente:</div></th>
@@ -101,6 +109,7 @@ if($result=mysql_db_query($basedatos,$sSQL)){
 while($myrow = mysql_fetch_array($result)){ 
 $numeroE=$myrow['numeroE'];
 $nCuenta=$myrow['nCuenta'];
+/*
 if($col){
 $color = '#FFFFCC';
 $col = "";
@@ -108,7 +117,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
-
+*/
 $nT=$myrow['keyClientesInternos'];
 	  ?>
       <td height="24" bgcolor="<?php echo $color?>" ><?php echo $myrow['folioVenta'];
@@ -190,6 +199,10 @@ echo $myrow['usuario'];
      button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
 }); 
     </script> 
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

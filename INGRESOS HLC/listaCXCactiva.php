@@ -1,4 +1,10 @@
-<?PHP require("menuOperaciones.php"); 
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 function noRound($val, $pre = 0) {
     $val = (string) $val;
     if (strpos($val, ".") !== false) {
@@ -35,6 +41,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 
  <h1 align="center">&nbsp;</h1>
 
@@ -73,8 +80,11 @@ $_POST['fechaInicial']=$myrowp['fechaApertura'];
 
 
 
+   <!--
   <div id="divContainer">   
    <table width="800" class="formatHTML5">
+   -->
+   <table width="800" class="table-template">
        <tr class="separator">
          <td width="10"  >#</td>
        <td width="100"  ><span >Nombre Aseguradora</span></td>
@@ -135,7 +145,7 @@ Agregar
     
      </tr>     <?php } ?>
    </table>
-  </div>
+  <!--</div>-->
    <p align="center"><label></label>
  </p>
 </form>
@@ -152,5 +162,10 @@ Agregar
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario
 });
 </script>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

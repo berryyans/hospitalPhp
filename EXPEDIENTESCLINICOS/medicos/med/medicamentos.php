@@ -1,4 +1,4 @@
-<?php require('/configuracion/ventanasEmergentes.php');?>
+<?php require('../../../configuracion/ventanasEmergentes.php');?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=700,height=700,scrollbars=YES") 
@@ -26,7 +26,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.observaciones.value) == false ) {   
-                alert("Por Favor, escribe las observaciones del diagnóstico!")   
+                alert("Por Favor, escribe las observaciones del diagnï¿½stico!")   
                 return false   
         } else if( vacio(F.receta.value) == false ) {   
                 alert("Por Favor, escribe la receta!")   
@@ -171,7 +171,7 @@ $myrow25= mysql_fetch_array($result25);
       </tr>
       <tr>
         <td height="33">&nbsp;</td>
-        <td><input name="actualizar" type="submit" class="style7" id="actualizar" value="Guardar Medicamentos" onClick="if(confirm('Esta seguro que deseas aplicar este diagnóstico?') == false){return false;}" />
+        <td><input name="actualizar" type="submit" class="style7" id="actualizar" value="Guardar Medicamentos" onClick="if(confirm('Esta seguro que deseas aplicar este diagnï¿½stico?') == false){return false;}" />
         <a href="javascript:ventanaSecundaria('despliegaArticulos.php?numCliente=<?php echo $_GET['seguro']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
         <input name="keyClientesInternos" type="hidden" id="keyClientesInternos" value="<?php echo $_GET['keyClientesInternos'];?>" />
         </a><a href="javascript:ventanaSecundaria('despliegaArticulos.php?numCliente=<?php echo $_GET['seguro']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">

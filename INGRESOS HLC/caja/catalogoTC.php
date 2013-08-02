@@ -1,5 +1,5 @@
-<?PHP include("/configuracion/ingresoshlcmenu/caja/menuCaja.php"); 
-include("/configuracion/funciones.php");
+<?PHP include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); 
+include("../../configuracion/funciones.php");
 //valida('CAJA','CatTCCaja',$usuario,$basedatos); ?>
 
 <script language="javascript" type="text/javascript">   
@@ -20,7 +20,7 @@ function valida(F) {
                 alert("Por Favor, escoje el codigo/departamento!")   
                 return false   
         } else if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este codigo!")   
+                alert("Por Favor, escribe la descripciï¿½n de este codigo!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   
@@ -76,7 +76,7 @@ codigo,descripcion,status,entidad,porcentajeComisino
 ) values ('".$_POST['codigo']."','".$_POST['descripcion']."','A','".$entidad."','".$_POST['porcentajeComision']."')";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
-echo 'Transacción agregada';
+echo 'Transacciï¿½n agregada';
 echo '<script type="text/vbscript">
 msgbox "ESTE TIPO DE TRANSACCION HA SIDO AGREGADO EXITOSAMENTE! "
 </script>';
@@ -89,7 +89,7 @@ WHERE
 codigo='".$_POST['codigo']."'";
 mysql_db_query($basedatos,$q);
 echo mysql_error();
-echo 'Transacción modificada';
+echo 'Transacciï¿½n modificada';
 echo '<script type="text/vbscript">
 msgbox "ESTA CAJA HA SIDO MODIFICADA! "
 </script>';
@@ -103,7 +103,7 @@ mysql_db_query($basedatos,$borrame);
 
 
 echo mysql_error();
-echo 'La transacción deberá ser removida manualmente!';
+echo 'La transacciï¿½n deberï¿½ ser removida manualmente!';
 echo '<script type="text/vbscript">
 msgbox "ESTE CAJA HA SIDO ELIMINADA! "
 </script>';

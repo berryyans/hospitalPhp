@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php include('/configuracion/funciones.php'); 
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION.'/funciones.php'); 
 $ventana1='ventanaModificaEspecialidades.php';
 ?>
 <script language="javascript" type="text/javascript">   
@@ -20,7 +22,7 @@ function valida(F) {
                 alert("Por Favor, escoje el almacen/departamento!")   
                 return false   
         } else if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este almacen!")   
+                alert("Por Favor, escribe la descripciï¿½n de este almacen!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   

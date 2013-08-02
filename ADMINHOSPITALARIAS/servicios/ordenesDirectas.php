@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <script language=javascript> 
@@ -19,7 +21,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -104,7 +106,7 @@ $agregaSaldo = "INSERT INTO OC ( codigo,id_almacen,usuario,fecha,hora,ID_EJERCIC
 mysql_db_query($basedatos,$agregaSaldo);
 echo mysql_error();
 $estado="insertado";
-$leyenda="Se generó o se actualizó la órden de compra: ".$requisicion;
+$leyenda="Se generï¿½ o se actualizï¿½ la ï¿½rden de compra: ".$requisicion;
 }//cierra validacion de cantidad
 }//cierra validacion del almacen
 
@@ -315,7 +317,7 @@ $codigo=$code1=$myrow18['codigo'];
 
 
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $sSQL17= "Select * From OC WHERE codigo= '".$code1."' 
@@ -400,7 +402,7 @@ $col = 1;
 	  if($myrow18['maximo']){
 	  echo $myrow18['maximo'];
 	  } else {
-	  echo "Sin Máximo";
+	  echo "Sin Mï¿½ximo";
 	  }
 	 
 		?>

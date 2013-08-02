@@ -1,4 +1,4 @@
-<?php include('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php include('../../js/pdf/fpdf_js.php');
 
 
 		
@@ -250,7 +250,7 @@ $pdf->SetY(45);
 $pdf->Cell(0,0,'Usuario Autorizo: '.$myrow311['autoriza'],0,0,R);
 
 
-//Credencial/Nómina 
+//Credencial/Nï¿½mina 
 if($myrow311['credencial']){
 $pdf->SetXY(80,45);
 $pdf->Cell(0,0,'Credencial/Nomina: '.$myrow311['credencial'],0,0,M);

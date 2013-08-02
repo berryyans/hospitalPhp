@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php");
+<?php //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -163,6 +170,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 
  <h1 align="center" >&nbsp;
 </h1>
@@ -177,7 +185,8 @@ $estilos->styles();
 
 
 
-   <table widtd="385" class="table-forma">
+   <!--<table widtd="385" class="table-forma">-->
+   <table widtd="385" class="table-template">
 
 
 
@@ -212,7 +221,7 @@ $estilos->styles();
        </div></td>
      </tr>
    </table>
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
 
 
 
@@ -222,10 +231,10 @@ $estilos->styles();
          <label>
          </label>
          
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
 
 
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
      <?php
 	  if($_POST['buscar'] and $_POST['fechaInicial'] and $_POST['fechaFinal']){ ?>
    <p align="center">&nbsp;</p>
@@ -240,7 +249,7 @@ Ver
 
  </form>
 
-<p align="center">&nbsp;</p>
+<!--<p align="center">&nbsp;</p>-->
   <script type="text/javascript">
    Calendar.setup({
     inputField     :    "campo_fecha1",     // id del campo de texto
@@ -277,6 +286,10 @@ Ver
 			// return "completeEmpName.php?q=" + tdis.value;
 		});
 	</script>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

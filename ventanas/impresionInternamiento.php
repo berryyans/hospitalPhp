@@ -1,6 +1,6 @@
-<?PHP require("/configuracion/funciones.php"); $ALMACEN=$_GET['datawarehouse'];?>
-<?PHP require("/configuracion/clases/valida.php");?>
-<?PHP require("/configuracion/baseDatos.php"); 
+<?PHP require("../configuracion/funciones.php"); $ALMACEN=$_GET['datawarehouse'];?>
+<?PHP require("../configuracion/clases/valida.php");?>
+<?PHP require("../configuracion/baseDatos.php"); 
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

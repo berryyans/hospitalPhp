@@ -1,2 +1,2 @@
-<?php require('/configuracion/ventanasEmergentes.php');?>
-<?php require('/configuracion/clases/aperturaCaja.php');?>
+<?php require('../../configuracion/ventanasEmergentes.php');?>
+<?php require('../../configuracion/clases/aperturaCaja.php');?>

@@ -1,4 +1,11 @@
-<?php require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript>
 function ventanaSecundaria (URL){
    window.open(URL,"ventanaSecundaria","width=1000,height=800,scrollbars=YES")
@@ -83,7 +90,7 @@ $estilos->styles();
 </head>
 
 <body>
-    
+    <div class="page_right">
 <p align="center" >
     Usuarios Modulos
 </p>
@@ -96,7 +103,7 @@ $estilos->styles();
     <span >
     <?php 
     if(!$_POST['entidades']){$_POST['entidades']=$_GET['entidades'];}
-    require("/configuracion/componentes/comboEntidades.php");
+    require("../configuracion/componentes/comboEntidades.php");
 	   $entidades=new despliegaEntidades();$entidades->listaEntidades($usuario,$basedatos);
 	   ?>
   </span>
@@ -104,7 +111,8 @@ $estilos->styles();
     
     
 	
-  <table width="800" class="table table-striped">
+  <table width="800" class="table-template-left">
+  <!--<table width="800" class="table table-striped">-->
 <tr >
         <th width="5" align="center" >#</th>
 
@@ -234,7 +242,10 @@ echo '<span >'.cambia_a_normal($myrow81['fechaSalida']).'</span>';
   <p align="center">
     <input name="nuevo" type="button" class="style7" id="nuevo" value="Nuevo Usuario"  onclick="javascript:ventanaSecundaria('modificaUsuarios.php?nuevo=si&codigo=<?php echo $s; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;usuario=<?php echo $sE; ?>')"/>
   </p>    
-    
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

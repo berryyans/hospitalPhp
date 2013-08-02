@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -78,7 +85,7 @@ $estilos-> styles();
 	<link rel="stylesheet" href="../js/stylesheets/autocomplete.css" type="text/css" />
         
         
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>-->
 <script language="javascript">
 jQuery.noConflict();
 jQuery(document).ready(function(){
@@ -242,6 +249,7 @@ div.style.display ='';
 </head>
 
 <body >
+    <div class="page_right">
  <h1 align="center" >
  <div align="center"></div>
 <form id="form2" name="form2" method="POST">
@@ -252,7 +260,8 @@ div.style.display ='';
    <h3><?php //echo $_POST['medico'];?></h3>
    
 
-   <table width="500" class="table-forma">
+   <!--<table width="500" class="table-forma">-->
+   <table width="500" class="table-template">
     <tr >
        <td><span >Fecha Inicial </span></td>
        <td>
@@ -323,7 +332,8 @@ div.style.display ='';
        
        
 <?php if($_POST['mostrar']!=NULL){ ?>
-   <table width="730" class="table table-striped">
+   <!--<table width="730" class="table table-striped">-->
+   <table width="730" class="table-template-left">
      <tr >
          
                   <th width="2" >
@@ -593,7 +603,8 @@ $devs[0]+=$myrow1ab['devCortesias'];
        
        </div>
     
-    <table>
+    <!--<table>-->
+    <table class="table-template">
         <tr>
             <th>Total de Cortesias</th>
             <th align="left" >
@@ -634,7 +645,8 @@ $devs[0]+=$myrow1ab['devCortesias'];
         
         
         
-   <table width="730" class="table table-striped">
+   <!--<table width="730" class="table table-striped">-->
+   <table width="730" class="table-template-left">
      <tr >
          
                   <th width="2" >
@@ -903,7 +915,8 @@ $devsBen[0]+=$myrow1ab['devBeneficencias'];
    
    </div>
    
-       <table>
+       <!--<table>-->
+       <table class="table-template">
         <tr>
             <th>Total de Beneficencias</th>
             <th align="left" >
@@ -940,7 +953,8 @@ $devsBen[0]+=$myrow1ab['devBeneficencias'];
 <input type="button" name="Print" id="mostrar" value="Print" onClick="javascript:ventanaSecundaria1('../ventanas/printDescuentos.php?fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>')"/>
        </span>        
 <?php if($_POST['mostrar']!=NULL){ ?>
-   <table width="730" class="table table-striped">
+   <!--<table width="730" class="table table-striped">-->
+   <table width="730" class="table-template-left">
      <tr >
          
                   <th width="2" >
@@ -1216,7 +1230,8 @@ $devsDesc[0]+=$myrow1ab['devDescuentos'];
    </table>
    </div>
    
-          <table>
+          <!--<table>-->
+    <table class="table-template">
         <tr>
             <th>Total de Descuentos</th>
             <th align="left" >
@@ -1299,5 +1314,10 @@ $devsDesc[0]+=$myrow1ab['devDescuentos'];
 }); 
  </script>
 </div>
+ </div>
+    <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

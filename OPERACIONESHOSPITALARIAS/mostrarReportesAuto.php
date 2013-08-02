@@ -1,4 +1,10 @@
-<?php require("menuOperaciones.php");
+<?php //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -72,6 +78,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" class="titulos">Listado de Reportes Automaticos </h1>
  <form id="form2" name="form2" method="post" >
   
@@ -94,7 +101,8 @@ $estilos->styles();
          
    <p>&nbsp;</p>
    <p>&nbsp;</p>
-   <table class="table table-striped" width="379" >
+   <!--<table class="table table-striped" width="379" >-->
+   <table class="table-template-left" width="379" >
      <tr >
        <th width="24" ><div align="left" class="none">
          <div align="left"># </div>
@@ -159,5 +167,10 @@ $f+=1;
    </p>
  </form>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

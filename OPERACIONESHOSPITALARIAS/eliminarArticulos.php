@@ -1,4 +1,12 @@
-<?PHP require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php"); ?>
+<?PHP 
+//require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+$estilos=new muestraEstilos();
+$estilos->styles();
+?>
 
 
 <script type="text/javascript">
@@ -124,13 +132,14 @@ window.alert("Se quitaron articulos de este almacen");
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <?php
 
-$estilos= new muestraEstilos();
-$estilos-> styles();
+//$estilos= new muestraEstilos();
+//$estilos-> styles();
 
 ?>
 
 </head>
-
+<!--<div class="contenido_pagina">-->
+<div class="page_right">
 <h1 align="center" class="titulos"><br /> 
 Eliminar Articulos
 <br />
@@ -138,11 +147,19 @@ Eliminar Articulos
 
 <?php echo $leyenda; ?>&nbsp;</h1>
 <form id="form1" name="form1" method="post" action="">
+    <div class="table-template">  
+  <!--
   <table width="583" class="table-forma">
+  <table width="583" >
+  -->
+  <table width="583" >
     <tr>
       <td width="146"  scope="col"><div align="left" >
         <div align="right" ><span >Datos Articulo </span></div>
       </div></td>
+        <!--
+      <td width="373"  scope="col"><div align="left"><span >
+        -->
       <td width="373"  scope="col"><div align="left"><span >
           <input name="porArticulo" type="text"  id="porArticulo" size="60" 
 		  value="<?php if($_POST['porArticulo']) echo $_POST['porArticulo']; ?>"
@@ -152,7 +169,7 @@ Eliminar Articulos
     <tr >
       <td scope="col"><div align="right" >Almac&eacute;n</div></td>
       <td scope="col"> <div align="left">
-          <?php require("/configuracion/componentes/comboAlmacen.php"); 
+          <?php require("../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>
@@ -169,8 +186,21 @@ $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenSolicitante,$almacenDe
         </label></td>
     </tr>
   </table>
+        </div>
   <p>&nbsp;</p>
-  <table width="718" class="table table-striped">
+  <!--<table width="718" class="table table-striped">-->
+  <div class="table-template">
+  <table width="660" >
+    <tr >
+      <th width="40" >Clave</th>
+      <th width="395" >Descripcion</th>
+      <th width="155" >CBarra</th>
+      <th width="80" >Status</th>
+      <th width="85" >Existencias</th>
+      <th width="60" >Eliminar</th>
+    </tr >
+  <!--    
+  <table width="718" >
 
     <tr >
       <th width="42" >Clave</th>
@@ -181,6 +211,7 @@ $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenSolicitante,$almacenDe
       <th width="87" >Existencias</th>
       <th width="64" >Eliminar</th>
     </tr>
+  -->
 <?php	
 
 
@@ -282,6 +313,7 @@ echo mysql_error();
     <?php  }}?>
 
   </table>
+  </div>
   <p align="center">&nbsp;</p>
   <div align="center" class="informativo"><strong>
     <?php if(!$codigo){ echo "No se encontraron datos..!!"; }?>
@@ -302,5 +334,10 @@ echo mysql_error();
     <input name="anaquel1" type="hidden" id="anaquel1" value="<?php echo $_POST['anaquel']; ?>" />
   </p>
 </form>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

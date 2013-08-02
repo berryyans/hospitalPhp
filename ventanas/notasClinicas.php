@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php require("../configuracion/ventanasEmergentes.php"); ?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   

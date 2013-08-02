@@ -1,5 +1,7 @@
-<?php require("/configuracion/ventanasEmergentes.php"); 
-require('/configuracion/funciones.php');
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); 
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 $mostrarmenu=new menus();
 $mostrarmenu->menuOperaciones($_GET['main'],$_GET['primario'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 ?>

@@ -1,5 +1,5 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/clases/discrimina1.php"); ?>
+<?PHP include("../configuracion/ventanasEmergentes.php"); ?>
+<?php include("../configuracion/clases/discrimina1.php"); ?>
 
 <?php
 

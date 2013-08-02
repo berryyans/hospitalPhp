@@ -1,4 +1,13 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 
 <script language=javascript> 
@@ -51,7 +60,8 @@ $estilos-> styles();
 ?>
 
 </head>
-
+    <body>
+        <div class="page_right">
 <h1 align="center" >
     <br />
 
@@ -79,7 +89,8 @@ EVALUACION DEL INVENTARIO<br />
     
 <form id="form1" name="form1" method="post" action="">
 
-  <table width="600" class="table-forma">
+  <!--<table width="600" class="table-forma">-->
+  <table width="600" class="table-template">
       
       
       
@@ -189,7 +200,8 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
   
 <p>&nbsp;</p>
 
-  <table width="800" class="table table-striped" >
+  <!--<table width="600" class="table table-striped" >-->
+  <table width="600" class="table-template-left" >
     <tr>
     
     </tr>
@@ -732,7 +744,10 @@ if($myrow8acb['costo']>0){
   </p>
 </form>
 
-
-
+        </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php require("/configuracion/ventanasEmergentes.php"); ?>
+=======
+<?php require("../configuracion/ventanasEmergentes.php"); ?>
+>>>>>>> ffca23b146c55951cda977be74fea6569f465f46
 
 <?php
 if ($_POST['ADDOS'] != NULL and $_GET['solicitud'] > 0) {
@@ -802,12 +806,83 @@ $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
                         <div align="left">
 <?php
 $sqlNombre11 = "SELECT * from sis_marcasm
+<<<<<<< HEAD
 
 ORDER BY descripcion ASC";
 $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
 ?>
                             <select name="keyMAM" onClick="this.form.submit();">
 
+                                <option value="">N/A</option>
+                            <?php
+                            while ($rNombre11 = mysql_fetch_array($resultaNombre11)) {
+                                echo mysql_error();
+                                ?>
+                                    <option
+                                <?php if ($_POST["keyMAM"] == $rNombre11['keyMAM']) {
+                                    echo 'selected=""';
+                                } ?>
+                                        value="<?php echo $rNombre11["keyMAM"]; ?>"><?php echo $rNombre11["descripcion"]; ?></option>
+                                <?php } ?>
+                            </select>              
+                        </div></td>
+                </tr>           
+
+
+                                    <?php if ($_POST['keyMAM'] != NULL) { ?>
+                    <tr>
+                        <td width="152" scope="col"><div align="left"><?php echo utf8_decode('Tamaño'); ?></div></td>
+                        <td width="451" scope="col"><label> </label>
+                            <div align="left">
+                                <input name="monitor" type="text" size="5" value="<?php
+                                        if ($myrow1['monitor']) {
+                                            echo $myrow1['monitor'];
+                                        } else {
+                                            echo $_POST['monitor'];
+                                        }
+                                        ?>"/>(Pulgadas)
+                            </div></td>
+                    </tr>    
+                            <?php } ?>
+
+
+
+
+=======
+>>>>>>> ffca23b146c55951cda977be74fea6569f465f46
+
+ORDER BY descripcion ASC";
+$resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
+?>
+                            <select name="keyMAM" onClick="this.form.submit();">
+
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+            </table>
+
+
+
+<?php if ($_POST['entidad'] != NULL) { ?>    
+                <p align="center">
+
+                    <input name="update" type="submit"  value="Guardar/Modificar" />
+
+                </p>
+            <?php } ?>
+        </form>
+
+=======
                                 <option value="">N/A</option>
                             <?php
                             while ($rNombre11 = mysql_fetch_array($resultaNombre11)) {
@@ -870,6 +945,7 @@ $resultaNombre11 = mysql_db_query($basedatos, $sqlNombre11);
             <?php } ?>
         </form>
 
+>>>>>>> ffca23b146c55951cda977be74fea6569f465f46
     </body>
 </html>
 

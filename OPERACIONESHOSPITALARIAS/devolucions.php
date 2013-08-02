@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -8,7 +15,7 @@
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -45,7 +52,7 @@ function ventanaSecundaria2 (URL){
 <!--
 function comprueba()
 {
-if (confirm('Estas seguro que deseas enviar la cuenta de este paciente a admisiones? ya no podras hacer cargos, y la operación es irreversible')) return true;
+if (confirm('Estas seguro que deseas enviar la cuenta de este paciente a admisiones? ya no podras hacer cargos, y la operaciï¿½n es irreversible')) return true;
 return false;
 }
 -->
@@ -87,12 +94,14 @@ $estilos->styles();
 <META HTTP-EQUIV="Refresh"
 CONTENT="100"> 
 <body>
+    <div class="page_right">
 <form id="form1" name="form1" method="post" action="#">
   <h1 align="center" class="titulos">Devoluciones</h1>
   <p align="center" class="titulos"></p>
   <span ></span>
 
-  <table width="678" class="table table-striped">
+  <!--<table width="678" class="table table-striped">-->
+  <table width="678" class="table-template-left">
     <tr >
       <th width="56"  scope="col"><div align="left" >
         <div align="center">Folio </div>
@@ -175,7 +184,7 @@ $myrow31cd = mysql_fetch_array($result31cd);
 
 	  <?php echo $myrow['paciente'];
 	  if($myrow['status']=='ontransfer'){
-	  echo '   [Se solicitó la transferencia de éste paciente]';
+	  echo '   [Se solicitï¿½ la transferencia de ï¿½ste paciente]';
 	  }
 	  ?>
       </span></td>
@@ -209,5 +218,10 @@ $myrow31cd = mysql_fetch_array($result31cd);
   </span></span>
 
 </form>
+    </div>
+    <?php
+    $mostrarFooter=new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

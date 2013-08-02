@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 
 <script language=javascript> 
@@ -51,7 +59,8 @@ $estilos-> styles();
 ?>
 
 </head>
-
+    <body>
+        <div class="page_right">
 <h1 align="center" >
     <br />
 CONVERTIR EXISTENCIAS DE ARTICULOS EN STOCK<br />
@@ -68,7 +77,8 @@ CONVERTIR EXISTENCIAS DE ARTICULOS EN STOCK<br />
 &nbsp;</h1>
 <form id="form1" name="form1" method="post" action="">
 
-  <table width="600" class="table-forma">
+  <!--<table width="600" class="table-forma">-->
+  <table width="600" class="table-template-left">
       
       
       
@@ -173,7 +183,8 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
   
 <p>&nbsp;</p>
 
-  <table width="600" class="table table-striped" >
+  <!--<table width="600" class="table table-striped" >-->
+  <table width="600" class="table-template-left" >
     <tr>
     
     </tr>
@@ -304,6 +315,7 @@ $result1=mysql_db_query($basedatos,$sSQL1);
 while($myrow1 = mysql_fetch_array($result1)){
 
 $a+=1;
+/*
 if($col){
 $color = '#FFCCFF';
 $col = "";
@@ -311,7 +323,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
-
+*/
 
 
 
@@ -543,7 +555,10 @@ Editar
   </p>
 </form>
 
-
-
+        </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

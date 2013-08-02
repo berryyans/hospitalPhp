@@ -1,4 +1,4 @@
-<?php include('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php include('../../js/pdf/fpdf_js.php');
 
 
 
@@ -709,7 +709,7 @@ $pdf->Cell(0,0,'Total',0,0,M);
 $pdf->SetX('170');
 $pdf->Cell(0,0,'$'.number_format($efectivo[0]+$iva[0],2),0,0,M);
 
-//$header=array('País','Capital','Superficie (km2)','Pobl. (en miles)');
+//$header=array('Paï¿½s','Capital','Superficie (km2)','Pobl. (en miles)');
 
 
 

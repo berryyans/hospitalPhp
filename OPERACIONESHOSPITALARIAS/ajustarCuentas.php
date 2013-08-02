@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 
 <script language=javascript> 
@@ -56,7 +64,7 @@ $estilos->styles();
 </head>
 
 <body>
-    
+    <div class="page_right">
     
     
     
@@ -72,7 +80,8 @@ $estilos->styles();
     
     
 <h4>
-<table width="570" class="table-striped">   
+<!--<table width="570" class="table-striped">   -->
+<table width="570" class="table-template-left">   
     
         <tr>
         <td  >&nbsp;</td>
@@ -119,7 +128,8 @@ $estilos->styles();
     </h4>
     
 <?php if($_POST['ir']!=NULL){?>  
-  <table width="570" class="table-striped">
+  <!--<table width="570" class="table-striped">-->
+  <table width="570" class="table-template-left">
 
     <tr >
          <th width="40" >#</th>
@@ -280,6 +290,11 @@ Ver
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario 
 }); 
-</script> 
+</script>
+    </div>
+    <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

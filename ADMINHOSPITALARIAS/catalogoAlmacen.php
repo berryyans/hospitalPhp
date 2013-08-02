@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php"); $ventana1='ventanaCatalogoAlmacen.php';
+<?PHP 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+//require("menuOperaciones.php"); 
+
+$ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
 
@@ -75,6 +83,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >Listado de Almacenes</h1>
 <form id="form2" name="form2" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>?main=<?php echo  $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&datawarehouse=<?php echo $_GET['datawarehouse'];?>">
    <table width="440" class="table-forma">
@@ -128,7 +137,10 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
     <?php if($_POST['departamento']!=NULL){?>
 
    
+   <!--
    <table width="903" class="table table-striped">
+   -->
+   <table width="903" class="table-template">
 
        <tr >
        <th width="26" scope="col"><div align="left" >
@@ -450,5 +462,11 @@ if($myrowa['descripcion']){
    </p>
  </form>    <?php }}?>
  <p align="center">&nbsp;</p>
+ </div>
+     <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+
+?>
 </body>
 </html>

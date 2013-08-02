@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 
 <script language=javascript> 
@@ -52,6 +60,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 
 
   <h1 align="center" >Listado de Medicos  </h1>
@@ -64,7 +73,7 @@ $estilos->styles();
     <input name="nuevo" type="button"  id="nuevo" value="Nuevo Medico"
 	  onclick="ventanaSecundaria1('../ventanas/catmedicos.php')" />
   </p>
-  <p >&nbsp;</p>
+  <!--<p >&nbsp;</p>-->
 </div>
 
 
@@ -72,7 +81,8 @@ $estilos->styles();
 <form id="form1" name="form1" method="post" action="modificaMedicos1.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&datawarehouse=">
 
 
-  <table width="672" class="table table-striped">
+  <!--<table width="672" class="table table-striped">-->
+  <table width="672" class="table-template-left">
     <tr >
       <th width="18"  scope="col"><span ># </span></th>
         <th width="27"  scope="col"><span >Cedula P</span></th>
@@ -99,6 +109,7 @@ ASC
 if($result=mysql_db_query($basedatos,$sSQL)){
 while($myrow = mysql_fetch_array($result)){ 
 $No=$myrow['keyMedico'];
+/*
 if($col){
 $color = '#FFFF99';
 $col = "";
@@ -106,6 +117,8 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
+ * 
+ */
 $nombreCompleto=$myrow['apellido1'].' '.$myrow['apellido2'].' '.$myrow['nombre1'].' '.$myrow['nombre2'];
 $N=$myrow['numMedico'];
 $a+=1;
@@ -189,5 +202,10 @@ codigo = '".$myrow['especialidad']."'
     </p>
 </form>
 <p>&nbsp; </p>
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

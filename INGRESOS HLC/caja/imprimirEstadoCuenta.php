@@ -1,4 +1,4 @@
-<?php require('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php require('../../js/pdf/fpdf_js.php');
 
 
 		
@@ -137,7 +137,7 @@ function AutoPrintToPrinter($server, $printer, $dialog=false)
 
 
 //*****************CONEXION  A SIMA***************
-require('/configuracion/baseDatos.php');
+require('../../configuracion/baseDatos.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

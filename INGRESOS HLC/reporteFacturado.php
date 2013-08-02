@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -49,6 +56,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <?php $sSQL1= "SELECT *
 FROM
 facturaGrupos
@@ -108,7 +116,8 @@ $texto='NO SE ENCONTRO LA FACTURA...!';
   
   
   <?php if($_POST['tipoBusqueda']!=NULL ){?>
-  <table width="522" class="table-forma">
+  <!--<table width="522" class="table-forma">-->
+  <table width="522" class="table-template">
     
       
       <?php  if($_POST['tipoBusqueda']=='factura'){?>
@@ -182,7 +191,8 @@ $texto='NO SE ENCONTRO LA FACTURA...!';
   
   
    <?php if($_POST['buscar'] ){ ?>
-  <table width="808" class="table table-striped">
+  <!--<table width="808" class="table table-striped">-->
+  <table width="808" class="table-template-left">
     <tr>
          <th  scope="col"><div align="left">#</div></th>
         <th  scope="col"><div align="left">#Factura</div></th>
@@ -435,7 +445,10 @@ echo '---';
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
-    
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

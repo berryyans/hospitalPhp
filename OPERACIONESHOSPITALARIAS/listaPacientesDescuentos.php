@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -67,7 +74,7 @@ $estilos-> styles();
 </head>
 
 <body>
-
+    <div class="page_right">
   <h1>Reporte de Descuentos</h1>
 
 <form id="form2" name="form2" method="get" >
@@ -76,7 +83,8 @@ $estilos-> styles();
 <input tyoe="hidden" name="warehouse" value="<?php echo $_GET['warehouse'];?>" />
  
 <br />
-  <table width="557" class="table-forma">
+  <!--<table width="557" class="table-forma">-->
+  <table width="557" class="table-template-left">
     <tr>
       <td width="165" ><div align="left" >Almacen Principal</div></td>
       <td width="382"><?php 
@@ -174,7 +182,8 @@ $myrow1 = mysql_fetch_array($result1); ?>
   <p>
     <?php if($_GET['busca'] and $_GET['fechaInicial'] and $_GET['fechaFinal']) { ?>
   </p>
-  <table  class="table table-striped">
+  <!--<table  class="table table-striped">-->
+  <table  class="table-template-left">
 
       <tr >
       <th width="49"  scope="col"><div align="center" >
@@ -337,13 +346,13 @@ onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargos.php?numero
   <p align="center" class="precio1">&nbsp;</p>
   <p align="center" class="precio1"><em>Total Pacientes con Descuento <?php print $a;?></em></p>
   <p align="center">&nbsp;</p>
-  <p align="center">&nbsp;</p>
+  <!--<p align="center">&nbsp;</p>-->
   <p>
     <?php  }?>
   </p>
-  <p>&nbsp;</p>
+  <!--<p>&nbsp;</p>-->
 </form>
-<p>&nbsp; </p>
+<!--<p>&nbsp; </p>-->
   <script type="text/javascript"> 
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
@@ -358,5 +367,10 @@ onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargos.php?numero
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario 
 }); 
 </script> 
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

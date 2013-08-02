@@ -1,4 +1,11 @@
-<?php require("/var/www/html/sima/OPERACIONESHOSPITALARIAS/menuOperaciones.php"); 
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -6,13 +13,13 @@ $ventana1='ventanaCatalogoAlmacen.php';
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
 
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
   
@@ -34,7 +41,7 @@ function valida(F) {
                 alert("Por Favor, escoje el almacen/departamento!")   
                 return false   
         } else if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este almacen!")   
+                alert("Por Favor, escribe la descripciï¿½n de este almacen!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   
@@ -138,6 +145,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" class="titulos">&nbsp;</h1>
  <h1 align="center" class="titulos">Ventas por Almacen </h1>
  <form id="form2" name="form2" method="post" >
@@ -221,7 +229,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
      </script>
 
@@ -230,9 +238,13 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
    Calendar.setup({ 
     inputField     :    "campo_fecha1",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador1"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador1"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
      </script>
-
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
  </html>

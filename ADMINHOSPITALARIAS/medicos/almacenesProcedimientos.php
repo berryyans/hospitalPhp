@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/administracionhospitalaria/medicos/medicosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/medicos/medicosmenu.php"); ?>
 <script type="text/javascript" src="public_smo_scripts.js"></script>
 <?php 
 if($_POST['nuevo']){
@@ -30,7 +32,7 @@ codAlmacen,codProcedimiento,usuario,fecha,hora
 )";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
-$leyenda = "Se ingresó el almacen: ".$_POST['almacen'];
+$leyenda = "Se ingresï¿½ el almacen: ".$_POST['almacen'];
 }}}
 //*****************cierro INSERTAR Y ACTUALIZAR **********************************
 /* } else {
@@ -49,7 +51,7 @@ $borrame = "DELETE FROM almacenesProcedimientos WHERE keyAP ='".$quitar[$is]."'"
 mysql_db_query($basedatos,$borrame);
 echo mysql_error();
 }
-$leyenda = "Se eliminó el modulo ".$quitar[$i];
+$leyenda = "Se eliminï¿½ el modulo ".$quitar[$i];
 }
 } else if($_POST['borrar'] AND !$_POST['almacen']){
 $leyenda = "Por favor, escoja el nombre de almacen que desee eliminar..!";

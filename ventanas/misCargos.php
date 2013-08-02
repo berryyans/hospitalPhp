@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php");require("/configuracion/funciones.php");?>  
+<?php require("../configuracion/ventanasEmergentes.php");require("../configuracion/funciones.php");?>  
 <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla

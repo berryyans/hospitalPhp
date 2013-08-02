@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php 
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
@@ -163,6 +170,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" class="titulos">REPORTES</h1>
  <form id="form2" name="form2" method="get" >
    <div align="center"></div>
@@ -352,8 +360,10 @@ $texto='Te faltan campos por llenar!';
     }
     ?>
 <?php } ?>
+        <!--
      <p>&nbsp;   </p>
      <p>&nbsp;</p>
+        -->
      <p>
        <input type="hidden" name="bandera" id="bandera" value="<?php echo $a;?>" />
        
@@ -376,6 +386,10 @@ $texto='Te faltan campos por llenar!';
  </form>
  
 <p align="center">&nbsp;</p>
-
+</div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

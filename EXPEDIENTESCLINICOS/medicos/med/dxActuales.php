@@ -1,6 +1,6 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); 
-include("/configuracion/clases/sql.php");
-include("/configuracion/clases/diagnosticos.php");?>
+<?PHP include("../../../configuracion/ventanasEmergentes.php"); 
+include("../../../configuracion/clases/sql.php");
+include("../../../configuracion/clases/diagnosticos.php");?>
 <?php
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];

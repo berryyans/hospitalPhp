@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); 
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -162,6 +169,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >&nbsp;</h1>
  <h1 align="center" >IVA x Pagar </h1>
  <form id="form2" name="form2" method="post" action="">
@@ -262,6 +270,11 @@ $estilos->styles();
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador2"     // el id del bot�n que lanzar� el calendario 
 }); 
-</script> 
+</script>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?> 
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?> 
 
 
 
@@ -20,7 +27,7 @@ function valida(F) {
                 alert("Por Favor, escoje el keyTCred/departamento!")   
                 return false   
         } else if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este keyTCred!")   
+                alert("Por Favor, escribe la descripciï¿½n de este keyTCred!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   
@@ -56,7 +63,7 @@ codigoTC,descripcion,status,costoNormal,costoAdicional,entidad,maximoAdicional,r
 ) values ('".$_POST['codigoTC']."','".$_POST['descripcion']."','A','".$_POST['costoNormal']."','".$_POST['costoAdicional']."','".$entidad."','".$_POST['maximoAdicional']."','".$random."')";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
-echo 'Transacción agregada';
+echo 'Transacciï¿½n agregada';
 echo '<script>
 window.alert( "SE AGREGO EL TIPO DE CREDENCIAL! ");
 </script>';
@@ -74,7 +81,7 @@ WHERE
 keyTCred='".$_POST['keyTCred']."'";
 mysql_db_query($basedatos,$q);
 echo mysql_error();
-echo 'Transacción modificada';
+echo 'Transacciï¿½n modificada';
 echo '<script>';
 echo 'window.alert("SE MODIFICO EL TIPO DE CREDENCIAL! ");';
 echo '</script>';
@@ -93,7 +100,7 @@ mysql_db_query($basedatos,$borrame);
 
 
 echo mysql_error();
-echo 'La transacción deberá ser removida manualmente!';
+echo 'La transacciï¿½n deberï¿½ ser removida manualmente!';
 echo '<script >
 window.alert("SE ELIMINO EL TIPO DE CREDENCIAL! "=;
 </script>';
@@ -131,6 +138,7 @@ $estilo-> styles();
 </head>
 
 <body>
+    <div class="page_right">
 
  <h1 >Cat&aacute;logo de Tipos de Credencial</h1>
  <p>
@@ -141,7 +149,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?> </p>
 <form id="form2" name="form2" method="post" >
 
-  <table width="645" class="table table-striped">
+  <!--<table width="645" class="table table-striped">-->
+  <table width="645" class="table-template-left">
     <tr>
       <th width="113"   scope="col"><div align="left" >
         <div align="left">Tipo Credencial</div>
@@ -204,6 +213,11 @@ echo 'checked'.$myrow['keyTT'];
      </label>
   </p>
 </form>
- <p align="center">&nbsp;</p>
+ <!--<p align="center">&nbsp;</p>-->
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

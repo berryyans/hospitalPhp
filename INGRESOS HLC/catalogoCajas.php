@@ -1,4 +1,12 @@
-<?PHP require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 <script language="javascript" type="text/javascript">   
 
@@ -197,13 +205,15 @@ $estilo-> styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >Catalogo de Cajas </h1>
  <form id="form1" name="form1" method="post" action="" >
-   <p>
+   <!--<p>
      <label></label>
-   </p>
+   </p>-->
 
-   <table width="616" class="table-forma">
+   <!--<table width="616" class="table-forma">-->
+   <table width="616" class="table-template-left">
      <tr>
        <td width="9"  scope="col">&nbsp;</td>
        <td width="101"  scope="col"><div align="left">Codigo Caja </div>         
@@ -231,8 +241,9 @@ size="10" <?php if($myrow2['codigoCaja']){ echo 'readonly=""';}?> autocomplete="
      </tr>
    </table>
 
-<p>&nbsp;</p>
-   <table width="36%" >
+<!--<p>&nbsp;</p>-->
+   <!--<table width="36%" >-->
+<table width="36%" class="table-template">
      <tr valign="middle">
        <td><span >
          <input name="actualizar" type="submit"  id="actualizar" value="Alta/Modificar" src="../imagenes/btns/modifybutton.png"/>
@@ -246,7 +257,7 @@ size="10" <?php if($myrow2['codigoCaja']){ echo 'readonly=""';}?> autocomplete="
        </td>
      </tr>
    </table>
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
  </form>
  <p>
    <?php   
@@ -303,5 +314,10 @@ echo 'checked'.$myrow['keyTT'];
    </p>
  </form>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

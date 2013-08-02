@@ -1,23 +1,25 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="calendar-green.css" title="win2k-cold-1" /> 
 
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="calendar-setup.js"></script> 
 
 <script language="javascript" type="text/javascript">  
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -412,7 +414,7 @@ echo 'No tiene ninguna hora definida!';
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
 <p>&nbsp;</p>

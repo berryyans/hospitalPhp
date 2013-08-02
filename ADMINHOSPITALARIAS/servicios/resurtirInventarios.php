@@ -1,4 +1,6 @@
-<?php require('/configuracion/ventanasEmergentes.php');?>
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=630,height=300,scrollbars=YES") 
@@ -9,7 +11,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -241,7 +243,7 @@ $codigo=$code1=$myrow18['codigo'];
 
 
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $sSQL17= "Select * From OC WHERE codigo= '".$code1."' 

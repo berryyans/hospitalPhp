@@ -1,4 +1,11 @@
-<?php  require("menuOperaciones.php");
+<?php  //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
 // **************************************************************************
 // sample.php - sample script that demonstrates using as-diagrams.php,
 // class for drawing gd-less bar diagrams.
@@ -19,7 +26,7 @@ require_once('../js/diagramas/as-diagrams.php');
 	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
 </HEAD>
 <BODY>
-    
+    <div class="page_right">
     
     
     
@@ -63,7 +70,8 @@ value="<?php echo $year;?>"><?php echo $year;?></option>
 </h1>  
 
    
-   <table >
+   <!--<table >-->
+   <table class="table-template">
     <tr  >
       
         <td  ></td>
@@ -75,7 +83,7 @@ value="<?php echo $year;?>"><?php echo $year;?></option>
         <th width="338" scope="col"><div align="left">
           <?php 
 		
-		  require("/configuracion/componentes/comboAlmacen.php"); 
+		  require("../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenDestino,$almacenDestino,$basedatos);
 ?>
@@ -1701,3 +1709,9 @@ $graph->DiagramBar($legend_x, $legend_y, $data, $data_title);
 ?>
 <br>
 <br>
+
+</div>
+<?php
+$mostrarFooter = new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>

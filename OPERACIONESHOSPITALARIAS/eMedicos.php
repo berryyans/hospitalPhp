@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -83,14 +90,15 @@ $estilos-> styles();
 </head>
 
 <body>
-
+    <div class="page_right">
  <div align="center"></div>
 <form id="form2" name="form2" method="POST">
  <div align="center">
    
    <h1>Reporte estadistico de consultas por Medico</h1>
 
-   <table width="500" class="table-forma">
+   <!--<table width="500" class="table-forma">-->
+   <table width="500" class="table-template">
     <tr >
        <td><span >Fecha Inicial </span></td>
        <td>
@@ -138,7 +146,8 @@ $estilos-> styles();
    <br>
    <br>
 <?php if($_POST['mostrar']!=NULL){?>
-   <table width="660" class="table table-striped">
+   <!--<table width="660" class="table table-striped">-->
+   <table width="660" class="table-template-left">
      <tr >
          
                   <th width="2" >
@@ -416,5 +425,10 @@ Detalles
 }); 
  </script>
        <br />
+    </div>
+       <?php
+       $mostrarFooter = new menus();
+       $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+       ?>
 </body>
 </html>

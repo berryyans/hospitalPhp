@@ -1,2 +1,4 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php include('/configuracion/clases/reposicionxVenta.php'); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION.'/clases/reposicionxVenta.php'); ?>

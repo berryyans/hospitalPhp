@@ -1,11 +1,16 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php require("configuracion/ventanasEmergentes.php"); ?>
 
 <?php 
+<<<<<<< HEAD
 $ip = $_SERVER['REMOTE_ADDR']; 
 //if($ip=='127.0.0.1' or $ip=='localhost'){
 
 
 
+=======
+//echo $ip = $_SERVER['REMOTE_ADDR']; 
+//if($ip=='127.0.0.1' or $ip=='localhost'){
+>>>>>>> ffca23b146c55951cda977be74fea6569f465f46
 
 
 $agrega = "INSERT INTO logs (
@@ -23,8 +28,9 @@ $url='http://hlc.um.edu.mx/sima/movil/principal.php/';
 	//require("/configuracion/MenuPrincipal/menup.php"); 
 	} else {
 	//require("/configuracion/MenuPrincipal/menup.php");
-        require("/configuracion/MenuPrincipal/menuPrincipal.php");    
-	require("/configuracion/MenuPrincipal/menuAyuda.php");
+        //require("/configuracion/MenuPrincipal/menuPrincipal.php");    
+        require("configuracion/MenuPrincipal/menuPrincipalv4.php");    
+	//require("/configuracion/MenuPrincipal/menuAyuda.php");
 
 }
 //***************************************************
@@ -43,9 +49,17 @@ body {
 -->
 </style>
 <?php //}else{
+<<<<<<< HEAD
 /*
     echo '<script>window.alert("NO ESTA PERMITIDO");
 window.location.href="index.php?backurl="+window.location.href;
     
 </script>';*/
 //}
+=======
+    /*echo '<script>window.alert("NO ESTA PERMITIDO");
+window.location.href="index.php?backurl="+window.location.href;
+    
+</script>';
+}
+>>>>>>> ffca23b146c55951cda977be74fea6569f465f46

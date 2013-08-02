@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php 
 $ventana='ventanaModificaClientes.php';
 $ventana1='despliegaSubClientes.php';
@@ -143,12 +150,14 @@ $estilo->styles();
 </head>
 
 <body onLoad="inicio();">
+    <div class="page_right">
  <h1 align="center" >Listado de RFC </h1>
 
   <form id="form1" name="form1" method="post" action="">
    <p align="center">&nbsp;</p>
 
-   <table width="750" class="table table-striped">
+   <!--<table width="750" class="table table-striped">-->
+   <table width="750" class="table-template-left">
      <tr >
        <th width="44"  scope="col"><div align="left" >
          <div align="center"># </div>
@@ -222,6 +231,10 @@ $a+=1;
 	  onclick="ventanaSecundaria1('ventanaModificaRFC.php')" />
    </p>
 </form>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

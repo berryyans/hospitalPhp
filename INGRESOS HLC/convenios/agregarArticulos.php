@@ -1,5 +1,5 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
-<?php require("/configuracion/funciones.php");
+<?php require("../../configuracion/ventanasEmergentes.php"); ?>
+<?php require("../../configuracion/funciones.php");
 $numCliente=$_POST['seguro'];
 $seguro=$_POST['nomSeguro'];
 $medico=$_GET['medico'];
@@ -224,7 +224,7 @@ $myrow1 = mysql_fetch_array($result1);
       <td width="24" height="24" bgcolor="#CCCCCC">&nbsp;</td>
     <td width="98" bgcolor="#CCCCCC" class="negromid">Departamento</td>
     <td width="478" bgcolor="#CCCCCC">
-    <?php require("/configuracion/componentes/comboAlmacen.php"); 
+    <?php require("../../configuracion/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style12',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

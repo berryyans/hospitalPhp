@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php require("../../configuracion/ventanasEmergentes.php"); ?>
 
 <script type="text/javascript"  src="stmenu.js"></script>
 <script type="text/javascript">
@@ -144,7 +144,7 @@ stm_ai("p0i9",[0,"SALIR","","",-1,-1,0,"","_self","","","icon_10a.gif","icon_10b
 stm_bp("p1",[1,4,0,3,0,4,5,0,100,"",-2,"",-2,48,2,3,"#999999","transparent","",0,0,0,"#333333"]);
 stm_ai("p1i0",[6,1,"#50647f","",-1,-1,0]);
 
-stm_aix("p10i1","p6i0",[0," Menú principal","","",-1,-1,0,"/sima/MenuIndex.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
+stm_aix("p10i1","p6i0",[0," Menï¿½ principal","","",-1,-1,0,"/sima/MenuIndex.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
 
 
 stm_aix("p10i2","p2i2",[0," SALIR","","",-1,-1,0,"/sima/salir.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);

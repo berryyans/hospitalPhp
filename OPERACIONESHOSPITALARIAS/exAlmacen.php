@@ -1,4 +1,10 @@
-<?php require("menuOperaciones.php");
+<?php //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -163,6 +169,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" class="titulos">REPORTES</h1>
  <form id="form2" name="form2" method="get" >
    <div align="center"></div>
@@ -340,7 +347,8 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
      </label><?php if($random){ ?>
    </p>
    
-   <table width="888" border="0" align="center">
+   <!--<table width="888" border="0" align="center">-->
+   <table width="888" border="0" align="center" class="table-template">
      <tr>
        <th scope="col">&nbsp;</th>
        <th scope="col"></th>
@@ -373,6 +381,10 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
  </form>
  
 <p align="center">&nbsp;</p>
-
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

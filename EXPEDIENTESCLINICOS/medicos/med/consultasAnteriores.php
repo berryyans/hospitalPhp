@@ -1,7 +1,7 @@
 <?PHP 
-include("/configuracion/expedientesclinicos/medicos/medicosmenu.php");  
-include("/configuracion/clases/despliegaConsultasAnteriores.php"); 
-include("/configuracion/funciones.php"); ?>
+include("../../../configuracion/expedientesclinicos/medicos/medicosmenu.php");  
+include("../../../configuracion/clases/despliegaConsultasAnteriores.php"); 
+include("../../../configuracion/funciones.php"); ?>
 
 <?php
 

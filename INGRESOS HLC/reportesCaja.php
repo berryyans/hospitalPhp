@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 <SCRIPT LANGUAGE="JavaScript">
 function checkIt(evt) {
@@ -91,11 +99,13 @@ $estilos-> styles();
 </head>
 
 <body>
+    <div class="page_right">
     <br></br>
 <h1 align="center" class="titulos">Reporte de Cajeros  </h1>
 <form id="form1" name="form1" method="post" action="">
  
-  <table width="453" class="table-forma">
+  <table width="453" class="table-template-left">
+  <!--<table width="453" class="table-forma">-->
     <tr>
       <th colspan="2"  scope="col"><p align="center">Imprimir Reporte de Caja</p></th>
     </tr>
@@ -226,6 +236,11 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 
 </form>
 <p align="center">&nbsp;</p>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
+?>
 </body>
 </html>

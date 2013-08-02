@@ -1,6 +1,6 @@
 <?php 
 //*****************CONEXION  A SIMA***************
-require('/configuracion/baseDatos.php');require('/configuracion/funciones.php');
+require('../configuracion/baseDatos.php');require('../configuracion/funciones.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();
@@ -26,7 +26,8 @@ $conexionManual->conecta();
     </label>
 
   </p>
-  <table width="650" border="0" cellspacing="0" cellpadding="0" align="center">
+  <!--<table width="650" border="0" cellspacing="0" cellpadding="0" align="center">-->
+  <table width="650" border="0" cellspacing="0" cellpadding="0" align="center" class="table-template-left">
  
     <tr bgcolor="#FFFF00">
         <td width="10" class="negromid">#</td>

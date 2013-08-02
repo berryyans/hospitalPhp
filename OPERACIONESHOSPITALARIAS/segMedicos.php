@@ -1,4 +1,11 @@
-<?php require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php"); $ALMACEN=$_GET['datawarehouse'];?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+$ALMACEN=$_GET['datawarehouse'];?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -88,15 +95,18 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" class="titulomedio">
  <div align="center"></div>
 <form id="form2" name="form2" method="get">
  <div align="center">
-   <p><br />
+   <p>
+       <!--<br />-->
      (Este proceso puede demorar algunos minutos)<br />
    </p>
    Fecha Inicial
-   <table width="205" border="0" align="center">
+   <!--<table width="205" border="0" align="center">-->
+   <table width="205" border="0" align="center" class="table-template-left">
 
 
         <tr>
@@ -140,16 +150,17 @@ $estilos->styles();
 		value="<?php if($_GET['seguro']){ echo $_GET['seguro'];} else { echo "0";}?>" 
 	/>
    
-   <input name="nomSeguro" type="text" class="camposmid" id="nomSeguro" size="80"
+   <input name="nomSeguro" type="text" class="camposmid" id="nomSeguro" size="55"
 		value="<?php echo $_GET['nomSeguro'];?>"/>
    </p>
    <p class="titulomedio">
      <label for="enviar"></label>
      <input type="submit" name="enviar" id="enviar" value="Mostrar Estadisticas" />
    </p>
-   <p class="titulomedio">&nbsp;</p>
+   <!--<p class="titulomedio">&nbsp;</p>-->
 
-   <table class="table table-striped" width="929"  >
+   <!--<table class="table table-striped" width="929"  >-->
+   <table class="table-template-left" width="929"  >
      <tr bgcolor="#FFFF00">
        <th width="54" scope="col"><div align="left" class="normal">
            <div align="left">Exp</div>
@@ -353,5 +364,10 @@ echo	$myrow39['descripcion'];
 }); 
  </script>
 </div>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

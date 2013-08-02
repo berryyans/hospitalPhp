@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php 
       
 
@@ -72,6 +79,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 
 
 
@@ -93,7 +101,8 @@ $estilos->styles();
     <br>
 <form id="form10" name="form10" method="post" action="#">
   <h1 align="center" >TICKETS EMITIDOS</h1>
-  <table width="400" class="table-forma">
+  <!--<table width="400" class="table-forma">-->
+  <table width="400" class="table-template-left">
 
     <tr>
       <td width="90"> Fecha Inicial</td>
@@ -125,7 +134,8 @@ $estilos->styles();
   <?php if($_POST['buscar'] or $_GET['update']=='yes'){ ?>
   <p align="center" >&nbsp;</p>
 
-  <table width="716" class="table table-striped">
+  <!--<table width="716" class="table table-striped">-->
+  <table width="716" class="table-template-left">
     <tr >
       <th width="67"   scope="col"><div align="left">Fecha</div></th>
       <th width= "70"   scope="col"><div align="left">Ticket</div></th>
@@ -166,7 +176,7 @@ order by ticket ASC
 
 if($result=mysql_db_query($basedatos,$sSQL)){
 while($myrow = mysql_fetch_array($result)){ 
-
+/*
 if($col){
 $color = '#FFFF99';
 $col = "";
@@ -174,7 +184,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
-
+*/
 $nT=$myrow['keyClientesInternos'];
 
 
@@ -292,6 +302,11 @@ Reenviar
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario
 });
 </script>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 
 </html>

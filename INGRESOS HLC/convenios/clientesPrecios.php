@@ -1,4 +1,4 @@
-<?php include("/configuracion/conf.php"); ?>
+<?php include("../../configuracion/conf.php"); ?>
 <?php
 $modulo = 'altaConvenios.conv';
 $checaModuloScript= "Select * From usuariosModulos WHERE usuario = '".$usuario."' AND modulo = '".$modulo."'";
@@ -95,7 +95,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.nomArticulo.value) == false ) {   
-                alert("Por Favor, escribe el nombre del artículo!")   
+                alert("Por Favor, escribe el nombre del artï¿½culo!")   
                 return false   
         }          
 }   

@@ -1,4 +1,10 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php 
 $sSQLC= "Select * From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";
 $resultC=mysql_db_query($basedatos,$sSQLC);
@@ -46,7 +52,7 @@ if(win.window.focus){win.window.focus();}
 
 </script>
 <script src="/sima/js/jquery.js" type="text/javascript"></script>
- <!-Hoja de estilos del calendario --> 
+ <!--Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
@@ -74,7 +80,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
 
 
 <?php 
@@ -107,12 +113,13 @@ $estilos->styles();
 
 
 <script>
- $(document).ready(function() {
- 	 $("#responsecontainer").load("listaOrdenes1.php?almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&fecha2=<?php echo $fecha2;?>&fecha1=<?php echo $date;?>&almacen=<?php echo $ALMACEN;?>&tipoOrden=<?php echo $_GET['tipoOrden'];?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&warehouse=<?php echo $_GET['warehouse'];?>&entidad=<?php echo $entidad;?>");
+ $(document).ready(function() {     
+        var $j = jQuery.noConflict();
+ 	 $j("#responsecontainer").load("listaOrdenes1.php?almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&fecha2=<?php echo $fecha2;?>&fecha1=<?php echo $date;?>&almacen=<?php echo $ALMACEN;?>&tipoOrden=<?php echo $_GET['tipoOrden'];?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&warehouse=<?php echo $_GET['warehouse'];?>&entidad=<?php echo $entidad;?>");
    var refreshId = setInterval(function() {
-      $("#responsecontainer").load("listaOrdenes1.php?almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&fecha2=<?php echo $fecha2;?>&fecha1=<?php echo $date;?>&almacen=<?php echo $ALMACEN;?>&tipoOrden=<?php echo $_GET['tipoOrden'];?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&warehouse=<?php echo $_GET['warehouse'];?>&entidad=<?php echo $entidad;?>");
+      $j("#responsecontainer").load("listaOrdenes1.php?almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&fecha2=<?php echo $fecha2;?>&fecha1=<?php echo $date;?>&almacen=<?php echo $ALMACEN;?>&tipoOrden=<?php echo $_GET['tipoOrden'];?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&warehouse=<?php echo $_GET['warehouse'];?>&entidad=<?php echo $entidad;?>");
    }, 9000);
-   $.ajaxSetup({ cache: false });
+   $j.ajaxSetup({ cache: false });
 });
 </script>
 
@@ -133,8 +140,12 @@ $estilos->styles();
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
 }); 
-    </script> 
-
+    </script>
+    </div>
+<?php
+$mostrarFooter = new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>
 

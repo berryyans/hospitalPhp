@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
@@ -22,6 +29,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center">Cat&aacute;logo de Habitaciones/Cuartos <?php   
  $sSQL= "Select * From cuartos where entidad='".$entidad."' AND departamento='".$_POST['almacenDestino2']."' order by descripcionCuarto ASC";
 $result=mysql_db_query($basedatos,$sSQL); 
@@ -30,13 +38,14 @@ $result=mysql_db_query($basedatos,$sSQL);
  </h1>
  <form id="form1" name="form1" method="post" action="">
    <p align="center">Escoje el Departamento<span >:
-<?php require("/configuracion/componentes/comboAlmacen.php");
+<?php require("../configuracion/componentes/comboAlmacen.php");
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->almacenesCuartos($entidad,'style7',$myrow2['almacen'],$almacenDestino,$basedatos);
 ?>
    </span></p>
 
-   <table width="600"  class="table table-striped">
+   <!--<table width="600"  class="table table-striped">-->
+   <table width="600"  class="table-template-left">
      <tr>
        <th width="51" height="27" scope="col"><div align="left">C&oacute;digo </div></th>
        <th width="230" scope="col"><div align="left">Descripci&oacute;n de la Habitaci&oacute;n/Cuarto </div></th>
@@ -45,6 +54,7 @@ $comboAlmacen->almacenesCuartos($entidad,'style7',$myrow2['almacen'],$almacenDes
      <tr>
        <?php
 while($myrow = mysql_fetch_array($result)){
+    /*
 if($col){
 $color = '#FFFF99';
 $col = "";
@@ -52,6 +62,8 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
+     * 
+     */
 $C=$myrow['codigoCuarto'];
 ?>
        <td height="33" bgcolor="<?php echo $color?>" ><span >
@@ -60,12 +72,12 @@ $C=$myrow['codigoCuarto'];
        </span></td>
        <td bgcolor="<?php echo $color?>" ><span ><?php echo $myrow['descripcionCuarto'];?></span></td>
        <td bgcolor="<?php echo $color?>" ><a href="#" 
-onclick="javascript:ventanaSecundaria111('ventanaCatalogoCuartos.php?almacen=<?php echo $_POST['almacenDestino2']; ?>&codigo=<?php echo $C; ?>')"><img src="/sima/imagenes/transfer1.jpeg" alt="" width="12" height="12" border="0" /></a></td>
+onclick="javascript:ventanaSecundaria1('../ventanas/ventanaCatalogoCuartos.php?almacen=<?php echo $_POST['almacenDestino2']; ?>&codigo=<?php echo $C; ?>')"><img src="/sima/imagenes/transfer1.jpeg" alt="" width="12" height="12" border="0" /></a></td>
      </tr>
      <?php }?>
    </table>
 
-   <p>&nbsp;</p>
+   <p>&nbsp;</p>   
    <div align="center">
    <?php if($_POST['almacenDestino2']){?>
      <input name="almacenDestino" type="hidden" value="<?php echo $_POST['almacenDestino'];?>">
@@ -76,5 +88,10 @@ onclick="javascript:ventanaSecundaria111('ventanaCatalogoCuartos.php?almacen=<?p
 </div>
  </form>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

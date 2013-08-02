@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php
 $_POST['codigo']=$_GET['codigo'];
 ?>
@@ -29,11 +31,11 @@ WHERE
 codigo='".$_POST['codigo']."' AND almacen='".$agregar[$i]."'
 ";
 mysql_db_query($basedatos,$q);
-$leyenda = "Se actualizó el usuario: ".$_POST['usuario'];
+$leyenda = "Se actualizï¿½ el usuario: ".$_POST['usuario'];
 echo mysql_error();
 }
 
-$leyenda = "Se ingresó el almacén para el artículo: ".$_POST['codigo'];
+$leyenda = "Se ingresï¿½ el almacï¿½n para el artï¿½culo: ".$_POST['codigo'];
 } //cierra validacion
 }
 
@@ -56,8 +58,8 @@ echo mysql_error();
       CONTENT="0; URL=listaUsuarios.php">';
 exit;
  */
-}$leyenda = "Se eliminó del almacén ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['usuario']){
-$leyenda = "Por favor, escoja el nombre de almacén que desee quitar.!";
+}$leyenda = "Se eliminï¿½ del almacï¿½n ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['usuario']){
+$leyenda = "Por favor, escoja el nombre de almacï¿½n que desee quitar.!";
 }
 
 
@@ -79,7 +81,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""

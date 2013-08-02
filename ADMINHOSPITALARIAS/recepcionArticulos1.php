@@ -1,4 +1,12 @@
-<?php require("menuOperaciones.php");?>
+<?php //require("menuOperaciones.php");
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -10,7 +18,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -21,13 +29,13 @@ function checkIt(evt) {
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
 <?php
 
@@ -136,7 +144,7 @@ mysql_db_query($basedatos,$agregaSaldo);
 $leyenda="";
 //**********************************
 } else {
-//$leyenda="La cantidad que estás intentando actualizar es mayor a la cantidad requerida";
+//$leyenda="La cantidad que estï¿½s intentando actualizar es mayor a la cantidad requerida";
 }
 }
 
@@ -261,6 +269,8 @@ $_GET['cxp']="";
 <title></title>
 
 </head>
+    <body>
+        <div class="page_right">
       <?php
 $cmdstr3 = "select * from PEDRO.USUARIO WHERE LOGIN = '".$usuario."'";
 $parsed3 = ociparse($db_conn, $cmdstr3);
@@ -290,7 +300,8 @@ $myrow17 = mysql_fetch_array($result17);
 ?>
 <h1 align="center">Recepci&oacute;n OC <span class="style13"><strong><?php echo $nRequisicion;?></strong></span></h1>
 <form id="form1" name="form1" method="GET" action="recepcionArticulos1.php">
-  <table width="382" border="0" align="center" cellpadding="4" cellspacing="0" bgcolor="#FFFFFF" class="style7">
+  <!--<table width="382" border="0" align="center" cellpadding="4" cellspacing="0" bgcolor="#FFFFFF" class="style7">-->
+  <table width="382" border="0" align="center" cellpadding="4" cellspacing="0" bgcolor="#FFFFFF" class="table-template">
     <tr bgcolor="#FFFF99">
       <th width="121" scope="col"><div align="left" class="style13">Proveedor</div></th>
       <th width="243" scope="col"><div align="left" class="style13"><?php echo $myrow17['razonSocial'];?></div></th>
@@ -358,7 +369,8 @@ $myrow17 = mysql_fetch_array($result17);
     </tr>
   </table>
   <p align="center" class="style14">&nbsp;</p>
-  <table width="821" border="0" align="center" cellpadding="4" cellspacing="0">
+  <table width="821" border="0" align="center" cellpadding="4" cellspacing="0" class="table-template">
+  <!--<table width="821" border="0" align="center" cellpadding="4" cellspacing="0">-->
     <tr bgcolor="#FFFF00">
       <th colspan="4" scope="col"><span class="style11">Orden de Compra</span></th>
       <th scope="col">&nbsp;</th>
@@ -423,7 +435,7 @@ $requisicion=$myrow18['id_requisicion'];
 $id_almacen=$myrow18['id_almacen'];
 $id_proveedor=$myrow18['id_proveedor'];
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $sSQL17= "Select * From proveedores WHERE id_proveedor='".$id_proveedor."'";
@@ -627,7 +639,8 @@ $Total=$subtotal[0]+$sumaIVA[0];
     <span class="Estilo24">
     <input name="cantidadBandera[]" type="hidden" id="cantidadBandera[]" value="<?php echo $b; ?>" />
   </span></p>
-  <table width="200" border="0" align="center">
+  <!--<table width="200" border="0" align="center">-->
+  <table width="200" border="0" align="center" class="table-template">
     <tr>
       <th class="style7" scope="col"><div align="left"><span class="Estilo24"> </span> <span class="style21">Diferencia en Importe Total: </span></div></th>
       <th class="style7" scope="col"><div align="left">
@@ -650,7 +663,8 @@ $Total=$subtotal[0]+$sumaIVA[0];
     </tr>
   </table>
   <p align="center"><label></label></p>
-  <table width="200" border="0" align="center">
+  <!--<table width="200" border="0" align="center">-->
+  <table width="200" border="0" align="center" class="table-template">
     <tr>
       <th scope="col">
 	  
@@ -672,7 +686,7 @@ $Total=$subtotal[0]+$sumaIVA[0];
 	} else {
 		echo 'disabled="disabled"';
 	}
-	?> onClick="if(confirm('Esta seguro de enviar al cendis estos artículos? La operación es irreversible...') == false){return false;}"></th>
+	?> onClick="if(confirm('Esta seguro de enviar al cendis estos artï¿½culos? La operaciï¿½n es irreversible...') == false){return false;}"></th>
 <?php //echo $banderaFactura." ".$banderaIVA." ".$tb." ".$myrow3['id_factura']." ".$flagCR.'<br>';?>
       <th scope="col">
 	  
@@ -694,8 +708,13 @@ $Total=$subtotal[0]+$sumaIVA[0];
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
-</script> 
+</script>
+        </div>
+<?php
+$mostrarFooter = new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

@@ -1,4 +1,13 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP 
+require("/Constantes.php");
+//require("menuOperaciones.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=700,height=600,scrollbars=YES") 
@@ -208,11 +217,13 @@ $estilo-> styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >Articulos Capturados por OC sin actualizar</h1>
  <form id="form2" name="form2" method="post" >
 
 
- <table width="500" class="table table-striped">
+<!-- <table width="500" class="table table-striped">-->
+ <table width="500" class="table-template">
      <tr >
        <th width="2"   scope="col">#</th>
        
@@ -355,7 +366,10 @@ $a+=1;
 
 </div></p>
  </form>
-
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

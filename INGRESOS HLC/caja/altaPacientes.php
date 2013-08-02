@@ -7,7 +7,7 @@ $myrowC = mysql_fetch_array($resultC);
 
 
 if($myrowC['status']=='abierta'){ //*******************Comienzo la validaci�n*****************
-include("/configuracion/clases/listadoAltaPxInternos.php");
+include("../../configuracion/clases/listadoAltaPxInternos.php");
 } else {
 ?>
 <script>

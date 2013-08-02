@@ -1,5 +1,8 @@
-<?PHP require("../INGRESOS HLC/menuOperaciones.php"); 
-
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 $sSQLC= "Select status From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";
 $resultC=mysql_db_query($basedatos,$sSQLC);
@@ -40,6 +43,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <?php 
 
 $sSQL2= "Select transacciones From almacenes WHERE almacen = '".$ALMACEN."' ";
@@ -51,7 +55,8 @@ $myrow2 = mysql_fetch_array($result2);
   <h1 align="center" > <br />
   Abonos a Pacientes Internos</h1>
   <p align="center" >(Para hacer un abono, Presiona en el nombre del Paciente)</p>
-  <table width="570" class="table table-striped">
+  <!--<table width="570" class="table table-striped">-->
+  <table width="570" class="table-template-left">
 
     <tr >
       <th width="52" >Folio V</th>
@@ -135,6 +140,11 @@ $myrow17 = mysql_fetch_array($result17);
   </table>
   
 </form>
+    </div>
+        <?php
+        $mostrarFooter = new menus();
+        $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+        ?>
 </body>
 </html>
 

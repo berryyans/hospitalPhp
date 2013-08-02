@@ -1,4 +1,6 @@
-<?php include("/configuracion/administracionhospitalaria/menufinancieros.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/menufinancieros.php"); ?>
 <?php
  $module = $_POST['modulo'];
 if($_POST['actualizar'] AND $_POST['hora'] AND $_POST['keyHora']){

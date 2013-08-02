@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/ventanasEmergentes.php");  include("/configuracion/funciones.php"); 
+<?PHP include("../configuracion/ventanasEmergentes.php");  include("../configuracion/funciones.php"); 
 if($_GET['numCliente']!=NULL){
     $_POST['seguro']=$_GET['numCliente'];
 }

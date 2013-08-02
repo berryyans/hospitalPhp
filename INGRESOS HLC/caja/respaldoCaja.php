@@ -1,5 +1,5 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?><?php include("/configuracion/clases/eCuentaGrafico.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php require("../../configuracion/ventanasEmergentes.php"); ?><?php include("../../configuracion/clases/eCuentaGrafico.php"); ?>
+<?php include("../../configuracion/funciones.php"); ?>
 <?php
 $cargosAseguradora=new acumulados();
 function redondear_dos_decimal($valor) {
@@ -44,7 +44,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -67,7 +67,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.tipoTransaccion.value) == false ) {   
-                alert("Escoje el Tipo de Transacción que desees hacer!")   
+                alert("Escoje el Tipo de Transacciï¿½n que desees hacer!")   
                 return false   
         }  else if( vacio(F.cantidadRecibida.value) == false ) {   
                 alert("Escribe la cantidad!")   
@@ -121,7 +121,7 @@ $myrowC = mysql_fetch_array($resultC);
 
 
 
-if($myrowC['status']=='abierta' ){ //*******************Comienzo la validación*****************
+if($myrowC['status']=='abierta' ){ //*******************Comienzo la validaciï¿½n*****************
 
 
 
@@ -711,7 +711,7 @@ window.close();
 //echo 'No se permite refrescar pantalla..!'; 
 ?>
 <script>
-window.alert("Sólo se permite una transacción por vez...!");
+window.alert("Sï¿½lo se permite una transacciï¿½n por vez...!");
 </script>
 <?php 
 }
@@ -740,11 +740,11 @@ window.opener.document.forms["form1"].submit();
 
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
 
 
@@ -1050,7 +1050,7 @@ window.close();
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
     </script> 
             <tr bgcolor="#FFFFFF">
@@ -1267,7 +1267,7 @@ if($_GET['tipoPago'] and $_GET['tipoTransaccion'] and $transaccion) {  ?>
 <?php 
 
 } else {
-echo 'La Caja está cerrada';
+echo 'La Caja estï¿½ cerrada';
 echo '<script >
 window.alert( "LA CAJA ESTA CERRADA!");
 </script>';
@@ -1275,7 +1275,7 @@ window.alert( "LA CAJA ESTA CERRADA!");
 ?>
 
 <?php } else {
-echo 'La Caja está cerrada';
+echo 'La Caja estï¿½ cerrada';
 echo '<script >
 window.alert( "LA CAJA ESTA CERRADA!");
 </script>';

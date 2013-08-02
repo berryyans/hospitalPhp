@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <?php
 if($_POST['actualizar'] AND $_POST['codigoSala']){
@@ -56,13 +63,15 @@ $estilos->styles();
 
 </head>
 <body>
+    <div class="page_right">
  <p align="center"><strong>Cat&aacute;logo de Salas</strong></p>
  <form id="form1" name="form1" method="post" action="">
-   <p>
+   <!--<p>
      <label></label>
-   </p>
+   </p>-->
 
-   <table width="600" class="table-forma">
+   <!--<table width="600" class="table-forma">-->
+   <table width="600" class="table-template-left">
      <tr>
        <td width="79" height="40"  scope="col">C&oacute;digo Sala:</td>
        <td width="435"   scope="col"><div align="left">
@@ -82,7 +91,7 @@ $estilos->styles();
      </tr>
    </table>
 
-   <p>&nbsp;</p>
+   <!--<p>&nbsp;</p>-->
  </form>
  <p>
    <?php   
@@ -92,7 +101,8 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?>
  </p>
  <form id="form2" name="form2" method="post" action="">
-   <table width="421" class="table table-striped">
+   <!--<table width="421" class="table table-striped">-->
+   <table width="421" class="table-template-left">
      <tr>
        <th width="232"  scope="col"><span >C&oacute;digo Sala </span></th>
        <th width="155"  scope="col"><span >Descripci&oacute;n de la Sala</span></th>
@@ -118,5 +128,10 @@ $col = 1;
    </table>
 </form>
  <p align="center">&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

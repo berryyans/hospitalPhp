@@ -1,4 +1,4 @@
-<?php include('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php include('../../js/pdf/fpdf_js.php');
 
 
 
@@ -444,7 +444,7 @@ $pdf->Ln(2); //salto de linea
 
 
 
-//$header=array('País','Capital','Superficie (km2)','Pobl. (en miles)');
+//$header=array('Paï¿½s','Capital','Superficie (km2)','Pobl. (en miles)');
 
 
 

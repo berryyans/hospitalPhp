@@ -1,4 +1,4 @@
-<?PHP include("/configuracion/ventanasEmergentes.php");  ?>
+<?PHP include("../../configuracion/ventanasEmergentes.php");  ?>
 
 
 
@@ -12,13 +12,13 @@
 $resultC=mysql_db_query($basedatos,$sSQLC);
 $myrowC = mysql_fetch_array($resultC);
 
-if($myrowC['status']=='abierta'){ //*******************Comienzo la validación*****************
+if($myrowC['status']=='abierta'){ //*******************Comienzo la validaciï¿½n*****************
 include("/configuracion/clases/variosPagos.php"); 
 $TITULO='';
 $pagosDiversos=new variosPagos();
 $pagosDiversos->pagosDiversos($usuario,$fecha1,$hora1,$TITULO,$entidad,$ALMACEN,$basedatos);
 } else {
-echo 'Estimado(a) '.$usuario.': No puedes hacer ninguna transaccion si la caja está cerrada, Gracias!';
+echo 'Estimado(a) '.$usuario.': No puedes hacer ninguna transaccion si la caja estï¿½ cerrada, Gracias!';
 
 }
 ?>

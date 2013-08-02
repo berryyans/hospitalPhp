@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/administracionhospitalaria/medicos/medicosmenu.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/medicos/medicosmenu.php"); ?>
 <?php
 if($_POST['actualizar'] AND $_POST['tipoMedicos']){
 $sSQL1= "Select * From tipoMedico WHERE entidad='".$entidad."' AND tipoMedicos = '".$_POST['tipoMedicos']."' ";

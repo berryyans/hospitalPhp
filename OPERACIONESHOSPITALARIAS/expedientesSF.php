@@ -1,11 +1,18 @@
-<?php require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");?>
-<?php require("/configuracion/clases/despliegaExpedientesPendientes.php"); 
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
+<?php require("../configuracion/clases/despliegaExpedientesPendientes.php"); 
 
 $almacenDestino=$_GET['datawarehouse'];
 $forma=$_GET['forma'];
 $campoDespliega=$_GET['campoDespliega'];
 $campoDespliegaFecha=$_GET['campoDespliegaFecha'];
-require("/configuracion/componentes/comboAlmacen.php"); 
+require("../configuracion/componentes/comboAlmacen.php"); 
 ?>
 
 <!-Hoja de estilos del calendario --> 
@@ -64,7 +71,7 @@ $estilos->styles();
 
 
 </head>
-
+    <div class="page_right">
 
 <p align="center">
     
@@ -127,7 +134,8 @@ function compara_fechas($fecha1,$fecha2)
   </p>
   <p ><strong>Expedientes Fuera (no tienen folio de venta) </strong></p>
  
-  <table width="857" class="table table-striped">
+  <!--<table width="857" class="table table-striped">-->
+  <table width="857" class="table-template-left">
     <tr  >
       <th width="77"   scope="col"><div align="center" >
         <div align="left">Hora</span></div>
@@ -277,7 +285,10 @@ almacen='".$myrow['almacen']."'
 
 
 <p>&nbsp;</p>
-
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

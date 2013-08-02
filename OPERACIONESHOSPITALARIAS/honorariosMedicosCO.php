@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -91,6 +98,7 @@ $estilos-> styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >
  <div align="center"></div>
 <form id="form2" name="form2" method="POST">
@@ -101,7 +109,8 @@ $estilos-> styles();
 
    
 
-   <table width="500" class="table-forma">
+   <!--<table width="500" class="table-forma">-->
+   <table width="500" class="table-template-left">
     <tr >
        <td><span >Fecha Inicial</span></td>
        <td>
@@ -192,12 +201,14 @@ $estilos-> styles();
        
        
 <?php if($_POST['mostrar']!=NULL){ ?>
-       
-
    <h3>PACIENTES EXTERNOS</h3>       
-              
+   <!--<table width="930" class="table table-striped">-->
+   <table width="930" class="table-template-left">
+
        
-   <table width="930" class="table table-striped">
+             
+       
+   
      <tr >
          
                   <th width="2" >
@@ -448,7 +459,8 @@ $devs[0]+=($myrow['precioVenta']*$myrow['cantidad'])+($myrow['iva']*$myrow['cant
       
       
       
- <table width="200" class="table table-striped">
+ <!--<table width="200" class="table table-striped">-->
+ <table width="200" class="table-template-left">
     <tr >
        
     <th width="2" >
@@ -563,6 +575,9 @@ $devs[0]=NULL;
 
    
    
+
+ <!--</div>-->
+</form>
 
    <table width="930" class="table table-striped">
      <tr >
@@ -1127,5 +1142,10 @@ echo cambia_a_normal($myrowap['fechaPago']);
  
 
 </div>
+</div>
+     <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

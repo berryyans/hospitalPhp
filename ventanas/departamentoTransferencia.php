@@ -1,5 +1,5 @@
-<?PHP require("/configuracion/ventanasEmergentes.php"); ?>
-<?PHP require("/configuracion/funciones.php"); ?>
+<?PHP require("../configuracion/ventanasEmergentes.php"); ?>
+<?PHP require("../configuracion/funciones.php"); ?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   

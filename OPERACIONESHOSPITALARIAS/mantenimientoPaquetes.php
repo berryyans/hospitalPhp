@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php
 $ventana1='ventanaCatalogoPaquetes.php';
 $ventana2='/sima/cargos/ventanitaCambiaPrecioPaquete.php';
@@ -91,6 +98,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1  class="titulos">Lista de Paquetes<br /></h1>
  <div align="center"><h3 class="error">(Precio NO INCLUYE IVA) </h3></div>
 <p>
@@ -101,8 +109,15 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?>
  </p>
  <form id="form2" name="form2" method="post" action="">
+
+
+   <!--<table width="750" class="table table-striped">-->
+   <table width="750" class="table-template-left">
+<!--
 <div id="divContainer">
    <table width="500" class="formatHTML5">
+>>>>>>> 41e553e84121f2b4539968ff2b36c29805ea2ac9
+-->
      <tr >
        <th width="5"  scope="col"><div align="left" >#</div></th>
        <th width="258"  scope="col"><div align="left" >Descripci&oacute;n</div></th>
@@ -186,5 +201,10 @@ almacen='".$myrow7."'
  <p>&nbsp;</p>
  <p>&nbsp;</p>
  <p>&nbsp;</p>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

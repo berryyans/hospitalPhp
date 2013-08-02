@@ -1,4 +1,6 @@
-<?PHP require("menuOperaciones.php"); require("/configuracion/clases/solicitudesAlmacenes.php");
+<?PHP 
+require("/Constantes.php");
+require("menuOperaciones.php"); require(CONSTANT_PATH_CONFIGURACION."/clases/solicitudesAlmacenes.php");
 
 
 $sSQL8a= "

@@ -1,4 +1,14 @@
-<?PHP require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); ?>
+<?PHP 
+//require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); 
+//require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=700,height=600,scrollbars=YES") 
@@ -79,6 +89,7 @@ $estilo-> styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >Reporte de Transacciones </h1>
  <form id="form2" name="form2" method="post" >
  <p align="center">
@@ -99,7 +110,8 @@ $estilo-> styles();
    </label>
  </p>
 
- <table width="754" class="table table-striped">
+ <!--<table width="754" class="table table-striped">-->
+ <table width="754" class="table-template-left">
      <tr >
        <th width="27"   scope="col">&nbsp;</th>
        
@@ -319,6 +331,10 @@ $haber[0]+=$myrow['precioVenta']*$myrow['cantidad'];
      button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
 }); 
 </script> 
-
+</div>
+  <?php
+  $mostrarFooter = new menus();
+  $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+  ?>
 </body>
 </html>

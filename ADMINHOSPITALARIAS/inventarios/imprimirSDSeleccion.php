@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];
@@ -34,10 +36,10 @@ function valida(F) {
                 alert("Por Favor, escoje el departamento!")   
                 return false   
         } else if( vacio(F.tipoUM.value) == false ) {   
-                alert("Por Favor, escoje si es un servicio o si son artículos lo que vas a cargar!")   
+                alert("Por Favor, escoje si es un servicio o si son artï¿½culos lo que vas a cargar!")   
                 return false   
         } else if( vacio(F.nomArticulo.value) == false ) {   
-                alert("Por Favor, escoje el artículo o servicio para solicitar!")   
+                alert("Por Favor, escoje el artï¿½culo o servicio para solicitar!")   
                 return false   
         }            
 }   
@@ -51,7 +53,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""

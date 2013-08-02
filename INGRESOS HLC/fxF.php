@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php
 if(($_POST['previzualizar'] or $_POST['aplicarFactura']) and $_POST['folioFactura']){
 $sSQL3d= "Select numFactura From facturasAplicadas WHERE numFactura = '".$_POST['folioFactura']."' ";
@@ -114,7 +121,8 @@ $showStyles->styles();
 <h1 align="center" >Facturacion Particular</h1>
 <p align="center" >&nbsp;</p>
 <form id="form1" name="form1" method="post" action="">
-  <table width="582" >
+  <!--<table width="582" >-->
+    <table width="582" class="page_right">
     <tr>
 
       <td width="407"  scope="col"><div align="center">
@@ -133,6 +141,9 @@ $showStyles->styles();
 <p align="center">
 
 
-
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

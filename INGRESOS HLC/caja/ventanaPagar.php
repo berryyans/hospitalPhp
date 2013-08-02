@@ -1,6 +1,6 @@
-<?php include("/configuracion/clases/basedatos.php"); 
+<?php include("../../configuracion/clases/basedatos.php"); 
 
-include('/configuracion/clases/ventanaPago.php');
+include('../../configuracion/clases/ventanaPago.php');
  
 
 

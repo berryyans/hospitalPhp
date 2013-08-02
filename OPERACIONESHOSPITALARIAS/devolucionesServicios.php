@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php");?>
+<?php //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -85,6 +92,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <form id="form1" name="form1" method="post" >
   <h1 align="center" class="titulos">Devoluciones</h1>
   <p align="center" class="titulos">
@@ -107,7 +115,8 @@ $estilos->styles();
       
       
 
-  <table width="598" border="0.2" align="center" cellpadding="4" cellspacing="0">
+  <!--<table width="598" border="0.2" align="center" cellpadding="4" cellspacing="0">-->
+  <table width="598" border="0.2" align="center" cellpadding="4" cellspacing="0" class="table-template-left">
     <tr bgcolor="#FFFF00">
 
               <th class="normal" scope="col"><div align="left" class="normal">
@@ -278,5 +287,10 @@ if ($myrow['statusCargoDevolucion'] != '') {
   </div>
 
 </form>
+    </div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

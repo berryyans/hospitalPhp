@@ -1,10 +1,18 @@
-<?php require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");$almacen=$ALMACEN=$_GET['datawarehouse']; ?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+$almacen=$ALMACEN=$_GET['datawarehouse']; ?>
 <?php
 $almacenDestino=$almacen;
 $forma=$_GET['forma'];
 $campoDespliega=$_GET['campoDespliega'];
 $campoDespliegaFecha=$_GET['campoDespliegaFecha'];
-require("/configuracion/componentes/comboAlmacen.php"); 
+require("../configuracion/componentes/comboAlmacen.php"); 
 ?>
 <?php  
 if($_GET['numCliente'] AND ($_GET['inactiva'] or $_GET['activa'])){
@@ -118,6 +126,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <h1 align="center">Pacientes Posiblemente Duplicados </h1>
 
 
@@ -201,7 +210,8 @@ if($result and $num_total_registros  ){
 ?>
   </p>
 
-  <table width="625" class="table table-striped">
+  <!--<table width="625" class="table table-striped">-->
+  <table width="625" class="table-template-left">
     <tr>
       <th width="61"   scope="col"><div align="left"><span >#Mov</span></div></th>
       <th width="61"  scope="col"><div align="left"><span >Expediente</span></div></th>
@@ -347,7 +357,11 @@ echo "<a href=".$_SERVER['PHP_SELF']."?main=".$_GET['main']."&warehouse=".$_GET[
   <p>  <a href="javascript:ventanaSecundaria19('/sima/cargos/imprimirPrecios.php?nRequisicion=<?php echo $requisicion; ?>&amp;almacen=
 		<?php echo $ALMACEN; ?>&amp;referido=<?php echo $_GET['referido']; ?>&amp;aseguradora=<?php echo $_GET['aseguradora']; ?>&amp;particular=<?php echo $_GET['particular']; ?>&amp;gpoProducto=<?php echo $gpoProducto; ?>&amp;codigo=<?php echo $C; ?>&amp;almacenes=<?php echo $Cd; ?>')"></a></p>
 </div>
-
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>
 <?php } else { echo 'No hay registros para mostrar!';}//cierro validacion de MYSQL?>

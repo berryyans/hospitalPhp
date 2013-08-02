@@ -1,6 +1,9 @@
-<?PHP require("menuOperaciones.php");  
-
-
+<?PHP //require("menuOperaciones.php");
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 
 if($_POST['actualizar'] and $_POST['descripcion'] and $_POST['codigoCB'] ){
@@ -145,6 +148,7 @@ $estilos->styles();
 
 
 <body>
+    <div class="page_right">
 <p>&nbsp;</p>
 <div align="center"></div>
 <?php
@@ -165,7 +169,8 @@ echo $myrow['ruta'];
  <?php } ?>
  </a></p>
 
-  <table width="595" class="table-forma">
+  <!--<table width="595" class="table-forma">-->
+  <table width="595" class="table-template">
     <tr>
       <th colspan="3"   scope="col"><p align="center">Asignar C&oacute;digo de Barra al Inventario </p></th>
     </tr>
@@ -213,5 +218,10 @@ echo $myrow['ruta'];
 </form>
 
 <p>&nbsp;</p>
+</div>
+    <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

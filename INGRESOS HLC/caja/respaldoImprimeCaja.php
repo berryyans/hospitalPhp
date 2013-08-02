@@ -1,4 +1,4 @@
-<?php include("/configuracion/conf.php"); ?>
+<?php include("../../configuracion/conf.php"); ?>
 <?php 
 /* header("Content-Type: application/vnd.ms-word");
 header("Expires: 0");

@@ -1,4 +1,10 @@
-<?PHP require("menuOperaciones.php"); 
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 function noRound($val, $pre = 0) {
     $val = (string) $val;
     if (strpos($val, ".") !== false) {
@@ -42,7 +48,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
  <h1 align="center">&nbsp;</h1>
 
 <h1 align="center"><?php echo utf8_decode('Saldos por compañías');?></h1>
@@ -89,7 +95,8 @@ $_POST['fechaInicial']=$myrowp['fechaApertura'];
  
      
      
-    <table width="521" height="211" class="table-forma">     
+    <!--<table width="521" height="211" class="table-forma">-->     
+    <table width="521" height="211" class="table-template-left">     
 <tr>
         <td width="1" height="29"  scope="col">&nbsp;</td>
         <td  ><div align="left" >Fecha Inicial </div></td>
@@ -150,7 +157,8 @@ $_POST['fechaInicial']=$myrowp['fechaApertura'];
      
 
   
-   <table width="600" class="table table-striped">
+   <!--<table width="600" class="table table-striped">-->
+   <table width="600" class="table-template-left">
 
          <th width="10"  >#</th>
        
@@ -409,5 +417,10 @@ Ver
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario 
 }); 
 </script>
+    </div>
+     <?php
+    $mostrarFooter=new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+     ?>
 </body>
 </html>

@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?><?PHP include("/configuracion/funciones.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?PHP include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php
 
 $sSQL2= "SELECT nombreCompleto

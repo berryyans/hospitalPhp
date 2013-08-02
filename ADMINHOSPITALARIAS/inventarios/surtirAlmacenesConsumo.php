@@ -1,4 +1,6 @@
-<?PHP require("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php");require("/configuracion/funciones.php");?>
+<?PHP 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php");require(CONSTANT_PATH_CONFIGURACION."/funciones.php");?>
 
   <script language="JavaScript" type="text/javascript">
     /**

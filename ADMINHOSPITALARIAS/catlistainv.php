@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php");
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
@@ -119,6 +127,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" >Catalogo de Listas de Inventarios</h1>
  <form id="form2" name="form2" method="post" >
    <p>
@@ -137,7 +146,8 @@ $estilos->styles();
      
      
    <div id="divContainer">     
-   <table width="300" class="formatHTML5">
+   <!--<table width="300" class="formatHTML5">-->
+   <table width="300" class="table-template-left">
      <tr >
        <th ><div align="left" >
          <div align="left"># </div>
@@ -274,6 +284,11 @@ X
      </label>
    </p>
  </form>
+    </div>
  <p align="center">&nbsp;</p>
+ <?php
+ $mostrarFooter = new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

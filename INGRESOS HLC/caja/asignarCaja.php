@@ -1,4 +1,4 @@
-<?php include("/configuracion/ingresoshlcmenu/caja/menuCaja.php"); ?>
+<?php include("../../configuracion/ingresoshlcmenu/caja/menuCaja.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=400,height=190,scrollbars=YES") 
@@ -109,7 +109,7 @@ $myrow1 = mysql_fetch_array($result1);
 	?></span></td>
       <td bgcolor="<?php echo $color;?>" class="style12"><a href="#"  onclick="ventanaSecundaria2('despliegaUsuariosCajas.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;usuario=<?php echo $E?>')"><img src="/sima/imagenes/listado.jpg"  width="12" height="12" border="0" /></a></td>
       <td bgcolor="<?php echo $color;?>" class="style12">
-	  <a onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Estás modificando al usuario: '.$myrow81['aPaterno']." ".$myrow81['aMaterno']." ".$myrow81['nombre'];?></div>')" onMouseOut="UnTip()" href="javascript:ventanaSecundaria('ventanaAsignaCaja.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;us=<?php echo $E; ?>')"><img src="/sima/imagenes/expandir.gif" alt="Ajustar " width="12" height="12" border="0" /></a></td>
+	  <a onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Estï¿½s modificando al usuario: '.$myrow81['aPaterno']." ".$myrow81['aMaterno']." ".$myrow81['nombre'];?></div>')" onMouseOut="UnTip()" href="javascript:ventanaSecundaria('ventanaAsignaCaja.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;us=<?php echo $E; ?>')"><img src="/sima/imagenes/expandir.gif" alt="Ajustar " width="12" height="12" border="0" /></a></td>
       <td bgcolor="<?php echo $color;?>" class="style12"><div align="center"><span class="style71">
      
         <a

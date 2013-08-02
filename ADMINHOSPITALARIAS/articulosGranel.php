@@ -1,4 +1,12 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php");
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+?>
 
 
 
@@ -45,7 +53,7 @@ $estilos->styles();
 
 
 <body>
-
+    <div class="page_right">
 
 
  <form id="form1" name="form1" method="post" >
@@ -56,7 +64,8 @@ $estilos->styles();
 
   
 
-  <table width="400" class="table table-striped">
+  <!--<table width="400" class="table table-striped">-->
+  <table width="400" class="table-template-left">
 
     <tr >
       <th width="5" >#</th>
@@ -186,5 +195,10 @@ $myrow8aab = mysql_fetch_array($result8aab);
 
   </span></p>
 </form>
+    </div>
+    <?php
+    $mostrarFooter=new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

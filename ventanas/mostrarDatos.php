@@ -4,7 +4,7 @@
  * @author Emmanuel Arana Corzo <emmanuel.arana@gmail.com>
  */
  
- include("/var/www/html/sima/js/barGraphics.class.php");
+ include("../js/barGraphics.class.php");
               //Es el ancho de la gr�fica
  $externos = new BarGraphicPercent(1000);
 

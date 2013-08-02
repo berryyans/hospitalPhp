@@ -1,4 +1,12 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php");
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -80,7 +88,7 @@ $estilos-> styles();
 </head>
 
 <body>
-   
+    <div class="page_right">
 
 
  
@@ -91,8 +99,11 @@ $estilos-> styles();
 
      
      
-<div id="divContainer">
+<!--<div id="divContainer">-->
+   <table width="560" class="table-template-left">
+   <!--
    <table width="560" class="formatHTML5">
+   -->
      <tr>
        <th   ><div align="left"><span >#</span></div></th>
        <th   ><div align="left"><span >Raz&oacute;n Social / Nombre </span></div></th>
@@ -139,11 +150,11 @@ $A=$myrow['id_proveedor'];
          <?php } else { ?>
          <a href="catalogoProveedores.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;id_proveedor=<?php echo $A?>"> <img src="../imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
          <?php } ?>
-       </span></div></td>
+       </span><!--</div>--></td>
      </tr>
      <?php }?>
    </table>
- </div>
+ <!--</div>-->
    <p align="center">
      <label>
      <input name="Submit" type="button"  value="Agregar Nuevo Proveedor" onClick="ventanaSecundaria1('<?php echo $ventana1;?>?numeroE=<?php echo $myrow['numeroE']; ?>
@@ -153,6 +164,12 @@ $A=$myrow['id_proveedor'];
  </form>
  <?php if($a>0){ ?>
  <p align="center" ><em>Se encontraron  <?php echo $a;?>  registros... </em></p>
- <?php } ?>
+ <?php }  
+ ?>
+    </div>
+ <?php
+    $mostrarFooter=new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

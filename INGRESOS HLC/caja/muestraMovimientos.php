@@ -1,6 +1,6 @@
-<?php include('/configuracion/ventanasEmergentes.php');
+<?php include('../../configuracion/ventanasEmergentes.php');
 
-include("/configuracion/funciones.php"); 
+include("../../configuracion/funciones.php"); 
 $cargosCia=new acumulados();
 ?>
 <script language=javascript> 

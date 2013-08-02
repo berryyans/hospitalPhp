@@ -1,4 +1,4 @@
-<?php require("/configuracion/ventanasEmergentes.php");?>
+<?php require("../../configuracion/ventanasEmergentes.php");?>
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
    window.open(URL,"ventana1","width=430,height=700,scrollbars=YES") 
@@ -29,7 +29,7 @@ entidad,codigoCaja
 )";
 mysql_db_query($basedatos,$agregados);
 echo mysql_error();
-echo 'se agregó el usuario';
+echo 'se agregï¿½ el usuario';
 echo '<script>';
 echo 'window.opener.document.forms["form1"].submit();';
 echo '</script>';

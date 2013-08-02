@@ -1,5 +1,11 @@
-<?php require("menuOperaciones.php");
-    
+<?php 
+require("/Constantes.php");
+//require("menuOperaciones.php");
+    require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 ?>
 
 
@@ -39,7 +45,7 @@ $estilos->styles();
 <META HTTP-EQUIV="Refresh"
 CONTENT="100"> 
 <body>
-
+    <div class="page_right">
 
 
 
@@ -67,7 +73,8 @@ CONTENT="100">
 
   
   
-   <table width="700" class="table table-striped">
+   <!--<table width="700" class="table table-striped">-->
+   <table width="700" class="table-template">
     <tr >
       <th width="17" >Hora</th>
       
@@ -329,7 +336,11 @@ echo $myrow8ab['descripcion'];
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
 }); 
-    </script>     
-    
+    </script>
+    </div>
+    <?php
+    $mostrarFooter=new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

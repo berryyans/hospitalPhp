@@ -1,4 +1,10 @@
-<?PHP require("menuOperaciones.php"); 
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
 
 ?>
 <script language="javascript" type="text/javascript">   
@@ -87,6 +93,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 
 <h1 align="center">&nbsp;</h1>
 <h1 align="center">DESCUENTOS A OTROS CXC</h1>
@@ -105,6 +112,11 @@ $estilos->styles();
     </p>
 </form>
 <h1 align="center">&nbsp;</h1>
-<br></br>
+<!--<br></br>-->
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

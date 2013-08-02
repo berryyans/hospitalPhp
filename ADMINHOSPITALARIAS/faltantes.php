@@ -1,4 +1,13 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP 
+//require("menuOperaciones.php"); 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=630,height=300,scrollbars=YES") 
@@ -193,11 +202,13 @@ $estilos=new muestraEstilos();
 $estilos->styles();
 ?>
 </head>
-
+    <body>
+        <div class="page_right">
 <h1 align="center">Generar una OC directa </h1>
 <form id="form2" name="form2" method="post" action="">
 
-  <table width="726" class="table-forma">
+  <!--<table width="726" class="table-forma">-->
+  <table width="726" class="table-template">
     <tr>
       <td width="25"  scope="col"><input name="escoje" type="radio" value="porarticulo" checked="checked" /></td>
       <td width="54"   scope="col"><div align="left"><span >Art&iacute;culo </span></div></td>
@@ -286,7 +297,8 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 <form id="form1" name="form1" method="post" action="">
   <div align="center"></div>
 
-  <table width="726" class="table table-striped">
+  <!--<table width="726" class="table table-striped">-->
+  <table width="726" class="table-template-left">
     <tr>
       <th width="49"  scope="col">C&oacute;digo</th>
       <th width="172"  scope="col">Descripci&oacute;n</th>
@@ -488,5 +500,10 @@ $col = 1;
     <input name="nomPoveedor" type="hidden" id="nomPoveedor" value="<?php echo $_POST['nomProveedor']; ?>" />
   </p>
 </form>
+        </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

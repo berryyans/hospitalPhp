@@ -1,4 +1,11 @@
-<?php require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php"); ?>
+<?php //require("../OPERACIONESHOSPITALARIAS/menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
   <script language=javascript> 
 function ventanaSecundaria10 (URL){ 
@@ -133,11 +140,13 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <h1 >Internar Paciente  </h1>
 <?php echo $leyenda; ?>
   <form id="form1" name="form1" method="post" action="#" >
   
-<table width="584" class="table-forma">
+<!--<table width="584" class="table-forma">-->
+<table width="584" class="table-template-left">
 
   <tr    >
         <td colspan="2" ><div align="center" >Datos del Paciente </div></td>
@@ -180,11 +189,17 @@ apellido1 asc
 
 ?>
 <p>&nbsp;</p>
-<table width="385" border="0" align="center">
+<!--<table width="385" border="0" align="center">-->
+<table width="385" border="0" align="center" class="table-template-left">
   <tr>
+      <!--
         <th width="96" height="19" bgcolor="#FFFF00" scope="col"><div align="left" class="none">Expediente</div></th>
       <th width="234" bgcolor="#FFFF00" scope="col"><div align="left" class="none">Paciente</div></th>
       <th width="41" bgcolor="#FFFF00" scope="col" class="none">Editar</th>
+      -->
+        <th width="96" height="19" scope="col"><div align="left" class="none">Expediente</div></th>
+      <th width="234"  scope="col"><div align="left" class="none">Paciente</div></th>
+      <th width="41"  scope="col" class="none">Editar</th>
     </tr>
       <tr>
         <?php 
@@ -196,7 +211,7 @@ $bandera+="1";
 
 
 //cierro descuento
-
+/*
 if($col){
 $color = '#FFCCFF';
 $col = "";
@@ -204,6 +219,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
+*/
 $NUMEROE=$myrow['numCliente']; 
 $sSQL31= "Select  * From clientesInternos WHERE entidad ='".$entidad."' and numeroE = '".$NUMEROE."' and (tipoPaciente='interno' or 
 tipoPaciente='urgencias') and 
@@ -309,5 +325,10 @@ $myrow31 = mysql_fetch_array($result31);
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
+    </div>
+    <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

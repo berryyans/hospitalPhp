@@ -1,4 +1,11 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -67,7 +74,7 @@ $estilos-> styles();
 </head>
 
 <body>
-
+    <div class="page_right">
   <h1 >Reporte de Beneficencia</h1>
 
 <form id="form2" name="form2" method="get" >
@@ -76,7 +83,8 @@ $estilos-> styles();
 <input type="hidden" name="warehouse" value="<?php echo $_GET['warehouse'];?>" />
 
 
-  <table width="557" class="table-forma">
+  <!--<table width="557" class="table-forma">-->
+  <table width="557" class="table-template-left">
     <tr>
       <td width="165"  ><div align="left" >Almacen Principal</div></td>
       <td width="594" ><?php 
@@ -162,7 +170,8 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
   <p>
     <?php if($_GET['busca'] and $_GET['fechaInicial'] and $_GET['fechaFinal']) { ?>
   </p>
-  <table  border="0" class="table table-striped">
+  <!--<table  border="0" class="table table-striped">-->
+  <table  border="0" class="table-template-left">
 
       <tr >
       <th width="49"  scope="col"><div align="center" >
@@ -321,7 +330,8 @@ onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargos.php?numero
 
   </table>
   <p>&nbsp;</p>
-  <table width="271" >
+  <!--<table width="271" >-->
+  <table width="271" class="page_right">
     <tr>
       <th width="126"  scope="col"><div align="left" >Total Beneficencia</div></th>
       <th width="135" scope="col"><div align="left" ><?php print '$'.number_format($totalBeneficencia[0],2);?></div></th>
@@ -334,13 +344,13 @@ onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargos.php?numero
   <p align="center" >&nbsp;</p>
   <p align="center" ><em>Total Pacientes con Beneficencia <?php print $a;?></em></p>
   <p align="center">&nbsp;</p>
-  <p align="center">&nbsp;</p>
+  <!--<p align="center">&nbsp;</p>-->
   <p>
     <?php  }?>
   </p>
-  <p>&nbsp;</p>
+  <!--<p>&nbsp;</p>-->
 </form>
-<p>&nbsp; </p>
+<!--<p>&nbsp; </p>-->
   <script type="text/javascript"> 
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
@@ -354,6 +364,11 @@ onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargos.php?numero
      ifFormat     :     "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario 
 }); 
-</script> 
+</script>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

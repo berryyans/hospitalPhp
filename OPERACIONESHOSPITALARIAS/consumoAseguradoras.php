@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 <?php require("menuOperaciones.php"); 
+=======
+<?php //require("menuOperaciones.php");
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+
+
+>>>>>>> ffca23b146c55951cda977be74fea6569f465f46
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
 
@@ -163,12 +175,13 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
  <h1 align="center" class="titulos">Cuentas Cerradas Externos </h1>
  <form id="form2" name="form2" method="post" action="">
    <div align="center"></div>
-   <p align="center">
+   <!--<p align="center">
      <label></label>
-   </p>
+   </p>-->
 
 <div align="center">
          Fecha inicial: 
@@ -200,8 +213,9 @@ $estilos->styles();
 
    
    
-<p>&nbsp;</p>
-   <table width="524" height="125" >
+<!--<p>&nbsp;</p>-->
+   <!--<table width="524" height="125" >-->
+<table width="524" height="125" class="table-template-left">
      <tr valign="middle" class="catalogo">
        <td colspan="3"><div align="center" class="titulomedio">Cliente Principal </div></td>
      </tr>
@@ -228,7 +242,7 @@ $estilos->styles();
            <div align="center"> &nbsp;</div></td>
      </tr>
    </table>
-   <p align="center">&nbsp;</p>
+   <!--<p align="center">&nbsp;</p>-->
    <p align="center">
      
      <?php if($random){ ?>
@@ -298,7 +312,7 @@ Por Centro de Costo
 </div>
   
   
-   <p align="center">&nbsp;</p>
+   <!--<p align="center">&nbsp;</p>-->
    <p align="center">
 
   
@@ -335,7 +349,7 @@ Por Centro de Costo
 		});	
 	</script>
 	
-<p align="center">&nbsp;</p>
+<!--<p align="center">&nbsp;</p>-->
   <script type="text/javascript"> 
    Calendar.setup({ 
     inputField     :    "campo_fecha1",     // id del campo de texto 
@@ -349,6 +363,11 @@ Por Centro de Costo
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador2"     // el id del bot�n que lanzar� el calendario 
 }); 
-</script> 
+</script>
+</div>
+ <?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 </html>

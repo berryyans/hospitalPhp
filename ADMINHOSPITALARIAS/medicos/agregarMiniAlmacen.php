@@ -1,4 +1,6 @@
-<?php include('/configuracion/ventanasEmergentes.php'); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); ?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -17,7 +19,7 @@ function valida(F) {
                 alert("Por Favor, escoje el almacen/departamento!")   
                 return false   
         } else if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este almacen!")   
+                alert("Por Favor, escribe la descripciï¿½n de este almacen!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   
@@ -206,7 +208,7 @@ size="60" <?php if($myrow2['almacen']){ echo 'readonly=""';}?> autocomplete="off
      <tr>
        <td class="style12">Almac&eacute;n Prinicipal </td>
        <td class="style12"><span class="Estilo24">
-         <?php require("/configuracion/componentes/comboAlmacen.php"); 
+         <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenSS('style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

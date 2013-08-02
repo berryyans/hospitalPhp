@@ -1,5 +1,5 @@
-<?php require('/configuracion/baseDatos.php');?><?php require('/configuracion/clases/valida.php');?>
-<?php require("/configuracion/clases/desbloquea.php"); ?>
+<?php require('../configuracion/baseDatos.php');?><?php require('../configuracion/clases/valida.php');?>
+<?php require("../configuracion/clases/desbloquea.php"); ?>
 <?php 
 $servidor= $_SERVER['SERVER_NAME'];
 ?>

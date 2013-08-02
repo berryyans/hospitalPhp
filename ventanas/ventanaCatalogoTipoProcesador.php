@@ -1,6 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); 
+<?php require("../configuracion/ventanasEmergentes.php"); 
 //#########CONFIGURACION DE LA TABLA##############
-require("/configuracion/funciones.php");
+require("../configuracion/funciones.php");
 $nombreTabla='sis_catTipoProcesador';
 $limiteRegistros=0;
 $titulo='Catalogo de Tipo de Procesador';

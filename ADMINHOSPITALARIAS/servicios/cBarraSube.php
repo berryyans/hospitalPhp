@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php include('/configuracion/clases/validaModulos.php'); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION.'/clases/validaModulos.php'); ?>
 <?php
 
 
@@ -133,7 +135,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""

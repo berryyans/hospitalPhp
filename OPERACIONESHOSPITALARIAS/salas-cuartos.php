@@ -1,4 +1,11 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php"); 
+require("../configuracion/ventanasEmergentes.php");
+require('../configuracion/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 
 <?php 
 if($_POST['nuevo']){
@@ -27,7 +34,7 @@ codSala,codCuarto
 )";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
-$leyenda = "Se agregó el cuarto: ".$_POST['codSala'];
+$leyenda = "Se agregï¿½ el cuarto: ".$_POST['codSala'];
 }}
 }
 //*****************cierro INSERTAR Y ACTUALIZAR **********************************
@@ -48,7 +55,7 @@ $borrame = "DELETE FROM SalasCuartos WHERE codSala ='".$_POST['sala']."'
 AND codCuarto LIKE '%$quitar[$is]%' ";
 mysql_db_query($basedatos,$borrame);
 echo mysql_error();
-$leyenda = "Se eliminó la cama del cuarto ".$quitar[$i];
+$leyenda = "Se eliminï¿½ la cama del cuarto ".$quitar[$i];
 /* echo '<META HTTP-EQUIV="Refresh"
       CONTENT="0; URL=listaUsuarios.php">';
 exit;
@@ -69,6 +76,7 @@ $estilos->styles();
 </head>
 
 <body>
+    <div class="page_right">
 <p align="center">
   <label></label> 
 Relaci&oacute;n Salas &lt;--&gt;Cuartos</p>
@@ -79,7 +87,8 @@ Relaci&oacute;n Salas &lt;--&gt;Cuartos</p>
   </div>
   </label><br />
   
-  <table width="323" class="table-forma">
+  <!--<table width="323" class="table-forma">-->
+  <table width="323" class="table-template">
 
     <tr>
       <td  colspan="2"  scope="col"><strong>Qu&eacute; sala quieres asignar</strong></td>
@@ -116,7 +125,8 @@ echo mysql_error();
   
   
 
-  <table width="405" class="table table-striped">
+  <!--<table width="405" class="table table-striped">-->
+  <table width="405" class="table-template-left">
     <tr>
       <th width="136"  scope="col"><span >C&oacute;digo del Cuarto </span></th>
       <th width="149"  scope="col"><span >Agregar Cuartos</span></th>
@@ -127,6 +137,7 @@ echo mysql_error();
  $sSQL= "Select * From cuartos order by codigoCuarto ASC";
 $result=mysql_db_query($basedatos,$sSQL); 
 while($myrow = mysql_fetch_array($result)){
+    /*
 if($col){
 $color = '#FFFF99';
 $col = "";
@@ -134,7 +145,7 @@ $col = "";
 $color = '#FFFFFF';
 $col = 1;
 }
-	  
+	*/  
 $bandera += 1;
 $codigoModulo = $myrow['codigoCuarto'];
 ?>
@@ -178,7 +189,8 @@ echo mysql_error();
   </p>
   <hr />
   <form id="form1" name="form1" method="post" action="">
-    <table width="330" class="table table-striped" >
+    <!--<table width="330" class="table table-striped" >-->
+    <table width="330" class="table-template-left" >
       <tr>
         <th width="257"  scope="col"><strong><span >Cuartos ya agregados </span></strong></th>
         <th width="73"  scope="col"><span >Quitar</span></th>
@@ -208,9 +220,15 @@ $col = 1;
    
 <p align="center">&nbsp;</p>
 </form>
+<!--
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
+<p>&nbsp;</p>-->
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+ ?>
 </body>
 </html>

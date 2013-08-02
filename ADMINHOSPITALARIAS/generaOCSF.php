@@ -1,4 +1,12 @@
-<?php require("menuOperaciones.php"); ?>
+<?php //require("menuOperaciones.php");
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <?php 
 $imagen='ordencompra.jpg';
 $ventana1='../ventanas/ventanaOCSF.php';
@@ -71,8 +79,9 @@ if(win.window.focus){win.window.focus();}
 
 </script>
 
- 
-  <table width="37%" class="table-forma">
+ <div class="page_right">
+  <!--<table width="37%" class="table-forma">-->
+  <table width="37%" class="table-template">
       <br></br>
     <tr valign="middle">
       <td width="34%"><div align="center">
@@ -116,8 +125,8 @@ $estilos->styles();
 ?>
 
 </head>
-
-
+    <body>
+        
 
 <?php
 
@@ -153,7 +162,8 @@ $estilos->styles();
 
   
 
-   <table width="700" class="table table-striped">
+   <!--<table width="700" class="table table-striped">-->
+   <table width="700" class="table-template-left">
     <tr >
       <th width="17" >#</th>
       <th width="17" >Hora</th>
@@ -402,7 +412,11 @@ $myrow8a = mysql_fetch_array($result8a);
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
      button     :    "lanzador"     // el id del bot�n que lanzar� el calendario 
 }); 
-    </script>     
-    
+    </script>
+        </div>
+    <?php
+    $mostrarFooter = new menus();
+    $mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+    ?>
 </body>
 </html>

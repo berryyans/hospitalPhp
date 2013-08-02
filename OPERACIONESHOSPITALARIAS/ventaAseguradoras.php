@@ -1,5 +1,5 @@
-<?php require('/configuracion/ventanasEmergentes.php');?>
-<?php require('/configuracion/funciones.php');
+<?php require('../configuracion/ventanasEmergentes.php');?>
+<?php require('../configuracion/funciones.php');
 
 if($_POST['cargos']){ //validacion de vigencia de credenciales
 

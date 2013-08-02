@@ -230,15 +230,15 @@ $_GET['extension']=0;
 
 
 <head>
-<style type="text/css">
 <!--
+<style type="text/css">
 .Estilo1 {color: #FFFFFF;
           background:#000066;
 
 }
  
--->
 </style>
+-->
 <?php 
 $showStyles=new muestraEstilos();
 $showStyles->styles();
@@ -266,8 +266,12 @@ $myrow3 = mysql_fetch_array($result3);
 <form id="form1" name="form1" method="post" action="">
   <table width="582" border="0" align="center" cellpadding="1" cellspacing="1" bordercolor="#990099" class="normal">
     <tr>
+        <!--
       <th bgcolor="#330099" class="blancomid" scope="col"><div align="left">Folio de Venta</div></th>
       <th bgcolor="#330099" class="blanco" scope="col"><div align="left">
+        -->
+      <th class="blancomid" scope="col"><div align="left">Folio de Venta</div></th>
+      <th class="blanco" scope="col"><div align="left">
         <label>
       <?php print $_GET['folioVenta'];?>
         </label>
@@ -279,23 +283,29 @@ $myrow3 = mysql_fetch_array($result3);
     
 
     <tr>
+        <!--
       <th width="168" bgcolor="#330099" class="normal" scope="col"><div align="left" class="blancomid"><strong>Paciente</strong></div></th>
+        -->
+      <th width="168" class="normal" scope="col"><div align="left" class="blancomid"><strong>Paciente</strong></div></th>
       <th width="407" bgcolor="#FFFFFF" class="normalmid" scope="col"><div align="left"><strong>
           <label> </label>
       </strong> <?php echo $myrow3['paciente']; ?> </div></th>
     </tr>
     <tr>
-      <td bgcolor="#330099" class="blancomid">Compa&ntilde;&iacute;a</td>
+      <!--<td bgcolor="#330099" class="blancomid">Compa&ntilde;&iacute;a</td>-->
+      <td class="blancomid">Compa&ntilde;&iacute;a</td>
 <td bgcolor="#FFFFFF" class="normalmid"><label> 
         <input name="seguro2" type="hidden" id="seguro2" value="<?php echo $traeSeguro; ?>" />
       </label></td>
     </tr>
     <tr>
-      <td bgcolor="#330099" class="blancomid">N&deg; Credencial</td>
+      <!--<td bgcolor="#330099" class="blancomid">N&deg; Credencial</td>-->
+      <td class="blancomid">N&deg; Credencial</td>
       <td bgcolor="#FFFFFF" class="normalmid"><?php echo $myrow3['credencial']; ?> </td>
     </tr>
     <tr>
-      <th bgcolor="#330099" class="blancomid" scope="col"><div align="left"><strong>M&eacute;dico</strong></div></th>
+      <!--<th bgcolor="#330099" class="blancomid" scope="col"><div align="left"><strong>M&eacute;dico</strong></div></th>-->
+      <th class="blancomid" scope="col"><div align="left"><strong>M&eacute;dico</strong></div></th>
       <th bgcolor="#FFFFFF" class="normalmid" scope="col"><div align="left">
           <label></label>
           
@@ -307,15 +317,18 @@ $rNombre18 = mysql_fetch_array($result18);
           <?php echo $dr="Dr(a): ".$rNombre18['descripcion'];?> </div></th>
     </tr>
     <tr>
-      <td bgcolor="#330099" class="blancomid">Fecha Internamiento</td>
+      <!--<td bgcolor="#330099" class="blancomid">Fecha Internamiento</td>-->
+      <td class="blancomid">Fecha Internamiento</td>
       <td bgcolor="#FFFFFF" class="normalmid"><?php print cambia_a_normal($myrow3['fecha']);?></td>
     </tr>
     <tr>
-      <td bgcolor="#330099" class="blancomid">Dx Entrada</td>
+      <!--<td bgcolor="#330099" class="blancomid">Dx Entrada</td>-->
+      <td class="blancomid">Dx Entrada</td>
       <td bgcolor="#FFFFFF" class="normalmid"><?php print $myrow3['dx'];?></td>
     </tr>
     <tr>
-      <td bgcolor="#330099" class="blancomid">Seguro</td>
+      <!--<td bgcolor="#330099" class="blancomid">Seguro</td>-->
+      <td class="blancomid">Seguro</td>
       <td bgcolor="#FFFFFF" class="normalmid"><label><?php print $myrow3['seguro'];?></label></td>
     </tr>
   </table>
@@ -358,22 +371,26 @@ $rNombre18 = mysql_fetch_array($result18);
   
   </p>
 <table width="440" height="53" border="1" align="center" bordercolor="#FF0000">
-    <tr bgcolor="#330099">
-      <th width="142" bgcolor="#330099" class="blanco" scope="col"><div align="left" class="blancomid">
+    <!--<tr bgcolor="#330099">-->
+    <tr >
+      <!--<th width="142" bgcolor="#330099" class="blanco" scope="col"><div align="left" class="blancomid">-->
+      <th width="142" class="blanco" scope="col"><div align="left" class="blancomid">
           <div align="left">Ext</div>
       </div></th>
 
-      <th width="297" bgcolor="#330099" class="blanco" scope="col"><div align="left" class="blancomid">
+      <!--<th width="297" bgcolor="#330099" class="blanco" scope="col"><div align="left" class="blancomid">-->
+      <th width="297" class="blanco" scope="col"><div align="left" class="blancomid">
         <div align="left">Grupo</div>
       </div></th>
-      <th width="114" bgcolor="#330099" class="blanco" scope="col"><div align="left" class="blancomid">
+      <!--<th width="114" bgcolor="#330099" class="blanco" scope="col"><div align="left" class="blancomid">-->
+      <th width="114" class="blanco" scope="col"><div align="left" class="blancomid">
           <div align="left">Importe</div>
       </div></th>
     </tr>
     
        
-      
-    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >
+    <!--<tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >-->
+    <tr bgcolor="#FFFFFF" >
       <td height="24" bgcolor="<?php echo $color;?>" class="codigos"><div align="center">0</div></td>
       <td bgcolor="<?php echo $color;?>" class="normalmid">
 	  ---
@@ -383,7 +400,8 @@ $rNombre18 = mysql_fetch_array($result18);
 		
 
 		echo "$".number_format($cargos,2);?>      </tr>
-    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >
+    <!--<tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >-->
+    <tr bgcolor="#FFFFFF" >
       <td height="24" bgcolor="<?php echo $color;?>" class="codigos"><div align="center">1</div></td>
       <td bgcolor="<?php echo $color;?>" class="normalmid">
 	  <?php
@@ -404,7 +422,8 @@ $myrow1 = mysql_fetch_array($result1);
       <td bgcolor="<?php echo $color;?>" class="normalmid">
 <?php 
 echo "$".number_format($myrow3ab['imp'],2);?>	      </tr>
-    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >
+    <!--<tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >-->
+    <tr bgcolor="#FFFFFF" >
       <td height="24" bgcolor="<?php echo $color;?>" class="codigos"><div align="center">2</div></td>
       <td bgcolor="<?php echo $color;?>" class="normalmid">
 	  <?php
@@ -427,7 +446,8 @@ $myrow1 = mysql_fetch_array($result1);
 
 
 echo "$".number_format($myrow3ab['imp'],2);?>      </tr>
-    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >
+    <!--<tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >-->
+    <tr bgcolor="#FFFFFF" >
       <td height="24" bgcolor="<?php echo $color;?>" class="codigos"><div align="center">3</div></td>
       <td bgcolor="<?php echo $color;?>" class="normalmid">
 	 <?php
@@ -449,7 +469,8 @@ $myrow1 = mysql_fetch_array($result1);
 
 
 echo "$".number_format($myrow3ab['imp'],2);?>      </tr>
-    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >
+    <!--<tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >-->
+    <tr bgcolor="#FFFFFF" >
       <td height="24" bgcolor="<?php echo $color;?>" class="codigos"><div align="center">4</div></td>
       <td bgcolor="<?php echo $color;?>" class="normalmid">    
 	  <?php
@@ -473,7 +494,8 @@ $myrow1 = mysql_fetch_array($result1);
 
 
 echo "$".number_format($myrow3ab['imp'],2);?>      </tr>
-    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >
+    <!--<tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >-->
+    <tr bgcolor="#FFFFFF" >
       <td height="24" bgcolor="<?php echo $color;?>" class="codigos"><div align="center">5</div></td>
       <td bgcolor="<?php echo $color;?>" class="normalmid">      
 	  <?php
@@ -497,7 +519,8 @@ $myrow1 = mysql_fetch_array($result1);
 
 
 echo "$".number_format($myrow3ab['imp'],2);?>      </tr>
-    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >
+    <!--<tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >-->
+    <tr bgcolor="#FFFFFF" >
       <td height="24" bgcolor="<?php echo $color;?>" class="codigos"><div align="center">6</div></td>
       <td bgcolor="<?php echo $color;?>" class="normalmid">    
 	  <?php
@@ -519,7 +542,8 @@ $myrow1 = mysql_fetch_array($result1);
     <td bgcolor="<?php echo $color;?>" class="normalmid"><?php 
 
 echo "$".number_format($myrow3ab['imp'],2);?>      </tr>
-    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >
+    <!--<tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >-->
+    <tr bgcolor="#FFFFFF" >
       <td height="24" bgcolor="<?php echo $color;?>" class="codigos"><div align="center">7</div></td>
       <td bgcolor="<?php echo $color;?>" class="normalmid">      
 	  <?php
@@ -541,7 +565,8 @@ $myrow1 = mysql_fetch_array($result1);
 
 
 echo "$".number_format($myrow3ab['imp'],2);?>    </tr>
-    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >
+    <!--<tr bgcolor="#FFFFFF" onMouseOver="bgColor='#ffff33'" onMouseOut="bgColor='#ffffff'" >-->
+    <tr bgcolor="#FFFFFF" >
       <td height="24" bgcolor="<?php echo $color;?>" class="codigos">&nbsp;</td>
       <td bgcolor="<?php echo $color;?>" class="normalmid"><div align="right">Disponible:
       </div>
@@ -563,6 +588,7 @@ echo "$".number_format($cargos-$myrow3ab['imp'],2);?>
 
     <table width="716" border="0" align="center">
       <tr>
+          <!--
         <th width="60" bgcolor="#660066" scope="col"><div align="left" class="blanco">Cod. GP</div></th>
         <th width="281" bgcolor="#660066" scope="col"><div align="left" class="blanco">Descripci&oacute;n de Productos </div></th>
         <th width="69" bgcolor="#660066" scope="col" class="blanco"><div align="left">Cantidad</div></th>
@@ -570,6 +596,14 @@ echo "$".number_format($cargos-$myrow3ab['imp'],2);?>
         <th width="69" bgcolor="#660066" scope="col" class="blanco"><div align="left">Reservado</div></th>
         <th width="69" bgcolor="#660066" scope="col" class="blanco"><div align="left">Disponible</div></th>
         <th width="69" bgcolor="#660066" scope="col" class="blanco"><div align="left">Status</div></th>
+        -->
+        <th width="60" scope="col"><div align="left" class="blanco">Cod. GP</div></th>
+        <th width="281"scope="col"><div align="left" class="blanco">Descripci&oacute;n de Productos </div></th>
+        <th width="69" scope="col" class="blanco"><div align="left">Cantidad</div></th>
+        <th width="69" scope="col" class="blanco"><div align="left">facturar</div></th>
+        <th width="69" scope="col" class="blanco"><div align="left">Reservado</div></th>
+        <th width="69" scope="col" class="blanco"><div align="left">Disponible</div></th>
+        <th width="69" scope="col" class="blanco"><div align="left">Status</div></th>
       </tr>
       <tr>
 	  
@@ -582,13 +616,13 @@ $result=mysql_db_query($basedatos,$sSQL);
 
 while($myrow = mysql_fetch_array($result)){
 $bandera+=1;	
-if($col){
+/*if($col){
 $color = '#FFCCFF';
 $col = "";
 } else {
 $color = '#FFFFFF';
 $col = 1;
-}
+}*/
 $C=$myrow['codigoGP'];
 
 

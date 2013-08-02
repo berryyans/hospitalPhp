@@ -1,4 +1,4 @@
-<?php include('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php include('../js/pdf/fpdf_js.php');
 		$entidad='01';
     function cambia_a_normal($fecha){ 
     ereg( "([0-9]{2,4})-([0-9]{1,2})-([0-9]{1,2})", $fecha, $mifecha); 
@@ -307,13 +307,13 @@ $pdf->Cell(0,0,$_GET['credencial'],0,0,L);
 
 
 //$pdf->SetXY(100,50);
-//$pdf->Cell(0,0,"N° Folio: ".$myrow311['folioVenta'],0,0,L);
+//$pdf->Cell(0,0,"Nï¿½ Folio: ".$myrow311['folioVenta'],0,0,L);
 
 //numero de paciente
 $pdf->SetXY(50,44);
 //$pdf->Cell(0,0,$_GET['folioFactura'],0,0,R);
 $pdf->SetY(45);
-$pdf->Cell(0,0,"Fact N°: ".$_GET['folioFactura'],0,0,R);
+$pdf->Cell(0,0,"Fact Nï¿½: ".$_GET['folioFactura'],0,0,R);
 
 //cambiar fecha
 //$myrow1['fecha1']=cambia_a_normal($myrow1['fecha1']);

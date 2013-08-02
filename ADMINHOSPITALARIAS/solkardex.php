@@ -1,4 +1,13 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP 
+require("/Constantes.php");
+//require("menuOperaciones.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+
+$mostrarmenu=new menus();
+$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
+
+?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -151,7 +160,7 @@ $estilos->styles();
 </head>
 
 <body>
-
+    <div class="page_right">
 
 
 <?php
@@ -167,7 +176,8 @@ $estilos->styles();
   <h1 align="center" >Kardex de Articulos</h1>
   
 
-  <table width="500" class="table-forma">
+ <!-- <table width="500" class="table-forma">-->
+  <table width="500" class="table-template-left">
 
 
       <tr>
@@ -257,7 +267,8 @@ $estilos->styles();
   
   
   
-  <table width="600" class="table table-striped">
+  <!--<table width="600" class="table table-striped">-->
+  <table width="600" class="table-template-left">
 <tr >
          <th width="5"  ><div align="left">#</div></th>
         <th width="5" ><div align="left">KEY</div></th>
@@ -471,6 +482,11 @@ $myrow39 = mysql_fetch_array($result39);
      button     :    "lanzador1"     // el id del bot�n que lanzar� el calendario
 });
 </script>
+    </div>
+<?php
+$mostrarFooter=new menus();
+$mostrarFooter->footerTemplate($usuario,$entidad,$basedatos);
+?>
 </body>
 
 </html>
