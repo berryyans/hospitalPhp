@@ -1,5 +1,7 @@
-<?php include("../configuracion/ventanasEmergentes.php"); ?>
-<?php include("../configuracion/funciones.php"); 
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 $numCliente=$_GET['numCliente'];
 $seguro=$_GET['seguro'];
 $medico=$_GET['medico'];

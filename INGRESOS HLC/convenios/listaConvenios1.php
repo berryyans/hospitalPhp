@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ingresoshlcmenu/menuingresoshlc.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ingresoshlcmenu/menuingresoshlc.php"); ?>
  <SCRIPT LANGUAGE="JavaScript">
 function checkIt(evt) {
     evt = (evt) ? evt : window.event

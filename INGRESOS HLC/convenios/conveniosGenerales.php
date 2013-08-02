@@ -1,4 +1,6 @@
-<?php include("../../configuracion/conf.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/conf.php"); ?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   

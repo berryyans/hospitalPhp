@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ingresoshlcmenu/convenios/menuConvenios.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ingresoshlcmenu/convenios/menuConvenios.php"); ?>
 
 <style type="text/css">
 <!--

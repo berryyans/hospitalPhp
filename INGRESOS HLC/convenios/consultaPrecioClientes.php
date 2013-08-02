@@ -1,4 +1,6 @@
-<?php //include("/configuracion/conf.php"); ?>
+<?php 
+require("/Constantes.php");
+//include("/configuracion/conf.php"); ?>
 
 <?php require("conexion.php"); $articulo = $_POST['nomArticulo']; ?>
 <script language=javascript> 
@@ -84,7 +86,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.nomArticulo.value) == false ) {   
-                alert("Por Favor, escribe el nombre del artículo!")   
+                alert("Por Favor, escribe el nombre del artï¿½culo!")   
                 return false   
         }          
 }   

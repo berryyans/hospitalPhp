@@ -1,4 +1,6 @@
-<?PHP include("../../configuracion/ventanasEmergentes.php"); include("../../configuracion/funciones.php"); ?>
+<?PHP 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=700,height=700,scrollbars=YES") 
@@ -155,7 +157,7 @@ msgbox "SE ELIMINO EL CONVENIO!"
           </div>
           <div align="left">
             <label>          
-            <?php require("/configuracion/componentes/comboAlmacen.php"); 
+            <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenSS($entidad,'Estilo24',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

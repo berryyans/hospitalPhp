@@ -1,4 +1,6 @@
-  <?php require('../configuracion/ventanasEmergentes.php'); $date=$_GET['fecha1'];require('../configuracion/funciones.php');?>
+  <?php 
+  require("/Constantes.php");
+  require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); $date=$_GET['fecha1'];require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
   
 
   <p align="center" >
