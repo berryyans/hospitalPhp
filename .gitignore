@@ -1,0 +1,14 @@
+_STORE
+target
+*.log*
+*.jasper
+*.java~
+*.*~
+/src/main/resources/rebel.xml
+/src/main/resources/logback.xml
+/nb-configuration.xml
+/nb-actions.xml
+.settings
+.classpath
+.project
+aoe.exe
