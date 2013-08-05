@@ -1,4 +1,6 @@
-<?php include("/configuracion/seguridadsima/seguridadmenu.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/seguridadsima/seguridadmenu.php"); ?>
 
 <?php 
 if($_POST['nuevo']){
@@ -27,7 +29,7 @@ usuario,almacen
 )";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
-$leyenda = "Se ingresó el almacén para el usuario: ".$_POST['usuario'];
+$leyenda = "Se ingresï¿½ el almacï¿½n para el usuario: ".$_POST['usuario'];
 }}}
 //*****************cierro INSERTAR Y ACTUALIZAR **********************************
 /* } else {
@@ -49,7 +51,7 @@ echo mysql_error();
       CONTENT="0; URL=listaUsuarios.php">';
 exit;
  */
-}$leyenda = "Se eliminó el modulo ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['usuario']){
+}$leyenda = "Se eliminï¿½ el modulo ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['usuario']){
 $leyenda = "Por favor, escoja el nombre de usuario que desee eliminar..!";
 }
 /* $nCliente1= $_POST['nCliente'];
@@ -81,7 +83,7 @@ WHERE
 usuario='".$_POST['usuario']."' AND modulo='".$agregar[$i]."'
 ";
 mysql_db_query($basedatos,$q);
-$leyenda = "Se actualizó el usuario: ".$_POST['usuario'];
+$leyenda = "Se actualizï¿½ el usuario: ".$_POST['usuario'];
 echo mysql_error();
 } else {
 $agrega = "INSERT INTO usuarios-modulos (
@@ -92,7 +94,7 @@ $nCliente,
 '".$agregar[$i]."'
 )";
 mysql_db_query($basedatos,$agrega);
-$leyenda = "Se insertó el usuario: ".$_POST['usuario'];
+$leyenda = "Se insertï¿½ el usuario: ".$_POST['usuario'];
 echo mysql_error();
 //$nCliente-=1;
 //echo '<META HTTP-EQUIV="Refresh"
@@ -109,7 +111,7 @@ if($_POST['borrar'] AND $_POST['nCliente']){
 $borrame = "DELETE FROM usuarios WHERE nCliente ='".$_POST['nCliente']."'";
 mysql_db_query($basedatos,$borrame);
 echo mysql_error();
-$leyenda = "Se eliminó el usuario: ".$_POST['usuario'];
+$leyenda = "Se eliminï¿½ el usuario: ".$_POST['usuario'];
 echo '<META HTTP-EQUIV="Refresh"
       CONTENT="0; URL=listaUsuarios.php">';
 exit;
