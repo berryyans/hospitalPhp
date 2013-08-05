@@ -1,4 +1,6 @@
-<?php require('/configuracion/ventanasEmergentes.php'); require('/configuracion/funciones.php');
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 $cargosCia=new acumulados();
 $folioVenta=$_GET['folioVenta'];
@@ -221,12 +223,12 @@ if($myrow3['statusCuenta']=='cerrada' and $myrow3['status']=='cerrada'){
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 
-  <?php include('/configuracion/clases/encabezado.php');?>
+  <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/encabezado.php');?>
 
 
   <div align="center">
   
-  <?php include('/configuracion/clases/mostrarDatosCuenta.php');?>
+  <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarDatosCuenta.php');?>
 </div>
 
 
@@ -241,7 +243,7 @@ if($myrow3['statusCuenta']=='cerrada' and $myrow3['status']=='cerrada'){
   
   </div>
   
-<?php include('/configuracion/clases/mostrarEfectuarTransacciones.php');?>
+<?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarEfectuarTransacciones.php');?>
 
 </body>
 </html>

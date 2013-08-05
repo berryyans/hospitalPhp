@@ -1,11 +1,13 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php 
 
 if($_GET['almacen']=='HCEX'){
-include("/configuracion/clases/cargosPaquetes.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/clases/cargosPaquetes.php"); 
 } else {
-include("/configuracion/clases/formasCapturaPaquetes.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/clases/formasCapturaPaquetes.php"); 
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];
 $credencial=$_GET['credencial'];

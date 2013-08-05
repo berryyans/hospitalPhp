@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/clases/estadoCuentaE.class.abonos.php"); include("/configuracion/funciones.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/clases/estadoCuentaE.class.abonos.php"); include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php //include("/configuracion/clases/respaldoCuentaE.class.php"); include("/configuracion/funciones.php"); ?>
 <?php
 $sSQLC= "Select status From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";
