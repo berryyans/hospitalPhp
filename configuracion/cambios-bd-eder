@@ -1,0 +1,69 @@
+update extensionmodules set ruta='ncDevolucion.php' where mainmodulename='CxP' and keyEM=613
+
+
+select * from mainmodules where name='OPERACIONES 2'
+select * from primarymodules where mainmenu='OPERACIONES 2'
+select * from usersmodules where main='OPERACIONES 2'
+--changes
+update primarymodules set mainmenu='OPERACIONES' where mainmenu='OPERACIONES 2'
+delete from mainmodules where name='OPERACIONES 2' and keymm=21
+update usersmodules set main='OPERACIONES' where main='OPERACIONES 2'
+
+--agregar ruta completa
+alter table extensionmodules add prefijo varchar(100)
+
+--inserts
+update extensionmodules set prefijo='ADMINHOSPITALARIAS/'where name='ALMACENES' and mainmodulename='INVENTARIOS'
+--ADMINHOSPITALARIAS
+update extensionmodules set prefijo='ADMINHOSPITALARIAS/' where mainmodulename='INVENTARIOS'
+update extensionmodules set prefijo='ADMINHOSPITALARIAS/' where mainmodulename='SERVICIOS'
+update extensionmodules set prefijo='ADMINHOSPITALARIAS/' where mainmodulename='COMPRAS'
+update extensionmodules set prefijo='ADMINHOSPITALARIAS/' where mainmodulename='MEDICOS'
+--CONFIGURACIONES
+update extensionmodules set prefijo='SEGURIDADSIMA/' where mainmodulename='CONFIGURACIONES'
+--EGRESOS
+update extensionmodules set prefijo='EGRESOS/' where mainmodulename='CxP'
+--EXPEDIENTES	
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='EXPEDIENTES'
+--INGRESOS
+update extensionmodules set prefijo='INGRESOS HLC/' where mainmodulename='CONVENIOS'
+update extensionmodules set prefijo='INGRESOS HLC/' where mainmodulename='CAJA'
+update extensionmodules set prefijo='INGRESOS HLC/' where mainmodulename='CXC'
+--OPERACIONES
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='ADMINISTRACION'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='ARCHIVO'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='CONSULTAEXTERNA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='FARMACIA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='GINE'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='LUZ Y VIDA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='PARTO'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='QUIROFANO'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='SALA 1'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='URGENCIAS'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='DIAGNOSTICO'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='PROCEDIMIENTOS OTORRINO'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='PROCEDIMIENTOS CIRUGIAS'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='MEDICINA PREVENTIVA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='TERAPIA INTERMEDIA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='ADMISIONES'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='BENEFICENCIA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='CEYE'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='FISIOTERAPIA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='LABORATORIO'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='NEFROLOGIA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='PREQUIRURGICO'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='RAYOS X'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='SISTEMAS'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='GASTRO'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='VALORACION'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='SALA  ECNT'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='PROCEDIMIENTOS TRAUMATOLOGIA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='HEMODIALISIS'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='ENDOSCOPIA'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='UNIDAD DE CUIDADOS INTENSIVOS'
+update extensionmodules set prefijo='OPERACIONESHOSPITALARIAS/' where mainmodulename='UROLOGIA'
+
+
+select * from extensionmodules where name="REPORTES AUTOMATICOS"
+update extensionmodules set ruta='MenuIndex.php' where name="REPORTES AUTOMATICOS" and keyEM=95
+update extensionmodules set prefijo='' where name="REPORTES AUTOMATICOS" and keyEM=95
