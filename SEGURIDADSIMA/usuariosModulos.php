@@ -1,4 +1,6 @@
-<?php require("/configuracion/seguridadsima/seguridadmenu.php"); require("/configuracion/funciones.php");?>
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/seguridadsima/seguridadmenu.php"); require(CONSTANT_PATH_CONFIGURACION."/funciones.php");?>
 <script language=javascript>
 function ventanaSecundaria (URL){
    window.open(URL,"ventanaSecundaria","width=630,height=800,scrollbars=YES")
@@ -49,7 +51,7 @@ $estilos->styles();
     <p>
 
     <span class="normalmid">
-    <?php require("/configuracion/componentes/comboEntidades.php");
+    <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboEntidades.php");
 	   $entidades=new despliegaEntidades();$entidades->listaEntidades($usuario,$basedatos);
 	   ?>
   </span>
