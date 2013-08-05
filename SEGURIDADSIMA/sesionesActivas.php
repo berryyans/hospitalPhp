@@ -1,4 +1,6 @@
-<?php include("/configuracion/seguridadsima/seguridadmenu.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/seguridadsima/seguridadmenu.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=300,height=100,scrollbars=NO") 
@@ -58,7 +60,7 @@ $E=$myrow1['usuario'];
 ?>
         <?php if($myrow1['usuario']!=$usuario){ ?>
         <?php if($myrow1['usuario']){ ?>
-        <a href="javascript:ventanaSecundaria('sesionFuera.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $E; ?>')"> <img src="sinCandado.png" width="23" height="23" border="0" onClick="if(confirm('Esta seguro que deseas cerrarle la sesión?') == false){return false;}" /></a>
+        <a href="javascript:ventanaSecundaria('sesionFuera.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $E; ?>')"> <img src="sinCandado.png" width="23" height="23" border="0" onClick="if(confirm('Esta seguro que deseas cerrarle la sesiï¿½n?') == false){return false;}" /></a>
         <?php }else { ?>
         <a href="javascript:ventanaSecundaria('activarCuenta.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="candado.png" width="23" height="23" border="0"  onclick="if(confirm('Esta seguro que deseas activar la cuenta?') == false){return false;}" /></a>
         <?php } ?>

@@ -1,8 +1,10 @@
-<?php require('../configuracion/ventanasEmergentes.php');
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');
 
 if($_GET['paquetes']){
-require("../configuracion/formas/aplicarPaquete.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/formas/aplicarPaquete.php"); 
 } else if($_GET['cargos']){
-require("../configuracion/formas/ventaPublico.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/formas/ventaPublico.php"); 
 }
 ?>

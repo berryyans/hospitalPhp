@@ -1,4 +1,6 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 
 
 
@@ -23,6 +25,6 @@ OCICommit($db_conn); // hace commit */
 
 
 
-echo "El usuario ".$_GET['usuario']." salió de sesión";
+echo "El usuario ".$_GET['usuario']." saliï¿½ de sesiï¿½n";
 }
 ?>

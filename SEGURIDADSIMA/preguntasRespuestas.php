@@ -1,4 +1,6 @@
-<?php include("/configuracion/seguridadsima/seguridadmenu.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/seguridadsima/seguridadmenu.php"); ?>
 <?php
 
 
@@ -33,7 +35,7 @@ codigoLP,codigoLR,usuario,fecha
 )";
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
-$leyenda = "Se agregó el Módulo..!";
+$leyenda = "Se agregï¿½ el Mï¿½dulo..!";
 } else {
 $leyenda = "Ya existe ese modulo....";
 }
@@ -57,7 +59,7 @@ $borrame = "DELETE FROM preguntasRespuestas WHERE codigoLP ='".$_POST['listaPreg
 AND codigoLR = '".$quitar[$is]."'";
 mysql_db_query($basedatos,$borrame);
 echo mysql_error();
-$leyenda = "Se eliminó el modulo";
+$leyenda = "Se eliminï¿½ el modulo";
 /* echo '<META HTTP-EQUIV="Refresh"
       CONTENT="0; URL=listaUsuarios.php">';
 exit;

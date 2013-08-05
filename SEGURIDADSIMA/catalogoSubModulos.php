@@ -1,4 +1,6 @@
-<?php require("/configuracion/seguridadsima/seguridadmenu.php"); 
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/seguridadsima/seguridadmenu.php"); 
 
 
 if($_POST['actualizar']!=NULL AND $_POST['name']!=NULL and $_POST['keyc']!=NULL ){
@@ -101,7 +103,7 @@ $estilo->styles();
     <span class="normalmid">
     <?php
     if(!$_POST['entidades']) {$_POST['entidades']=$_GET['entidades'];}
-    require("/configuracion/componentes/comboEntidades.php");
+    require(CONSTANT_PATH_CONFIGURACION."/componentes/comboEntidades.php");
 	   $entidades=new despliegaEntidades();$entidades->listaEntidades($usuario,$basedatos);
 	   ?>
   </span>

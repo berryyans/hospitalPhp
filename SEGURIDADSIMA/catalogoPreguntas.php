@@ -1,4 +1,6 @@
-<?php include("/configuracion/seguridadsima/seguridadmenu.php"); ?>
+<?php 
+require("/Constantes.php");
+include(CONSTANT_PATH_CONFIGURACION."/seguridadsima/seguridadmenu.php"); ?>
 
 <?php
 if($_POST['actualizar'] AND $_POST['codigoLP'] ){

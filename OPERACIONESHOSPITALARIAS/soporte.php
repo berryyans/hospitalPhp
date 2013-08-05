@@ -1,19 +1,12 @@
 <?php 
-<<<<<<< HEAD
-require("menuOperaciones.php");
-//require("/configuracion/ventanasEmergentes.php");
-//require('/configuracion/funciones.php');
-
-//$mostrarmenu=new menus();
-//$mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
-=======
+require("/Constantes.php");
 //require("menuOperaciones.php");
-require("../configuracion/ventanasEmergentes.php");
-require('../configuracion/funciones.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
->>>>>>> ffca23b146c55951cda977be74fea6569f465f46
+
 $estilos=new muestraEstilos();
 $estilos->styles();
 
@@ -255,10 +248,8 @@ if($totaldone>0 || $totalRequest>0 || $totalontransit>0){
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--
-<<<<<<< HEAD
 -->
-=======
->>>>>>> ffca23b146c55951cda977be74fea6569f465f46
+
 <link href="../js/styleTabs.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui-personalized-1.5.2.packed.js"></script>
@@ -388,11 +379,7 @@ $q=mysql_real_escape_string($q);
 
 <div id="content"> 
     <div id="tab1">
-<<<<<<< HEAD
-        
-=======
         <!--
->>>>>>> ffca23b146c55951cda977be74fea6569f465f46
 <style>
     
 

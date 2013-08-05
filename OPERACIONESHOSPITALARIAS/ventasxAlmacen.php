@@ -1,5 +1,7 @@
-<?php require("/configuracion/operacioneshospitalariasmenu/administracion/administracion.php"); ?>
-<?PHP require("/configuracion/funciones.php"); ?>
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/administracion/administracion.php"); ?>
+<?PHP require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=700,height=700,scrollbars=YES") 
@@ -90,7 +92,7 @@ $estilos->styles();
         <th width="338" scope="col"><div align="left">
           <?php 
 		
-		  require("/configuracion/componentes/comboAlmacen.php"); 
+		  require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenDestino,$almacenDestino,$basedatos);
 ?>

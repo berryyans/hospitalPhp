@@ -1,5 +1,7 @@
-<?php require('../configuracion/ventanasEmergentes.php');
+<?php 
+require("/Constantes.php");
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');
 
-require("../configuracion/formas/ventaParticulares.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/formas/ventaParticulares.php"); 
 
 ?>
