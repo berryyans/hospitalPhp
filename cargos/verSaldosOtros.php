@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); require('/configuracion/funciones.php');?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 <script language=javascript> 
 function ventanaSecundaria2 (URL){ 
    window.open(URL,"ventana2","width=800,height=600,scrollbars=YES") 
@@ -111,13 +113,13 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.medico.value) == false ) {   
-                alert("Por Favor, escoje un médico que va a atender a este paciente!")   
+                alert("Por Favor, escoje un mï¿½dico que va a atender a este paciente!")   
                 return false   
         } else if( vacio(F.paciente.value) == false ) {   
                 alert("Por Favor, escribe el nombre del paciente!")   
                 return false   
         } else if( vacio(F.seguro.value) == false ) {   
-                alert("Por Favor, escoje algún tipo de seguro, o también si es particular!")   
+                alert("Por Favor, escoje algï¿½n tipo de seguro, o tambiï¿½n si es particular!")   
                 return false   
         }            
 }   

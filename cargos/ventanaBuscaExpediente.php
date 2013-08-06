@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?><?php include("/configuracion/clases/internarPaciente.php"); ?><?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/clases/internarPaciente.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <?php  //class internar{ ?>

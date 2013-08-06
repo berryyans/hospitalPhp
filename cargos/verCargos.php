@@ -1,5 +1,7 @@
-<?php require('/configuracion/ventanasEmergentes.php'); 
-require('/configuracion/funciones.php'); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); 
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php'); ?>
 <script language=javascript> 
 function ventanaSecundaria8 (URL){ 
    window.open(URL,"ventana8","width=500,height=200,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -264,7 +266,7 @@ $col = "";
 		  <input name="codigoArt[]" type="hidden" id="codigoArt[]" value="<?php  echo $myrow['codProcedimiento']; ?>" />        </td>
         <td bgcolor="<?php echo $color;?>" class="normal"><?php 
 		if($myrow['tipoTransaccion'] and !$myrow11['descripcion']){
-		echo "Depósito ó Movimiento de Caja" ;
+		echo "Depï¿½sito ï¿½ Movimiento de Caja" ;
 		} else {
 			$descripcion=new articulosDetalles();
 			
@@ -294,7 +296,7 @@ $descripcion->descripcion($entidad,$keyCAP,$numeroE,$nCuenta,$codigo,$basedatos)
 		}
 		?>
 		<?php if($myrow['status']=='cancelado'){ ?>
-		  <span class="Estilo25"><blink><?php echo '(Artículo Cancelado por '.$myrow['usuarioCancela'].')';?></blink></span>
+		  <span class="Estilo25"><blink><?php echo '(Artï¿½culo Cancelado por '.$myrow['usuarioCancela'].')';?></blink></span>
 		<?php } ?>
 		
 			<?php if($myrow['generico']=='si'){?>

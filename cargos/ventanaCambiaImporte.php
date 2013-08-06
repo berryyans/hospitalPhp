@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); 
-include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana","width=700,height=700,scrollbars=YES") 

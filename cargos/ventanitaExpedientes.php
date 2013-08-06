@@ -1,4 +1,6 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 
 <?php
 $campo=$_GET['campo'];
@@ -141,7 +143,7 @@ $myrow = mysql_fetch_array($result);
 
 echo $myrow11['nombre1']." ".$myrow11['nombre2']." ".$myrow11['apellido1']." ".$myrow11['apellido2']." ".$myrow11['apellido3'];
 if($myrow['status']=='standby'){
-echo "  (Falta que pague en caja su depósito)";
+echo "  (Falta que pague en caja su depï¿½sito)";
 }
 ?></span></td>
      

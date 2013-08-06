@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php");?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");?>
 <?php
 
 $hoy = date("d/m/Y");
@@ -37,7 +39,7 @@ codigo='".$_POST['codigo']."' ";
 echo mysql_error();
 
 
-echo $leyenda="Se actualizó el precio de venta";
+echo $leyenda="Se actualizï¿½ el precio de venta";
 ?>
 <script language="JavaScript" type="text/javascript">
   <!--

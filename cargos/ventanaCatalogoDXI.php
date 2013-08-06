@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php");?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");?>
 <script language=javascript> 
 function ventanaSecundaria5 (URL){ 
    window.open(URL,"ventana5","width=500,height=500,scrollbars=YES") 
@@ -22,7 +24,7 @@ CI,descripcion,usuario,fecha,entidad
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
 
-echo 'Se agregó el código Internacional';
+echo 'Se agregï¿½ el cï¿½digo Internacional';
 
 
 } else {
@@ -41,7 +43,7 @@ and
 CI='".$_POST['CI']."'";
 mysql_db_query($basedatos,$q);
 echo mysql_error();
-echo 'Se Modificó el CI';
+echo 'Se Modificï¿½ el CI';
 
 } //cierra validacion de existencia
 

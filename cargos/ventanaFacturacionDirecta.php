@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php");?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");?>
 
 
 
@@ -243,7 +245,7 @@ $telefono=$_GET['telefono'];
 	     <div align="center">
 		<div id="results" ></div>
 		</div>	   
-         </td>
+        ï¿½</td>
        <td bgcolor="<?php echo $color;?>" class="Estilo24">&nbsp;</td>
        <td bgcolor="<?php echo $color?>" class="Estilo24">&nbsp;</td>
      </tr>

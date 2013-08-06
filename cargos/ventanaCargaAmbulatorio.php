@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php
 $_POST['medico']=$medico=$_GET['medico'];
 $_POST['seguro']=$seguro=$_GET['seguro'];
@@ -81,7 +83,7 @@ $totalCredito+=$Cost;
 
 if($totalCredito<$creditoTope){
 echo '<br>';
-echo "El Paciente tiene un crédito disponible de: "."$".number_format($creditoTope-$totalCredito,2)." y un acumulado de "."$".number_format($totalCredito,2).", de un crédito de "."$".number_format($creditoTope,2);
+echo "El Paciente tiene un crï¿½dito disponible de: "."$".number_format($creditoTope-$totalCredito,2)." y un acumulado de "."$".number_format($totalCredito,2).", de un crï¿½dito de "."$".number_format($creditoTope,2);
 $cumpleRequisitos="si";
 } else {
 $cumpleRequisitos="no";

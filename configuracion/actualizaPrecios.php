@@ -1,4 +1,6 @@
-<?php require("/configuracion/baseDatos.php"); 
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/baseDatos.php"); 
 $usuario=NULL;
 $fecha=NULL;
 $hora=NULL;
