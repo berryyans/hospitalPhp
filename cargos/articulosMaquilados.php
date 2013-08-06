@@ -1,4 +1,6 @@
-<?php require('/configuracion/ventanasEmergentes.php'); include('/configuracion/funciones.php');?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); include(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 <?php  
 if($_GET['keyR'] ){
 

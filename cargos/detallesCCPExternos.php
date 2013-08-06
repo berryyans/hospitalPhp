@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/ingresoshlcmenu/cxc/menuCXC.php"); 
-include("/configuracion/clases/cierraCuenta5.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ingresoshlcmenu/cxc/menuCXC.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/clases/cierraCuenta5.php"); ?>
 
 
 <?php 

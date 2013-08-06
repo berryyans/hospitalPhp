@@ -1,6 +1,8 @@
 <?php
+require('/Constantes.php');
+
 $bali=$ALMACEN;
-require("/configuracion/clases/eCuenta.php");
+require(CONSTANT_PATH_CONFIGURACION."/clases/eCuenta.php");
 ?>
   <script language="JavaScript" type="text/javascript">
     /**
@@ -11,7 +13,7 @@ require("/configuracion/clases/eCuenta.php");
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 

@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/ventanasEmergentes.php");
-include("/configuracion/clases/desplegarFacturaParticular.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+include(CONSTANT_PATH_CONFIGURACION."/clases/desplegarFacturaParticular.php"); ?>
 
 
 <?php 

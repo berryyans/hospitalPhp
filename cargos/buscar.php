@@ -1,5 +1,7 @@
 Escoje el Paciente...
-<?php require('/configuracion/ventanasEmergentes.php');
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');
 /*
 	This is the back-end PHP file for the AJAX Suggest Tutorial
 	

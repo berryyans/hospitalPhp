@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?><?php require("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php 
 
 
@@ -35,13 +37,13 @@ close();
 } ?>
 <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 	function fuzzy( $qa, $column, $s ) {
 		$result = "";
 		$lastLocate = "0";
@@ -17,8 +18,8 @@
         
         
 //*****************CONEXION  A SIMA***************
-require('/configuracion/funciones.php');
-require('/configuracion/baseDatos.php');
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
+require(CONSTANT_PATH_CONFIGURACION.'/baseDatos.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

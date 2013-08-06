@@ -1,9 +1,11 @@
-<?PHP include("/configuracion/ventanasEmergentes.php");
- include("/configuracion/clases/moduloFacturacionEnterprise.php");  
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+ include(CONSTANT_PATH_CONFIGURACION."/clases/moduloFacturacionEnterprise.php");  
  ?>
 <?php 
 
-$TITULO='Módulo de Facturación';
+$TITULO='Mï¿½dulo de Facturaciï¿½n';
 $nCliente= $_GET['nCliente'];
 $ventana='';
 

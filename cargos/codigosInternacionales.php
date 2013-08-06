@@ -1,5 +1,7 @@
-<?php include("/configuracion/operacioneshospitalariasmenu/admiciones/menuadmiciones.php"); ?>
-<?php include("/configuracion/clases/internarPaciente.php"); ?><?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/admiciones/menuadmiciones.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/clases/internarPaciente.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <?php  //class internar{ ?>

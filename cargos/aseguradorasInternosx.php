@@ -1,5 +1,5 @@
 <?php
-	
+require('/Constantes.php');	
 	
 	function cambia_a_normal($fecha){ 
     ereg( "([0-9]{2,4})-([0-9]{1,2})-([0-9]{1,2})", $fecha, $mifecha); 
@@ -8,7 +8,7 @@
 	} 
 
 //*****************CONEXION  A SIMA***************
-require('/configuracion/baseDatos.php');
+require(CONSTANT_PATH_CONFIGURACION.'/baseDatos.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

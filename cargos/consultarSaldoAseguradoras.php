@@ -1,4 +1,6 @@
-<?php  require('/configuracion/ventanasEmergentes.php'); require('/configuracion/funciones.php');
+<?php  
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 
 $sSQL7n= "Select * from periodoAlumnos where entidad='".$entidad."'  and  '".$fecha1."' between fechaInicial and fechaFinal ";
@@ -32,16 +34,16 @@ function valida(F) {
                 alert("Por Favor, escribe el nombre del paciente!")   
                 return false   
         } else if( vacio(F.deposito.value) == false ) {   
-                alert("Por Favor, escribe el depósito!")   
+                alert("Por Favor, escribe el depï¿½sito!")   
                 return false   
         } else if( vacio(F.medico.value) == false ) {   
-                alert("Por Favor, escoje el médico responsable del internamiento!")   
+                alert("Por Favor, escoje el mï¿½dico responsable del internamiento!")   
                 return false   
         }  else if( vacio(F.cuarto.value) == false ) {   
                 alert("Por Favor, escoje el cuarto que desees asignar!")   
                 return false   
         }  else if( vacio(F.limiteCredito.value) == false ) {   
-                alert("Por Favor, escoje el límite que desees asignar!")   
+                alert("Por Favor, escoje el lï¿½mite que desees asignar!")   
                 return false   
         }   
 }   
@@ -96,7 +98,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -108,7 +110,7 @@ function checkIt(evt) {
 // Nannette Thacker http://www.shiningstar.net
 function confirmSubmit()
 {
-var agree=confirm("Está Ud. seguro de cambiar a este paciente de cama?");
+var agree=confirm("Estï¿½ Ud. seguro de cambiar a este paciente de cama?");
 var bandera;
 if (agree)
 	return true ;

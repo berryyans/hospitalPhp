@@ -1,5 +1,7 @@
-<?php include("/configuracion/operacioneshospitalariasmenu/laboratorio/menulab.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/laboratorio/menulab.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <?php  //class internar{ ?>

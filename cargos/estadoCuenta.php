@@ -1,5 +1,7 @@
-<?php include("../configuracion/ventanasEmergentes.php"); ?><?php include("../configuracion/funciones.php"); ?>
-<?php require("../configuracion/clases/eCCI.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/clases/eCCI.php"); ?>
 <?php
 $eCuenta=new estadoCuentas();
 $eCuenta-> eCCI($usuario,$entidad,$_GET['folioVenta'],$basedatos);

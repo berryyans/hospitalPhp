@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 
 <script language=javascript> 
 function ventanaSecundaria8 (URL){ 
@@ -197,7 +199,7 @@ $estilo->styles();
 
 
 
- <?php require("/configuracion/componentes/comboAlmacen.php"); include("/configuracion/funciones.php"); ?>
+ <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <form id="form1" name="form1" method="post" action="#">
   <h1 align="center">Surtir articulos </h1>
   <p align="center"><?php echo $_GET['descripcionArticulo'];?></p>

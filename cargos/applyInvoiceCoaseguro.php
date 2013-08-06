@@ -1,9 +1,11 @@
-<?PHP include("/configuracion/ventanasEmergentes.php");
- include("/configuracion/clases/moduloFacturacionCoaseguro.php");  
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+ include(CONSTANT_PATH_CONFIGURACION."/clases/moduloFacturacionCoaseguro.php");  
  ?>
 <?php 
 
-$TITULO='Módulo de Facturación Coaseguro';
+$TITULO='Mï¿½dulo de Facturaciï¿½n Coaseguro';
 $nCliente= $_GET['nCliente'];
 $ventana='';
 

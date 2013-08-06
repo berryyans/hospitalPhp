@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/clases/internarPaciente.php"); ?><?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/clases/internarPaciente.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <?php  //class internar{ ?>
@@ -159,15 +161,15 @@ function ventanaSecundaria1 (URL){
       <tr valign="middle" class="catalogo">
         <td>Nuevo C&oacute;digo </td>
         <td><span class="Estilo26"><span class="style121"><a 
-		onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Si no existe el código internacional que busca se puede agregar pulsando éste botón...';?></div>')" onMouseOut="UnTip()"
+		onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Si no existe el cï¿½digo internacional que busca se puede agregar pulsando ï¿½ste botï¿½n...';?></div>')" onMouseOut="UnTip()"
 		href="javascript:ventanaSecundaria1('/sima/cargos/ventanaCatalogoDXI.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Datos Generales del Paciente" width="12" height="12" border="0" /></a></span></span></td>
       </tr>
       <tr valign="middle" bgcolor="#FFCCFF" class="catalogo">
         <td width="140"><div align="left" class="style71">Descripci&oacute;n</div></td>
         <td width="403" bgcolor="#FFCCFF"><label>
           <input name="nombres" type="text" class="Estilo28" id="nombres2" size="60" 
-		value="<?php echo $_GET['nombres'];?>" onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Escribe el posible diagnóstico..';?></div>')" onMouseOut="UnTip()" />
-          <input name="mostrar" type="submit" class="style71" id="mostrar2" value="&gt;" onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Presiona éste botón para mostrar los posibles resultados de acuerdo a tu búsqueda';?></div>')" onMouseOut="UnTip()" />
+		value="<?php echo $_GET['nombres'];?>" onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Escribe el posible diagnï¿½stico..';?></div>')" onMouseOut="UnTip()" />
+          <input name="mostrar" type="submit" class="style71" id="mostrar2" value="&gt;" onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Presiona ï¿½ste botï¿½n para mostrar los posibles resultados de acuerdo a tu bï¿½squeda';?></div>')" onMouseOut="UnTip()" />
           </label>
 &nbsp;
       <input name="nombrePaciente12" type="hidden" id="nombrePaciente12" value="<?php echo $_POST['numPaciente'];?>"/>
@@ -238,7 +240,7 @@ $myrow31 = mysql_fetch_array($result31);
         <td height="23" bgcolor="<?php echo $color;?>" class="Estilo24"><span class="style7">
 
           <div align="left"><a 
-		  onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Muestra el código internacional: '.$myrow['descripcion'].' basada en DC9';?></div>')" onMouseOut="UnTip()"
+		  onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Muestra el cï¿½digo internacional: '.$myrow['descripcion'].' basada en DC9';?></div>')" onMouseOut="UnTip()"
 		  href="#"  onClick="javascript:regresar('<?php echo $myrow['CI'];?>','<?php echo $myrow['descripcion'];?>')">
           <?php 
 			echo $myrow['CI'];
@@ -258,7 +260,7 @@ $myrow31 = mysql_fetch_array($result31);
 		
 		
 
-		<a onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Editar el código internacional: '.$myrow['descripcion'];?></div>')" onMouseOut="UnTip()"
+		<a onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Editar el cï¿½digo internacional: '.$myrow['descripcion'];?></div>')" onMouseOut="UnTip()"
 		 href="javascript:ventanaSecundaria1('/sima/cargos/ventanaCatalogoDXI.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&keyDiagnosticos=<?php echo $myrow['keyDiagnosticos']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Modificar Codigo Internacional" width="12" height="12" border="0" /></a></span></td>
     </tr>
 
