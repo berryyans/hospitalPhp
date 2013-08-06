@@ -1,4 +1,6 @@
-<?php include('../js/pdf/fpdf_js.php');
+<?php 
+require('/Constantes.php');
+include('../js/pdf/fpdf_js.php');
 
 
 		
@@ -139,7 +141,7 @@ function AutoPrintToPrinter($server, $printer, $dialog=false)
 
 
 //*****************CONEXION  A SIMA***************
-require('/configuracion/baseDatos.php');
+require(CONSTANT_PATH_CONFIGURACION.'/baseDatos.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

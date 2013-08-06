@@ -1,4 +1,4 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];
@@ -21,7 +21,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.escoje.value) == null ) {   
-                alert("Por Favor, escoje como quieres agregar artículos!")   
+                alert("Por Favor, escoje como quieres agregar artï¿½culos!")   
                 return false   
         }            
 }   
@@ -75,7 +75,7 @@ WHERE keyCAP ='".$codigo[$i]."'";
 echo mysql_error();
 }
 }
-$leyenda="Se removieron artículos/Servicios";
+$leyenda="Se removieron artï¿½culos/Servicios";
 }
 
 ?>
@@ -214,7 +214,7 @@ echo $myrow['fecha1']."/".$myrow['hora1'];
     <p align="center">
       <label>
       <input name="actualizar" type="submit" class="Estilo24" id="actualizar" value="Actualizar Cantidad" onclick="if(confirm('Esta seguro que desea actualizar existencias-?') == false){return false;}" />
-      <input name="quitar" type="submit" class="Estilo24" id="quitar" value="Quitar Art&iacute;culos" onClick="if(confirm('Esta seguro que eliminar el artículo/servicio?') == false){return false;}" />
+      <input name="quitar" type="submit" class="Estilo24" id="quitar" value="Quitar Art&iacute;culos" onClick="if(confirm('Esta seguro que eliminar el artï¿½culo/servicio?') == false){return false;}" />
       </label>
     </p>
     <?php 

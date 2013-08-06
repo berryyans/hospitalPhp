@@ -1,4 +1,6 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?><?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];
@@ -22,7 +24,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.escoje.value) == null ) {   
-                alert("Por Favor, escoje como quieres agregar artículos!")   
+                alert("Por Favor, escoje como quieres agregar artï¿½culos!")   
                 return false   
         }            
 }   

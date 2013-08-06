@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); 
-require('/configuracion/funciones.php'); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); 
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php'); ?>
 
 
 

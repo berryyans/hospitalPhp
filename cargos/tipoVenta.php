@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 //actualizar ******************************************************************************************************
  if(!$_POST['keyPA']){
 $_POST['keyPA']=$_GET['keyPA'];
@@ -197,7 +198,7 @@ keyPA = '".$_POST['keyPA']."'
       
       
       
-<?php  require("/configuracion/funciones.php");
+<?php  require(CONSTANT_PATH_CONFIGURACION."/funciones.php");
 $cendis=new whoisCendis();
 $aP=$centroDistribucion=$cendis->cendis($entidad,$basedatos);  
   

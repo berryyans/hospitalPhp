@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -11,7 +13,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -31,7 +33,7 @@ $estilos->styles();
 
 </head>
 
-<h1 align="center">Requisición: #<?php echo $_GET['id_requisicion'];?> </h1>
+<h1 align="center">Requisiciï¿½n: #<?php echo $_GET['id_requisicion'];?> </h1>
 
 <?php 
 $sSQL8= "Select * From OC WHERE keyR='".$_GET['keyR']."'";
@@ -110,7 +112,7 @@ $requisicion=$myrow18['id_requisicion'];
 $id_almacen=$myrow18['id_almacen'];
 $id_proveedor=$myrow18['id_proveedor'];
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $sSQL17= "Select * From proveedores WHERE id_proveedor='".$id_proveedor."'";

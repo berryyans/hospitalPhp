@@ -1,4 +1,6 @@
-<?php require('/configuracion/ventanasEmergentes.php'); require('/configuracion/funciones.php'); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); require(CONSTANT_PATH_CONFIGURACION.'/funciones.php'); ?>
 
   <script language="JavaScript" type="text/javascript">
     /**
@@ -9,7 +11,7 @@
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 

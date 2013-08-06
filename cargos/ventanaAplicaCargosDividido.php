@@ -1,5 +1,7 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?><?php include("/configuracion/clases/eCuentaGrafico.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/clases/eCuentaGrafico.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php
 $cargosAseguradora=new acumulados();
 function redondear_dos_decimal($valor) {
@@ -43,7 +45,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -66,7 +68,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.tipoTransaccion.value) == false ) {   
-                alert("Escoje el Tipo de Transacción que desees hacer!")   
+                alert("Escoje el Tipo de Transacciï¿½n que desees hacer!")   
                 return false   
         }  else if( vacio(F.cantidadRecibida.value) == false ) {   
                 alert("Escribe la cantidad!")   
@@ -147,7 +149,7 @@ $myrowC = mysql_fetch_array($resultC);
 
 
 
-if($myrowC['status']=='abierta' ){ //*******************Comienzo la validación*****************
+if($myrowC['status']=='abierta' ){ //*******************Comienzo la validaciï¿½n*****************
 
 
 
@@ -752,7 +754,7 @@ window.close();cierro
 //echo 'No se permite refrescar pantalla..!'; 
 ?>
 <script>
-window.alert("Sólo se permite una transacción por vez...!");
+window.alert("Sï¿½lo se permite una transacciï¿½n por vez...!");
 </script>
 <?php 
 }
@@ -932,7 +934,7 @@ $myrow455 = mysql_fetch_array($result455);
         
 		<?php if($_GET['devolucion']=='si'){ ?>
 <select name="tipoPago" class="style20" id="tipoPago" onChange="javascript:form.submit();" <?php if($_GET['tipoCliente']!=NULL) //echo 'disabled=""';?>>
-             <option value="">Tipo de devolución</option>
+             <option value="">Tipo de devoluciï¿½n</option>
                 <option
 				 <?php if($_GET['tipoPago']=='Efectivo' ){ ?>
 				 selected="selected"
@@ -1091,7 +1093,7 @@ tipoPago='".$_GET['tipoPago']."'
 $resultaNombre11=mysql_db_query($basedatos,$sqlNombre11);
 ?>
   <select name="transaccion" class="Estilo24" id="transaccion" onChange="javascript:form.submit();" />  
-<option value="">Escoje el Tipo de Transacción</option>
+<option value="">Escoje el Tipo de Transacciï¿½n</option>
 
   
 
@@ -1450,7 +1452,7 @@ $valor=round($myrow17['sumaAcumulado']-$myrow17a['sumaAcumulado'],2);
 } else { //NO ES PAQUETE		
 
 
-//****************¿eSTE CONVENIO SOLO SE PAGA EN EFECTIVO?************
+//****************ï¿½eSTE CONVENIO SOLO SE PAGA EN EFECTIVO?************
 $sSQL31ab= "Select pagoEfectivo From clientes WHERE numCliente='".$seguro."'";
 $result31ab=mysql_db_query($basedatos,$sSQL31ab);
 $myrow31ab =mysql_fetch_array($result31ab);
@@ -1491,7 +1493,7 @@ if($seguro and $myrow31ab['pagoEfectivo']==''){
 		} else { //NO TRAE SEGURO
 		
 		   
-				if($_GET['devolucion']=='si'){ //es por devolución  
+				if($_GET['devolucion']=='si'){ //es por devoluciï¿½n  
 				$sSQL3471= "Select codigoTT From catTTCaja WHERE banderaDevolucionAbono='si'";
 				$valor=$dev->devoluciones($basedatos,$_GET['nCuenta']); 
 		} else { 
@@ -1500,7 +1502,7 @@ if($seguro and $myrow31ab['pagoEfectivo']==''){
 				if($_GET['tipoPago']=='Cortesia'){
 				$sSQL3471= "Select codigoTT From catTTCaja WHERE banderaCortesia='si'";
 				$valor=$cargosCortesia->cargosCortesia($basedatos,$usuario,$_GET['nCuenta']);
-				} else { //no es una nota de devolución
+				} else { //no es una nota de devoluciï¿½n
 				
 				if($myrow31ab['pagoEfectivo']=='si'){ 
 				//tiene convenio pero paga en efectivo 
@@ -1527,7 +1529,7 @@ if($seguro and $myrow31ab['pagoEfectivo']==''){
 				
 				
 				}
-		}//termina validacion de devolución	
+		}//termina validacion de devoluciï¿½n	
 		
 		}//CIERRA VALIDACION DE PAQUETE	
         
@@ -1732,7 +1734,7 @@ if(($_GET['abono']=='si'  and $_GET['tipoPago']) or (($valor>0  and $_GET['tipoP
 <?php 
 
 } else {
-echo 'La Caja está cerrada';
+echo 'La Caja estï¿½ cerrada';
 echo '<script type="text/vbscript">
 msgbox "LA CAJA ESTA CERRADA!"
 </script>';
@@ -1740,7 +1742,7 @@ msgbox "LA CAJA ESTA CERRADA!"
 ?>
 
   <?php } else {
-echo 'La Caja está cerrada';
+echo 'La Caja estï¿½ cerrada';
 echo '<script type="text/vbscript">
 msgbox "LA CAJA ESTA CERRADA!"
 </script>';

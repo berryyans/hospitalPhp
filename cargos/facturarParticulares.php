@@ -1,5 +1,7 @@
-<?php require("/configuracion/ventanasEmergentes.php");  ?>
-<?php include("/configuracion/clases/cierraCuenta4.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");  ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/clases/cierraCuenta4.php"); ?>
 
 
 <?php 

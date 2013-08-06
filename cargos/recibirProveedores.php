@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php
 $_POST['codigo']=$_GET['codigo'];
 $cantidadSurtir=$_POST['cantidad'];
@@ -140,7 +142,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -195,7 +197,7 @@ codigo = '".$_POST['codigo']."'
 	</p>
     <p align="center"><span class="style15"><?php 
 
-	echo "Están solicitando ".$myrow17['cantidad']. " articulos ".'<br>';
+	echo "Estï¿½n solicitando ".$myrow17['cantidad']. " articulos ".'<br>';
 	echo $leyenda;?>  </span></p>
     <table width="520" border="1" align="center">
       <tr>

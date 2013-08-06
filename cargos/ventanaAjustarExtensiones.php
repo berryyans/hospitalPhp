@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <?php if(($_POST['rfc'] and  $_POST['tipoFactura']) || ($_POST['seguro'] and $_POST['tipoFactura'])){
@@ -27,7 +29,7 @@ mysql_db_query($basedatos,$sql);
 echo mysql_error();
 
   echo '<script>';
-  echo 'window.alert("Se agrego una razón social");';
+  echo 'window.alert("Se agrego una razï¿½n social");';
   echo '</script>';
 
 

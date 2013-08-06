@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <SCRIPT language="javascript">
@@ -147,7 +149,7 @@ $col = 1;
 $codigo=$code1=$myrow18['codProcedimiento'];
 
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $sSQL7a= "Select almacen From almacenes WHERE entidad='".$entidad."' and centroDistribucion='si' ";

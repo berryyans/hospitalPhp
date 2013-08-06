@@ -1,5 +1,7 @@
-<?PHP require("/configuracion/ventanasEmergentes.php"); require('/configuracion/funciones.php'); 
-require ('/configuracion/clases/eFV.php'); 
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); require(CONSTANT_PATH_CONFIGURACION.'/funciones.php'); 
+require (CONSTANT_PATH_CONFIGURACION.'/clases/eFV.php'); 
 
 
 function redondeado ($numero, $decimales) {

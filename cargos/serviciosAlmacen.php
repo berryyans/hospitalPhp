@@ -1,4 +1,6 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?><?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];
@@ -22,7 +24,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.escoje.value) == null ) {   
-                alert("Por Favor, escoje como quieres agregar artículos!")   
+                alert("Por Favor, escoje como quieres agregar artï¿½culos!")   
                 return false   
         }            
 }   
@@ -72,7 +74,7 @@ $totalCredito+=$Cost;
 
 if($totalCredito<$creditoTope){
 echo '<br>';
-echo "El Paciente tiene un crédito disponible de: "."$".number_format($creditoTope-$totalCredito,2)." y un acumulado de "."$".number_format($totalCredito,2).", de un crédito de "."$".number_format($creditoTope,2);
+echo "El Paciente tiene un crï¿½dito disponible de: "."$".number_format($creditoTope-$totalCredito,2)." y un acumulado de "."$".number_format($totalCredito,2).", de un crï¿½dito de "."$".number_format($creditoTope,2);
 $cumpleRequisitos="si";
 } else {
 $cumpleRequisitos="no";
@@ -489,7 +491,7 @@ $um=$myrow12['um'];
     <p align="center"><?php 
 	
 	if($co){
-	echo "Se encontraron $bandera artículos..";
+	echo "Se encontraron $bandera artï¿½culos..";
 	}
 	?>&nbsp;</p>
     <p align="center">

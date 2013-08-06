@@ -1,11 +1,12 @@
 <?php 
+require('/Constantes.php');
 	// ---------------------------------------------------------------- // 
 	// DATABASE CONNECTION PARAMETER 									// 
 	// ---------------------------------------------------------------- // 
 	// Modify config.php with your DB connection parameters or add them //
 	// directly below insted of include('config.php'); 					//
 	
-	include('/configuracion/ventanasEmergentes.php'); 
+	include(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); 
 	
 	
 	// ---------------------------------------------------------------- // 

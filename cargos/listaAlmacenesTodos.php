@@ -1,4 +1,6 @@
-<?PHP require("/configuracion/ventanasEmergentes.php"); 
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); 
 
 if($_GET['tipoVenta']=='activado' and !$_POST['opcion']){
     $_POST['opcion']='tipoVenta';
