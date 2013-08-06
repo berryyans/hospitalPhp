@@ -1,10 +1,12 @@
-<?php class despliegaCitasDepartamentos{
+<?php 
+require('/Constantes.php');
+class despliegaCitasDepartamentos{
 public function despliegaCitas($entidad,$ventana,$fecha1,$hora1,$almacen,$basedatos){ 
 $almacenDestino=$almacen;
 $forma=$_GET['forma'];
 $campoDespliega=$_GET['campoDespliega'];
 $campoDespliegaFecha=$_GET['campoDespliegaFecha'];
-require("/configuracion/componentes/comboAlmacen.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 
 
 	
@@ -12,13 +14,13 @@ require("/configuracion/componentes/comboAlmacen.php");
 <script src="/sima/js/jquery.js" type="text/javascript"></script>
 <!-Hoja de estilos del calendario --> 
 <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-system.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
   
   
@@ -222,7 +224,7 @@ echo 'Atte: '.$myrow6['usuario'];
     Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
     ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-    button     :    "lanzador"     // el id del botón que lanzará el calendario 
+    button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script>
 

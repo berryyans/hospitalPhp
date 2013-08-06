@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -129,7 +131,7 @@ $code1=$myrow18['codigo'];
 $descripcion=descripcion($code=$code1,$basedatos);
 
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $sSQL17= "Select * From requisiciones WHERE codigo= '".$code1."' and id_almacen='".$_POST['id_almacen']."'";

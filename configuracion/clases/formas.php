@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 
 //clase 1
 
@@ -4175,6 +4176,6 @@ $UserType=new tipoUsuario();
 
 $UserType=$UserType->tipoDeUsuario($usuario,$basedatos,$ALMACEN);
 
- include('../../configuracion/clases/desplegarArticulosSolicitados.php');
+ include(CONSTANT_PATH_CONFIGURACION.'/clases/desplegarArticulosSolicitados.php');
 
  }} ?>

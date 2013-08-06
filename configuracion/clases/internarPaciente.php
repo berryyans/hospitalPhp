@@ -1,9 +1,10 @@
 <?php 
+require('/Constantes.php');
 $NUMEROE=$_GET['numeroE'];
 class internar {
 public function internarPaciente($fecha1,$hora1,$entidad,$ALMACEN,$usuario,$NUMEROE,$basedatos){ 
 if(!$almacen)$almacen=$ALMACEN=$_GET['almacen'];
-require("/configuracion/clases/generaFolioVenta.php");
+require(CONSTANT_PATH_CONFIGURACION."/clases/generaFolioVenta.php");
 ?>
 <script language="javascript" type="text/javascript">   
 
@@ -426,7 +427,7 @@ $estilos->styles();
         <td ><div align="left" >Especialidad</div></td>
         <td ><div align="left">
           <?php 
-include('/configuracion/componentes/comboEspecialidades.php');
+include(CONSTANT_PATH_CONFIGURACION.'/componentes/comboEspecialidades.php');
 $listaEsp=new especialidades();
 $listaEsp->listaEspecialidadesMedicas($entidad,'style12',$myrow['especialidad'],$_POST['especialidad'],$basedatos);
 ?>
@@ -441,7 +442,7 @@ $listaEsp->listaEspecialidadesMedicas($entidad,'style12',$myrow['especialidad'],
       </tr>
       <tr valign="middle"  >
         <td >Departamento</td>
-        <td><?php require("/configuracion/componentes/comboAlmacen.php"); 
+        <td><?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->almacenesCuartos($entidad,'style7',$almacen,$almacenDestino,$basedatos);
 ?></td>

@@ -1,4 +1,6 @@
-<?php $articulo = $_POST['nomArticulo']; ?>
+<?php 
+require('/Constantes.php');
+$articulo = $_POST['nomArticulo']; ?>
 
 
 <?php 
@@ -40,7 +42,7 @@ $estilos->styles();
       <td    scope="col"><div align="left">Almac&eacute;n</div></td>
       <td   scope="col">
         <div align="left">
-          <?php require("../configuracion/componentes/comboAlmacen.php"); 
+          <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style12',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

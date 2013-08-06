@@ -1,4 +1,6 @@
-<?php //traigo agregados
+<?php 
+require('/Constantes.php');
+//traigo agregados
 class eCuentaT{
 
 public function ECUENTA($entidad,$eCuenta,$nT,$basedatos){
@@ -348,7 +350,7 @@ $myrow3 = mysql_fetch_array($result3);
 	<?php
 class muestraInternosUrgencias{
 public function listaInternosUrgencias($ALMACEN,$entidad,$TITULO,$ventana,$basedatos){
-require('/configuracion/clases/listadoPxUrgencias.php');
+require(CONSTANT_PATH_CONFIGURACIO.'/clases/listadoPxUrgencias.php');
 }//cierra funcion
 }//cierra clase 
 ?>  
@@ -357,7 +359,7 @@ require('/configuracion/clases/listadoPxUrgencias.php');
 <?php
 class muestraInternos{
 public function listaInternos($ALMACEN,$entidad,$TITULO,$ventana,$basedatos){
-require('/configuracion/clases/listadoECInternos.php');
+require(CONSTANT_PATH_CONFIGURACION.'/clases/listadoECInternos.php');
 }//cierra funcion
 }//cierra clase 
 ?>
@@ -366,7 +368,7 @@ require('/configuracion/clases/listadoECInternos.php');
 <?php
 class dividirCuentas{
 public function dC($ALMACEN,$entidad,$TITULO,$ventana,$basedatos){
-require('/configuracion/clases/dividirCuentas.php');
+require(CONSTANT_PATH_CONFIGURACION.'/clases/dividirCuentas.php');
 }//cierra funcion
 }//cierra clase 
 ?>
@@ -376,7 +378,7 @@ require('/configuracion/clases/dividirCuentas.php');
 <?php
 class trasladoOtros{
 public function otros($ALMACEN,$entidad,$TITULO,$ventana,$basedatos){
-require('/configuracion/clases/listadoOtros.php');
+require(CONSTANT_PATH_CONFIGURACION.'/clases/listadoOtros.php');
 }//cierra funcion
 }//cierra clase 
 ?>
@@ -386,7 +388,7 @@ require('/configuracion/clases/listadoOtros.php');
 <?php
 class muestraInternosAlta{
 public function listaInternos($ALMACEN,$entidad,$TITULO,$ventana,$basedatos){
-require('/configuracion/clases/cierreCuenta1.php');
+require(CONSTANT_PATH_CONFIGURACION.'/clases/cierreCuenta1.php');
 }//cierra funcion
 }//cierra clase 
 ?>
@@ -405,7 +407,7 @@ require('/configuracion/clases/cierreCuenta1.php');
 <?php
 class muestraInternosCxC{
 public function listaInternosCxC($ALMACEN,$entidad,$TITULO,$ventana,$basedatos){
-require ('/configuracion/clases/listaAplicarCoaseguro.php');
+require (CONSTANT_PATH_CONFIGURACION.'/clases/listaAplicarCoaseguro.php');
 }//cierra funcion
 }//cierra clase 
 ?>
@@ -418,7 +420,7 @@ require ('/configuracion/clases/listaAplicarCoaseguro.php');
 <?php
 class muestraExternosDescuentos{
 public function listaExternosDescuentos($ALMACEN,$entidad,$TITULO,$ventana,$basedatos){
-require ('/configuracion/clases/listaExternosDescuentos.php');
+require (CONSTANT_PATH_CONFIGURACION.'/clases/listaExternosDescuentos.php');
 }//cierra funcion
 }//cierra clase 
 ?>

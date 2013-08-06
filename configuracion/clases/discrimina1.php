@@ -1,7 +1,8 @@
 <?php 
+require('/Constantes.php');
 class eCuentas{
 public function eCuenta($fecha1,$hora1,$dia,$usuario,$nT,$basedatos){
-include("../../configuracion/funciones.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 $cargosParticularesDiscrimina=new  cierraCuenta();
 $cargosAseguradoraDiscrimina=new cierraCuenta();
 $entidad=$_GET['entidad'];
@@ -410,7 +411,7 @@ while($myrow = mysql_fetch_array($result81)){
 $a+=1;
 
 ?>
-    <?php include('../../configuracion/clases/operacionesGlobales.php');?>
+    <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/operacionesGlobales.php');?>
 
     <tr >
       <td height="48" ><?php echo $a;	?></td>
@@ -461,10 +462,10 @@ $a+=1;
     <?php }?>
 
   </table><br />
-  	   <?php include('../../configuracion/clases/mostrarTotalesEC.php');?> <br />
-   <?php include('../../configuracion/clases/mostrarDatosEC.php');?> 
+  	   <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarTotalesEC.php');?> <br />
+   <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarDatosEC.php');?> 
   
-  <p><?php  include('../../configuracion/clases/mostrarEfectuarTransacciones.php');?></p>
+  <p><?php  include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarEfectuarTransacciones.php');?></p>
   <p>
 
 

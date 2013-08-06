@@ -1,4 +1,6 @@
-<?php require('../configuracion/funciones.php');
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 if($_POST['cargos']){ //validacion de vigencia de credenciales
 

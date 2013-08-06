@@ -15,6 +15,7 @@ function ventanaSecundaria111 (URL){
 <head>
 
 <?php
+require('/Constantes.php');
 $estilos=new muestraEstilos();
 $estilos->styles();
 ?>
@@ -22,7 +23,7 @@ $estilos->styles();
 </head>
 
 <body>
-<?php require("/configuracion/funciones.php");//ventanasPrototype::links();
+<?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php");//ventanasPrototype::links();
 
 $sSQL2= "Select transacciones From almacenes WHERE almacen = '".$ALMACEN."' ";
 $result2=mysql_db_query($basedatos,$sSQL2);

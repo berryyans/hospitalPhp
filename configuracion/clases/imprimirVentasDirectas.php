@@ -1,4 +1,6 @@
-<?php include('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php 
+require('/Constantes.php');
+include('/var/www/html/sima/js/pdf/fpdf_js.php');
 
 
 

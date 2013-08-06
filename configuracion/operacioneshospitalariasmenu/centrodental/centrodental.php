@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php 
 $ALMACEN='HCDM';
 
@@ -98,7 +100,7 @@ $resScript=mysql_db_query($basedatos,$checaModuloScript);
 $resulScripModulo = mysql_fetch_array($resScript);
 echo mysql_error();
 if($resulScripModulo['usuario']){ ?>
-stm_aix("p2i1","p1i2",[0," Venta al Público","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/centrodental/encabezadoAmbulatorio.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],130,22);
+stm_aix("p2i1","p1i2",[0," Venta al Pï¿½blico","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/centrodental/encabezadoAmbulatorio.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],130,22);
 <?php } ?>
 
 
@@ -184,7 +186,7 @@ $resScript=mysql_db_query($basedatos,$checaModuloScript);
 $resulScripModulo = mysql_fetch_array($resScript);
 echo mysql_error();
 if($resulScripModulo['usuario']){ ?>
-stm_aix("p8i1","p1i4",[0," Catálogo de Reportes","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/laboratorio/Reportes/catalogoReportes.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
+stm_aix("p8i1","p1i4",[0," Catï¿½logo de Reportes","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/laboratorio/Reportes/catalogoReportes.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
 <?php $sec='si';} else { $sec='no';} ?>
 
 <?php 
@@ -197,7 +199,7 @@ $resScript=mysql_db_query($basedatos,$checaModuloScript);
 $resulScripModulo = mysql_fetch_array($resScript);
 echo mysql_error();
 if($resulScripModulo['usuario']){ ?>
-stm_aix("p8i2","p1i5",[0," Relación Estudio<->Reportes","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/laboratorio/Reportes/RelArticReportRut.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
+stm_aix("p8i2","p1i5",[0," Relaciï¿½n Estudio<->Reportes","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/laboratorio/Reportes/RelArticReportRut.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
 <?php $sec='si';} else { $sec='no';} ?>
 stm_ep();
 <?php $sec='si';} else { $sec='no';} ?>
@@ -342,7 +344,7 @@ stm_aix("p0i8","p0i4",[0,"SALIR","","",-1,-1,0,"","_self","","","/sima/imagenes/
 stm_bpx("p10","p2",[1,4,0,3,0,4,5,0,100,"",-2,"",-2,48,2,3,"#999999","transparent","",0,0,0,"#333333"]);
 stm_aix("p10i0","p1i0",[6,1,"#50647f","",-1,-1,0]);
 
-stm_aix("p10i1","p6i0",[0," Menú principal","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/index.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
+stm_aix("p10i1","p6i0",[0," Menï¿½ principal","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/index.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
 
 
 

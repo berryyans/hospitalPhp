@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class consultaMedicosPrecios{
 public function consultarPrecios($almacen,$entidad,$basedatos){
 ?>
@@ -73,7 +74,7 @@ $estilos->styles();
         <td width="31"  scope="col"><label></label></td>
         <td width="103"  scope="col"><div align="left">Departamento</div></td>
         <td width="347"  scope="col"><div align="left">
-          <?php require("/configuracion/componentes/comboAlmacen.php"); 
+          <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

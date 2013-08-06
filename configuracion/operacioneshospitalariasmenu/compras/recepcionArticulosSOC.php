@@ -1,4 +1,6 @@
-<?php include("/configuracion/operacioneshospitalariasmenu/compras/menucompras.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/compras/menucompras.php"); ?>
 
 
 <SCRIPT LANGUAGE="JavaScript">
@@ -6,7 +8,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -203,7 +205,7 @@ setTimeout("jump0()",50)}}
 
 <script language="JavaScript1.2">
 
-//Highlight form element- © Dynamic Drive (www.dynamicdrive.com)
+//Highlight form element- ï¿½ Dynamic Drive (www.dynamicdrive.com)
 //For full source code, 100's more DHTML scripts, and TOS,
 //visit http://www.dynamicdrive.com
 
@@ -383,7 +385,7 @@ $TAMANO_PAGINA = 30;
 } else {
 $TAMANO_PAGINA=$_GET['registros'];
 }
-//examino la página a mostrar y el inicio del registro a mostrar
+//examino la pï¿½gina a mostrar y el inicio del registro a mostrar
 $pagina = $_GET["pagina"];
 if (!$pagina) {
 		$inicio = 0;
@@ -393,9 +395,9 @@ else {
 	$inicio = ($pagina - 1) * $TAMANO_PAGINA;
 }
 
-//miro a ver el número total de campos que hay en la tabla con esa búsqueda
+//miro a ver el nï¿½mero total de campos que hay en la tabla con esa bï¿½squeda
 
-//calculo el total de páginas
+//calculo el total de pï¿½ginas
 $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
 
 if($_GET['criterio']){
@@ -619,10 +621,10 @@ $myrow39d = mysql_fetch_array($result39d);
 <div align="center" class="normal"><?php
 
 
-//pongo el número de registros total, el tamaño de página y la página que se muestra
-echo "Número de registros encontrados: " . $num_total_registros . "<br>";
-echo "Se muestran páginas de " . $TAMANO_PAGINA . " registros cada una<br>";
-echo "Mostrando la página " . $pagina . " de " . $total_paginas . "<p>";
+//pongo el nï¿½mero de registros total, el tamaï¿½o de pï¿½gina y la pï¿½gina que se muestra
+echo "Nï¿½mero de registros encontrados: " . $num_total_registros . "<br>";
+echo "Se muestran pï¿½ginas de " . $TAMANO_PAGINA . " registros cada una<br>";
+echo "Mostrando la pï¿½gina " . $pagina . " de " . $total_paginas . "<p>";
 
 
 //construyo la sentencia SQL
@@ -636,23 +638,23 @@ $rs = mysql_query($ssql);
 	echo $fila->descripcion . "<br>";
 } */
 
-//cerramos el conjunto de resultados y la conexión con la base de datos
+//cerramos el conjunto de resultados y la conexiï¿½n con la base de datos
 /* mysql_free_result($rs);
 mysql_close($conn); 
  */
 //echo "<p>";
 
-//muestro los distintos índices de las páginas, si es que hay varias páginas
+//muestro los distintos ï¿½ndices de las pï¿½ginas, si es que hay varias pï¿½ginas
 //echo $res=$i/$total_paginas;
 $palabrasABC=32;
 
 if ($total_paginas > 1){
 	for ($i=1;$i<=$total_paginas;$i++){
 		if ($pagina == $i) 
-			//si muestro el índice de la página actual, no coloco enlace
+			//si muestro el ï¿½ndice de la pï¿½gina actual, no coloco enlace
 			echo $pagina . "  ";
 		else
-			//si el índice no corresponde con la página mostrada actualmente, coloco el enlace para ir a esa página
+			//si el ï¿½ndice no corresponde con la pï¿½gina mostrada actualmente, coloco el enlace para ir a esa pï¿½gina
 			echo "<a href='recepcionArticulosSOC.php?zombie=yes&pagina=" . $i . "&criterio=" . $txt_criterio . "&registros=" . $_GET['registros'] . "'>" . $i . "</a> ";
 	}
 }

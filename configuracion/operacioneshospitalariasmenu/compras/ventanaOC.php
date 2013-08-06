@@ -1,4 +1,6 @@
-<?php require('/configuracion/ventanasEmergentes.php'); include('/configuracion/funciones.php');?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); include(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 
 
 <?php  
@@ -40,7 +42,7 @@ $agregaSaldo = "INSERT INTO OC ( codigo,id_almacen,usuario,fecha,hora,ID_EJERCIC
 '".$_POST['prioridad']."','comprar','".$_POST['proveedor']."','".$entidad."','".$_POST['proveedor1']."','".$_POST['descripcion']."','".$_POST['precioUnitario']."')";
 mysql_db_query($basedatos,$agregaSaldo);
 echo mysql_error();
-print 'SE GENERO # de requisición'.$myrow333['req'];
+print 'SE GENERO # de requisiciï¿½n'.$myrow333['req'];
 
 
 

@@ -1,4 +1,6 @@
-<?php class estadoCuentas{ 
+<?php
+require('/Constantes.php');
+class estadoCuentas{ 
 public function eCCI($usuario,$entidad,$folioVenta,$basedatos){
 
 
@@ -239,10 +241,10 @@ $link->links();
 $estilo=new muestraEstilos();
 $estilo->styles();
 ?>
-    <?php include('../../configuracion/clases/encabezado.php');?>
+    <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/encabezado.php');?>
 
-  <?php include('../../configuracion/clases/mostrarDatosCuenta.php');?>
-  <?php include('../../configuracion/clases/mostrarEfectuarTransacciones.php');?>
+  <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarDatosCuenta.php');?>
+  <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarEfectuarTransacciones.php');?>
 </html>
 
 <?php } ?>

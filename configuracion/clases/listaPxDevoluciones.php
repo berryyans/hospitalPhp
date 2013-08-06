@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class listadoPacientesInternos{
 public function listadoPI($entidad,$bali,$basedatos){
 ?>
@@ -11,7 +12,7 @@ public function listadoPI($entidad,$bali,$basedatos){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -59,7 +60,7 @@ function ventanaSecundaria (URL){
 <META HTTP-EQUIV="Refresh"
 CONTENT="30"> 
 <body>
-<?php require("/configuracion/funciones.php");//ventanasPrototype::links();?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php");//ventanasPrototype::links();?>
 <form id="form1" name="form1" method="post" action="#">
   <h1 align="center">Hacer Devoluciones </h1>
   <span class="style12"></span>
@@ -112,7 +113,7 @@ $myrow31 = mysql_fetch_array($result31);
       <td width="396" bgcolor="<?php echo $color?>" class="style12"><span class="style7"> 
 		  <?php echo $myrow['paciente'];
 	  if($myrow['status']=='ontransfer'){
-	  echo '   [Se solicitó la transferencia de éste paciente]';
+	  echo '   [Se solicitï¿½ la transferencia de ï¿½ste paciente]';
 	  }
 if(	  $almacenesCierreCuenta->almacenesCierreCuenta($bali,$fecha1,$hora1,$usuario,$myrow['keyClientesInternos'],$entidad,$numeroE,$nCuenta,$basedatos)=='cargado'){
 echo '<span class="style9">'.' [La Cuenta en este departamento ha sido Liberada]'.'</span>';

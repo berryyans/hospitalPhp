@@ -1,4 +1,6 @@
 <?php 
+require('/Constantes.php');
+
 if($_GET['almacen']){
 $ALMACEN=$_GET['almacen'];
 } else {
@@ -22,13 +24,13 @@ function ventanaSecundaria3 (URL){
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="calendar-green.css" title="win2k-cold-1" /> 
 
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="calendar-setup.js"></script> 
 
 
@@ -76,7 +78,7 @@ function ventanaSecundaria6 (URL){
 
 
 
- <?php include("/configuracion/funciones.php"); ?>
+ <?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 <?php 
 $convenios= new validaConvenios();

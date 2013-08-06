@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class muestraInternos{
 public function listaInternos($entidad,$TITULO,$ventana,$basedatos){
 ?>
@@ -44,7 +45,7 @@ width: 250px; /*width of tooltip*/
 <META HTTP-EQUIV="Refresh"
 CONTENT="60"> 
 <body>
-<?php require("/configuracion/funciones.php");ventanasPrototype::links();?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php");ventanasPrototype::links();?>
 <form id="form1" name="form1" method="get" action="#">
   <h1 align="center"> <?php echo $TITULO; ?></h1>
   <table width="707" border="0.2" align="center">

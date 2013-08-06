@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 
 //clase 1
 
@@ -1885,7 +1886,7 @@ $myrow10a = mysql_fetch_array($result10a);
 
       <td bgcolor="#CCCCCC"><span class="normalmid">
 
-        <?php require("/configuracion/componentes/comboAlmacen.php"); 
+        <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 
 
 
@@ -3359,6 +3360,6 @@ $UserType=new tipoUsuario();
 
 $UserType=$UserType->tipoDeUsuario($usuario,$basedatos,$ALMACEN);
 
- include('/configuracion/clases/desplegarArticulosSolicitados.php');
+ include(CONSTANT_PATH_CONFIGURACION.'/clases/desplegarArticulosSolicitados.php');
 
  }} ?>

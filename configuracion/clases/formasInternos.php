@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 //clase 3
 class solicitar{
 public function solicitaArticulos($entidad,$almacenSolicitante,$ID_EJERCICIOM,$dia,$fecha1,$hora1,$usuario,$numeroPaciente,$seguro,$credencial,$medico,$almacenSolicitante,$nCuenta,$tipoCargo,$almacenDestino,$tipoPaciente,$basedatos){
@@ -933,7 +934,7 @@ $myrow31a = mysql_fetch_array($result31a);
      
       
       
-      <td ><?php require("../../configuracion/componentes/comboAlmacen.php"); 
+      <td ><?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenAAV($entidad,'select',$almacenSolicitante,$almacenDestino,$basedatos);
 ?></td>

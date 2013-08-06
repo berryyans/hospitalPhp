@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 if($_GET['almacen']){
 $ALMACEN=$_GET['almacen'];
 } else {
@@ -79,7 +80,7 @@ function ventanaSecundaria6 (URL){
 
 
 
-<?php include("/configuracion/funciones.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php 
 
 

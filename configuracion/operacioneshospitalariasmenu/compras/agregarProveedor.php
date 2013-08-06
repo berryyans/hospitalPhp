@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 
 
 <script language=javascript> 
@@ -25,7 +27,7 @@ function valida(F) {
                 alert("Te falta asignar la existencia  a este articulo!")   
                 return false   
         }   else if( vacio(F.cantidades.value) == false ) {   
-                alert("Escoje tu transacción, si es entrada o salida!")   
+                alert("Escoje tu transacciï¿½n, si es entrada o salida!")   
                 return false   
         }            
 }   
@@ -40,7 +42,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -163,7 +165,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
         </select>
       <?php 
 	  if($myrow18['cantidad']){
-	  echo "Este almacén está solicitando ".$myrow18['cantidad']." artículos";
+	  echo "Este almacï¿½n estï¿½ solicitando ".$myrow18['cantidad']." artï¿½culos";
 	  }
 	  ?>
 	  </label></td>

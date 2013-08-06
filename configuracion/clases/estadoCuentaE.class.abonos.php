@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class eCuentasE{
 public function eCuentaE($mostrar,$usuario,$entidad,$almacen,$fecha1,$hora1,$dia,$usu,$nT,$basedatos){
 $folioVenta=$_GET['folioVenta'];
@@ -219,11 +220,11 @@ if($myrow3['statusCuenta']=='cerrada' and $myrow3['status']=='cerrada'){
 
 
 
-  <?php include('/configuracion/clases/encabezado.php');?>
-  <?php include('/configuracion/clases/mostrarDatosCuenta.php');?>
-      <?php include('/configuracion/clases/mostrarDatosEC.php');?> 
-  <?php include('/configuracion/clases/hacerAbonosSlide.php');?>
-	       <?php include('/configuracion/clases/mostrarEfectuarTransacciones.php');?>
+  <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/encabezado.php');?>
+  <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarDatosCuenta.php');?>
+      <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarDatosEC.php');?> 
+  <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/hacerAbonosSlide.php');?>
+	       <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarEfectuarTransacciones.php');?>
 </body>
 </html>
 <?php } ?>

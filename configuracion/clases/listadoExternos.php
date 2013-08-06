@@ -1,4 +1,6 @@
-<?php require('/configuracion/clases/listadoExternos.php');?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/clases/listadoExternos.php');?>
 <table width="864" border="0.2" align="center">
   <tr>
     <th width="74" bgcolor="#660066" class="blanco" scope="col"><div align="left">Referencia</div></th>

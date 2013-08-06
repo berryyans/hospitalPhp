@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class solicitudesAlmacenes{
 public function despliegaSolicitudes($entidad,$titulo,$bali,$basedatos){
 
@@ -13,7 +14,7 @@ public function despliegaSolicitudes($entidad,$titulo,$bali,$basedatos){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -55,7 +56,7 @@ CONTENT="30">
 
 
 
- <?php require("/configuracion/componentes/comboAlmacen.php"); ?>
+ <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); ?>
 <form id="form1" name="form1" method="post" action="#">
   <h1 align="center" class="titulos"><?php echo $titulo;?></h1>
   <p align="center">&nbsp;<em>Escoje el MiniAlmac&eacute;n a Surtir</em>    <?php 

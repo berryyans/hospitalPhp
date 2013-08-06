@@ -1,5 +1,7 @@
-<?php include("/configuracion/operacioneshospitalariasmenu/compras/menucompras.php"); ?>
-<?php  include('/configuracion/funciones.php');?>
+<?php
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/compras/menucompras.php"); ?>
+<?php  include(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 
 <?php 
 if($_POST['send'] and !$_POST['modifica']){

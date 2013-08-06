@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); $ALMACEN='HADM';?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); $ALMACEN='HADM';?>
 <style type="text/css">
 <!--
 body {

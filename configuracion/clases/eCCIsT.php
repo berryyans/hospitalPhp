@@ -1,4 +1,6 @@
-<?php class estadoCuentas{ 
+<?php 
+require('/Constantes.php');
+class estadoCuentas{ 
 public function eCCI($mostrar,$usuario,$entidad,$folioVenta,$basedatos){
 
 
@@ -204,10 +206,10 @@ if($myrow3['statusCuenta']=='cerrada' and $myrow3['status']=='cerrada'){
 <html xmlns="http://www.w3.org/1999/xhtml">
 
   <p align="center">
-    <?php require('/configuracion/clases/encabezado.php');?>
-  <?php require('/configuracion/clases/mostrarDatosCuenta.php');?>
-    <?php require('/configuracion/clases/mostrarDatosEC.php');?>
-   <?php require('/configuracion/clases/mostrarEfectuarTransacciones.php');?> 
+    <?php require(CONSTANT_PATH_CONFIGURACION.'/clases/encabezado.php');?>
+  <?php require(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarDatosCuenta.php');?>
+    <?php require(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarDatosEC.php');?>
+   <?php require(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarEfectuarTransacciones.php');?> 
 
 </p>
 

@@ -1,4 +1,6 @@
-<?php include('/configuracion/ventanasEmergentes.php');?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');?>
 <?php 
 
 if(!$_POST['id_proveedor2']){

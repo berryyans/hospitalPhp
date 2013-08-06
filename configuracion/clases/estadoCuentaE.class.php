@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class eCuentasE{
 public function eCuentaE($descripcionTransaccion,$mostrar,$usuario,$entidad,$almacen,$fecha1,$hora1,$dia,$usu,$nT,$basedatos){
 
@@ -368,7 +369,7 @@ $texto='FOLIO(s) FACTURADOS..';
     $myrowT = mysql_fetch_array($resultT);
     $ticket= $myrowT['topeMaximo'];
     $tipoFacturacion='Auto';
-    require("/configuracion/clases/generarFacturaElectronica.php");    
+    require(CONSTANT_PATH_CONFIGURACION."/clases/generarFacturaElectronica.php");    
     
     
     
@@ -839,7 +840,7 @@ $texto='FOLIO(s) FACTURADOS..';
     $myrowT = mysql_fetch_array($resultT);
     $ticket= $myrowT['topeMaximo'];
     $tipoFacturacion='Auto';
-    require("/configuracion/clases/generarFacturaElectronica.php");    
+    require(CONSTANT_PATH_CONFIGURACION."/clases/generarFacturaElectronica.php");    
     
     
     

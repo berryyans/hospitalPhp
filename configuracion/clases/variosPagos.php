@@ -1,4 +1,6 @@
-<?PHP class variosPagos{ 
+<?PHP 
+require('/Constantes.php');
+class variosPagos{ 
 public function pagosDiversos($usuario,$fecha1,$hora1,$TITULO,$entidad,$almacen,$basedatos){
  ?>
 
@@ -9,8 +11,8 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
-		alert("Sólo Se aceptan Números!")
+        status = "Este campo sï¿½lo acepta nï¿½meros."
+		alert("Sï¿½lo Se aceptan Nï¿½meros!")
         return false
 		
     }
@@ -38,7 +40,7 @@ function ventanaSecundaria1 (URL){
 
 <?php
 
-include("/configuracion/funciones.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 //************************ACTUALIZO **********************
 $ALMACEN=$_GET['almacen'];
 
@@ -158,7 +160,7 @@ echo mysql_error();
 print  '<script type="text/vbscript">
 msgbox "SE AGREGO UN MOVIMIENTO!" 
 </script>'; 
-echo $leyenda= "Se Agregó un movimiento!";
+echo $leyenda= "Se Agregï¿½ un movimiento!";
 //**************ACTUALIZA STATUS DE PAQUETE****
 $actualiza = "UPDATE articulosPaquetesPacientes
 set

@@ -6,7 +6,9 @@ function ventanaSecundaria10 (URL){
 </script>
 <div align="center">
 <span >Opciones de Grupo de Producto: </br></span>
-      <?php   $sSQL7= "Select gpoProducto From cargosCuentaPaciente
+      <?php   
+      require('/Constantes.php');
+      $sSQL7= "Select gpoProducto From cargosCuentaPaciente
           where entidad='".$entidad."'
              and
              folioVenta='".$_GET['folioVenta']."'
@@ -312,7 +314,7 @@ echo '$'.number_format(($myrow['cantidadAseguradora']*$myrow['cantidad'])+($myro
 </div></td>
 </tr> 
 
-<?php require('../../configuracion/clases/operacionesGlobales.php');?>
+<?php require(CONSTANT_PATH_CONFIGURACION.'/clases/operacionesGlobales.php');?>
 
     <?php  }}?>
     <input name="menu" type="hidden" value="<?php echo $menu;?>" />
@@ -333,7 +335,7 @@ echo '$'.number_format(($myrow['cantidadAseguradora']*$myrow['cantidad'])+($myro
   
   
   <p>
- <?php require('../../configuracion/clases/mostrarTotalesEC.php');?> 
+ <?php require(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarTotalesEC.php');?> 
   </p>
   
   

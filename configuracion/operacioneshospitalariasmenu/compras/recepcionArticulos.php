@@ -1,5 +1,7 @@
-<?php include("/configuracion/operacioneshospitalariasmenu/compras/menucompras.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/compras/menucompras.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <script language=javascript> 
@@ -12,7 +14,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -147,7 +149,7 @@ $code1=$myrow18['codigo'];
 $descripcion=descripcion($code=$code1,$basedatos);
 
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $a=$myrow18['id_almacen'];

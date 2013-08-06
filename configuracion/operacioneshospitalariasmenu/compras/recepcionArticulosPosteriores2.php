@@ -1,5 +1,7 @@
-<?php include("/configuracion/operacioneshospitalariasmenu/compras/menucompras.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/compras/menucompras.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -11,7 +13,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -115,7 +117,7 @@ echo mysql_error();
 }
 
 }
-//$leyenda="Se agregaron artículos posteriores";
+//$leyenda="Se agregaron artï¿½culos posteriores";
 }
 
 $_POST['existencias']="";
@@ -320,7 +322,7 @@ $requisicion=$myrow18['id_requisicion'];
 $id_almacen=$myrow18['id_almacen'];
 $id_proveedor=$myrow18['id_proveedor'];
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $sSQL17= "Select * From proveedores WHERE id_proveedor='".$id_proveedor."'";
@@ -569,7 +571,7 @@ $Total=$subtotal[0]+$sumaIVA[0];
 	} else {
 		echo 'disabled="disabled"';
 	}
-	?> onClick="if(confirm('Esta seguro de enviar al cendis estos artículos? La operación es irreversible...') == false){return false;}" disabled="disabled"></th>
+	?> onClick="if(confirm('Esta seguro de enviar al cendis estos artï¿½culos? La operaciï¿½n es irreversible...') == false){return false;}" disabled="disabled"></th>
 	
       <th scope="col">
 	  
@@ -592,7 +594,7 @@ $myrow12 = mysql_fetch_array($result12);
 	  if($myrow12['articulosPosteriores']){
 	 echo 'disabled="disabled"';
 	  } ?>
-		onClick="if(confirm('Deseas continuar? La operación es irreversible...') == false){return false;}"/>
+		onClick="if(confirm('Deseas continuar? La operaciï¿½n es irreversible...') == false){return false;}"/>
       </label></th>
     </tr>
   </table>

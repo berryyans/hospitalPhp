@@ -29,7 +29,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.observaciones.value) == false ) {   
-                alert("Por Favor, escribe las observaciones del diagnóstico!")   
+                alert("Por Favor, escribe las observaciones del diagnï¿½stico!")   
                 return false   
         } else if( vacio(F.receta.value) == false ) {   
                 alert("Por Favor, escribe la receta!")   
@@ -86,7 +86,7 @@ $devuelvePlaca->devuelvePlacaRX($numeroE,$nCuenta,$keyCAP,$basedatos);
 
   <p>&nbsp;</p>
 <?php 
-include("/configuracion/clases/diagnosticos.php");
+include(CONSTANT_PATH_CONFIGURACION."/clases/diagnosticos.php");
 $diagnostico=new diagnostico();
 $diagnostico->diagnosticos($ruta,$seguro,$numeroE,$keyCAP,$usuario,$hora1,$fecha1,$basedatos);
 ?>

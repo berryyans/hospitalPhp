@@ -1,4 +1,6 @@
-<?php include("/configuracion/operacioneshospitalariasmenu/urgencias/urgencias.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/urgencias/urgencias.php"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
@@ -8,7 +10,7 @@
 <script type="text/javascript">
 
 /***********************************************
-* Dynamic Ajax Content- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Dynamic Ajax Content- ï¿½ Dynamic Drive DHTML code library (www.dynamicdrive.com)
 * This notice MUST stay intact for legal use
 * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
 ***********************************************/
@@ -124,14 +126,14 @@ $ventana11='/sima/cargos/listadoPacientes.php';
 </p>
 <p>&nbsp; </p>
 <div id="leftcolumn">
-<a href="javascript:ajaxpage('/sima/OPERACIONESHOSPITALARIAS/urgencias/ventaPublico.php?cargos=si&almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Venta al Público</a>
+<a href="javascript:ajaxpage('/sima/OPERACIONESHOSPITALARIAS/urgencias/ventaPublico.php?cargos=si&almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Venta al Pï¿½blico</a>
 <a href="javascript:ajaxpage('/sima/OPERACIONESHOSPITALARIAS/urgencias/ventaPublico.php?paquetes=si&almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Cargar Paquetes</a>
 <a href="javascript:ajaxpage('/sima/cargos/listadoPacientes.php?almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Listado de Pacientes</a>
 
 
 </div>
 
-<div id="rightcolumn"><h3>Menú de Pacientes Externos</h3></div>
+<div id="rightcolumn"><h3>Menï¿½ de Pacientes Externos</h3></div>
 <div style="clear: left; margin-bottom: 1em"></div>
 
 </body>

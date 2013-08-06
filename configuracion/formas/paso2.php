@@ -1,5 +1,6 @@
 <?php 
-require('/configuracion/funciones.php');
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 if($_POST['cargos']){ //validacion de vigencia de credenciales
 if($_POST['eFisico']){
@@ -33,7 +34,7 @@ $re1=mysql_db_query($basedatos,$sSQL45z1);
 $si1 = mysql_fetch_array($re1)
 ?>
 <script>
-window.alert("La credencial: #<?php echo $si1['keyCredencial'];?> expiró en: <?php echo cambia_a_normal($si1['fechaFinal']);?>, por lo cual está bloqueada o cancelada..!");
+window.alert("La credencial: #<?php echo $si1['keyCredencial'];?> expirï¿½ en: <?php echo cambia_a_normal($si1['fechaFinal']);?>, por lo cual estï¿½ bloqueada o cancelada..!");
 window.close();
 </script>
 <?php }
@@ -64,13 +65,13 @@ function ventanaSecundaria3 (URL){
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="calendar-green.css" title="win2k-cold-1" /> 
 
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="calendar-setup.js"></script> 
 
 
@@ -482,7 +483,7 @@ $myrow4c = mysql_fetch_array($result4c);
   //var e = e || window.event;
      
     //if (e) {
-    //e.returnValue = "No has llenado datos correctamente, ¿estas seguro que deseas salir?";
+    //e.returnValue = "No has llenado datos correctamente, ï¿½estas seguro que deseas salir?";
 	//}
 
 //}

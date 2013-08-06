@@ -1,13 +1,15 @@
-<?PHP class variosPagos{ 
+<?PHP 
+require('/Constantes.php');
+class variosPagos{ 
 public function pagosDiversos($usuario,$fecha1,$hora1,$TITULO,$entidad,$almacen,$basedatos){
  ?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -44,8 +46,8 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
-		alert("Sólo Se aceptan Números!")
+        status = "Este campo sï¿½lo acepta nï¿½meros."
+		alert("Sï¿½lo Se aceptan Nï¿½meros!")
         return false
 		
     }
@@ -109,7 +111,7 @@ $almacen==$_GET['almacen'];
 if(!$_GET['nT']){
 $_GET['nT']=$_POST['nT'];
 }
-include("/configuracion/funciones.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 //************************ACTUALIZO **********************
 
 
@@ -195,7 +197,7 @@ echo mysql_error();
 print  '<script type="text/vbscript">
 msgbox "SE AGREGO UN CARGO!" 
 </script>'; 
-echo $leyenda= "Se Agregó un cargo!";
+echo $leyenda= "Se Agregï¿½ un cargo!";
 /* echo '<script language="JavaScript" type="text/javascript">
   <!--
     opener.location.reload(true);

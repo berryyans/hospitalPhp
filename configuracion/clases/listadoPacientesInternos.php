@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class listadoPacientesInternos{
 public function listadoPI($entidad,$bali,$basedatos){
 ?>
@@ -52,7 +53,7 @@ $estilos-> styles();
 <META HTTP-EQUIV="Refresh"
 CONTENT="30"> 
 <body>
-<?php require("../configuracion/funciones.php");//ventanasPrototype::links();?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php");//ventanasPrototype::links();?>
 <form id="form1" name="form1" method="post" action="#">
   <h1 align="center" class="titulos">Cargos a  Pacientes Internos </h1>
  

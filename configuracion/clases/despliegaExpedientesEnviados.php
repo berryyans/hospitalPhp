@@ -1,10 +1,12 @@
-<?php class despliegaExpedientesPendientes{
+<?php 
+require('/Constantes.php');
+class despliegaExpedientesPendientes{
 public function despliegaExpedientesEnviados($entidad,$ventana,$fecha1,$hora1,$almacen,$basedatos){ 
 $almacenDestino=$almacen;
 $forma=$_GET['forma'];
 $campoDespliega=$_GET['campoDespliega'];
 $campoDespliegaFecha=$_GET['campoDespliegaFecha'];
-require("../configuracion/componentes/comboAlmacen.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 ?>
 
 <!-Hoja de estilos del calendario --> 

@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class muestraInternos{
 public function listaInternos($estado,$fecha1,$hora1,$usuario,$ALMACEN,$entidad,$TITULO,$ventana,$basedatos){
 
@@ -88,7 +89,7 @@ $estilos-> styles();
 <META HTTP-EQUIV="Refresh"
 CONTENT="60"> 
 <body>
-<?php require("/configuracion/funciones.php");//ventanasPrototype::links();?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php");//ventanasPrototype::links();?>
 <form id="form1" name="form1" method="get" action="#">
   <h1 align="center" class="titulos"> <?php echo $TITULO; ?></h1>
   <table width="739" border="0.2" align="center">
@@ -309,7 +310,7 @@ public function listaExternos($entidad,$TITULO,$fecha1,$ventana,$basedatos){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
