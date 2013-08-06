@@ -1,11 +1,13 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
 <SCRIPT LANGUAGE="JavaScript">
 function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
-		alert("Sólo Se aceptan Números!")
+        status = "Este campo sï¿½lo acepta nï¿½meros."
+		alert("Sï¿½lo Se aceptan Nï¿½meros!")
         return false
     }
     status = ""
@@ -15,10 +17,10 @@ function checkIt(evt) {
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -42,7 +44,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.nomArticulo.value) == false  && vacio(F.porCodigo.value) == false) {   
-                alert("Escoje algún artículo a buscar!")   
+                alert("Escoje algï¿½n artï¿½culo a buscar!")   
                 return false   
         } 
            

@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php include('/configuracion/clases/validaModulos.php'); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION.'/clases/validaModulos.php'); ?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -18,7 +20,7 @@ function valida(F) {
                 alert("Por Favor, escoje el id_LF/departamento!")   
                 return false   
         } else if( vacio(F.descripcionLF.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este id_LF!")   
+                alert("Por Favor, escribe la descripciï¿½n de este id_LF!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   

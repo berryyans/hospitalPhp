@@ -1,5 +1,7 @@
-<?PHP require("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php require('/configuracion/clases/validaModulos.php'); ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php require(CONSTANT_PATH_CONFIGURACION.'/clases/validaModulos.php'); ?>
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
