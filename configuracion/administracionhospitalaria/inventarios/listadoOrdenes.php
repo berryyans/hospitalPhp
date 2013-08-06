@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
-<?php include("/configuracion/funciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
@@ -11,7 +13,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -162,7 +164,7 @@ $descripcion=descripcion($code=$code1,$basedatos);
 $requisicion=$myrow18['id_requisicion'];
 $id_almacen=$myrow18['id_almacen'];
 if(!$descripcion){
-$descripcion="No existen estos artículos o están inactivos";
+$descripcion="No existen estos artï¿½culos o estï¿½n inactivos";
 }
 
 $sSQL17= "Select * From OC WHERE codigo= '".$code1."' and id_almacen='".$_POST['id_almacen']."'";

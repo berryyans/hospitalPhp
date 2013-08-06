@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 
 
 
@@ -74,7 +76,7 @@ $resScript=mysql_db_query($basedatos,$checaModuloScript);
 $resulScripModulo = mysql_fetch_array($resScript);
 echo mysql_error();
 if($resulScripModulo['usuario']){ ?>
-stm_aix("p7i19","p2i2",[0," Catálogo de Médicos","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/medicos/modificaMedicos1.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
+stm_aix("p7i19","p2i2",[0," Catï¿½logo de Mï¿½dicos","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/medicos/modificaMedicos1.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
 <?php } ?>
 
 <?php 
@@ -87,7 +89,7 @@ $resScript=mysql_db_query($basedatos,$checaModuloScript);
 $resulScripModulo = mysql_fetch_array($resScript);
 echo mysql_error();
 if($resulScripModulo['usuario']){ ?>
-stm_aix("p7i19","p2i2",[0," Catálogo de Tipo de Medicos","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/medicos/catalogoTipoMedico.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
+stm_aix("p7i19","p2i2",[0," Catï¿½logo de Tipo de Medicos","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/medicos/catalogoTipoMedico.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
 <?php } ?>
 
 
@@ -103,7 +105,7 @@ $resScript=mysql_db_query($basedatos,$checaModuloScript);
 $resulScripModulo = mysql_fetch_array($resScript);
 echo mysql_error();
 if($resulScripModulo['usuario']){ ?>
-stm_aix("p7i19","p2i2",[0," Catálogo de Especialidades","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/medicos/catalogoEspecialidadesMedicos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
+stm_aix("p7i19","p2i2",[0," Catï¿½logo de Especialidades","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/medicos/catalogoEspecialidadesMedicos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],160,22);
 <?php } ?>
 
 stm_ep();
@@ -175,7 +177,7 @@ $resScript=mysql_db_query($basedatos,$checaModuloScript);
 $resulScripModulo = mysql_fetch_array($resScript);
 echo mysql_error();
 if($resulScripModulo['usuario']){ ?>
-stm_aix("p7i9","p2i2",[0," Listado/Modifica Médicos","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/medicos/listadoMedicos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],138,22);
+stm_aix("p7i9","p2i2",[0," Listado/Modifica Mï¿½dicos","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/medicos/listadoMedicos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],138,22);
 <?php } ?>
 
 
@@ -229,7 +231,7 @@ stm_aix("p0i8","p0i4",[0,"SALIR","","",-1,-1,0,"","_self","","","/sima/imagenes/
 stm_bpx("p10","p2",[1,4,0,3,0,4,5,0,100,"",-2,"",-2,48,2,3,"#999999","transparent","",0,0,0,"#333333"]);
 stm_aix("p10i0","p1i0",[6,1,"#50647f","",-1,-1,0]);
 
-stm_aix("p10i1","p6i0",[0," Menú principal","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
+stm_aix("p10i1","p6i0",[0," Menï¿½ principal","","",-1,-1,0,"/sima/ADMINHOSPITALARIAS/","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
 
 
 stm_aix("p10i2","p2i2",[0," SALIR","","",-1,-1,0,"/sima/salir.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);

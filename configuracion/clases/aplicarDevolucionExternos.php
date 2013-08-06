@@ -1,5 +1,7 @@
-<?php class devE{
-public function devolucionExternos($usuario,$folioVenta,$entidad,$basedatos){ require("/configuracion/clases/generaFolioVenta.php");?>
+<?php 
+require('/Constantes.php');
+class devE{
+public function devolucionExternos($usuario,$folioVenta,$entidad,$basedatos){ require(CONSTANT_PATH_CONFIGURACION."/clases/generaFolioVenta.php");?>
 <script language=javascript> 
 function ventanaSecundaria4 (URL){ 
    window.open(URL,"ventana4","width=800,height=300,scrollbars=YES,resizable=YES, maximizable=YES") 

@@ -2,7 +2,7 @@
 //clase 3
 class aplicarPaquetes{
 public function aplicaPaquete($entidad,$almacenSolicitante,$ID_EJERCICIOM,$dia,$fecha1,$hora1,$usuario,$numeroPaciente,$seguro,$credencial,$medico,$almacenSolicitante,$nCuenta,$tipoCargo,$almacenDestino,$tipoPaciente,$basedatos){
-$almacenPrincipal='HALM';//necesitamos definirlo desde el catálogo de almacenes
+$almacenPrincipal='HALM';//necesitamos definirlo desde el catï¿½logo de almacenes
 ?>
 
 
@@ -14,13 +14,13 @@ function ventanaSecundaria3 (URL){
 
 <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
   
 <script language="javascript" type="text/javascript">   
@@ -41,10 +41,10 @@ function valida(F) {
                 alert("Por Favor, escoje el departamento!")   
                 return false   
         } else if( vacio(F.tipoUM.value) == false ) {   
-                alert("Por Favor, escoje si es un servicio o si son artículos lo que vas a cargar!")   
+                alert("Por Favor, escoje si es un servicio o si son artï¿½culos lo que vas a cargar!")   
                 return false   
         } else if( vacio(F.nomArticulo.value) == false ) {   
-                alert("Por Favor, escoje el artículo o servicio para solicitar!")   
+                alert("Por Favor, escoje el artï¿½culo o servicio para solicitar!")   
                 return false   
         }            
 }   
@@ -58,7 +58,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -134,7 +134,7 @@ $priceLevel=$priceLevel->precioVenta($paquete,$_POST['generico'],$cantidad[$i],$
 if($verificaSaldos1->verificaSaldos1($cantidad[$i],$iva,$priceLevel,$dia,$fecha1,$hora1,$seguro,$credencial,$leyenda,$basedatos)==true
 and
 $verificaSaldosInternos->verificaSaldosInternos($numeroPaciente,$nCuenta,$hora1,$seguro,$credencial,$basedatos)==true){
-$leyenda="Se agregaron artículos";
+$leyenda="Se agregaron artï¿½culos";
 
 if( $cantidad[$i] ){
 $um=new articulosDetalles();
@@ -416,7 +416,7 @@ $myrow31 = mysql_fetch_array($result31);
        <th bgcolor="#FFCCFF" scope="col"><div align="left">Departamento</div></th>
        <th bgcolor="#FFCCFF" scope="col">
          <div align="left">
-           <?php require("/configuracion/componentes/comboAlmacen.php"); 
+           <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacenAAV($entidad,'style7',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>
@@ -868,7 +868,7 @@ and $myrow['gpoProducto']) {
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
 

@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class  catalogosS{
 public function catalogosServicios($entidad,$almacenSolicitante,$usuario,$fecha1,$basedatos){
 ?>
@@ -296,7 +297,7 @@ $estilos-> styles();
 	  
 	  
 <?php 
-require_once('/configuracion/componentes/comboEspecialidades.php');
+require_once(CONSTANT_PATH_CONFIGURACION.'/componentes/comboEspecialidades.php');
 $listaEsp=new especialidades();
 $listaEsp->listaEspecialidadesMedicasSS($entidad,'style12',$myrow['especialidad'],$myrow['especialidad'],$basedatos);
 ?>	  </td>

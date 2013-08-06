@@ -1,4 +1,6 @@
-<?php require("../../configuracion/clases/generaFolioVenta.php");
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/clases/generaFolioVenta.php");
 //**************VERIFICO QUE NO ESTE PAGADO***************
 
 

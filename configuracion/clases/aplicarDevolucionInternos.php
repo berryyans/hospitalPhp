@@ -1,6 +1,8 @@
-<?php class devE{ 
+<?php 
+require('/Constantes.php');
+class devE{ 
 public function devolucionInternos($usuario,$folioVenta,$entidad,$basedatos){
-require("/configuracion/clases/generaFolioVenta.php");    ?>
+require(CONSTANT_PATH_CONFIGURACION."/clases/generaFolioVenta.php");    ?>
 
 <script language=javascript> 
 function ventanaSecundaria4 (URL){ 

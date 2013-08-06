@@ -1,4 +1,6 @@
-<? include("/configuracion/conf.php"); ?>
+<? 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/conf.php"); ?>
 <?
 $modulo = 'menu.inv';
 $checaModuloScript= "Select all distinct * From usuariosModulos WHERE usuario = '".$usuario."' AND modulo LIKE '%$modulo%'";

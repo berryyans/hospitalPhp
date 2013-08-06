@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class  catalogosS{
 public function catalogosServicios($entidad,$almacenSolicitante,$usuario,$fecha1,$basedatos){
 ?>
@@ -319,7 +320,7 @@ echo $_GET['descripcion'];
 	  <td  scope="col">&nbsp;</td>
 	  <td ><span >Departamento (Solo si es un cuarto)</span></td>
 	  <td><span >
-	    <?php require("/configuracion/componentes/comboAlmacen.php"); 
+	    <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->almacenesCuartosGET($entidad,'style12',$myrow['departamento'],$almacenDestino,$basedatos);
 

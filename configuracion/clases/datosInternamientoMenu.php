@@ -1,4 +1,6 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -17,16 +19,16 @@ function valida(F) {
                 alert("Por Favor, escribe el nombre del paciente!")   
                 return false   
         } else if( vacio(F.deposito.value) == false ) {   
-                alert("Por Favor, escribe el depósito!")   
+                alert("Por Favor, escribe el depï¿½sito!")   
                 return false   
         } else if( vacio(F.medico.value) == false ) {   
-                alert("Por Favor, escoje el médico responsable del internamiento!")   
+                alert("Por Favor, escoje el mï¿½dico responsable del internamiento!")   
                 return false   
         }  else if( vacio(F.cuarto.value) == false ) {   
                 alert("Por Favor, escoje el cuarto que desees asignar!")   
                 return false   
         }  else if( vacio(F.limiteCredito.value) == false ) {   
-                alert("Por Favor, escoje el límite que desees asignar!")   
+                alert("Por Favor, escoje el lï¿½mite que desees asignar!")   
                 return false   
         }   
 }   
@@ -76,7 +78,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""

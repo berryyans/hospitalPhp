@@ -1,8 +1,9 @@
 <?php 
+require('/Constantes.php');
 class eCuentasE{
 public function eCuentaE($folioVenta,$usuario,$entidad,$almacen,$fecha1,$hora1,$dia,$usu,$nT,$basedatos){
 
-include("/configuracion/funciones.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 $cargosCia=new acumulados();
 
 
@@ -22,7 +23,7 @@ echo mysql_error();
 
 if($myrow1['folioVenta'] AND $myrow1['usuario']!=$usuario){ ?>
 <script>
-window.alert("Este proceso está siendo utilizado por: (<?php echo $myrow1['usuario'];?>) y sólo el puede terminar este proceso");
+window.alert("Este proceso estï¿½ siendo utilizado por: (<?php echo $myrow1['usuario'];?>) y sï¿½lo el puede terminar este proceso");
 window.close();
 </script>
 <?php 

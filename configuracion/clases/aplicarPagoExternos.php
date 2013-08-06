@@ -1,7 +1,8 @@
 <?php 
+require('/Constantes.php');
 class eCuentas{
 public function eCuenta($usuario,$fecha1,$hora1,$nT,$basedatos){
-include("/configuracion/funciones.php");  
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php");  
 
 
 if(!$_GET['nT']){
@@ -23,10 +24,10 @@ function ventanaSecundaria2 (URL){
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -70,7 +71,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -139,7 +140,7 @@ $sSQLC= "Select * From aperturaCaja ";
 $resultC=mysql_db_query($basedatos,$sSQLC);
 $myrowC = mysql_fetch_array($resultC);
 
-if($poliza=$myrowC['numeroPoliza']){ //*******************Comienzo la validación*****************
+if($poliza=$myrowC['numeroPoliza']){ //*******************Comienzo la validaciï¿½n*****************
 if($_POST['pagar'] AND $numeroE AND $nCuenta){
 $numeroConfirmacion=rand();
 $q = "UPDATE clientesInternos set 
@@ -581,14 +582,14 @@ $col = 1;
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
   <script type="text/javascript"> 
    Calendar.setup({ 
     inputField     :    "campo_fecha1",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",     // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador1"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador1"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script>
 <?php }} ?>
