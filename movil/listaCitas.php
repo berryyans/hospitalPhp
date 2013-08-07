@@ -1,6 +1,8 @@
-<?PHP include("/configuracion/expedientesclinicos/medicos/medicosmenu.php"); ?>
-<?PHP include("/configuracion/clases/editarResultados.php"); ?>
-<?PHP include("/configuracion/funciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/expedientesclinicos/medicos/medicosmenu.php"); ?>
+<?PHP include(CONSTANT_PATH_CONFIGURACION."/clases/editarResultados.php"); ?>
+<?PHP include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 
 <script language=javascript> 
@@ -15,11 +17,11 @@ function ventanaSecundaria3 (URL){
 </script> 
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
   <script language="JavaScript" type="text/javascript">
     /**
@@ -30,7 +32,7 @@ function ventanaSecundaria3 (URL){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 

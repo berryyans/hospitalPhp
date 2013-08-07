@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/administracionhospitalaria/inventarios/inventariosmenu.php");?>
-<?php include('/configuracion/clases/validaModulos.php'); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/administracionhospitalaria/inventarios/inventariosmenu.php");?>
+<?php include(CONSTANT_PATH_CONFIGURACION.'/clases/validaModulos.php'); ?>
 
 
 <?php $articulo = $_POST['nomArticulo']; ?>
@@ -91,7 +93,7 @@ echo mysql_error();
       <th scope="col">&nbsp;</th>
       <th class="style7" scope="col"><div align="left">Almacen</div></th>
       <th class="style7" scope="col"><div align="left"><span class="style7">
-        <?php require("/configuracion/componentes/comboAlmacen.php"); 
+        <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style7','almacen',$almacenDestino,$basedatos)
 ?>

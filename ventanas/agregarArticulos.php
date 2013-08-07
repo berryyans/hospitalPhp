@@ -1,4 +1,6 @@
-<?php require("../configuracion/ventanasEmergentes.php"); require('../configuracion/funciones.php'); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); require(CONSTANT_PATH_CONFIGURACION.'/funciones.php'); ?>
 <? 
 $numCliente=$_GET['numCliente'];
 $seguro=$_GET['seguro'];
@@ -195,7 +197,7 @@ echo $nombreSeguro=$rNombre23['nomCliente'];
     <td height="37" scope="col">&nbsp;</td>
     <td width="75" scope="col"><div align="left" >Departamento</div></td>
     <td width="392" scope="col"> <div align="left">
-      <?php require("../configuracion/componentes/comboAlmacen.php"); 
+      <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php"); 
 $comboAlmacen=new comboAlmacen();
 $comboAlmacen->despliegaAlmacen($entidad,'style12',$almacenSolicitante,$almacenDestino,$basedatos);
 ?>

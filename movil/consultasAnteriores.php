@@ -1,6 +1,8 @@
-<?PHP  include("/configuracion/ventanasEmergentes.php");
-include("/configuracion/clases/despliegaConsultasAnterioresMovil.php"); 
-include("/configuracion/funciones.php"); ?>
+<?PHP  
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");
+include(CONSTANT_PATH_CONFIGURACION."/clases/despliegaConsultasAnterioresMovil.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 <?php
 

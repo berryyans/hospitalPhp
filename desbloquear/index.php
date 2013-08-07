@@ -1,5 +1,7 @@
-<?php require('../configuracion/baseDatos.php');?><?php require('../configuracion/clases/valida.php');?>
-<?php require("../configuracion/clases/desbloquea.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/baseDatos.php');?><?php require(CONSTANT_PATH_CONFIGURACION.'/clases/valida.php');?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/clases/desbloquea.php"); ?>
 <?php 
 $servidor= $_SERVER['SERVER_NAME'];
 ?>

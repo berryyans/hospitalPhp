@@ -1,4 +1,6 @@
-<?php include("/configuracion/operacioneshospitalariasmenu/farmacia/farmacia.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/farmacia/farmacia.php"); ?>
 <?php $articulo = $_POST['nomArticulo']; ?>
           <?php
 //***********************CAMBIAR ALMACEN****************************

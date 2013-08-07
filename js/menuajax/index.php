@@ -1,4 +1,6 @@
-<?php require ('/configuracion/operacioneshospitalariasmenu/sala1/sala1.php'); require('/configuracion/funciones.php');?>
+<?php 
+require('/Constantes.php');
+require (CONSTANT_PATH_CONFIGURACION.'/operacioneshospitalariasmenu/sala1/sala1.php'); require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 <?php
 
 $_GET['folioVenta']='I20064';
@@ -114,13 +116,13 @@ $_GET['folioVenta']='I20064';
             <div id="fragment-1">
                 <p>Datos del Paciente</p>
      <?php
-               include ('/configuracion/clases/datosPaciente.php');
+               include (CONSTANT_PATH_CONFIGURACION.'/clases/datosPaciente.php');
 			  
                ?>
             </div>
             <div id="fragment-2">
                <?php
-               include ('/configuracion/clases/estadoCuentaMenu.php');
+               include (CONSTANT_PATH_CONFIGURACION.'/clases/estadoCuentaMenu.php');
 			  
                ?>
             </div>
@@ -130,13 +132,13 @@ $_GET['folioVenta']='I20064';
             
            <div id="fragment-4">
                <?php
-               include ('/configuracion/clases/aplicarDevolucionesMenu.php');
+               include (CONSTANT_PATH_CONFIGURACION.'/clases/aplicarDevolucionesMenu.php');
 			  
                ?>
             </div>
             <div id="fragment-5">
                <?php
-               include ('/configuracion/clases/cargosPacientesInternos.php');
+               include (CONSTANT_PATH_CONFIGURACION.'/clases/cargosPacientesInternos.php');
 			  
                ?>
             </div>

@@ -1,4 +1,6 @@
-<?php require('/configuracion/ventanasEmergentes.php'); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); ?>
 <?php  
 if($_GET['keyFC'] AND $_GET['del']=='si'){
 

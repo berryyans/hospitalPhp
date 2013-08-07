@@ -1,6 +1,8 @@
-<?php include("../configuracion/ventanasEmergentes.php"); ?>
+<?php
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php 
-include("../configuracion/funciones.php"); 
+include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 ?>
 <?php 
 $sSQL3= "Select * From clientesInternos WHERE keyClientesInternos = '".$_GET['nT']."' ";
@@ -232,11 +234,11 @@ $estilos->styles();
 <h1 align="center"> Coaseguro / Deducible</h1>
 <form id="form1" name="form1" method="post" action="">
 
-    <?php include('../configuracion/clases/encabezado.php');?>
+    <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/encabezado.php');?>
 
   <p>&nbsp;</p>
-    <?php include('../configuracion/clases/mostrarDatosCuenta.php');?>
-   <?php include('../configuracion/clases/mostrarEfectuarTransacciones.php');?> 
+    <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarDatosCuenta.php');?>
+   <?php include(CONSTANT_PATH_CONFIGURACION.'/clases/mostrarEfectuarTransacciones.php');?> 
   <p>&nbsp;</p>
   <div align="center">
     

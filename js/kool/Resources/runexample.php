@@ -1,4 +1,6 @@
-<?php require('/configuracion/ventanasEmergentes.php');?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');?>
 <?php 
 //ob_start();
 //session_start();
@@ -88,7 +90,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -242,7 +244,7 @@ setTimeout("jump0()",50)}}
 
 <script language="JavaScript1.2">
 
-//Highlight form element- © Dynamic Drive (www.dynamicdrive.com)
+//Highlight form element- ï¿½ Dynamic Drive (www.dynamicdrive.com)
 //For full source code, 100's more DHTML scripts, and TOS,
 //visit http://www.dynamicdrive.com
 

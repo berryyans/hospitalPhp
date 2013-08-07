@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?><?PHP include("/configuracion/funciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?PHP include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php
 $keyCAP=$_GET['keyCAP'];
 ?>
@@ -29,13 +31,13 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción del diagnóstico!")   
+                alert("Por Favor, escribe la descripciï¿½n del diagnï¿½stico!")   
                 return false   
         } else if( vacio(F.paciente.value) == false ) {   
                 alert("Por Favor, escribe el nombre del paciente!")   
                 return false   
         } else if( vacio(F.seguro.value) == false ) {   
-                alert("Por Favor, escoje algún tipo de seguro, o también si es particular!")   
+                alert("Por Favor, escoje algï¿½n tipo de seguro, o tambiï¿½n si es particular!")   
                 return false   
         }            
 }   
@@ -45,7 +47,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""

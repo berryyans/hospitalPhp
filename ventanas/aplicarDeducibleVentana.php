@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 
 
 <?php
@@ -6,7 +8,7 @@ $ALMACEN=$_GET['almacen'];
 if(!$_GET['nT']){
 $_GET['nT']=$_POST['nT'];
 }
-require("/configuracion/funciones.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 //************************ACTUALIZO **********************
 
 $sSQL3= "Select * From clientesInternos WHERE keyClientesInternos='".$_GET['nT']."'";

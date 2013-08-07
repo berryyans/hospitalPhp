@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php
 $ALMACEN='HVS';
 
@@ -122,7 +124,7 @@ stm_aix("p8i0","p1i0",[6,1,"#50647f","",-1,-1,0]);
 
 //stm_aix("p7i110","p2i2",[0," Imprimir Antecedentes","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/admisiones/imprimirAntecedentes.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],138,22);
 
-//stm_aix("p7i110","p2i2",[0," Límite Crédito(Seguros)","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/admisiones/limites.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],138,22);
+//stm_aix("p7i110","p2i2",[0," Lï¿½mite Crï¿½dito(Seguros)","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/admisiones/limites.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],138,22);
 
 stm_ep();
 
@@ -138,7 +140,7 @@ stm_aix("p10i0","p1i0",[6,1,"#50647f","",-1,-1,0]);
 
 //stm_aix("p7i19","p2i2",[0," Tipo de Seguros","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/admisiones/tiposeguros.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],138,22);
 
-//stm_aix("p7i110","p2i2",[0," Créditos vencidos","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/admisiones/creditoSuperado.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],138,22);
+//stm_aix("p7i110","p2i2",[0," Crï¿½ditos vencidos","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/admisiones/creditoSuperado.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],138,22);
 
 //stm_aix("p7i111","p2i2",[0," BANORTE","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/admisiones/banorte/","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],138,22);
 
@@ -150,7 +152,7 @@ stm_aix("p0i8","p0i4",[0,"SALIR","","",-1,-1,0,"","_self","","","/sima/imagenes/
 stm_bpx("p10","p2",[1,4,0,3,0,4,5,0,100,"",-2,"",-2,48,2,3,"#999999","transparent","",0,0,0,"#333333"]);
 stm_aix("p10i0","p1i0",[6,1,"#50647f","",-1,-1,0]);
 
-stm_aix("p10i1","p6i0",[0," Menú principal","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
+stm_aix("p10i1","p6i0",[0," Menï¿½ principal","","",-1,-1,0,"/sima/OPERACIONESHOSPITALARIAS/","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
 
 stm_aix("p10i2","p2i2",[0," SALIR","","",-1,-1,0,"/sima/salir.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","/sima/imagenes/fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
 

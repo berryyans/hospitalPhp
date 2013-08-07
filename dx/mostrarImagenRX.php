@@ -1,5 +1,7 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?><?PHP include("/configuracion/funciones.php"); ?>
-<?PHP include("/configuracion/clases/sql.php");include("/configuracion/clases/mostrarImagenRX.php");?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?PHP include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
+<?PHP include(CONSTANT_PATH_CONFIGURACION."/clases/sql.php");include(CONSTANT_PATH_CONFIGURACION."/clases/mostrarImagenRX.php");?>
 <?php
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];

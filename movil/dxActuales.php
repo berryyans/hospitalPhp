@@ -1,4 +1,6 @@
-<?PHP include("/configuracion/ventanasEmergentes.php"); ?>
+<?PHP 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];
@@ -31,13 +33,13 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción del diagnóstico!")   
+                alert("Por Favor, escribe la descripciï¿½n del diagnï¿½stico!")   
                 return false   
         } else if( vacio(F.paciente.value) == false ) {   
                 alert("Por Favor, escribe el nombre del paciente!")   
                 return false   
         } else if( vacio(F.seguro.value) == false ) {   
-                alert("Por Favor, escoje algún tipo de seguro, o también si es particular!")   
+                alert("Por Favor, escoje algï¿½n tipo de seguro, o tambiï¿½n si es particular!")   
                 return false   
         }            
 }   
@@ -47,7 +49,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -87,7 +89,7 @@ echo mysql_error();
 
 echo $myrow11['descripcion'];	
 echo '<script type="text/vbscript">';
-echo 'msgbox "SE AGREGÓ EL DIAGNOSTICO "'.$myrow5['descripcion']; 
+echo 'msgbox "SE AGREGï¿½ EL DIAGNOSTICO "'.$myrow5['descripcion']; 
 echo '</script>';
 }
 
@@ -98,7 +100,7 @@ $borrame = "DELETE FROM dx WHERE keyDiagnostico = '".$quitar[$is]."' ";
 //mysql_db_query($basedatos,$borrame);
 echo mysql_error();
 
-}$leyenda = "Se eliminó el modulo ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['numCliente']){
+}$leyenda = "Se eliminï¿½ el modulo ".$quitar[$i];}} else if($_POST['borrar'] AND !$_POST['numCliente']){
 $leyenda = "Por favor, escoja el nombre de numCliente que desee eliminar..!";
 echo '<script type="text/vbscript">
 msgbox "SE ELIMINO EL CONVENIO!"

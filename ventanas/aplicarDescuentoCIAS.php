@@ -1,4 +1,6 @@
-<?PHP require('/configuracion/ventanasEmergentes.php'); ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); ?>
 
 <script language=javascript> 
 function ventanaSecundaria3 (URL){ 
@@ -51,7 +53,7 @@ $ALMACEN=$_GET['almacen'];
 
 
 
-require("/configuracion/funciones.php"); 
+require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 
 
 

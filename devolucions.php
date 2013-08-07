@@ -1,5 +1,7 @@
-<?php require("/configuracion/operacioneshospitalariasmenu/urgencias/urgencias.php"); 
-require('/configuracion/funciones.php');?>
+<?php
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/urgencias/urgencias.php"); 
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -9,7 +11,7 @@ require('/configuracion/funciones.php');?>
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -46,7 +48,7 @@ function ventanaSecundaria2 (URL){
 <!--
 function comprueba()
 {
-if (confirm('Estas seguro que deseas enviar la cuenta de este paciente a admisiones? ya no podras hacer cargos, y la operación es irreversible')) return true;
+if (confirm('Estas seguro que deseas enviar la cuenta de este paciente a admisiones? ya no podras hacer cargos, y la operaciï¿½n es irreversible')) return true;
 return false;
 }
 -->
@@ -176,7 +178,7 @@ $myrow31cd = mysql_fetch_array($result31cd);
 
 	  <?php echo $myrow['paciente'];
 	  if($myrow['status']=='ontransfer'){
-	  echo '   [Se solicitó la transferencia de éste paciente]';
+	  echo '   [Se solicitï¿½ la transferencia de ï¿½ste paciente]';
 	  }
 	  ?>
       </span></td>

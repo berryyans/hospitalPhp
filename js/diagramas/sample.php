@@ -1,4 +1,6 @@
 <?php
+require('/Constantes.php');
+
 // **************************************************************************
 // sample.php - sample script that demonstrates using as-diagrams.php,
 // class for drawing gd-less bar diagrams.
@@ -38,7 +40,7 @@ $data = array();
 
 // Se define el array de datos
 //*****************CONEXION  A SIMA***************
-require('/configuracion/baseDatos.php');
+require(CONSTANT_PATH_CONFIGURACION.'/baseDatos.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

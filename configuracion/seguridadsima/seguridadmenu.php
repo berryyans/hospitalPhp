@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 
 <script type="text/javascript"  src="/sima/js/new/stmenu.js"></script>
 <script type="text/javascript">
