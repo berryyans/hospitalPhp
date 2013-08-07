@@ -1,9 +1,11 @@
-<?php require("../configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 
 
 <?php
 //#########CONFIGURACION DE LA TABLA##############
-require("../configuracion/funciones.php");
+require(CONSTANT_PATH_CONFIGURACION."/funciones.php");
 $nombreTabla='sis_SW';
 $limiteRegistros=0;
 $titulo='Catalogo de Sotfware';

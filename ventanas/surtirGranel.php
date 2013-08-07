@@ -1,4 +1,6 @@
-<?PHP require("/configuracion/ventanasEmergentes.php");  require("/configuracion/funciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");  require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
 <script language=javascript>
 function ventanaSecundaria (URL){
@@ -1708,7 +1710,7 @@ $estilo->styles();
 
 
 
- <?php require("/configuracion/componentes/comboAlmacen.php");  ?>
+ <?php require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php");  ?>
 <form id="form1" name="form1" method="post" action="#">
 <br>
     

@@ -1,4 +1,6 @@
-<?php require('/configuracion/ventanasEmergentes.php'); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php'); ?>
 
 <?php 
 if($_POST['actualizar'] and $_POST['maximos']>0 and $_POST['minimos']>0 and $_POST['reorden']>0){

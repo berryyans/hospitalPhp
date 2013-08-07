@@ -1,6 +1,8 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
-<?php require("/configuracion/clases/internarPaciente.php"); ?>
-<?php require("/configuracion/funciones.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/clases/internarPaciente.php"); ?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php 
 
 if(!$ALMACEN) $ALMACEN=$_GET['almacen'];

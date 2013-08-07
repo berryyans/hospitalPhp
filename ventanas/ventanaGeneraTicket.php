@@ -1,4 +1,6 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 
 
 <?php
@@ -316,7 +318,7 @@ $texto='FOLIO(s) FACTURADOS..';
     $myrowT = mysql_fetch_array($resultT);
     $ticket= $myrowT['topeMaximo'];
     $tipoFacturacion='Auto';
-    require("/configuracion/clases/generarFacturaElectronica.php");    
+    require(CONSTANT_PATH_CONFIGURACION."/clases/generarFacturaElectronica.php");    
     
     
     

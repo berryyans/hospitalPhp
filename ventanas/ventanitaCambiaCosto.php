@@ -1,4 +1,6 @@
-<?php require('/configuracion/funciones.php');
+<?php
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/funciones.php');
 
 $hoy = date("d/m/Y");
 $hora = date("g:i a");
