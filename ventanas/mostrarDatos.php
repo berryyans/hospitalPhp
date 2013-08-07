@@ -1,4 +1,6 @@
 <?php
+require('/Constantes.php');
+
 /**
  * testGraphs.php
  * @author Emmanuel Arana Corzo <emmanuel.arana@gmail.com>
@@ -9,7 +11,7 @@
  $externos = new BarGraphicPercent(1000);
 
 //*****************CONEXION  A SIMA***************
-require('/configuracion/baseDatos.php');
+require(CONSTANT_PATH_CONFIGURACION.'/baseDatos.php');
 $base=new MYSQL();
 $basedatos=$base->basedatos();
 $conexionManual=new MYSQL();

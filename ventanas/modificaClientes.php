@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/clases/catalogoClientes.php"); ?>
+<?php
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/clases/catalogoClientes.php"); ?>
 
 <?php
 $muestraClientes=new editarClientes();

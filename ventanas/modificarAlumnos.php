@@ -1,5 +1,7 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
- <!-Hoja de estilos del calendario --> 
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+ <!--Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librera principal del calendario --> 

@@ -1,4 +1,6 @@
-<?php require("../configuracion/ventanasEmergentes.php");require("../configuracion/clases/generaFolioVenta.php"); ?>
+<?php
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php");require(CONSTANT_PATH_CONFIGURACION."/clases/generaFolioVenta.php"); ?>
 
 <script language="javascript" type="text/javascript">   
 
