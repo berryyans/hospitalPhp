@@ -1,3 +1,7 @@
+
+<?php
+require("/Constantes.php");
+?>
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
    window.open(URL,"ventana1","width=900,height=800,scrollbars=YES") 
@@ -114,13 +118,13 @@ $myrowe = mysql_fetch_array($resulte);
   
   <br/>
   <br/>
-  <a onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu� para ver los servicios recibidos..';?>&lt;/div&gt;')" onmouseout="UnTip()" name="nuevo22" id="nuevo22"  onclick="nueva('/sima/cargos/aplicarServicios.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria1','900','500','yes')">&nbsp;Listado de Pacientes&nbsp;&nbsp;</a>|
+  <a onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu� para ver los servicios recibidos..';?>&lt;/div&gt;')" onmouseout="UnTip()" name="nuevo22" id="nuevo22"  onclick="nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/aplicarServicios.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria1','900','500','yes')">&nbsp;Listado de Pacientes&nbsp;&nbsp;</a>|
     
     
-<a onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para consultar saldos ..';?>&lt;/div&gt;')" onmouseout="UnTip()" name="nuevo42" d="nuevo42" onclick="nueva('/sima/cargos/consultarSaldo.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria1','900','500','yes')">&nbsp;Consultar Saldos&nbsp;&nbsp;</a> |   
+<a onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para consultar saldos ..';?>&lt;/div&gt;')" onmouseout="UnTip()" name="nuevo42" d="nuevo42" onclick="nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/consultarSaldo.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria1','900','500','yes')">&nbsp;Consultar Saldos&nbsp;&nbsp;</a> |   
     
 
-<a onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para consultar precios ..';?>&lt;/div&gt;')" onmouseout="UnTip()" name="nuevo5" id="nuevo5" onclick="nueva('/sima/cargos/presupuestos.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria1','900','500','yes')">&nbsp;Consultar Precios&nbsp;&nbsp;</a>  |
+<a onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para consultar precios ..';?>&lt;/div&gt;')" onmouseout="UnTip()" name="nuevo5" id="nuevo5" onclick="nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/presupuestos.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria1','900','500','yes')">&nbsp;Consultar Precios&nbsp;&nbsp;</a>  |
     
 
        <?php }else{ echo 'Este  almacen no permite ventas!';}?>

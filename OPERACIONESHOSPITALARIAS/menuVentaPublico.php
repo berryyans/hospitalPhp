@@ -12,7 +12,7 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 //$imagen='ventapublicofarmacia.jpg';
 $ALMACEN=$_GET['datawarehouse'];
 $ventana1='ventaPublico.php';
-$ventana11='/sima/cargos/listadoPacientes.php';
+$ventana11=CONSTANT_PATH_SIMA_RAIZ.'/cargos/listadoPacientes.php';
 require(CONSTANT_PATH_CONFIGURACION."/formas/ventaPublicoMenu.php");
 
 $mostrarFooter=new menus();
