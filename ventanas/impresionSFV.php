@@ -1,4 +1,6 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria4 (URL){ 
    window.open(URL,"ventana4","width=800,height=300,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -48,7 +50,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""

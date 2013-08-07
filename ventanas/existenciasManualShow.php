@@ -1,4 +1,6 @@
-<?PHP require("/configuracion/ventanasEmergentes.php"); $ALMACEN=$alma=$_POST['almacenDestino']=$_POST['almacenDestino1']=$_GET['almacen'];?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); $ALMACEN=$alma=$_POST['almacenDestino']=$_POST['almacenDestino1']=$_GET['almacen'];?>
 
 
 

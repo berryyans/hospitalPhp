@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include('/configuracion/funciones.php'); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION.'/funciones.php'); ?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -18,7 +20,7 @@ function valida(F) {
                 alert("Por Favor, escoje el clientePrincipal/departamento!")   
                 return false   
         } else if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe la descripción de este clientePrincipal!")   
+                alert("Por Favor, escribe la descripciï¿½n de este clientePrincipal!")   
                 return false   
         } else if( vacio(F.ctaContable.value) == false ) {   
                 alert("Por Favor, escoje la cuenta mayor!")   
@@ -58,11 +60,11 @@ $myrow7ab = mysql_fetch_array($result7ab);
 
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
 
 <script language="javascript" type="text/javascript">

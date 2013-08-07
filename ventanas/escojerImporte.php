@@ -1,4 +1,6 @@
-﻿<?php require("/configuracion/ventanasEmergentes.php"); require_once('/configuracion/funciones.php');?>
+﻿<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); require_once(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
 
 
 <script language=javascript> 

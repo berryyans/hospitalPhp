@@ -1,5 +1,7 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
-<?php require("/configuracion/funciones.php"); 
+<?php
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 $numCliente=$_GET['numCliente'];
 //215430625 maguila
 $medico=$_GET['medico'];
@@ -904,7 +906,7 @@ $texto='FOLIO(s) FACTURADOS..';
     $resultT=mysql_db_query($basedatos,$sSQLT);
     $myrowT = mysql_fetch_array($resultT);
     $ticket= $myrowT['topeMaximo'];
-    require("/configuracion/clases/generarFacturaElectronica.php");    
+    require(CONSTANT_PATH_CONFIGURACION."/clases/generarFacturaElectronica.php");    
     
     
     

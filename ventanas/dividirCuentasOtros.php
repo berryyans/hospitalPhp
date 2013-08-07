@@ -1,4 +1,6 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <? 
 $numCliente=$_GET['numCliente'];
 
@@ -47,7 +49,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.escoje.value) == null ) {   
-                alert("Por Favor, escoje como quieres agregar artículos!")   
+                alert("Por Favor, escoje como quieres agregar artï¿½culos!")   
                 return false   
         }            
 }   
@@ -139,11 +141,11 @@ function submitform()
 
  <!-Hoja de estilos del calendario --> 
   <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
+  <!-- librerï¿½a principal del calendario --> 
  <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
   <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
   <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
   
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -480,7 +482,7 @@ $myrow5= mysql_fetch_array($result5);
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
     </script> 
 

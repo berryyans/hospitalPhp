@@ -1,4 +1,6 @@
-<?php require("/configuracion/funciones.php");
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/funciones.php");
 //actualizar ******************************************************************************************************
  if(!$_POST['keyPA']){
 $_POST['keyPA']=$_GET['keyPA'];

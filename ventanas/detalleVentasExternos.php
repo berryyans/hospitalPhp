@@ -1,4 +1,6 @@
-<?php include('../js/pdf/fpdf_js.php');
+<?php
+require('/Constantes.php');
+include('../js/pdf/fpdf_js.php');
 
 
 

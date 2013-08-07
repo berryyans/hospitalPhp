@@ -1,5 +1,7 @@
-<?php require("/configuracion/ventanasEmergentes.php"); ?>
-<?php require("/configuracion/funciones.php"); 
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 $numCliente=$_GET['numCliente'];
 //215430625 maguila
 $medico=$_GET['medico'];
@@ -1192,7 +1194,7 @@ $texto='FOLIO(s) FACTURADOS..';
     $ticket= $myrowT['topeMaximo'];
     $_POST['observaciones']=preg_replace("/[^a-zA-Z0-9\s]/", "", $_POST['observaciones']);
     $vFac='divideAseguradoras';
-    include("/configuracion/clases/generarFacturaElectronica.php");
+    include(CONSTANT_PATH_CONFIGURACION."/clases/generarFacturaElectronica.php");
  
 
 }else{

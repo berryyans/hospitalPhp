@@ -1,2 +1,4 @@
-<?php require('/configuracion/ventanasEmergentes.php');?>
-<?php require('/configuracion/formas/ventaPublico.php');?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_CONFIGURACION.'/ventanasEmergentes.php');?>
+<?php require(CONSTANT_PATH_CONFIGURACION.'/formas/ventaPublico.php');?>

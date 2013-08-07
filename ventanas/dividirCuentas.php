@@ -1,5 +1,7 @@
-<?php include("/configuracion/ventanasEmergentes.php"); ?>
-<?php include("/configuracion/funciones.php"); 
+<?php 
+require('/Constantes.php');
+include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
+<?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); 
 $numCliente=$_GET['numCliente'];
 $medico=$_GET['medico'];
 ?>
@@ -58,7 +60,7 @@ function valida(F) {
 <?php
 
 if(!$_POST['actualizar'] and !$_POST['elimina'] and !$_POST['continue']){
-    include("/configuracion/clases/generarSolicitudFactura.php");
+    include(CONSTANT_PATH_CONFIGURACION."/clases/generarSolicitudFactura.php");
 }
 
 
