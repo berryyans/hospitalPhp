@@ -9799,15 +9799,15 @@ public function menuTemplate($mainmenu,$primario,$rutasalir,$rutapasswd,$usuario
         print '<head>';
             print '<title>SIMA</title>';
             print '<meta charset="UTF-8" />';
-            print '<link rel="stylesheet" type="text/css" href="/sima/style/reset.css" />';
-            print '<link rel="stylesheet" type="text/css" href="/sima/style/superfish.css" />';
-            print '<link rel="stylesheet" type="text/css" href="/sima/style/fancybox/jquery.fancybox.css" />';
-            print '<link rel="stylesheet" type="text/css" href="/sima/style/jquery.qtip.css" />';
-            print '<link rel="stylesheet" type="text/css" href="/sima/style/jquery-ui-1.9.2.custom.css" />';
-            print '<link rel="stylesheet" type="text/css" href="/sima/style/style.css" />';
-            print '<link rel="stylesheet" type="text/css" href="/sima/style/responsive.css" />';
-            print '<script src="/sima/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>';
-            print '<script src="/sima/js/jquery-ui-1.9.2.custom.min.js" type="text/javascript" charset="utf-8"></script>';
+            print '<link rel="stylesheet" type="text/css" href="'.CONSTANT_PATH_SIMA_RAIZ.'/style/reset.css" />';
+            print '<link rel="stylesheet" type="text/css" href="'.CONSTANT_PATH_SIMA_RAIZ.'/style/superfish.css" />';
+            print '<link rel="stylesheet" type="text/css" href="'.CONSTANT_PATH_SIMA_RAIZ.'/style/fancybox/jquery.fancybox.css" />';
+            print '<link rel="stylesheet" type="text/css" href="'.CONSTANT_PATH_SIMA_RAIZ.'/style/jquery.qtip.css" />';
+            print '<link rel="stylesheet" type="text/css" href="'.CONSTANT_PATH_SIMA_RAIZ.'/style/jquery-ui-1.9.2.custom.css" />';
+            print '<link rel="stylesheet" type="text/css" href="'.CONSTANT_PATH_SIMA_RAIZ.'/style/style.css" />';
+            print '<link rel="stylesheet" type="text/css" href="'.CONSTANT_PATH_SIMA_RAIZ.'/style/responsive.css" />';
+            print '<script src="'.CONSTANT_PATH_SIMA_RAIZ.'/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>';
+            print '<script src="'.CONSTANT_PATH_SIMA_RAIZ.'/js/jquery-ui-1.9.2.custom.min.js" type="text/javascript" charset="utf-8"></script>';
         print '<script type="text/javascript" charset="utf-8">';
             print '$(function() {';
                 print 'var $j = jQuery.noConflict();';
@@ -9821,8 +9821,8 @@ public function menuTemplate($mainmenu,$primario,$rutasalir,$rutapasswd,$usuario
                 print '<div class="header_container">';
                     print '<div class="header clearfix">';
                         print '<div class="header_left">';
-                            print '<a href="/sima/MenuIndex.php?main=index&warehouse=&datawarehouse=&submenu=&click=" title="HLC">';
-                                print '<img src="/sima/images/logo.png" alt="logo"/>';
+                            print '<a href="'.CONSTANT_PATH_SIMA_RAIZ.'/MenuIndex.php?main=index&warehouse=&datawarehouse=&submenu=&click=" title="HLC">';
+                                print '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/images/logo.png" alt="logo"/>';
                             print '</a>';
                        print '</div>';
             $ruta = "";
@@ -9886,7 +9886,7 @@ public function menuTemplate($mainmenu,$primario,$rutasalir,$rutapasswd,$usuario
                         print '<li>';                        
                     }
                 }
-                            print '<a href="/sima/MenuIndex.php?main=index&warehouse=&datawarehouse=&submenu=&click=" title="HOME">';
+                            print '<a href="'.CONSTANT_PATH_SIMA_RAIZ.'/MenuIndex.php?main=index&warehouse=&datawarehouse=&submenu=&click=" title="HOME">';
                                 print 'HOME';
                             print '</a>';
                        print '</li>';  
@@ -9943,10 +9943,10 @@ public function menuTemplate($mainmenu,$primario,$rutasalir,$rutapasswd,$usuario
                         if(isset($arregloModulos[$myrowmu1['menuname']])){
                             if($selected_n2==$myrowmu1['menuname']){
                                 //print '<li class="selected"><a href="?main=' . $myrowmp['main'] . '&warehouse=' . $myrowmu1['menuname'] . '&datawarehouse='.$myrowmu1['almacen'].'&ruta=' . $mainRuta . '&actualizar=0&encabezado='.$encabezado.'&click=0" title="' . $myrowmu1['menuname'] . '"><span>' . $myrowmu1['menuname'] . '</span></a>';
-                                print '<li class="selected"><a href="/sima/MenuIndex.php?main=' . $myrowmp['main'] . '&warehouse=' . $myrowmu1['menuname'] . '&datawarehouse='.$myrowmu1['almacen'].'&ruta=' . $mainRuta . '&actualizar=0&encabezado='.$encabezado.'&click=0" title="' . $myrowmu1['menuname'] . '"><span>' . $myrowmu1['menuname'] . '</span></a>';
+                                print '<li class="selected"><a href="'.CONSTANT_PATH_SIMA_RAIZ.'/MenuIndex.php?main=' . $myrowmp['main'] . '&warehouse=' . $myrowmu1['menuname'] . '&datawarehouse='.$myrowmu1['almacen'].'&ruta=' . $mainRuta . '&actualizar=0&encabezado='.$encabezado.'&click=0" title="' . $myrowmu1['menuname'] . '"><span>' . $myrowmu1['menuname'] . '</span></a>';
                             }else{
                                 //print '<li><a href="?main=' . $myrowmp['main'] . '&warehouse=' . $myrowmu1['menuname'] . '&datawarehouse='.$myrowmu1['almacen'].'&ruta=' . $mainRuta . '&actualizar=0&encabezado='.$encabezado.'&click=0" title="' . $myrowmu1['menuname'] . '"><span>' . $myrowmu1['menuname'] . '</span></a>';
-                                print '<li><a href="/sima/MenuIndex.php?main=' . $myrowmp['main'] . '&warehouse=' . $myrowmu1['menuname'] . '&datawarehouse='.$myrowmu1['almacen'].'&ruta=' . $mainRuta . '&actualizar=0&encabezado='.$encabezado.'&click=0" title="' . $myrowmu1['menuname'] . '"><span>' . $myrowmu1['menuname'] . '</span></a>';
+                                print '<li><a href="'.CONSTANT_PATH_SIMA_RAIZ.'/MenuIndex.php?main=' . $myrowmp['main'] . '&warehouse=' . $myrowmu1['menuname'] . '&datawarehouse='.$myrowmu1['almacen'].'&ruta=' . $mainRuta . '&actualizar=0&encabezado='.$encabezado.'&click=0" title="' . $myrowmu1['menuname'] . '"><span>' . $myrowmu1['menuname'] . '</span></a>';
                             }
                         }    
                         //$mainmodulename = $myrowmu1['menuname'];
@@ -10009,7 +10009,7 @@ public function menuTemplate($mainmenu,$primario,$rutasalir,$rutapasswd,$usuario
         }else{            
             print "<li>";
         }
-            print "<a href='/sima/salir.php'>SALIR</a>";
+            print "<a href='".CONSTANT_PATH_SIMA_RAIZ."/salir.php'>SALIR</a>";
         print "</li>";
         print "</ul>";
    print "</div>";
@@ -10044,10 +10044,10 @@ print '<div class="page relative noborder">';
                 //print '</div>';
                 //print '<ul>';
                   //  print '<li>';
-                    //    print '<a href = "/sima/SEGURIDADSIMA/cambiarPassword.php">Cambiar Password</a>';
+                    //    print '<a href = "'.CONSTANT_PATH_SIMA_RAIZ.'/SEGURIDADSIMA/cambiarPassword.php">Cambiar Password</a>';
                     //print '</li>';
                      //print '<li>';
-                       // print '<a href = "/sima/SEGURIDADSIMA/pruebaMenu.php">Prueba Menu</a>';
+                       // print '<a href = "'.CONSTANT_PATH_SIMA_RAIZ.'/SEGURIDADSIMA/pruebaMenu.php">Prueba Menu</a>';
                     //print '</li>';
                 //print '</ul>';
             //print '</li>';
@@ -10070,11 +10070,11 @@ print '<div class="page relative noborder">';
                 print '<ul>';
                 while ($myrowmpv2c = mysql_fetch_array($resultmpv2c)) {
                     //print '<li><a href="' . $mp . '/' . $myrowmpv2c['ruta'] . '">' . $myrowmpv2c['name'] . '</a></li>';
-                    //print '<li><a href="/sima/' . $ruta .''.$myrowmpv2c['ruta'].'?main='.$ms.'&warehouse='.$ms.'">' . $myrowmpv2c['name'] . '</a></li>';
+                    //print '<li><a href="'.CONSTANT_PATH_SIMA_RAIZ.'/' . $ruta .''.$myrowmpv2c['ruta'].'?main='.$ms.'&warehouse='.$ms.'">' . $myrowmpv2c['name'] . '</a></li>';
                     //echo trim($myrowmpv2c['prefijo']);
                     //echo '--'.trim($ruta);
-                    //print '<li><a href="/sima/' . $ruta .''.trim($myrowmpv2c['ruta']).'?main='.$mp.'&warehouse='.$ms.'&datawarehouse='.$primario.'&submenu='.$myrowmp1a['secondary'].'&ruta='.$ruta.'&actualizar=1" >' . $myrowmpv2c['name'] . '</a></li>';
-                    print '<li><a href="/sima/' . trim($myrowmpv2c['prefijo']).''.trim($myrowmpv2c['ruta']).'?main='.$mp.'&warehouse='.$ms.'&datawarehouse='.$primario.'&submenu='.$myrowmp1a['secondary'].'&ruta='.$ruta.'&actualizar=1&click=1" >' . $myrowmpv2c['name'] . '</a></li>';
+                    //print '<li><a href="'.CONSTANT_PATH_SIMA_RAIZ.'/' . $ruta .''.trim($myrowmpv2c['ruta']).'?main='.$mp.'&warehouse='.$ms.'&datawarehouse='.$primario.'&submenu='.$myrowmp1a['secondary'].'&ruta='.$ruta.'&actualizar=1" >' . $myrowmpv2c['name'] . '</a></li>';
+                    print '<li><a href="'.CONSTANT_PATH_SIMA_RAIZ.'/' . trim($myrowmpv2c['prefijo']).''.trim($myrowmpv2c['ruta']).'?main='.$mp.'&warehouse='.$ms.'&datawarehouse='.$primario.'&submenu='.$myrowmp1a['secondary'].'&ruta='.$ruta.'&actualizar=1&click=1" >' . $myrowmpv2c['name'] . '</a></li>';
                 }
                 print '</ul>';
             print '</li>';

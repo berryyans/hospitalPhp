@@ -4,5 +4,6 @@
  * DE ESTE ARCHIVO SE LEEN LAS RUTAS DEL PROYECTO DE CONFIGURACION Y SIMA
  */
 define("CONSTANT_PATH_SIMA", "/var/www/simaVT");
+define("CONSTANT_PATH_SIMA_RAIZ", "/simaVT");
 define("CONSTANT_PATH_CONFIGURACION", "/var/www/simaVT/configuracion");
 ?>

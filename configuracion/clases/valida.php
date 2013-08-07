@@ -1,4 +1,5 @@
 <?php 
+require("/Constantes.php");
 class validator {
 
 static public function medico($usuario,$basedatos){
@@ -282,7 +283,7 @@ print '<script type="text/vbscript">
 msgbox "FIN DE SESION, SE HA DESCONECTADO DE LA BASE DE DATOS !" 
 </script>';
 echo '<META HTTP-EQUIV="Refresh"
-      CONTENT="0; URL=/sima/index.php">';
+      CONTENT="0; URL='.CONSTANT_PATH_SIMA_RAIZ.'/index.php">';
 exit; 
 session_destroy();
 }
