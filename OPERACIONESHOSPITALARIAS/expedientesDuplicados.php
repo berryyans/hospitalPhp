@@ -299,7 +299,7 @@ $myrow1 = mysql_fetch_array($result1);
       </span></td>
       <td   ><div align="center">
        
-      <span ><a href="<?php echo $_SERVER['PHP_SELF'];?>?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&datawarehouse=<?php echo $_GET['datawarehouse'];?>&numCliente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_GET['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&keyED=<?php echo $myrow['keyED']; ?>&keyPacientes=<?php echo $myrow1['keyPacientes']; ?>"> <img src="/sima/imagenes/borrar.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar a <?php echo $myrow['apellido1']." ".$myrow['apellido2']." ".$myrow['nombre1']." ".$myrow1['nombre2'];?>?') == false){return false;}" /></a>      </span></div></td>
+      <span ><a href="<?php echo $_SERVER['PHP_SELF'];?>?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&datawarehouse=<?php echo $_GET['datawarehouse'];?>&numCliente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_GET['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&keyED=<?php echo $myrow['keyED']; ?>&keyPacientes=<?php echo $myrow1['keyPacientes']; ?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/borrar.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar a <?php echo $myrow['apellido1']." ".$myrow['apellido2']." ".$myrow['nombre1']." ".$myrow1['nombre2'];?>?') == false){return false;}" /></a>      </span></div></td>
     </tr>
     <?php }//cierra while?>
   </table>
@@ -356,7 +356,7 @@ echo "<a href=".$_SERVER['PHP_SELF']."?main=".$_GET['main']."&warehouse=".$_GET[
 
 ?>
   </p>
-  <p>  <a href="javascript:ventanaSecundaria19('/sima/cargos/imprimirPrecios.php?nRequisicion=<?php echo $requisicion; ?>&amp;almacen=
+  <p>  <a href="javascript:ventanaSecundaria19('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirPrecios.php?nRequisicion=<?php echo $requisicion; ?>&amp;almacen=
 		<?php echo $ALMACEN; ?>&amp;referido=<?php echo $_GET['referido']; ?>&amp;aseguradora=<?php echo $_GET['aseguradora']; ?>&amp;particular=<?php echo $_GET['particular']; ?>&amp;gpoProducto=<?php echo $gpoProducto; ?>&amp;codigo=<?php echo $C; ?>&amp;almacenes=<?php echo $Cd; ?>')"></a></p>
 </div>
     </div>

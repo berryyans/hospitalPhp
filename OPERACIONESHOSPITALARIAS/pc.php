@@ -603,7 +603,7 @@ echo $myrow['usuario'];
       
       
       <td >
-          <a href='/sima/OPERACIONESHOSPITALARIAS/altaEquipos.php?main=<?php echo $_GET['main'];?>warehouse=<?php echo $_GET['warehouse'];?>&registro=<?php echo $myrow['registro']; ?>&tipo=PC'><?php echo $myrow['registro']; ?></a>
+          <a href='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/altaEquipos.php?main=<?php echo $_GET['main'];?>warehouse=<?php echo $_GET['warehouse'];?>&registro=<?php echo $myrow['registro']; ?>&tipo=PC'><?php echo $myrow['registro']; ?></a>
           <!--<p><?php echo $myrow['registro']; ?></p>-->
       </td>
       

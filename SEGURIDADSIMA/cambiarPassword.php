@@ -110,7 +110,7 @@ $estilos->styles();
 <p align="center">
   <label>Datos del Usuario <?php echo $usuario; ?></label>
 </p>
-<p align="center"><a href="/sima/MenuIndex.php">Regresar a Men&uacute; </a></p>
+<p align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/MenuIndex.php">Regresar a Men&uacute; </a></p>
 <form name="form1" id="form1" method="post" action="">
   <table width="519" >
     <tr>

@@ -271,7 +271,7 @@ echo mysql_error();
         </div>
         <br />
         <div align="center"><span >
-          <input name="buscar" type="submit" src="/sima/imagenes/btns/searcharticles.png" id="buscar" value="buscar" />
+          <input name="buscar" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png" id="buscar" value="buscar" />
       </span></div>
   
   
@@ -449,14 +449,14 @@ $bandera=+1;
       <?php 
         } else {
 	  
-	   $imagen='<img src="/sima/imagenes/stop.png" width="13" height="13" border="0" />';
+	   $imagen='<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/stop.png" width="13" height="13" border="0" />';
 	   echo $myrow['descripcion'].'<blink>'.$imagen.'</blink>'.'< Sin Almacen..>';
 	   }
 	  ?>
 	  
 	  	<?php if($myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>
 	  </span></td>
       

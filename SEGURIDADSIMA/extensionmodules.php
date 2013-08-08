@@ -111,8 +111,8 @@ $myrow2a = mysql_fetch_array($result2a);
 $estilo=new muestraEstilos();
 $estilo->styles();
 ?>
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 </head>
 
 <body>
@@ -303,7 +303,7 @@ $C=$myrow['keySM'];
 
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/modulesextensionsx.php?mainmodule=<?php echo $myrow2['name'];?>&mainmodulename=<?php echo $myrow2['mainmodulename'];?>&entidad=<?php echo $entidad;?>&almacen=<?php echo $ALMACEN;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/modulesextensionsx.php?mainmodule=<?php echo $myrow2['name'];?>&mainmodulename=<?php echo $myrow2['mainmodulename'];?>&entidad=<?php echo $entidad;?>&almacen=<?php echo $ALMACEN;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});
 	</script>

@@ -200,7 +200,7 @@ $estilos->styles();
     </tr>
     <tr valign="middle" >
       <td height="26" >Nuevo</td>
-      <td ><span ><span ><a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" /></a><a href="javascript:ventanaSecundaria1('modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span></td>
+      <td ><span ><span ><a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" /></a><a href="javascript:ventanaSecundaria1('modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span></td>
     </tr>
     <tr valign="middle"  >
       <td height="46" >Apellidos</td>
@@ -302,7 +302,7 @@ $NC=$myrow['numCliente'];
 		
 		
 		</span>
-          <div align="center"> <a href="<?php echo $_SERVER['PHP_SELF'];?>?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&datawarehouse=<?php echo $_GET['datawarehouse'];?>&numCliente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_GET['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&keyED=<?php echo $myrow['keyED']; ?>&keyPacientes=<?php echo $myrow['keyPacientes']; ?>"> <img src="/sima/imagenes/borrar.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar a <?php echo $myrow['apellido1']." ".$myrow['apellido2']." ".$myrow['nombre1']." ".$myrow1['nombre2'];?>?') == false){return false;}" /></a> </div>
+          <div align="center"> <a href="<?php echo $_SERVER['PHP_SELF'];?>?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&datawarehouse=<?php echo $_GET['datawarehouse'];?>&numCliente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_GET['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&keyED=<?php echo $myrow['keyED']; ?>&keyPacientes=<?php echo $myrow['keyPacientes']; ?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/borrar.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar a <?php echo $myrow['apellido1']." ".$myrow['apellido2']." ".$myrow['nombre1']." ".$myrow1['nombre2'];?>?') == false){return false;}" /></a> </div>
         </td>
     </tr>
 

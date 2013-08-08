@@ -59,13 +59,13 @@ $myrow7ab = mysql_fetch_array($result7ab);
 
 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 
 <script language="javascript" type="text/javascript">
 
@@ -84,8 +84,8 @@ if(win.window.focus){win.window.focus();}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
 <?php
 $estilos= new muestraEstilos();
@@ -123,7 +123,7 @@ Consumo de Aseguradoras</h1>
      <p class="titulomedio"> PACIENTES EXTERNOS</p>
      <table width="1500" border="0" cellspacing="0" cellpadding="0" align="center">
      <tr>
-       <td colspan="90"><img src="/sima/imagenes/bordestablas/borde1.png" width="1500" height="21" /></td>
+       <td colspan="90"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="1500" height="21" /></td>
      </tr>
      <tr bgcolor="#FFFF00">
   <td width="207" bgcolor="#FFFF00" class="negromid"><div align="center">Empleado</div></td>
@@ -709,7 +709,7 @@ $myrowa8 = mysql_fetch_array($resulta8);
      <tr>
 	 
 	 
-       <td colspan="90"><img src="/sima/imagenes/bordestablas/borde2.png" width="1500" height="20" /></td>
+       <td colspan="90"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="1500" height="20" /></td>
      </tr>
    </table>
    
@@ -774,7 +774,7 @@ $myrowa8 = mysql_fetch_array($resulta8);
      <p>VENTAS INTERNOS </p>
      <table width="1500" border="0" cellspacing="0" cellpadding="0" align="center">
        <tr>
-         <td colspan="90"><img src="/sima/imagenes/bordestablas/borde1.png" width="1500" height="21" /></td>
+         <td colspan="90"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="1500" height="21" /></td>
        </tr>
        <tr bgcolor="#FFFF00">
          <td width="207" bgcolor="#FFFF00" class="negromid"><div align="center">Empleado</div></td>
@@ -1254,7 +1254,7 @@ $myrowa8 = mysql_fetch_array($resulta8);
 			 ?> </p></td>
        </tr>
        <tr>
-         <td colspan="90"><img src="/sima/imagenes/bordestablas/borde2.png" width="1500" height="20" /></td>
+         <td colspan="90"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="1500" height="20" /></td>
        </tr>
      </table>
      <p>&nbsp;</p>

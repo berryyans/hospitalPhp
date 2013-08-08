@@ -93,7 +93,7 @@ $estilos->styles();
 		 }
 		 ?>"/>
           </label>
-          <input name="button" type="image"src="/sima/imagenes/btns/fecha.png" /> 
+          <input name="button" type="image"src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fecha.png" /> 
           <span >a</span> 
           <label>
           <input name="fechaFinal" type="text"  id="campo_fecha1" size="10" maxlength="10" readonly=""
@@ -103,7 +103,7 @@ $estilos->styles();
 		 }
 		 ?>"/>
           </label>
-          <input name="button1" type="image"src="/sima/imagenes/btns/fecha.png" />      </td>
+          <input name="button1" type="image"src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fecha.png" />      </td>
     </tr>
 
   </table>

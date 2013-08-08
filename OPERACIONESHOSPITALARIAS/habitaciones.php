@@ -74,7 +74,7 @@ $C=$myrow['codigoCuarto'];
        </span></td>
        <td bgcolor="<?php echo $color?>" ><span ><?php echo $myrow['descripcionCuarto'];?></span></td>
        <td bgcolor="<?php echo $color?>" ><a href="#" 
-onclick="javascript:ventanaSecundaria1('../ventanas/ventanaCatalogoCuartos.php?almacen=<?php echo $_POST['almacenDestino2']; ?>&codigo=<?php echo $C; ?>')"><img src="/sima/imagenes/transfer1.jpeg" alt="" width="12" height="12" border="0" /></a></td>
+onclick="javascript:ventanaSecundaria1('../ventanas/ventanaCatalogoCuartos.php?almacen=<?php echo $_POST['almacenDestino2']; ?>&codigo=<?php echo $C; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/transfer1.jpeg" alt="" width="12" height="12" border="0" /></a></td>
      </tr>
      <?php }?>
    </table>

@@ -53,7 +53,7 @@ $_POST['tipoAlmacen']=$_GET['tipoAlmacen'];
 }
 ?>
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -152,7 +152,7 @@ echo mysql_error();
 	   <?php if($myrow7a['almacen']!=NULL){  ?>
          <div align="center">
            
-             <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria1('/sima/ventanas/mostrarPoliticas.php?gpoProducto=<?php echo $myrow['codigoGP']; ?>
+             <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ventanas/mostrarPoliticas.php?gpoProducto=<?php echo $myrow['codigoGP']; ?>
 		&descripcionGP=<?php echo $myrow['descripcionGP']; ?>&amp;almacen=<?php echo $myrow['almacen']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')">
             Editar
                 <?php 
@@ -173,7 +173,7 @@ echo mysql_error();
 	    
          <div align="center">
            
-             <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria1('/sima/ventanas/ventanaAsignarPoliticas.php?gpoProducto=<?php echo $myrow['codigoGP']; ?>
+             <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ventanas/ventanaAsignarPoliticas.php?gpoProducto=<?php echo $myrow['codigoGP']; ?>
 		&descripcionGP=<?php echo $myrow['descripcionGP']; ?>')">
             
             Agregar

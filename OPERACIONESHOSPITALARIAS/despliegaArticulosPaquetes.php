@@ -435,7 +435,7 @@ echo "---";
                
         <td ><div align="center" > 
                 <a href="despliegaArticulosPaquetes.php?codigo=<?php echo $code; ?>&amp;codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&amp;keyE=<?php echo $myrow['keyE']; ?>&amp;del=<?php echo $yes; ?>&inactiva=si"> 
-                    <img src="/sima/imagenes/borrar.png" alt="INACTIVO" width="20" height="20" border="0"  onclick="if(confirm('Estas seguro que deseas eliminar el Articulo? <?php echo $myrow['descripcionPaquete'];?>?') == false){return false;}" />
+                    <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/borrar.png" alt="INACTIVO" width="20" height="20" border="0"  onclick="if(confirm('Estas seguro que deseas eliminar el Articulo? <?php echo $myrow['descripcionPaquete'];?>?') == false){return false;}" />
                 </a></div></td>
       </tr>
       <?php  

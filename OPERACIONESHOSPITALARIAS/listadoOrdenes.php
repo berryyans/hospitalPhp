@@ -53,7 +53,7 @@ function ventanaSecundaria (URL){
 
   
   
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 
 
 <script>

@@ -16,8 +16,8 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 
 <?php
 
-$ventana1='/sima/ventanas/modificarP.php';
-$ventana='/sima/ventanas/ventanaAsignarPaquete.php';
+$ventana1=CONSTANT_PATH_SIMA_RAIZ.'/ventanas/modificarP.php';
+$ventana=CONSTANT_PATH_SIMA_RAIZ.'/ventanas/ventanaAsignarPaquete.php';
 $TITULO='Asignar un paquete a un paciente';
 $mostrarPacientes=new listaPX();
 $mostrarPacientes->mostrarPacientes($ventana1,$ventana,$entidad,$TITULO,$_GET['datawarehouse'],$usuario,$numeroE,$basedatos);

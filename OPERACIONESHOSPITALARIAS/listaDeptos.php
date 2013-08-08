@@ -61,7 +61,7 @@ $_POST['tipoAlmacen']=$_GET['tipoAlmacen'];
 }
 ?>
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -154,7 +154,7 @@ echo mysql_error();
        <td ><span ><?php echo $myrow['descripcion'];?></span></td>
        <td ><div align="center">
          <?php if($myrow7a['departamento']){  ?>
-         <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" id="editar<?php echo $f;?>" onClick="ventanaSecundaria10('/sima/ventanas/listaDescuentoAuto.php?numMedico=<?php echo $myrow['id_medico']; ?>
+         <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" id="editar<?php echo $f;?>" onClick="ventanaSecundaria10('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ventanas/listaDescuentoAuto.php?numMedico=<?php echo $myrow['id_medico']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $myrow['almacen']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')" onMouseOver="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo $myrow['descripcion'];?>&lt;/div&gt;')" onMouseOut="UnTip()"><img src="../imagenes/btns/editbtn.png" alt="EDITAR A: <?php echo $myrow['descripcion'];?>" width="20" height="20" border="0" /></a>
          <?php } else{ echo '---';} ?>
        </div></td>
@@ -165,7 +165,7 @@ echo mysql_error();
 	   
          <div align="center">
            <?php if($myrow['activo']=='A'){  ?>
-             <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria4('/sima/ventanas/ventanaDescuentoAuto.php?numMedico=<?php echo $myrow['id_medico']; ?>
+             <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria4('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ventanas/ventanaDescuentoAuto.php?numMedico=<?php echo $myrow['id_medico']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $myrow['almacen']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')">
                Add
              </a>
@@ -180,7 +180,7 @@ echo mysql_error();
 	   
          <div align="center">
            <?php if($myrow['activo']=='A'){  ?>
-             <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria4('/sima/ventanas/ventanaDescuentoAutoServicio.php?numMedico=<?php echo $myrow['id_medico']; ?>
+             <a href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria4('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ventanas/ventanaDescuentoAutoServicio.php?numMedico=<?php echo $myrow['id_medico']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $myrow['almacen']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')">
                Add
              </a>

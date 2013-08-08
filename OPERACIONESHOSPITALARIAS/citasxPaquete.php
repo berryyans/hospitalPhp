@@ -157,7 +157,7 @@ $myrow39 = mysql_fetch_array($result39);
 		  }
 		  ?>
           </div></td>
-          <td bgcolor="#FFFFFF" class="Estilo24"><div align="center"><a href="javascript:ventanaSecundaria1('../ventanas/asignarCitasPxPaquetes.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;almacen=<?php echo $myrow['id_almacen']; ?>&amp;medico=<?php echo $myrow39['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>')"><img src="/sima/imagenes/btns/aprobar.png" alt="Datos Generales del Paciente" width="24" height="24" border="0" /></a></div></td>
+          <td bgcolor="#FFFFFF" class="Estilo24"><div align="center"><a href="javascript:ventanaSecundaria1('../ventanas/asignarCitasPxPaquetes.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;almacen=<?php echo $myrow['id_almacen']; ?>&amp;medico=<?php echo $myrow39['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/aprobar.png" alt="Datos Generales del Paciente" width="24" height="24" border="0" /></a></div></td>
         <td bgcolor="#FFFFFF" class="negro">
 		
 		

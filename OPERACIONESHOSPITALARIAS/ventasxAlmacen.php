@@ -58,13 +58,13 @@ function checkIt(evt) {
 }
 </SCRIPT>
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -127,7 +127,7 @@ $comboAlmacen->despliegaAlmacen($entidad,'style7',$almacenDestino,$almacenDestin
 		 }
 		 ?>"/>
             </label>
-            <input name="button1" type="image"src="/sima/imagenes/btns/fecha.png"class="Estilo24" id="lanzador1" value="..." />
+            <input name="button1" type="image"src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fecha.png"class="Estilo24" id="lanzador1" value="..." />
         </div></td>
       </tr>
       <tr>
@@ -247,9 +247,9 @@ $myrow31 = mysql_fetch_array($result31);
     </tr>
     <?php }}?>
   </table>
-  <p align="center"><a href="/sima/graficas/ventasxDiaxAlmacen.php" class="style71"></a>
+  <p align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/graficas/ventasxDiaxAlmacen.php" class="style71"></a>
     <input name="nuevo" type="button" class="style71" id="nuevo" value=" Graficar"
-	  onclick="ventanaSecundaria1('/sima/graficas/ventasxDiaxAlmacen.php?almacen=<?php echo $_POST['almacenDestino'];?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>&entidad=<?php echo $entidad;?>')" />
+	  onclick="ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/graficas/ventasxDiaxAlmacen.php?almacen=<?php echo $_POST['almacenDestino'];?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>&entidad=<?php echo $entidad;?>')" />
   </p>
 </body>
 </html>

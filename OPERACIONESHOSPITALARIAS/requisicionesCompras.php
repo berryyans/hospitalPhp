@@ -1,4 +1,6 @@
-<?php require("menuOperaciones.php"); ?>
+<?php
+require('/Constantes.php');
+require("menuOperaciones.php"); ?>
 
 
 <?php  
@@ -73,13 +75,13 @@ if(win.window.focus){win.window.focus();}
 
 
 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
  
 
 
@@ -268,7 +270,7 @@ echo $myrow['hora'];
  
       <td >
  <a href="javascript:ventanaSecundaria('../ventanas/ventanaMuestraRequisicion.php?nRequisicion=<?php echo $myrow['contador'];?>','ventana7','800','600','yes');" />
- <img src="/sima/imagenes/btns/printer.png" width="20" height="20" />
+ <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/printer.png" width="20" height="20" />
  </a>
           
       </td>  
@@ -285,7 +287,7 @@ echo $myrow['hora'];
                 
        <?php if($myrow['status']=='standby'){?>    
            <a href="<?php echo $_SERVER['PHP_SELF'];?>?nRequisicion=<?php echo $myrow['contador']; ?>&datawarehouse=<?php echo $_GET['datawarehouse']; ?>&warehouse=<?php echo $_GET['warehouse']; ?>&main=<?php echo $_GET['main']; ?>&inactiva=<?php echo'inactiva'; ?>&almacen=<?php echo $_GET['almacen'];?>&numSolicitud=<?php echo $myrow['numSolicitud'];?>"> 
-                    <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar esta solicitud?') == false){return false;}" />
+                    <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar esta solicitud?') == false){return false;}" />
                 </a>
        <?php }else{ echo '---';}?>
        </div>
@@ -347,7 +349,7 @@ mysql_db_query($basedatos,$agrega);
 echo mysql_error();
 ?>
         <input onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Presiona aqui para generar una Devolucion';?></div>')" onMouseOut="UnTip()" name="nuevo" 
-		type="button"   id="nuevo" value="NUEVA SOLICITUD DE COMPRA" src="/sima/imagenes/btns/genorden.png"
+		type="button"   id="nuevo" value="NUEVA SOLICITUD DE COMPRA" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/genorden.png"
 	  onclick="nueva('../ventanas/generaOrdenCompra.php?cargos=cargos&almacen=<?php echo $_GET['datawarehouse'];?>&solicitud=<?php echo $n;?>','ventana7','800','500','yes')" />
       </div></td>
 

@@ -11,7 +11,7 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 <?php require(CONSTANT_PATH_CONFIGURACION."/clases/pacientesInternosUrgencias.php") ?>
 <?php 
 $TITULO='Cargos a  Pacientes';
-$ventana='/sima/cargos/solicitaArticulos.php';
+$ventana=CONSTANT_PATH_SIMA_RAIZ.'/cargos/solicitaArticulos.php';
 $ventana1='../ventanas/datosAdicionales.php';
 $muestraPI=new pacientesInternosUrgencias();
 $muestraPI->listadoPI($entidad,$TITULO,$ventana,$ventana1,$_GET['datawarehouse'],$basedatos);

@@ -129,8 +129,8 @@ else
 <head>
 
  <meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
- <script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+ <script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 
 
 <?php
@@ -164,7 +164,7 @@ $estilos->styles();
         </span>
             <input name="numeroEx" type="hidden"  id="numeroEx" value="<?php echo $_POST['numeroEx'];?>" />
         </label>
-        <a href="javascript:ventanaSecundaria10('/sima/cargos/busquedaAvanzadaAlumnos.php?reload=si')" >Busqueda Avanzada</a></td>
+        <a href="javascript:ventanaSecundaria10('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/busquedaAvanzadaAlumnos.php?reload=si')" >Busqueda Avanzada</a></td>
     </tr>
     </table>
 
@@ -290,7 +290,7 @@ $NUMEROE=$myrow['numCliente'];
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesTodosAjax.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesTodosAjax.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
@@ -311,7 +311,7 @@ $NUMEROE=$myrow['numCliente'];
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/alumnosx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $ALMACEN;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/alumnosx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $ALMACEN;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

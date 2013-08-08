@@ -112,7 +112,7 @@ $estilo->styles();
    <p>
      <label></label>
    </p>
-   <img src="/sima/imagenes/bordestablas/borde1.png" width="644" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="644" height="24" />
    <table width="644" border="0" align="center" cellpadding="4" cellspacing="0">
 
      <tr bgcolor="#CCCCCC">
@@ -181,7 +181,7 @@ $resultaNombre11=mysql_db_query($basedatos,$sqlNombre11);
          </span></td>
      </tr>
    </table>
-   <img src="/sima/imagenes/bordestablas/borde2.png" width="644" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="644" height="24" />
 <p>&nbsp;</p>
  </form>
  <p>
@@ -197,7 +197,7 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?>
  </p>
  <form id="form2" name="form2" method="post" action="">
-   <img src="/sima/imagenes/bordestablas/borde1.png" width="519" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="519" height="24" />
    <table width="519" border="0" align="center" cellpadding="4" cellspacing="0">
       
       <tr bgcolor="#FFFF00">
@@ -263,7 +263,7 @@ $C=$myrow['keySM'];
    
    
    
-   <img src="/sima/imagenes/bordestablas/borde2.png" width="519" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="519" height="24" />
 </form>
  <p align="center">&nbsp;</p>
 </body>

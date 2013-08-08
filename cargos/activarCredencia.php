@@ -177,13 +177,13 @@ echo mysql_error();
  ?>
 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script>
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
@@ -237,8 +237,8 @@ echo mysql_error();
 .style121 {font-size: 10px}
 </style>
 
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 
 
 
@@ -407,19 +407,19 @@ $myrow33a = mysql_fetch_array($result33a);
         <td bgcolor="<?php echo $color?>" class="normal"><?php echo $myrow['tipoCredencial'];?></td>
         <td bgcolor="<?php echo $color?>" class="normal"><?php echo $myrow['fechaInicial'];?></td>
         <td bgcolor="<?php echo $color?>" class="normal"><?php echo $myrow['fechaFinal'];?></td>
-        <td bgcolor="<?php echo $color?>" class="normal"><a href="javascript:ventanaSecundaria1('/sima/OPERACIONESHOSPITALARIAS/admisiones/ventanaAgregarDependientes.php?numCredencial=<?php echo $myrow['numCredencial'];?>&amp;forma=<?php echo "F"; ?>&amp;keyPacientes=<?php echo $myrow['keyPacientes']; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>')"><img src="/sima/imagenes/edit.jpg" alt="credencial" width="12" height="12" border="0" /></a></td>
-        <td bgcolor="<?php echo $color?>" class="normal"><div align="left"><span class="style121"> <a href="javascript:ventanaSecundaria1('imprimirCredencial.php?almacen=<?php echo $almacen; ?>&amp;forma=<?php echo "F"; ?>&amp;keyPacientes=<?php echo $myrow['keyPacientes']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"> <img src="/sima/imagenes/camera.jpg" alt="credencial" width="24" height="24" border="0" /> </a> </span></div></td>
+        <td bgcolor="<?php echo $color?>" class="normal"><a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/ventanaAgregarDependientes.php?numCredencial=<?php echo $myrow['numCredencial'];?>&amp;forma=<?php echo "F"; ?>&amp;keyPacientes=<?php echo $myrow['keyPacientes']; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/edit.jpg" alt="credencial" width="12" height="12" border="0" /></a></td>
+        <td bgcolor="<?php echo $color?>" class="normal"><div align="left"><span class="style121"> <a href="javascript:ventanaSecundaria1('imprimirCredencial.php?almacen=<?php echo $almacen; ?>&amp;forma=<?php echo "F"; ?>&amp;keyPacientes=<?php echo $myrow['keyPacientes']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/camera.jpg" alt="credencial" width="24" height="24" border="0" /> </a> </span></div></td>
         <td bgcolor="<?php echo $color?>" class="normal"><label></label>
             </span>
             <div align="center"><span class="style71">
               <?php if($myrow['status']=='A'){ ?>
               </span> <span class="Estilo24"> <a 
 		
-		href="<?php echo $_SERVER['PHP_SELF'];?>?keyCredencial=<?php echo $myrow['keyCredencial'];?>&keyPacientes=<?php echo $_GET['keyPacientes']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_GET['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;gpoProducto=<?php echo $_GET['gpoProducto1'];?>&amp;almacenDestino=<?php echo $_GET['almacenDestino'];?>&amp;almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&amp;gpoProducto1=<?php echo $_GET['gpoProducto1'];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>"> <img src="/sima/imagenes/newicons/active_icon.jpg" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
+		href="<?php echo $_SERVER['PHP_SELF'];?>?keyCredencial=<?php echo $myrow['keyCredencial'];?>&keyPacientes=<?php echo $_GET['keyPacientes']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_GET['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;gpoProducto=<?php echo $_GET['gpoProducto1'];?>&amp;almacenDestino=<?php echo $_GET['almacenDestino'];?>&amp;almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&amp;gpoProducto1=<?php echo $_GET['gpoProducto1'];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/newicons/active_icon.jpg" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
               <?php } else { ?>
               <a
 			 
-			   href="<?php echo $_SERVER['PHP_SELF'];?>?keyCredencial=<?php echo $myrow['keyCredencial'];?>&keyPacientes=<?php echo $_GET['keyPacientes']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_GET['tipoAlmacen']; ?>&amp;codigo=<?php echo $C?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;gpoProducto=<?php echo $_GET['gpoProducto1'];?>&amp;almacenDestino=<?php echo $_GET['almacenDestino'];?>&amp;almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&amp;gpoProducto1=<?php echo $_GET['gpoProducto1'];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>"> <img src="/sima/imagenes/newicons/delete_icon.jpg" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
+			   href="<?php echo $_SERVER['PHP_SELF'];?>?keyCredencial=<?php echo $myrow['keyCredencial'];?>&keyPacientes=<?php echo $_GET['keyPacientes']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_GET['tipoAlmacen']; ?>&amp;codigo=<?php echo $C?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;gpoProducto=<?php echo $_GET['gpoProducto1'];?>&amp;almacenDestino=<?php echo $_GET['almacenDestino'];?>&amp;almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&amp;gpoProducto1=<?php echo $_GET['gpoProducto1'];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/newicons/delete_icon.jpg" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
               <?php } ?>
             </span></div></td>
       </tr>
@@ -451,7 +451,7 @@ echo 'checked'.$myrow['keyTT'];
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesPermitenCredenciales.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesPermitenCredenciales.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

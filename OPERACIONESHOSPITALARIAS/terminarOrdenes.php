@@ -1,4 +1,6 @@
-<?php require("menuOperaciones.php"); ?>
+<?php 
+require('/Constantes.php');
+require("menuOperaciones.php"); ?>
 
   <script language="JavaScript" type="text/javascript">
     /**
@@ -85,13 +87,13 @@ echo '<div class="success">Se recibieron servicios</div>';
 
 
 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script>
 
 
 
@@ -267,7 +269,7 @@ echo $myrow['usuario'];
   <?php
 if( $myrow['statusEstudio']=='onTransfer'){
 ?>
-<td width="32" bgcolor="<?php echo $color?>" ><div align="center"><a href="javascript:ventanaSecundaria1('../ventanas/lentesopticaPrint.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;paciente=<?php echo $myrow['paciente'];?>')"><img src="/sima/imagenes/btns/printer.png" alt="" width="20" height="20" border="0" /></a>
+<td width="32" bgcolor="<?php echo $color?>" ><div align="center"><a href="javascript:ventanaSecundaria1('../ventanas/lentesopticaPrint.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;paciente=<?php echo $myrow['paciente'];?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/printer.png" alt="" width="20" height="20" border="0" /></a>
 <?php }else{ echo '---';} ?>
 </div></td>
     </tr>

@@ -8,7 +8,7 @@ $mostrarmenu=new menus();
 $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,'principal',$rutaimagen,$basedatos);
 
 $TITULO='Cargos a  Pacientes';
-$ventana='/sima/cargos/solicitaArticulos.php';
+$ventana=CONSTANT_PATH_SIMA_RAIZ.'/cargos/solicitaArticulos.php';
 $ventana1='datosAdicionales.php';
 require(CONSTANT_PATH_CONFIGURACION.'/clases/cargosPacientesInternos.php');
 

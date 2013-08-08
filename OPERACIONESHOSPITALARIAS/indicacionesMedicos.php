@@ -129,7 +129,7 @@ CONTENT="20">
 		 echo $date;
 		 
 		 ?>"/>
-        <input name="button" type="image"src="/sima/imagenes/btns/fecha.png" />
+        <input name="button" type="image"src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fecha.png" />
       </p>
     </div>
   </div>
@@ -210,9 +210,9 @@ $col = 1;
     
   
 	  <td width="67" bgcolor="<?php echo $color?>" ><div align="center"><a href="#" onClick="javascript:ventanaSecundaria2('../ventanas/notasClinicas.php?numeroE=<?php echo $myrow['numeroE']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="/sima/imagenes/nuevo.jpg" alt="Aplicar Cargos" width="24" height="24" border="0" /></a></div></td>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/nuevo.jpg" alt="Aplicar Cargos" width="24" height="24" border="0" /></a></div></td>
 	  <td width="67" bgcolor="<?php echo $color?>" ><div align="center"><a href="#" onClick="javascript:ventanaSecundaria2('notasClinicas.php?numeroE=<?php echo $myrow['numeroE']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="/sima/imagenes/btns/editbtn.png" alt="Aplicar Cargos" width="24" height="24" border="0" /></a></div></td>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/editbtn.png" alt="Aplicar Cargos" width="24" height="24" border="0" /></a></div></td>
     </tr>
     <?php  }}?>
     <input name="nombres" type="hidden" value="<?php echo $nombrePaciente; ?>" />

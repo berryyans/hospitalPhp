@@ -10,7 +10,7 @@ $mostrarmenu->menuTemplate($_GET['warehouse'],$_GET['datawarehouse'],$rutasalir,
 ?>
 <?php
 $ventana1='ventanaCatalogoPaquetes.php';
-$ventana2='/sima/cargos/ventanitaCambiaPrecioPaquete.php';
+$ventana2=CONSTANT_PATH_SIMA_RAIZ.'/cargos/ventanitaCambiaPrecioPaquete.php';
 $ventana3='despliegaArticulosPaquetes.php';
 ?>
 

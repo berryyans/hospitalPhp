@@ -53,7 +53,7 @@ function ventanaSecundaria11 (URL){
 
 
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 <style type="text/css">
 <!--
 .style7 {font-size: 9px}
@@ -85,14 +85,14 @@ function ventanaSecundaria11 (URL){
     <tr valign="middle">
       <td width="36%"><div align="center"></div></td>
       <td width="46%"><div align="center">
-        <input onMouseOver="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para consultar saldos ..';?>&lt;/div&gt;')" onMouseOut="UnTip()" name="nuevo42" type="button" src="/sima/imagenes/btns/new_consulta.png" id="nuevo42" value="Por Persona"
-	  onClick="ventanaSecundaria11('/sima/cargos/consultarSaldo.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>')" /> 
+        <input onMouseOver="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para consultar saldos ..';?>&lt;/div&gt;')" onMouseOut="UnTip()" name="nuevo42" type="button" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/new_consulta.png" id="nuevo42" value="Por Persona"
+	  onClick="ventanaSecundaria11('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/consultarSaldo.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>')" /> 
         
         
         
         
-         <input onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para consultar saldos ..';?>&lt;/div&gt;')" onmouseout="UnTip()" name="nuevo422" type="button" src="/sima/imagenes/btns/new_consulta.png" id="nuevo422" value="Por Aseguradora"
-	  onclick="ventanaSecundaria11('/sima/cargos/consultarSaldoxAseguradora.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>')" />
+         <input onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para consultar saldos ..';?>&lt;/div&gt;')" onmouseout="UnTip()" name="nuevo422" type="button" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/new_consulta.png" id="nuevo422" value="Por Aseguradora"
+	  onclick="ventanaSecundaria11('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/consultarSaldoxAseguradora.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>')" />
       </div></td>
       <td width="18%"><div align="center"></div></td>
     </tr>

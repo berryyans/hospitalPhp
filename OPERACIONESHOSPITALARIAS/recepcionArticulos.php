@@ -1,4 +1,6 @@
-<?php require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
 
 
 <script language=javascript> 
