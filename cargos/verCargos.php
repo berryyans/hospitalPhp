@@ -301,7 +301,7 @@ $descripcion->descripcion($entidad,$keyCAP,$numeroE,$nCuenta,$codigo,$basedatos)
 		
 			<?php if($myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>		</td>
 		
      

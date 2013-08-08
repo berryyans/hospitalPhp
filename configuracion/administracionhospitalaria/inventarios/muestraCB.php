@@ -3,13 +3,13 @@
 define('IN_CB',true);
 
 // Including all required classes
-require('/var/www/html/sima/js/class/index.php');
-require('/var/www/html/sima/js/class/FColor.php');
-require('/var/www/html/sima/js/class/BarCode.php');
-require('/var/www/html/sima/js/class/FDrawing.php');
+require(CONSTANT_PATH_SIMA.'/js/class/index.php');
+require(CONSTANT_PATH_SIMA.'/js/class/FColor.php');
+require(CONSTANT_PATH_SIMA.'/js/class/BarCode.php');
+require(CONSTANT_PATH_SIMA.'/js/class/FDrawing.php');
 
 // including the barcode technology
-include('/var/www/html/sima/js/class/code39.barcode.php');
+include(CONSTANT_PATH_SIMA.'/js/class/code39.barcode.php');
 
 // Creating some Color (arguments are R, G, B)
 $color_black = new FColor(0,0,0);

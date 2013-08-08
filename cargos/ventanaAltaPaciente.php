@@ -237,7 +237,7 @@ $leyenda='Se hizo un Movimiento';
 		 echo $myrow2['codigo']; 
 		 }
 		 ?>" size="10" readonly=""/>
-              <a href="javascript:ventanaSecundaria3('/sima/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&amp;descripcion=<?php echo "descripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;comision=<?php echo "comision"; ?>')"><img src="/sima/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></td>
+              <a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&amp;descripcion=<?php echo "descripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;comision=<?php echo "comision"; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></td>
          
 		  <input name="comision" type="hidden" value="">
 		  </tr>
@@ -287,7 +287,7 @@ $myrow31 = mysql_fetch_array($result31);
               </label>
                 <label>
 				<a href="javascript:ventanaSecundaria1(
-		'ventanaTC.php?campo=<?php echo "tipoTransaccion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;descripcion=<?php echo "campoDespliega"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Tipo de Transacci&oacute;n" width="20" height="20" border="0" /></a><a href="javascript:ventanaSecundaria1(
+		'ventanaTC.php?campo=<?php echo "tipoTransaccion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;descripcion=<?php echo "campoDespliega"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Tipo de Transacci&oacute;n" width="20" height="20" border="0" /></a><a href="javascript:ventanaSecundaria1(
 		'ventanaTC.php?campo=<?php echo "tipoTransaccion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;descripcion=<?php echo "campoDespliega"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')">
                 <input name="tipoTransaccion" type="hidden" class="Estilo24" id="tipoTransaccion" 
 				value="<?php 

@@ -194,7 +194,7 @@ echo $myrow['ruta'];
  alt="<?php echo $myrow['nombre1']." ".$myrow['apellido1']; ?>" width="150" height="113" border="0" />
  <?php } ?>
  </a></p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="536" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="536" height="24" />
   <table width="536" border="0" align="center" cellpadding="0" cellspacing="0" class="style12">
     <tr>
       <th colspan="3" bgcolor="#CCCCCC" class="style12" scope="col"><strong>Asignar C&oacute;digo de Barra al Inventario </strong></th>
@@ -232,14 +232,14 @@ echo $myrow['ruta'];
         <span class="Estilo24">
         <input name="consultas" type="submit" class="Estilo24" id="consultas"  onclick="javascript:ventanaSecundaria('despliegaCB.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="Consultar" />
-        <input name="consultas2" type="submit" class="Estilo24" id="consultas2"  onclick="javascript:ventanaSecundaria2('/sima/ADMINHOSPITALARIAS/inventarios/barcode/index.php?numeroE=<?php echo $myrow['numeroE']; ?>
+        <input name="consultas2" type="submit" class="Estilo24" id="consultas2"  onclick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/barcode/index.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="Generar C&oacute;digo de Barra" />
         </span>
         <input name="rutaImagen" type="hidden" id="rutaImagen" value="<?php echo $myrow['ruta']; ?>" />
       </label></td>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="536" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="536" height="24" />
 </form>
 
 <p>&nbsp;</p>

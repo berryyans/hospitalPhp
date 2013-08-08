@@ -210,7 +210,7 @@ $myrow31 = mysql_fetch_array($result31);
 		
 		  ?>
     </span></span></td>
-    <td bgcolor="<?php echo $color;?>" class="Estilo241"><span class="style113"> <a href="javascript:ventanaSecundaria15('/sima/cargos/ventanaCatalogoDXI.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&keyDiagnosticos=<?php echo $myrow['keyDiagnosticos']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Modificar Codigo Internacional" width="19" height="19" border="0" /></a></span></td>
+    <td bgcolor="<?php echo $color;?>" class="Estilo241"><span class="style113"> <a href="javascript:ventanaSecundaria15('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaCatalogoDXI.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&keyDiagnosticos=<?php echo $myrow['keyDiagnosticos']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Modificar Codigo Internacional" width="19" height="19" border="0" /></a></span></td>
   </tr>
   <?php }?>
 </table>

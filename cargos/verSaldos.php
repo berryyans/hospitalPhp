@@ -151,7 +151,7 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?>
  </p>
  <form id="form2" name="form2" method="post" action="">
-   <img src="/sima/imagenes/bordestablas/borde1.png" width="750" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="750" height="24" />
    <table width="750" border="0" align="center" cellpadding="4" cellspacing="0" bordercolor="#000000" class="Estilo24">
      <tr>
        <td width="181" bgcolor="#FFFF00" class="Estilo25">&nbsp;</td>
@@ -336,7 +336,7 @@ $abonos=$aplicados+$noAplicados;
        <td class="style12"><?php echo '$'.number_format($cargos-$abonos,2);?></td>
      </tr>
    </table>
-   <img src="/sima/imagenes/bordestablas/borde2.png" width="750" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="750" height="24" />
    <p align="center"><label></label>
  </p>
 </form>

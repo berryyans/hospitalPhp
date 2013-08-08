@@ -64,7 +64,7 @@ if(win.window.focus){win.window.focus();}
 
 </script>
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -129,7 +129,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
    
    <table width="903" border="0" align="center" cellspacing="0" cellpadding="0">
      <tr>
-       <td colspan="13"><img src="/sima/imagenes/bordestablas/borde1.png" width="900" height="24" /></td>
+       <td colspan="13"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="900" height="24" /></td>
      </tr>
        <tr bgcolor="#ffff00">
        <th width="26" scope="col"><div align="left" class="negromid">
@@ -279,7 +279,7 @@ echo $resulScripModulo2a['descripcion'];
 
        <td class="style12"><span class="normal"><?php
 	   if($myrow['id_medico']){ ?>
-<a href="#" onClick="javascript:ventanaSecundaria('/sima/ADMINHOSPITALARIAS/medicos/ventanaModificaMedicos.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&numMedico=<?php echo $myrow['id_medico'];?>')">
+<a href="#" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/medicos/ventanaModificaMedicos.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&numMedico=<?php echo $myrow['id_medico'];?>')">
 
 	   <?php echo $myrow['id_medico']; ?>	   </a><?php    
 	   } else { 
@@ -404,7 +404,7 @@ if($myrowa['descripcion']){
      </tr>
      <?php }}}?>
    </table>
-   <img src="/sima/imagenes/bordestablas/borde2.png" width="903" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="903" height="24" />
    <p align="center">
      <label>
      <input name="nuevo" type="button" class="style7" id="nuevo" value="Nuevo Almacen"

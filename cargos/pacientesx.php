@@ -101,7 +101,7 @@ keyPacientes DESC limit 0,100";
 		//echo "<li onselect=\" this.setText('$name').setValue('$emp_no'); \"><span>$emp_no</span>\n\t$name\n</li>\n";
 
                 if($row['ruta']!='images/' AND $row['ruta']){
-                $route='/sima/OPERACIONESHOSPITALARIAS/admisiones/'.$row['ruta'];
+                $route=CONSTANT_PATH_SIMA_RAIZ.'/OPERACIONESHOSPITALARIAS/admisiones/'.$row['ruta'];
                 $ruta='<img src="'.$route.'" width="80" height="80" />';
                 }else{
 

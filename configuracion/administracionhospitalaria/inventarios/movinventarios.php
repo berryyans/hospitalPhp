@@ -75,7 +75,7 @@ INVENTARIOS<br />
 
 &nbsp;</h1>
 <form id="form1" name="form1" method="post" action="">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="600" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="600" height="24" />
   <table width="600" border="0" align="center" cellpadding="3" cellspacing="0">
       
       
@@ -207,7 +207,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
         </label></th>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="600" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="600" height="24" />
 <p>&nbsp;</p>
  
   

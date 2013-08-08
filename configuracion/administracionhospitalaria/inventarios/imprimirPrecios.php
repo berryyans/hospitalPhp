@@ -1,4 +1,6 @@
-<?php require('/var/www/html/sima/js/pdf/fpdf_js.php');
+<?php
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA.'/js/pdf/fpdf_js.php');
 
 
 define('FPDF_FONTPATH','font/');
@@ -248,7 +250,7 @@ $pdf->SetFont('Arial','',12);
 
 
 $pdf->SetXY(22,18);
-$pdf->Cell(0,0,'Descripción',0,0,L);
+$pdf->Cell(0,0,'Descripciï¿½n',0,0,L);
 
 
 $pdf->SetXY(175,18);

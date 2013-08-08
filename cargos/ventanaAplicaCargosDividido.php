@@ -475,7 +475,7 @@ keyClientesInternos='".$_GET['nCuenta']."'
 mysql_db_query($basedatos,$actualiza3);
 echo mysql_error();
 ?><script>
-javascript:ventanaSecundaria2('/sima/cargos/imprimirCargosPAK.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $_GET['random'];?>&usuario=<?php echo $usuario;?>&folioVenta=<?php echo $myrow3['folioVenta'];?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirCargosPAK.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $_GET['random'];?>&usuario=<?php echo $usuario;?>&folioVenta=<?php echo $myrow3['folioVenta'];?>');
 window.opener.document.forms["form1"].submit();
 </script>
 <?php 
@@ -728,7 +728,7 @@ echo mysql_error();
 
 
 <?php if($_GET['abono']=='si' ){ ?>
-javascript:ventanaSecundaria2('/sima/cargos/imprimirCargosInternos.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $_GET['random'];?>&usuario=<?php echo $usuario;?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirCargosInternos.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $_GET['random'];?>&usuario=<?php echo $usuario;?>');
 window.opener.document.forms["form1"].submit();
 
 <?php } else if($_GET['tipoVenta']=='interno'){ ?>
@@ -821,8 +821,8 @@ window.opener.document.forms["form1"].submit();
 </style>
 </head>
 	
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
     
 <body>
 <p>&nbsp;</p>
@@ -1724,7 +1724,7 @@ if(($_GET['abono']=='si'  and $_GET['tipoPago']) or (($valor>0  and $_GET['tipoP
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesAjax.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesAjax.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

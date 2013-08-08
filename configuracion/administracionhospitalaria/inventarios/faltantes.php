@@ -209,7 +209,7 @@ echo mysql_error();
 
 <h1 align="center">Generar una OC directa </h1>
 <form id="form2" name="form2" method="post" action="">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="726" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="726" height="24" />
   <table width="726" border="0" align="center" cellpadding="3" cellspacing="0">
     <tr>
       <th width="25" bgcolor="#CCCCCC" scope="col"><input name="escoje" type="radio" value="porarticulo" checked="checked" /></th>
@@ -231,7 +231,7 @@ echo mysql_error();
 		onchange="javascript:this.form.submit();" />
         <span class="Estilo24">
           <input name="agregarCargos3" type="submit" class="Estilo24" id="agregarCargos3"  onclick="javascript:ventanaSecundaria1(
-		'/sima/cargos/agregarProveedores.php?campoDespliega=<?php echo "nomProveedor"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campoProveedor=<?php echo "id_proveedor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="P">
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregarProveedores.php?campoDespliega=<?php echo "nomProveedor"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campoProveedor=<?php echo "id_proveedor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="P">
       </span><span class="Estilo24">
 
 	   <input name="nomProveedor" type="text" class="Estilo24" id="nomProveedor" size="80" 
@@ -300,7 +300,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 <p align="center" class="style19"><?php echo $leyenda;?>&nbsp;</p>
 <form id="form1" name="form1" method="post" action="">
   <div align="center"></div>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="726" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="726" height="24" />
   <table width="726" border="0" align="center" cellpadding="3" cellspacing="0">
     <tr>
       <th width="49" bgcolor="#FFFF00" scope="col">C&oacute;digo</th>

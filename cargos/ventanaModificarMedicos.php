@@ -243,7 +243,7 @@ function MM_swapImage() { //v3.0
 </script>
 </head>
 
-<body onLoad="MM_preloadImages('/sima/imagenes/bordestablas/btns/newbtn.png')">
+<body onLoad="MM_preloadImages('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/newbtn.png')">
 <h1 align="center" class="titulos"> Alta de Medicos<br />
 <br />
 </h1><form id="form1" name="form1" method="post" action="" enctype="multipart/form-data" >
@@ -253,11 +253,11 @@ function MM_swapImage() { //v3.0
        
         
     <td width="115" align="right"><div align="center">
-      <input name="nuevo" type="Submit" src='/sima/imagenes/bordestablas/btns/newbtn.png' id="nuevo" value="Nuevo" />
+      <input name="nuevo" type="Submit" src='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/newbtn.png' id="nuevo" value="Nuevo" />
      </td>
-    <td width="118" align="right"><div align="center"><input name="actualizar" type="Submit" src='/sima/imagenes/bordestablas/btns/refreshbtn.png' class="Estilo24" id="actualizar" value="Modificar/Grabar" />
+    <td width="118" align="right"><div align="center"><input name="actualizar" type="Submit" src='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/refreshbtn.png' class="Estilo24" id="actualizar" value="Modificar/Grabar" />
     </div></td>
-    <td width="115" align="right"><div align="center"> <input name="borrar" type="Submit" src='/sima/imagenes/bordestablas/btns/deletebtn.png' id="borrar" value="Borrar"  disabled="disabled"/></div></td>
+    <td width="115" align="right"><div align="center"> <input name="borrar" type="Submit" src='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/deletebtn.png' id="borrar" value="Borrar"  disabled="disabled"/></div></td>
   </tr>
 
 </table>
@@ -289,7 +289,7 @@ function MM_swapImage() { //v3.0
 <td   >&nbsp;</td>
       <td width="162" rowspan="7" align="center" valign="middle" scope="col"><?php 
 
-if($myrow['ruta'] and $route='/sima/ADMINHOSPITALARIAS/medicos/'.$myrow['ruta']){
+if($myrow['ruta'] and $route='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/medicos/'.$myrow['ruta']){
 
 ?>
         <a href="javascript:ventanaSecundaria31('ventanaImagenMedicos.php?route=<?php echo $route;?>')" title="<?php echo $myrow['nombre1']." ".$myrow['apellido1']; ?>" class="style15" rel="lightbox" tag="IMG"> <img src="<?php echo $myrow['ruta']; ?>"
@@ -407,7 +407,7 @@ if($myrow['especialidad']==$resCombo['codigo']){
       <td ><label>
       <input name="ctaContable" type="text"  id="ctaContable" 
 	   value ="<?php echo $myrow['ctaContable']?>" readonly=""/>
-      <input name="ID_CCOSTO" type="submit"  id="ID_CCOSTO"  onclick="javascript:ventanaSecundaria1('/sima/cargos/ctoCosto.php?numeroE=<?php echo $numPaciente; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;campoSeguro=<?php echo "ctaContable"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="C" />
+      <input name="ID_CCOSTO" type="submit"  id="ID_CCOSTO"  onclick="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ctoCosto.php?numeroE=<?php echo $numPaciente; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;campoSeguro=<?php echo "ctaContable"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="C" />
 </select>
       </label></td>
       <td >&nbsp;</td>

@@ -196,7 +196,7 @@ $myrow8 = mysql_fetch_array($result8);
 		?>
       </span></td>
       <td bgcolor="<?php echo $color?>" class="style12"><label><span class="style7"><?php echo $cantidadComprar=$myrow18['cantidadComprar']; ?></span></label></td>
-      <td bgcolor="<?php echo $color?>" class="style12"><a href="javascript:ventanaSecundaria('/sima/cargos/cargarProveedores.php?id_requisicion=<?php echo $requisicion; ?>&amp;cantidadComprar=<?php echo $cantidadComprar; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;codigo=<?php echo $code1; ?>&amp;id_almacen=<?php echo $id_almacen; ?>')">
+      <td bgcolor="<?php echo $color?>" class="style12"><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/cargarProveedores.php?id_requisicion=<?php echo $requisicion; ?>&amp;cantidadComprar=<?php echo $cantidadComprar; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;codigo=<?php echo $code1; ?>&amp;id_almacen=<?php echo $id_almacen; ?>')">
         <?php 		
 $sSQL17= "Select * From proveedores WHERE id_proveedor= '".$id_proveedor."'";
 $result17=mysql_db_query($basedatos,$sSQL17);

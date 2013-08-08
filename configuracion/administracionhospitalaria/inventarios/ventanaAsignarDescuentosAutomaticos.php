@@ -150,16 +150,16 @@ $leyenda='Se agregaron datos';
 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librería principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librería para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
 
 
@@ -185,8 +185,8 @@ $showStyles=new muestraEstilos();
 $showStyles->styles();
 ?>
 
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
     
     
     
@@ -200,7 +200,7 @@ $showStyles->styles();
 <p align="center" class="negro"><?php echo '<blink>'.$leyenda.'</blink>';?></p>
 <form id="form1" name="form1" method="post" action="">
   <p align="center">&nbsp;</p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="497" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="497" height="24" />
   <table width="497" border="0" align="center" cellpadding="4" cellspacing="0">
       <tr>
         <th width="60" bgcolor="#FFFF00" scope="col"><div align="left" class="none">Cod. GP</div></th>
@@ -260,7 +260,7 @@ $myrow7ada = mysql_fetch_array($result7ada);
       </tr>
       <?php }?>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="497" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="497" height="24" />
   <p align="center">
     <label></label>
     <input type="submit" name="asignar" id="asignar" value="Efectuar Cambios"/>
@@ -288,7 +288,7 @@ $myrow7ada = mysql_fetch_array($result7ada);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesPrincipales.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesPrincipales.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
@@ -309,7 +309,7 @@ $myrow7ada = mysql_fetch_array($result7ada);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/rfcx.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/rfcx.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

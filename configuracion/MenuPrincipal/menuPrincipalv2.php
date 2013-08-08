@@ -264,7 +264,7 @@ while($myrowmpv2c = mysql_fetch_array($resultmpv2c)){
       }
 #tabsF a {
       float:left;
-      background:url("/sima/images/tableftF.gif") no-repeat left top;
+      background:url("<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/images/tableftF.gif") no-repeat left top;
       margin:0;
       padding:0 0 0 4px;
       text-decoration:none;
@@ -272,7 +272,7 @@ while($myrowmpv2c = mysql_fetch_array($resultmpv2c)){
 #tabsF a span {
       float:left;
       display:block;
-      background:url("/sima/images/tabrightF.gif") no-repeat right top;
+      background:url("<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/images/tabrightF.gif") no-repeat right top;
       padding:5px 15px 4px 6px;
       
 }

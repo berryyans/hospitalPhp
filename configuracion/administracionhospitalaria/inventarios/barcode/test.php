@@ -1,9 +1,10 @@
 <?php
+require('/Constantes.php');
 // Define variable to prevent hacking
 define('IN_CB',true);
 
 // Including all required classes
-require('/sima/js/class/index.php');
+require(CONSTANT_PATH_SIMA_RAIZ.'/js/class/index.php');
 require('/sima/js/class/FColor.php');
 require('/sima/js/class/BarCode.php');
 require('/sima/js/class/FDrawing.php');

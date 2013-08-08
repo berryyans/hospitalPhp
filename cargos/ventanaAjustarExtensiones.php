@@ -61,8 +61,8 @@ $estilos->styles();
 </head>
 
 <body>
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <h1 align="center">Agregar RFC a Extensi&oacute;n: <?php echo $_GET['extension'];?></h1>
 <?php echo $leyenda; ?>
   <form id="form1" name="form1" method="post" action="#" >
@@ -115,8 +115,8 @@ $myrow2 = mysql_fetch_array($result2);
 		}
 		?>" size="60" />
       </span></span>
-      <label> <a href="#" onClick="ventanaSecundaria111('/sima/INGRESOS HLC/cxc/ventanaModificaRFC.php?numMedico=<?php echo $myrow['id_medico']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $A; ?>&amp;codigoGP1=<?php echo $C?>&amp;codigosGP=<?php echo $C?>')"> <img src="/sima/imagenes/btns/editbtn.png" alt="EDITAR A: <?php echo $myrow['descripcionGP'];?>" width="16" height="16" border="0" /> </a></label>
+      <label> <a href="#" onClick="ventanaSecundaria111('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/cxc/ventanaModificaRFC.php?numMedico=<?php echo $myrow['id_medico']; ?>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $A; ?>&amp;codigoGP1=<?php echo $C?>&amp;codigosGP=<?php echo $C?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/editbtn.png" alt="EDITAR A: <?php echo $myrow['descripcionGP'];?>" width="16" height="16" border="0" /> </a></label>
     </span></td>
     Si el RFC no aparece, darlo de alta. </tr>
 </table>
@@ -188,7 +188,7 @@ $myrow2 = mysql_fetch_array($result2);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesPrincipales.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesPrincipales.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
@@ -209,7 +209,7 @@ $myrow2 = mysql_fetch_array($result2);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/rfcx.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/rfcx.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

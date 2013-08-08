@@ -145,7 +145,7 @@ $_GET['edit']=NULL;
 	?>
 <h1 align="center" class="titulos">&nbsp;</h1>
 <form id="form1" name="form1" method="post" >
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="647" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="647" height="24" />
   <table width="648" height="229" border="0" align="center" cellpadding="0" cellspacing="0" class="none">
 
     <tr>
@@ -261,7 +261,7 @@ $myrow12 = mysql_fetch_array($result12);
       <td height="14" colspan="4">&nbsp;</td>
     </tr>
   </table>
-<img src="/sima/imagenes/bordestablas/borde2.png" width="647" height="24" />
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="647" height="24" />
 <p>&nbsp;</p>
 </form>
 
@@ -274,7 +274,7 @@ $myrow12 = mysql_fetch_array($result12);
 
 <form id="form2" name="form2" method="post" >
   <input name="almacen" type="hidden" id="almacen" value="<?php echo $_POST['almacen']; ?>" />
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="360" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="360" height="24" />
   <table width="360" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <th width="99" height="23" bgcolor="#FFFF00" scope="col"><span class="normal"># Anaquel </span></th>
@@ -340,7 +340,7 @@ $myrow12 = mysql_fetch_array($result12);
     </tr>
     <?php }?>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="360" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="360" height="24" />
 </form>
 <p align="center">&nbsp;</p>
 </body>

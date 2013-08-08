@@ -49,7 +49,7 @@ function ventanaSecundaria1 (URL){
       <input name="buscar" type="submit" class="style7" id="buscar" value="Buscar" />
       </label>
       <a href="javascript:ventanaSecundaria1(
-		'/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $_POST['numeroE']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" /></a></div>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $_POST['numeroE']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" /></a></div>
   </label>
   <hr width="460" />
   <table width="404" border="0" align="center">

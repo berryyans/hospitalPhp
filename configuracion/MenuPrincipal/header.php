@@ -1,14 +1,17 @@
+<?php
+require('/Constantes.php');
+?>
 <html>
     <head>
         <title>SIMA</title>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" type="text/css" href="/sima/style/reset.css" />
-        <link rel="stylesheet" type="text/css" href="/sima/style/superfish.css" />
-        <link rel="stylesheet" type="text/css" href="/sima/style/fancybox/jquery.fancybox.css" />
-        <link rel="stylesheet" type="text/css" href="/sima/style/jquery.qtip.css" />
-        <link rel="stylesheet" type="text/css" href="/sima/style/jquery-ui-1.9.2.custom.css" />
-        <link rel="stylesheet" type="text/css" href="/sima/style/style.css" />
-        <link rel="stylesheet" type="text/css" href="/sima/style/responsive.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/style/reset.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/style/superfish.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/style/fancybox/jquery.fancybox.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/style/jquery.qtip.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/style/jquery-ui-1.9.2.custom.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/style/style.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/style/responsive.css" />
         <!--
         este tiene los cambios necesarios para  hacer que se vea bien 
         <link rel="stylesheet" type="text/css" href="style/style-test.css" />
@@ -16,8 +19,8 @@
         -->
         <!--<script src="js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>-->
         <!--<script src="js/test-script/jquery.accordion.js" type="text/javascript" charset="utf-8"></script>-->
-        <script src="/sima/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/sima/js/jquery-ui-1.9.2.custom.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/jquery-ui-1.9.2.custom.min.js" type="text/javascript" charset="utf-8"></script>
         <!--
         este es el min del js que tiene el accordion aparenmente este influye en la altura del accordion
         -->
@@ -35,7 +38,7 @@
         <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
         <script type="text/javascript" src="js/jquery.qtip.min.js"></script>
         -->
-        <script type="text/javascript" src="/sima/js/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/jquery.blockUI.js"></script>
         <!--
         <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
         -->
@@ -50,8 +53,8 @@
             <div class="header_container">
                 <div class="header clearfix">
                     <div class="header_left">
-                        <a href="/sima/MenuIndex.php" title="HLC">
-                            <img src="/sima/images/logo.png" alt="logo" />
+                        <a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/MenuIndex.php" title="HLC">
+                            <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/images/logo.png" alt="logo" />
                             <!--<span class="logo">Hospital La Carlota</span>-->
                         </a>
                     </div>

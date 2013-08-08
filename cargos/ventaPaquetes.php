@@ -110,7 +110,7 @@ echo mysql_error();
 ?>
 
 <script>
-javascript:ventanaSecundaria2('/sima/cargos/escojerArticulosPaquetes.php?numeroE=<?php echo $_POST['numeroE']; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&codigoPaquete=<?php echo $_POST['codigoPaquete']; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow4['keyClientesInternos'];?>
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/escojerArticulosPaquetes.php?numeroE=<?php echo $_POST['numeroE']; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&codigoPaquete=<?php echo $_POST['codigoPaquete']; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow4['keyClientesInternos'];?>
 &usuario=<?php echo $usuario;?>&keyCAP=<?php echo $myrow333['keyCAP'];?>&folioVenta=<?php echo $FV;?>');
 //window.alert("Se genero el folio de venta: <?php echo $FV;?>");
 //window.opener.document.forms["form1"].submit();
@@ -153,8 +153,8 @@ function Disable(cb,but){
 -->
 </style>
 <head>
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 
 <?php
 $estilos= new muestraEstilos();
@@ -211,7 +211,7 @@ $myrow1 = mysql_fetch_array($result1);
       </p></td>
       <td width="110" height="46" valign="top"><label>
         <input name="agregarCargos3" type="button"  src="../../imagenes/btns/searcharticles.png" id="agregarCargos3"  onclick="javascript:ventanaSecundaria1(
-		'/sima/cargos/agregarPaquetesPacientes.php?campoDespliega=<?php echo "descripcionPaquete"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "codigoPaquete"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="Asignar Paquete"   />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregarPaquetesPacientes.php?campoDespliega=<?php echo "descripcionPaquete"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "codigoPaquete"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="Asignar Paquete"   />
       <div align="left"></div></td>
     </tr>
     <tr>
@@ -252,7 +252,7 @@ $myrow1 = mysql_fetch_array($result1);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesAjax.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesAjax.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

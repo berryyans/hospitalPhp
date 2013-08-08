@@ -108,7 +108,7 @@ self.close();
 
 
 
-<script type="text/javascript" src="/sima/js/despliegaRFC.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/despliegaRFC.js"></script>
 
 
 

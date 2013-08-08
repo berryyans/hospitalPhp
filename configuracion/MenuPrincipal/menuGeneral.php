@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 $ruta = "";
 $rutaEncabezado="HOME";
 function ejecutaLateral($basedatos, $usuario, $menuPrincipal, $menuSecundario, $entidad) {
@@ -382,7 +383,7 @@ $mainRuta=$myrowmu1['ruta'];
                             print '<ul>';
                             while ($myrowmpv2c = mysql_fetch_array($resultmpv2c)) {
                                 //print '<li><a href="' . $ruta . '' . $myrowmpv2c['ruta'] . '">' . $myrowmpv2c['name'] . '</a></li>';
-                                print '<li><a href="/sima/' . $ruta .''.$myrowmpv2c['ruta'].'?main='.$ms.'&warehouse='.$ms.'">' . $myrowmpv2c['name'] . '</a></li>';
+                                print '<li><a href="'.CONSTANT_PATH_SIMA_RAIZ . $ruta .''.$myrowmpv2c['ruta'].'?main='.$ms.'&warehouse='.$ms.'">' . $myrowmpv2c['name'] . '</a></li>';
                             }
                             print '</ul></li>';
                         }

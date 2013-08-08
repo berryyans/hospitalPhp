@@ -97,7 +97,7 @@ $estilo->styles();
 
    <table width="500" border="0" cellspacing="0" cellpadding="0" align="center">
      <tr>
-       <td colspan="7"><img src="/sima/imagenes/bordestablas/borde1.png" alt="" width="500" height="16" align="center"/></td>
+       <td colspan="7"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" alt="" width="500" height="16" align="center"/></td>
      </tr>
 
      <tr bgcolor="#FFFF00">
@@ -234,7 +234,7 @@ $col = "";
        <td colspan="2"><div align="center" class="normalmid"> <?php echo '$'.number_format($cargos[0]-$devoluciones[0],2);?> </div></td>
      </tr>
      <tr>
-       <td colspan="4"><img src="/sima/imagenes/bordestablas/borde2.png" width="500" height="16" /></td>
+       <td colspan="4"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="500" height="16" /></td>
      </tr>
 
 

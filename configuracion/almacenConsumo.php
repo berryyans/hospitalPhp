@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class solicitudesAlmacenes{
 public function despliegaSolicitudes($entidad,$titulo,$bali,$basedatos){
 
@@ -114,7 +115,7 @@ $myrow1 = mysql_fetch_array($result1); ?>
   </p>
   
   <p align="center">
-   <a href="#"  onClick="javascript:ventanaSecundaria('/sima/cargos/despliegaSD.php?numeroE=<?php echo $myrow['numeroE']; ?>
+   <a href="#"  onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaSD.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;almacenDestino=<?php echo $bali; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>&paciente=<?php echo $myrow8a['paciente'];?>&usuario=<?php echo $myrow['usuario'];?>')">
   Re-imprimir
   </a>
@@ -211,7 +212,7 @@ $myrow8ab = mysql_fetch_array($result8ab);
 	  
 	  <tr bgcolor="#ffffff" onMouseOver="bgColor='#cccccc'" onMouseOut="bgColor='#ffffff'" >
       <td height="48" class="codigos"><?php echo $myrow['folioVenta'];?></td>
-      <td class="normalmid"><span class="normal"><a href="#"  onclick="javascript:ventanaSecundaria('/sima/cargos/despliegaSolicitudesDirectas.php?numeroE=<?php echo $myrow['numeroE']; ?>
+      <td class="normalmid"><span class="normal"><a href="#"  onclick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaSolicitudesDirectas.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;almacenDestino=<?php echo $bali; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>&paciente=<?php echo $myrow8a['paciente'];?>&usuario=<?php echo $myrow['usuario'];?>&numSolicitud=<?php echo $myrow['numSolicitud'];?>')">
         <?php 
 

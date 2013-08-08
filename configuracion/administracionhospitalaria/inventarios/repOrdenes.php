@@ -106,7 +106,7 @@ $myrowa= mysql_fetch_array($resulta);
 if($myrowa['nOrden']){
 ?>
       <div align="center"><span class="titulos">
-<a href="#" onClick="javascript:ventanaSecundaria1('/sima/ADMINHOSPITALARIAS/inventarios/surtir.php?solicitud=<?php echo $_POST['nOrden']; ?>&usuario=<?php echo $myrowa['usuario'];?>&random=<?php echo $myrowa['random'];?>')">
+<a href="#" onClick="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/surtir.php?solicitud=<?php echo $_POST['nOrden']; ?>&usuario=<?php echo $myrowa['usuario'];?>&random=<?php echo $myrowa['random'];?>')">
 Surtir faltantes
 </a>
 </span>
@@ -114,7 +114,7 @@ Surtir faltantes
   </h1>
   <?php } ?>
 
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="400" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="400" height="24" />
   <table width="400" border="0.2" align="center" cellpadding="4" cellspacing="0">
     <tr bgcolor="#330099">
 
@@ -208,7 +208,7 @@ $a+=1;
 
 <td width="70" bgcolor="<?php echo $color?>" class="normal">
 <div align="left">
-<a href="#" onClick="javascript:ventanaSecundaria1('/sima/ADMINHOSPITALARIAS/inventarios/imprimirTraspaso.php?orden=<?php echo $_POST['nOrden']; ?>&usuario=<?php echo $myrow['usuario'];?>&random=<?php echo $myrow['random'];?>')">
+<a href="#" onClick="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/imprimirTraspaso.php?orden=<?php echo $_POST['nOrden']; ?>&usuario=<?php echo $myrow['usuario'];?>&random=<?php echo $myrow['random'];?>')">
 Print
 </a>
 </div>
@@ -221,7 +221,7 @@ Print
     <?php  }}}?>
 
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="400" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="400" height="24" />
 </form>
 </body>
 </html>

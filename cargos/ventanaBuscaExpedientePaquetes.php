@@ -172,8 +172,8 @@ onClick="javascript:regresar('<?php echo $myrow['numeroE'];?>','<?php echo $nomb
         <td bgcolor="<?php echo $color;?>" class="Estilo24"><span class="style12">
 		
 		
-		<a href="javascript:ventanaSecundaria1('/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')">
-		<img src="/sima/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" />
+		<a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')">
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" />
 		</a>
 		
 		</span></td>

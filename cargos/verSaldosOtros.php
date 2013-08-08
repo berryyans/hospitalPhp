@@ -152,7 +152,7 @@ $myrow = mysql_fetch_array($result);
 ?>
 </p>
  <form id="form2" name="form2" method="post" action="">
- <div align="center"><img src="/sima/imagenes/bordestablas/borde1.png" width="510" height="24" />
+ <div align="center"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="510" height="24" />
    <table width="510" border="0.2" align="center" cellpadding="3" cellspacing="0">
      <tr>
       <th width="25" bgcolor="#FFFF00" class="none" scope="col"><div align="center">#</div></th>
@@ -262,7 +262,7 @@ echo '$'.number_format(($myrow['cantidadParticular']*$myrow['cantidad'])+($myrow
 
     <input name="menu" type="hidden" value="<?php echo $menu;?>" />
 </table>
-   <img src="/sima/imagenes/bordestablas/borde2.png" width="510" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="510" height="24" />
    </p>	
 	
 	
@@ -278,7 +278,7 @@ echo '$'.number_format(($myrow['cantidadParticular']*$myrow['cantidad'])+($myrow
 	
 	
     <p>&nbsp;</p>
-    <img src="/sima/imagenes/bordestablas/borde1.png" width="600" height="24" />
+    <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="600" height="24" />
     <table width="600" border="0.2" align="center" cellpadding="3" cellspacing="0">
       <tr>
         <th width="36" bgcolor="#FFFF00" class="none" scope="col"><div align="center">#</div></th>
@@ -380,7 +380,7 @@ echo '$'.number_format($myrow['precioVenta']*$myrow['cantidad'],2);
 
       <input name="menu2" type="hidden" value="<?php echo $menu;?>" />
     </table>
-    <img src="/sima/imagenes/bordestablas/borde2.png" width="600" height="24" />
+    <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="600" height="24" />
 <p>&nbsp;</p>
  </div>
   

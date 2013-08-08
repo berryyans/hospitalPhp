@@ -345,7 +345,7 @@ $myrow39 = mysql_fetch_array($result39);
 		<?php if(!$_POST['sinE']){  ?><?php } ?>
 		
 		
-          <span ><span ><a href="javascript:ventanaSecundaria2('/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span> </span>
+          <span ><span ><a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span> </span>
           <input name="fechaNac" type="hidden"  id="fechaNac" size="10"  readonly="" value="<?php 
 		  if($_POST['fechaNac'] and !$_POST['fechaNac']){
 		  echo $_POST['fechaNac'];

@@ -18,7 +18,7 @@ $resulScripModulo = mysql_fetch_array($resScript);
 $ruta=$resulScripModulo['ruta'];
 
 if($ruta){
-$borraImagen='rm -rf /var/www/html/sima/ADMINHOSPITALARIAS/inventarios/'.$ruta;
+$borraImagen='rm -rf '.CONSTANT_PATH_SIMA.'/ADMINHOSPITALARIAS/inventarios/'.$ruta;
 shell_exec($borraImagen);
 }
 
@@ -133,7 +133,7 @@ $col = 1;
           <input name="codigoBeta[]" type="hidden" id="codigoBeta[]" value="<?php  echo $myrow['codigoCB']; ?>" />
         </span></td>
         <td bgcolor="<?php echo $color;?>" class="Estilo24"><span class="style7"><?php echo $myrow['descripcion']; ?><?php //echo $myrow12['um'].$myrow13['umVentas']; ?></span></td>
-        <td bgcolor="<?php echo $color;?>" class="Estilo24"><a href="despliegaCB.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;usuario=<?php echo $E; ?>"><img src="/sima/imagenes/borrar.png" alt="Bot&oacute;n Eliminar" width="23" height="23" border="0" onclick="if(confirm('Esta seguro que deseas eliminar este c�digo de barras?') == false){return false;}" /></a></td>
+        <td bgcolor="<?php echo $color;?>" class="Estilo24"><a href="despliegaCB.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;usuario=<?php echo $E; ?>"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/borrar.png" alt="Bot&oacute;n Eliminar" width="23" height="23" border="0" onclick="if(confirm('Esta seguro que deseas eliminar este c�digo de barras?') == false){return false;}" /></a></td>
         <td bgcolor="<?php echo $color;?>" class="Estilo24"><span class="style7"><label>
         <label><img src="<?php  echo $myrow['ruta']; ?>" width="156" height="43" /> </label>
         </label>

@@ -1,10 +1,11 @@
 <?php
+require('/Constantes.php');
 if($_GET['pais']=='MEX'){
 $_GET['pais']='mexico';
 }
        
 $direccion=$_GET['calle'].', '.$_GET['ciudad'].', '.$_GET['pais'];       
-require'/var/www/html/sima/js/EasyGoogleMap.class.php';
+require CONSTANT_PATH_SIMA.'/js/EasyGoogleMap.class.php';
 if($_SERVER['SERVER_NAME']=='10.2.11.250'){
 $certificado="ABQIAAAAqs98jRmICtRwulWma7vxmxTFTF7P-_E0jva-NhGNrHHStLgDqRR3DnYPayBtXUnYYIRLvt9PFMAE7w";
 } else if($_SERVER['SERVER_NAME']=='10.2.1.201'){

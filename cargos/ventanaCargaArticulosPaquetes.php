@@ -136,7 +136,7 @@ $myrow31 = mysql_fetch_array($result31);
 		
 		<a href="#" 
 onClick="javascript:regresar('<?php echo $myrow31['folioVenta'];?>','<?php echo $myrow31['paciente'];?>')">
-		<img src="/sima/imagenes/btns/addbtn.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" />
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addbtn.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" />
 		</a>
 		
 		</span></td>

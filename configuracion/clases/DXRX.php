@@ -1,4 +1,6 @@
-<?php class DXRX{
+<?php 
+require('/Constantes.php');
+class DXRX{
 public function diagnosticosRX($ruta,$seguro,$numeroPaciente,$keyCAP,$usuario,$hora1,$fecha1,$basedatos){ 
 ?>
 <script language=javascript> 
@@ -28,7 +30,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.observaciones.value) == false ) {   
-                alert("Por Favor, escribe las observaciones del diagnóstico!")   
+                alert("Por Favor, escribe las observaciones del diagnï¿½stico!")   
                 return false   
         } else if( vacio(F.receta.value) == false ) {   
                 alert("Por Favor, escribe la receta!")   
@@ -92,7 +94,7 @@ $actualizaEstudio=new SQL();
 $actualizaEstudio->actualizaEstudio($numeroE,$nCuenta,$keyCAP,$ruta,$basedatos);
 echo $myrow11['descripcion'];	
 echo '<script type="text/vbscript">';
-echo 'msgbox "SE AGREGÓ EL DIAGNOSTICO "'.$myrow5['descripcion']; 
+echo 'msgbox "SE AGREGï¿½ EL DIAGNOSTICO "'.$myrow5['descripcion']; 
 echo '</script>';
 }
 ?>
@@ -134,9 +136,9 @@ echo '</script>';
 .style121 {font-size: 10px}
 -->
 </style>
-	<script src="/sima/js/prototype.js" type="text/javascript"></script>
-	<script src="/sima/js/scriptaculous.js?load=effects" type="text/javascript"></script>
-	<script src="/sima/js/lightboxXL.js" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/prototype.js" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scriptaculous.js?load=effects" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/lightboxXL.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -150,7 +152,7 @@ echo '</script>';
         <td width="514"><span class="style12">
           <input name="ci" type="text" class="style7" size="10"  readonly=""/>
           <input name="M2" type="button" class="style7" id="M2"  onclick="javascript:ventanaSecundaria(
-		'/sima/cargos/despliegaCodigosInternacionales.php?campoDespliega=<?php echo "despliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "ci"; ?>&amp;keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>')" value="C" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCodigosInternacionales.php?campoDespliega=<?php echo "despliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "ci"; ?>&amp;keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>')" value="C" />
           <input name="despliega" type="text" class="style7" size="60"  readonly=""/>
 </span></td>
       </tr>
@@ -166,7 +168,7 @@ echo '</script>';
       </tr>
       <tr>
         <td height="33" bgcolor="#660066">&nbsp;</td>
-        <td><input name="actualizar" type="submit" class="style7" id="actualizar" value="Aplicar Dx" onClick="if(confirm('Esta seguro que deseas aplicar este diagnóstico?') == false){return false;}" />
+        <td><input name="actualizar" type="submit" class="style7" id="actualizar" value="Aplicar Dx" onClick="if(confirm('Esta seguro que deseas aplicar este diagnï¿½stico?') == false){return false;}" />
         <a href="javascript:ventanaSecundaria('despliegaArticulos.php?numCliente=<?php echo $_POST['seguro']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"></a></td>
       </tr>
     </table>
