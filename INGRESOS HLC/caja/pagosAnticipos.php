@@ -134,7 +134,7 @@ function ventanaSecundaria1 (URL){
 		onchange="javascript:this.form.submit();" />
           <span class="Estilo24">
           <input name="cuentaSMayores" type="submit" class="Estilo24" id="cuentaSMayores"  onclick="javascript:ventanaSecundaria1(
-		'/sima/cargos/ctaMayor.php?campoDespliega=<?php echo "campoDespliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "ctaMayor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="M" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ctaMayor.php?campoDespliega=<?php echo "campoDespliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "ctaMayor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="M" />
           </span>
           <label>
           <input name="campoDespliega" type="text" class="style12" id="campoDespliega" size="50" 
@@ -158,7 +158,7 @@ function ventanaSecundaria1 (URL){
 		<?php if($_POST['banderaAuxiliar'] and !$_POST['cuentaSMayores']){?>
         <input name="auxiliar" type="text" class="style12" id="auxiliar" />
         <input name="auxiliares" type="submit" class="Estilo24" id="auxiliares"  onclick="javascript:ventanaSecundaria1(
-		'/sima/cargos/ctasAuxiliares.php?campoDespliega=<?php echo "campoDespliega2"; ?>&amp;forma=<?php echo "form1"; ?>&amp;ctaMayor=<?php echo $_POST['ctaMayor']; ?>&amp;campoSeguro=<?php echo "auxiliar"; ?>')" value="A" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ctasAuxiliares.php?campoDespliega=<?php echo "campoDespliega2"; ?>&amp;forma=<?php echo "form1"; ?>&amp;ctaMayor=<?php echo $_POST['ctaMayor']; ?>&amp;campoSeguro=<?php echo "auxiliar"; ?>')" value="A" />
         <input name="campoDespliega2" type="text" class="Estilo24" id="campoDespliega2" size="50" 
 		  onchange="javascript:this.form.submit();" value="<?php if($_POST['campoDespliega2']){ echo $_POST['campoDespliega2'];}?>"/>
         <?php }?>

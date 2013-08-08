@@ -369,7 +369,7 @@ $myrow1 = mysql_fetch_array($result1);
     <label></label>
     <input name="nRequisicion" type="hidden" id="nRequisicion" value="<?php echo $requisicion; ?>" />
   </p>
-  <p align="center">    <a href="javascript:ventanaSecundaria('/sima/cargos/imprimirFaltantes.php?numeroE=<?php echo $myrow1['numeroE']; ?>&amp;traspaso=<?php echo $traspaso; ?>&amp;id_requisicion=<?php echo $requisicion; ?>&amp;usuario=<?php echo $usuario; ?>&amp;almacen=<?php echo $ali; ?>')"><img src="/sima/cargos/printer.jpg" alt="Imprimir " width="48" height="48" border="0" /></a><a href="javascript:ventanaSecundaria('/sima/cargos/imprimirSurtidos.php?numeroE=<?php echo $myrow1['numeroE']; ?>&amp;traspaso=<?php echo $traspaso; ?>&amp;id_requisicion=<?php echo $requisicion; ?>&amp;usuario=<?php echo $usuario; ?>&amp;almacen=<?php echo $ali; ?>')"></a></p>
+  <p align="center">    <a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirFaltantes.php?numeroE=<?php echo $myrow1['numeroE']; ?>&amp;traspaso=<?php echo $traspaso; ?>&amp;id_requisicion=<?php echo $requisicion; ?>&amp;usuario=<?php echo $usuario; ?>&amp;almacen=<?php echo $ali; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/printer.jpg" alt="Imprimir " width="48" height="48" border="0" /></a><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirSurtidos.php?numeroE=<?php echo $myrow1['numeroE']; ?>&amp;traspaso=<?php echo $traspaso; ?>&amp;id_requisicion=<?php echo $requisicion; ?>&amp;usuario=<?php echo $usuario; ?>&amp;almacen=<?php echo $ali; ?>')"></a></p>
 </form>
 </body>
 </html>

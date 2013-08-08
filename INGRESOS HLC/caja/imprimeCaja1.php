@@ -1,4 +1,6 @@
-<?php require('/var/www/html/sima/js/pdf/fpdf.php'); 
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA.'/js/pdf/fpdf.php'); 
  class acumulados {
   public function acumulado1($basedatos,$usuario,$numeroE1,$nCuenta1){
  $sSQL171= "

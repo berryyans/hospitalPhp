@@ -5,7 +5,7 @@ include(CONSTANT_PATH_CONFIGURACION."/expedientesclinicos/medicos/medicosmenu.ph
 <style type="text/css">
 <!--
 body {
-	background-image: url(/sima/imagenes/imagenesModulos/screenexpedientes.jpg);
+	background-image: url(<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/imagenesModulos/screenexpedientes.jpg);
 }
 -->
 </style>

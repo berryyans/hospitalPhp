@@ -1,4 +1,6 @@
-<?PHP require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); 
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/INGRESOS HLC/menuOperaciones.php"); 
 $sSQLC= "Select status From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";
 $resultC=mysql_db_query($basedatos,$sSQLC);
 $myrowC = mysql_fetch_array($resultC);
@@ -123,7 +125,7 @@ if(win.window.focus){win.window.focus();}
       <input onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para hacer traslados a Otros..';?>&lt;/div&gt;')" onmouseout="UnTip()" name="others" type="button" class="style7" id="others" value="Otros"
 	  onclick="nueva('ventanasTCxCOtros.php?cargos=cargos&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria1','800','300','yes')" />
       <input onMouseOver="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para ver las notas de cargo y su estado actual..';?>&lt;/div&gt;')" onMouseOut="UnTip()" name="nuevo22" type="button" class="style7" id="nuevo22" value="Listado de Pagos"
-	  onclick="nueva('/sima/cargos/listadoVentasPacientes.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria10','500','500','yes')" />
+	  onclick="nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listadoVentasPacientes.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria10','500','500','yes')" />
     </p>
 </form>
 <h1 align="center">&nbsp;</h1>

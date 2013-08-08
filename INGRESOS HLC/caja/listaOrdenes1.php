@@ -126,7 +126,7 @@ $myrow17d = mysql_fetch_array($result17d);
       <td >  <?php echo $myrow['folioVenta'];
 ?></td>
       <td >
-      <a href="javascript:nueva('/sima/INGRESOS HLC/caja/estadoCuentaE.php?numeroE=<?php echo $myrow['keyClientesInternos']; ?>&nCuenta=<?php echo $myrow['keyClientesInternos']; ?>&almacenSolicitante=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>&tipoVenta=<?php echo 'externo';?>&devolucion=<?php echo $myrow['statusDevolucion'];?>&descripcionTransaccion=<?php echo $_GET['descripcionTransaccion'];?>&warehouse=<?php echo $_GET['warehouse'];?>#final','ventana1','1024','1000','yes')">
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/estadoCuentaE.php?numeroE=<?php echo $myrow['keyClientesInternos']; ?>&nCuenta=<?php echo $myrow['keyClientesInternos']; ?>&almacenSolicitante=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>&tipoVenta=<?php echo 'externo';?>&devolucion=<?php echo $myrow['statusDevolucion'];?>&descripcionTransaccion=<?php echo $_GET['descripcionTransaccion'];?>&warehouse=<?php echo $_GET['warehouse'];?>#final','ventana1','1024','1000','yes')">
 
 <?php echo $myrow['paciente'];
 		  if($myrow['statusDevolucion']=='si'){

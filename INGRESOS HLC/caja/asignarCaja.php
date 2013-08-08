@@ -27,7 +27,7 @@ function ventanaSecundaria2 (URL){
    window.open(URL,"ventana2","width=300,height=200,scrollbars=YES,resizable=YES, maximizable=YES") 
 } 
 </script> 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -109,13 +109,13 @@ $myrow1 = mysql_fetch_array($result1);
 	  echo '---';
 	  }
 	?></span></td>
-      <td bgcolor="<?php echo $color;?>" class="style12"><a href="#"  onclick="ventanaSecundaria2('despliegaUsuariosCajas.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;usuario=<?php echo $E?>')"><img src="/sima/imagenes/listado.jpg"  width="12" height="12" border="0" /></a></td>
+      <td bgcolor="<?php echo $color;?>" class="style12"><a href="#"  onclick="ventanaSecundaria2('despliegaUsuariosCajas.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;usuario=<?php echo $E?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/listado.jpg"  width="12" height="12" border="0" /></a></td>
       <td bgcolor="<?php echo $color;?>" class="style12">
-	  <a onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Est�s modificando al usuario: '.$myrow81['aPaterno']." ".$myrow81['aMaterno']." ".$myrow81['nombre'];?></div>')" onMouseOut="UnTip()" href="javascript:ventanaSecundaria('ventanaAsignaCaja.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;us=<?php echo $E; ?>')"><img src="/sima/imagenes/expandir.gif" alt="Ajustar " width="12" height="12" border="0" /></a></td>
+	  <a onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Est�s modificando al usuario: '.$myrow81['aPaterno']." ".$myrow81['aMaterno']." ".$myrow81['nombre'];?></div>')" onMouseOut="UnTip()" href="javascript:ventanaSecundaria('ventanaAsignaCaja.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;us=<?php echo $E; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/expandir.gif" alt="Ajustar " width="12" height="12" border="0" /></a></td>
       <td bgcolor="<?php echo $color;?>" class="style12"><div align="center"><span class="style71">
      
         <a
-			   href="<?php echo $_SERVER['PHP_SELF'];?>?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo "inactiva"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;gpoProducto=<?php echo $_POST['gpoProducto1'];?>&amp;almacenDestino=<?php echo $_POST['almacenDestino'];?>&amp;almacenDestino1=<?php echo $_POST['almacenDestino1'];?>&amp;gpoProducto1=<?php echo $_POST['gpoProducto1'];?>"> <img src="/sima/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
+			   href="<?php echo $_SERVER['PHP_SELF'];?>?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo "inactiva"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;gpoProducto=<?php echo $_POST['gpoProducto1'];?>&amp;almacenDestino=<?php echo $_POST['almacenDestino'];?>&amp;almacenDestino1=<?php echo $_POST['almacenDestino1'];?>&amp;gpoProducto1=<?php echo $_POST['gpoProducto1'];?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
       
       </span></div></td>
     </tr>

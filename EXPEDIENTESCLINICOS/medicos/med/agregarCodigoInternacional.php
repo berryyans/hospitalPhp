@@ -48,7 +48,7 @@ function valida(F) {
         }         
 }   
 </script> 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 
 
 <?php
@@ -204,7 +204,7 @@ $nombreMedico= $myrow24['nombre1'].' '.$myrow24['apellido1'];
         <td width="156" height="40" bgcolor="#660066"><span class="style13">DX Codigo Internacional</span></td>
         <td width="514"><span class="style12">
           <input name="M2" type="button" class="style7" id="M2"  onclick="javascript:ventanaSecundaria(
-		'/sima/cargos/despliegaCodigosInternacionales.php?campoDespliega=<?php echo "despliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "ci"; ?>&amp;keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>')" value="CI" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Mostrar la lista de C�digos Internacionales';?></div>')" onMouseOut="UnTip()"/>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCodigosInternacionales.php?campoDespliega=<?php echo "despliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "ci"; ?>&amp;keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>')" value="CI" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Mostrar la lista de C�digos Internacionales';?></div>')" onMouseOut="UnTip()"/>
           <input name="despliega" type="text" class="style7" size="80"  readonly="" value="<?php echo $_GET['despliega'];?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Agregar C�digos Internacionales';?></div>')" onMouseOut="UnTip()"/>
           <span class="style13">
           <input name="ci" type="hidden" class="style7" size="10"  readonly=""/>

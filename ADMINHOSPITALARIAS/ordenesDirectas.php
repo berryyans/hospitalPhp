@@ -211,7 +211,7 @@ $estilos->styles();
 		onchange="javascript:this.form.submit();" />
         <span >
         <input name="agregarCargos3" type="submit"  id="agregarCargos3"  onclick="javascript:ventanaSecundaria1(
-		'/sima/cargos/agregarProveedores.php?campoDespliega=<?php echo "nomProveedor"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campoProveedor=<?php echo "id_proveedor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="P" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregarProveedores.php?campoDespliega=<?php echo "nomProveedor"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campoProveedor=<?php echo "id_proveedor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="P" />
         </span><span >
         <input name="nomProveedor" type="text"  id="nomProveedor" size="80" 
 		  

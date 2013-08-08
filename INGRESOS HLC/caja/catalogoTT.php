@@ -125,7 +125,7 @@ $estilo->styles();
 </head>
 
 <body>
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
  <h1 align="center" class="titulos">Cat&aacute;logo de Tipo de Transacciones </h1>
  <form id="form1" name="form1" method="post" action="" >
    <p>
@@ -214,7 +214,7 @@ $ventana='catalogoTT.php';
        <td bgcolor="<?php echo $color?>" class="style12"><span class="normal"><span class="style7">
 	 
 <a href="catalogoTT.php?keyCTR=<?php echo $myrow['keyCTR'];?>" onClick="javascript:document.form2.submit();"/>
-<img src="/sima/imagenes/expandir.gif" width="12" height="12" border="0">
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/expandir.gif" width="12" height="12" border="0">
 <?php echo $A?>
  </a>
 

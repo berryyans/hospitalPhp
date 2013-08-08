@@ -1,6 +1,6 @@
 <?PHP 
 require("/Constantes.php");
-require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
+require(CONSTANT_PATH_SIMA."/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
 <?php require(CONSTANT_PATH_CONFIGURACION.'/clases/medicosPrecios.php'); ?>
 
 <?php

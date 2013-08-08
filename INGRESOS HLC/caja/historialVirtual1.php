@@ -123,7 +123,7 @@ $col = 1;
 </html>
 <?php } else {
 echo '<META HTTP-EQUIV="Refresh"
-      CONTENT="0; URL=/sima/menuPrincipal.php">';
+      CONTENT="0; URL='.CONSTANT_PATH_SIMA_RAIZ.'/menuPrincipal.php">';
 exit;
 
 }

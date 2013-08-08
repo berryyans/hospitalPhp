@@ -1,4 +1,6 @@
-<?PHP require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/INGRESOS HLC/menuOperaciones.php"); ?>
 
 <SCRIPT LANGUAGE="JavaScript">
 function checkIt(evt) {
@@ -93,7 +95,7 @@ $estilos-> styles();
 <body>
 <h1 align="center" class="titulos">Reporte de Cajeros  </h1>
 <form id="form1" name="form1" method="post" action="">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="653" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="653" height="24" />
   <table width="653" border="0" align="center" cellpadding="4" cellspacing="0" bgcolor="#CCCCCC" class="Estilo24">
     <tr>
       <th colspan="3" bgcolor="#FFFF00" class="none" scope="col"><strong>Imprimir Reporte de Caja</strong></th>
@@ -221,7 +223,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
       </div></td>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="653" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="653" height="24" />
 </form>
 <p align="center">&nbsp;</p>
 

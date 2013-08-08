@@ -328,14 +328,14 @@ $myrow333 = mysql_fetch_array($result333);
 
 <?php if($_GET['tipoMovimiento']=='transaccion'){ //imprimir solo la transaccion?>
 <script>
-javascript:ventanaSecundaria2('/sima/cargos/imprimirCargosInternos.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&usuario=<?php echo $usuario;?>&keyCAP=<?php echo $myrow333['keyCAP'];?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirCargosInternos.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&usuario=<?php echo $usuario;?>&keyCAP=<?php echo $myrow333['keyCAP'];?>');
   <!--
 window.opener.document.forms["form1"].submit();
 self.close();
 </script>
 <?php } else { //imprimir todo?>
 <script>
-javascript:ventanaSecundaria2('/sima/cargos/imprimirCargosInternosCC.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&usuario=<?php echo $usuario;?>&keyCAP=<?php echo $myrow333['keyCAP'];?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirCargosInternosCC.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&usuario=<?php echo $usuario;?>&keyCAP=<?php echo $myrow333['keyCAP'];?>');
   <!--
 window.opener.document.forms["form1"].submit();
 self.close();
@@ -426,7 +426,7 @@ self.close();
 		 echo $myrow2['codigo']; 
 		 }
 		 ?>" size="10" readonly=""/>
-              <a href="javascript:ventanaSecundaria3('/sima/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&descripcion=<?php echo "descripcion"; ?>&forma=<?php echo "form1"; ?>&comision=<?php echo "comision"; ?>&tipoPago=<?php echo $_GET['tipoPago'];?>')"><img src="/sima/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></td>
+              <a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&descripcion=<?php echo "descripcion"; ?>&forma=<?php echo "form1"; ?>&comision=<?php echo "comision"; ?>&tipoPago=<?php echo $_GET['tipoPago'];?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></td>
          
 		  <input name="comision" type="hidden" value="">
 		  </tr>
@@ -523,13 +523,13 @@ $tipoVenta='interno';
 
 <?php if($_GET['tipoCliente']=='coaseguro'){ ?>
 <a href="javascript:ventanaSecundaria1('ventanaCoaseguro.php?almacen=<?php echo $_GET['almacenFuente']; ?>&campoDespliega=<?php echo "campoDespliega"; ?>&campo1=<?php echo "cantidadRecibida"; ?>&forma=<?php echo "form1"; ?>&campoSeguro=<?php echo "tipoTransaccion"; ?>&numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPago=<?php echo $_GET['tipoPago']; ?>&almacenFuente=<?php echo $_GET['almacenFuente']; ?>&campo=<?php echo "tipoTransaccion"; ?>&tipoCliente=<?php echo $_GET['tipoCliente'];?>&tipoVenta=<?php echo $tipoVenta;?>')">
-<img src="/sima/imagenes/expandir.gif" alt="Tipo de Transacci&oacute;n" width="12" height="12" border="0" /></a>
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/expandir.gif" alt="Tipo de Transacci&oacute;n" width="12" height="12" border="0" /></a>
 
 
 
 <?php } else { ?>
 <a href="javascript:ventanaSecundaria1('ventanaTT.php?almacen=<?php echo $_GET['almacenFuente']; ?>&campoDespliega=<?php echo "campoDespliega"; ?>&campo1=<?php echo "cantidadRecibida"; ?>&forma=<?php echo "form1"; ?>&campoSeguro=<?php echo "tipoTransaccion"; ?>&numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPago=<?php echo $_GET['tipoPago']; ?>&almacenFuente=<?php echo $_GET['almacenFuente']; ?>&campo=<?php echo "tipoTransaccion"; ?>&tipoCliente=<?php echo $_GET['tipoCliente'];?>&tipoVenta=<?php echo $tipoVenta;?>')">
-<img src="/sima/imagenes/expandir.gif" alt="Tipo de Transacci&oacute;n" width="12" height="12" border="0" /></a>
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/expandir.gif" alt="Tipo de Transacci&oacute;n" width="12" height="12" border="0" /></a>
 <?php } ?></a></label></td>
 			  <?php } ?>
 			  

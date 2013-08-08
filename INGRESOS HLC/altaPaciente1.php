@@ -14,7 +14,7 @@ $myrowC = mysql_fetch_array($resultC);
 
 
 if($myrowC['status']=='abierta'){ //*******************Comienzo la validac8n*****************
-$ventana='/sima/cargos/cierraCuenta2.php';
+$ventana=CONSTANT_PATH_SIMA_RAIZ.'/cargos/cierraCuenta2.php';
 ?>
 
 
@@ -106,7 +106,7 @@ $myrow40['nomCliente']='Particular';
       <td height="40"><span ><?php echo $myrow['folioVenta'];
 ?></span></td>
       <td><a href="#abonos<?php echo $a;?>" name="abonos<?php echo $a;?>" id="abonos<?php echo $a;?>" 
-onclick="javascript:ventanaSecundaria11('/sima/cargos/agregarAbonos.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&amp;folioVenta=<?php echo $myrow['folioVenta'];?>')">
+onclick="javascript:ventanaSecundaria11('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregarAbonos.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&amp;folioVenta=<?php echo $myrow['folioVenta'];?>')">
 	  <span ><?php echo $myrow['paciente'];
 
 	  ?></a></span>

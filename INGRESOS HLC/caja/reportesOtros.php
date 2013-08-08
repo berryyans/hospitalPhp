@@ -1,4 +1,6 @@
-<?PHP require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/INGRESOS HLC/menuOperaciones.php"); ?>
 
 
 <script language="javascript" type="text/javascript">

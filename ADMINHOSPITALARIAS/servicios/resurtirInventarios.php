@@ -314,7 +314,7 @@ $myrow8a = mysql_fetch_array($result8a);
       <td bgcolor="<?php echo $color?>" class="style12"><span class="style7">
         <label></label>
         <?php if($myrow18['status']=='standby'){ ?>
-        <span class="Estilo24"> <a   href="resurtirInventarios.php?keyF=<?php echo $myrow18['keyF'];?>&actualizar=<?php echo $actualizar;?>&nOrden=<?php echo $_GET['nOrden'];?>"> <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
+        <span class="Estilo24"> <a   href="resurtirInventarios.php?keyF=<?php echo $myrow18['keyF'];?>&actualizar=<?php echo $actualizar;?>&nOrden=<?php echo $_GET['nOrden'];?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
         <?php } else{ echo '---';}  ?>
         </span></span></td>
     </tr>

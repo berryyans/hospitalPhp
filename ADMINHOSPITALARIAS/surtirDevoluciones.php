@@ -15,13 +15,13 @@ $ventanaCenter=new windowCenter();
 echo $ventanaCenter->mainmenu();
 ?>
 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
  
 
 
@@ -290,7 +290,7 @@ echo $myrow8ab['descripcion'];
          
          
 <?php if($myrow['statusCargo']!='cargado'){         ?>
-          <a href="#"  onclick="javascript:ventanaSecundaria('/sima/cargos/despliegaSolicitudesDirectas.php?departamentoSolicitante=<?php echo $myrow['descripcionAlmacen'];?>&numeroE=<?php echo $myrow['numeroE']; ?>
+          <a href="#"  onclick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaSolicitudesDirectas.php?departamentoSolicitante=<?php echo $myrow['descripcionAlmacen'];?>&numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;almacenDestino=<?php echo $myrow['almacenDestino']; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>&paciente=<?php echo $myrow8a['paciente'];?>&usuario=<?php echo $myrow['usuario'];?>&numSolicitud=<?php echo $myrow['numSolicitud'];?>&usuarioSolicitante=<?php echo $myrow['usuario'];?>&horaSolicitud=<?php echo $myrow['horaSolicitud'];?>&fechaSolicitud=<?php echo $myrow['fecha1'];?>')">
          Cargar
          </a>         
@@ -309,9 +309,9 @@ echo $myrow8ab['descripcion'];
  
  
       <td >
- <a href="javascript:ventanaSecundaria('/sima/ADMINHOSPITALARIAS/inventarios/printTraspasosSD.php?keyCAP=<?php echo $myrow['keyCAP'];?>&nOrden=<?php echo $myrow['nOrden'];?>&departamentoSolicitante=<?php echo $myrow['almacenSolicitante'];?>&entidad=<?php echo $entidad;?>&random=<?php echo $rand; ?>&usuarioCargo=<?php echo $usuario;?>&usuarioSolicitante=<?php echo $myrow['usuario'];?>&fecha=<?php echo $fecha1;?>&hora=<?php echo $hora1;?>&fechaSolicitud=<?php echo $myrow['fechaSolicitud'];?>&horaSolicitud=<?php echo $myrow['horaSolicitud'];?>
+ <a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/printTraspasosSD.php?keyCAP=<?php echo $myrow['keyCAP'];?>&nOrden=<?php echo $myrow['nOrden'];?>&departamentoSolicitante=<?php echo $myrow['almacenSolicitante'];?>&entidad=<?php echo $entidad;?>&random=<?php echo $rand; ?>&usuarioCargo=<?php echo $usuario;?>&usuarioSolicitante=<?php echo $myrow['usuario'];?>&fecha=<?php echo $fecha1;?>&hora=<?php echo $hora1;?>&fechaSolicitud=<?php echo $myrow['fechaSolicitud'];?>&horaSolicitud=<?php echo $myrow['horaSolicitud'];?>
 &numSolicitud=<?php echo $myrow['numSolicitud'];?>&folioVenta=<?php echo $myrow['folioVenta'];?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&almacenDestino=<?php echo $bali;?>','ventana7','800','600','yes');" />
- <img src="/sima/imagenes/btns/printer.png" width="30" height="30" />
+ <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/printer.png" width="30" height="30" />
  </a>
           
       </td>  

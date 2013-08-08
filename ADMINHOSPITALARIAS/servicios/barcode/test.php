@@ -1,15 +1,16 @@
 <?php
+require('/Constantes.php');
 // Define variable to prevent hacking
 define('IN_CB',true);
 
 // Including all required classes
-require('/sima/js/class/index.php');
-require('/sima/js/class/FColor.php');
-require('/sima/js/class/BarCode.php');
-require('/sima/js/class/FDrawing.php');
+require(CONSTANT_PATH_SIMA_RAIZ.'/js/class/index.php');
+require(CONSTANT_PATH_SIMA_RAIZ.'/js/class/FColor.php');
+require(CONSTANT_PATH_SIMA_RAIZ.'/js/class/BarCode.php');
+require(CONSTANT_PATH_SIMA_RAIZ.'/js/class/FDrawing.php');
 
 // including the barcode technology
-include('/sima/js/class/code39.barcode.php');
+include(CONSTANT_PATH_SIMA_RAIZ.'/js/class/code39.barcode.php');
 
 // Creating some Color (arguments are R, G, B)
 $color_black = new FColor(0,0,0);

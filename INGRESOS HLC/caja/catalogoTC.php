@@ -232,7 +232,7 @@ $ventana='catalogoTT.php';
        <td bgcolor="<?php echo $color?>" class="style12"><span class="Estilo24"><span class="style18">
 	 
   <a href="catalogoTC.php?codigo=<?php echo $A; ?>&descripcion=<?php echo "descripcion"; ?>&forma=<?php echo "form1"; ?>&comision=<?php echo "comision"; ?>&tipoPago=<?php echo $_GET['tipoPago'];?>">
-<img src="/sima/imagenes/expandir.gif" width="12" height="12" border="0">
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/expandir.gif" width="12" height="12" border="0">
 <?php echo $A?>
  </a>
 

@@ -1,4 +1,6 @@
-<?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
 <?php 
 $ventana1='ventanaCatalogoAlmacen.php';
 ?>
@@ -49,7 +51,7 @@ $_POST['tipoAlmacen']=$_GET['tipoAlmacen'];
 }
 ?>
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -293,7 +295,7 @@ $myrowa = mysql_fetch_array($resulta);
 
 
         if($myrow['id_medico']){ ?>
-<a href="#" onClick="javascript:ventanaSecundaria('/sima/ADMINHOSPITALARIAS/medicos/ventanaModificaMedicos.php?numMedico=<?php echo $myrow['id_medico'];?>')">
+<a href="#" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/medicos/ventanaModificaMedicos.php?numMedico=<?php echo $myrow['id_medico'];?>')">
 	   Editar Medico  </a><?php
 	   }
 

@@ -94,7 +94,7 @@ echo $myrow['um'];
         <input name="um" type="text" class="Estilo24" id="um" 
 		onchange="javascript:this.form.submit();"
 		value="<?php echo $myrow['um']; ?>" size="4"   readonly="" />
-        <span class="Estilo24"><a href="javascript:ventanaSecundaria2('/sima/cargos/ventanaEmergenteUM.php?campoDespliega=<?php echo "umDescripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;nombreCampo=<?php echo "um"; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="/sima/imagenes/Save.png" alt="Unidad de Medida" width="20" height="20" border="0" /></a>
+        <span class="Estilo24"><a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaEmergenteUM.php?campoDespliega=<?php echo "umDescripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;nombreCampo=<?php echo "um"; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Unidad de Medida" width="20" height="20" border="0" /></a>
         <?php
 	  $um=$myrow['um'];
 	  $sSQL11= "SELECT 
@@ -106,7 +106,7 @@ $result11=mysql_db_query($basedatos,$sSQL11);
 $myrow11 = mysql_fetch_array($result11);
 	  ?>
         <input name="umDescripcion" type="text" class="Estilo24" id="umDescripcion" value="<?php echo $myrow11['descripcionUM'];?>" size="40" readonly="" />
-        <a href="javascript:ventanaSecundaria('/sima/cargos/um.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"></a></span>
+        <a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/um.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"></a></span>
       </label></td>
     </tr>
 

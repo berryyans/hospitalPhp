@@ -1,4 +1,6 @@
-<?PHP require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); ?>
+<?PHP
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/INGRESOS HLC/menuOperaciones.php"); ?>
 
 <script language="javascript" type="text/javascript">   
 
@@ -279,7 +281,7 @@ $ventana='catalogoTT.php';
        <td bgcolor="<?php echo $color?>" class="normal">
 	 
 <a href="catalogoCajas?warehouse=<?php echo $_GET['warehouse'];?>&keyCatC=<?php echo $myrow['keyCatC'];?>">
-<img src="/sima/imagenes/expandir.gif" width="12" height="12" border="0">
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/expandir.gif" width="12" height="12" border="0">
 <?php echo $A?>
  </a>
 

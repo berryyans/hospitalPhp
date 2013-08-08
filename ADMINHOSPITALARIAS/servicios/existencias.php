@@ -393,7 +393,7 @@ echo mysql_error();
     <label>
 
     <input name="pasoBandera" type="hidden" id="pasoBandera" value="<?php echo $a; ?>"  />
-    <input class="normalmid" name="actualizar2" type="submit" src="/sima/imagenes/btns/refresh.png"  id="actualizar2" value="Actualizar Articulos" <?php if($a<1){	echo 'disabled="disabled"';
+    <input class="normalmid" name="actualizar2" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/refresh.png"  id="actualizar2" value="Actualizar Articulos" <?php if($a<1){	echo 'disabled="disabled"';
 	}
 	?>  />
     

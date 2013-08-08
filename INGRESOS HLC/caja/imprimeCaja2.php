@@ -377,7 +377,7 @@ $pdf->Ln(2); //salto de linea
 
 //function Header() { 
 $image=new fpdf();
-$image->Image('/var/www/html/sima/imagenes/logohlc.jpg'); 
+$image->Image(CONSTANT_PATH_SIMA.'/imagenes/logohlc.jpg'); 
 //} 
 
 //function Footer() { 

@@ -181,7 +181,7 @@ echo $cierreCuentaReporte->cierreCuentaReportes($entidad,$nT,$numeroE,$nCuenta,$
 
 <a href="#" 
 onclick="nueva('estadoCuentaE.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['keyClientesInternos']; ?>&almacen=<?php echo $ALMACEN; ?>&almacenFuente=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&tipoCliente=<?php echo $tipoCliente;?>&tipoMovimiento=<?php echo 'transaccion';?>&entidad=<?php echo $entidad;?>&usuario=<?php echo $usuario;?>&devolucion=si&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&folioVenta=<?php echo $myrow['folioVenta'];?>','ventanaSecundaria111','800','700','yes')">
-<img src="/sima/imagenes/transfer1.jpeg" alt="" width="12" height="12" border="0" /></a></td>
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/transfer1.jpeg" alt="" width="12" height="12" border="0" /></a></td>
     <?php  }//fin de transacciones?>
     </tr>
     <?php  }}?>

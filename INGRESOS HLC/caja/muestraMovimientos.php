@@ -161,9 +161,9 @@ echo mysql_error();
 ?>
 
 <script>
-javascript:ventanaSecundaria2('/sima/cargos/imprimirDevoluciones.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $_GET['nT']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirDevoluciones.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $_GET['nT']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>');
 
-nueva('/sima/cargos/imprimirCargosPA.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $nT; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>','ventana7','800','600','yes');
+nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirCargosPA.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $nT; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>','ventana7','800','600','yes');
 window.opener.document.forms["form1"].submit();
 
 
@@ -456,10 +456,10 @@ echo '$'.number_format(		$sumatoriaAbonos[0],2); ?>
 		if(round(($sumatoriaCargos[0]+$sumaIVA[0])-$sumatoriaAbonos[0])==NULL){ 
 	?>
     <label>
-    <input name="imprimir" type="image" class="style27" id="imprimir" value="Imprimir" src="/sima/imagenes/btns/printbutton.png"/>
+    <input name="imprimir" type="image" class="style27" id="imprimir" value="Imprimir" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/printbutton.png"/>
     </label>
 	<?php } else {?>
-    <input name="Submit" type="image" class="style27" value="Aplicar Pagos" src="/sima/imagenes/btns/aplicapay.png"  onclick="nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&numeroE=<?php echo $numeroE; ?>
+    <input name="Submit" type="image" class="style27" value="Aplicar Pagos" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/aplicapay.png"  onclick="nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&numeroE=<?php echo $numeroE; ?>
 &almacen=<?php echo $_GET['almacenSolicitante']; ?>&almacenFuente=<?php echo $almacen; ?>&seguro=<?php echo $seguroT; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'particular';?>&tipoVenta=<?php echo $_GET['tipoVenta'];?>&paquete=<?php echo $_GET['paquete'];?>&folioVenta=<?php echo $folioDVenta;?>&devolucion=si&rand=<?php echo rand(1000,10000000);?>','ventanaSecundaria7','500','600','yes')"/>
     <input name="keyClientesInternos" type="hidden" class="style7" id="keyClientesInternos" value="<?php echo $_GET['nT'];?>" />
 	<?php } 

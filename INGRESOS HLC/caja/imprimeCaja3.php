@@ -1,4 +1,6 @@
-<?php require('/var/www/html/sima/js/pdf/fpdf.php'); 
+<?php 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA.'/js/pdf/fpdf.php'); 
 		
 		
 		function cambia_a_normal($fecha){ 

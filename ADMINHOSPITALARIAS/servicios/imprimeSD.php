@@ -7,6 +7,6 @@ $bali=$ALMACEN;
 ?>
 <?php 
 $display=new despliegaPacientesInternos();
-$ventana='/sima/cargos/imprimeSD.php';
+$ventana=CONSTANT_PATH_SIMA_RAIZ.'/cargos/imprimeSD.php';
 $display->displayPI($entidad,$bali,$ventana,$basedatos);
 ?>
