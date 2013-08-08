@@ -1,4 +1,6 @@
-<?php session_start();
+<?php
+require('/Constantes.php');
+session_start();
 $llavePrimaria = session_id();
 ?>
 <?php require('basedatos.php'); ?>
@@ -57,7 +59,7 @@ $ID_CCOSTOM='4.01';
 //********************COMIENZAN VALIDACIONES***********************************
 if(!$usuario AND !isset($_POST['username']) AND !isset($_POST['password']) AND !isset($_POST['ingresar'])){
  echo '<META HTTP-EQUIV="Refresh"
-     CONTENT="0; URL=/sima/index.php">';
+     CONTENT="0; URL='.CONSTANT_PATH_SIMA_RAIZ.'/index.php">';
 exit;  
 
 }
@@ -105,12 +107,12 @@ echo '<script type="text/vbscript">
 msgbox "USUARIO NO VALIDO !" 
 </script>'; 
 echo '<META HTTP-EQUIV="Refresh"
-      CONTENT="0; URL=/sima/index.php">';
+      CONTENT="0; URL='.CONSTANT_PATH_SIMA_RAIZ.'/index.php">';
 exit; 
 } 
 } else {
 echo '<META HTTP-EQUIV="Refresh"
-      CONTENT="0; URL=/sima/index.php">';
+      CONTENT="0; URL='.CONSTANT_PATH_SIMA_RAIZ.'/index.php">';
 exit;  
 }}
 //************************** TERMINAN LAS VALIDACIONES **************************************
@@ -222,9 +224,9 @@ echo mysql_error();
 $modulo39=$resulScripModulo19['modulo'];
 if(trim($modulo39)==$modulo19){
 ?>
-stm_aix("p3i6","p2i2",[0," Convenios x GP","","",-1,-1,0,"/sima/convenios/convenioxGP.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],178,22);
+stm_aix("p3i6","p2i2",[0," Convenios x GP","","",-1,-1,0,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/convenios/convenioxGP.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],178,22);
 
-stm_aix("p3i6","p2i2",[0," Convenios x Art","","",-1,-1,0,"/sima/convenios/convenioxArticulos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],178,22);
+stm_aix("p3i6","p2i2",[0," Convenios x Art","","",-1,-1,0,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/convenios/convenioxArticulos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],178,22);
 
 <?php } ?>
 
@@ -267,9 +269,9 @@ echo mysql_error();
 $modulo40=$resulScripModulo1a['modulo'];
 if(trim($modulo40)==$modulo1a){
 ?>
-stm_aix("p4i1","p2i2",[0," Listado de Ordenes (P. Internos)","","",-1,-1,0,"/sima/caja/listaOrdenesInternos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
-stm_aix("p4i2","p2i2",[0," Listado de Ordenes (P.Ambulatorios)","","",-1,-1,0,"/sima/caja/listaOrdenes.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
-stm_aix("p4i3","p2i2",[0," Pagos, Anticipos,etc.","","",-1,-1,0,"/sima/caja/pagosAnticipos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
+stm_aix("p4i1","p2i2",[0," Listado de Ordenes (P. Internos)","","",-1,-1,0,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/caja/listaOrdenesInternos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
+stm_aix("p4i2","p2i2",[0," Listado de Ordenes (P.Ambulatorios)","","",-1,-1,0,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/caja/listaOrdenes.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
+stm_aix("p4i3","p2i2",[0," Pagos, Anticipos,etc.","","",-1,-1,0,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/caja/pagosAnticipos.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
 <?php } ?>
 <?php
 $modulo3a = 'CrgCnPac.caja';
@@ -280,7 +282,7 @@ echo mysql_error();
 $modulo42=$resulScripModulo3a['modulo'];
 if(trim($modulo42)==$modulo3a){
 ?>
-stm_aix("p4i3","p2i2",[0," Corte de Caja","","",-1,-1,0,"/sima/caja/corteCaja.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
+stm_aix("p4i3","p2i2",[0," Corte de Caja","","",-1,-1,0,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/caja/corteCaja.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
 <?php } ?>
 <?php
 $modulo4a = 'AplicPag.caja';
@@ -291,7 +293,7 @@ echo mysql_error();
 $modulo43=$resulScripModulo4a['modulo'];
 if(trim($modulo43)==$modulo4a){
 ?>
-stm_aix("p4i4","p2i2",[0," Apertura de Caja","","",-1,-1,0,"/sima/caja/aperturaCaja.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
+stm_aix("p4i4","p2i2",[0," Apertura de Caja","","",-1,-1,0,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/caja/aperturaCaja.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#7a8c9e",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],199,22);
 <?php } ?>
 stm_ep();
 <?php } ?>
@@ -301,8 +303,8 @@ stm_ep();
 stm_ai("p0i9",[0,"SALIR","","",-1,-1,0,"","_self","","","icon_10a.gif","icon_10b.gif",7,13,0,"0604arroldw.gif","0604arroldw.gif",9,7,0,1,1,"#730270",0,"#730270",0,"","",0,0,0,0,"#009999","#50647f","#FFF480","#FFFF00","bold 8pt Arial","8pt Arial",0,0],52,30);
 stm_bp("p1",[1,4,0,3,0,4,5,0,100,"",-2,"",-2,48,2,3,"#999999","transparent","",0,0,0,"#333333"]);
 stm_ai("p1i0",[6,1,"#50647f","",-1,-1,0]);
-stm_aix("p10i1","p6i0",[0," Menú principal","","",-1,-1,0,"/sima/menuPrincipal2.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
-stm_aix("p10i2","p2i2",[0," SALIR","","",-1,-1,0,"/sima/salir.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
+stm_aix("p10i1","p6i0",[0," Menï¿½ principal","","",-1,-1,0,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/menuPrincipal2.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
+stm_aix("p10i2","p2i2",[0," SALIR","","",-1,-1,0,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/salir.php","_self","","","","",5,0,0,"","",0,0,0,0,1,"#FFD2FC",0,"#CCCCCC",1,"","fade.gif",3,3,0,0,"#7A8C9E","#CCCC00","#333333","#FFF480","7pt Verdana","7pt Verdana"],90,22);
 
 //************************************************************ CErrar SalIr **************************
 stm_ep();

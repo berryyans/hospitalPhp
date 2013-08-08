@@ -49,7 +49,7 @@ $q = "DELETE FROM beneficenciaDepartamentos WHERE entidad='".$entidad."' and dep
 }
 ?>
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>

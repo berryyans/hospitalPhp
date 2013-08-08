@@ -99,7 +99,7 @@ window.alert("af"+ovidio);
 	 
 	  
       <input onMouseOver="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Presiona aqu&iacute; para ver las notas de cargo y su estado actual..';?>&lt;/div&gt;')" onMouseOut="UnTip()" name="nuevo22" type="button"  id="nuevo22" src="../../imagenes/btns/listaventas.png"
-	  onclick="nueva('/sima/cargos/listadoVentasPacientes.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria10','500','500','yes')" value="Mostrar Lista" />
+	  onclick="nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listadoVentasPacientes.php?paquetes=paquetes&amp;almacen=<?php echo $ALMACEN;?>','ventanaSecundaria10','500','500','yes')" value="Mostrar Lista" />
       <label></label>
     </p>
 </form>

@@ -146,7 +146,7 @@ $myrow17 = mysql_fetch_array($result17);
 ?></td>
 
 
-      <td width="63" ><span > <a href="javascript:ventanaSecundaria1('/sima/cargos/despliegaCargos.php?almacen=<?php echo $_GET['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=externo&amp;folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>')">Ver</a></span></td>
+      <td width="63" ><span > <a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCargos.php?almacen=<?php echo $_GET['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=externo&amp;folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>')">Ver</a></span></td>
       <td width="54" ><?php
 echo $myrow['usuario'];
 ?></td>
@@ -154,7 +154,7 @@ echo $myrow['usuario'];
 
 <td width="31" >
 
-    <a href="javascript:ventanaSecundaria('/sima/cargos/aplicarDescuentos.php?keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&amp;nT=<?php echo $myrow['keyClientesInternos'];?>&entidad=<?php echo $myrow['entidad'];?>')">
+    <a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/aplicarDescuentos.php?keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&amp;nT=<?php echo $myrow['keyClientesInternos'];?>&entidad=<?php echo $myrow['entidad'];?>')">
     Aplicar
     </a>
     </td>

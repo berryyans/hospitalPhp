@@ -124,7 +124,7 @@ $N=$myrow['numCliente'];
 
 ?>
 <tr  > 
-       <td ><a href="#" onClick="javascript:ventanaSecundaria('/sima/cargos/despliegaCargos.php?almacen=<?php echo $bali; ?>&seguro=<?php echo $myrow['maguila']; ?>&numCliente=<?php echo $myrow['numCliente'];?>&nombreCliente=<?php echo $myrow['nomCliente'];?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php echo $myrow['folioVenta'];?></a></td>
+       <td ><a href="#" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCargos.php?almacen=<?php echo $bali; ?>&seguro=<?php echo $myrow['maguila']; ?>&numCliente=<?php echo $myrow['numCliente'];?>&nombreCliente=<?php echo $myrow['nomCliente'];?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php echo $myrow['folioVenta'];?></a></td>
         
         
        <td ><a href="#" onClick="javascript:ventanaSecundaria('../ventanas/dividirCuentasOtros.php?almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $myrowa['nomCliente']; ?>&amp;numCliente=<?php echo $myrow['numCliente'];?>&amp;nombreCliente=<?php echo $myrow['nomCliente'];?>&amp;clientePrincipal=<?php echo $myrow['numCliente'];?>')"><?php echo $myrow['responsableCuenta'];?></a></td>
@@ -185,7 +185,7 @@ echo '$'.number_format($myrowa['efectivo'],2);
        <td height="29" ><div align="center"><span class="">
        
        <a  href="javascript:ventanaSecundaria('../ventanas/impresionSFV.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>&numCliente=<?php echo $N; ?>')"> 
-       <img src="/sima/imagenes/edit.png" alt="Almacenes" width="20" height="20" border="0" />       </a>
+       <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/edit.png" alt="Almacenes" width="20" height="20" border="0" />       </a>
 
        
        </span></div></td>

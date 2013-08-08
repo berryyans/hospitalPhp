@@ -303,7 +303,7 @@ echo $myrow6['descripcion'].'<br>Atte: '.$myrow6['usuario'] ;
                       
                       <td  align="center" class="negro">
                         
-                    <span class="Estilo24"> <a  href="citas.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;keyAlmacenes=<?php echo $myrow['keyAlmacenes'];?>#status<?php echo $a;?>" name="status<?php echo $a;?>"> <img src="/sima/imagenes/btns/checkbtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas desactivar al medico: <?php echo $myrow['descripcion'];
+                    <span class="Estilo24"> <a  href="citas.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;keyAlmacenes=<?php echo $myrow['keyAlmacenes'];?>#status<?php echo $a;?>" name="status<?php echo $a;?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas desactivar al medico: <?php echo $myrow['descripcion'];
 ?>?') == false){return false;}" /></a>      </span></td>
                     </tr>
                     <tr>

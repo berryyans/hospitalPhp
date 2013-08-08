@@ -1,4 +1,6 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require("menuOperaciones.php"); ?>
 
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
@@ -59,7 +61,7 @@ $C=$myrow['codigo'];
        </span></td>
        <td bgcolor="<?php echo $color?>" ><span ><?php echo $myrow['descripcion'];?></span></td>
        <td bgcolor="<?php echo $color?>" ><div align="center" ><a href="#"  
-onclick="javascript:ventanaSecundaria20('ventanaCatalogoEM.php?almacen=<?php echo $_POST['almacenDestino2']; ?>&codigo=<?php echo $C; ?>')"><img src="/sima/imagenes/editbtn.png" alt="" width="12" height="12" border="0" /></a></div></td>
+onclick="javascript:ventanaSecundaria20('ventanaCatalogoEM.php?almacen=<?php echo $_POST['almacenDestino2']; ?>&codigo=<?php echo $C; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/editbtn.png" alt="" width="12" height="12" border="0" /></a></div></td>
      </tr>
      <?php }?>
    </table>

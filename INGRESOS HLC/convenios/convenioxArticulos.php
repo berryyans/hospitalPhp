@@ -57,13 +57,13 @@ function checkIt(evt) {
 }
 </SCRIPT>
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 <?php
 
 echo displaySeguro::despliegaSeguro($_GET['numCliente'],$basedatos);
@@ -174,7 +174,7 @@ $comboAlmacen->despliegaAlmacenSS($entidad,'Estilo24',$almacenSolicitante,$almac
           <input name="codigo" type="text" class="Estilo24" id="medico"  value="<?php echo $_POST['codigo'];?>" readonly=""/>
           </label>
           <input name="M" type="button" class="Estilo24" id="M"  onclick="javascript:ventanaSecundaria6(
-		'/sima/cargos/ventanaListaArticulos.php?campoDespliega=<?php echo "despliegaArticulo"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "codigo"; ?>')" value="M" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaListaArticulos.php?campoDespliega=<?php echo "despliegaArticulo"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "codigo"; ?>')" value="M" />
           <input name="despliegaArticulo" type="text" class="Estilo24"  size="40" readonly=""  id="despliegaMedico"
 		value="<?php if($_POST['despliegaMedico']){ echo $_POST['despliegaMedico'];} else { echo "";}?>"/>          
           <!-- div que mostrara la lista de coincidencias -->

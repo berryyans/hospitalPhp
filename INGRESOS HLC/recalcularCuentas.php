@@ -173,10 +173,10 @@ onclick="javascript:ventanaSecundaria2('../cargos/despliegaCargos.php?numeroE=<?
 
 <?php if($myrow['statusCuenta']=='revision'){ ?>
       <a href="#" onClick="javascript:ventanaSecundaria1('../ventanas/actualizaPagos.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&folioVenta=<?php echo $myrow['folioVenta'];?>')">
-        <img src="/sima/imagenes/btns/addbtn.png" alt="Pacientes Activos" width="22" height="22" border="0" />        </a>
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addbtn.png" alt="Pacientes Activos" width="22" height="22" border="0" />        </a>
         <?php } else { 
         
-     echo  '<img src="/sima/imagenes/btns/lockbtn.png" alt="Pacientes Activos" width="22" height="22" border="0" />';
+     echo  '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/btns/lockbtn.png" alt="Pacientes Activos" width="22" height="22" border="0" />';
 		
 		}
 		?>

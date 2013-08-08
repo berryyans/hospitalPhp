@@ -154,7 +154,7 @@ $estilos->styles();
         <td colspan="2" ><div align="center" >Datos del Paciente </div></td>
     </tr>
       <tr  >
-        <td  >Nuevo Paciente <a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&almacen=<?php echo $ALMACEN;?>')"><img src="/sima/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="24" height="24" border="0" /></a></td>
+        <td  >Nuevo Paciente <a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&almacen=<?php echo $ALMACEN;?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="24" height="24" border="0" /></a></td>
         <td ><span class="Estilo26"><span class="style121"><a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span></td>
     </tr>
       <tr   >

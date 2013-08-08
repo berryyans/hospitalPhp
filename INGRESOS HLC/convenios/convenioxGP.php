@@ -1,6 +1,6 @@
 <?PHP 
 require("/Constantes.php");
-require("/var/www/html/sima/INGRESOS HLC/menuOperaciones.php"); 
+require(CONSTANT_PATH_SIMA."/INGRESOS HLC/menuOperaciones.php"); 
 require(CONSTANT_PATH_CONFIGURACION."/clases/listaClientes.php"); ?>
 <?php $lista=new listadoClientes();
 $TITULO='Convenios x Grupo de Producto';

@@ -184,7 +184,7 @@ $estilos->styles();
 <table width="547" class="table-template-left">
   <tr  >
         <td colspan="3">Nuevo Paciente <span ><span >
-<a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="24" height="24" border="0" /></a></td>
+<a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="24" height="24" border="0" /></a></td>
 
     </tr>
       <tr  >
@@ -310,7 +310,7 @@ $myrow33 = mysql_fetch_array($result33);
                   <td bgcolor="<?php echo $color;?>" >
                   <div align="center">
 		  <?php if($myrow['beneficencia']=='si'){ ?>
-		  <a href="#" onClick="ventanaSecundaria3('../ventanas/activarBeneficencias.php?numeroE=<?php echo $myrow['numCliente'];?>&codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&keyPacientes=<?php echo $myrow['keyPacientes']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen2=<?php echo $A; ?>&seguro=<?php echo $_POST['seguro']; ?>&numCliente=<?php echo $N?>')"> <img src="/sima/imagenes/btns/addbtn2.png"  width="22" height="22" border="0" /> </a>
+		  <a href="#" onClick="ventanaSecundaria3('../ventanas/activarBeneficencias.php?numeroE=<?php echo $myrow['numCliente'];?>&codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&keyPacientes=<?php echo $myrow['keyPacientes']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen2=<?php echo $A; ?>&seguro=<?php echo $_POST['seguro']; ?>&numCliente=<?php echo $N?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addbtn2.png"  width="22" height="22" border="0" /> </a>
 		  <?php } else { echo '---'; }?>
                   </div>
                   </td>

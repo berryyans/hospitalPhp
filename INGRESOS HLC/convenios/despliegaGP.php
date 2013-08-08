@@ -133,7 +133,7 @@ echo $nombrePaciente1;
 	
 	
 	
-    <img src="/sima/imagenes/bordestablas/borde2.png" width="400" height="24" />
+    <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="400" height="24" />
     <table width="400" border="0" align="center">
        <tr bgcolor="#FFFF00">
         <th width="100"  class="normal" scope="col"><div align="left"><span class="normal">Almacen</span></div></th>
@@ -223,7 +223,7 @@ echo '---';
 	  $bandera+='1';
 	  }  //cierra while?>
   </table>
-    <img src="/sima/imagenes/bordestablas/borde2.png" width="400" height="24" />
+    <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="400" height="24" />
 <p align="center"><em> <?php if($bandera){ ?>Se encontraron <?php echo $bandera; ?> Registros <?php }
 	else {
 	echo "No se encontraron registros..!";
