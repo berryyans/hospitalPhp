@@ -126,7 +126,7 @@ $estilos->styles();
 <body>
 <form id="form1" name="form1" method="post" action="">
   <p align="center" class="titulos">Enviar Solicitud </p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="542" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="542" height="24" />
   <table width="542" border="0" align="center" cellpadding="4" cellspacing="0">
     <tr bgcolor="#CCCCCC">
       <th width="1" height="68" class="Estilo24" scope="col">&nbsp;</th>
@@ -140,9 +140,9 @@ $estilos->styles();
         <div align="left" class="style18"></div></th>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="542" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="542" height="24" />
 <p>&nbsp;</p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="395" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="395" height="24" />
   <table width="395" border="0" align="center" cellpadding="4" cellspacing="0">
     <tr bgcolor="#FFFF00">
       <th width="45" height="19" scope="col"><div align="left" class="normal">
@@ -234,7 +234,7 @@ $medico=$myrow['medico'];
       <td bgcolor="<?php echo $color;?>" class="Estilo24">
           <div align="center">
          <a href="<?php echo $_SERVER['PHP_SELF'];?>?descripcionProveedor=<?php echo $_GET['descripcionProveedor'];?>&keyClientesInternos=<?php echo $myrow112['keyClientesInternos']; ?>&seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacen=<?php echo $_GET['almacen'];?>&amp;keyR=<?php echo $myrow['keyR'];?>"> 
-          <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar <?php echo $myrow['descripcion']; ?>?') == false){return false;}" />
+          <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar <?php echo $myrow['descripcion']; ?>?') == false){return false;}" />
            </a>
           </div>
       </td>
@@ -243,7 +243,7 @@ $medico=$myrow['medico'];
 	
 	  ?>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="395" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="395" height="24" />
   <p align="center">
     <label>
 	  <input type="hidden" name="id_almacen" value="<?php echo $_GET['almacen'];?>" />

@@ -198,7 +198,7 @@ echo $myrow['ruta'];
         <span >
         <input name="consultas" type="submit"  id="consultas"  onclick="javascript:ventanaSecundaria('despliegaCB.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="Consultar" />
-        <input name="consultas2" type="submit"  id="consultas2"  onclick="javascript:ventanaSecundaria2('/sima/ADMINHOSPITALARIAS/inventarios/barcode/index.php?numeroE=<?php echo $myrow['numeroE']; ?>
+        <input name="consultas2" type="submit"  id="consultas2"  onclick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/barcode/index.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="Generar C&oacute;digo de Barra" />
         </span>
         <input name="rutaImagen" type="hidden" id="rutaImagen" value="<?php echo $myrow['ruta']; ?>" />

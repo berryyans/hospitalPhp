@@ -262,7 +262,7 @@ $orden='readonly="readonly"';
           <span class="style12"><span class="Estilo24">
   </span></span></div>
         <p align="center"><a href="javascript:ventanaSecundaria(
-		'/sima/ADMINHOSPITALARIAS/inventarios/imprimirSDSeleccion.php?numeroPaciente=<?php echo $numeroPaciente; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;campo=<?php echo "cbarra"; ?>')" class="style7">Imprimir Selecci&oacute;n </a> </p>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/imprimirSDSeleccion.php?numeroPaciente=<?php echo $numeroPaciente; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;campo=<?php echo "cbarra"; ?>')" class="style7">Imprimir Selecci&oacute;n </a> </p>
   
         <input name="gpoProducto" type="hidden" id="numPaciente2" value="<?php echo $gpoProducto; ?>" />
     <input name="numeroMedico1" type="hidden" id="numeroMedico1" value="<?php echo $numeroMedico; ?>" />

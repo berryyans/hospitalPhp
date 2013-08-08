@@ -82,15 +82,15 @@ $q = "UPDATE clientesInternos set
 
 
 <!-Hoja de estilos del calendario --> 
-<link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-system.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-system.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -130,7 +130,7 @@ width: 250px; /*width of tooltip*/
   <table width="342" border="0" align="center" class="style7">
     <tr valign="middle" class="style71">
       <th width="135" class="negro" scope="col"><span class="Estilo25">
-        <input name="button" type="image" class="style7"  id="lanzador" value="fecha"  src="/sima/imagenes/btns/fechadate.png"/>
+        <input name="button" type="image" class="style7"  id="lanzador" value="fecha"  src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fechadate.png"/>
       </span></th>
       <th width="197" scope="col"><div align="left">
           <input name="fechaSolicitud" type="text" class="campos" id="campo_fecha"
@@ -256,18 +256,18 @@ $myrow17 = mysql_fetch_array($result17);
 ?></span></td>
 
       <td width="26" bgcolor="<?php echo $color?>" class="style12"><?php if($myrow['statusCaja']!='pagado'){ ?>
-         <a href="#" onClick="javascript:ventanaSecundaria('/sima/OPERACIONESHOSPITALARIAS/urgencias/actualizaPagos.php?numeroE=<?php echo $myrow['numeroE']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="/sima/imagenes/btns/changebtn.png" alt="Aplicar Cargos" width="24" height="22" border="0" /></a>
+         <a href="#" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/urgencias/actualizaPagos.php?numeroE=<?php echo $myrow['numeroE']; ?>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/changebtn.png" alt="Aplicar Cargos" width="24" height="22" border="0" /></a>
         <?php } else { echo '---';}?></td>
       <td width="20" bgcolor="<?php echo $color?>" class="style12">
       
       <?php if($myrow['statusCaja']!='pagado'){ ?>
-      <a href="javascript:ventanaSecundaria1('/sima/cargos/verCargos.php?almacen=<?php echo $_GET['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=externo&amp;folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>')"><img src="/sima/imagenes/printer.jpg" alt="" width="20" height="18" border="0" /></a> 
+      <a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/verCargos.php?almacen=<?php echo $_GET['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=externo&amp;folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/printer.jpg" alt="" width="20" height="18" border="0" /></a> 
        <?php } else { echo '---'; }?>      </td>
       <td width="30" bgcolor="<?php echo $color?>" class="style12">
         <p>
           <?php if($myrow['statusCaja']!='pagado'){ ?>
-          <a href="javascript:ventanaSecundaria1('/sima/cargos/agregaArticulos.php?almacen=<?php echo $_GET['almacen']; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=externo&folioVenta=<?php echo $myrow['folioVenta']; ?>&numeroE=<?php echo $myrow['numeroE']; ?>&usuario=<?php echo $usuario; ?>&keyCAP=<?php echo $keyCAP;?>&seguro=<?php echo $myrow['seguro'];?>')"><img src="/sima/imagenes/listado.jpg" alt="" width="20" height="18" border="0" /></a>
+          <a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaArticulos.php?almacen=<?php echo $_GET['almacen']; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=externo&folioVenta=<?php echo $myrow['folioVenta']; ?>&numeroE=<?php echo $myrow['numeroE']; ?>&usuario=<?php echo $usuario; ?>&keyCAP=<?php echo $keyCAP;?>&seguro=<?php echo $myrow['seguro'];?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/listado.jpg" alt="" width="20" height="18" border="0" /></a>
           
            <?php } else { echo '---'; ?>
                     
@@ -275,14 +275,14 @@ $myrow17 = mysql_fetch_array($result17);
           </p>        </td>
       <td width="20" bgcolor="<?php echo $color?>" class="style12">
       <?php if($myrow['statusCaja']!='pagado'){ ?>
-      <a href="#" onClick="javascript:ventanaSecundaria1('/sima/OPERACIONESHOSPITALARIAS/admisiones/aplicarCoaseguro.php?numeroE=<?php echo $myrow['numeroE']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $_GET['almacen']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="/sima/imagenes/btns/editbtn.png" alt="Aplicar Cargos" width="20" height="18" border="0" /></a>
+      <a href="#" onClick="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/aplicarCoaseguro.php?numeroE=<?php echo $myrow['numeroE']; ?>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $_GET['almacen']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/editbtn.png" alt="Aplicar Cargos" width="20" height="18" border="0" /></a>
         <?php } else { echo '---';}?>        </td>
       <td width="20" bgcolor="<?php echo $color?>" class="style12">
       
       <?php if($myrow['statusCaja']=='pagado'){ ?>
-      <a href="javascript:ventanaSecundaria1('/sima/INGRESOS HLC/caja/imprimirEstadoCuenta.php?keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&folioFactura=<?php echo $_POST['folioFactura']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&folioVenta=<?php echo $myrow['folioVenta'];?>')">
-      <img src="/sima/imagenes/printer.jpg" alt="" width="20" height="18" border="0" /></a>
+      <a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/imprimirEstadoCuenta.php?keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&folioFactura=<?php echo $_POST['folioFactura']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&folioVenta=<?php echo $myrow['folioVenta'];?>')">
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/printer.jpg" alt="" width="20" height="18" border="0" /></a>
       <?php } else { echo '---';}?>      </td>
       <td width="43" bgcolor="<?php echo $color?>" class="style12"><span class="style7">
         <?php
@@ -291,9 +291,9 @@ echo $myrow['usuario'];
       </span></td>
       <td width="46" bgcolor="<?php echo $color?>" class="style12">
       <?php if($myrow['statusCaja']!='pagado'){ ?>
-      <a href="listadoPacientes.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;fechaSol=<?php echo $fecha2; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacen=<?php echo $_GET['almacen'];?>"><img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="20" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas cancelarle la cuenta a <?php echo $myrow['paciente'];?>?') == false){return false;}" /></a>
+      <a href="listadoPacientes.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;fechaSol=<?php echo $fecha2; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacen=<?php echo $_GET['almacen'];?>"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="20" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas cancelarle la cuenta a <?php echo $myrow['paciente'];?>?') == false){return false;}" /></a>
       <?php } else { ?>
-	  <img src="/sima/imagenes/btns/checkbtn.png" alt="" width="20" height="18" border="0" />
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" alt="" width="20" height="18" border="0" />
 	  
 	 <?php  }
 	  ?>      </td>

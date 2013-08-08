@@ -124,7 +124,7 @@ $totalPago=new eCuentaT();
 echo "$".number_format($totalPago->ECUENTA($eCuenta,$nT,$basedatos),2);
 ?></div>
       <td width="287" bgcolor="<?php echo $color?>" class="style12"><span class="style7">
-	  <a href="#" rel="htmltooltip" onClick="javascript:ventanaSecundaria('/sima/cargos/eCuenta1.php?numeroE=<?php echo $myrow['numeroE']; ?>
+	  <a href="#" rel="htmltooltip" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/eCuenta1.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;nT=<?php echo $nT; ?>')">
 	  <?php echo $myrow['paciente'];?></a>
           <input name="nombrePaciente" type="hidden" id="nombrePaciente" value="<?php echo $nombrePaciente; ?>"/>

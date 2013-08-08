@@ -211,16 +211,16 @@ $_GET['extension']=0;
 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librería principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librería para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
 
 
@@ -246,8 +246,8 @@ $showStyles=new muestraEstilos();
 $showStyles->styles();
 ?>
 
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
     
     
     
@@ -663,7 +663,7 @@ $err[0]+=$myrow3ad1['io']-$myrow3ad2['io'];
         <td bgcolor="<?php echo $color?>" class="normal">
 		<?php if($myrow3ad['io']>0){ ?>
 		<a   href="facturaExtensionesGrupos.php?extension=<?php echo $_POST['extension']; ?>&inactiva=<?php echo'inactiva'; ?>&folioVenta=<?php echo $_GET["folioVenta"];?>&gpoProducto=<?php echo $myrow['gpoProducto'];?>&keyAPF=<?php echo $myrow3ad['keyAPF'];?>">
-		<img src="/sima/imagenes/btns/checkbtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas quitar este producto?') == false){return false;}" />		</a>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas quitar este producto?') == false){return false;}" />		</a>
 		<?php }else{ echo '---';}?>		</td>
       </tr>
       <?php }?>
@@ -707,7 +707,7 @@ $err[0]+=$myrow3ad1['io']-$myrow3ad2['io'];
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesPrincipales.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesPrincipales.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
@@ -728,7 +728,7 @@ $err[0]+=$myrow3ad1['io']-$myrow3ad2['io'];
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/rfcx.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/rfcx.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

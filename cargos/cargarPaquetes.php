@@ -163,8 +163,8 @@ $myrow31 = mysql_fetch_array($result31);
         <td bgcolor="<?php echo $color;?>" class="Estilo24"><span class="style12">
 		
 		
-		<a href="#" onClick="ventanaSecundaria20('/sima/cargos/agregaArticulosPaquetes.php?almacen=<?php echo $ALMACEN; ?>&numeroE=<?php echo $_POST['numeroEx']; ?>&nCuenta=<?php echo $myrow1['nCuenta']; ?>&credencial=<?php echo $_POST['credencial']; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&almacenDestino=<?php echo $_GET['almacen']; ?>&almacenSolicitante=<?php echo $_GET['almacen']; ?>&banderaCXC=<?php echo $_POST['banderaCXC']; ?>&cargoTotal=<?php echo $_POST['cargoTotal']; ?>&fechaSolicitud=<?php echo $_POST['fechaSolicitud']; ?>&horaSolicitud=<?php echo $_POST['horaSolicitud']; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&almacenSolicitud=<?php echo $ALMACEN;?>&folioVenta=<?php echo $_POST['folioVenta']; ?>');">
-		<img src="/sima/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" />		</a>
+		<a href="#" onClick="ventanaSecundaria20('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaArticulosPaquetes.php?almacen=<?php echo $ALMACEN; ?>&numeroE=<?php echo $_POST['numeroEx']; ?>&nCuenta=<?php echo $myrow1['nCuenta']; ?>&credencial=<?php echo $_POST['credencial']; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&almacenDestino=<?php echo $_GET['almacen']; ?>&almacenSolicitante=<?php echo $_GET['almacen']; ?>&banderaCXC=<?php echo $_POST['banderaCXC']; ?>&cargoTotal=<?php echo $_POST['cargoTotal']; ?>&fechaSolicitud=<?php echo $_POST['fechaSolicitud']; ?>&horaSolicitud=<?php echo $_POST['horaSolicitud']; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&almacenSolicitud=<?php echo $ALMACEN;?>&folioVenta=<?php echo $_POST['folioVenta']; ?>');">
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" />		</a>
 		
 		</span></td>
     </tr>

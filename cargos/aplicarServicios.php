@@ -192,7 +192,7 @@ $myrow17 = mysql_fetch_array($result17);
 		  }
 ?></span></td>
 
-      <td width="32" bgcolor="<?php echo $color?>" ><div align="center"><a href="javascript:ventanaSecundaria1('imprimirContenidos.php?folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;almacen=<?php echo $myrow['almacenDestino'];?>')"><img src="/sima/imagenes/btns/printer.png" alt="" width="20" height="20" border="0" /></a></div></td>
+      <td width="32" bgcolor="<?php echo $color?>" ><div align="center"><a href="javascript:ventanaSecundaria1('imprimirContenidos.php?folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;almacen=<?php echo $myrow['almacenDestino'];?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/printer.png" alt="" width="20" height="20" border="0" /></a></div></td>
       <td width="132" bgcolor="<?php echo $color?>" ><span class="style7">
         <?php
 	

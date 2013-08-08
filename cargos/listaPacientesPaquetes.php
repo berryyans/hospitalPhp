@@ -161,7 +161,7 @@ $myrow4 = mysql_fetch_array($result4);
 echo $myrow['codigoPaquete'];
 	  ?>
       </span></td>
-      <td ><a href="javascript:ventanaSecundaria2('/sima/cargos/despliegaCargos.php?codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&numeroE=<?php echo $_GET['numeroE']; ?>&numeroExpediente=<?php echo $E; ?>&seguro=<?php echo $_POST['seguro']; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&folioVenta=<?php echo $myrow4['folioVenta'];?>')">
+      <td ><a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCargos.php?codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&numeroE=<?php echo $_GET['numeroE']; ?>&numeroExpediente=<?php echo $E; ?>&seguro=<?php echo $_POST['seguro']; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&folioVenta=<?php echo $myrow4['folioVenta'];?>')">
         <?php 
 
 if($myrow['descripcionPaquete']){

@@ -163,7 +163,7 @@ echo mysql_error();
 ?>
 
 <script>
-javascript:ventanaSecundaria2('/sima/cargos/imprimirServicios.php?numeroE=<?php echo $numeroE; ?>&codigo=<?php echo $myrow['codProcedimiento']; ?>&nCuenta=<?php echo $nCuenta ?>&paciente=<?php echo $_POST['paciente']; ?>&orden=<?php echo $E; ?>&hora1=<?php echo $hora1; ?>&almacen=<?php echo $_GET['almacenDestino']; ?>&folioVenta=<?php echo $_GET['folioVenta'];?>&rand=<?php echo $_POST['rand'];?>&usuario=<?php echo $_POST['usuarioSolicita'];?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirServicios.php?numeroE=<?php echo $numeroE; ?>&codigo=<?php echo $myrow['codProcedimiento']; ?>&nCuenta=<?php echo $nCuenta ?>&paciente=<?php echo $_POST['paciente']; ?>&orden=<?php echo $E; ?>&hora1=<?php echo $hora1; ?>&almacen=<?php echo $_GET['almacenDestino']; ?>&folioVenta=<?php echo $_GET['folioVenta'];?>&rand=<?php echo $_POST['rand'];?>&usuario=<?php echo $_POST['usuarioSolicita'];?>');
 </script>
 <?php 
 
@@ -204,14 +204,14 @@ close();
 
 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script> 
 
 <?php
 		if($_POST['fechaInicial']){

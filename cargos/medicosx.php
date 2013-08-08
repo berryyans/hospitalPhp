@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 function cambia_a_normal($fecha){ 
     ereg( "([0-9]{2,4})-([0-9]{1,2})-([0-9]{1,2})", $fecha, $mifecha); 
     $lafecha=$mifecha[3]."/".$mifecha[2]."/".$mifecha[1]; 
@@ -66,7 +67,7 @@ keyMedico DESC limit 0,100";
 		//echo "<li onselect=\" this.setText('$name').setValue('$emp_no'); \"><span>$emp_no</span>\n\t$name\n</li>\n";
 
                 if($row['ruta']!='images/' AND $row['ruta']){
-                $route='/sima/OPERACIONESHOSPITALARIAS/admisiones/medicos/'.$row['ruta'];
+                $route=CONSTANT_PATH_SIMA_RAIZ.'/OPERACIONESHOSPITALARIAS/admisiones/medicos/'.$row['ruta'];
                 $ruta='<img src="'.$route.'" width="80" height="80" />';
                 }else{
 

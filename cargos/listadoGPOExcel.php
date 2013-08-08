@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 header("Content-Type: application/vnd.ms-excel");
 header("Expires: 0");
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
@@ -81,7 +82,7 @@ $TAMANO_PAGINA = 30;
 } else {
 $TAMANO_PAGINA=$_GET['registros'];
 }
-//examino la página a mostrar y el inicio del registro a mostrar
+//examino la pï¿½gina a mostrar y el inicio del registro a mostrar
 $pagina = $_GET["pagina"];
 if (!$pagina) {
 		$inicio = 0;
@@ -91,9 +92,9 @@ else {
 	$inicio = ($pagina - 1) * $TAMANO_PAGINA;
 }
 
-//miro a ver el número total de campos que hay en la tabla con esa búsqueda
+//miro a ver el nï¿½mero total de campos que hay en la tabla con esa bï¿½squeda
 
-//calculo el total de páginas
+//calculo el total de pï¿½ginas
 $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
 
 
@@ -222,11 +223,11 @@ $myrow39 = mysql_fetch_array($result39);
     <td bgcolor="<?php echo $color;?>" class="style71"><span class=""><?php echo $myrow['descripcion']; ?>
           <?php 
 	  if(!$bali){
-	   echo '<img src="/sima/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
+	   echo '<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
 	   }
 	  ?>
           <?php if($myrow['generico']=='si'){?>
-          <blink> <img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
+          <blink> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
           <?php } else { echo '';}?>
     </span></td>
     <td bgcolor="<?php echo $color;?>" class="style71" >

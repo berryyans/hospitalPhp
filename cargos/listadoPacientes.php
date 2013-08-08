@@ -109,19 +109,19 @@ $q = "UPDATE clientesInternos set
 ?>
 
  <!-Hoja de estilos del calendario -->
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario -->
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script>
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script>
  <!-- librer�a para cargar el lenguaje deseado -->
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script>
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script>
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo -->
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script>
   
 
-        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.js"></script>
-        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.ui.js"></script>
-        <script type="text/javascript" src="/sima/js/editp/lib/jquery.editinplace.js"></script>
-        <link rel="stylesheet" href="/sima/js/editp/demo/css/styles.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.ui.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/lib/jquery.editinplace.js"></script>
+        <link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/demo/css/styles.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 
 
 
@@ -149,7 +149,7 @@ $estilo->styles();
 
       <div align="center">
 	<span >
-        <input name="button" type="image"   id="lanzador" value="fecha"  src="/sima/imagenes/btns/fechadate.png"/>
+        <input name="button" type="image"   id="lanzador" value="fecha"  src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fechadate.png"/>
       </span>
       
 
@@ -236,7 +236,7 @@ $(document).ready(function(){
 
 	// Using a callback function to update 2 divs
 	$("#<?php echo $myrow['keyClientesInternos']; ?>").editInPlace({
-          url: "/sima/cargos/actualizaNombrePx.php"
+          url: "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/actualizaNombrePx.php"
 		//callback: function(element_id,original_element, html, original){
                      
 		//	$("#updateDiv1").html("The original html was: " + original);
@@ -296,15 +296,15 @@ $myrow17 = mysql_fetch_array($result17);
 ?></span></td>
 
       <td width="87" bgcolor="<?php echo $color?>"  align="center"><?php if($myrow['statusCaja']=='pagado'){ ?>
-        <a href="javascript:ventanaSecundaria1('/sima/INGRESOS HLC/caja/imprimirEstadoCuenta.php?almacen=<?php echo $_GET['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=externo&amp;folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>&entidad=<?php echo $entidad;?>')"> Ver Nota de Venta </a>
+        <a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/imprimirEstadoCuenta.php?almacen=<?php echo $_GET['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=externo&amp;folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>&entidad=<?php echo $entidad;?>')"> Ver Nota de Venta </a>
         <?php } else { echo '---'; }?></td>
       <td width="103" bgcolor="<?php echo $color?>"  align="center">
 	      
       
-      <a href="javascript:ventanaSecundaria1('/sima/cargos/despliegaCargos.php?almacen=<?php echo $_GET['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=externo&amp;folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>')"> Ver Estado de Cuenta</a> 
+      <a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCargos.php?almacen=<?php echo $_GET['almacen']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=externo&amp;folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>')"> Ver Estado de Cuenta</a> 
          </td>
       <td width="89" bgcolor="<?php echo $color?>"  align="center"><?php if($myrow['statusCaja']!='pagado'){ ?>
-         <a href="#" onClick="javascript:ventanaSecundaria('/sima/cargos/actualizaPagosExternos.php?numeroE=<?php echo $myrow['numeroE']; ?>
+         <a href="#" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/actualizaPagosExternos.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')">Cambia Responsable</a>
         <?php } else { echo '---';}?></td>
       
@@ -317,7 +317,7 @@ $myrow17 = mysql_fetch_array($result17);
       
       <td width="74" bgcolor="<?php echo $color?>"  align="center">
 	          <?php if($myrow['statusCaja']!='pagado'){ ?>
-	  <a href="javascript:ventanaSecundaria1('/sima/OPERACIONESHOSPITALARIAS/urgencias/datosAdicionales.php?folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>')">
+	  <a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/urgencias/datosAdicionales.php?folioVenta=<?php echo $myrow['folioVenta']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyCAP=<?php echo $keyCAP;?>')">
 
         Editar Ingreso
 		  </a>
@@ -332,7 +332,7 @@ echo $myrow['usuario'];
       <?php if($myrow['statusCaja']!='pagado' and $myrow['folioVenta']!=''){ ?>
      
       <?php } else { ?>
-	  <img src="/sima/imagenes/btns/checkbtn.png" alt="" width="20" height="18" border="0" />
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" alt="" width="20" height="18" border="0" />
 	  
 	 <?php  }
 	  ?>      </td>

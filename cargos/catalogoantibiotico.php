@@ -200,13 +200,13 @@ window.alert( "SE ELIMINARON DATOS!");
 
 
  <!-Hoja de estilos del calendario -->
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario -->
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script>
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script>
  <!-- librer�a para cargar el lenguaje deseado -->
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script>
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script>
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo -->
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script>
 
 
 
@@ -223,12 +223,12 @@ $estilos= new muestraEstilos();
 $estilos->styles();
 
 ?>
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 
 </head>
 
-<body onLoad="MM_preloadImages('/sima/imagenes/bordestablas/btns/newbtn.png')">
+<body onLoad="MM_preloadImages('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/newbtn.png')">
 <h1 align="center" > FORMULARIO DE ANTIBIOTICOS<br />
 <br />
 </h1>
@@ -271,7 +271,7 @@ $myrow = mysql_fetch_array($result);
          
        
 
-    <td width="118" align="right"><div align="center"><input name="actualizar" type="Submit" src='/sima/imagenes/bordestablas/btns/refreshbtn.png' class="Estilo24" id="actualizar" value="Agregar/Actualizar" />
+    <td width="118" align="right"><div align="center"><input name="actualizar" type="Submit" src='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/refreshbtn.png' class="Estilo24" id="actualizar" value="Agregar/Actualizar" />
     </div></td>
  
   </tr>
@@ -658,7 +658,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/medicosantibioticosx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $_GET['almacen'];?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/medicosantibioticosx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $_GET['almacen'];?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

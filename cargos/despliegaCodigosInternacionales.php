@@ -97,7 +97,7 @@ function ventanaSecundaria1 (URL){
    window.open(URL,"ventana1","width=500,height=500,scrollbars=YES") 
 } 
 </script> 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -162,7 +162,7 @@ function ventanaSecundaria1 (URL){
         <td>Nuevo C&oacute;digo </td>
         <td><span class="Estilo26"><span class="style121"><a 
 		onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Si no existe el c�digo internacional que busca se puede agregar pulsando �ste bot�n...';?></div>')" onMouseOut="UnTip()"
-		href="javascript:ventanaSecundaria1('/sima/cargos/ventanaCatalogoDXI.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Datos Generales del Paciente" width="12" height="12" border="0" /></a></span></span></td>
+		href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaCatalogoDXI.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Datos Generales del Paciente" width="12" height="12" border="0" /></a></span></span></td>
       </tr>
       <tr valign="middle" bgcolor="#FFCCFF" class="catalogo">
         <td width="140"><div align="left" class="style71">Descripci&oacute;n</div></td>
@@ -261,7 +261,7 @@ $myrow31 = mysql_fetch_array($result31);
 		
 
 		<a onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Editar el c�digo internacional: '.$myrow['descripcion'];?></div>')" onMouseOut="UnTip()"
-		 href="javascript:ventanaSecundaria1('/sima/cargos/ventanaCatalogoDXI.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&keyDiagnosticos=<?php echo $myrow['keyDiagnosticos']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Modificar Codigo Internacional" width="12" height="12" border="0" /></a></span></td>
+		 href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaCatalogoDXI.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&keyDiagnosticos=<?php echo $myrow['keyDiagnosticos']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Modificar Codigo Internacional" width="12" height="12" border="0" /></a></span></td>
     </tr>
 
       <?php }}?>

@@ -1,4 +1,6 @@
-<?php //include('/configuracion/ventanasEmergentes.php');?>
+<?php
+require('/Constantes.php');
+//include('/configuracion/ventanasEmergentes.php');?>
 
 <table width="560" border="0" align="center">
   <tr>
@@ -183,7 +185,7 @@ $myrow39 = mysql_fetch_array($result39);
 		?>
         <?php 
 		if($myrow['paquete']=='si'){
-		echo '<img src="/sima/imagenes/p.jpeg" width="12" height="12" alt="ES UN PAQUETE" />';
+		echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/p.jpeg" width="12" height="12" alt="ES UN PAQUETE" />';
 
 		}
 		
@@ -192,7 +194,7 @@ $myrow39 = mysql_fetch_array($result39);
 		}
 		?>
         <?php if( $myrow['generico']=='si'){?>
-        <blink> <img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
+        <blink> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
         <?php } else { echo '';}?>
         <?php 
 		if( $myrow['laboratorioReferido']=='si'){
@@ -224,13 +226,13 @@ if($statusExistencias->statusExistencias($myrow['servicio'],$almacen,$myrow['cod
 and $myrow['gpoProducto']) { 
 		$errores='No hay existencias en el almacen: '.$almacen; ?>
       <?php if(!$priceLevel){ ?>
-      <a href="javascript:ventanaSecundaria20('/sima/cargos/ventanaErrores.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;error=<?php echo $errores; ?>&amp;error1=<?php echo $errores1; ?>')"> <img src="/sima/imagenes/btns/checkbtn.png" width="24" height="24" border="0" alt="ERRORES" /></a>
+      <a href="javascript:ventanaSecundaria20('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaErrores.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;error=<?php echo $errores; ?>&amp;error1=<?php echo $errores1; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="24" height="24" border="0" alt="ERRORES" /></a>
       <?php } else { ?>
-      <img src="/sima/imagenes/btns/stopbtn.png" width="22" height="22" alt="OK" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/stopbtn.png" width="22" height="22" alt="OK" />
       <?php } ?>
       <?php 
 		} else {
-		echo '<img src="/sima/imagenes/btns/checkbtn.png" width="22" height="22" alt="OK" />';
+		echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/btns/checkbtn.png" width="22" height="22" alt="OK" />';
 		}
 		?>
       &nbsp;</div></td>

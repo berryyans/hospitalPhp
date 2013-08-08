@@ -114,7 +114,7 @@ $estilos-> styles();
 <form id="form2" name="form2" method="post" action="" onSubmit="return valida(this);">
   <table width="513" border="0" align="center">
     <tr>
-      <th colspan="2" scope="col"><div align="center"><img src="/sima/imagenes/bordestablas/borde1.png" width="500" height="32" /></div></th>
+      <th colspan="2" scope="col"><div align="center"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="500" height="32" /></div></th>
     </tr>
     <tr>
       <th bgcolor="#330099" scope="col"><div align="left" class="blanco">Folio de Venta</div></th>
@@ -266,7 +266,7 @@ $despliegaTotales-> tt($entidad,$class,$estilo,$fechas1,$fechas2,$keyClientesInt
     <tr>
       <th width="15%" scope="col"> <table width="94" border="0" align="left">
           <tr bgcolor="#660066">
-            <th class="blanco" scope="col"> Particular<a href="#particular" name="particular" id="particular" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
+            <th class="blanco" scope="col"> Particular<a href="#particular" name="particular" id="particular" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&amp;tipoCliente=<?php echo 'particular';?>')"> </a></th>
           </tr>
           <tr>

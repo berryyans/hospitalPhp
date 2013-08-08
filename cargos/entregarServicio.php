@@ -84,7 +84,7 @@ $myrow = mysql_fetch_array($result);
   
   ?>
   </p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="508" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="508" height="24" />
   <table width="508" border="0" align="center" cellpadding="4" cellspacing="0" class="style71">
     <tr bgcolor="#CCCCCC">
       <th width="214" height="101" scope="col"><div align="left" class="Estilo24">Nombre quien recibe servicio </div></th>
@@ -94,7 +94,7 @@ $myrow = mysql_fetch_array($result);
       </div></th>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="508" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="508" height="24" />
   <p align="center"><label>
     <input name="actualizar" type="image" src="../imagenes/btns/refresh.png" id="actualizar" value="Aplicar Cambios">
   </label></p>

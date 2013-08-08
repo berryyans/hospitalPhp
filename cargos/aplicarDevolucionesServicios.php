@@ -446,13 +446,13 @@ $otros= new acumulados();
 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
-  <!-- librer�a principal del calendario --><script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+  <!-- librer�a principal del calendario --><script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
- <!-- librer�a para cargar el lenguaje deseado --><script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+ <!-- librer�a para cargar el lenguaje deseado --><script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
-  <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --><script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --><script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
   
@@ -534,7 +534,7 @@ $rNombre18 = mysql_fetch_array($result18);
 	  ." ".$rNombre18["apellido3"]." ".$rNombre18["nombre1"]." ".$rNombre18["nombre2"];?> </div></th>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="549" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="549" height="24" />
 
   <p align="center" class="error"><em>*Introduce la cantidad que deseas devolver...</em> <br />
     <input type="submit" class="boton1" name="aplicar" id="button" value="Aplicar Cambios" />

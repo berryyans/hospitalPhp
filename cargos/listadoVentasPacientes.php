@@ -61,15 +61,15 @@ if(win.window.focus){win.window.focus();}
 
 
 <!-Hoja de estilos del calendario --> 
-<link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-system.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-system.css" title="win2k-cold-1" />
   <!-- librería principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librería para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -92,7 +92,7 @@ $estilos->styles();
     <tr valign="middle" >
       <td  scope="col">&nbsp;</td>
       <td  scope="col"><div align="left"><span >
-        <input name="button2" type="button"   id="lanzador1" value="fecha Inicial"  src="/sima/imagenes/btns/fechadate.png"/>
+        <input name="button2" type="button"   id="lanzador1" value="fecha Inicial"  src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fechadate.png"/>
       </span></div></td>
       <td scope="col">
         
@@ -119,7 +119,7 @@ $estilos->styles();
     <tr valign="middle" >
       <td  scope="col">&nbsp;</td>
       <td  scope="col"><div align="left"><span >
-        <input name="button" type="button"   id="lanzador" value="fecha Final"  src="/sima/imagenes/btns/fechadate.png"/>
+        <input name="button" type="button"   id="lanzador" value="fecha Final"  src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fechadate.png"/>
       </span></div></th>
       <td scope="col"><div align="left">
         <input name="fechaFinal" type="text" class="campos" id="campo_fecha"
@@ -197,7 +197,7 @@ echo $myrow['descripcionArticulo'];
 ?></td>
 
       <td width="91" bgcolor="<?php echo $color?>" >
-	  	  <a href="javascript:nueva('/sima/INGRESOS HLC/caja/imprimirReciboCxC.php?entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>&seguro=<?php echo $myrow['clientePrincipal'];?>','ventana7','800','600','yes');">
+	  	  <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/imprimirReciboCxC.php?entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>&seguro=<?php echo $myrow['clientePrincipal'];?>','ventana7','800','600','yes');">
 	  <?php echo $myrow['numRecibo'];?>
 	  </a>
 	  </td>

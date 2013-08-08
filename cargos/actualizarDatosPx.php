@@ -225,11 +225,11 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
           <div align="left">
             <input name="medico" type="hidden"  id="medico"  value="<?php echo $_POST['medico'];?>" readonly=""/>
             <a href="javascript:ventanaSecundaria2(
-		'/sima/cargos/listaMedicos.php?campoDespliega=<?php echo "despliegaMedico"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "medico"; ?>')"></a>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaMedicos.php?campoDespliega=<?php echo "despliegaMedico"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "medico"; ?>')"></a>
             <input name="despliegaMedico" type="text"  readonly=""  id="despliegaMedico"
 		value="<?php if($_POST['despliegaMedico']){ echo $_POST['despliegaMedico'];} else { echo "";}?>"/>
           <a href="javascript:ventanaSecundaria2(
-		'/sima/cargos/listaMedicos.php?campoDespliega=<?php echo "despliegaMedico"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "medico"; ?>&amp;almacen=<?php echo $_POST['almacenDestino2'];?>')"><img src="/sima/imagenes/Save.png" alt="M&eacute;dico de Internamiento" width="19" height="19" border="0" /></a></div>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaMedicos.php?campoDespliega=<?php echo "despliegaMedico"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "medico"; ?>&amp;almacen=<?php echo $_POST['almacenDestino2'];?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="M&eacute;dico de Internamiento" width="19" height="19" border="0" /></a></div>
           </label>
           <div align="left"></div>
         </span></td>
@@ -239,7 +239,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
         <td><input name="descripcionCuarto" type="text"  id="descripcionCuarto" 
 		value="<?php if($_POST['descripcionCuarto']){ echo $_POST['descripcionCuarto'];} else { echo "";}?>" readonly=""/>
             <a href="javascript:ventanaSecundaria2(
-		'agregaCuarto.php?campoDespliega=<?php echo "descripcionCuarto"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoCuarto=<?php echo "cuarto"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;almacenInternamiento=<?php echo $_POST['almacenDestino2']; ?>')"><img src="/sima/imagenes/Save.png" alt="Cuarto" width="19" height="19" border="0" /></a> <span >
+		'agregaCuarto.php?campoDespliega=<?php echo "descripcionCuarto"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoCuarto=<?php echo "cuarto"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;almacenInternamiento=<?php echo $_POST['almacenDestino2']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Cuarto" width="19" height="19" border="0" /></a> <span >
             <input name="cuarto" type="hidden"  id="cuarto"   readonly=""
 		value="<?php if($_POST['cuarto']){ echo $_POST['cuarto'];} else { echo "0";}?>" 
 		onchange="javascript:this.form.submit();" />

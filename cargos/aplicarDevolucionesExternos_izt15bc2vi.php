@@ -394,16 +394,16 @@ $otros= new acumulados();
 
 
 <!-Hoja de estilos del calendario --> 
-  <link mmdw="0"  rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link mmdw="0"  rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
-<!--MMDW 28 --><script type="text/javascript" src="/sima/calendario/calendar.js"></script><!--MMDW 29 --> 
+<!--MMDW 28 --><script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script><!--MMDW 29 --> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-<!--MMDW 30 --><script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script><!--MMDW 31 --> 
+<!--MMDW 30 --><script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script><!--MMDW 31 --> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-<!--MMDW 32 --><script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script><!--MMDW 33 --> 
+<!--MMDW 32 --><script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script><!--MMDW 33 --> 
   
   
   

@@ -284,8 +284,8 @@ function ventanaSecundaria2 (URL){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <?php
 $estilos=new muestraEstilos();
 $estilos->styles();
@@ -463,7 +463,7 @@ $col = 1;
       <td bgcolor="<?php echo $color;?>" class="normal">
 
 		<input name="cantidad[]" type="text" id="cantidad[]" size="5" value="<?php echo $myrow['cantidad']; ?>"  autocomplete="off" />	  </td>
-      <td bgcolor="<?php echo $color;?>" class="normal"><div align="center"><a href="<?php echo $_SERVER['PHP_SELF'];?>?keyR=<?php echo $myrow['keyR'];?>&almacenDestino=<?php echo $_POST['almacenDestino'];?>&almacenDestino1=<?php echo $_POST['almacenDestino1'];?>&keyPACOM=<?php echo $_GET['keyPACOM'];?>&descripcion=<?php echo $_GET['descripcion'];?>"> <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar <?php echo $myrow['descripcion']; ?>?') == false){return false;}" /></a></div></td>
+      <td bgcolor="<?php echo $color;?>" class="normal"><div align="center"><a href="<?php echo $_SERVER['PHP_SELF'];?>?keyR=<?php echo $myrow['keyR'];?>&almacenDestino=<?php echo $_POST['almacenDestino'];?>&almacenDestino1=<?php echo $_POST['almacenDestino1'];?>&keyPACOM=<?php echo $_GET['keyPACOM'];?>&descripcion=<?php echo $_GET['descripcion'];?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar <?php echo $myrow['descripcion']; ?>?') == false){return false;}" /></a></div></td>
       </tr>
       <?php } //cierra while
 	
@@ -512,7 +512,7 @@ $col = 1;
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/articulosMaquiladosx.php?almacen=<?php echo $_POST['almacenDestino1'];?>&entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/articulosMaquiladosx.php?almacen=<?php echo $_POST['almacenDestino1'];?>&entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

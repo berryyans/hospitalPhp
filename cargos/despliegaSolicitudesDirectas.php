@@ -860,7 +860,7 @@ $existencias=NULL;
 		  ?>
     </span></td>
     <td ><span >
-      <div align="left" ><a href="#"  onclick="javascript:ventanaSecundaria('/sima/cargos/cambiarArticulos.php?numeroE=<?php echo $myrow['numeroE']; ?>
+      <div align="left" ><a href="#"  onclick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/cambiarArticulos.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;almacenDestino=<?php echo $bali; ?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&amp;paciente=<?php echo $myrow8a['paciente'];?>&amp;usuario=<?php echo $myrow['usuario'];?>&amp;numSolicitud=<?php echo $myrow['numSolicitud'];?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&amp;keyCAP=<?php echo $myrow['keyCAP'];?>&amp;codigo=<?php echo $myrow['codProcedimiento'];?>   ')">
         <?php 
 		  
@@ -926,7 +926,7 @@ echo $myrow8ab['descripcion'];
       <?php echo $myrow['cantidad']; ?>
       </span>    </span></td>
     <td ><div align="center">
-<a   href="despliegaSolicitudesDirectas.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>&amp;keyCAP=<?php print $myrow['keyCAP'];?>&amp;folioVenta=<?php echo $_GET['folioVenta'];?>&amp;almacenDestino=<?php echo $_GET['almacenDestino'];?>&amp;numSolicitud=<?php echo $_GET['numSolicitud'];?>"><img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar <?php echo $myrow['descripcionArticulo'];?>?') == false){return false;}" /></a></div></td>
+<a   href="despliegaSolicitudesDirectas.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;criterio=<?php echo $_GET["criterio"];?>&amp;keyPA=<?php echo $myrow['keyPA'];?>&amp;keyCAP=<?php print $myrow['keyCAP'];?>&amp;folioVenta=<?php echo $_GET['folioVenta'];?>&amp;almacenDestino=<?php echo $_GET['almacenDestino'];?>&amp;numSolicitud=<?php echo $_GET['numSolicitud'];?>"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar <?php echo $myrow['descripcionArticulo'];?>?') == false){return false;}" /></a></div></td>
   </tr>
   <?php  }?>
 
