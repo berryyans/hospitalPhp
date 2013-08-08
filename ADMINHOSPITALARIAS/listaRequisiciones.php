@@ -82,13 +82,13 @@ if(win.window.focus){win.window.focus();}
 
 
 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
  
 
 
@@ -300,7 +300,7 @@ Detalles
  
       <td >
  <a href="javascript:nueva('../ventanas/ventanaMuestraRequisicion.php?nRequisicion=<?php echo $myrow['contador'];?>','ventana7','800','600','yes');" />
- <img src="/sima/imagenes/btns/printer.png" width="20" height="20" />
+ <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/printer.png" width="20" height="20" />
  </a>
           
       </td>  

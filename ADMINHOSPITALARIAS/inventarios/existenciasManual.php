@@ -1,6 +1,6 @@
 <?PHP 
 require("/Constantes.php");
-require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
+require(CONSTANT_PATH_SIMA."/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
 
 
 <script type="text/javascript">
@@ -258,7 +258,7 @@ Ajuste a existencias Manuales <br />
 
 &nbsp;</h1>
 <form id="form1" name="form1" method="post" action="">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="600" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="600" height="24" />
   <table width="600" border="0" align="center" cellpadding="3" cellspacing="0">
     <tr>
       <th width="114" bgcolor="#FFFF00" scope="col"><div align="left" class="normalmid">
@@ -290,9 +290,9 @@ $comboAlmacen->despliegaAlmacenStock($entidad,'style7',$almacenSolicitante,$alma
         </label></th>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="600" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="600" height="24" />
 <p>&nbsp;</p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="600" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="600" height="24" />
   <table width="600" border="0" cellspacing="0" cellpadding="3" align="center" class="normalmid">
     <tr>
     

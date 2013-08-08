@@ -1,16 +1,18 @@
-<?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
  
 
 
 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 
 
 <script language=javascript>
@@ -70,7 +72,7 @@ $estilos->styles();
   
   <table width="400" border="0" cellspacing="0" cellpadding="0" align="center">
     <tr>
-      <td colspan="6"><img src="/sima/imagenes/bordestablas/borde1.png" width="400" height="21" /></td>
+      <td colspan="6"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="400" height="21" /></td>
     </tr>
     
 
@@ -173,7 +175,7 @@ if($myrow8aa['descripcion']!=NULL){
       
  <td class="normal">
  <a href="javascript:ventanaSecundaria('printTraspasos.php?nOrden=<?php echo $myrow['nOrden'];?>&departamentoSolicitante=<?php echo $myrow8aa['descripcion'];?>&entidad=<?php echo $entidad;?>&random=<?php echo $rand; ?>&usuarioCargo=<?php echo $usuario;?>&usuarioSolicitante=<?php echo $myrow['usuario'];?>&fecha=<?php echo $fecha1;?>&hora=<?php echo $hora1;?>&fechaSolicitud=<?php echo $myrow['fecha'];?>&horaSolicitud=<?php echo $myrow['hora'];?>','ventana7','800','600','yes');" />
- <img src="/sima/ic/pdf.png" width="30" height="30" />
+ <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ic/pdf.png" width="30" height="30" />
  </a>
  </td>
       
@@ -184,7 +186,7 @@ if($myrow8aa['descripcion']!=NULL){
     </tr>
     <?php  }?>
     <tr>
-      <td colspan="6"><img src="/sima/imagenes/bordestablas/borde2.png" width="400" height="20" /></td>
+      <td colspan="6"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="400" height="20" /></td>
     </tr>
   </table>
   <p>&nbsp;</p>

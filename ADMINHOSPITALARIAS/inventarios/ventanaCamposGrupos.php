@@ -96,7 +96,7 @@ function ventanaSecundaria5 (URL){
    <div align="center">
 
    </div>
-   <img src="/sima/imagenes/bordestablas/borde1.png" width="258" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="258" height="24" />
    <table width="258" border="0" align="center" cellpadding="4" cellspacing="0">
      <tr>
        <th width="51" height="15" bgcolor="#FFFF00" scope="col"><div align="left"><span class="style11">C&oacute;digo </span></div></th>
@@ -159,7 +159,7 @@ $B=$myrow1['keyCAG'];
      </tr>
      <?php }}?>
    </table>
-   <img src="/sima/imagenes/bordestablas/borde2.png" width="258" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="258" height="24" />
    <p align="center">&nbsp;</p>
 <table width="200" border="0" align="center">
   <tr>

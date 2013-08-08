@@ -68,7 +68,7 @@ anaquel_actualizado();
 <body>
 <p align="center">&nbsp;</p>
 <form id="form1" name="form1" method="post" action="">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="545" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="545" height="24" />
   <table width="545" height="189" border="0" align="center" cellpadding="0" cellspacing="0">
 
     <tr>
@@ -132,13 +132,13 @@ $imprimeTipo = mysql_fetch_array($rCombo);
       </div></td>
     </tr>
   </table>
-<img src="/sima/imagenes/bordestablas/borde2.png" width="545" height="24" />
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="545" height="24" />
 <p align="center" class="style12"><a href="anaquel.php">Regresar a Anaqueles</a></p>
   <p>&nbsp;</p>
 </form>
 <p align="center">&nbsp;</p>
 <form id="form2" name="form2" method="post" action="">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="384" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="384" height="24" />
 <table width="384" border="0" align="center" cellpadding="4" cellspacing="0">
     <tr>
       <th width="130" bgcolor="#FFFF00" scope="col"><span class="style11"># Tipo de Anaquel </span></th>
@@ -173,7 +173,7 @@ $C=$myrow1['codigoAnaquel'];
     </tr>
     <?php }?>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="384" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="384" height="24" />
 </form>
 <p align="center">&nbsp;</p>
 </body>

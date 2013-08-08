@@ -1,4 +1,6 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require("menuOperaciones.php"); ?>
 
 
 <script language=javascript> 
@@ -97,7 +99,7 @@ $estilos->styles();
 </div>
 </form>
 <form id="form1" name="form1" method="post" action="modificaMedicos1.php">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="672" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="672" height="24" />
 
   <table width="672" border="0" align="center" cellpadding="4" cellspacing="0">
     <tr bgcolor="#FFFF00">
@@ -193,16 +195,16 @@ codigo = '".$myrow['especialidad']."'
       
       <td width="81" bgcolor="<?php echo $color;?>" class="normal"><div align="left" class="normal"> 
         <?php if($myrow['status']=='A'){ ?>
-        <a href="listadoMedicos.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;id_proveedor=<?php echo $A; ?>&amp;keyMedico=<?php echo $No; ?>"> <img src="/sima/imagenes/btns/addbtn2.png" alt="Almacén ó Médico Activo" width="25" height="25" border="0" onClick="if(confirm('¿Estás seguro que deseas inactivar este registro?') == false){return false;}" /></a>
+        <a href="listadoMedicos.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;id_proveedor=<?php echo $A; ?>&amp;keyMedico=<?php echo $No; ?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addbtn2.png" alt="Almacén ó Médico Activo" width="25" height="25" border="0" onClick="if(confirm('¿Estás seguro que deseas inactivar este registro?') == false){return false;}" /></a>
         <?php } else { ?>
-        <a href="listadoMedicos.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;keyMedico=<?php echo $No?>"> <img src="/sima/imagenes/btns/stopbtn.png" alt="INACTIVO" width="25" height="25" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
+        <a href="listadoMedicos.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;keyMedico=<?php echo $No?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/stopbtn.png" alt="INACTIVO" width="25" height="25" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
         <?php } ?>
       </div></td>
     </tr>
     <?php  }}?>
     <input name="nombres" type="hidden" value="<?php echo $nombrePaciente; ?>" />
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="672" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="672" height="24" />
 <p align="center" class="normal">&nbsp;</p>
   <p class="normal"><span class="normal">
     <input name="nombrePaciente" type="hidden" id="nombrePaciente" value="<?php echo $nombrePaciente; ?>" />

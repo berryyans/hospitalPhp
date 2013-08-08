@@ -43,14 +43,14 @@ function ventanaSecundaria3 (URL){
 } 
 </script>
 
- <!-Hoja de estilos del calendario -->
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+ <!--Hoja de estilos del calendario -->
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario -->
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script>
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script>
  <!-- librer�a para cargar el lenguaje deseado -->
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script>
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script>
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo -->
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -92,7 +92,7 @@ $estilos->styles();
   
   
   
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="500" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="500" height="24" />
   <table width="500" border="0" align="center" cellpadding="4" cellspacing="0" class="normal">
 
 
@@ -235,9 +235,9 @@ Ultima Actualizacion:   <?php echo $_GET['fechaCreacion'];?>
 </tr>
 
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="500" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="500" height="24" />
 <p align="center" class="titulo">&nbsp;</p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="500" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="500" height="24" />
   <table width="500" border="0.2" align="center" cellpadding="4" cellspacing="0" class="normal">
     <tr bgcolor="#FFFF00">
          <th width="5" class="normal" scope="col"><div align="left">#</div></th>
@@ -427,7 +427,7 @@ codigo = '".$myrow['codProcedimiento']."'
     <?php  }}?>
 
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="500" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="500" height="24" />
 <p>&nbsp;</p>
 </form>
 

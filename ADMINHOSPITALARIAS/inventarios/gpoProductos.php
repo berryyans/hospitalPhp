@@ -1,4 +1,6 @@
-<?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
 
 
 
@@ -100,12 +102,12 @@ $C=$myrow['codigoGP'];
 	   }
 	   ?></td>
        <td align="center"><span class="style71"><a href="#" onclick="ventanaSecundaria1('ventanaModulos-Grupos.php?numMedico=<?php echo $myrow['id_medico']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $A; ?>&amp;codigoGP1=<?php echo $C?>&amp;codigosGP=<?php echo $C?>')"><img src="/sima/imagenes/btns/editbtn.png" alt="EDITAR A: <?php echo $myrow['descripcionGP'];?>" width="16" height="16" border="0" /></a></span></td>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $A; ?>&amp;codigoGP1=<?php echo $C?>&amp;codigosGP=<?php echo $C?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/editbtn.png" alt="EDITAR A: <?php echo $myrow['descripcionGP'];?>" width="16" height="16" border="0" /></a></span></td>
        <td align="center"><span class="Estilo24">
          <?php if($myrow['activo']=='activo'){ ?>
          <a href="gpoProductos.php?codigoGP=<?php echo $C; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;almacen=<?php echo $A; ?>"> <img src="../../imagenes/btns/checkbtn.png" alt="ACTIVO" width="20" height="20" border="0" onclick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
          <?php } else { ?>
-         <a href="gpoProductos.php?codigoGP=<?php echo $C; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;almacen=<?php echo $A?>"> <img src="/sima/imagenes/btns/lockbtn.png" alt="INACTIVO" width="16" height="16" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
+         <a href="gpoProductos.php?codigoGP=<?php echo $C; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;almacen=<?php echo $A?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/lockbtn.png" alt="INACTIVO" width="16" height="16" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
          <?php } ?>
        </span></td>
      </tr>

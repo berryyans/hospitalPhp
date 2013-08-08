@@ -99,7 +99,7 @@ function ventanaSecundaria5 (URL){
    <div align="center">
 <?php echo $leyenda.' del almac�n:'.$al;?>
    </div>
-   <img src="/sima/imagenes/bordestablas/borde1.png" width="416" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="416" height="24" />
    <table width="416" border="0" align="center" cellpadding="4" cellspacing="0">
      <tr>
        <th width="51" height="15" bgcolor="#FFFF00" scope="col"><div align="left"><span class="style11">C&oacute;digo </span></div></th>
@@ -162,7 +162,7 @@ $B=$myrow1['keyCAL'];
      </tr>
      <?php }}?>
    </table>
-   <img src="/sima/imagenes/bordestablas/borde2.png" width="416" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="416" height="24" />
    <table width="200" height="122" border="0" align="center">
      <tr>
        <td><input name="agrega" type="submit" class="Estilo24" id="agrega" value="Agregar" /></td>

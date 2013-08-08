@@ -178,7 +178,7 @@ size="60" <?php if($myrow2['almacen']){ echo 'readonly=""';}?> autocomplete="off
        <td class="style12"><span class="Estilo24">
          <input name="ctaContable" type="text" class="Estilo24" id="ctaContable" 
 	   value ="<?php echo $myrow2['ctaContable']?>" readonly=""/>
-         <input name="ID_CCOSTO" type="button" class="Estilo24" id="ID_CCOSTO"  onclick="javascript:ventanaSecundaria1('/sima/cargos/ctoCosto.php?numeroE=<?php echo $numPaciente; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;campoSeguro=<?php echo "ctaContable"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="C">
+         <input name="ID_CCOSTO" type="button" class="Estilo24" id="ID_CCOSTO"  onclick="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ctoCosto.php?numeroE=<?php echo $numPaciente; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;campoSeguro=<?php echo "ctaContable"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="C">
        </span></td>
      </tr>
     

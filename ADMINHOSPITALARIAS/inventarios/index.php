@@ -15,7 +15,7 @@ echo mysql_error();
 <style type="text/css">
 <!--
 body {
-	background-image: url(/sima/imagenes/imagenesModulos/inventario1.png);
+	background-image: url(<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/imagenesModulos/inventario1.png);
 }
 -->
 </style>

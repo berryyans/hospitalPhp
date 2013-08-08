@@ -8,7 +8,7 @@ $mostrarmenu->menuOperaciones($_GET['main'],$_GET['primario'],$rutasalir,$rutapa
 <?PHP //require("/configuracion/ingresoshlcmenu/menuingresoshlc.php"); ?>
 <html>
     <body>
-        <IMG  SRC="/sima/imagenes/simalineas.png" ALIGN="CENTER" >
+        <IMG  SRC="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/simalineas.png" ALIGN="CENTER" >
           
     </body>
 </html>

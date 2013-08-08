@@ -142,7 +142,7 @@ $A=$myrow['codigo'];
 		
 		
        <td bgcolor="<?php echo $color;?>" class="style12"><a href="#" onClick="ventanaSecundaria1('<?php echo $ventana1;?>?numMedico=<?php echo $myrow['id_medico']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;codigo=<?php echo $A; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')"><img src="/sima/imagenes/edit.jpg" alt="EDITAR A: <?php echo $myrow['descripcion'];?>" width="12" height="12" border="0" /></a></td>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;codigo=<?php echo $A; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/edit.jpg" alt="EDITAR A: <?php echo $myrow['descripcion'];?>" width="12" height="12" border="0" /></a></td>
      </tr>
      <?php }}?>
    </table>

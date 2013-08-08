@@ -97,7 +97,7 @@ function ventanaSecundaria3 (URL){
         <input name="numMedico1" type="text" class="Estilo24" id="numMedico1"  value="<?php echo $_POST['numMedico1"'];?>" readonly=""/>
         </label>
         <input name="M" type="submit" class="Estilo24" id="M"  onclick="javascript:ventanaSecundaria3(
-		'/sima/cargos/listaMedicos.php?campoDespliega=<?php echo "despliegaMedico"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campo=<?php echo "numMedico1"; ?>')" value="M" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaMedicos.php?campoDespliega=<?php echo "despliegaMedico"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campo=<?php echo "numMedico1"; ?>')" value="M" />
       </span></div></th>
     </tr>
     <tr>

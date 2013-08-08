@@ -51,7 +51,7 @@ $_POST['tipoAlmacen']=$_GET['tipoAlmacen'];
 }
 ?>
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -240,7 +240,7 @@ $f+=1;
        <td class="style12"><span class="normal"><?php echo $myrow['descripcion'];?></span></td>
        <td class="style12"><span class="normal"><?php 
 	   if($myrow['id_medico']){ ?>
-<a href="#" onClick="javascript:ventanaSecundaria('/sima/ADMINHOSPITALARIAS/medicos/ventanaModificaMedicos.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&numMedico=<?php echo $myrow['id_medico'];?>')">
+<a href="#" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/medicos/ventanaModificaMedicos.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&numMedico=<?php echo $myrow['id_medico'];?>')">
 
 	   <?php echo $myrow['id_medico']; ?>	   </a><?php    
 	   } else { 

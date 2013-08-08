@@ -1,4 +1,6 @@
-<?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php");  ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/ADMINHOSPITALARIAS/menuOperaciones.php");  ?>
 
 
 <script language=javascript> 
@@ -199,7 +201,7 @@ echo mysql_error();
 
 <h1 align="center">Ordenes x Reorden </h1>
 <form id="form2" name="form2" method="post" action="">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="684" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="684" height="24" />
   <table width="684" border="0" align="center" cellpadding="3" cellspacing="0">
     <tr>
       <th width="22" bgcolor="#CCCCCC" scope="col">&nbsp;</th>
@@ -210,7 +212,7 @@ echo mysql_error();
 		onchange="javascript:this.form.submit();" />
         <span class="Estilo24">
         <input name="agregarCargos3" type="submit" class="Estilo24" id="agregarCargos3"  onclick="javascript:ventanaSecundaria1(
-		'/sima/cargos/agregarProveedores.php?campoDespliega=<?php echo "nomProveedor"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campoProveedor=<?php echo "id_proveedor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="P" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregarProveedores.php?campoDespliega=<?php echo "nomProveedor"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campoProveedor=<?php echo "id_proveedor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="P" />
         </span><span class="Estilo24">
         <input name="nomProveedor" type="text" class="Estilo24" id="nomProveedor" size="80" 
 		  
@@ -266,7 +268,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 <p align="center" class="style19"><?php echo $leyenda;?>&nbsp;</p>
 <form id="form1" name="form1" method="post" action="">
   <div align="center"></div>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="645" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="645" height="24" />
   <table width="645" border="0" align="center" cellpadding="3" cellspacing="0">
     <tr>
       <th width="54" bgcolor="#FFFF00" scope="col"><span class="style11">C&oacute;digo</span></th>

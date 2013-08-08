@@ -1,4 +1,6 @@
-<?PHP require("/var/www/html/sima/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA."/ADMINHOSPITALARIAS/menuOperaciones.php"); ?>
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=700,height=600,scrollbars=YES") 
@@ -211,7 +213,7 @@ $estilo-> styles();
  <h1 align="center" class="titulos">Articulos Capturados por OC sin actualizar</h1>
  <form id="form2" name="form2" method="post" >
 
- <img src="/sima/imagenes/bordestablas/borde1.png" width="500" height="15" />
+ <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="500" height="15" />
  <table width="500" border="0" align="center" cellpadding="3" cellspacing="0" class="style12">
      <tr bgcolor="#330099">
        <th width="2" bgcolor="#FFFF00"  scope="col">#</th>
@@ -349,7 +351,7 @@ $a+=1;
 	
 	<?php } ?>
    </table>
- <img src="/sima/imagenes/bordestablas/borde2.png" width="500" height="15" />
+ <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="500" height="15" />
 <p>&nbsp;</p>
 <div class="normalmid">
 

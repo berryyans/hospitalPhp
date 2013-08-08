@@ -1,7 +1,8 @@
 <?php
+require('/Constantes.php');
 //require('/sima/js/pdf/mysql_table.php');
 
-require('/var/www/html/sima/js/pdf/mysql_table.php');
+require(CONSTANT_PATH_SIMA.'/js/pdf/mysql_table.php');
 class PDF extends PDF_MySQL_Table
 {
 function Header()
@@ -27,7 +28,7 @@ $pdf->AddPage();
 
 $porcentaje=$_GET['porcentaje']*0.01;
 
-$sSQL="SELECT articulos.descripcion as Descripción,concat('$',format(articulosPrecioNivel.nivel3-(articulosPrecioNivel.nivel3*('".$porcentaje."')),2)) as Precios
+$sSQL="SELECT articulos.descripcion as Descripciï¿½n,concat('$',format(articulosPrecioNivel.nivel3-(articulosPrecioNivel.nivel3*('".$porcentaje."')),2)) as Precios
 FROM
 articulos,articulosPrecioNivel
 

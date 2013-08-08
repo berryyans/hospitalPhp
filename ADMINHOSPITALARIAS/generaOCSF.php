@@ -86,7 +86,7 @@ if(win.window.focus){win.window.focus();}
     <tr valign="middle">
       <td width="34%"><div align="center">
         <input onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo 'Presiona aqui para generar una Orden de Compra';?></div>')" onMouseOut="UnTip()" name="nuevo" 
-		type="button"   id="nuevo" value="Nuevo" src="/sima/imagenes/btns/genorden.png"
+		type="button"   id="nuevo" value="Nuevo" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/genorden.png"
 	  onclick="nueva('<?php echo $ventana1;?>?cargos=cargos&almacen=<?php echo $ALMACEN;?>','ventana7','800','500','yes')" />
       </div></td>
 
@@ -94,13 +94,13 @@ if(win.window.focus){win.window.focus();}
     </tr>
   </table>
 
-<link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
  
 
 
@@ -153,7 +153,7 @@ $estilos->styles();
       <input onChange="this.form.submit();" name="fechaInicial" type="text"  id="campo_fecha" size="10" maxlength="10" readonly=""
 		value="<?php echo $dates; ?>"/>
     </label>
-    <input name="button" type="image" id="lanzador" src="/sima/imagenes/btns/fecha.png" />
+    <input name="button" type="image" id="lanzador" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fecha.png" />
 </p>
   
 
@@ -371,7 +371,7 @@ $myrow8a = mysql_fetch_array($result8a);
  
        <td ><?php if($myrow['status']!='sent'){ ?>
         <span > <a  href="generaOCSF.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&id_factura=<?php echo $myrow['factura'];?>&keyCO=<?php echo $myrow['keyCO'];?>&dates=<?php echo $dates;?>&delete=si"> 
-                <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onMouseover="showhint('Presiona aqui para cambiar el status del articulo..', this, event, '150px')" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar esta factura?') == false){return false;}" /></a>
+                <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onMouseover="showhint('Presiona aqui para cambiar el status del articulo..', this, event, '150px')" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar esta factura?') == false){return false;}" /></a>
         <?php }else{ echo '---';} ?>
         </span></td>
  

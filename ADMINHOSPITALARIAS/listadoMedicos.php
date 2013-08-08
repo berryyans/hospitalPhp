@@ -1,4 +1,6 @@
-<?PHP require("menuOperaciones.php"); ?>
+<?PHP 
+require('/Constantes.php');
+require("menuOperaciones.php"); ?>
 
 
 
@@ -141,8 +143,8 @@ $nombrePaciente =
 
 <?php if($myrow['ruta']!=NULL){?>
 <span class="tooltip html_tooltip_content2" ><?php echo $nombrePaciente;?></span>
-<a class=Ntooltip href="listadoMedicos.php"><img src="/sima/imagenes/camera2.jpg" width="10" height="10" border="0"><span> 
-<img src="/sima/ADMINHOSPITALARIAS/medicos/<?php echo $myrow['ruta'];?>" width="50" height="50" border="0"></span></a>
+<a class=Ntooltip href="listadoMedicos.php"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/camera2.jpg" width="10" height="10" border="0"><span> 
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/medicos/<?php echo $myrow['ruta'];?>" width="50" height="50" border="0"></span></a>
 <?php } else {?>
 
 <span class="tooltip html_tooltip_content2" >
@@ -181,13 +183,13 @@ $nombrePaciente =
         
              <a href="#" onClick="javascript:ventanaSecundaria('mostrarServiciosMedicos.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numMedico=<?php echo $N?>')">
-      <img src="/sima/imagenes/edit.jpg" alt="EDITAR" width="12" height="12" border="0" />	  </a> </span></div></td>
-      <td width="56" bgcolor="<?php echo $color;?>" class="style12"><div align="left"><span class="style71"><a href="#"  onclick="javascript:ventanaSecundaria('ventanaModificaMedicos.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $N?>')"><img src="/sima/imagenes/edit.jpg" alt="EDITAR" width="12" height="12" border="0" /></a></span></div></td>
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/edit.jpg" alt="EDITAR" width="12" height="12" border="0" />	  </a> </span></div></td>
+      <td width="56" bgcolor="<?php echo $color;?>" class="style12"><div align="left"><span class="style71"><a href="#"  onclick="javascript:ventanaSecundaria('ventanaModificaMedicos.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $N?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/edit.jpg" alt="EDITAR" width="12" height="12" border="0" /></a></span></div></td>
       <td width="39" bgcolor="<?php echo $color;?>" class="style12"><div align="left"><span class="style71"> </span><span class="Estilo24">
         <?php if($myrow['status']=='A'){ ?>
-        <a href="listadoMedicos.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;id_proveedor=<?php echo $A; ?>&amp;keyMedico=<?php echo $No; ?>"> <img src="/sima/imagenes/surtido.png" alt="Almacén ó Médico Activo" width="12" height="12" border="0" onClick="if(confirm('¿Estás seguro que deseas inactivar este registro?') == false){return false;}" /></a>
+        <a href="listadoMedicos.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;id_proveedor=<?php echo $A; ?>&amp;keyMedico=<?php echo $No; ?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/surtido.png" alt="Almacén ó Médico Activo" width="12" height="12" border="0" onClick="if(confirm('¿Estás seguro que deseas inactivar este registro?') == false){return false;}" /></a>
         <?php } else { ?>
-        <a href="listadoMedicos.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;keyMedico=<?php echo $No?>"> <img src="/sima/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
+        <a href="listadoMedicos.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;keyMedico=<?php echo $No?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
         <?php } ?>
       </span></div></td>
     </tr>

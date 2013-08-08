@@ -344,7 +344,7 @@ PROCESO DE INVENTARIOS<br />
 
 &nbsp;</h1>
 <form id="form1" name="form1" method="post" action="">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="600" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="600" height="24" />
   <table width="600" border="0" align="center" cellpadding="3" cellspacing="0">
       
       
@@ -475,9 +475,9 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
         </label></th>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="600" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="600" height="24" />
 <p>&nbsp;</p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="600" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="600" height="24" />
   <table width="600" border="0" cellspacing="0" cellpadding="3" align="center" class="normalmid">
     <tr>
     
@@ -687,7 +687,7 @@ echo '<span class="normal">Anaquel: '.$myrow1['anaquel'].'</span>';
           
           
           
-<a  href="javascript:ventanaSecundaria2('/sima/cargos/listaAlmacenesTodos.php?codigo=<?php echo $codigo; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow1['keyPA']; ?>&amp;gpoProducto=<?php echo $myrow8ac['gpoProducto'];?>')" onMouseover="showhint('Presiona aqui para asignar almacenes a este articulo...', this, event, '150px')">
+<a  href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenesTodos.php?codigo=<?php echo $codigo; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow1['keyPA']; ?>&amp;gpoProducto=<?php echo $myrow8ac['gpoProducto'];?>')" onMouseover="showhint('Presiona aqui para asignar almacenes a este articulo...', this, event, '150px')">
 Editar
 </a>          
       </td>
@@ -790,7 +790,7 @@ Editar
      
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="600" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="600" height="24" />
 <p align="center">&nbsp;</p>
   <div align="center" class="informativo"><strong>
     <?php if(!$codigo){ echo "No se encontraron datos..!!"; }?>
