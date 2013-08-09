@@ -224,16 +224,16 @@ $texto='SE AGREGO EL '.$_POST['porcentaje'].'%...';
 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
-<script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-<script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-<script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
   
@@ -250,8 +250,8 @@ $texto='SE AGREGO EL '.$_POST['porcentaje'].'%...';
 $showStyles=new muestraEstilos();
 $showStyles->styles();
 ?>
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 </head>
 
 
@@ -477,7 +477,7 @@ echo mysql_error();
 	    
          <div align="center">
            
-             <a  href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria1('/sima/ventanas/ventanaAsignarPoliticas.php?gpoProducto=<?php echo $myrow['gpoProducto']; ?>&del=si&descripcionGP=<?php echo $_GET['descripcionGP']; ?>&amp;keyPP=<?php echo $myrow['keyPP']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')">
+             <a  href="#editar<?php echo $f;?>" name="editar<?php echo $f;?>" onMouseOver="Tip('<div class=&quot;estilo25&quot;><?php echo $myrow['descripcion'];?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ventanas/ventanaAsignarPoliticas.php?gpoProducto=<?php echo $myrow['gpoProducto']; ?>&del=si&descripcionGP=<?php echo $_GET['descripcionGP']; ?>&amp;keyPP=<?php echo $myrow['keyPP']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')">
             
             Eliminar
               

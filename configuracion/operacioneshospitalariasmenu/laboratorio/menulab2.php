@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script type="text/javascript" src="/sima/js/new/stmenu.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/new/stmenu.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Documento sin t&iacute;tulo</title>
 </head>
@@ -10,8 +10,8 @@
 <a href="http://www.dhtml-menu-builder.com"  style="display:none;visibility:hidden;">Javascript DHTML Drop Down Menu Powered by dhtml-menu-builder.com</a>
 <script type="text/javascript">
 <!--
-stm_bm(["menu3ba5",900,"","/sima/imagenes/blank.gif",0,"","",1,0,250,0,1000,1,0,0,"","",0,0,1,2,"default","hand","",1,25],this);
-stm_bp("p0",[0,4,0,0,0,5,0,0,100,"",-2,"",-2,50,0,0,"#999999","#E6EFF9","/sima/imagenes/bg_02.gif",3,0,0,"#000000","",-1,-1,0,"#FFFFF7","",3,"/sima/imagenes/bg_03.gif",37,3,0,"#FFFFF7","",3,"",-1,-1,0,"#FFFFF7","",3,"/sima/imagenes/bg_01.gif",37,3,0,"#FFFFF7","",3,"","","","",20,20,20,20,20,20,20,20]);
+stm_bm(["menu3ba5",900,"","<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/blank.gif",0,"","",1,0,250,0,1000,1,0,0,"","",0,0,1,2,"default","hand","",1,25],this);
+stm_bp("p0",[0,4,0,0,0,5,0,0,100,"",-2,"",-2,50,0,0,"#999999","#E6EFF9","<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bg_02.gif",3,0,0,"#000000","",-1,-1,0,"#FFFFF7","",3,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bg_03.gif",37,3,0,"#FFFFF7","",3,"",-1,-1,0,"#FFFFF7","",3,"<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bg_01.gif",37,3,0,"#FFFFF7","",3,"","","","",20,20,20,20,20,20,20,20]);
 stm_ai("p0i0",[0,"Menu Inicio","","",-1,-1,0,"","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#E6EFF9",1,"","",3,3,0,0,"#E6EFF9","#000000","#FFFFFF","#FFFFFF","bold 9pt Verdana","bold 9pt Verdana",0,0,"","","","",0,0,0],150,33);
 stm_aix("p0i1","p0i0",[0,"Catalogo","","",-1,-1,0,"","_self","","","","",0,0,0,"","",0,0,0,1,1,"#E6EFF9",1,"#E6EFF9",1,"","4545454.gif",3,0,0,0,"#E6EFF9","#000000","#FFFFFF","#FFFFFF","bold 8pt Verdana","bold 8pt Verdana"],100,33);
 stm_bp("p1",[1,4,-20,2,0,5,0,0,100,"",-2,"",-2,50,2,3,"#333333","#333333","",3,1,1,"#000000"]);

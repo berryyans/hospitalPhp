@@ -207,8 +207,8 @@ $estilos->styles();
 
 ?>
 
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 
 
 
@@ -386,7 +386,7 @@ $bandera1+=1;
       
          <td  ><div align="center">
                 <a href="<?php echo $_SERVER['PHP_SELF'];?>?keyReq=<?php echo $myrow18['keyReq']; ?>&seguro=<?php echo $_POST['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&almacen=<?php echo $_GET['almacen'];?>&solicitud=<?php echo $_GET['solicitud'];?>"> 
-                    <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas activar la nota de credito?') == false){return false;}" />
+                    <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas activar la nota de credito?') == false){return false;}" />
                 </a></div>
                <input name="keyReq[]" type="hidden" value="<?php echo $myrow18['keyReq'];?>" />
         </td>
@@ -429,7 +429,7 @@ $bandera1+=1;
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/articulosCodigox.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/articulosCodigox.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

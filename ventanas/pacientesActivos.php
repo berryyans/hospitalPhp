@@ -224,7 +224,7 @@ echo  'Sin Exp';
       
       
 <td  align="center" title="Estado de cuenta el paciente">
-<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('/sima/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
+<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
 
 echo $myrow['folioVenta'];
 
@@ -234,7 +234,7 @@ echo $myrow['folioVenta'];
 
 
     <td  align="center" >
-<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('/sima/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
+<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
 
 echo $myrow['paciente'];
 
@@ -243,7 +243,7 @@ echo $myrow['paciente'];
         
 
 <td  align="center" title="Estado de cuenta el paciente">
-<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('/sima/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
+<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
 
 echo $myrow1s['descripcion'];
 
@@ -254,7 +254,7 @@ echo $myrow1s['descripcion'];
 
 
 <td  align="center" >
-<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('/sima/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
+<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
 
 echo $myrow['statusCuenta'];
 

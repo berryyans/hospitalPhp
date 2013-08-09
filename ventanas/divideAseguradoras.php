@@ -1232,8 +1232,8 @@ $texto='FOLIO(s) FACTURADOS..';
 
 
 
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <?php 
 $showStyles=new muestraEstilos();
 $showStyles->styles();
@@ -1475,7 +1475,7 @@ $myrow5da3= mysql_fetch_array($result5da3); ?>
       <td>
 	    <div align="center" >
 		
-		<a href="#" onClick="javascript:ventanaSecundaria5('/sima/cargos/printDetailsGroup.php?siniestro=<?php echo $_POST['siniestro'];?>&credencial=<?php echo $_POST['credencial'];?>&numSolicitud=<?php echo $_GET['numSolicitud'];?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&numFactura=<?php echo $numFactura;?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $_POST['rfc'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>&paciente=<?php echo $_POST['paciente'];?>');"   />
+		<a href="#" onClick="javascript:ventanaSecundaria5('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/printDetailsGroup.php?siniestro=<?php echo $_POST['siniestro'];?>&credencial=<?php echo $_POST['credencial'];?>&numSolicitud=<?php echo $_GET['numSolicitud'];?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&numFactura=<?php echo $numFactura;?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $_POST['rfc'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>&paciente=<?php echo $_POST['paciente'];?>');"   />
 	       Factura Agrupada
 	      </a>
         </div></td>
@@ -2041,7 +2041,7 @@ $myrow2a = mysql_fetch_array($result2a);
 
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/rfcx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $ALMACEN;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/rfcx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $ALMACEN;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});
 	</script>
@@ -2064,7 +2064,7 @@ $myrow2a = mysql_fetch_array($result2a);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesPrincipalesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesPrincipalesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

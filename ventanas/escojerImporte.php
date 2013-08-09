@@ -770,7 +770,7 @@ $myrow2f = mysql_fetch_array($result2f);
       <td>
 	    <div align="center">
 		
-		<a href="#" onClick="javascript:ventanaSecundaria5('/sima/cargos/printDetailsGroup.php?coaseguro=<?php echo $_POST['coaseguro'];?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $myrow1['RFC'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>&keyMOV=<?php echo $_GET['keyMOV'];?>');"   />
+		<a href="#" onClick="javascript:ventanaSecundaria5('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/printDetailsGroup.php?coaseguro=<?php echo $_POST['coaseguro'];?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $myrow1['RFC'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>&keyMOV=<?php echo $_GET['keyMOV'];?>');"   />
 	      Factura Agrupada
 	      </a>
         </div></td>
@@ -784,7 +784,7 @@ $myrow2f = mysql_fetch_array($result2f);
       <td>
 	  
         <div align="center">
-    <a href="#" onClick="javascript:ventanaSecundaria2('/sima/cargos/imprimirFolioVentaFactura.php?keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&entidad=<?php echo $entidad;?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $myrow1['RFC'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>&keyMOV=<?php echo $_GET['keyMOV'];?>');" >
+    <a href="#" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirFolioVentaFactura.php?keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&entidad=<?php echo $entidad;?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $myrow1['RFC'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>&keyMOV=<?php echo $_GET['keyMOV'];?>');" >
           Folios de Venta</a>
           
         </div></td>
@@ -1105,14 +1105,14 @@ $devoluciones[0]+=$myrow81['importe']+$myrow81['iva'];
         
       <td height="21" bgcolor="<?php echo $color;?>" class="negromid">
 	  <a href="#" 
-onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargoscxc.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $nT; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&folioVenta=<?php echo $myrow['folioVenta'];?>')">
+onclick="javascript:ventanaSecundaria11('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCargoscxc.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $nT; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&folioVenta=<?php echo $myrow['folioVenta'];?>')">
 	  <?php echo $myrow81['folioVenta'];?>	  </a>      </td>
 
 
 
 
       <td bgcolor="<?php echo $color;?>" class="negromid"><div align="left"><a href="#" 
-onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargoscxc.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $nT; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&amp;folioVenta=<?php echo $myrow81['folioVenta'];?>')"><?php echo $myrow3['paciente'];?></a></div></td>
+onclick="javascript:ventanaSecundaria11('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCargoscxc.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $nT; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&amp;folioVenta=<?php echo $myrow81['folioVenta'];?>')"><?php echo $myrow3['paciente'];?></a></div></td>
 
 
 
@@ -1184,7 +1184,7 @@ $myrow14n = mysql_fetch_array($result14n);
   <label>
   
   <div align="center">
-    <input type="submit" src="/sima/imagenes/btns/preview_btn.png"  name="previzualizar" id="previzualizar" value="Previsualizar/Aplicar Cambios" />
+    <input type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/preview_btn.png"  name="previzualizar" id="previzualizar" value="Previsualizar/Aplicar Cambios" />
 
   </div>
   </label>

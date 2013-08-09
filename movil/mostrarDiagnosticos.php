@@ -108,7 +108,7 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?>
     <span class="Estilo24"><span class="style7">
     <input name="numeroE" type="hidden" id="numeroE" value="<?php  echo $numeroE; ?>" />
-    <a href="/sima/movil/principal.php"><span class="style71">Regresar a Men&uacute;</span></a> </span></span>  </p>
+    <a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/principal.php"><span class="style71">Regresar a Men&uacute;</span></a> </span></span>  </p>
   <form id="form2" name="form2" method="get" action="">
     <table width="807" border="0" align="center">
       <tr>

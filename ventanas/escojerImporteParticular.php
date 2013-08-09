@@ -693,8 +693,8 @@ $estilo->styles();
  
 -->
 </style>
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 </head>
 
 <body>
@@ -778,7 +778,7 @@ $myrow455d = mysql_fetch_array($result455d);
       <td>
 	    <div align="center">
 		
-		<a href="#" onClick="javascript:ventanaSecundaria5('/sima/cargos/printDetailsGroup.php?random=<?php echo $_GET['random'];?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $_POST['rfc'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>');"   />
+		<a href="#" onClick="javascript:ventanaSecundaria5('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/printDetailsGroup.php?random=<?php echo $_GET['random'];?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $_POST['rfc'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>');"   />
 	       Factura Agrupada
 	      </a>
         </div></td>
@@ -787,7 +787,7 @@ $myrow455d = mysql_fetch_array($result455d);
      <tr bgcolor="#FFFFFF"><td>---</td>
       <td>
 	  
-        <div align="center"><a href="#" onClick="javascript:ventanaSecundaria2('/sima/cargos/imprimirFolioVentaFactura.php?random=<?php echo $_GET['random'];?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&entidad=<?php echo $entidad;?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $_POST['rfc'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>');" >
+        <div align="center"><a href="#" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirFolioVentaFactura.php?random=<?php echo $_GET['random'];?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&entidad=<?php echo $entidad;?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>&rfc=<?php print $_POST['rfc'];?>&tipoPaciente=<?php echo $_GET['tipoPaciente'];?>');" >
           Factura por Folios</a>
           
         </div></td>
@@ -1089,7 +1089,7 @@ $devoluciones[0]+=$myrow81['importe']+$myrow81['iva'];
 
 
       <td bgcolor="<?php echo $color;?>" class="negromid"><div align="left"><a href="#" 
-onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargoscxc.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $nT; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&amp;folioVenta=<?php echo $myrow81['folioVenta'];?>')">
+onclick="javascript:ventanaSecundaria11('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCargoscxc.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $nT; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&amp;folioVenta=<?php echo $myrow81['folioVenta'];?>')">
 <?php echo $myrow3['paciente'];?>
               </a>
           </div>
@@ -1168,7 +1168,7 @@ $myrow14n = mysql_fetch_array($result14n);
   <label>
   
   <div align="center">
-    <input type="submit" src="/sima/imagenes/btns/preview_btn.png"  name="previzualizar" id="previzualizar" value="Previsualizar" />
+    <input type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/preview_btn.png"  name="previzualizar" id="previzualizar" value="Previsualizar" />
 
   </div>
   </label>
@@ -1234,7 +1234,7 @@ $myrow14n = mysql_fetch_array($result14n);
 
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/rfcx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $ALMACEN;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/rfcx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $ALMACEN;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});
 	</script>

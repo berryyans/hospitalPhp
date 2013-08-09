@@ -2,16 +2,16 @@
 require('/Constantes.php');
 require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); include(CONSTANT_PATH_CONFIGURACION.'/funciones.php');?>
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librera principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librera para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librera que declara la funcin Calendar.setup, que ayuda a generar un calendario en unas pocas lneas de cdigo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 <script>
 function cerrarVentana(){
 close();

@@ -505,7 +505,7 @@ $myrow39e2= mysql_fetch_array($result39e2);
         
   <td ><div align="center">
                 <a href="<?php echo $_SERVER['PHP_SELF'];?>?nombreCompleto=<?php echo $_GET['nombreCompleto']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;boton=delete&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $myrow['codigo']; ?>&amp;almacen=<?php echo $myrow['almacen'];?>&opcion=<?php  echo $_POST['opcion'];?>&medico=<?php echo $_GET['medico'];?>"> 
-                    <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar este registro?') == false){return false;}" /></a></div>
+                    <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar este registro?') == false){return false;}" /></a></div>
         </td>
         
       </tr>

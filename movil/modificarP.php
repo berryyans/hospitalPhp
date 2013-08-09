@@ -160,16 +160,16 @@ $myrow = mysql_fetch_array($result);
 ?>
 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 
 
 <script language="javascript" type="text/javascript">   
@@ -258,7 +258,7 @@ function checkIt(evt) {
 <body>
 
 <form id="form1" name="form1" method="post" action="" enctype="multipart/form-data" >
-<p align="center"><a href="/sima/movil/principal.php"><span class="style7">Regresar a Men&uacute;</span></a>
+<p align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/principal.php"><span class="style7">Regresar a Men&uacute;</span></a>
   <?php if($myrow['ruta']!='images/' AND $myrow['ruta']){ ?>
 </p>
 <p align="center">  <a href="<?php 

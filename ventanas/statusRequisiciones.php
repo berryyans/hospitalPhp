@@ -61,8 +61,8 @@ window.close();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <?php
 $estilos= new muestraEstilos();
 $estilos->styles();

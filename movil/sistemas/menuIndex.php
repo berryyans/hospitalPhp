@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <style type="text/css">
 <!--
 .style7 {font-size: 9px}
@@ -11,7 +14,7 @@
       <td width="160"><div align="center"></div></td>
     </tr>
     <tr>
-      <td><div align="center"><a href="/sima/movil/buscarExpediente.php">Buscar Expediente </a></div></td>
+      <td><div align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/buscarExpediente.php">Buscar Expediente </a></div></td>
       <td><div align="center"></div></td>
     </tr>
     <tr>

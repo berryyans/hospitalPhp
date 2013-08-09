@@ -91,11 +91,11 @@ echo 'Dr. '.$myrow1['apellido1'].', ud. no tiene ninguna cita para hoy';
   <table width="291" height="69" border="0" align="center" class="style7">
     <tr>
       <td width="149">
-	    <div align="center"><a href="/sima/movil/listaCitas.php">Px </a></div></td>
+	    <div align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/listaCitas.php">Px </a></div></td>
       <td width="160"><div align="center">Px Atendidos </div></td>
     </tr>
     <tr>
-      <td><div align="center"><a href="/sima/movil/buscarExpediente.php">Buscar Expediente </a></div></td>
+      <td><div align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/buscarExpediente.php">Buscar Expediente </a></div></td>
       <td><div align="center"></div></td>
     </tr>
     <tr>

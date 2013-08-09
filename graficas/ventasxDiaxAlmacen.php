@@ -1,7 +1,7 @@
 <?php
 
 // conectamos a la base de datos
-#conexión a la BD...
+#conexiï¿½n a la BD...
 $usuario="omorales";
 $passwd='wolf3333';
 $servidor='localhost';
@@ -46,7 +46,7 @@ status!='cancelado'
 ";
 $result1=mysql_db_query($basedatos,$sql1);
 $myrow1 = mysql_fetch_array($result1);
-$data[] = $myrow1[0]; // agregamos el dato, suponiendo que este en la primera posición del arreglo resultanteç
+$data[] = $myrow1[0]; // agregamos el dato, suponiendo que este en la primera posiciï¿½n del arreglo resultanteï¿½
 
 }
 
@@ -54,9 +54,9 @@ $data[] = $myrow1[0]; // agregamos el dato, suponiendo que este en la primera po
 
 
 //if($myrow[0]){
-include ("/var/www/html/sima/js/jpgraph-1.27/src/jpgraph.php");
-include ("/var/www/html/sima/js/jpgraph-1.27/src/jpgraph_line.php");
-// aquí ya tenemos el arreglo en $data, solo le agregamos al código anterior
+include (CONSTANT_PATH_SIMA."/js/jpgraph-1.27/src/jpgraph.php");
+include (CONSTANT_PATH_SIMA."/js/jpgraph-1.27/src/jpgraph_line.php");
+// aquï¿½ ya tenemos el arreglo en $data, solo le agregamos al cï¿½digo anterior
 
 $datay = $data;
 // A nice graph with anti-aliasing

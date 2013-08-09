@@ -248,9 +248,9 @@ echo mysql_error();
 ?>
 
 
-        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.js"></script>
-        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.ui.js"></script>
-        <script type="text/javascript" src="/sima/js/editp/lib/jquery.editinplace.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.ui.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/lib/jquery.editinplace.js"></script>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -371,7 +371,7 @@ $(document).ready(function(){
 	// A select input field so we can limit our options
 	$("#<?php echo $myrow24['numCliente']; ?>").editInPlace({
 		//callback: function(unused, enteredText) { return enteredText; },
-                url: "/sima/cargos/server1.php",
+                url: "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/server1.php",
 		field_type: "select",
 		select_options: "<?php $sSQL= "Select * From relacionClientesTipo
 where

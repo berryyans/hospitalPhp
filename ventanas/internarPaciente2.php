@@ -321,8 +321,8 @@ function checkIt(evt) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <?php
 $estilos= new muestraEstilos();
 $estilos->styles();
@@ -363,7 +363,7 @@ $estilos->styles();
 		  
 		  <?php echo '</br>';?>
 		  <a href="javascript:ventanaSecundaria1(
-		'/sima/cargos/busquedaAvanzada.php?campoDespliega=<?php echo "descripcionPaquete"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "numeroEx"; ?>&amp;seguro=<?php echo "paciente"; ?>')">Busqueda Avanzada </a></span></td>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/busquedaAvanzada.php?campoDespliega=<?php echo "descripcionPaquete"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "numeroEx"; ?>&amp;seguro=<?php echo "paciente"; ?>')">Busqueda Avanzada </a></span></td>
     </tr>
 	  
 	 
@@ -703,7 +703,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesAjax.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesAjax.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
@@ -724,7 +724,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/pacientesx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $_GET['datawarehouse'];?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/pacientesx.php?entidad=<?php echo $entidad;?>&almacen=<?php echo $_GET['datawarehouse'];?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

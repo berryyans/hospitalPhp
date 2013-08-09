@@ -39,7 +39,7 @@ barText="UTILERIAS"; // <IMG> tag supported. Put exact html for an image to show
 
 // ssmItems[...]=[name, link, target, colspan, endrow?] - leave 'link' and 'target' blank to make a header
 ssmItems[0]=["<?php echo 'Conectado  '.$usuario;?>"] //create header
-ssmItems[1]=["Cambiar Password", "/sima/SEGURIDADSIMA/cambiarPassword.php", "_target"]
+ssmItems[1]=["Cambiar Password", "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/SEGURIDADSIMA/cambiarPassword.php", "_target"]
 
 buildMenu();
 

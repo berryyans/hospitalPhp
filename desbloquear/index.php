@@ -27,7 +27,7 @@ echo mysql_error();
 
 if($_POST['usuario'] AND $_POST['send']){
 
-    $server=$_SERVER['HTTP_HOST'].'/sima/index.php';
+    $server=$_SERVER['HTTP_HOST'].CONSTANT_PATH_SIMA_RAIZ.'/index.php';
     $unblock=new desbloquea();
 $unblock->unblock($fecha1,$hora1,$_POST['usuario'],$basedatos);
 echo "Se solicito desbloquear";

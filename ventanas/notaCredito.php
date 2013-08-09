@@ -1040,7 +1040,7 @@ $myrow17a = mysql_fetch_array($result17a);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/articulosx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/articulosx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

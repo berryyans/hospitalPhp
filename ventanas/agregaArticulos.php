@@ -4,7 +4,7 @@ require(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?>
 <?php require(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 <?php require(CONSTANT_PATH_CONFIGURACION."/clases/formas.php"); ?>
 <?php require(CONSTANT_PATH_CONFIGURACION."/clases/articulosReferidos.php"); ?>
-<?php require('/var/www/html/sima/cargos/muestraECuentas.php');?>
+<?php require(CONSTANT_PATH_SIMA.'/cargos/muestraECuentas.php');?>
 <?php
 
 

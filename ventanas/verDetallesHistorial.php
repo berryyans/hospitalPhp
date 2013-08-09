@@ -179,7 +179,7 @@ echo mysql_error();
 ?>
 <?php if($_GET['paquete']=='si'){ ?>
 <script language="javascript">
-nueva('/sima/cargos/imprimirReciboPaquetes.php?numeroE=<?php echo $myrow3['numeroE']; ?>&nCuenta=<?php echo $myrow3['nCuenta']; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>&codigoPaquete=<?php echo $myrow3['codigoPaquete'];?>&numRecibo=<?php echo $myrowC['numRecibo'];?>&paciente=<?php echo $_POST['paciente'];?>&cantidadRecibida=<?php echo $_POST['cantidadRecibida'];?>&folioVenta=<?php echo $myrow3['folioVenta'];?>&fechaSolicitud=<?php print $_POST['variable_php'];?>','ventana7','800','600','yes');
+nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirReciboPaquetes.php?numeroE=<?php echo $myrow3['numeroE']; ?>&nCuenta=<?php echo $myrow3['nCuenta']; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>&codigoPaquete=<?php echo $myrow3['codigoPaquete'];?>&numRecibo=<?php echo $myrowC['numRecibo'];?>&paciente=<?php echo $_POST['paciente'];?>&cantidadRecibida=<?php echo $_POST['cantidadRecibida'];?>&folioVenta=<?php echo $myrow3['folioVenta'];?>&fechaSolicitud=<?php print $_POST['variable_php'];?>','ventana7','800','600','yes');
 window.opener.document.form10["form10"].submit();
 //window.alert("sandra");
 window.close();
@@ -485,7 +485,7 @@ $myrownc = mysql_fetch_array($resultnc);
 	
 	<?php if($myrownc['folioVenta']){ ?>
 <h1 align="center" class="titulos"> 
-   <a href="javascript:nueva('/sima/cargos/despliegaCargos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+   <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCargos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $_GET['tipoVenta'];?>&amp;folioVenta=<?php echo $myrow['folioDevolucion'];?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $my['codigoTT'];?>&amp;precioVenta=<?php echo $totalParticular;?>&amp;modoPago=<?php if($_GET['devolucion']=='si'){echo 'devolucion';}else{ echo 'efectivo';} ?>&amp;tipoTransaccion=particular&amp;devolucion=<?php echo $_GET['devolucion'];?>&tipoPago=Efectivo','ventana7','800','600','yes');">
 NOTA DE CREDITO
 </a>
@@ -1002,7 +1002,7 @@ echo '</br><span >'.' ['.$myrow341cs['descripcion'].'  >  '.$myrow341ca['descrip
 
 if($myrow['numRecibo']){ ?>
 </br><span > Recibo: </span>
-	  <a href="javascript:nueva('/sima/INGRESOS HLC/caja/imprimirNumeroRecibo.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>','ventana7','800','600','yes');">
+	  <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/imprimirNumeroRecibo.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>','ventana7','800','600','yes');">
 <?php echo $myrow['numRecibo'];?></a>
 
 <?php 
@@ -1012,7 +1012,7 @@ if($myrow['numRecibo']){ ?>
 
 if($myrow['naturaleza']=='-'){ ?>
 </br><span > Cancelar </span>
-	  <a href="javascript:nueva('/sima/INGRESOS HLC/caja/imprimirNumeroRecibo.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>','ventana7','800','600','yes');">
+	  <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/imprimirNumeroRecibo.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>','ventana7','800','600','yes');">
 <?php echo $myrow['numRecibo'];?></a>
 
 <?php 
@@ -1061,7 +1061,7 @@ echo mysql_error();
 
 <?php if($myrow['naturaleza']=='-'){ ?>
 </br><span > 
-	  <a href="javascript:ventanaSecundaria10('/sima/cargos/ventanaEditar.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>','ventana7','500','200','yes');">
+	  <a href="javascript:ventanaSecundaria10('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaEditar.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;folioFactura=<?php echo $_POST['folioFactura']; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;hora1=<?php echo $hora1; ?>&amp;fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&amp;credencial=<?php echo $_POST['credencial'];?>&amp;siniestro=<?php echo $_POST['siniestro'];?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>&keyCAP=<?php echo $myrow['keyCAP'];?>','ventana7','500','200','yes');">
 Editar</a>
 <?php } ?>
 
@@ -2272,7 +2272,7 @@ $tipoPago='Efectivo';
 
 
 <?php if($totalParticular>0 and $totalParticular>-1){ ?>
-<a  href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+<a  href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=particular&amp;precioVenta=<?php echo $totalParticular;?>&amp;modoPago=<?php if($_GET['devolucion']=='si'){echo 'devolucionParticular';}else{ echo 'efectivo';} ?>&amp;tipoTransaccion=particular&amp;tipoPago=<?php echo $tipoPago;?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>&statusCortesia=<?php echo $myrow3['statusCortesia'];?>&tipoDevolucion=<?php echo $tipoDevolucion;?>&beneficencia=<?php
 if($myrow3['activaBeneficencia']=='si'){ echo 'si';}?>&statusBeneficencia=<?php if($myrow3['activaBeneficencia']=='si'){ echo 'si';}?>&activaBeneficencia=<?php if($myrow3['activaBeneficencia']=='si'){ echo 'si';}?>&caso=<?php echo $caso;?>','ventana7','680','380','yes');">
 <?php 
@@ -2280,13 +2280,13 @@ echo '$'.number_format($totalParticular,2);
 ?>
 </a>
 <?php } else{       
-echo '<img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />';}?>
+echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/btns/checkbtn.png" width="18" height="18" />';}?>
 
 
 
       <?php } else { echo '$'.number_format($totalParticular,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     <td  ><div align="center"><span >
@@ -2466,9 +2466,9 @@ $tipoPago='Cuentas por Cobrar';
 	  
 	  
 	  <?php if($totalAseguradora>-1 and $totalAseguradora>0){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;precioVenta=<?php echo $totalAseguradora;?>&amp;modoPago=<?php if($_GET['devolucion']=='si'){echo 'devolucionAseguradora';}else{ echo 'cxc';} ?>&amp;transaccion=<?php echo $my['codigoTT'];?>&amp;tipoTransaccion=aseguradora&amp;tipoPago=<?php echo $tipoPago;?>&amp;devolucion=<?php echo $_GET['devolucion'];?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','800','380','yes');"> <?php echo '$'.number_format($totalAseguradora,2);?></a>
-      <?php } else { echo '<img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />';}?>
+      <?php } else { echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/btns/checkbtn.png" width="18" height="18" />';}?>
 
 
 
@@ -2479,7 +2479,7 @@ $tipoPago='Cuentas por Cobrar';
       <?php echo '$'.number_format($totalAseguradora,2);?>
       <?php } ?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
 
@@ -2507,15 +2507,15 @@ if($totalAseguradora<-1  and $devolucionAseguradora[0]<1){
 $tA=$totalAseguradora*-1;
 ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
-&amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tA;?>&amp;modoPago=regresoAseguradora&amp;tipoTransaccion=particular&amp;tipoPago=regresoAseguradora&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"> </a></span></div>      <span ><a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+&amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tA;?>&amp;modoPago=regresoAseguradora&amp;tipoTransaccion=particular&amp;tipoPago=regresoAseguradora&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"> </a></span></div>      <span ><a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tA;?>&amp;modoPago=regresoAseguradora&amp;tipoTransaccion=particular&amp;tipoPago=regresoAseguradora&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"><blink> 
       <div align="center"><?php echo '$'.number_format($tA,2);?> </div>
       </blink></a>
       <div align="center">
         <?php } else { echo '$'.number_format($tA,2);}?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
         <?php } ?>
       </div>
 </span>
@@ -2548,11 +2548,11 @@ $tA=$totalAseguradora*-1;
 $tP=$totalParticular*-1;
 ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tP;?>&amp;modoPago=regresoParticular&amp;tipoTransaccion=particular&amp;tipoPago=regresoParticular&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"></a></span></div>     
         <span >
             
-<a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+<a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tP;?>&amp;modoPago=regresoParticular&amp;tipoTransaccion=particular&amp;tipoPago=regresoParticular&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"><blink>
      <div align="center">
      <?php echo '$'.number_format($tP,2);?>
@@ -2563,7 +2563,7 @@ $tP=$totalParticular*-1;
       <div align="center">
         <?php } else { echo '$'.number_format($tP,2);}?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
         <?php } ?>
       </div>
     </span></td>
@@ -2576,11 +2576,11 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($totalCoaseguro1>1){ 	?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $coaseguro1;?>&amp;precioVenta=<?php echo $totalCoaseguro1;?>&amp;modoPago=efectivo&amp;tipoTransaccion=coaseguro&amp;numCoaseguro=PCoaS1&amp;tipoPago=Efectivo&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> <?php echo '$'.number_format($totalCoaseguro1,2);?></a>
       <?php } else { echo '$'.number_format($totalCoaseguro1,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -2593,11 +2593,11 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($totalCoaseguro2>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $coaseguro2;?>&amp;precioVenta=<?php echo $totalCoaseguro2;?>&amp;modoPago=efectivo&amp;tipoTransaccion=coaseguro&amp;numCoaseguro=PCoaS2&amp;tipoPago=Efectivo&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> <?php echo '$'.number_format($totalCoaseguro2,2);?></a>
       <?php } else { echo '$'.number_format($totalCoaseguro2,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -2610,11 +2610,11 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($totalDeducible1>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $deducible1;?>&amp;precioVenta=<?php echo $totalDeducible1;?>&amp;modoPago=efectivo&amp;tipoTransaccion=coaseguro&amp;numCoaseguro=PDeduSeg1&amp;tipoPago=Efectivo&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> <?php echo '$'.number_format($totalDeducible1,2);?></a>
       <?php } else { echo '$'.number_format($totalDeducible1,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -2626,11 +2626,11 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($totalDeducible2>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $deducible2;?>&amp;precioVenta=<?php echo $totalDeducible2;?>&amp;modoPago=efectivo&amp;tipoTransaccion=coaseguro&amp;numCoaseguro=PDeduSeg2&amp;tipoPago=Efectivo&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> <?php echo '$'.number_format($totalDeducible2,2);?></a>
       <?php } else { echo '$'.number_format($totalDeducible2,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -2645,13 +2645,13 @@ $tP=$totalParticular*-1;
             <span >
       <?php if($descuentoP>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $descuentoParticular;?>&amp;precioVenta=<?php echo $descuentoP;?>&amp;modoPago=descuentos&amp;tipoPago=descuentos&amp;descuento=particular&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> 
     <?php echo '<span class="precio1"><blink>$'.number_format($descuentoP,2).'</blink></span>';?>
       </a>
       <?php } else { echo '$'.number_format($descuentoP,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -2663,13 +2663,13 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($descuentoA>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $descuentoAseguradora;?>&amp;precioVenta=<?php echo $descuentoA;?>&amp;modoPago=descuentos&amp;tipoPago=descuentos&amp;descuento=aseguradora&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> 
     <?php echo '<span class="precio1"><blink>$'.number_format($descuentoA,2).'</blink></span>';?>
       </a>
       <?php } else { echo '$'.number_format($descuentoA,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
 
@@ -2694,11 +2694,11 @@ $tpb='devolucionBeneficencia';
      <td  ><div align="center"><span >
       <?php if($ben!=NULL){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $transB;?>&amp;precioVenta=<?php echo $ben;?>&amp;modoPago=<?php echo $mp;?>&amp;tipoPago=<?php echo $tpb;?>&descripcionTransaccion=beneficencia&status=<?php echo $myrow3['status'];?>&beneficencia=si&statusBeneficencia=si','ventana7','480','380','yes');"> <?php echo '$'.number_format($ben,2);?></a>
       <?php } else { echo '$'.number_format($ben,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
   </tr>
@@ -3127,7 +3127,7 @@ $tipoPago='Efectivo';
 
 
 <?php if($totalParticular>0 and $totalParticular>-1){ ?>
-<a  href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+<a  href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=particular&amp;precioVenta=<?php echo $totalParticular;?>&amp;modoPago=<?php if($_GET['devolucion']=='si'){echo 'devolucionParticular';}else{ echo 'efectivo';} ?>&amp;tipoTransaccion=particular&amp;tipoPago=<?php echo $tipoPago;?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>&statusCortesia=<?php echo $myrow3['statusCortesia'];?>&tipoDevolucion=<?php echo $tipoDevolucion;?>&beneficencia=<?php
 if($myrow3['activaBeneficencia']=='si'){ echo 'si';}?>&statusBeneficencia=<?php if($myrow3['activaBeneficencia']=='si'){ echo 'si';}?>&activaBeneficencia=<?php if($myrow3['activaBeneficencia']=='si'){ echo 'si';}?>&caso=<?php echo $caso;?>','ventana7','680','380','yes');">
 <?php 
@@ -3135,13 +3135,13 @@ echo '$'.number_format($totalParticular,2);
 ?>
 </a>
 <?php } else{       
-echo '<img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />';}?>
+echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/btns/checkbtn.png" width="18" height="18" />';}?>
 
 
 
       <?php } else { echo '$'.number_format($totalParticular,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     <td  ><div align="center"><span >
@@ -3321,9 +3321,9 @@ $tipoPago='Cuentas por Cobrar';
 	  
 	  
 	  <?php if($totalAseguradora>-1 and $totalAseguradora>0){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;precioVenta=<?php echo $totalAseguradora;?>&amp;modoPago=<?php if($_GET['devolucion']=='si'){echo 'devolucionAseguradora';}else{ echo 'cxc';} ?>&amp;transaccion=<?php echo $my['codigoTT'];?>&amp;tipoTransaccion=aseguradora&amp;tipoPago=<?php echo $tipoPago;?>&amp;devolucion=<?php echo $_GET['devolucion'];?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','800','380','yes');"> <?php echo '$'.number_format($totalAseguradora,2);?></a>
-      <?php } else { echo '<img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />';}?>
+      <?php } else { echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/btns/checkbtn.png" width="18" height="18" />';}?>
 
 
 
@@ -3334,7 +3334,7 @@ $tipoPago='Cuentas por Cobrar';
       <?php echo '$'.number_format($totalAseguradora,2);?>
       <?php } ?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
 
@@ -3362,15 +3362,15 @@ if($totalAseguradora<-1  and $devolucionAseguradora[0]<1){
 $tA=$totalAseguradora*-1;
 ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
-&amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tA;?>&amp;modoPago=regresoAseguradora&amp;tipoTransaccion=particular&amp;tipoPago=regresoAseguradora&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"> </a></span></div>      <span ><a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+&amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tA;?>&amp;modoPago=regresoAseguradora&amp;tipoTransaccion=particular&amp;tipoPago=regresoAseguradora&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"> </a></span></div>      <span ><a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tA;?>&amp;modoPago=regresoAseguradora&amp;tipoTransaccion=particular&amp;tipoPago=regresoAseguradora&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"><blink> 
       <div align="center"><?php echo '$'.number_format($tA,2);?> </div>
       </blink></a>
       <div align="center">
         <?php } else { echo '$'.number_format($tA,2);}?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
         <?php } ?>
       </div>
 </span>
@@ -3403,11 +3403,11 @@ $tA=$totalAseguradora*-1;
 $tP=$totalParticular*-1;
 ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tP;?>&amp;modoPago=regresoParticular&amp;tipoTransaccion=particular&amp;tipoPago=regresoParticular&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"></a></span></div>     
         <span >
             
-<a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+<a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=regreso&amp;precioVenta=<?php echo $tP;?>&amp;modoPago=regresoParticular&amp;tipoTransaccion=particular&amp;tipoPago=regresoParticular&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','400','800','yes');"><blink>
      <div align="center">
      <?php echo '$'.number_format($tP,2);?>
@@ -3418,7 +3418,7 @@ $tP=$totalParticular*-1;
       <div align="center">
         <?php } else { echo '$'.number_format($tP,2);}?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
         <?php } ?>
       </div>
     </span></td>
@@ -3431,11 +3431,11 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($totalCoaseguro1>1){ 	?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $coaseguro1;?>&amp;precioVenta=<?php echo $totalCoaseguro1;?>&amp;modoPago=efectivo&amp;tipoTransaccion=coaseguro&amp;numCoaseguro=PCoaS1&amp;tipoPago=Efectivo&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> <?php echo '$'.number_format($totalCoaseguro1,2);?></a>
       <?php } else { echo '$'.number_format($totalCoaseguro1,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -3448,11 +3448,11 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($totalCoaseguro2>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $coaseguro2;?>&amp;precioVenta=<?php echo $totalCoaseguro2;?>&amp;modoPago=efectivo&amp;tipoTransaccion=coaseguro&amp;numCoaseguro=PCoaS2&amp;tipoPago=Efectivo&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> <?php echo '$'.number_format($totalCoaseguro2,2);?></a>
       <?php } else { echo '$'.number_format($totalCoaseguro2,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -3465,11 +3465,11 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($totalDeducible1>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $deducible1;?>&amp;precioVenta=<?php echo $totalDeducible1;?>&amp;modoPago=efectivo&amp;tipoTransaccion=coaseguro&amp;numCoaseguro=PDeduSeg1&amp;tipoPago=Efectivo&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> <?php echo '$'.number_format($totalDeducible1,2);?></a>
       <?php } else { echo '$'.number_format($totalDeducible1,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -3481,11 +3481,11 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($totalDeducible2>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $deducible2;?>&amp;precioVenta=<?php echo $totalDeducible2;?>&amp;modoPago=efectivo&amp;tipoTransaccion=coaseguro&amp;numCoaseguro=PDeduSeg2&amp;tipoPago=Efectivo&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> <?php echo '$'.number_format($totalDeducible2,2);?></a>
       <?php } else { echo '$'.number_format($totalDeducible2,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -3500,13 +3500,13 @@ $tP=$totalParticular*-1;
             <span >
       <?php if($descuentoP>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $descuentoParticular;?>&amp;precioVenta=<?php echo $descuentoP;?>&amp;modoPago=descuentos&amp;tipoPago=descuentos&amp;descuento=particular&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> 
     <?php echo '<span class="precio1"><blink>$'.number_format($descuentoP,2).'</blink></span>';?>
       </a>
       <?php } else { echo '$'.number_format($descuentoP,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
     
@@ -3518,13 +3518,13 @@ $tP=$totalParticular*-1;
     <td  ><div align="center"><span >
       <?php if($descuentoA>1){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $descuentoAseguradora;?>&amp;precioVenta=<?php echo $descuentoA;?>&amp;modoPago=descuentos&amp;tipoPago=descuentos&amp;descuento=aseguradora&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&status=<?php echo $myrow3['status'];?>','ventana7','480','380','yes');"> 
     <?php echo '<span class="precio1"><blink>$'.number_format($descuentoA,2).'</blink></span>';?>
       </a>
       <?php } else { echo '$'.number_format($descuentoA,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
 
@@ -3549,11 +3549,11 @@ $tpb='devolucionBeneficencia';
      <td  ><div align="center"><span >
       <?php if($ben!=NULL){ ?>
       <?php if($mostrar==TRUE){ ?>
-      <a href="javascript:nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
+      <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&amp;numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $_GET['almacenSolicitante']; ?>&amp;almacenFuente=<?php echo $almacen; ?>&amp;seguro=<?php echo $seguroT; ?>&amp;nCuenta=<?php echo $keyClientesInternos;?>&amp;tipoCliente=<?php echo 'particular';?>&amp;tipoVenta=<?php echo $folioVENTA;?>&amp;folioVenta=<?php echo $myrow3['folioVenta'];?>&amp;keyClientesInternos=<?php echo $keyClientesInternos;?>&amp;rand=<?php echo rand(1000,10000000);?>&amp;paquete=<?php echo $_GET['paquete'];?>&amp;transaccion=<?php echo $transB;?>&amp;precioVenta=<?php echo $ben;?>&amp;modoPago=<?php echo $mp;?>&amp;tipoPago=<?php echo $tpb;?>&descripcionTransaccion=beneficencia&status=<?php echo $myrow3['status'];?>&beneficencia=si&statusBeneficencia=si','ventana7','480','380','yes');"> <?php echo '$'.number_format($ben,2);?></a>
       <?php } else { echo '$'.number_format($ben,2);}?>
       <?php } else{?>
-      <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18" />
+      <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18" />
       <?php } ?>
     </span></div></td>
   </tr>

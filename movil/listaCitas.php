@@ -16,13 +16,13 @@ function ventanaSecundaria3 (URL){
 } 
 </script> 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -236,11 +236,11 @@ $myrow4 = mysql_fetch_array($result4);
       <td width="46" bgcolor="<?php echo $color?>" class="style12"><span class="style7"><?php echo $myrow['tipoPaciente']
 ?></span></td>
       <td width="39" bgcolor="<?php echo $color?>" class="style12"><span class="Estilo24"><span class="style121">
-	  <a href="javascript:ventanaSecundaria1('/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $numeroE; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')">
-	  <img src="/sima/imagenes/Save.png" alt="Datos Generales del Paciente" width="12" height="12" border="0" /></a></span></span></td>
-      <td bgcolor="<?php echo $color;  ?>" class="style12"><div align="center"><img src="/sima/imagenes/edit.jpg" alt="EDITAR CLIENTE <?php echo $myrow['nomCliente'];?>" width="12" height="12" border="0" /></div></td>
-      <td bgcolor="<?php echo $color;  ?>" class="style12"><div align="center"><span class="style71"> <a href="#" onClick="ventanaSecundaria3('antecedentesAnteriores.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen2=<?php echo $A; ?>&seguro=<?php echo $_POST['seguro']; ?>&numCliente=<?php echo $N?>')"> <img src="/sima/imagenes/listado.jpg" alt="Listado de Art&iacute;culos" width="12" height="12" border="0" /> </a> </span></div></td>
-      <td bgcolor="<?php echo $color;  ?>" class="style12"><div align="center"><span class="style71"> <a href="javascript:ventanaSecundaria2('dxActuales.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="/sima/imagenes/expandir.gif" alt="Almacenes" width="12" height="12" border="0" /></a><a href="#" onClick="ventanaSecundaria3('dxActuales.php?codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $A; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')"></a> </span></div></td>
+	  <a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $numeroE; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')">
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Datos Generales del Paciente" width="12" height="12" border="0" /></a></span></span></td>
+      <td bgcolor="<?php echo $color;  ?>" class="style12"><div align="center"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/edit.jpg" alt="EDITAR CLIENTE <?php echo $myrow['nomCliente'];?>" width="12" height="12" border="0" /></div></td>
+      <td bgcolor="<?php echo $color;  ?>" class="style12"><div align="center"><span class="style71"> <a href="#" onClick="ventanaSecundaria3('antecedentesAnteriores.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen2=<?php echo $A; ?>&seguro=<?php echo $_POST['seguro']; ?>&numCliente=<?php echo $N?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/listado.jpg" alt="Listado de Art&iacute;culos" width="12" height="12" border="0" /> </a> </span></div></td>
+      <td bgcolor="<?php echo $color;  ?>" class="style12"><div align="center"><span class="style71"> <a href="javascript:ventanaSecundaria2('dxActuales.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/expandir.gif" alt="Almacenes" width="12" height="12" border="0" /></a><a href="#" onClick="ventanaSecundaria3('dxActuales.php?codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen2=<?php echo $A; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')"></a> </span></div></td>
     </tr>
     <?php  }}
 	

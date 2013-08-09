@@ -236,9 +236,9 @@ setTimeout("jump0()",50)}}
 <?php 
 }
 ?>
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 
-<script src="/sima/js/prototype.js" type="text/javascript"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/prototype.js" type="text/javascript"></script>
 <!-- set focus to a field with the name "searchcontent" in my form -->
 
 
@@ -364,7 +364,7 @@ document.Form2.criterio.focus();
 </script>
       </span></td>
       <td width="102"><span class="negro">
-        <input type="image" src="/sima/imagenes/btns/searcharticles.png"  value="Buscar" />
+        <input type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png"  value="Buscar" />
       </span></td>
     </tr>
   </table>

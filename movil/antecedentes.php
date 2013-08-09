@@ -193,7 +193,7 @@ $myrow31 = mysql_fetch_array($result31);
 		 
 		  ?>
 <h1 align="center">Expediente Cl&iacute;nico</h1>
-<p align="center"><a href="/sima/movil/principal.php"><span class="style71">Regresar a Men&uacute;</span></a></p>
+<p align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/principal.php"><span class="style71">Regresar a Men&uacute;</span></a></p>
 <form id="form2" name="form2" method="post" action="">
   <table width="530" border="0" align="center" class="style7">
     <tr class="style7">
@@ -220,8 +220,8 @@ if($myrow31['numCliente']){
           <label><input name="DatosP23" type="button" class="style7" id="DatosP233"  
 onclick="javascript:ventanaSecundaria2('dxActuales.php?keyClientesInternos=<?php echo $keyClientesInternos; ?>&amp;medico=<?php echo $medico; ?>&amp;almacen=<?php echo $bebeAli; ?>&amp;seguro=<?php echo $traeSeguro; ?>&amp;numeroE=<?php echo $nCliente; ?>')" value="DX Actual" <?php if(!$nExpediente){ echo 'disabled=""';}?>/>
           <input name="DatosP22" type="button" class="style7" id="DatosP22"  
-onclick="javascript:ventanaSecundaria5('/sima/cargos/agregaArticulos.php?numPaciente=<?php echo $nExpediente; ?>&amp;medico=<?php echo $medico; ?>&amp;almacen=<?php echo $bebeAli; ?>&amp;seguro=<?php echo $traeSeguro; ?>&amp;numeroE=<?php echo $nCliente; ?>')" value="Inter-consultas" <?php if(!$nExpediente){ echo 'disabled=""';}?>/>
-          <input name="DatosP" type="button" class="style7" id="DatosP2"  onclick="javascript:ventanaSecundaria6('/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $existeNE; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="Datos P."
+onclick="javascript:ventanaSecundaria5('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaArticulos.php?numPaciente=<?php echo $nExpediente; ?>&amp;medico=<?php echo $medico; ?>&amp;almacen=<?php echo $bebeAli; ?>&amp;seguro=<?php echo $traeSeguro; ?>&amp;numeroE=<?php echo $nCliente; ?>')" value="Inter-consultas" <?php if(!$nExpediente){ echo 'disabled=""';}?>/>
+          <input name="DatosP" type="button" class="style7" id="DatosP2"  onclick="javascript:ventanaSecundaria6('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $existeNE; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="Datos P."
 		<?php if(!$nExpediente){ echo 'disabled=""';}?> />
           </label>
       </div></td>

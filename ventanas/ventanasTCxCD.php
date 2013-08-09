@@ -371,7 +371,7 @@ $myrow7cs = mysql_fetch_array($result7cs);
   
 
 
-nueva('/sima/cargos/imprimirAbonosOtros.php?cliente=<?php echo $myrow7cs['nomCliente'];?>&entidad=<?php echo $entidad; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $myrow311['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&entidad=<?php echo $entidad;?>&usuario=<?php echo $usuario;?>&seguro=<?php echo $_POST['seguro'];?>&cajero=<?php echo $usuario;?>&random=<?php echo $random;?>&numRecibo=<?php echo $myrowC['numRecibo'];?>&numCorte=<?php echo $myrowC['numCorte'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&cliente=<?php echo $_POST['nomSeguro'];?>&codigoCaja=<?php echo $myrowC['keyCatC'];?>&numMovimiento=<?php echo $myrow333a['CVI'];?>','ventanaSecundaria2','630','500','yes');
+nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirAbonosOtros.php?cliente=<?php echo $myrow7cs['nomCliente'];?>&entidad=<?php echo $entidad; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $myrow311['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&entidad=<?php echo $entidad;?>&usuario=<?php echo $usuario;?>&seguro=<?php echo $_POST['seguro'];?>&cajero=<?php echo $usuario;?>&random=<?php echo $random;?>&numRecibo=<?php echo $myrowC['numRecibo'];?>&numCorte=<?php echo $myrowC['numCorte'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&cliente=<?php echo $_POST['nomSeguro'];?>&codigoCaja=<?php echo $myrowC['keyCatC'];?>&numMovimiento=<?php echo $myrow333a['CVI'];?>','ventanaSecundaria2','630','500','yes');
 
 window.close();
 
@@ -420,8 +420,8 @@ $estilos->styles();
 
 
 
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
     
     </head>
 	<?php /*
@@ -498,7 +498,7 @@ $estilos->styles();
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesPrincipalesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesPrincipalesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

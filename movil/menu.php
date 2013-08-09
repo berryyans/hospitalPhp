@@ -66,7 +66,7 @@ $myrow = mysql_fetch_array($result);
     </tr>
     <tr>
       <td width="149">
-	    <div align="center"><a href="/sima/movil/sistemas/menuIndex.php">Sistemas</a></div></td>
+	    <div align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/sistemas/menuIndex.php">Sistemas</a></div></td>
       <td width="160"><div align="center">Admisiones</div></td>
     </tr>
     <tr>

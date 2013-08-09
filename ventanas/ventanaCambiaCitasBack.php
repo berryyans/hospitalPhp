@@ -328,8 +328,8 @@ $estilo->styles();
 ?>
 
 
-<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 
 <body>
 
@@ -400,7 +400,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
           
           <label>
           <a href="javascript:ventanaSecundaria('listaCitasMedicos.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;id_medico=<?php echo $_GET['id_medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>&almacenSolicitud=<?php echo $_POST['almacenDestino1'];?>&entidad=<?php echo $entidad;?>&fechaSolicitud=<?php echo $fecha2;?>&forma=citas&campoPrincipal=codHora&campoDespliegue=fechaSolicitud&almacen=<?php echo $_GET['almacen'];?>')">
-          <img src="/sima/imagenes/calendario.png" alt="Almacenes" width="24" height="24" border="0" />          </a>           </label>          <input type="hidden" name="guiaHora" id="guiaHora" /></td>
+          <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/calendario.png" alt="Almacenes" width="24" height="24" border="0" />          </a>           </label>          <input type="hidden" name="guiaHora" id="guiaHora" /></td>
     </tr>
     <tr >
       <td >&nbsp;</td>
@@ -424,7 +424,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 		
 		  ?>" size="60" />
 		  <?php echo '</br>';?>
-		  <a href="javascript:ventanaSecundaria10('/sima/cargos/busquedaAvanzada.php')" class="style1 style1">Busqueda Avanzada </a>		  </td>
+		  <a href="javascript:ventanaSecundaria10('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/busquedaAvanzada.php')" class="style1 style1">Busqueda Avanzada </a>		  </td>
     </tr>
     
     
@@ -472,7 +472,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/pacientesx.php?almacen=<?php echo $_GET['almacen'];?>&entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/pacientesx.php?almacen=<?php echo $_GET['almacen'];?>&entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script></p>

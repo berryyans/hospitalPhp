@@ -191,9 +191,9 @@ function confirmReset() {
 }
 </script>
 
-        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.js"></script>
-        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.ui.js"></script>
-        <script type="text/javascript" src="/sima/js/editp/lib/jquery.editinplace.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.ui.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/lib/jquery.editinplace.js"></script>
         
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -393,7 +393,7 @@ echo     '<span >, Anaquel: '.$myrow1['anaquel'].'</span>';
           
 /*          
           
-<a  href="javascript:ventanaSecundaria2('/sima/cargos/listaAlmacenesTodos.php?codigo=<?php echo $codigo; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow1['keyPA']; ?>&amp;gpoProducto=<?php echo $myrow8ac['gpoProducto'];?>')" onMouseover="showhint('Presiona aqui para asignar almacenes a este articulo...', this, event, '150px')">
+<a  href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenesTodos.php?codigo=<?php echo $codigo; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow1['keyPA']; ?>&amp;gpoProducto=<?php echo $myrow8ac['gpoProducto'];?>')" onMouseover="showhint('Presiona aqui para asignar almacenes a este articulo...', this, event, '150px')">
 Editar
 </a>     	*/	?>     
 </font>
@@ -412,7 +412,7 @@ Editar
 	// A select input field so we can limit our options
 	$("#<?php echo $myrow1['keyE']; ?>").editInPlace({
 		//callback: function(unused, enteredText) { return enteredText; },
-                url: "/sima/cargos/server2.php",
+                url: "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/server2.php",
 		field_type: "text"});
 	
 </script>

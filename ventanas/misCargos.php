@@ -44,13 +44,13 @@ function ventanaSecundaria (URL){
 
 
 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
  
 
 
@@ -98,7 +98,7 @@ $estilos->styles();
                 }
 		 ?>"/>
     </label>
-    <input name="button" type="image"src="/sima/imagenes/btns/fecha.png" />
+    <input name="button" type="image"src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fecha.png" />
 </p>
   
 
@@ -299,7 +299,7 @@ if($myrowd['statusCargo']!=''){
       <td >
  <a href="javascript:ventanaSecundaria('../ventanas/printRepo.php?keyCAP=<?php echo $myrow['keyCAP'];?>&nOrden=<?php echo $myrow['nOrden'];?>&departamentoSolicitante=<?php echo $myrow8ab['descripcion'];?>&entidad=<?php echo $entidad;?>&random=<?php echo $rand; ?>&usuarioCargo=<?php echo $usuario;?>&usuarioSolicitante=<?php echo $myrow['usuario'];?>&fecha=<?php echo $fecha1;?>&hora=<?php echo $hora1;?>&fechaSolicitud=<?php echo $myrow['fechaSolicitud'];?>&horaSolicitud=<?php echo $myrow['horaSolicitud'];?>
 &numSolicitud=<?php echo $myrow['numSolicitud'];?>&folioVenta=<?php echo $myrow['folioVenta'];?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&almacenDestino=<?php echo $bali;?>','ventana7','800','600','yes');" />
- <img src="/sima/ic/pdf.png" width="30" height="30" />
+ <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ic/pdf.png" width="30" height="30" />
  </a>
           
       </td>  

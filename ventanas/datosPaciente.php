@@ -150,8 +150,8 @@ $NUMEROE=$myrow7['numeroE'];
 <title></title>
 
 
-<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <?php
 $estilos=new muestraEstilos();
 $estilos->styles();
@@ -281,7 +281,7 @@ $estilos->styles();
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesTodosAjax.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesTodosAjax.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

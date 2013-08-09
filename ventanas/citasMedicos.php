@@ -275,7 +275,7 @@ $col = 1;
     <?php } ?>
     
     
-    <td height="31" bgcolor="<?php echo $color;?>" class="normalmid"><div align="center"><a href="citasMedicos.php?keyClientesInternos=<?php echo $myrow11['keyClientesInternos']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;almacen=<?php echo $_GET['almacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacenDestino=<?php echo $_GET['almacenDestino'];?>&amp;keyMC=<?php echo $myrow['keyMC'];?>"><img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar este registro?') == false){return false;}" /></a></div></td>
+    <td height="31" bgcolor="<?php echo $color;?>" class="normalmid"><div align="center"><a href="citasMedicos.php?keyClientesInternos=<?php echo $myrow11['keyClientesInternos']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;almacen=<?php echo $_GET['almacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacenDestino=<?php echo $_GET['almacenDestino'];?>&amp;keyMC=<?php echo $myrow['keyMC'];?>"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar este registro?') == false){return false;}" /></a></div></td>
   </tr>
   <?php 
 	 $al=$myrow['almacenSolicitante'];

@@ -158,7 +158,7 @@ $estilo->styles();
 
 
 <script src="../js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <body>
 
 
@@ -261,7 +261,7 @@ $estilo->styles();
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/pacientesx.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/pacientesx.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script></p>

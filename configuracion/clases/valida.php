@@ -1,5 +1,7 @@
 <?php 
 require("/Constantes.php");
+define("CONSTANT_PATH_SIMA_RAIZ", "/simaVT");
+$url=CONSTANT_PATH_SIMA_RAIZ.'/index.php';
 class validator {
 
 static public function medico($usuario,$basedatos){
@@ -33,7 +35,7 @@ return $myrow1['entidad'];
 
 
 
-var $url=CONSTANT_PATH_SIMA_RAIZ.'/index.php';
+
 var $ID_EJERCICIO;
 
 static function sesionesActivas($usuario,$llavePrimaria,$basedatos){

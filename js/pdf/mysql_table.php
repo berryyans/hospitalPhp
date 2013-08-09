@@ -1,5 +1,6 @@
 <?php
-require('/var/www/html/sima/js/pdf/fpdf.php');
+require('/Constantes.php');
+require(CONSTANT_PATH_SIMA.'/js/pdf/fpdf.php');
 
 class PDF_MySQL_Table extends FPDF
 {

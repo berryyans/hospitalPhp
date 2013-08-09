@@ -951,7 +951,7 @@ $_POST['cantidadAseguradora']='si';$_POST['trasladoNomina']='si';$_POST['otros']
 
 <?php if(($_POST['tipoPaciente'] and ($_POST['buscar'] or $_POST['continue'] or $_POST['actualizar'] or $_POST['elimina']))  and 
 ($_POST['cantidadParticular'] or $_POST['cantidadAseguradora'] or $_POST['trasladoNomina'] or $_POST['otros'])){ ?>
-<img src="/sima/imagenes/bordestablas/borde1.png" alt="" width="1036" height="24" align="center"/>
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" alt="" width="1036" height="24" align="center"/>
 <table width="1036" height="84" border="0" align="center" cellpadding="4" cellspacing="0">
       <tr bgcolor="#330099">
         <th width="75" height="20" bgcolor="#FFFF00" class="Estilo24" scope="col"><div align="left" class="none">
@@ -1565,7 +1565,7 @@ $importeaFacturar= $cantidadAseguradora+$cantidadParticular+$nomina+$otros;
 	  }  //cierra while
 	  ?>
   </table>
-<img src="/sima/imagenes/bordestablas/borde2.png" alt="" width="1036" height="24" align="center"/>
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" alt="" width="1036" height="24" align="center"/>
 <p align="center" class="error"><em> 
   
   

@@ -6,7 +6,7 @@ include(CONSTANT_PATH_CONFIGURACION."/ventanasEmergentes.php"); ?><?PHP include(
 $numeroPaciente=$_GET['numeroE'];
 $seguro=$_GET['seguro'];
 $keyCAP=$_GET['keyCAP'];
-$ruta='/sima/dx/mostrarDiagnosticos.php';
+$ruta=CONSTANT_PATH_SIMA_RAIZ.'/dx/mostrarDiagnosticos.php';
 $DXRX=new DXRX();
 $DXRX->diagnosticosRX($_GET['numeroE'],$_GET['nCuenta'],$ruta,$seguro,$numeroPaciente,$keyCAP,$usuario,$hora1,$fecha1,$basedatos);
 ?>

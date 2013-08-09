@@ -30,7 +30,7 @@ $estilo->styles();
 <body>
 <p align="center">&nbsp;</p>
 <form id="form1" name="form1" method="post" action="">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="526" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="526" height="24" />
   <table width="526" border="0" align="center" cellpadding="4" cellspacing="0">
     <tr bgcolor="#FFFF00">
      
@@ -84,7 +84,7 @@ while($myrow11 = mysql_fetch_array($result11)){
     </tr>
     <?php }?>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="526" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="526" height="24" />
 <tr>
     <td>
     

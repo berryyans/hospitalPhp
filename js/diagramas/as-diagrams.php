@@ -7,10 +7,12 @@
 * Please read "as-diagrams.en.htm" for detailed instructions
 ============================================================================
 */
+require('/Constantes.php');
 $asbarchart_csshown = 0;
+$imgpath = CONSTANT_PATH_SIMA_RAIZ.'/js/diagramas/img/'; // place all 'diagram' images in this "folder";
 class CAsBarDiagram
 { // bar diagram class
-  var $imgpath = '/sima/js/diagramas/img/'; // place all 'diagram' images in this "folder";
+  //var $imgpath = '/sima/js/diagramas/img/'; // place all 'diagram' images in this "folder";
   var $bt_lgtitle = '';
   var $graf_height = 240;
   var $bwidth = 0;

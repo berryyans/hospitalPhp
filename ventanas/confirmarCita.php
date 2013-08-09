@@ -405,7 +405,7 @@ $myrowj2a = mysql_fetch_array($resultj2a);
       <td align="center"><?php if($myrow11['paquete']=='no'){ 
 	   if(!$myrow11['folioVenta']){ ?>
         <a href="confirmarCita.php?keyClientesInternos=<?php echo $myrow11['keyClientesInternos']; ?>&seguro=<?php echo $_POST['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&almacen=<?php echo $_GET['almacen']; ?>&codigo=<?php echo $C; ?>&almacenDestino=<?php echo $_GET['almacenDestino'];?>">
-            <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="22" height="22" border="0" onclick="if(confirm('&iquest;Est&aacute;s seguro que deseas cancelar la cita?') == false){return false;}" />
+            <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="22" height="22" border="0" onclick="if(confirm('&iquest;Est&aacute;s seguro que deseas cancelar la cita?') == false){return false;}" />
         </a>
       <?php } else {
 	  echo '---';

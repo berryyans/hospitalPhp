@@ -398,9 +398,9 @@ $myrow40b = mysql_fetch_array($result40b);
         
 		<td bgcolor="<?php echo $color?>" >
 		<?php if($myrow3['codigo']){ ?>
-		<img src="/sima/imagenes/solicitado.png" alt="Almacenes" width="12" height="12" border="0" />
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/solicitado.png" alt="Almacenes" width="12" height="12" border="0" />
 		<?php } else { ?>
-		<img src="/sima/imagenes/candado.png" alt="Almacenes" width="12" height="12" border="0" />
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/candado.png" alt="Almacenes" width="12" height="12" border="0" />
 		<?php } ?>		</td>
       </tr>
       <?php  

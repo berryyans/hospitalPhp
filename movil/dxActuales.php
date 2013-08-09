@@ -120,7 +120,7 @@ msgbox "SE ELIMINO EL CONVENIO!"
 -->
 </style>
 <head>
-<script type="text/javascript" src="/sima/js/ajax.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/ajax.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title></title>
 
@@ -138,7 +138,7 @@ msgbox "SE ELIMINO EL CONVENIO!"
 
 <body>
 
-  <p align="center"><a href="/sima/movil/principal.php"><span class="style71">Regresar a Men&uacute;</span></a></p>
+  <p align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/principal.php"><span class="style71">Regresar a Men&uacute;</span></a></p>
   <p>&nbsp;</p>
   <form id="form2" name="form2" method="post" action="">
     <?php	
