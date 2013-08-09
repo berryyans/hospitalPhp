@@ -10,15 +10,15 @@ require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php");
 ?>
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-win2k-2.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-win2k-2.css" title="win2k-cold-1" /> 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
 <script language=javascript> 
@@ -175,7 +175,7 @@ almacen='".$myrow11['almacenSolicitud']."'
     <tr>
       <td colspan="4" align="center">
           <?php if($bandera>0){?>
-          <input name="entregar" type="submit" src="/sima/imagenes/btns/new_recibe.png" id="entregar" value="Recibir" />
+          <input name="entregar" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/new_recibe.png" id="entregar" value="Recibir" />
       <?php }else{ echo 'No hay registros para mostrar...';}?>      </td>
       
     </tr>

@@ -1,4 +1,6 @@
-<?php  class desplegar { 
+<?php  
+require('/Constantes.php');
+class desplegar { 
 public function internarPaciente($TITULO,$ventana,$ventana2,$keyPacientes,$entidad,$hora,$fecha,$almacen,$usuario,$numeroE,$basedatos){ 
 ?>
 
@@ -135,7 +137,7 @@ $estilos-> styles();
         <td colspan="3" ><div align="center" >Datos del Paciente </div></td>
       </tr>
       <tr valign="middle" >
-        <td valign="top"  >Nuevo Paciente <a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="24" height="24" border="0" /></a></td>
+        <td valign="top"  >Nuevo Paciente <a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="24" height="24" border="0" /></a></td>
         <td  >&nbsp;</td>
         <td >&nbsp;</td>
       </tr>

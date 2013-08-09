@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class editarClientes {
 
 
@@ -303,7 +304,7 @@ function ventanaSecundaria1 (URL){
 		value="<?php if($_POST['seguro'] and !$_POST['nuevo']){ echo $_POST['seguro'];} else { echo "0";}?>" 
 		onchange="javascript:this.form.submit();" /></td>
       <td class="style12"><input name="subClientes" type="button" class="style7" id="subClientes"  onclick="javascript:ventanaSecundaria1(
-		'/sima/cargos/agregarSeguros.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "seguro"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="S" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregarSeguros.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "seguro"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="S" />
       
 	  
 	<?php   

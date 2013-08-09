@@ -331,7 +331,7 @@ $listaEsp->listaEspecialidadesMedicasSS($entidad,'style12',$myrow['especialidad'
 
     <label>
     
-    <a href="javascript:ventanaSecundaria('/sima/cargos/listaAlmacenesTodos.php?codigo=<?php echo $myrow['codigo']; ?>&keyPA=<?php echo $myrow['keyPA']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&activar=si')"><img src="../imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" />          </a>          </label></td>
+    <a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenesTodos.php?codigo=<?php echo $myrow['codigo']; ?>&keyPA=<?php echo $myrow['keyPA']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&activar=si')"><img src="../imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" />          </a>          </label></td>
     </tr>
    
 

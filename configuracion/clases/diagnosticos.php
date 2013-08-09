@@ -1,4 +1,6 @@
-<?php class diagnostico{
+<?php 
+require('/Constantes.php');
+class diagnostico{
 public function diagnosticos($MEDICO,$entidad,$ruta,$seguro,$numeroPaciente,$keyCAP,$usuario,$hora1,$fecha1,$basedatos){ 
 ?>
 <script language=javascript> 
@@ -43,12 +45,12 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.despliega.value) == false ) {   
-                alert("Por Favor, escribe el Código Internacional!")   
+                alert("Por Favor, escribe el Cï¿½digo Internacional!")   
                 return false   
         }         
 }   
 </script> 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 
 
 <?php
@@ -100,7 +102,7 @@ $agrega = "insert into dx
 mysql_db_query($basedatos,$agrega);
 echo mysql_error();
 } else {
-echo '<blink>'.'Ya existe éste Código Internacional'.'</blink>';
+echo '<blink>'.'Ya existe ï¿½ste Cï¿½digo Internacional'.'</blink>';
 }
 
 
@@ -213,11 +215,11 @@ $myrow121= mysql_fetch_array($result121);
 ?>
           <?php if(!$myrow121['banderaCI']){ ?>
           <a 
-		   onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Agregar códigos Internacionales';?>&lt;/div&gt;')" onMouseOut="UnTip()"
+		   onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Agregar cï¿½digos Internacionales';?>&lt;/div&gt;')" onMouseOut="UnTip()"
 		  href="javascript:ventanaSecundaria1('agregarCodigoInternacional.php?keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>&amp;ci=<?php echo $_GET['ci']; ?>&amp;keyDiagnostico=<?php echo $myrow25['keyDiagnostico']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>')"> (Sin agregar) </a>
           <?php } else {  ?>
 C&oacute;digo Internacional <a 
-					onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Editar código internacional';?>&lt;/div&gt;')" onMouseOut="UnTip()"
+					onmouseover="Tip('&lt;div class=&quot;estilo25&quot;&gt;<?php echo 'Editar cï¿½digo internacional';?>&lt;/div&gt;')" onMouseOut="UnTip()"
 					href="javascript:ventanaSecundaria1('agregarCodigoInternacional.php?keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>&amp;ci=<?php echo $_GET['ci']; ?>&amp;keyDiagnostico=<?php echo $myrow25['keyDiagnostico']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>')"> (Editar) </a>
 <?php } ?>
         </label></td>
@@ -242,14 +244,14 @@ $myrow121= mysql_fetch_array($result121);
 ?>
           <?php if(!$myrow121['banderaCuadro']){ ?>
           <a 
-		   onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Agregar el cuadro clínico';?></div>')" onMouseOut="UnTip()"
+		   onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Agregar el cuadro clï¿½nico';?></div>')" onMouseOut="UnTip()"
 		  href="javascript:ventanaSecundaria1('cuadroClinico.php?keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>&amp;ci=<?php echo $_GET['ci']; ?>&amp;keyDiagnostico=<?php echo $myrow25['keyDiagnostico']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>')"> (Sin agregar) </a>
           <?php } else {  ?>
           Cuadro Cl&iacute;nico Agregado 
 		  
 		  
 		            <a 
-					onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Editar cuadro clínico';?></div>')" onMouseOut="UnTip()"
+					onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Editar cuadro clï¿½nico';?></div>')" onMouseOut="UnTip()"
 					href="javascript:ventanaSecundaria1('cuadroClinico.php?keyClientesInternos=<?php echo $_GET['keyClientesInternos']; ?>&amp;ci=<?php echo $_GET['ci']; ?>&amp;keyDiagnostico=<?php echo $myrow25['keyDiagnostico']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>')"> (Editar) </a>
           <?php } ?>
         </label></td>

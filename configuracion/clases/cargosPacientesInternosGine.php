@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -7,7 +10,7 @@
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -44,7 +47,7 @@ function ventanaSecundaria2 (URL){
 <!--
 function comprueba()
 {
-if (confirm('Estas seguro que deseas enviar la cuenta de este paciente a admisiones? ya no podras hacer cargos, y la operación es irreversible')) return true;
+if (confirm('Estas seguro que deseas enviar la cuenta de este paciente a admisiones? ya no podras hacer cargos, y la operaciï¿½n es irreversible')) return true;
 return false;
 }
 -->
@@ -190,7 +193,7 @@ $myrow31cd = mysql_fetch_array($result31cd);
 
     <?php echo $myrow['paciente'];
 	  if($myrow['status']=='ontransfer'){
-	  echo '   [Se solicitó la transferencia de éste paciente]';
+	  echo '   [Se solicitï¿½ la transferencia de ï¿½ste paciente]';
 	  }
 	 ?>
       </span></td>
@@ -210,21 +213,21 @@ $myrow31cd = mysql_fetch_array($result31cd);
     
       <td width="77" bgcolor="<?php echo $color?>" class="style12"><div align="center">
         <?php if( $myrow['statusCuenta']=='abierta'){ ?>
-        <a href="pacientesInternos.php?rand=<?php echo rand(4555,42334543);?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&cierre=si&tipoCierre=revision" onClick="return comprueba();"> <img src="/sima/imagenes/btns/reservbtn.png" alt="Aplicar Cargos" width="22" height="22" border="0" /></a>
+        <a href="pacientesInternos.php?rand=<?php echo rand(4555,42334543);?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&cierre=si&tipoCierre=revision" onClick="return comprueba();"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/reservbtn.png" alt="Aplicar Cargos" width="22" height="22" border="0" /></a>
         <?php } else if($myrow['statusCuenta']=='revision'){ ?>
-        <a href="pacientesInternos.php?rand=<?php echo rand(4555,42334543);?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&cierre=si&tipoCierre=caja" onClick="return comprueba();"> <img src="/sima/imagenes/lupa.jpeg" alt="Aplicar Cargos" width="22" height="22" border="0" /></a>
+        <a href="pacientesInternos.php?rand=<?php echo rand(4555,42334543);?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&cierre=si&tipoCierre=caja" onClick="return comprueba();"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/lupa.jpeg" alt="Aplicar Cargos" width="22" height="22" border="0" /></a>
         <?php } else {
 		  
 		  echo '---';
 		  } ?>
 </div></td>
-      <td width="71" bgcolor="<?php echo $color?>" class="style12"><div align="center"><a href="#" onClick="javascript:ventanaSecundaria2('/sima/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="/sima/imagenes/btns/edocta.png" alt="Lista de Cargos..." width="22" height="22" border="0" /></a></div></td>
+      <td width="71" bgcolor="<?php echo $color?>" class="style12"><div align="center"><a href="#" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/edocta.png" alt="Lista de Cargos..." width="22" height="22" border="0" /></a></div></td>
       
       <td width="62" bgcolor="<?php echo $color?>" class="style12" align="center">
       <?php if($myrow['statusCuenta']!='revision'){ ?>
-      <a href="#" onClick="javascript:ventanaSecundaria2('/sima/cargos/solicitaArticulos.php?numeroE=<?php echo $myrow['numeroE']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="/sima/imagenes/btns/addbtn.png" alt="Aplicar Cargos" width="24" height="24" border="0" /></a>
+      <a href="#" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/solicitaArticulos.php?numeroE=<?php echo $myrow['numeroE']; ?>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addbtn.png" alt="Aplicar Cargos" width="24" height="24" border="0" /></a>
         <?php } else { echo '---';}?>        </td>
     </tr>
     <?php  }}?>

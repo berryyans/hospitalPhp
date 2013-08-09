@@ -1,4 +1,6 @@
-<?php class articulos {
+<?php 
+require('/Constantes.php');
+class articulos {
 public function catalogoArticulos($entidad,$usuario,$codigo,$fecha1,$basedatos){
 $hora1= date("H:i a");
 ?>
@@ -354,11 +356,11 @@ $estilos->styles();
        
         
     <td width="115" align="right"><div align="center">
-      <input name="nuevo" class="boton1" type="submit" src="/sima/imagenes/bordestablas/btns/newbtn.png" id="nuevo" value="Nuevo" <?php echo $r;?> />
+      <input name="nuevo" class="boton1" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/newbtn.png" id="nuevo" value="Nuevo" <?php echo $r;?> />
      </td>
-    <td width="118" align="right"><div align="center"><input name="actualizar" class="boton1" type="submit" src="/sima/imagenes/bordestablas/btns/refreshbtn.png"  id="actualizar" value="Actualizar/Grabar" />
+    <td width="118" align="right"><div align="center"><input name="actualizar" class="boton1" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/refreshbtn.png"  id="actualizar" value="Actualizar/Grabar" />
     </div></td>
-    <td width="115" align="right"><div align="center"> <input name="borrar" class="boton1" type="submit" src='/sima/imagenes/bordestablas/btns/deletebtn.png' id="borrar" value="Borrar" /></div></td>
+    <td width="115" align="right"><div align="center"> <input name="borrar" class="boton1" type="submit" src='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/deletebtn.png' id="borrar" value="Borrar" /></div></td>
   </tr>
 
 </table>
@@ -391,12 +393,12 @@ $estilos->styles();
       <td ><label>
         <input name="cbarra" type="text"  id="cbarra" value="<?php echo $myrow['cbarra']; ?>" size="40"  autocomplete="off"/>
       <a href="javascript:ventanaSecundaria4(
-		'/sima/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a> <a href="javascript:ventanaSecundaria3('/sima/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="/sima/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a> </label></td>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a> <a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a> </label></td>
     </tr>
     <tr>
       <td  scope="col">&nbsp;</td>
       <td  >Generar C&oacute;digo de Barra</td>
-      <td ><img src="/sima/imagenes/barcode.gif" width="89" height="68" />(Click en la imagen para generar el c&oacute;digo)</td>
+      <td ><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/barcode.gif" width="89" height="68" />(Click en la imagen para generar el c&oacute;digo)</td>
     </tr>
     <tr>
       <td  scope="col">&nbsp;</td>
@@ -518,7 +520,7 @@ $result71=mysql_db_query($basedatos,$sSQL71);
 
       <td ><span >Agregar Almacen:</span></td>
       <td ><label></label>
-          <label><a href="javascript:ventanaSecundaria('/sima/cargos/listaAlmacenesTodos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA'];?>')"> <img src="/sima/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></label></td>
+          <label><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenesTodos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA'];?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></label></td>
     </tr>
 
     <tr>

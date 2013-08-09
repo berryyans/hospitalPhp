@@ -1,4 +1,6 @@
-<?php class interpretarRX{
+<?php 
+require('/Constantes.php');
+class interpretarRX{
 public function interpretaRX($ventana,$titulo,$ALMACEN,$fecha1,$hora1,$basedatos){
 ?>
 <script language=javascript> 
@@ -20,7 +22,7 @@ function ventanaSecundaria2 (URL){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -137,8 +139,8 @@ $myrow31 = mysql_fetch_array($result31);
       </a>
 
 
-<a href="javascript:ventanaSecundaria('/sima/dx/mostrarImagenRX.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta ?>&amp;keyCAP=<?php echo $E; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
-        <img src="/sima/imagenes/camera.jpg" width="20" height="20" border="0" />
+<a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/dx/mostrarImagenRX.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta ?>&amp;keyCAP=<?php echo $E; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/camera.jpg" width="20" height="20" border="0" />
 </a>
 
 	  </td>
@@ -150,7 +152,7 @@ $myrow31 = mysql_fetch_array($result31);
   <p align="center">&nbsp;  </p>
 </form>
 <div align="center"><span class="style12">
-<a href="javascript:ventanaSecundaria2('/sima/cargos/imprimirServicios.php?numeroE=<?php echo $numeroE; ?>&amp;codigo=<?php echo $myrow['codProcedimiento']; ?>&amp;nCuenta=<?php echo $nCuenta ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;orden=<?php echo $E; ?>')">
+<a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirServicios.php?numeroE=<?php echo $numeroE; ?>&amp;codigo=<?php echo $myrow['codProcedimiento']; ?>&amp;nCuenta=<?php echo $nCuenta ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;orden=<?php echo $E; ?>')">
 </a>
 </span>
 </div>

@@ -1,4 +1,5 @@
 <?php //traigo agregados
+require('/Constantes.php');
 class consultarCxC{
 
 
@@ -21,7 +22,7 @@ function ventanaSecundaria2 (URL){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -187,7 +188,7 @@ if(!$seguro)$seguro='particular';
       </span></td>
       <td width="65" bgcolor="<?php echo $color?>" class="style12"><div align="left"><span class=""> 
 	  <a href="javascript:ventanaSecundaria2('<?php echo $ventana;?>?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;nt=<?php echo $nT; ?>&amp;basedatos=<?php echo $basedatos; ?>&amp;tipoFacturacion=<?php echo $tipoFacturacion; ?>')">
-	   <img src="/sima/imagenes/facturar.jpg" alt="Facturar" width="12" height="12" border="0" />	   </a> 
+	   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/facturar.jpg" alt="Facturar" width="12" height="12" border="0" />	   </a> 
 	  </span></div></td>
     </tr>
     <?php  }}?>

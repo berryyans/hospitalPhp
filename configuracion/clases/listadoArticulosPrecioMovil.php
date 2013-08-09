@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class consultaArticulosPrecio{
 public function consultarArticulos($almacen,$entidad,$basedatos){
 ?>
@@ -203,7 +204,7 @@ codigo = '".$code."'
       <td height="24"  bgcolor="<?php echo $color;?>" class="style7"><span class=""><?php echo $myrow['descripcion']; ?> 
 	  	<?php if($myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>
 	  </span></td>
       <td bgcolor="<?php echo $color;?>" class="style7">
@@ -237,7 +238,7 @@ codigo = '".$code."'
   </p>
 </form>
 <?php if($totalRegistros){ ?>
-<div align="center"><a href="/sima/movil/sistemas/menuIndex.php"><span class="style71">Regresar a Men&uacute;</span></a> </div>
+<div align="center"><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/sistemas/menuIndex.php"><span class="style71">Regresar a Men&uacute;</span></a> </div>
 <p align="center"><strong><em>Se encontraron  <?php echo $totalRegistros?> registros</em></strong></p>
 <?php } ?>
 <p>&nbsp;</p>

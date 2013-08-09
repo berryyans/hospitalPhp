@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class consultaArticulosPrecio{
 public function consultarArticulos($almacen,$entidad,$basedatos){
 ?>
@@ -34,7 +35,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -160,7 +161,7 @@ $TAMANO_PAGINA = 30;
 } else {
 $TAMANO_PAGINA=$_GET['registros'];
 }
-//examino la página a mostrar y el inicio del registro a mostrar
+//examino la pï¿½gina a mostrar y el inicio del registro a mostrar
 $pagina = $_GET["pagina"];
 if (!$pagina) {
 		$inicio = 0;
@@ -170,9 +171,9 @@ else {
 	$inicio = ($pagina - 1) * $TAMANO_PAGINA;
 }
 
-//miro a ver el número total de campos que hay en la tabla con esa búsqueda
+//miro a ver el nï¿½mero total de campos que hay en la tabla con esa bï¿½squeda
 
-//calculo el total de páginas
+//calculo el total de pï¿½ginas
 $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
 
 if($_GET['criterio']){
@@ -257,11 +258,11 @@ codigo = '".$code."'
       <td bgcolor="<?php echo $color;?>" ><span ><?php echo $myrow['descripcion']; ?>
             <?php 
 	  if(!$bali){
-	   echo '<img src="/sima/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
+	   echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
 	   }
 	  ?>
             <?php if($myrow['generico']=='si'){?>
-            <blink> <img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
+            <blink> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
             <?php } else { echo '';}?>
       </span></td>
       <td bgcolor="<?php echo $color;?>" ><span ><span >
@@ -297,7 +298,7 @@ echo mysql_error();
 	  }
 	  ?>
       </td>
-      <td bgcolor="<?php echo $color;?>"  ><div align="left"><span > <a href="javascript:ventanaSecundaria2('/sima/cargos/listaAlmacenes.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_GET['seguro']; ?>&medico=<?php echo $_GET['medico']; ?>&usuario=<?php echo $usuario; ?>')"> <img src="/sima/imagenes/almacen.jpeg" alt="Almacenes" width="12" height="12" border="0" /></a> </span></div></td>
+      <td bgcolor="<?php echo $color;?>"  ><div align="left"><span > <a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenes.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_GET['seguro']; ?>&medico=<?php echo $_GET['medico']; ?>&usuario=<?php echo $usuario; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/almacen.jpeg" alt="Almacenes" width="12" height="12" border="0" /></a> </span></div></td>
       <td ><div align="left">
           <?php 
 if($myrow['gpoProducto']=='PAT'){
@@ -318,14 +319,14 @@ $modifica='interpHonMedicos.php';
 ?>
           <?php if($modifica){ ?>
           <a href="<?php echo $modifica?>?nRequisicion=<?php echo $requisicion; ?>&amp;almacen=
-		<?php echo $myrow13['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacen=<?php echo $ali; ?>"><img src="/sima/imagenes/Save.png" alt="Modificaci&oacute;n de Art&iacute;culos, M&aacute;ximo, M&iacute;nimo, Reorden.." width="12" height="12" border="0" /> </a>
+		<?php echo $myrow13['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacen=<?php echo $ali; ?>"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Modificaci&oacute;n de Art&iacute;culos, M&aacute;ximo, M&iacute;nimo, Reorden.." width="12" height="12" border="0" /> </a>
           <?php } else { echo '?';} ?>
       </div></td>
       <td bgcolor="<?php echo $color;?>" ><div align="center">
           <?php if($myrow['activo']=='A'){ ?>
-          <span > <a href="precios.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>"> <img src="/sima/imagenes/surtido.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
+          <span > <a href="precios.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/surtido.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
           <?php } else { ?>
-          <a href="precios.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C?>"> <img src="/sima/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
+          <a href="precios.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
           <?php } ?>
       </span></div></td>
     </tr>
@@ -344,10 +345,10 @@ $modifica='interpHonMedicos.php';
 <div align="center" ><?php
 
 
-//pongo el número de registros total, el tamaño de página y la página que se muestra
-echo "Número de registros encontrados: " . $num_total_registros . "<br>";
-echo "Se muestran páginas de " . $TAMANO_PAGINA . " registros cada una<br>";
-echo "Mostrando la página " . $pagina . " de " . $total_paginas . "<p>";
+//pongo el nï¿½mero de registros total, el tamaï¿½o de pï¿½gina y la pï¿½gina que se muestra
+echo "Nï¿½mero de registros encontrados: " . $num_total_registros . "<br>";
+echo "Se muestran pï¿½ginas de " . $TAMANO_PAGINA . " registros cada una<br>";
+echo "Mostrando la pï¿½gina " . $pagina . " de " . $total_paginas . "<p>";
 
 
 //construyo la sentencia SQL
@@ -361,20 +362,20 @@ $rs = mysql_query($ssql);
 	echo $fila->descripcion . "<br>";
 } */
 
-//cerramos el conjunto de resultados y la conexión con la base de datos
+//cerramos el conjunto de resultados y la conexiï¿½n con la base de datos
 /* mysql_free_result($rs);
 mysql_close($conn); 
  */
 //echo "<p>";
 
-//muestro los distintos índices de las páginas, si es que hay varias páginas
+//muestro los distintos ï¿½ndices de las pï¿½ginas, si es que hay varias pï¿½ginas
 if ($total_paginas > 1){
 	for ($i=1;$i<=$total_paginas;$i++){
 		if ($pagina == $i) 
-			//si muestro el índice de la página actual, no coloco enlace
+			//si muestro el ï¿½ndice de la pï¿½gina actual, no coloco enlace
 			echo $pagina . "  ";
 		else
-			//si el índice no corresponde con la página mostrada actualmente, coloco el enlace para ir a esa página
+			//si el ï¿½ndice no corresponde con la pï¿½gina mostrada actualmente, coloco el enlace para ir a esa pï¿½gina
 			echo "<a href='precios.php?pagina=" . $i . "&criterio=" . $txt_criterio . "&registros=" . $_GET['registros'] . "'>" . $i . "</a> ";
 	}
 }

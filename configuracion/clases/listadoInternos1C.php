@@ -1,4 +1,7 @@
- <script language="JavaScript" type="text/javascript">
+<?php
+require('/Constantes.php');
+?>
+<script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
     */
@@ -159,7 +162,7 @@ $nT=$myrow['keyClientesInternos'];
     <tr >
       <td height="48" ><?php echo $myrow['folioVenta'];
 ?></td>
-      <td ><a href="javascript:nueva('/sima/cargos/discrimina1.php?folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>','ventana1','1024','1000','yes')"> <?php echo $myrow['paciente'];?></a>
+      <td ><a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/discrimina1.php?folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>','ventana1','1024','1000','yes')"> <?php echo $myrow['paciente'];?></a>
           <span > Departamento: </span><span >
 <?php
 $al=$myrow['almacen'];

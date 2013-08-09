@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -173,7 +176,7 @@ $result1=mysql_db_query($basedatos,$sSQL1);
 Presiona sobre su Nombre)</p>
   <table width="200" border="0" cellspacing="0" cellpadding="0" align="center">
     <tr>
-      <td colspan="6"><img src="/sima/imagenes/bordestablas/borde1.png" width="750" height="27" /></td>
+      <td colspan="6"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="750" height="27" /></td>
     </tr>
     <tr>
       <td width="54" bgcolor="#FFFF00" class="negromid" align="center">Folio V</td>
@@ -227,7 +230,7 @@ $myrow31cd = mysql_fetch_array($result31cd);
     <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#CCCCCC'" onMouseOut="bgColor='#ffffff'" >
       <td height="59" align="center" class="precio2"><?php echo $myrow['folioVenta'];?></td>
       <td class="normalmid">
-	  <a name="ec<?php echo $guia;?>" href="#ec<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('/sima/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>
+	  <a name="ec<?php echo $guia;?>" href="#ec<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta']; ?>')">
 	  <?php echo $myrow['paciente'];
 	  if($myrow['solicitaTransferencia']=='si'){
@@ -246,10 +249,10 @@ $myrow31cd = mysql_fetch_array($result31cd);
 	  }
 ?>
    </td>
-      <td class="normalmid" align="center"><a href="javascript:ventanaSecundaria20('/sima/OPERACIONESHOSPITALARIAS/urgencias/departamentoTransferencia.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&amp;usuario=<?php echo $usuario; ?>#trans<?php echo $guia;?>')" name="trans<?php echo $guia;?>" id="trans<?php echo $guia;?>"  onclick="if(confirm('Estas seguro que deseas transferir la cuenta?') == false){return false;}">Transferir PX
+      <td class="normalmid" align="center"><a href="javascript:ventanaSecundaria20('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/urgencias/departamentoTransferencia.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&amp;usuario=<?php echo $usuario; ?>#trans<?php echo $guia;?>')" name="trans<?php echo $guia;?>" id="trans<?php echo $guia;?>"  onclick="if(confirm('Estas seguro que deseas transferir la cuenta?') == false){return false;}">Transferir PX
       </a></td>
       <td  align="center" class="normalmid"><?php if($myrow['statusCuenta']!='revision'){ ?>
-      <a href="#solicitar<?php echo $guia;?>" name="solicitar<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('/sima/cargos/solicitaArticulos.php?numeroE=<?php echo $myrow['numeroE']; ?>
+      <a href="#solicitar<?php echo $guia;?>" name="solicitar<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/solicitaArticulos.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $myrow['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')">Solicitar</a>
         <?php } else { echo '---';}?>        </td>
       
@@ -266,7 +269,7 @@ $myrow31cd = mysql_fetch_array($result31cd);
     </tr>
     
     <tr>
-      <td colspan="6"><img src="/sima/imagenes/bordestablas/borde2.png" width="750" height="25" /></td>
+      <td colspan="6"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="750" height="25" /></td>
     </tr>
   </table>
   

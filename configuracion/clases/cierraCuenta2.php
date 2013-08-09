@@ -270,16 +270,16 @@ window.alert("Hay un problema con la cuenta");
 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
   <?php
@@ -433,7 +433,7 @@ $despliegaTotales-> tt($entidad,$class,$estilo,$fechas1,$fechas2,$myrow3['keyCli
           <tr bgcolor="#660066">
             <th class="blanco" scope="col">
 			
-			<span class="blanco">Particular<a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
+			<span class="blanco">Particular<a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&amp;tipoCliente=<?php echo 'particular';?>')"> </a></span></th>
           </tr>
           <tr>
@@ -457,7 +457,7 @@ $despliegaTotales-> tt($entidad,$class,$estilo,$fechas1,$fechas2,$myrow3['keyCli
 		}
 		
 		?>
-                <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?almacenFuente=<?php echo $bali; ?>&numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'particular';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=particular&random=<?php echo rand(90000,900000000);?>&devolucion=<?php print $dev;?>&cantidadDevolucion=<?php echo $cantidadDevolucion;?>')">
+                <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?almacenFuente=<?php echo $bali; ?>&numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'particular';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=particular&random=<?php echo rand(90000,900000000);?>&devolucion=<?php print $dev;?>&cantidadDevolucion=<?php echo $cantidadDevolucion;?>')">
                 <?php 	
         
 		echo "$".number_format($cargosParticularesCC->cargosParticularesCC($basedatos,$usuario,$myrow3['keyClientesInternos']),2);
@@ -494,7 +494,7 @@ $despliegaTotales-> tt($entidad,$class,$estilo,$fechas1,$fechas2,$myrow3['keyCli
 		$coaseguro=new acumulados();
 		$ttCO=$coaseguro->cargosCoaseguro($basedatos,$usuario,$_GET['nT']);
 		if($ttCO){    ?>
-                <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'coaseguro';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=coaseguro&random=<?php echo rand(90000,900000000);?>')">
+                <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'coaseguro';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=coaseguro&random=<?php echo rand(90000,900000000);?>')">
                 <?php 
 		echo "$".number_format($coaseguro->cargosCoaseguro($basedatos,$usuario,$_GET['nT']),2);?>
                 </a>
@@ -527,7 +527,7 @@ $despliegaTotales-> tt($entidad,$class,$estilo,$fechas1,$fechas2,$myrow3['keyCli
               <?php 
 			  $ttCA=$cargosAseguradoraCC->cargosAseguradoraCC($basedatos,$usuario,$_GET['nT'] );
 		if($ttCA && !$coaseguro->cargosCoaseguro($basedatos,$usuario,$_GET['nT'])){ ?>
-              <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
+              <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
 		&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'aseguradora';?>&tipoVenta=<?php echo 'interno';?>&tipoTransaccion=aseguradora&random=<?php echo rand(90000,900000000);?>')">
               <?php 
 			echo "$".number_format($cargosAseguradoraCC->cargosAseguradoraCC($basedatos,$usuario,$_GET['nT']),2);?>
@@ -572,7 +572,7 @@ $variables=round($ttP+$ttO+$ttCO+$ttCA+$totalxSurtir->totalxSurtirFV($basedatos,
 	
 	if((!$myrow661['status'] and !$myrow14a['cierreCuenta']) and $variables ){ 
 	?>
-	<input name="faltan" type="image" src="/sima/imagenes/btns/aplypago.png" id="cerrar" value="Falta Aplicar Pagos" disabled=""/>	
+	<input name="faltan" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/aplypago.png" id="cerrar" value="Falta Aplicar Pagos" disabled=""/>	
 	<?php } else if(!$variables){ ?>
 	<input name="cerrar" type="submit" class="normal" id="cerrar" value="Cerrar Cuenta" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas cerrar la cuenta?') == false){return false;}" />
 	<?php }//cierra validaciones de proceso de cierre de departamentos ?>

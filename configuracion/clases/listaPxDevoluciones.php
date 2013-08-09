@@ -125,7 +125,7 @@ echo '<span class="style9">'.' [La Cuenta en este departamento ha sido Liberada]
       <td width="53" bgcolor="<?php echo $color?>" class="style12">
 
 	  <a href="#" onClick="javascript:ventanaSecundaria('listadoArticulos.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPaciente=<?php echo "interno"; ?>')">
-	  <img src="/sima/imagenes/agregar.gif" alt="Agregar Articulos" width="12" height="12" border="0"/>	  </a>  	  </td>
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/agregar.gif" alt="Agregar Articulos" width="12" height="12" border="0"/>	  </a>  	  </td>
     </tr>
     <?php  }}?>
     <input name="nombres" type="hidden" value="<?php echo $nombrePaciente; ?>" />

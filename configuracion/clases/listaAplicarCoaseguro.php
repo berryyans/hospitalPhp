@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language=javascript> 
 function ventanaSecundaria11 (URL){ 
    window.open(URL,"ventana11","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -121,7 +124,7 @@ echo $cierreCuentaReporte->cierreCuentaReportes($entidad,$nT,$numeroE,$nCuenta,$
       <td width="12" bgcolor="<?php echo $color?>" class="normal">
 	  
 	  <a href="#" 
-onClick="javascript:ventanaSecundaria11('<?php echo $ventana;?>?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $ALMACEN; ?>&almacenFuente=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&tipoCliente=<?php echo $tipoCliente;?>')"><img src="/sima/imagenes/listado.jpg" alt="Pacientes Activos" width="12" height="12" border="0" /></a></td>
+onClick="javascript:ventanaSecundaria11('<?php echo $ventana;?>?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $ALMACEN; ?>&almacenFuente=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&tipoCliente=<?php echo $tipoCliente;?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/listado.jpg" alt="Pacientes Activos" width="12" height="12" border="0" /></a></td>
 
 <?php //if($myrow2['transacciones']=='si'){ ?>  
       <?php  //}//fin de transacciones?>

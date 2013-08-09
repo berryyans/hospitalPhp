@@ -299,7 +299,7 @@ mysql_db_query($basedatos,$sqla);
 echo mysql_error();
 ?>
  <script language="JavaScript" type="text/javascript">
-javascript:ventanaSecundaria2('/sima/cargos/printDetailsInvoice.php?keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&folioFactura=<?php echo $_POST['folioFactura']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>'); 
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/printDetailsInvoice.php?keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&folioFactura=<?php echo $_POST['folioFactura']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>'); 
 window.opener.document.forms["form1"].submit();
 window.location = 'ctaTransferidas.php'
 self.close();
@@ -392,16 +392,16 @@ $result3=mysql_db_query($basedatos,$sSQL3);
 $myrow3 = mysql_fetch_array($result3);
 ?>
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
   
@@ -688,7 +688,7 @@ $myrow321['cantidadF']=round($myrow321['cantidadF'],2);
 	  <td bgcolor="<?php echo $color;?>" class="normal"><div align="center">
 	  
 	 
-	  <a href="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/cxc/subCuentasParticular.php?nRequisicion=<?php echo $requisicion; ?>&almacen=<?php echo $ALMACEN; ?>&nT=<?php echo $_GET['nT']; ?>&keyCAP=<?php echo $myrow81['keyCAP'];?>&aseguradora=<?php echo $_GET['aseguradora']; ?>&entidad=<?php echo $entidad; ?>&particular=<?php echo $_GET['particular']; ?>&referido=<?php echo $_GET['referido']; ?>&gpoProducto=<?php echo $gpoProducto; ?>&tipoCliente=<?php echo $myrow81['tipoCliente']; ?>&codigo=<?php echo $C; ?>&almacenes=<?php echo $Cd; ?>')">
+	  <a href="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/cxc/subCuentasParticular.php?nRequisicion=<?php echo $requisicion; ?>&almacen=<?php echo $ALMACEN; ?>&nT=<?php echo $_GET['nT']; ?>&keyCAP=<?php echo $myrow81['keyCAP'];?>&aseguradora=<?php echo $_GET['aseguradora']; ?>&entidad=<?php echo $entidad; ?>&particular=<?php echo $_GET['particular']; ?>&referido=<?php echo $_GET['referido']; ?>&gpoProducto=<?php echo $gpoProducto; ?>&tipoCliente=<?php echo $myrow81['tipoCliente']; ?>&codigo=<?php echo $C; ?>&almacenes=<?php echo $Cd; ?>')">
 	  <label></label>
 	  </a>
 	  
@@ -699,7 +699,7 @@ $myrow321['cantidadF']=round($myrow321['cantidadF'],2);
 	  $diferiencia=$suma[0]-$myrow341['cantidadF'];
 	  if($_POST['folioFactura'] and $diferiencia!='0' and $myrow81['statusFactura']=='request'){ ?>
       <a href="#" onClick="javascript:ventanaSecundaria8('ventanaCambiaImporte.php?keyCAP=<?php echo $myrow81['keyCAP']; ?>
-&seguro=<?php echo $myrow3['seguro']; ?>&folioFactura=<?php echo $_POST['folioFactura']; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>')"><img src="/sima/imagenes/modificascl.png" width="12" height="12" border="0" /></a>
+&seguro=<?php echo $myrow3['seguro']; ?>&folioFactura=<?php echo $_POST['folioFactura']; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/modificascl.png" width="12" height="12" border="0" /></a>
       <?php } ?>
 </div></td>
       </tr>

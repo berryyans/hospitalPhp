@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class consultaArticulosPrecio{
 public function consultarArticulos($almacen,$entidad,$basedatos){
 ?>
@@ -186,7 +187,7 @@ setTimeout("jump0()",50)}}
 }
 ?>
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 <!--<script src="/sima/js/prototype.js" type="text/javascript"></script>-->
 
 <!-- set focus to a field with the name "searchcontent" in my form -->
@@ -242,9 +243,9 @@ echo $_GET['buscar'];
 ?>
 
 
-	<link href="/sima/js/editinplace.css" rel="Stylesheet" type="text/css" />
+	<link href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editinplace.css" rel="Stylesheet" type="text/css" />
 	<!--<script src="/sima/js/prototype.js" type="text/javascript"></script>-->
-	<script src="/sima/js/editinplace.js" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editinplace.js" type="text/javascript"></script>
 
 
 
@@ -442,7 +443,7 @@ document.Form2.criterio.focus();
 </script>
       </span></td>
       <td width="102"><span >
-        <input type="image" src="/sima/imagenes/btns/searcharticles.png"  value="Buscar" />
+        <input type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png"  value="Buscar" />
       </span></td>
       <td width="98"><span >Mostrar Registros</span></td>
       <td width="54"><span >
@@ -639,11 +640,11 @@ $myrow39 = mysql_fetch_array($result39);
           <label>
           <?php 
 	  if(!$bali){
-	   echo '<img src="/sima/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0"  />';
+	   echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0"  />';
 	   }
 	  ?>
           <?php if($myrow['generico']=='si'){?>
-          <blink> <img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
+          <blink> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
           <?php } else { echo '';}?>
 		  
 		  

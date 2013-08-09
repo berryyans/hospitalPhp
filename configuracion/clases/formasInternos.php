@@ -27,15 +27,15 @@ function ventanaSecundaria3 (URL){
 </script> 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
 <script language="javascript" type="text/javascript">   
 
@@ -1629,9 +1629,9 @@ echo 'readonly=""';
 if( $myrow['gpoProducto']){ $errores1='No tiene grupo de producto';}
  ?>
         <?php if($priceLevel ){ ?>
-        <a href="javascript:ventanaSecundaria20('/sima/cargos/ventanaErrores.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&error=<?php echo $errores; ?>&error1=<?php echo $errores1; ?>')"> <img src="/sima/imagenes/btns/checkbtn.png" width="24" height="24" border="0" alt="ERRORES" /></a>
+        <a href="javascript:ventanaSecundaria20('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaErrores.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&error=<?php echo $errores; ?>&error1=<?php echo $errores1; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="24" height="24" border="0" alt="ERRORES" /></a>
         <?php } else { ?>
-        <img src="/sima/imagenes/candado.png" width="22" height="22" alt="OK" />
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/candado.png" width="22" height="22" alt="OK" />
         <?php } ?>
    </td>
       

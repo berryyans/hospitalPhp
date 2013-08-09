@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 $sSQLC= "Select * From statusCaja where entidad='".$entidad."' and usuario='".$usuario."' order by keySTC DESC ";
 $resultC=mysql_db_query($basedatos,$sSQLC);
 $myrowC = mysql_fetch_array($resultC);
@@ -44,16 +45,16 @@ if(win.window.focus){win.window.focus();}
 }
 
 </script>
-<script src="/sima/js/jquery.js" type="text/javascript"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/jquery.js" type="text/javascript"></script>
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -131,7 +132,7 @@ Corte: <?php echo $myrowC['numCorte'];?></h5>
     <input name="button" type="button"  id="lanzador" value="..." />
 </p>
       <div id="contentLoading" class="contentLoading">
-<img src="/sima/imagenes/barras/loading30.gif" alt="Loading data, please wait...">
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/barras/loading30.gif" alt="Loading data, please wait...">
 </div>
 <div id="contentArea">
 </div>
@@ -154,7 +155,7 @@ Corte: <?php echo $myrowC['numCorte'];?></h5>
 <script type="text/javascript">
 <!--
 jQuery(function($) {
-$("#contentArea").load("/sima/INGRESOS HLC/caja/listaOrdenes1.php?almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&fecha2=<?php echo $fecha2;?>&fecha1=<?php echo $date;?>&almacen=<?php echo $ALMACEN;?>&tipoOrden=<?php echo $_GET['tipoOrden'];?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&warehouse=<?php echo $_GET['warehouse'];?>");
+$("#contentArea").load("<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/listaOrdenes1.php?almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&fecha2=<?php echo $fecha2;?>&fecha1=<?php echo $date;?>&almacen=<?php echo $ALMACEN;?>&tipoOrden=<?php echo $_GET['tipoOrden'];?>&descripcionTransaccion=<?php echo $descripcionTransaccion;?>&warehouse=<?php echo $_GET['warehouse'];?>");
 });
 
 $().ajaxSend(function(r,s){

@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class editarClientes {
 
 
@@ -583,13 +584,13 @@ echo $myrow2['cp'];
   <table width="64%" >
     <tr align="center">
       <td width="34%"><div align="center">
-        <input name="nuevo" type="submit" src="/sima/imagenes/btns/newbutton.png"  id="nuevo" value="Nuevo" />
+        <input name="nuevo" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/newbutton.png"  id="nuevo" value="Nuevo" />
       </div></td>
       <td width="32%"><div align="center">
-        <input name="borrar" type="submit"  src="/sima/imagenes/btns/deletebutton.png" id="borrar" value="Eliminar Cliente" />
+        <input name="borrar" type="submit"  src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/deletebutton.png" id="borrar" value="Eliminar Cliente" />
       </div></td>
       <td width="34%"><div align="center">
-        <input name="actualizar" type="submit" src="/sima/imagenes/btns/modifybutton.png" id="actualizar" value="Modificar/Grabar Cliente" />
+        <input name="actualizar" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/modifybutton.png" id="actualizar" value="Modificar/Grabar Cliente" />
       </div></td>
     </tr>
   </table>

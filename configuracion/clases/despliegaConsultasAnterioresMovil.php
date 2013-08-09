@@ -1,4 +1,6 @@
-<?php class despliegaCA{
+<?php 
+require('/Constantes.php');
+class despliegaCA{
 public function consultasAnteriores($ventana,$TITULO,$numeroE,$basedatos){ ?>
 
 <script language=javascript> 
@@ -15,7 +17,7 @@ function ventanaSecundaria (URL){
 .style7 {font-size: 9px}
 -->
 </style>
-<p align="center"><?php echo $TITULO;?><a href="/sima/movil/principal.php"><span class="style7">Regresar a Men&uacute;</span></a></p>
+<p align="center"><?php echo $TITULO;?><a href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/movil/principal.php"><span class="style7">Regresar a Men&uacute;</span></a></p>
 <form name="form1" method="post" action="">
   <table width="568" border="0" align="center">
       <tr>

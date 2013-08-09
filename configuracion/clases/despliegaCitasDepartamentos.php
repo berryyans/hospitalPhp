@@ -11,17 +11,17 @@ require(CONSTANT_PATH_CONFIGURACION."/componentes/comboAlmacen.php");
 
 	
 ?>
-<script src="/sima/js/jquery.js" type="text/javascript"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/jquery.js" type="text/javascript"></script>
 <!-Hoja de estilos del calendario --> 
-<link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-system.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-system.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
 <script language=javascript> 
@@ -119,7 +119,7 @@ echo $myrow6['descripcion'];
 
     <tr valign="middle" class="style71">
       <th width="49" class="negro" scope="col"><span class="Estilo25">
-        <input name="button" type="image"  id="lanzador" value="fecha"  src="/sima/imagenes/btns/fechadate.png"/>
+        <input name="button" type="image"  id="lanzador" value="fecha"  src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fechadate.png"/>
       </span></th>
       <th width="283" scope="col"><div align="left">
         <input name="fechaSolicitud" type="text" class="campos" id="campo_fecha"
@@ -176,7 +176,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
 	  
 	  <a href="#" onClick="javascript:ventanaSecundaria7('ventanaMedicosNotas.php?numeroE=<?php echo $numeroE; ?>
 		&nCuenta=<?php echo $nCuenta; ?>&keyCAP=<?php echo $keyCAP; ?>&almacen=<?php echo $almacenDestino; ?>&fechaSolicitud=<?php echo $_GET['fechaSolicitud'];?>&id_medico=<?php echo $_GET['almacenDestino1'];?>&alma=<?php echo $almacen;?>')">
-		<img src="/sima/imagenes/btns/addnote.png" alt="Agregar Notas" border="0" /></a>	  </th>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addnote.png" alt="Agregar Notas" border="0" /></a>	  </th>
       <th scope="col"><div align="left">
 	  
 	  </div></th>
@@ -209,7 +209,7 @@ echo 'Atte: '.$myrow6['usuario'];
   <tr>
     <td>
     <div id="contentLoading" class="contentLoading">
-<img src="/sima/imagenes/barras/loading30.gif" alt="Loading data, please wait...">
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/barras/loading30.gif" alt="Loading data, please wait...">
 </div>
 <div id="contentArea">
 </div>

@@ -1,6 +1,6 @@
 <?php 
 require('/Constantes.php');
-include('/var/www/html/sima/js/pdf/fpdf_js.php');
+include(CONSTANT_PATH_SIMA.'/js/pdf/fpdf_js.php');
 
 
 

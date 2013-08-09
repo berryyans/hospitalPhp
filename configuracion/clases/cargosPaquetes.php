@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language=javascript> 
 function ventanaSecundaria3 (URL){ 
    window.open(URL,"ventana3","width=420,height=350,scrollbars=YES") 
@@ -103,7 +106,7 @@ echo mysql_error();
 //********************ABRO IMPRESIONES*****************
 ?>
 <script>
-javascript:ventanaSecundaria2('/sima/cargos/imprimirCargosPaq.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $_GET['keyClientesInternos'];?>&entidad=<?php echo $entidad;?>&usuario=<?php echo $usuario;?>&keyCAP=<?php echo $myrow333['keyCAP'];?>&random=<?php echo $random;?>&departamento=<?php echo $_GET['almacen'];?>&codigoPaquete=<?php echo $_POST['codigoPaquete'];?>&folioVenta=<?php echo $_GET['folioVenta'];?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirCargosPaq.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $_GET['keyClientesInternos'];?>&entidad=<?php echo $entidad;?>&usuario=<?php echo $usuario;?>&keyCAP=<?php echo $myrow333['keyCAP'];?>&random=<?php echo $random;?>&departamento=<?php echo $_GET['almacen'];?>&codigoPaquete=<?php echo $_POST['codigoPaquete'];?>&folioVenta=<?php echo $_GET['folioVenta'];?>');
 window.opener.document.forms["form1"].submit();
 </script>
 <?php 
@@ -326,7 +329,7 @@ $pVC[0]+=$precioVenta->precioVenta($paquete,$_POST['generico'],$cantidad,$numero
 		
               		<?php if( $myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>
 		
 		<?php if( $myrow3145['status']=='cargado'){echo '<span class="Estilo25">'.' [Articulo Cargado]'.'</span>';}?>
@@ -365,9 +368,9 @@ $statusExistencias->statusExistencias($entidad,$myrow['servicio'],$almacen,$myro
         <td bgcolor="<?php echo $color;?>" ><?php 
 		if($statusExistencias->statusExistencias($myrow['servicio'],$almacen,$myrow['codigo'],$basedatos)=='disabled') { 
 		$banderaDisabled='disabled';
-		echo '<img src="/sima/imagenes/pregunta.png" width="12" height="12" alt="NO HAY EXISTENCIAS" />';
+		echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/pregunta.png" width="12" height="12" alt="NO HAY EXISTENCIAS" />';
 		} else {
-		echo '<img src="/sima/imagenes/ok.jpeg" width="12" height="12" alt="OK" />';
+		echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/ok.jpeg" width="12" height="12" alt="OK" />';
 		}
 		?></td>
         <td bgcolor="<?php echo $color;?>" >
@@ -397,7 +400,7 @@ $statusExistencias->statusExistencias($entidad,$myrow['servicio'],$almacen,$myro
 <?php if($bandera>=1 and $bandera!=$incrementa){ 
 
 ?>
-      <input name="insertarArticulos" type="image" src="/sima/imagenes/btns/addarticles.png" id="insertarArticulos" 
+      <input name="insertarArticulos" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addarticles.png" id="insertarArticulos" 
 	  value="Agregar Articulos" />
 	  <?php }} ?>
     

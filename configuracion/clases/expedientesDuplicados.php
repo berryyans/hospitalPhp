@@ -1,4 +1,6 @@
-<?php  class expedientes{ 
+<?php  
+require('/Constantes.php');
+class expedientes{ 
 public function expedientesDuplicados($entidad,$usuario,$numeroE,$basedatos){ ?>
 
 <script language="javascript" type="text/javascript">   
@@ -134,7 +136,7 @@ $estilos->styles();
       <th colspan="3"><div align="center" >Datos del Paciente </div></th>
     </tr>
     <tr valign="middle" >
-      <td height="49" colspan="3" class="normalmid">Nuevo Paciente <span class="Estilo26"><span class="style121"><a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" /></a><a href="javascript:ventanaSecundaria1('modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')">
+      <td height="49" colspan="3" class="normalmid">Nuevo Paciente <span class="Estilo26"><span class="style121"><a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" /></a><a href="javascript:ventanaSecundaria1('modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')">
         <input name="numeroEx" type="hidden" class="Estilo28" id="numeroEx" size="60" readonly="" value="">
       </a></span></span></td>
     </tr>
@@ -240,7 +242,7 @@ while($myrow = mysql_fetch_array($result)){
         <td bgcolor="<?php echo $color;?>" ><div align="center"><span >
           
           
-          <a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/btns/editbtn.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" /></a>
+          <a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/editbtn.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" /></a>
          
         </span></div></td>
     </tr>

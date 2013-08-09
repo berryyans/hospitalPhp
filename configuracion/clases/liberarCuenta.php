@@ -223,7 +223,7 @@ echo '<span class="style9">'.' [La Cuenta en este departamento ha sido Liberada]
 	  if($myrow12['altaEspecial'] and $myrow11['status']=='standby'){
 	  
 	  ?>
-	  <img src="/sima/imagenes/iconosSima/lock_icon.jpg" alt="LA CUENTA ESTA EN PROCESO" width="12" height="12" border="0" />
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/iconosSima/lock_icon.jpg" alt="LA CUENTA ESTA EN PROCESO" width="12" height="12" border="0" />
 	  
 	  
 	  <?php } else { ?>
@@ -232,13 +232,13 @@ echo '<span class="style9">'.' [La Cuenta en este departamento ha sido Liberada]
 	   { ?>
 	  
 	  	
-	  <a href='liberarCuenta.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&alta=<?php echo $alta; ?>&nT=<?php echo $nT; ?>'"><img src="/sima/imagenes/iconosSima/lock_icon.jpg" alt="LA CUENTA YA FUE REVISADA, FALTA LIBERAR" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas liberar la cuenta del paciente <?php echo $myrow['paciente'];?>?') == false){return false;}" />	  </a>
+	  <a href='liberarCuenta.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&alta=<?php echo $alta; ?>&nT=<?php echo $nT; ?>'"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/iconosSima/lock_icon.jpg" alt="LA CUENTA YA FUE REVISADA, FALTA LIBERAR" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas liberar la cuenta del paciente <?php echo $myrow['paciente'];?>?') == false){return false;}" />	  </a>
 	  
 	  <?php } else if($myrow11['status']=='cargado') { ?>
 
-	    <img src="/sima/imagenes/iconosSima/unlock_icon.jpg" alt="CUENTA REVISADA" width="12" height="12" border="0"  />
+	    <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/iconosSima/unlock_icon.jpg" alt="CUENTA REVISADA" width="12" height="12" border="0"  />
 	  <?php } else {?>
-	  <img src="/sima/imagenes/pendiente.png" alt="LA CUENTA FALTA POR REVISAR" width="12" height="12" border="0"  />
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/pendiente.png" alt="LA CUENTA FALTA POR REVISAR" width="12" height="12" border="0"  />
 	  <?php }} ?>	  </td>
     </tr>
     <?php  }}?>

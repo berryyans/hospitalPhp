@@ -1,4 +1,6 @@
-<?php class articulos
+<?php 
+require('/Constantes.php');
+class articulos
 public function catalogoArticulos($entidad,$usuario,$codigo,$fecha1,$basedatos){
 $hora1= date("H:i a");
 ?>
@@ -29,10 +31,10 @@ function ventanaSecundaria2 (URL){
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -55,7 +57,7 @@ function vacio(q) {
 //valida que el campo no este vacio y no tenga solo espacios en blanco   
 function valida(F) {   
       if( vacio(F.descripcion.value) == false ) {   
-                alert("Por Favor, escribe una breve descripción del artículo!")   
+                alert("Por Favor, escribe una breve descripciï¿½n del artï¿½culo!")   
                 return false   
         } else if( vacio(F.gpoProducto.value) == false ) {   
                 alert("Por Favor, escribe el grupo de producto que deseas anexar!")   
@@ -64,19 +66,19 @@ function valida(F) {
                 alert("Por Favor, escoje el costo!")   
                 return false   
         } else if( vacio(F.pmax.value) == false ) {   
-                alert("Por Favor, escoje el máximo!")   
+                alert("Por Favor, escoje el mï¿½ximo!")   
                 return false   
         } else if( vacio(F.reorden.value) == false ) {   
                 alert("Por Favor, escoje el punto de reorden!")   
                 return false   
         } else if( vacio(F.pmin.value) == false ) {   
-                alert("Por Favor, escoje el mínimo!")   
+                alert("Por Favor, escoje el mï¿½nimo!")   
                 return false   
         } else if( vacio(F.precioEfectivo.value) == false ) {   
-                alert("Por Favor, escoje el precio efectivo venta al público!")   
+                alert("Por Favor, escoje el precio efectivo venta al pï¿½blico!")   
                 return false   
         } else if( vacio(F.precioCredito.value) == false ) {   
-                alert("Por Favor, escoje el precio Credito venta al público!")   
+                alert("Por Favor, escoje el precio Credito venta al pï¿½blico!")   
                 return false   
          }  
 }   
@@ -87,7 +89,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -401,8 +403,8 @@ $myrow11 = mysql_fetch_array($result11);
 		?>
          </select>
       </label>	  </td>
-      <td width="68" bgcolor="#FFCCFF"><a href="gpoProductos.php"></a><a href="javascript:ventanaSecundaria('/sima/cargos/gpoProductos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
-	  <img src="/sima/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a></td>
+      <td width="68" bgcolor="#FFCCFF"><a href="gpoProductos.php"></a><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/gpoProductos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a></td>
     </tr>
     
 	
@@ -412,9 +414,9 @@ $myrow11 = mysql_fetch_array($result11);
 	  <td colspan="2"><label>
 	    <input name="cbarra" type="text" class="style12" id="cbarra" value="<?php echo $myrow['cbarra']; ?>" size="40"  autocomplete="off"/>
 	    <a href="javascript:ventanaSecundaria4(
-		'/sima/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a>
-	    <a href="javascript:ventanaSecundaria3('/sima/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
-		<img src="/sima/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a></label></td>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a>
+	    <a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a></label></td>
     </tr>
 	<tr>
 	  <th scope="col">&nbsp;</th>
@@ -445,8 +447,8 @@ $myrow11 = mysql_fetch_array($result11);
       <input name="um" type="text" class="Estilo24" id="um" 
 		onchange="javascript:this.form.submit();"
 		value="<?php echo $myrow['um']; ?>" size="4"   readonly="" />
-      <span class="Estilo24"><a href="javascript:ventanaSecundaria2('/sima/cargos/ventanaEmergenteUM.php?campoDespliega=<?php echo "umDescripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;nombreCampo=<?php echo "um"; ?>&amp;usuario=<?php echo $usuario; ?>')">
-	  <img src="/sima/imagenes/Save.png" alt="Unidad de Medida" width="20" height="20" border="0" /></a>
+      <span class="Estilo24"><a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaEmergenteUM.php?campoDespliega=<?php echo "umDescripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;nombreCampo=<?php echo "um"; ?>&amp;usuario=<?php echo $usuario; ?>')">
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Unidad de Medida" width="20" height="20" border="0" /></a>
 	  <?php
 	  $um=$myrow['um'];
 	  $sSQL11= "SELECT 
@@ -458,8 +460,8 @@ $result11=mysql_db_query($basedatos,$sSQL11);
 $myrow11 = mysql_fetch_array($result11);
 	  ?>
       <input name="umDescripcion" type="text" class="Estilo24" id="umDescripcion" value="<?php echo $myrow11['descripcionUM'];?>" size="40" readonly="" />
-      <a href="javascript:ventanaSecundaria('/sima/cargos/um.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
-	  <img src="/sima/imagenes/Save.png" alt="EDITAR UNIDAD DE MEDIDA" width="20" height="20" border="0" /></a></span></td>
+      <a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/um.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="EDITAR UNIDAD DE MEDIDA" width="20" height="20" border="0" /></a></span></td>
     </tr>
     
 	<?php 
@@ -508,12 +510,12 @@ $PA=$myrow111['keyPA'];
 	if($myrow['codigo']){ ?>
       <td bgcolor="#660066"><span class="style13">Agregar Almacen:</span></td>
 	  <td colspan="2" bgcolor="#FFCCFF"><label></label>
-          <label><a href="javascript:ventanaSecundaria('/sima/cargos/listaAlmacenesTodos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="/sima/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></label></td>
+          <label><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenesTodos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></label></td>
     </tr>
 	<tr>
       <th scope="col">&nbsp;</th>
 	  <td bgcolor="#660066"><span class="style13">M&aacute;ximos y M&iacute;nimos, Reorden: </span></td>
-	  <td colspan="2"><a href="javascript:ventanaSecundaria('/sima/cargos/maximosMinimos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="/sima/imagenes/Save.png" alt="M&aacute;ximos y M&iacute;nimos" width="20" height="20" border="0" /></a></td>
+	  <td colspan="2"><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/maximosMinimos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="M&aacute;ximos y M&iacute;nimos" width="20" height="20" border="0" /></a></td>
     </tr>
 	    <?php } ?>
 	<tr>

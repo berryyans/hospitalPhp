@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 //clase 3
 class aplicarPaquetes{
 public function aplicaPaquete($entidad,$almacenSolicitante,$ID_EJERCICIOM,$dia,$fecha1,$hora1,$usuario,$numeroPaciente,$seguro,$credencial,$medico,$almacenSolicitante,$nCuenta,$tipoCargo,$almacenDestino,$tipoPaciente,$basedatos){
@@ -13,15 +14,15 @@ function ventanaSecundaria3 (URL){
 </script> 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
 <script language="javascript" type="text/javascript">   
 
@@ -579,7 +580,7 @@ if($result=mysql_db_query($basedatos,$sSQL)){
 		echo $_POST['horaSolicitud'];?>" size="10"/>
         </label>
         <input name="H2" type="button" class="style71" id="H2"  onclick="javascript:ventanaSecundaria3(
-		'/sima/cargos/citas.php?numeroE=<?php echo $numeroPaciente?>&amp;forma=<?php echo "form2"; ?>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/citas.php?numeroE=<?php echo $numeroPaciente?>&amp;forma=<?php echo "form2"; ?>
 		&amp;campoDespliega=<?php echo "horaSolicitud"; ?>
 		&amp;almacenSolicitante=<?php echo $_POST['almacenDestino1']; ?>
 		&amp;campoDespliegaFecha=<?php echo "fechaSolicitud"; ?>
@@ -730,7 +731,7 @@ $myrow39 = mysql_fetch_array($result39);
 		?>
 		<?php 
 		if($myrow['paquete']=='si'){
-		echo '<img src="/sima/imagenes/p.jpeg" width="12" height="12" alt="ES UN PAQUETE" />';
+		echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/p.jpeg" width="12" height="12" alt="ES UN PAQUETE" />';
 
 		}
 		
@@ -741,7 +742,7 @@ $myrow39 = mysql_fetch_array($result39);
 		
               		<?php if( $myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>
 		
 		
@@ -818,11 +819,11 @@ echo $statusExistencias->statusExistencias($unidadMedida->unidadMedida($codigo,$
 if($statusExistencias->statusExistencias($myrow['servicio'],$almacen,$myrow['codigo'],$basedatos)=='readonly' 
 and $myrow['gpoProducto']) { 
 		$errores='No hay existencias en el almacen: '.$almacen; ?>
-		<a href="javascript:ventanaSecundaria20('/sima/cargos/ventanaErrores.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&error=<?php echo $errores; ?>&error1=<?php echo $errores1; ?>')">
-		<img src="/sima/imagenes/pregunta.png" width="12" height="12" border="0" alt="ERRORES" /></a>		
+		<a href="javascript:ventanaSecundaria20('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaErrores.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&error=<?php echo $errores; ?>&error1=<?php echo $errores1; ?>')">
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/pregunta.png" width="12" height="12" border="0" alt="ERRORES" /></a>		
 		<?php 
 		} else {
-		echo '<img src="/sima/imagenes/ok.jpeg" width="12" height="12" alt="OK" />';
+		echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/ok.jpeg" width="12" height="12" alt="OK" />';
 		}
 		?>
 		</label></td>

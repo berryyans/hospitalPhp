@@ -15,15 +15,15 @@ function ventanaSecundaria3 (URL){
 </script> 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
 <script language="javascript" type="text/javascript">   
 
@@ -509,10 +509,10 @@ $estilos-> styles();
         <table width="200">
           <tr>
             <td><div align="center">
-<input name="M"  type="image"  id="M"  onclick="javascript:ventanaSecundaria6('/sima/cargos/ventanaCargaPaquetesPersonalizado.php?campoDespliega=<?php echo "despliegaArticulo"; ?>&forma=<?php echo "form2"; ?>&campo=<?php echo "codigoPaquete"; ?>&almacen=<?php echo $_POST['almacenDestino'];?>&numeroE=<?php echo $myrow311['numeroE'];?>&keyClientesInternos=<?php echo $myrow311['keyClientesInternos'];?>')" value="Cargar" />
+<input name="M"  type="image"  id="M"  onclick="javascript:ventanaSecundaria6('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaCargaPaquetesPersonalizado.php?campoDespliega=<?php echo "despliegaArticulo"; ?>&forma=<?php echo "form2"; ?>&campo=<?php echo "codigoPaquete"; ?>&almacen=<?php echo $_POST['almacenDestino'];?>&numeroE=<?php echo $myrow311['numeroE'];?>&keyClientesInternos=<?php echo $myrow311['keyClientesInternos'];?>')" value="Cargar" />
             </div></td>
             <td><div align="center">
-              <input name="close" type="image" src="/sima/imagenes/btns/close.png" id="close" value="Cerrar Ventana (x)" onClick="cerrarVentana()" />
+              <input name="close" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/close.png" id="close" value="Cerrar Ventana (x)" onClick="cerrarVentana()" />
             </div></td>
             <td><div align="center">
               <input name="mostrar" type="image"  id="mostrar2" value="Mostrar" />
@@ -708,7 +708,7 @@ $pVC[0]+=$precioVenta->precioVenta($paquete,$_POST['generico'],$cantidad,$numero
 		
               		<?php if( $myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>
 		
 		<?php if( $myrow3145['status']=='cargado'){echo '<span class="Estilo25">'.' [Articulo Cargado]'.'</span>';}?>
@@ -752,9 +752,9 @@ $statusExistencias->statusExistencias($entidad,$myrow['servicio'],$almacen,$myro
         <td bgcolor="<?php echo $color;?>" ><?php 
 		if($statusExistencias->statusExistencias($entidad,$myrow['servicio'],$almacen,$myrow['codigo'],$basedatos)=='disabled') {
 		$banderaDisabled='disabled';
-		echo '<img src="/sima/imagenes/pregunta.png" width="12" height="12" alt="NO HAY EXISTENCIAS" />';
+		echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/pregunta.png" width="12" height="12" alt="NO HAY EXISTENCIAS" />';
 		} else {
-		echo '<img src="/sima/imagenes/ok.jpeg" width="12" height="12" alt="OK" />';
+		echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/ok.jpeg" width="12" height="12" alt="OK" />';
 		}
 		?></td>
         <td bgcolor="<?php echo $color;?>" >
@@ -784,7 +784,7 @@ $statusExistencias->statusExistencias($entidad,$myrow['servicio'],$almacen,$myro
 <?php if($bandera>=1 and $bandera!=$incrementa){ 
 
 ?>
-      <input name="insertarArticulos" type="submit" src="/sima/imagenes/btns/addarticles.png" id="insertarArticulos" class="boton1"
+      <input name="insertarArticulos" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addarticles.png" id="insertarArticulos" class="boton1"
 	  value="Agregar Articulos" />
 	  <?php }} ?>
     

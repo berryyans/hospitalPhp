@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language=javascript> 
 function ventanaSecundaria8 (URL){ 
    window.open(URL,"ventana8","width=500,height=200,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -278,7 +281,7 @@ $col = "";
         </td>
         <td bgcolor="<?php echo $color;?>" class="normal"><?php 
 		if($myrow['tipoTransaccion'] and !$myrow11['descripcion']){
-		echo "Depósito ó Movimiento de Caja" ;
+		echo "Depï¿½sito ï¿½ Movimiento de Caja" ;
 		} else {
 			
 					$descripcion=new articulosDetalles();
@@ -288,12 +291,12 @@ $col = "";
 		}
 		?>
 		<?php if($myrow['status']=='cancelado'){ ?>
-		  <span class="Estilo25"><blink><?php echo '(Artículo Cancelado por '.$myrow['usuarioCancela'].')';?></blink></span>
+		  <span class="Estilo25"><blink><?php echo '(Artï¿½culo Cancelado por '.$myrow['usuarioCancela'].')';?></blink></span>
 		<?php } ?>
 		
 			<?php if($myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>		
 		
 		
@@ -351,11 +354,11 @@ echo "N/A";
       <table width="332" border="0">
         <tr valign="middle">
           <td width="143"><div align="center">
-            <input name="send" type="image" src="/sima/imagenes/btns/sendsolicitud.png" id="enviar" value="Enviar Solicitud" onClick="return comprueba();" />
+            <input name="send" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/sendsolicitud.png" id="enviar" value="Enviar Solicitud" onClick="return comprueba();" />
           </div></td>
           <td width="46"><div align="center"></div></td>
           <td width="129"><div align="center">
-            <input name="borrar" type="image" src="/sima/imagenes/btns/delete2button.png" id="numPaciente" value="Borrar/Eliminar" />
+            <input name="borrar" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/delete2button.png" id="numPaciente" value="Borrar/Eliminar" />
            <p class="negro"> <?php } else { echo 'No hay Registros';}?></p>
           </div></td>
         </tr>

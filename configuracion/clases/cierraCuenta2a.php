@@ -295,7 +295,7 @@ $_POST['tipoVista']='Detalle';
 
 <?php if($_POST['imprimir']) { ?>
 <script>
-javascript:ventanaSecundaria2('/sima/cargos/imprimirCargosInternosCC.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirCargosInternosCC.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>');
   <!--
 window.opener.document.forms["form1"].submit();
 self.close();
@@ -304,16 +304,16 @@ self.close();
 
 <?php } ?>
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
   
@@ -529,9 +529,9 @@ $myrow661 = mysql_fetch_array($result661);
       <td bgcolor="<?php echo $color?>" class="normal"><span class="style71"><?php echo $myrow661['usuario'];?></span></td>
       <td bgcolor="<?php echo $color?>" class="normal"><span class="style71"><?php 
 	  if( !$myrow661['status']){
-	  echo '<img src="/sima/imagenes/candado.png" alt="LA CUENTA ESTA EN REVISION" width="12" height="12" border="0">';
+	  echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/candado.png" alt="LA CUENTA ESTA EN REVISION" width="12" height="12" border="0">';
 	  } else {
-	  echo '<img src="/sima/imagenes/solicitado.png" alt="LA CUENTA ESTA EN REVISION" width="12" height="12" border="0">';
+	  echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/solicitado.png" alt="LA CUENTA ESTA EN REVISION" width="12" height="12" border="0">';
 	  }
 	  ?>
       <span class="normal"></span></span></td>
@@ -1021,7 +1021,7 @@ echo $mostrarCuadroGP->mostrarCuadrito($_POST['fecha'],$_POST['fecha2'],'normal'
           <tr bgcolor="#660066">
             <th class="blanco" scope="col">
 			
-			<span class="blanco">Particular<a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
+			<span class="blanco">Particular<a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&amp;tipoCliente=<?php echo 'particular';?>')"> </a></span></th>
           </tr>
           <tr>
@@ -1034,7 +1034,7 @@ echo $mostrarCuadroGP->mostrarCuadrito($_POST['fecha'],$_POST['fecha2'],'normal'
 		$T=$cargosParticulares->cargosParticulares($basedatos,$usuario,$numeroE,$nCuenta);
 		// $T=round($T,$ase);
 		if($T and $transacciones=='si'){ ?>
-                <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?almacenFuente=<?php echo $bali; ?>&numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'particular';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoPago=Efectivo')">
+                <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?almacenFuente=<?php echo $bali; ?>&numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'particular';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoPago=Efectivo')">
                 <?php 	
 
 		echo "$".number_format($cargosParticulares->cargosParticulares($basedatos,$usuario,$numeroE,$nCuenta),2);
@@ -1066,7 +1066,7 @@ echo $mostrarCuadroGP->mostrarCuadrito($_POST['fecha'],$_POST['fecha2'],'normal'
                 <?php 
 		$otros=new acumulados();
 		if($otros->otros($basedatos,$usuario,$numeroE,$nCuenta)>0){    ?>
-                <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'otros';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>')">
+                <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'otros';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>')">
                 <?php 
 		echo "$".number_format($otros->otros($basedatos,$usuario,$numeroE,$nCuenta),2);?>
                 </a>
@@ -1093,7 +1093,7 @@ echo $mostrarCuadroGP->mostrarCuadrito($_POST['fecha'],$_POST['fecha2'],'normal'
                 <?php 
 		$coaseguro=new acumulados();
 		if($coaseguro->cargosCoaseguro($basedatos,$usuario,$numeroE,$nCuenta)>0){    ?>
-                <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'coaseguro';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>')">
+                <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'coaseguro';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>')">
                 <?php 
 		echo "$".number_format($coaseguro->cargosCoaseguro($basedatos,$usuario,$numeroE,$nCuenta),2);?>
                 </a>
@@ -1123,7 +1123,7 @@ echo $mostrarCuadroGP->mostrarCuadrito($_POST['fecha'],$_POST['fecha2'],'normal'
             <td><span class="normal">
               <?php $cargosAseguradora=new acumulados();
 		if($cargosAseguradora->cargosAseguradora($basedatos,$usuario,$numeroE,$nCuenta)!=null and $transacciones=='si'){ ?>
-              <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
+              <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
 		&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'aseguradora';?>&tipoVenta=<?php echo 'interno';?>')">
               <?php 
 		

@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 if(($_POST['previzualizar'] or $_POST['aplicarFactura']) and $_POST['folioFactura']){
 $sSQL3d= "Select numFactura From facturasAplicadas WHERE numFactura = '".$_POST['folioFactura']."' ";
 $result3d=mysql_db_query($basedatos,$sSQL3d);
@@ -162,7 +163,7 @@ $myrow3 = mysql_fetch_array($result3);
 if($myrow3['folioVenta']){ 
 ?>
 <script>
-javascript:ventanaSecundaria2('/sima/cargos/facturaExtensionesGrupos.php?keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&folioFactura=<?php echo $_POST['folioFactura']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&entidad=<?php echo $entidad;?>&rfc=<?php echo $_POST['rfc'];?>&razonSocial=<?php echo $_POST['razonSocial'];?>&calle=<?php echo $_POST['calle'];?>&colonia=<?php echo $_POST['colonia'];?>&ciudad=<?php echo $_POST['ciudad'];?>&estado=<?php echo $_POST['estado'];?>&cp=<?php echo $_POST['cp'];?>&pais=<?php echo $_POST['pais'];?>&delegacion=<?php echo $_POST['delegacion'];?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>'); 
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/facturaExtensionesGrupos.php?keyClientesInternos=<?php echo $_POST['keyClientesInternos']; ?>&folioFactura=<?php echo $_POST['folioFactura']; ?>&paciente=<?php echo $_POST['paciente']; ?>&usuario=<?php echo $usuario; ?>&hora1=<?php echo $hora1; ?>&fechaImpresion=<?php echo $_POST['fechaImpresion'];?>&credencial=<?php echo $_POST['credencial'];?>&siniestro=<?php echo $_POST['siniestro'];?>&entidad=<?php echo $entidad;?>&rfc=<?php echo $_POST['rfc'];?>&razonSocial=<?php echo $_POST['razonSocial'];?>&calle=<?php echo $_POST['calle'];?>&colonia=<?php echo $_POST['colonia'];?>&ciudad=<?php echo $_POST['ciudad'];?>&estado=<?php echo $_POST['estado'];?>&cp=<?php echo $_POST['cp'];?>&pais=<?php echo $_POST['pais'];?>&delegacion=<?php echo $_POST['delegacion'];?>&folioFactura=<?php echo $_POST['folioFactura'];?>&seguro=<?php echo $_GET['numCliente'];?>&paciente=<?php echo $_POST['paciente'];?>&folioVenta=<?php echo $_POST['folioVenta'];?>&bandera=<?php echo $_POST['bandera'];?>&entidad=<?php echo $entidad;?>'); 
 
 window.opener.document.forms["form1"].submit();
 //window.location = 'dividirCuentas.php'
@@ -183,16 +184,16 @@ window.alert("No existe ese folio de venta!");
 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
   
@@ -206,8 +207,8 @@ window.alert("No existe ese folio de venta!");
 
 
 
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
     
 <?php 
 $showStyles=new muestraEstilos();
@@ -275,7 +276,7 @@ $myrow3 = mysql_fetch_array($result3);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesPrincipales.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesPrincipales.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

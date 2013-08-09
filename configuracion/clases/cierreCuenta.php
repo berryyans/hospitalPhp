@@ -1,4 +1,6 @@
-<?php class close{ 
+<?php 
+require('/Constantes.php');
+class close{ 
 public function closing($keyClientesInternos,$basedatos){?>
 <table width="86%" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -10,7 +12,7 @@ public function closing($keyClientesInternos,$basedatos){?>
           <tr bgcolor="#660066">
             <th class="blanco" scope="col">
 			
-			<span class="blanco">Particular<a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
+			<span class="blanco">Particular<a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
 &amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&amp;tipoCliente=<?php echo 'particular';?>')"> </a></span></th>
           </tr>
           <tr>
@@ -34,7 +36,7 @@ public function closing($keyClientesInternos,$basedatos){?>
 		}
 		
 		?>
-                <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?almacenFuente=<?php echo $bali; ?>&numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'particular';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=particular&random=<?php echo rand(90000,900000000);?>&devolucion=<?php print $dev;?>&cantidadDevolucion=<?php echo $cantidadDevolucion;?>')">
+                <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?almacenFuente=<?php echo $bali; ?>&numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'particular';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=particular&random=<?php echo rand(90000,900000000);?>&devolucion=<?php print $dev;?>&cantidadDevolucion=<?php echo $cantidadDevolucion;?>')">
                 <?php 	
         
 		echo "$".number_format($cargosParticularesCC->cargosParticularesCC($basedatos,$usuario,$myrow3['keyClientesInternos']),2);
@@ -67,7 +69,7 @@ public function closing($keyClientesInternos,$basedatos){?>
 		$otros=new acumulados();
 		$ttO=$otros->otros($basedatos,$usuario,$numeroE,$nCuenta);
 		if($ttO){    ?>
-                <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'otros';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=otros&random=<?php echo rand(90000,900000000);?>')">
+                <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'otros';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=otros&random=<?php echo rand(90000,900000000);?>')">
                 <?php 
 		echo "$".number_format($otros->otros($basedatos,$usuario,$numeroE,$nCuenta),2);?>
                 </a>
@@ -100,7 +102,7 @@ public function closing($keyClientesInternos,$basedatos){?>
 		$coaseguro=new acumulados();
 		$ttCO=$coaseguro->cargosCoaseguro($basedatos,$usuario,$_GET['nT']);
 		if($ttCO){    ?>
-                <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'coaseguro';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=coaseguro&random=<?php echo rand(90000,900000000);?>')">
+                <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'coaseguro';?>&tipoVenta=<?php echo 'interno';?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoTransaccion=coaseguro&random=<?php echo rand(90000,900000000);?>')">
                 <?php 
 		echo "$".number_format($coaseguro->cargosCoaseguro($basedatos,$usuario,$_GET['nT']),2);?>
                 </a>
@@ -133,7 +135,7 @@ public function closing($keyClientesInternos,$basedatos){?>
               <?php 
 			  $ttCA=$cargosAseguradoraCC->cargosAseguradoraCC($basedatos,$usuario,$_GET['nT'] );
 		if($ttCA && !$coaseguro->cargosCoaseguro($basedatos,$usuario,$_GET['nT'])){ ?>
-              <a href="#" onClick="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
+              <a href="#" onClick="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?numeroE=<?php echo $numeroE; ?>
 		&almacen=<?php echo $bali; ?>&almacenFuente=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'aseguradora';?>&tipoVenta=<?php echo 'interno';?>&tipoTransaccion=aseguradora&random=<?php echo rand(90000,900000000);?>')">
               <?php 
 			echo "$".number_format($cargosAseguradoraCC->cargosAseguradoraCC($basedatos,$usuario,$_GET['nT']),2);?>

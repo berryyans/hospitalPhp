@@ -313,7 +313,7 @@ keyPA='".$myrow['keyPA']."'
     <tr bgcolor="#ffffff" onMouseOver="bgColor='#cccccc'" onMouseOut="bgColor='#ffffff'" >
 	        <td bgcolor="<?php echo $color?>" class="normal"><?php echo $myrow['keyPA'];?></td>
 <td height="24" bgcolor="<?php echo $color?>" class="normal">
-<a href="javascript:ventanaSecundaria8('/sima/cargos/cargarArticulosMaquilados.php?keyPA=<?php echo $myrow['keyPA']; ?>&descripcionArticulo=<?php echo $myrow['descripcionArticulo'];?>&keyR=<?php echo $myrow['keyR'];?>&almacenSolicitante=<?php echo $myrow['almacenPrincipal'];?>')">
+<a href="javascript:ventanaSecundaria8('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/cargarArticulosMaquilados.php?keyPA=<?php echo $myrow['keyPA']; ?>&descripcionArticulo=<?php echo $myrow['descripcionArticulo'];?>&keyR=<?php echo $myrow['keyR'];?>&almacenSolicitante=<?php echo $myrow['almacenPrincipal'];?>')">
 <?php 
 echo $myrow['descripcionArticulo'];
 ?>

@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class listadoPacientesClass{ 
 public function listadoPx($basedatos){ 
 ?>
@@ -12,7 +13,7 @@ public function listadoPx($basedatos){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -73,7 +74,7 @@ function ventanaSecundaria3 (URL){
 .style13 {color: #FFFFFF}		
 		</style>
 		
-		<script language="JavaScript" type="text/javascript" src="/sima/js/ajax_search.js"></script>
+		<script language="JavaScript" type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/ajax_search.js"></script>
 	</head>
 <body>
 

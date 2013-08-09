@@ -74,7 +74,7 @@ function checkIt(evt) {
     return true
 }
 </SCRIPT>
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -167,7 +167,7 @@ $comboAlmacen1->despliegaMiniAlmacen($entidad,'combos',$_POST['almacenDestino'],
       <td width="322"  scope="col"><span >
           </span>
         <div align="left" >
-          <input name="buscar" type="submit" src="/sima/imagenes/btns/searcharticles.png" id="buscar" value="buscar" />
+          <input name="buscar" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png" id="buscar" value="buscar" />
         </div>        </td>
     </tr>
   </table>
@@ -322,11 +322,11 @@ $myrow39 = mysql_fetch_array($result39);
         <td  ><?php echo $myrow['descripcion']; ?>
           <?php 
 	  if(!$bali){
-	   echo '<img src="/sima/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
+	   echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
 	   }
 	  ?>
           <?php if($myrow['generico']=='si'){?>
-          <blink> <img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /></blink>
+          <blink> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /></blink>
           <?php } else { echo '';}?></td>
        
         <td align="right"  ><?php 

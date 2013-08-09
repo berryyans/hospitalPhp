@@ -1,4 +1,6 @@
-<?php  class expedientes{ 
+<?php  
+require('/Constantes.php');
+class expedientes{ 
 public function expedientesDuplicados($ALMACEN,$fecha1,$hora1,$entidad,$usuario,$numeroE,$basedatos){ ?>
 
 <script language="javascript" type="text/javascript">   
@@ -122,8 +124,8 @@ window.alert("El expediente se encuentra fuera");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <?php
 $estilos= new muestraEstilos();
 $estilos->styles();
@@ -152,7 +154,7 @@ $estilos->styles();
       <th><div align="center" >Datos del Paciente </div></th>
     </tr>
     <tr valign="middle" >
-      <td  >Nuevo Paciente <span ><span ><a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&almacen=<?php echo $ALMACEN;?>')"><img src="/sima/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" /></a><a href="javascript:ventanaSecundaria1('modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span></td>
+      <td  >Nuevo Paciente <span ><span ><a href="javascript:ventanaSecundaria1('../ventanas/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&almacen=<?php echo $ALMACEN;?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addpatient.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" /></a><a href="javascript:ventanaSecundaria1('modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span></td>
     </tr>
     <tr valign="middle" >
       <td >N&deg; Exp. Apellido o Nombre</td>
@@ -289,7 +291,7 @@ $NC=$myrow['numCliente'];
         <td bgcolor="<?php echo $color;?>" ><div align="center"><span class="style12">
           
           
-          <a href="javascript:ventanaSecundaria1('/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/btns/editbtn.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" />          </a>
+          <a href="javascript:ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/editbtn.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" />          </a>
           
         </span></div></td>
     </tr>
@@ -425,7 +427,7 @@ numCliente='".$myrow['numeroEx']."'
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesTodosAjax.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesTodosAjax.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>
@@ -446,7 +448,7 @@ numCliente='".$myrow['numeroEx']."'
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/pacientesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/pacientesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

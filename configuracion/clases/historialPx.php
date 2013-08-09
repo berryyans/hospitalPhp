@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class historialPacientesC{ 
 public function historialPacientes($entidad,$TITULO,$basedatos){ 
 ?>
@@ -27,8 +28,8 @@ $estilo= new muestraEstilos();
 $estilo->styles();
 ?>
 
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 	</head>
 <body>
 
@@ -116,7 +117,7 @@ $myrow3 = mysql_fetch_array($result3);
       </span></td>
       <td bgcolor="<?php echo $color?>" class="style12"><span class="style7">
 <?php 	  if($myrow3['keyClientesInternos']) { ?>
-	   <a href="#" rel="htmltooltip" onClick="javascript:ventanaSecundaria('/sima/consultas/consultaEC.php?nT=<?php echo $myrow3['keyClientesInternos']; ?>
+	   <a href="#" rel="htmltooltip" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/consultas/consultaEC.php?nT=<?php echo $myrow3['keyClientesInternos']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;basedatos=<?php echo $basedatos; ?>&amp;seguro=<?php echo $N; ?>&amp;numCliente=<?php echo $N?>')">	  <?php echo $myrow['nombre1']." ".$myrow['nombre2']
 	  ." ".$myrow['apellido1']." ".$myrow['apellido2']." ".$myrow['apellido3'];?>
 	  </a>
@@ -154,7 +155,7 @@ var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/pacientesQuery.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/pacientesQuery.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

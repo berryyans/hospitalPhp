@@ -1,4 +1,6 @@
-<?php  class editarResultados{
+<?php  
+require('/Constantes.php');
+class editarResultados{
  
 public function editaResultados($entidad,$reporteReportes,$fecha1,$ventana,$TITULO,$ALMACEN,$basedatos){
 ?>
@@ -11,7 +13,7 @@ public function editaResultados($entidad,$reporteReportes,$fecha1,$ventana,$TITU
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -42,13 +44,13 @@ function ventanaSecundaria8 (URL){
 </script>
 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <!-- librerï¿½a principal del calendario --> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -102,7 +104,7 @@ if($_POST['fechaInicial']){
   </p>
   <table width="554" border="0" cellspacing="0" cellpadding="0" align="center">
     <tr>
-      <td colspan="5"><img src="/sima/imagenes/bordestablas/borde1.png" width="555" height="27" /></td>
+      <td colspan="5"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="555" height="27" /></td>
     </tr>
     <tr bgcolor="#FFFF00">
       <td width="61" class="negromid" align="center">Orden</td>
@@ -186,7 +188,7 @@ $myrow2a = mysql_fetch_array($result2a);
        <?php } ?>
     </tr>
     <tr><?php  }}}?>
-      <td colspan="5"><img src="/sima/imagenes/bordestablas/borde2.png" width="555" height="25" /></td>
+      <td colspan="5"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="555" height="25" /></td>
       
     </tr>
   </table>
@@ -199,7 +201,7 @@ $myrow2a = mysql_fetch_array($result2a);
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
 

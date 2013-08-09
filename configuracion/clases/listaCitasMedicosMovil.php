@@ -1,14 +1,16 @@
-<?php class listaCitas{
+<?php
+require('/Constantes.php');
+class listaCitas{
 public function listadoCitas($retorno,$fecha1,$MEDICO,$basedatos){
 ?>
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <!-- librerï¿½a principal del calendario --> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -18,7 +20,7 @@ public function listadoCitas($retorno,$fecha1,$MEDICO,$basedatos){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -216,7 +218,7 @@ $myrow4 = mysql_fetch_array($result4);
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
 </body>

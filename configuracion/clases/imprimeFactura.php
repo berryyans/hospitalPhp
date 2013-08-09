@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class printInvoice{
 static public function imprimirFactura($nT,$nCuenta,$seguro,$fecha,$numeroE,$basedatos){ ?>
 <script language=javascript> 
@@ -16,10 +17,10 @@ function ventanaSecundaria2 (URL){
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -63,7 +64,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -131,7 +132,7 @@ cleartimeout(timer)
 <div align="left">
   <table width="597" border="0" align="center">
     <tr>
-      <th width="77" scope="col"><img src="/sima/imagenes/logohlc.jpg" width="68" height="60" align="left" /></th>
+      <th width="77" scope="col"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/logohlc.jpg" width="68" height="60" align="left" /></th>
       <th width="411" scope="col"><h1>Hospital La Carlota </h1></th>
       <th width="95" scope="col"><span class="style7"><?php echo cambia_a_normal($fecha1); ?></span></th>
     </tr>

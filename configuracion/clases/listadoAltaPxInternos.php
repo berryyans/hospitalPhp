@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language=javascript> 
 function ventanaSecundaria11 (URL){ 
    window.open(URL,"ventana11","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -106,7 +109,7 @@ $myrow40['nomCliente']='Particular';
       <td height="49" ><?php echo $myrow['folioVenta'];
 ?></td>
       <td >
-	        <a href="javascript:nueva('/sima/cargos/cierraCuenta2.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&folioVenta=<?php echo $myrow['folioVenta'];?>&devolucion=<?php echo $myrow['statusDevolucion'];?>&descripcionTransaccion=altaPacientes#final','ventanaNueva','1024','1000','yes')">
+	        <a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/cierraCuenta2.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&folioVenta=<?php echo $myrow['folioVenta'];?>&devolucion=<?php echo $myrow['statusDevolucion'];?>&descripcionTransaccion=altaPacientes#final','ventanaNueva','1024','1000','yes')">
       <?php echo $myrow['paciente'];	  ?>
 	  </a>
 	  <?php 
@@ -147,7 +150,7 @@ $myrow42 = mysql_fetch_array($result42);
 ?> </span></td>
       <td > <?php 
 	  if($myrow['statusDevolucion']!='si'){ $dev='';?>
-	  <a href="#" onClick="javascript:ventanaSecundaria111('/sima/cargos/enviarA.php?numeroE=<?php echo $myrow['numeroE']; ?>
+	  <a href="#" onClick="javascript:ventanaSecundaria111('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/enviarA.php?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;ali=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>')">Envia a: </a>
 		<?php }else{ 
 		$dev='si';

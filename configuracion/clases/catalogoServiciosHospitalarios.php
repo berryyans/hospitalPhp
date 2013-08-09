@@ -353,7 +353,7 @@ $cuartosGET->cuartosGET($entidad,$estilos,$myrow['id_cuarto'],$_GET['departament
       <td>
  &nbsp;
    
-<a href="javascript:ventanaSecundaria('/sima/cargos/listaAlmacenesTodos.php?codigo=<?php echo $myrow['codigo']; ?>&keyPA=<?php echo $myrow['keyPA']; ?>&activar=si&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="/sima/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a>    </td>
+<a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenesTodos.php?codigo=<?php echo $myrow['codigo']; ?>&keyPA=<?php echo $myrow['keyPA']; ?>&activar=si&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a>    </td>
     </tr>
     <?php } ?>
 

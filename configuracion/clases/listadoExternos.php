@@ -101,7 +101,7 @@ $myrow17 = mysql_fetch_array($result17);
 echo $myrow['usuario'];
 ?></td>
     <td width="25" bgcolor="<?php echo $color?>" class="normal" align="center"><label> <a href="javascript:nueva('<?php echo $ventana;?>?numeroE=<?php echo $myrow['keyClientesInternos']; ?>
-&nCuenta=<?php echo $myrow['keyClientesInternos']; ?>&almacenSolicitante=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>&tipoVenta=<?php echo 'externo';?>','ventana1','800','600','yes')"><img src="/sima/imagenes/btns/aplybtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="30" height="24" border="0"/> </a> </label></td>
+&nCuenta=<?php echo $myrow['keyClientesInternos']; ?>&almacenSolicitante=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>&tipoVenta=<?php echo 'externo';?>','ventana1','800','600','yes')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/aplybtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="30" height="24" border="0"/> </a> </label></td>
   </tr>
   <?php  }}?>
   <input name="menu" type="hidden" value="<?php echo $menu;?>" />

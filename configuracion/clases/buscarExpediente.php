@@ -1,4 +1,6 @@
-<?php  class expedientes{ 
+<?php  
+require('/Constantes.php');
+class expedientes{ 
 public function buscarExpediente($entidad,$usuario,$numeroE,$basedatos){ ?>
 
 <script language="javascript" type="text/javascript">   
@@ -106,7 +108,7 @@ else
 </script>
 
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -275,7 +277,7 @@ $NC=$myrow['numCliente'];
 		
 		
 		
-<a href="#"  onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Revisar Historial Cl�nico del Paciente: '.$nombrePaciente;?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria3('antecedentesAnteriores.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen2=<?php echo $A; ?>&seguro=<?php echo $_POST['seguro']; ?>&numCliente=<?php echo $myrow['numCliente'];?>')"><img src="/sima/imagenes/listado.jpg" alt="Listado de Art&iacute;culos" width="12" height="12" border="0" /></a></span></td>
+<a href="#"  onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Revisar Historial Cl�nico del Paciente: '.$nombrePaciente;?></div>')" onMouseOut="UnTip()" onClick="ventanaSecundaria3('antecedentesAnteriores.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen2=<?php echo $A; ?>&seguro=<?php echo $_POST['seguro']; ?>&numCliente=<?php echo $myrow['numCliente'];?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/listado.jpg" alt="Listado de Art&iacute;culos" width="12" height="12" border="0" /></a></span></td>
     </tr>
 
       <?php }}?>

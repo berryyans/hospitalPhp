@@ -1,4 +1,6 @@
-<?PHP class desplegarFV{
+<?PHP 
+require('/Constantes.php');
+class desplegarFV{
 public function eFV($numero,$FV,$random,$usuario,$entidad,$basedatos){ 
 ?> 
 <script language=javascript> 
@@ -38,7 +40,7 @@ $myrow7e = mysql_fetch_array($result7e);
  echo '</br>';
  ?>
   <a href="#" 
-onclick="javascript:ventanaSecundaria11('/sima/cargos/despliegaCargos.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&amp;folioVenta=<?php echo $FV;?>')">
+onclick="javascript:ventanaSecundaria11('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaCargos.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;almacenFuente=<?php echo $ALMACEN; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoCliente=<?php echo $tipoCliente;?>&amp;tipoMovimiento=<?php echo 'cierreCuenta';?>&amp;tipoPaciente=interno&amp;folioVenta=<?php echo $FV;?>')">
  <?php print $FV.'   '.$myrow7e['paciente']; ?>
  </a>
  </h1>

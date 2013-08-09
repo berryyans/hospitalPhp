@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language=javascript> 
 function ventanaSecundaria4 (URL){ 
    window.open(URL,"ventana4","width=800,height=300,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -39,10 +42,10 @@ function ventanaSecundaria7 (URL){
 <script language="javascript" type="text/javascript">   
 //Validacion de campos de texto no vacios by Mauricio Escobar   
 //   
-//Iván Nieto Pérez   
+//Ivï¿½n Nieto Pï¿½rez   
 //Este script y otros muchos pueden   
 //descarse on-line de forma gratuita   
-//en El Código: www.elcodigo.com   
+//en El Cï¿½digo: www.elcodigo.com   
   
   
 //*********************************************************************************   
@@ -86,7 +89,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -277,16 +280,16 @@ $otros= new acumulados();
 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
-  <!-- librería principal del calendario --> 
-<script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+  <!-- librerï¿½a principal del calendario --> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
- <!-- librería para cargar el lenguaje deseado --> 
-<script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
-<script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
   

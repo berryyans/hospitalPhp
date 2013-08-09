@@ -1,14 +1,17 @@
- <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+<?php
+require('/Constantes.php');
+?>
+<!-Hoja de estilos del calendario --> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librera principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librera para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librera que declara la funcin Calendar.setup, que ayuda a generar un calendario en unas pocas lneas de cdigo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 <script>
 function cerrarVentana(){
 close();
@@ -457,7 +460,7 @@ echo $myrow['ruta'];
     <tr bgcolor="#9999FF">
       <td height="28" colspan="3" class="blancomid">Informacion de Contacto del Paciente 
 	  <?php if($myrow['calle']!=NULL and $myrow['pais1']!=NULL and $myrow['ciudad']!=NULL){ ?>
-	   <a href="#"  onClick="javascript:ventanaSecundaria4('/sima/cargos/ubicacion.php?calle=<?php echo $myrow['calle']; ?>
+	   <a href="#"  onClick="javascript:ventanaSecundaria4('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ubicacion.php?calle=<?php echo $myrow['calle']; ?>
 		&pais=<?php echo $myrow['pais1']; ?>&ciudad=<?php echo $myrow['ciudad']; ?>&almacen=<?php echo $ALMACEN; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPaciente=<?php echo "interno"; ?>')">
 	  <img src="../../imagenes/agregar.gif" width="14" height="14" border="0">	  </a>	  
 	  <?php } ?>	  </td>
@@ -591,7 +594,7 @@ if($_GET['internar']=='si'){
 ?>
  <td height="33" colspan="3"><div align="center" class="negromid">
  
-	  <a href="#"  onClick="javascript:ventanaSecundaria('/sima/OPERACIONESHOSPITALARIAS/admisiones/ventanaInternarPaciente.php?numeroE=<?php echo $myrow['numCliente']; ?>
+	  <a href="#"  onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/ventanaInternarPaciente.php?numeroE=<?php echo $myrow['numCliente']; ?>
 		&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $ALMACEN; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPaciente=<?php echo "interno"; ?>');javascript:window.close();">INTERNAR PACIENTE		</a> 
 			  </div></td>
 <?php }?>	  

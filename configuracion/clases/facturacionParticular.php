@@ -196,16 +196,16 @@ echo 'Se facturo el folio: '.$_GET['nT'];
 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
   
@@ -308,7 +308,7 @@ echo mysql_error();
 	  
         <input name="rfc" type="text" class="style71" id="folioFactura" value="<?php echo $myrow21['RFC'];?>" 
 		readonly=""/>
-        <a href="#" onClick="javascript:ventanaSecundaria2('/sima/cargos/ventanaFacturacionDirecta.php?folioFactura=<?php echo $_GET['folioFactura']; ?>&nT=<?php echo $_GET['nT'];?>')"><img src="/sima/imagenes/modificascl.png" alt="RFC" width="12" height="12" border="0" /></a></div></th>
+        <a href="#" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaFacturacionDirecta.php?folioFactura=<?php echo $_GET['folioFactura']; ?>&nT=<?php echo $_GET['nT'];?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/modificascl.png" alt="RFC" width="12" height="12" border="0" /></a></div></th>
     </tr>
     <tr>
       <th width="10" class="Estilo24" scope="col">&nbsp;</th>
@@ -494,7 +494,7 @@ if($c>=1){
   if($suma!='0' or $suma!=NULL){
    ?>
   <input name="nuevo" type="button" class="style71" id="nuevo" value="Escoje Cantidad a Facturar"
-	  onclick="ventanaSecundaria1('/sima/cargos/desplegarFacturaParticular.php?folioFactura=<?php echo $_GET['folioFactura'];?>&nT=<?php echo $_GET['nT'];?>')" />
+	  onclick="ventanaSecundaria1('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/desplegarFacturaParticular.php?folioFactura=<?php echo $_GET['folioFactura'];?>&nT=<?php echo $_GET['nT'];?>')" />
 	  <?php }
 	  
 	  }

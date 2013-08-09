@@ -210,7 +210,7 @@ mysql_db_query($basedatos,$agrega);
 echo mysql_error();
 ?>
 <script>
-javascript:ventanaSecundaria6('/sima/INGRESOS%20HLC/caja/imprimeCajaExternos.php?numeroE=<?php echo $nCliente5; ?>&amp;nT=<?php echo $numeroCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;orden=<?php echo $E; ?>&amp;hora1=<?php echo $hora1; ?>');
+javascript:ventanaSecundaria6('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/imprimeCajaExternos.php?numeroE=<?php echo $nCliente5; ?>&amp;nT=<?php echo $numeroCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;orden=<?php echo $E; ?>&amp;hora1=<?php echo $hora1; ?>');
 </script>
 <?php 
 }
@@ -288,7 +288,7 @@ javascript:ventanaSecundaria6('/sima/INGRESOS%20HLC/caja/imprimeCajaExternos.php
 		 echo $myrow2['codigo']; 
 		 }
 		 ?>" size="10" readonly=""/>
-          <a href="javascript:ventanaSecundaria3('/sima/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&amp;descripcion=<?php echo "descripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;comision=<?php echo "comision"; ?>')"><img src="/sima/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></td>
+          <a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&amp;descripcion=<?php echo "descripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;comision=<?php echo "comision"; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></td>
       <input name="comision" type="hidden" value="" />
     </tr>
     <tr bgcolor="#FFFFFF">

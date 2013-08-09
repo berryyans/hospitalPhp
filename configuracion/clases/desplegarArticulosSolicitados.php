@@ -687,7 +687,7 @@ if($myrow3115s['tipoPaciente']=='externo'){?>
 <?php if($myrow3a['puntoVenta']!=NULL){?>
 <script>
 window.alert("SE GENERO EL FOLIO DE VENTA <?php echo $FV;?>"); 
-ventanaSecundaria2('/sima/INGRESOS HLC/caja/estadoCuentaE.php?numeroE=<?php echo $myrow15['numeroE']; ?>&nCuenta=<?php echo $myrow15['keyClientesInternos']; ?>&almacenSolicitante=<?php echo $_GET['almacen']; ?>&nT=<?php echo $myrow15['keyClientesInternos']; ?>&folioVenta=<?php echo $FV;?>&tipoVenta=<?php echo 'externo';?>&devolucion=<?php echo $myrow15['statusDevolucion'];?>&descripcionTransaccion=externos&warehouse=<?php echo $_GET['warehouse'];?>#final','ventana1','1024','1000','yes');
+ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/estadoCuentaE.php?numeroE=<?php echo $myrow15['numeroE']; ?>&nCuenta=<?php echo $myrow15['keyClientesInternos']; ?>&almacenSolicitante=<?php echo $_GET['almacen']; ?>&nT=<?php echo $myrow15['keyClientesInternos']; ?>&folioVenta=<?php echo $FV;?>&tipoVenta=<?php echo 'externo';?>&devolucion=<?php echo $myrow15['statusDevolucion'];?>&descripcionTransaccion=externos&warehouse=<?php echo $_GET['warehouse'];?>#final','ventana1','1024','1000','yes');
 window.close();
 </script>
 <?php }else{ ?>
@@ -1070,7 +1070,7 @@ $descripcion->descripcion($entidad,$keyCAP,$numeroE,$nCuenta,$codigo,$basedatos)
 		
 		<?php if($myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>		
         <?php echo '</br>'.'usuario solicita: ['.$myrow['usuario'].']';?>        
         </br>

@@ -1,4 +1,6 @@
-<?php class catalogos {
+<?php 
+require('/Constantes.php');
+class catalogos {
 public function catalogoArticulos($entidad,$usuario,$codigo,$fecha1,$basedatos){
 $hora1= date("H:i a");
 ?>
@@ -307,11 +309,11 @@ $estilos->styles();
        
         
     <td width="115" align="right"><div align="center">
-      <input name="nuevo" type="image" src="/sima/imagenes/bordestablas/btns/newbtn.png" id="nuevo" value="Nuevo" <?php echo $r;?> />
+      <input name="nuevo" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/newbtn.png" id="nuevo" value="Nuevo" <?php echo $r;?> />
     </td>
-    <td width="118" align="right"><div align="center"><input name="actualizar" type="image" src="/sima/imagenes/bordestablas/btns/refreshbtn.png"  id="actualizar" value="Actualizar/Grabar" />
+    <td width="118" align="right"><div align="center"><input name="actualizar" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/refreshbtn.png"  id="actualizar" value="Actualizar/Grabar" />
     </div></td>
-    <td width="115" align="right"><div align="center"> <input name="borrar" type="image" src='/sima/imagenes/bordestablas/btns/deletebtn.png' id="borrar" value="Borrar" /></div></td>
+    <td width="115" align="right"><div align="center"> <input name="borrar" type="image" src='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/deletebtn.png' id="borrar" value="Borrar" /></div></td>
   </tr>
   <tr>
     <td align="right"><div align="center" class="codigos">Nuevo</div></td>
@@ -322,7 +324,7 @@ $estilos->styles();
 
   <table width="550" border="0" align="center" cellpadding="0" cellspacing="0" class="style12">
     <tr>
-      <th colspan="4" scope="col"><img src="/sima/imagenes/bordestablas/borde1.png" width="550" height="22" /></th>
+      <th colspan="4" scope="col"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="550" height="22" /></th>
     </tr>
     <tr bgcolor="#CCCCCC">
       <th width="3" scope="col">&nbsp;</th>
@@ -362,7 +364,7 @@ $PA=$myrow111['keyPA'];
       <td><span class="negromid">C&oacute;digo Barra:</span></td>
       <td colspan="2"><input name="cbarra" type="text" class="style12" id="cbarra" value="<?php echo $myrow['cbarra']; ?>" size="40"  autocomplete="off"/>
         <a href="javascript:ventanaSecundaria4(
-		'/sima/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a></td>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a></td>
     </tr>
     <tr bgcolor="#CCCCCC">
       <th scope="col">&nbsp;</th>
@@ -372,14 +374,14 @@ $PA=$myrow111['keyPA'];
     <tr bgcolor="#CCCCCC">
       <th scope="col">&nbsp;</th>
       <td class="negromid">Generar C&oacute;digo</td>
-      <td colspan="2" valign="middle" class="codigos"><a href="javascript:ventanaSecundaria3('/sima/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="/sima/imagenes/barcode.gif" width="89" height="68" border="0" /></a>(Click en la imagen para generar el Codigo de Barra)</td>
+      <td colspan="2" valign="middle" class="codigos"><a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/barcode.gif" width="89" height="68" border="0" /></a>(Click en la imagen para generar el Codigo de Barra)</td>
     </tr>
     <tr bgcolor="#CCCCCC">
       <th scope="col">&nbsp;</th>
 
       <td><span class="negromid">Agregar Precios -Almacen:</span></td>
       <td colspan="2"><label></label>
-          <label><a href="javascript:ventanaSecundaria('/sima/cargos/listaAlmacenesTodos.php?keyPA=<?php echo $myrow['keyPA']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="/sima/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></label></td>
+          <label><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenesTodos.php?keyPA=<?php echo $myrow['keyPA']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></label></td>
     </tr>
  
 
@@ -396,7 +398,7 @@ $PA=$myrow111['keyPA'];
           <label></label>
           <p>
             <label></label>
-            <img src="/sima/imagenes/bordestablas/borde2.png" width="550" height="22" /></p>
+            <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="550" height="22" /></p>
       </div></td>
     </tr>
   </table>
@@ -404,12 +406,12 @@ $PA=$myrow111['keyPA'];
 <table width="348" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="115" align="right"><div align="center">
-      <input name="nuevo2" type="image" src="/sima/imagenes/bordestablas/btns/newbtn.png" id="nuevo2" value="Nuevo" <?php echo $r;?> /></td>
+      <input name="nuevo2" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/newbtn.png" id="nuevo2" value="Nuevo" <?php echo $r;?> /></td>
     <td width="118" align="right"><div align="center">
-      <input name="actualizar2" type="image" src="/sima/imagenes/bordestablas/btns/refreshbtn.png"  id="actualizar2" value="Actualizar/Grabar" />
+      <input name="actualizar2" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/refreshbtn.png"  id="actualizar2" value="Actualizar/Grabar" />
     </div></td>
     <td width="115" align="right"><div align="center">
-      <input name="borrar2" type="image" src='/sima/imagenes/bordestablas/btns/deletebtn.png' id="borrar2" value="Borrar" />
+      <input name="borrar2" type="image" src='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/deletebtn.png' id="borrar2" value="Borrar" />
     </div></td>
   </tr>
   <tr>

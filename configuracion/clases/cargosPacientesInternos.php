@@ -1,4 +1,6 @@
-<?php $ALMACEN=$_GET['datawarehouse'];?>
+<?php 
+require('/Constantes.php');
+$ALMACEN=$_GET['datawarehouse'];?>
 <script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
@@ -267,7 +269,7 @@ $myrow31cdd = mysql_fetch_array($result31cdd);
         <td  align="center" ><?php echo $guia;?></td>
       <td  align="center" ><?php echo $myrow['folioVenta'];?></td>
       <td >
-<a name="ec<?php echo $guia;?>" href="#ec<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('/sima/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>
+<a name="ec<?php echo $guia;?>" href="#ec<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>
 nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta']; ?>')">
 	  <?php echo $myrow['paciente'];
 	  if($myrow['solicitaTransferencia']=='si'){

@@ -163,14 +163,14 @@ echo mysql_error();
 ?>
 <?php if($_GET['paquete']=='si'){ ?>
 <script language="javascript">
-nueva('/sima/cargos/imprimirReciboPaquetes.php?numeroE=<?php echo $myrow3['numeroE']; ?>&nCuenta=<?php echo $myrow3['nCuenta']; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>&codigoPaquete=<?php echo $myrow3['codigoPaquete'];?>&numRecibo=<?php echo $myrowC['numRecibo'];?>&paciente=<?php echo $_POST['paciente'];?>&cantidadRecibida=<?php echo $_POST['cantidadRecibida'];?>&folioVenta=<?php echo $myrow3['folioVenta'];?>','ventana7','800','600','yes');
+nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirReciboPaquetes.php?numeroE=<?php echo $myrow3['numeroE']; ?>&nCuenta=<?php echo $myrow3['nCuenta']; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>&codigoPaquete=<?php echo $myrow3['codigoPaquete'];?>&numRecibo=<?php echo $myrowC['numRecibo'];?>&paciente=<?php echo $_POST['paciente'];?>&cantidadRecibida=<?php echo $_POST['cantidadRecibida'];?>&folioVenta=<?php echo $myrow3['folioVenta'];?>','ventana7','800','600','yes');
 //window.opener.document.form10["form10"].submit();
 //window.alert("sandra");
 window.close();
 </script>
 <?php } else { ?>
 <script>
-nueva('/sima/cargos/imprimirCargosPA.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $nT; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>','ventana7','800','600','yes');
+nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirCargosPA.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $nT; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>','ventana7','800','600','yes');
 //window.opener.document.form10["form"].submit();
 
 window.close();
@@ -381,7 +381,7 @@ echo '$'.number_format($myrow81['cantidadAseguradora']*$myrow81['cantidad'],2);
         <?php 
 
 	  if($myrow81['tipoConvenio'] AND $myrow81['tipoConvenio']!='No'){
-	  echo '<img src="/sima/imagenes/cci/grafica.png" width="20" height="20" />';
+	  echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/cci/grafica.png" width="20" height="20" />';
 	   }else{echo '---';}
 		?>
       </span></td>
@@ -458,10 +458,10 @@ echo '$'.number_format($abonos[0],2);
 	if(round($total)==NULL){ 
 	?>
     <label>
-    <input name="imprimir" type="image"  id="imprimir" value="Imprimir" src="/sima/imagenes/btns/printbutton.png" onclick="Disab (2)"/>
+    <input name="imprimir" type="image"  id="imprimir" value="Imprimir" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/printbutton.png" onclick="Disab (2)"/>
     </label>
 	<?php } else {?>
-    <input name="cargado" type="image" value="Aplicar Pagos" src="/sima/imagenes/btns/aplicapay.png"  onclick="nueva('/sima/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&numeroE=<?php echo $numeroE; ?>
+    <input name="cargado" type="image" value="Aplicar Pagos" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/aplicapay.png"  onclick="nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaAplicaPagoInternos.php?usuario=<?php echo $_GET['usuario'];?>&numeroE=<?php echo $numeroE; ?>
 &almacen=<?php echo $_GET['almacenSolicitante']; ?>&almacenFuente=<?php echo $almacen; ?>&seguro=<?php echo $seguroT; ?>&nCuenta=<?php echo $myrow3['keyClientesInternos'];?>&tipoCliente=<?php echo 'particular';?>&tipoVenta=<?php echo $_GET['tipoVenta'];?>&folioVenta=<?php echo $myrow3['folioVenta'];?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&rand=<?php echo rand(1000,10000000);?>&paquete=<?php echo $_GET['paquete'];?>','ventana7','500','600','yes')"/>
    
 	<?php } ?>

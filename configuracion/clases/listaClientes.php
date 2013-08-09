@@ -1,4 +1,6 @@
-<?php class listadoClientes{
+<?php 
+require('/Constantes.php');
+class listadoClientes{
 public function listaClientes($tipoconvenio,$entidad,$ventana,$ventana1,$TITULO,$basedatos){
 
 
@@ -100,7 +102,7 @@ $myrow2 = mysql_fetch_array($result2);
 
 
  
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -271,7 +273,7 @@ $myrow1 = mysql_fetch_array($result1);
           <td  ><p align="center">
 <a href="<?php echo $url;?>?numCliente=<?php echo $N; ?>&tipoConvenio=<?php echo $tipoconvenio;?>&borrar=si">
 
-<img src="/sima/imagenes/borrar.png" alt="INACTIVO" width="20" height="20" border="0"
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/borrar.png" alt="INACTIVO" width="20" height="20" border="0"
      onclick="if(confirm('Esta seguro que deseas eliminar el convenio <?php echo $tipoconvenio;?> del cliente <?php   echo $myrow1['nomCliente'];?> ?') == false){return false;}" />
 </a></p>
        </td>

@@ -1,4 +1,6 @@
-<?php class referirArticulos{
+<?php 
+require('/Constantes.php');
+class referirArticulos{
 public function articulosReferidos($entidad,$almacen,$ID_EJERCICIOM,$dia,$fecha1,$hora1,$usuario,$numeroPaciente,$seguro,$credencial,$medico,$almacenSolicitante,$nCuenta,$tipoCargo,$almacenDestino,$tipoPaciente,$basedatos){
 $ventana='cambiarPrecio.php';
 $UserType=new tipoUsuario();
@@ -225,7 +227,7 @@ $col = "";
         </td>
         <td bgcolor="<?php echo $color;?>" ><?php 
 		if($myrow['tipoTransaccion'] and !$myrow11['descripcion']){
-		echo "Depósito ó Movimiento de Caja" ;
+		echo "Depï¿½sito ï¿½ Movimiento de Caja" ;
 		} else {
 		
 		
@@ -240,12 +242,12 @@ $col = "";
 		}
 		?>
 		<?php if($myrow['status']=='cancelado'){ ?>
-		  <span class="Estilo25"><blink><?php echo '(Artículo Cancelado por '.$myrow['usuarioCancela'].')';?></blink></span>
+		  <span class="Estilo25"><blink><?php echo '(Artï¿½culo Cancelado por '.$myrow['usuarioCancela'].')';?></blink></span>
 		<?php } ?>
 		
 			<?php if($myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>		
 		
 		

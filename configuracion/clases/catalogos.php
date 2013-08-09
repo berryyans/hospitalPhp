@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class catalogosOtros{
 
 
@@ -407,8 +408,8 @@ $myrow11 = mysql_fetch_array($result11);
 		?>
          </select>
       </label>	  </td>
-      <td width="68" bgcolor="#FFCCFF"><a href="gpoProductos.php"></a><a href="javascript:ventanaSecundaria('/sima/cargos/gpoProductos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
-	  <img src="/sima/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a></td>
+      <td width="68" bgcolor="#FFCCFF"><a href="gpoProductos.php"></a><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/gpoProductos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a></td>
     </tr>
     
 	
@@ -418,9 +419,9 @@ $myrow11 = mysql_fetch_array($result11);
 	  <td colspan="2"><label>
 	    <input name="cbarra" type="text" class="style12" id="cbarra" value="<?php echo $myrow['cbarra']; ?>" size="40"  autocomplete="off"/>
 	    <a href="javascript:ventanaSecundaria4(
-		'/sima/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a>
-	    <a href="javascript:ventanaSecundaria3('/sima/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
-		<img src="/sima/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a></label></td>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a>
+	    <a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Grupo de Producto" width="20" height="20" border="0" /></a></label></td>
     </tr>
 	<tr>
 	  <th scope="col">&nbsp;</th>
@@ -451,8 +452,8 @@ $myrow11 = mysql_fetch_array($result11);
       <input name="um" type="text" class="Estilo24" id="um" 
 		onchange="javascript:this.form.submit();"
 		value="<?php echo $myrow['um']; ?>" size="4"   readonly="" />
-      <span class="Estilo24"><a href="javascript:ventanaSecundaria2('/sima/cargos/ventanaEmergenteUM.php?campoDespliega=<?php echo "umDescripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;nombreCampo=<?php echo "um"; ?>&amp;usuario=<?php echo $usuario; ?>')">
-	  <img src="/sima/imagenes/Save.png" alt="Unidad de Medida" width="20" height="20" border="0" /></a>
+      <span class="Estilo24"><a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaEmergenteUM.php?campoDespliega=<?php echo "umDescripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;nombreCampo=<?php echo "um"; ?>&amp;usuario=<?php echo $usuario; ?>')">
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Unidad de Medida" width="20" height="20" border="0" /></a>
 	  <?php
 	  $um=$myrow['um'];
 	  $sSQL11= "SELECT 
@@ -464,8 +465,8 @@ $result11=mysql_db_query($basedatos,$sSQL11);
 $myrow11 = mysql_fetch_array($result11);
 	  ?>
       <input name="umDescripcion" type="text" class="Estilo24" id="umDescripcion" value="<?php echo $myrow11['descripcionUM'];?>" size="40" readonly="" />
-      <a href="javascript:ventanaSecundaria('/sima/cargos/um.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
-	  <img src="/sima/imagenes/Save.png" alt="EDITAR UNIDAD DE MEDIDA" width="20" height="20" border="0" /></a></span></td>
+      <a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/um.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="EDITAR UNIDAD DE MEDIDA" width="20" height="20" border="0" /></a></span></td>
     </tr>
     
 	<?php 
@@ -551,16 +552,16 @@ $result71=mysql_db_query($basedatos,$sSQL71);
       <td colspan="2" bgcolor="#FFCCFF">
  
     <label></label>
-    <label><a href="javascript:ventanaSecundaria('/sima/cargos/listaAlmacenes.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&keyPA=<?php echo $myrow['keyPA'];?>')">
-	<img src="/sima/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></label></td>
+    <label><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenes.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&keyPA=<?php echo $myrow['keyPA'];?>')">
+	<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></label></td>
     </tr>
 
 	
     <tr>
       <th scope="col">&nbsp;</th>
       <td bgcolor="#660066"><span class="style13">M&aacute;ximos y M&iacute;nimos, Reorden: </span></td>
-      <td colspan="2"><a href="javascript:ventanaSecundaria('/sima/cargos/maximosMinimos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
-	  <img src="/sima/imagenes/Save.png" alt="M&aacute;ximos y M&iacute;nimos" width="20" height="20" border="0" /></a></td>
+      <td colspan="2"><a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/maximosMinimos.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="M&aacute;ximos y M&iacute;nimos" width="20" height="20" border="0" /></a></td>
     </tr>
 	    <?php } ?>
         <tr>
@@ -1011,8 +1012,8 @@ $myrow11 = mysql_fetch_array($result11);
  
     <label></label>
     <label>
-    <a href="javascript:ventanaSecundaria('/sima/cargos/listaAlmacenes.php?codigo=<?php echo $_POST['codigo']; ?>&amp;almacen=<?php echo $almacenSolicitante; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
-	<img src="/sima/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a>
+    <a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenes.php?codigo=<?php echo $_POST['codigo']; ?>&amp;almacen=<?php echo $almacenSolicitante; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')">
+	<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a>
     
     <?php if($myrow['codigo']){ ?><?php } else {?>
     <?php 

@@ -243,7 +243,7 @@ codigo = '".$code."'
 	  </span></td>
 	 
       <td  > <div align="left"><a href="#" onClick="javascript:ventanaSecundaria('<?php echo $ventana;?>?numeroE=<?php echo $myrow['numeroE']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $_POST['almacenDestino1']; ?>&amp;codigo=<?php echo $codigo; ?>&amp;almacenPrincipal=<?php echo $ALMACEN; ?>&amp;codigo=<?php echo $code; ?>')"> <img src="/sima/imagenes/edit.jpg" alt="Editar el art�culo: <?php echo $myrow15['descripcion']; ?>" widtd="12" height="12" border="0" /> </a> </div></td>
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $_POST['almacenDestino1']; ?>&amp;codigo=<?php echo $codigo; ?>&amp;almacenPrincipal=<?php echo $ALMACEN; ?>&amp;codigo=<?php echo $code; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/edit.jpg" alt="Editar el art�culo: <?php echo $myrow15['descripcion']; ?>" widtd="12" height="12" border="0" /> </a> </div></td>
     </tr>
     <?php }}}?>
   </table>

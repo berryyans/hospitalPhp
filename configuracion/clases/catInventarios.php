@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -119,13 +122,13 @@ $estilos-> styles();
      <table width="200" class="table-template">
      <tr>
        <td><span >
-         <input name="nuevo" type="submit" src="/sima/imagenes/bordestablas/btns/newbtn.png" id="nuevo" value="Nuevo" />
+         <input name="nuevo" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/newbtn.png" id="nuevo" value="Nuevo" />
        </span></td>
        <td><span >
-       <input name="actualizar" type="submit" src="/sima/imagenes/bordestablas/btns/refreshbtn.png" id="actualizar" value="Alta/Modificar Laboratorio" />
+       <input name="actualizar" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/refreshbtn.png" id="actualizar" value="Alta/Modificar Laboratorio" />
        </span></td>
        <td><span >
-         <input name="borrar" type="submit" src="/sima/imagenes/bordestablas/btns/deletebtn.png" id="borrar" value="Eliminar Laboratorio" />
+         <input name="borrar" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/deletebtn.png" id="borrar" value="Eliminar Laboratorio" />
        </span></td>
      </tr>
 

@@ -469,14 +469,14 @@ if(win.window.focus){win.window.focus();}
 </script>
 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
@@ -518,7 +518,7 @@ $estilos->styles();
     </label>
     <input name="button" type="button" class="Estilo24" id="lanzador" value="..." />
 </p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="864" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="864" height="24" />
   <table width="864" border="0.2" align="center" cellpadding="4" cellspacing="0">
     <tr bgcolor="#FFFF00">
       <th width="85" class="blanco" scope="col"><div align="left">Referencia</div></th>
@@ -630,7 +630,7 @@ echo $myrow['usuario'];
 
 
   <a href="javascript:nueva('estadoCuentaE.php?numeroE=<?php echo $myrow['keyClientesInternos']; ?>
-&nCuenta=<?php echo $myrow['keyClientesInternos']; ?>&almacenSolicitante=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>&tipoVenta=<?php echo 'externo';?>','ventana1','800','600','yes')"><img src="/sima/imagenes/btns/aplybtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="30" height="24" border="0"/>
+&nCuenta=<?php echo $myrow['keyClientesInternos']; ?>&almacenSolicitante=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>&tipoVenta=<?php echo 'externo';?>','ventana1','800','600','yes')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/aplybtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="30" height="24" border="0"/>
   </a>
   
 </label></td>

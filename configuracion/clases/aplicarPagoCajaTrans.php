@@ -28,7 +28,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -51,7 +51,7 @@ function vacio(q) {
 function valida(F) {   
            
         if( vacio(F.tipoTransaccion.value) == false ) {   
-                alert("Escoje el Tipo de Transacción que desees hacer!")   
+                alert("Escoje el Tipo de Transacciï¿½n que desees hacer!")   
                 return false   
         }  else if( vacio(F.cantidadRecibida.value) == false ) {   
                 alert("Escribe la cantidad!")   
@@ -81,7 +81,7 @@ $tipoTrans=$myrow3['tipoTransaccion'];
 
 <?php if(($tipoPaciente=='externo' || $tipoPaciente=='urgencias') AND !$_POST['aplicarPago']){  ?>
 <script>
-javascript:ventanaSecundaria6('/sima/INGRESOS%20HLC/caja/imprimeCajaExternos.php?numeroE=<?php echo $nCliente5; ?>&amp;nT=<?php echo $numeroCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;orden=<?php echo $E; ?>&amp;hora1=<?php echo $hora1; ?>');
+javascript:ventanaSecundaria6('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/imprimeCajaExternos.php?numeroE=<?php echo $nCliente5; ?>&amp;nT=<?php echo $numeroCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;orden=<?php echo $E; ?>&amp;hora1=<?php echo $hora1; ?>');
 </script>
 
 <?php }?>
@@ -110,7 +110,7 @@ $al = $_GET['almacen1'];
 } else if($_GET['almacen3']){
 $al = $_GET['almacen3'];
 } 
-//***********************Cierro validaciones de almacén************************
+//***********************Cierro validaciones de almacï¿½n************************
 
 //*********************************CREAR FUNCIONES******************************************
 function saca_por($can,$por){
@@ -153,7 +153,7 @@ $sSQLC= "Select * From aperturaCaja ";
 $resultC=mysql_db_query($basedatos,$sSQLC);
 $myrowC = mysql_fetch_array($resultC);
 
-if($poliza=$myrowC['numeroPoliza']){ //*******************Comienzo la validación*****************
+if($poliza=$myrowC['numeroPoliza']){ //*******************Comienzo la validaciï¿½n*****************
 //********************Llenado de datos
 $sSQL3= "Select * From clientesInternos WHERE keyClientesInternos = '".$numeroCuenta."' ";
 $result3=mysql_db_query($basedatos,$sSQL3);
@@ -233,7 +233,7 @@ $leyenda='Se hizo un Movimiento';
 
 <?php if($myrow3['tipoPaciente']=='externo' AND $_GET['tipoTransaccion']==''){?>
 <script>
-javascript:ventanaSecundaria2('/sima/INGRESOS%20HLC/caja/imprimeCaja2.php?numeroE=<?php echo $numeroE1; ?>&amp;nCuenta=<?php echo $nCuenta1; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/imprimeCaja2.php?numeroE=<?php echo $numeroE1; ?>&amp;nCuenta=<?php echo $nCuenta1; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>');
 </script>
 <script language="JavaScript" type="text/javascript">
   <!--
@@ -249,7 +249,7 @@ javascript:ventanaSecundaria2('/sima/INGRESOS%20HLC/caja/imprimeCaja2.php?numero
 </script>
 <?php } else { ?>
 <script>
-javascript:ventanaSecundaria2('/sima/INGRESOS%20HLC/caja/imprimeCaja3.php?numeroE=<?php echo $numeroE1; ?>&amp;nCuenta=<?php echo $nCuenta1; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/imprimeCaja3.php?numeroE=<?php echo $numeroE1; ?>&amp;nCuenta=<?php echo $nCuenta1; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>');
 </script>
 <script language="JavaScript" type="text/javascript">
   <!--
@@ -340,7 +340,7 @@ javascript:ventanaSecundaria2('/sima/INGRESOS%20HLC/caja/imprimeCaja3.php?numero
 		 echo $myrow2['codigo']; 
 		 }
 		 ?>" size="10" readonly=""/>
-              <a href="javascript:ventanaSecundaria3('/sima/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&amp;descripcion=<?php echo "descripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;comision=<?php echo "comision"; ?>')"><img src="/sima/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></td>
+              <a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&amp;descripcion=<?php echo "descripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;comision=<?php echo "comision"; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></td>
          
 		  <input name="comision" type="hidden" value="">
 		  </tr>
@@ -397,7 +397,7 @@ $myrow31 = mysql_fetch_array($result31);
               </label>
                 <label>
 				<a href="javascript:ventanaSecundaria1(
-		'ventanaTT.php?campoDespliega=<?php echo "campoDespliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "tipoTransaccion"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Tipo de Transacci&oacute;n" width="20" height="20" border="0" /></a><a href="javascript:ventanaSecundaria1(
+		'ventanaTT.php?campoDespliega=<?php echo "campoDespliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "tipoTransaccion"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Tipo de Transacci&oacute;n" width="20" height="20" border="0" /></a><a href="javascript:ventanaSecundaria1(
 		'ventanaTT.php?campoDespliega=<?php echo "campoDespliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "tipoTransaccion"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')">
                 
 				

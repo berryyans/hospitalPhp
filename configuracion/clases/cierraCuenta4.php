@@ -227,16 +227,16 @@ $_GET['inactiva']=='activa';
 
 
 <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
   
   
   
@@ -484,7 +484,7 @@ $myrow341 = mysql_fetch_array($result341);
 	  
 	  <?php 
 		if($statFactura[$a]=='solicita'){ $dork+=1;?>
-	  <a href="<?php echo $_SERVER['PHP_SELF'];?>?nT=<?php echo $_GET['nT']; ?>&keyCAP=<?php echo $myrow81['keyCAP'];?>&seguro=<?php echo $_POST['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&codigo=<?php echo $C; ?>"><img src="/sima/imagenes/iconosSima/delete_icon.jpg" alt="Quitar" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar la solicitud de factura para este registro?') == false){return false;}" /></a>
+	  <a href="<?php echo $_SERVER['PHP_SELF'];?>?nT=<?php echo $_GET['nT']; ?>&keyCAP=<?php echo $myrow81['keyCAP'];?>&seguro=<?php echo $_POST['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&codigo=<?php echo $C; ?>"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/iconosSima/delete_icon.jpg" alt="Quitar" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar la solicitud de factura para este registro?') == false){return false;}" /></a>
 	  <?php } else { echo '---';}?>	  </td>
 	  
 	  
@@ -496,16 +496,16 @@ $myrow341 = mysql_fetch_array($result341);
 	  
 	  
 	  <?php if($myrow81['tipoCliente']=='particular' and $statFactura[$a]=='solicita'){ ?>
-	  <a href="javascript:ventanaSecundaria7('/sima/INGRESOS%20HLC/cxc/subCuentas.php?nRequisicion=<?php echo $requisicion; ?>&almacen=<?php echo $ALMACEN; ?>&nT=<?php echo $_GET['nT']; ?>&keyCAP=<?php echo $myrow81['keyCAP'];?>&aseguradora=<?php echo $_GET['aseguradora']; ?>&entidad=<?php echo $entidad; ?>&particular=<?php echo $_GET['particular']; ?>&referido=<?php echo $_GET['referido']; ?>&gpoProducto=<?php echo $gpoProducto; ?>&tipoCliente=<?php echo $myrow81['tipoCliente']; ?>&codigo=<?php echo $C; ?>&almacenes=<?php echo $Cd; ?>')"><img src="/sima/imagenes/agregar.gif" alt="Modificar Precios" width="12" height="12" border="0" /></a>
+	  <a href="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/cxc/subCuentas.php?nRequisicion=<?php echo $requisicion; ?>&almacen=<?php echo $ALMACEN; ?>&nT=<?php echo $_GET['nT']; ?>&keyCAP=<?php echo $myrow81['keyCAP'];?>&aseguradora=<?php echo $_GET['aseguradora']; ?>&entidad=<?php echo $entidad; ?>&particular=<?php echo $_GET['particular']; ?>&referido=<?php echo $_GET['referido']; ?>&gpoProducto=<?php echo $gpoProducto; ?>&tipoCliente=<?php echo $myrow81['tipoCliente']; ?>&codigo=<?php echo $C; ?>&almacenes=<?php echo $Cd; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/agregar.gif" alt="Modificar Precios" width="12" height="12" border="0" /></a>
 	  <?php } else if($myrow81['tipoCliente']=='aseguradora' and $statFactura[$a]=='solicita'){ ?>
 	    <a href="" onClick="javascript:ventanaSecundaria6('applyInvoiceEnterprise.php?nT=<?php echo $keyClientesInternos;?>&tipoFacturacion=<?php echo $tipoFacturacion;?>')">
-	  <img src="/sima/imagenes/agregar.gif" alt="Modificar Precios" width="12" height="12" border="0" /></a>
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/agregar.gif" alt="Modificar Precios" width="12" height="12" border="0" /></a>
 	  
 	  
 	  
 	  <?php } else if($myrow81['tipoCliente']=='coaseguro' and $statFactura[$a]=='solicita'){ ?>
 	    <a href="" onClick="javascript:ventanaSecundaria6('applyInvoiceCoaseguro.php?nT=<?php echo $keyClientesInternos;?>&tipoFacturacion=<?php echo $tipoFacturacion;?>')">
-	  <img src="/sima/imagenes/agregar.gif" alt="Modificar Precios" width="12" height="12" border="0" /></a>
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/agregar.gif" alt="Modificar Precios" width="12" height="12" border="0" /></a>
 	  <?php } else { 
 	  echo '---';
 	  }
@@ -518,11 +518,11 @@ $myrow341 = mysql_fetch_array($result341);
           <?php 
 		if($statFactura[$a]=='solicita'){ ?>
           
-          <img src="/sima/imagenes/letraS.jpg" alt="Solicita Factura" width="12" height="12" border="0" />
+          <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/letraS.jpg" alt="Solicita Factura" width="12" height="12" border="0" />
           
           <?php } else if($statFactura[$a]=='cargado'){ ?>
           
-          <img src="/sima/imagenes/letraF.jpg" alt="Solicita Factura" width="12" height="12" border="0" />
+          <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/letraF.jpg" alt="Solicita Factura" width="12" height="12" border="0" />
           <?php } else { echo '---';
 		
 		}?>

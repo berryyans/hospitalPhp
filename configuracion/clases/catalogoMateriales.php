@@ -1,4 +1,6 @@
-<?php class articulos{
+<?php 
+require('/Constantes.php');
+class articulos{
 public function catalogoArticulos($entidad,$usuario,$codigo,$fecha1,$basedatos){
 ?>
 
@@ -342,11 +344,11 @@ $estilos->styles();
        
         
     <td width="115" align="right">
-      <input name="nuevo"  type="submit" src="/sima/imagenes/bordestablas/btns/newbtn.png" id="nuevo" value="Nuevo" <?php echo $r;?> />
+      <input name="nuevo"  type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/newbtn.png" id="nuevo" value="Nuevo" <?php echo $r;?> />
      </td>
-    <td width="118" align="right"><div align="center"><input name="actualizar"   type="submit" src="/sima/imagenes/bordestablas/btns/refreshbtn.png"  id="actualizar" value="Actualizar/Grabar" />
+    <td width="118" align="right"><div align="center"><input name="actualizar"   type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/refreshbtn.png"  id="actualizar" value="Actualizar/Grabar" />
     </div></td>
-    <td width="115" align="right"><div align="center"> <input name="borrar"  type="submit" src='/sima/imagenes/bordestablas/btns/deletebtn.png' id="borrar" value="Borrar" /></div></td>
+    <td width="115" align="right"><div align="center"> <input name="borrar"  type="submit" src='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/deletebtn.png' id="borrar" value="Borrar" /></div></td>
   </tr>
 
 </table>
@@ -422,7 +424,7 @@ $result71=mysql_db_query($basedatos,$sSQL71);
       <td ><span >C&oacute;digo Barra:</span></td>
       <td ><input name="cbarra" type="text"  id="cbarra" value="<?php echo $myrow['cbarra']; ?>" size="40"  autocomplete="off"/>
       <a href="javascript:ventanaSecundaria4(
-		'/sima/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a></td>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaCB.php?descripcion=<?php echo $descripcion; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "cbarra"; ?>')">Adjuntar</a></td>
 
     </tr>
     <?php 
@@ -501,7 +503,7 @@ $PA=$myrow111['keyPA'];
     <tr >
       <td>&nbsp;</td>
       <td  >Generar C&oacute;digo:</td>
-      <td  ><a href="javascript:ventanaSecundaria3('/sima/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="/sima/imagenes/barcode.gif" width="89" height="68" border="0" /></a>(Click en la imagen para Generar)</td>
+      <td  ><a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/cBarraSubeVentana.php?codigo=<?php echo $_POST['codigo']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/barcode.gif" width="89" height="68" border="0" /></a>(Click en la imagen para Generar)</td>
       <td >&nbsp;</td>
     </tr>
     <tr >
@@ -512,8 +514,8 @@ $PA=$myrow111['keyPA'];
         
 		<?php if( $myrow['maquilado']=='si'){ ?>
 		<label>
-		<a href="javascript:ventanaSecundaria('/sima/cargos/articulosMaquilados.php?keyPACOM=<?php echo $myrow['keyPA']; ?>&descripcion=<?php echo $myrow['descripcion'];?>')">
-		<img src="/sima/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" />
+		<a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/articulosMaquilados.php?keyPACOM=<?php echo $myrow['keyPA']; ?>&descripcion=<?php echo $myrow['descripcion'];?>')">
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" />
 		</a>
 		</label>
 		
@@ -540,7 +542,7 @@ $PA=$myrow111['keyPA'];
 	if($myrow['codigo']){ ?>
       <td ><span >Precios-Almacen:</span></td>
       <td >
-        <a href="javascript:ventanaSecundaria('/sima/cargos/listaAlmacenesTodos.php?keyPA=<?php echo $myrow['keyPA']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="/sima/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></td>
+        <a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenesTodos.php?keyPA=<?php echo $myrow['keyPA']; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Almacenes" width="20" height="20" border="0" /></a></td>
       <td >&nbsp;</td>
     </tr>
 

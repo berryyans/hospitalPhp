@@ -1,4 +1,6 @@
-<?php class hacerDevolucion{
+<?php 
+require('/Constantes.php');
+class hacerDevolucion{
 public function articulos($entidad,$almacen,$ID_EJERCICIOM,$dia,$fecha1,$hora1,$usuario,$numeroPaciente,$seguro,$credencial,$medico,$almacenSolicitante,$nCuenta,$tipoCargo,$almacenDestino,$tipoPaciente,$basedatos){
 $ventana='cambiarPrecio.php';
 $UserType=new tipoUsuario();
@@ -252,7 +254,7 @@ $myrow341 = mysql_fetch_array($result341);
 			
 			if($myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>		</td>
 		
      
@@ -276,9 +278,9 @@ echo "N/A";
           <div align="center"><span class="">
 		  
 		  <?php if($myrow['statusDevolucion']=='no'){ ?>
-		  <a href="javascript:ventanaSecundaria8('ventanaAplicarDevolucion.php?keyCAP=<?php echo $keyCAP; ?>&;seguro=<?php echo $_GET['seguro']; ?>&medico=<?php echo $_GET['medico']; ?>&usuario=<?php echo $usuario; ?>')"><img src="/sima/imagenes/iconosSima/active_icon.jpg" alt="" width="12" height="12" border="0" /></a> 
+		  <a href="javascript:ventanaSecundaria8('ventanaAplicarDevolucion.php?keyCAP=<?php echo $keyCAP; ?>&;seguro=<?php echo $_GET['seguro']; ?>&medico=<?php echo $_GET['medico']; ?>&usuario=<?php echo $usuario; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/iconosSima/active_icon.jpg" alt="" width="12" height="12" border="0" /></a> 
 		  <?php } else { ?>
-		  <img src="/sima/imagenes/iconosSima/delete_icon.jpg" alt="" width="12" height="12" border="0" />
+		  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/iconosSima/delete_icon.jpg" alt="" width="12" height="12" border="0" />
 		  <?php } ?>
 		  </span>            </div>
         </label></td>

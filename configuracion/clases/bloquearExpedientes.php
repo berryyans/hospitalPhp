@@ -1,3 +1,7 @@
+<?php
+require('/Constantes.php');
+?>
+
 <script language=javascript>
 function ventanaSecundaria1 (URL){
    window.open(URL,"ventana1","width=700,height=500,scrollbars=YES")
@@ -109,7 +113,7 @@ while($myrow = mysql_fetch_array($result)){
         <td bgcolor="<?php echo $color;?>" ><div align="center"><span >
 
 
-          <a href="javascript:ventanaSecundaria1('../cargos/aplicarBloqueo.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/btns/editbtn.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" />          </a>
+          <a href="javascript:ventanaSecundaria1('../cargos/aplicarBloqueo.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/editbtn.png" alt="Datos Generales del Paciente" width="22" height="22" border="0" />          </a>
 
         </span></div></td>
     </tr>
@@ -142,7 +146,7 @@ while($myrow = mysql_fetch_array($result)){
 
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/pacientesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/pacientesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});
 	</script>

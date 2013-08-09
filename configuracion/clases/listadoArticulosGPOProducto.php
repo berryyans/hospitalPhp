@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class consultaArticulosPrecio{
 public function consultarArticulos($almacen,$entidad,$basedatos){
 ?>
@@ -79,7 +80,7 @@ echo 'Se hicieron cambios en el sistema...';
 
 }
 ?>
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -217,7 +218,7 @@ echo mysql_error();
     <tr bgcolor="#FFFFFF">
       <th height="22" scope="col">&nbsp;</th>
       <th scope="col"><div align="left"><span class="style19">
-        <input name="buscar" type="image" src="/sima/imagenes/btns/searcharticles.png" id="buscar" value="buscar" />
+        <input name="buscar" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png" id="buscar" value="buscar" />
       </span></div></th>
     </tr>
   </table>
@@ -362,7 +363,7 @@ articulos.activo!='cancelado'
 }
 }
 }
-} //cierra validacion de artículos
+} //cierra validacion de artï¿½culos
 }
 
 $result=mysql_db_query($basedatos,$sSQL);
@@ -484,14 +485,14 @@ $bandera=+1;
       <?php 
         } else {
 	  
-	   $imagen='<img src="/sima/imagenes/stop.png" width="13" height="13" border="0" />';
+	   $imagen='<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/stop.png" width="13" height="13" border="0" />';
 	   echo $myrow['descripcion'].'<blink>'.$imagen.'</blink>'.'< Sin Almacen..>';
 	   }
 	  ?>
 	  
 	  	<?php if($myrow['generico']=='si'){?>
 					<blink>
-		<img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" />		</blink>
 		<?php } else { echo '';}?>
 	  </span></td>
       
@@ -513,7 +514,7 @@ $bandera=+1;
 $result7=mysql_db_query($basedatos,$sSQL7); 
 echo mysql_error();
 	  ?>
-        <select name="gpoProducto[]" class="combos" id="gpoProducto[]" onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Escoje el Grupo de Producto para Artículo: '.$myrow['descripcion'];?></div>')" onmouseout="UnTip()">
+        <select name="gpoProducto[]" class="combos" id="gpoProducto[]" onmouseover="Tip('<div class=&quot;estilo25&quot;><?php echo 'Escoje el Grupo de Producto para Artï¿½culo: '.$myrow['descripcion'];?></div>')" onmouseout="UnTip()">
           <option value="">Escoje el Grupo</option>
           <?php  	 		 
 		   while($myrow7 = mysql_fetch_array($result7)){ ?>
@@ -560,7 +561,7 @@ $modifica=$myrow39['rutaModifica'];
 	<a 
 	
 	href="<?php echo $modifica?>?nRequisicion=<?php echo $requisicion; ?>&amp;almacen=
-		<?php echo $myrow13['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacen=<?php echo $ali; ?>&keyPA=<?php echo $myrow['keyPA'];?>"><img src="/sima/imagenes/Save.png" alt="Modificaci&oacute;n de Art&iacute;culos, M&aacute;ximo, M&iacute;nimo, Reorden.." width="12" height="12" border="0" /> </a> 
+		<?php echo $myrow13['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacen=<?php echo $ali; ?>&keyPA=<?php echo $myrow['keyPA'];?>"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Modificaci&oacute;n de Art&iacute;culos, M&aacute;ximo, M&iacute;nimo, Reorden.." width="12" height="12" border="0" /> </a> 
 		<?php } else { echo '?';} ?>
 		
 	  </div></td>
@@ -592,11 +593,11 @@ $modifica=$myrow39['rutaModifica'];
 		
 		href="<?php echo $_SERVER['PHP_SELF'];?>?codigo5=<?php echo $code; ?>&seguro=<?php echo $_GET['seguro']; ?>&inactiva=<?php echo'inactiva'; ?>&tipoAlmacen=<?php echo $_GET['tipoAlmacen']; ?>&codigo=<?php echo $C; ?>&criterio=<?php echo $_GET["criterio"];?>&gpoProducto=<?php echo $_GET['gpoProducto1'];?>&almacenDestino=<?php echo $_GET['almacenDestino'];?>&almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&gpoProducto1=<?php echo $_GET['gpoProducto1'];?>&keyPA=<?php echo $myrow['keyPA'];?>">
         
-        <img src="/sima/imagenes/newicon/active_icon.jpg" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/newicon/active_icon.jpg" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
               <?php } else { ?>
               <a
 			 
-			   href="<?php echo $_SERVER['PHP_SELF'];?>?codigo5=<?php echo $code; ?>&seguro=<?php echo $_GET['seguro']; ?>&activa=<?php echo "activa"; ?>&usuario=<?php echo $E; ?>&tipoAlmacen=<?php echo $_GET['tipoAlmacen']; ?>&codigo=<?php echo $C?>&criterio=<?php echo $_GET["criterio"];?>&gpoProducto=<?php echo $_GET['gpoProducto1'];?>&almacenDestino=<?php echo $_GET['almacenDestino'];?>&almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&gpoProducto1=<?php echo $_GET['gpoProducto1'];?>&keyPA=<?php echo $myrow['keyPA'];?>"> <img src="/sima/imagenes/newicon/delete_icon.jpg" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
+			   href="<?php echo $_SERVER['PHP_SELF'];?>?codigo5=<?php echo $code; ?>&seguro=<?php echo $_GET['seguro']; ?>&activa=<?php echo "activa"; ?>&usuario=<?php echo $E; ?>&tipoAlmacen=<?php echo $_GET['tipoAlmacen']; ?>&codigo=<?php echo $C?>&criterio=<?php echo $_GET["criterio"];?>&gpoProducto=<?php echo $_GET['gpoProducto1'];?>&almacenDestino=<?php echo $_GET['almacenDestino'];?>&almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&gpoProducto1=<?php echo $_GET['gpoProducto1'];?>&keyPA=<?php echo $myrow['keyPA'];?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/newicon/delete_icon.jpg" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
               <?php } ?>
       </span></div></td>
     </tr>
@@ -606,7 +607,7 @@ $modifica=$myrow39['rutaModifica'];
     <label></label>
     <input name="bandera" type="hidden" id="bandera" value="<?php echo $totalRegistros; ?>" />
     <label><?php if($totalRegistros){ ?>
-    <input name="actualizar" type="image" src="/sima/imagenes/btns/refresh.png" id="actualizar" value="Actualizar " />
+    <input name="actualizar" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/refresh.png" id="actualizar" value="Actualizar " />
 	<?php } ?>
     </label>
     <input name="gpoProducto1" type="hidden" id="gpoProducto1" value="<?php echo $_GET['gpoProducto1']; ?>" />
