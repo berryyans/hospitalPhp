@@ -1,4 +1,5 @@
-<?php 
+<?php
+require('/Constantes.php');
 class consultaArticulosPrecio{
 public function consultarArticulos($almacen,$entidad,$basedatos){
 $articulo = $_GET['nomArticulo']; 
@@ -148,9 +149,9 @@ echo 'Se eliminaron cambios en el sistema...';
 
 
 
-        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.js"></script>
-        <script type="text/javascript" src="/sima/js/editp/spec/support/jquery.ui.js"></script>
-        <script type="text/javascript" src="/sima/js/editp/lib/jquery.editinplace.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.ui.js"></script>
+        <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/lib/jquery.editinplace.js"></script>
         
 
 
@@ -234,7 +235,7 @@ $rCombo=mysql_db_query($basedatos,$aCombo); ?>
     <tr>
       <td height="22"  scope="col">&nbsp;</td>
       <td  scope="col"><div align="left"><span >
-          <input name="buscar" type="submit" src="/sima/imagenes/btns/searcharticles.png" id="buscar" value="buscar" />
+          <input name="buscar" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png" id="buscar" value="buscar" />
       </span></div></td>
     </tr>
   </table>
@@ -390,7 +391,7 @@ $(document).ready(function(){
 
 	// Using a callback function to update 2 divs
 	$("#<?php echo $myrow['keyE']; ?>").editInPlace({
-            url: "/sima/cargos/ajusteAnaquel.php?keyE=<?php echo $myrow['keyE']; ?>"
+            url: "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ajusteAnaquel.php?keyE=<?php echo $myrow['keyE']; ?>"
 		//callback: function(element_id,original_element, html, original){
                      
 		//	$("#updateDiv1").html("The original html was: " + original);
@@ -404,7 +405,7 @@ $(document).ready(function(){
         	// A select input field so we can limit our options
 	$("#<?php echo $myrow['keyPA'];?>").editInPlace({
 		callback: function(unused, enteredText) { return enteredText; },
-                url: "/sima/cargos/ajusteGpoProducto.php?gpoProducto=<?php echo $myrow['gpoProducto'];?>&keyPA=<?php echo $myrow['keyPA'];?>",
+                url: "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ajusteGpoProducto.php?gpoProducto=<?php echo $myrow['gpoProducto'];?>&keyPA=<?php echo $myrow['keyPA'];?>",
 		field_type: "select",
 		select_options: "<?php 
 	 

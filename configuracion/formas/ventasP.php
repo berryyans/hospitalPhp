@@ -184,7 +184,7 @@ echo mysql_error();
 ?>
 
 <script language="JavaScript" type="text/javascript">
-javascript:ventanaSecundaria20('/sima/cargos/agregaArticulos.php?almacen=<?php echo $_GET['almacen']; ?>&numeroE=<?php echo $_POST['numeroEx']; ?>&nCuenta=<?php echo $myrow45['nCuenta']; ?>&credencial=<?php echo $_POST['credencial']; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&almacenDestino=<?php echo $_GET['almacen']; ?>&almacenSolicitante=<?php echo $_GET['almacen']; ?>&banderaCXC=<?php echo $_POST['banderaCXC']; ?>&cargoTotal=<?php echo $_POST['cargoTotal']; ?>&fechaSolicitud=<?php echo $_POST['fechaSolicitud']; ?>&horaSolicitud=<?php echo $_POST['horaSolicitud']; ?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos'];?>&tipoPaciente=<?php echo 'externo';?>');
+javascript:ventanaSecundaria20('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaArticulos.php?almacen=<?php echo $_GET['almacen']; ?>&numeroE=<?php echo $_POST['numeroEx']; ?>&nCuenta=<?php echo $myrow45['nCuenta']; ?>&credencial=<?php echo $_POST['credencial']; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&almacenDestino=<?php echo $_GET['almacen']; ?>&almacenSolicitante=<?php echo $_GET['almacen']; ?>&banderaCXC=<?php echo $_POST['banderaCXC']; ?>&cargoTotal=<?php echo $_POST['cargoTotal']; ?>&fechaSolicitud=<?php echo $_POST['fechaSolicitud']; ?>&horaSolicitud=<?php echo $_POST['horaSolicitud']; ?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos'];?>&tipoPaciente=<?php echo 'externo';?>');
 
 opener.location.reload(true);
 self.close();
@@ -246,7 +246,7 @@ msgbox "SE GENERO LA ORDEN # <?php echo $myrow1['keyClientesInternos']; ?>!"
 
 
 <script>
-javascript:ventanaSecundaria20('/sima/cargos/agregaArticulos.php?numeroE=<?php echo $myrow1['numeroE']; ?>&credencial=<?php echo $_POST['credencial']; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&almacen=<?php echo $ALMACEN; ?>&banderaCXC=<?php echo $_POST['banderaCXC']; ?>&nCuenta=<?php echo $myrow1['nCuenta']; ?>&cargoTotal=<?php echo $_POST['cargoTotal']; ?>&fechaSolicitud=<?php echo $_POST['fechaSolicitud']; ?>&horaSolicitud=<?php echo $_POST['horaSolicitud']; ?>&keyClientesInternos=<?php echo $myrow1['keyClientesInternos'];?>&tipoPaciente=<?php echo 'externo';?>');
+javascript:ventanaSecundaria20('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaArticulos.php?numeroE=<?php echo $myrow1['numeroE']; ?>&credencial=<?php echo $_POST['credencial']; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&almacen=<?php echo $ALMACEN; ?>&banderaCXC=<?php echo $_POST['banderaCXC']; ?>&nCuenta=<?php echo $myrow1['nCuenta']; ?>&cargoTotal=<?php echo $_POST['cargoTotal']; ?>&fechaSolicitud=<?php echo $_POST['fechaSolicitud']; ?>&horaSolicitud=<?php echo $_POST['horaSolicitud']; ?>&keyClientesInternos=<?php echo $myrow1['keyClientesInternos'];?>&tipoPaciente=<?php echo 'externo';?>');
 </script>
 <?php 
 } else {
@@ -468,13 +468,13 @@ $myrow39 = mysql_fetch_array($result39);
 		  ?>" size="60"   />                
           <span class="style12">
           <input name="M2" type="button" class="style12" id="M2"  onclick="javascript:ventanaSecundaria6(
-		'/sima/cargos/ventanaBuscaExpediente.php?campoDespliega=<?php echo "paciente"; ?>&forma=<?php echo "form1"; ?>&campo=<?php echo "numeroEx"; ?>&fechaNac=<?php echo "fechaNac"; ?>&edad=<?php echo "edad"; ?>')" value="E" />
-          <span class="Estilo25"><span class="style121"><a href="javascript:ventanaSecundaria2('/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span> </span><span class="style15">
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaBuscaExpediente.php?campoDespliega=<?php echo "paciente"; ?>&forma=<?php echo "form1"; ?>&campo=<?php echo "numeroEx"; ?>&fechaNac=<?php echo "fechaNac"; ?>&edad=<?php echo "edad"; ?>')" value="E" />
+          <span class="Estilo25"><span class="style121"><a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span> </span><span class="style15">
           <input name="M22" type="button" class="style15" id="M22"  onclick="javascript:ventanaSecundaria6(
-		'/sima/cargos/listaPacientesPrepago.php?campoDespliega=<?php echo "paciente"; ?>&forma=<?php echo "form1"; ?>&campo=<?php echo "numeroEx"; ?>&fechaNac=<?php echo "keyClientesInternos"; ?>&edad=<?php echo "edad"; ?>')" value="PP" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaPacientesPrepago.php?campoDespliega=<?php echo "paciente"; ?>&forma=<?php echo "form1"; ?>&campo=<?php echo "numeroEx"; ?>&fechaNac=<?php echo "keyClientesInternos"; ?>&edad=<?php echo "edad"; ?>')" value="PP" />
           </span><span class="style15">
           <input name="paquete" type="submit" class="style15" id="paquete"  onclick="javascript:ventanaSecundaria6(
-		'/sima/cargos/ventanaCargaArticulosPaquetes.php?campoDespliega=<?php echo "paciente"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "numeroEx"; ?>&amp;fechaNac=<?php echo "fechaNac"; ?>&amp;edad=<?php echo "edad"; ?>')" value="EPAQ" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaCargaArticulosPaquetes.php?campoDespliega=<?php echo "paciente"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "numeroEx"; ?>&amp;fechaNac=<?php echo "fechaNac"; ?>&amp;edad=<?php echo "edad"; ?>')" value="EPAQ" />
           </span></div></th>
 		  <?php } ?>
       </tr>
@@ -489,7 +489,7 @@ $myrow39 = mysql_fetch_array($result39);
 		value="<?php if($_POST['seguro'] and !$_POST['nuevo']){ echo $_POST['seguro'];} else { echo "0";}?>" 
 		onchange="javascript:this.form.submit();" />
               <input name="agregarCargos3" type="button" class="Estilo24" id="agregarCargos3"  onclick="javascript:ventanaSecundaria1(
-		'/sima/cargos/agregarSeguros.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "seguro"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="S" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregarSeguros.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "seguro"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="S" />
               <input name="nomSeguro" type="text" class="Estilo24" id="nomSeguro" size="80" readonly="" 
 		value="<?php 
 		 if($_POST['seguro'] and !$_POST['nuevo']){ 

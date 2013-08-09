@@ -1,4 +1,6 @@
-<?php  class listaPX{ 
+<?php  
+require('/Constantes.php');
+class listaPX{ 
 public function mostrarPacientes($ventana1,$ventana,$entidad,$TITULO,$almacen,$usuario,$numeroE,$basedatos){ ?>
 
 <script language="javascript" type="text/javascript">   
@@ -19,16 +21,16 @@ function valida(F) {
                 alert("Por Favor, escribe el nombre del paciente!")   
                 return false   
         } else if( vacio(F.deposito.value) == false ) {   
-                alert("Por Favor, escribe el depósito!")   
+                alert("Por Favor, escribe el depï¿½sito!")   
                 return false   
         } else if( vacio(F.medico.value) == false ) {   
-                alert("Por Favor, escoje el médico responsable del internamiento!")   
+                alert("Por Favor, escoje el mï¿½dico responsable del internamiento!")   
                 return false   
         }  else if( vacio(F.cuarto.value) == false ) {   
                 alert("Por Favor, escoje el cuarto que desees asignar!")   
                 return false   
         }  else if( vacio(F.limiteCredito.value) == false ) {   
-                alert("Por Favor, escoje el límite que desees asignar!")   
+                alert("Por Favor, escoje el lï¿½mite que desees asignar!")   
                 return false   
         }   
 }   
@@ -83,7 +85,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -95,7 +97,7 @@ function checkIt(evt) {
 // Nannette Thacker http://www.shiningstar.net
 function confirmSubmit()
 {
-var agree=confirm("Está Ud. seguro de cambiar a este paciente de cama?");
+var agree=confirm("Estï¿½ Ud. seguro de cambiar a este paciente de cama?");
 var bandera;
 if (agree)
 	return true ;
@@ -156,7 +158,7 @@ else
       </tr>
       <tr valign="middle" class="catalogo">
         <td>Nuevo Paciente </td>
-        <td><span class="Estilo26"><span class="style121"><a href="javascript:ventanaSecundaria1('<?php echo $ventana;?>?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" /></a><a href="javascript:ventanaSecundaria1('modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span></td>
+        <td><span class="Estilo26"><span class="style121"><a href="javascript:ventanaSecundaria1('<?php echo $ventana;?>?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" /></a><a href="javascript:ventanaSecundaria1('modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&forma=<?php echo "F"; ?>&numeroExpediente=<?php echo $myrow['numCliente']; ?>&seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span></td>
     </tr>
       <tr valign="middle" bgcolor="#FFCCFF" class="catalogo">
         <td width="137"><div align="left" class="style7">Apellido Paterno, Materno </div></td>
@@ -266,7 +268,7 @@ $myrow31 = mysql_fetch_array($result31);
         <td bgcolor="<?php echo $color;?>" class="Estilo24"><span class="style12">
 		
 		
-		<a href="javascript:ventanaSecundaria1('<?php echo $ventana1;?>?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" />
+		<a href="javascript:ventanaSecundaria1('<?php echo $ventana1;?>?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Datos Generales del Paciente" width="19" height="19" border="0" />
 		</a>
 		
 		</span></td>

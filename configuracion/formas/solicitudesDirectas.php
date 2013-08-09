@@ -367,12 +367,12 @@ onclick="if(confirm('�Est�s seguro que deseas cancelar el articulo: <?php ec
 	  
 	  <td bgcolor="<?php echo $color?>" class="style12"><span class="Estilo24">
         <?php if(	  !$myrow17['id_requisicion']){ ?>
-        <img src="/sima/imagenes/sinSolicitar.png" alt="No se ha generado una requisicion para este art&iacute;culo" width="23" height="23" />
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/sinSolicitar.png" alt="No se ha generado una requisicion para este art&iacute;culo" width="23" height="23" />
         <?php } else if($pendiente=='1'){?>
-		<img src="/sima/imagenes/pendiente.png" width="23" height="23" alt="Solicitud Pendiente" /> 
+		<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/pendiente.png" width="23" height="23" alt="Solicitud Pendiente" /> 
 		
 		<?php } else { ?>
-        <img src="/sima/imagenes/solicitado.png" alt="Ya tiene una requisicion" width="23" height="23" />
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/solicitado.png" alt="Ya tiene una requisicion" width="23" height="23" />
         <?php } ?>
            </span></td>
       <td bgcolor="<?php echo $color?>" class="style12"><span class="style7">

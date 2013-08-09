@@ -89,7 +89,7 @@ if($_POST['cargosPaquetes'] AND $_POST['keyClientesInternos'] AND $_POST['pacien
 
 
 <script language="JavaScript" type="text/javascript">
-ventanaSecundaria20('/sima/cargos/agregaArticulosPaquetes.php?almacen=<?php echo $_GET['almacen']; ?>&numeroE=<?php echo $_POST['numeroEx']; ?>&nCuenta=<?php echo $myrow1['nCuenta']; ?>&credencial=<?php echo $_POST['credencial']; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&almacenDestino=<?php echo $_GET['almacen']; ?>&almacenSolicitante=<?php echo $_GET['almacen']; ?>&banderaCXC=<?php echo $_POST['banderaCXC']; ?>&cargoTotal=<?php echo $_POST['cargoTotal']; ?>&fechaSolicitud=<?php echo $_POST['fechaSolicitud']; ?>&horaSolicitud=<?php echo $_POST['horaSolicitud']; ?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos'];?>&almacenSolicitud=<?php echo $_GET['almacenSolicitud'];?>&folioVenta=<?php echo $_POST['keyClientesInternos']; ?>');
+ventanaSecundaria20('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregaArticulosPaquetes.php?almacen=<?php echo $_GET['almacen']; ?>&numeroE=<?php echo $_POST['numeroEx']; ?>&nCuenta=<?php echo $myrow1['nCuenta']; ?>&credencial=<?php echo $_POST['credencial']; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&almacenDestino=<?php echo $_GET['almacen']; ?>&almacenSolicitante=<?php echo $_GET['almacen']; ?>&banderaCXC=<?php echo $_POST['banderaCXC']; ?>&cargoTotal=<?php echo $_POST['cargoTotal']; ?>&fechaSolicitud=<?php echo $_POST['fechaSolicitud']; ?>&horaSolicitud=<?php echo $_POST['horaSolicitud']; ?>&keyClientesInternos=<?php echo $_POST['keyClientesInternos'];?>&almacenSolicitud=<?php echo $_GET['almacenSolicitud'];?>&folioVenta=<?php echo $_POST['keyClientesInternos']; ?>');
 close();
 </script>
 
@@ -159,7 +159,7 @@ $myrow39 = mysql_fetch_array($result39);
           </label>
           <span >
           <input name="paquete" type="button" id="paquete"  onClick="javascript:ventanaSecundaria6(
-		'/sima/cargos/ventanaCargaArticulosPaquetes.php?campoDespliega=<?php echo "paciente"; ?>&forma=<?php echo "form1"; ?>&campo=<?php echo "folioVenta"; ?>&fechaNac=<?php echo "fechaNac"; ?>&edad=<?php echo "edad"; ?>&almacen=<?php echo $ALMACEN; ?>')" value="EPAQ" src="/sima/imagenes/btns/searcharticles.png" align="bottom" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaCargaArticulosPaquetes.php?campoDespliega=<?php echo "paciente"; ?>&forma=<?php echo "form1"; ?>&campo=<?php echo "folioVenta"; ?>&fechaNac=<?php echo "fechaNac"; ?>&edad=<?php echo "edad"; ?>&almacen=<?php echo $ALMACEN; ?>')" value="EPAQ" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png" align="bottom" />
           </span><br>
         </div></td>
       </tr>
@@ -182,7 +182,7 @@ $myrow39 = mysql_fetch_array($result39);
 		  echo $_POST['paciente'];
 		  } 
 		  ?>" size="60" readonly=""  />                
-          <span ><span c><span ><a href="javascript:ventanaSecundaria2('/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span> </span></div></td>
+          <span ><span c><span ><a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></span> </span></div></td>
 		  <?php } ?>
       </tr>
       
@@ -212,7 +212,7 @@ $myrow1 = mysql_fetch_array($result1);
           <p>
             <input name="fechaSolicitud" type="hidden"  id="nuevo" value="<?php echo $_GET['fechaSolicitud'];?>" />
             <input name="horaSolicitud" type="hidden"  id="nuevo" value="<?php echo $_GET['horaSolicitud'];?>" />
-            <input name="cargosPaquetes" type="submit" src="/sima/imagenes/btns/agregacargos.png" id="boton" value="Agregar Cargos" />
+            <input name="cargosPaquetes" type="submit" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/agregacargos.png" id="boton" value="Agregar Cargos" />
             </p>
           </p>
         <div align="center"><strong>

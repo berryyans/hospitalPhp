@@ -41,7 +41,7 @@ function ventanaSecundaria2 (URL){
    window.open(URL,"ventana2","width=350,height=170,scrollbars=YES") 
 } 
 </script> 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -214,7 +214,7 @@ codigo = '".$code."'
       <td bgcolor="<?php echo $color;?>" ><span ><?php echo $myrow['descripcion']; ?> 
         <?php 
 	  if(!$bali){
-	   echo '<img src="/sima/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
+	   echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
 	   }
 	  ?>
 	  

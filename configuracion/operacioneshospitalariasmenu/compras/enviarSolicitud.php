@@ -356,24 +356,24 @@ $estilos->styles();
 
 
   <form id="form1" name="form1" method="post" >
-    <p align="center"><span class="normalmid"><a href="javascript:ventanaSecundaria7('/sima/ADMINHOSPITALARIAS/inventarios/catalogoPatente.php')">PAT
+    <p align="center"><span class="normalmid"><a href="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/catalogoPatente.php')">PAT
 	</a>
 	</span>
 	---
 	    
-	<span class="normalmid"><a href="javascript:ventanaSecundaria7('/sima/ADMINHOSPITALARIAS/inventarios/catalogoGenericos.php')">GEN
+	<span class="normalmid"><a href="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/catalogoGenericos.php')">GEN
 	</a>	</span>
 	---
 
-    <span class="normalmid"><a href="javascript:ventanaSecundaria7('/sima/ADMINHOSPITALARIAS/inventarios/catalogoMateriales.php')">MAT
+    <span class="normalmid"><a href="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/catalogoMateriales.php')">MAT
 	</a>	</span>
 	---
 
-    <span class="normalmid"><a href="javascript:ventanaSecundaria7('/sima/ADMINHOSPITALARIAS/inventarios/catalogoVarios.php')">VARIOS
+    <span class="normalmid"><a href="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/catalogoVarios.php')">VARIOS
 	</a>	</span>
 	---
 
-    <span class="normalmid"><a href="javascript:ventanaSecundaria7('/sima/ADMINHOSPITALARIAS/inventarios/catalogoMateriales.php')">CONT
+    <span class="normalmid"><a href="javascript:ventanaSecundaria7('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/catalogoMateriales.php')">CONT
 	</a>	</span>	</p>
     <p align="center" class="normal"><a href="javascript:ventanaSecundaria17('ventanaAgregarArticulos.php?proveedor=<?php echo $_GET['proveedor'];?>&id_factura=<?php echo $_GET['id_factura'];?>&departamento=<?php echo $_GET['departamento'];?>&req=<?php echo $_GET['req'];?>')">CARGAR ARTICULOS </a></p>
 	
@@ -602,9 +602,9 @@ $notaCredito[0]+=$myrow['precioUnitario']*$myrow['cantidad'];
         <td bgcolor="<?php echo $color;?>" class="normal">
 		
 		<input name="precioSugerido[]" type="text" id="precioSugerido[]" size="6" value="<?php echo $myrow['precioSugerido']; ?>" autocomplete="off" <?php  if($myrow['status']=='notaCredito')echo 'readonly=""';?>/>		</td>
-        <td bgcolor="<?php echo $color;?>" class="normal"><div align="center"><span class=""> <a  href="javascript:ventanaSecundaria2('/sima/cargos/listaAlmacenes.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>')"> <img src="/sima/imagenes/btns/precio.png" alt="Almacenes" width="20" height="20" border="0" /></a></span></div></td>
+        <td bgcolor="<?php echo $color;?>" class="normal"><div align="center"><span class=""> <a  href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenes.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/precio.png" alt="Almacenes" width="20" height="20" border="0" /></a></span></div></td>
         <td bgcolor="<?php echo $color;?>" class="normal"><div align="center">
-                <a href="<?php echo $_SERVER['PHP_SELF'];?>?keyClientesInternos=<?php echo $myrow112['keyClientesInternos']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&amp;keyR=<?php echo $myrow['keyR'];?>&id_factura=<?php echo $_GET['id_factura'];?>&proveedor=<?php echo $_GET['proveedor'];?>&departamento=<?php echo $_GET['departamento'];?>&req=<?php echo $_GET['req'];?>&id_proveedor=<?php echo $_GET['proveedor'];?>&importeFactura=<?php echo $_GET['importeFactura'];?>&ivaFactura=<?php echo $_GET['ivaFactura'];?>"> <img src="/sima/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar <?php echo $myrow['descripcion']; ?>?') == false){return false;}" /></a></div></td>
+                <a href="<?php echo $_SERVER['PHP_SELF'];?>?keyClientesInternos=<?php echo $myrow112['keyClientesInternos']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;almacenDestino1=<?php echo $_GET['almacenDestino1'];?>&amp;keyR=<?php echo $myrow['keyR'];?>&id_factura=<?php echo $_GET['id_factura'];?>&proveedor=<?php echo $_GET['proveedor'];?>&departamento=<?php echo $_GET['departamento'];?>&req=<?php echo $_GET['req'];?>&id_proveedor=<?php echo $_GET['proveedor'];?>&importeFactura=<?php echo $_GET['importeFactura'];?>&ivaFactura=<?php echo $_GET['ivaFactura'];?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/cancelabtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="16" height="16" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas eliminar <?php echo $myrow['descripcion']; ?>?') == false){return false;}" /></a></div></td>
       </tr>
       <?php } //cierra while
 	
@@ -741,7 +741,7 @@ echo '$'.number_format($total,2);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/articulosx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/articulosx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

@@ -127,13 +127,13 @@ AND
 OR
 ($almacenesCierreCuenta->almacenesCierreCuenta($bali,$fecha1,$hora1,$usuario,$myrow['keyClientesInternos'],$entidad,$numeroE,$nCuenta,$basedatos)=='standby' or $almacenesCierreCuenta->almacenesCierreCuenta($bali,$fecha1,$hora1,$usuario,$myrow['keyClientesInternos'],$entidad,$numeroE,$nCuenta,$basedatos)=='request')){
 ?>
-            <a href="#" onClick="javascript:ventanaSecundaria('/sima/cargos/solicitaArticulos.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPaciente=<?php echo "interno"; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>')">
-            <img src="/sima/imagenes/btns/addbtn.png"  alt="Agregar Articulos" width="24" height="24" border="0"/>	  </a>
+            <a href="#" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/solicitaArticulos.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPaciente=<?php echo "interno"; ?>&keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>')">
+            <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/addbtn.png"  alt="Agregar Articulos" width="24" height="24" border="0"/>	  </a>
           
           
           
           <?php } else { ?>
-          <img src="/sima/imagenes/btns/stopbtn.png" alt="Cuenta en proceso de cierre"  width="24" height="24" border="0"/>
+          <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/stopbtn.png" alt="Cuenta en proceso de cierre"  width="24" height="24" border="0"/>
           <?php } ?>	  
       </div></td>
     </tr>

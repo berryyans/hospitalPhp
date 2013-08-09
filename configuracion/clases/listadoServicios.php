@@ -1,4 +1,6 @@
-<?php $articulo = $_POST['nomArticulo']; ?>
+<?php 
+require('/Constantes.php');
+$articulo = $_POST['nomArticulo']; ?>
 
 
 <?php 
@@ -228,7 +230,7 @@ $bali=$myrow51['almacen'];
 	  <?php echo $myrow15['descripcion']; ?>
         <?php 
 	  if(!$bali){
-	   echo '<img src="/sima/imagenes/candado.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
+	   echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/candado.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
 	   }
 	  ?>
     </span></div></td>
@@ -240,9 +242,9 @@ $bali=$myrow51['almacen'];
 	  echo '...';
 	  }
 	   ?></td>
-	  <td bgcolor="<?php echo $color;?>" class="style12"><div align="left"><span class=""> <a href="javascript:ventanaSecundaria2('/sima/cargos/listaAlmacenes.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>')"> <img src="/sima/imagenes/almacen.jpeg" alt="Almacenes" width="12" height="12" border="0" /></a> </span></div></td>
+	  <td bgcolor="<?php echo $color;?>" class="style12"><div align="left"><span class=""> <a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenes.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/almacen.jpeg" alt="Almacenes" width="12" height="12" border="0" /></a> </span></div></td>
 	  <td bgcolor="<?php echo $color;?>" class="style12"><div align="left"><a href="<?php echo $modifica;?>?nRequisicion=<?php echo $requisicion; ?>&amp;almacen=
-		<?php echo $myrow13['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;codigo=<?php echo $codigo; ?>&amp;almacen=<?php echo $_POST['almacenDestino1']; ?>"><img src="/sima/imagenes/Save.png" alt="Modificaci&oacute;n de Art&iacute;culos, M&aacute;ximo, M&iacute;nimo, Reorden.." width="12" height="12" border="0" /> </a> </div></td>
+		<?php echo $myrow13['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;codigo=<?php echo $codigo; ?>&amp;almacen=<?php echo $_POST['almacenDestino1']; ?>"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Modificaci&oacute;n de Art&iacute;culos, M&aacute;ximo, M&iacute;nimo, Reorden.." width="12" height="12" border="0" /> </a> </div></td>
 	  <?php 
 $sSQL151="SELECT articulos.codigo
 FROM
@@ -257,9 +259,9 @@ group by articulos.codigo
   $result151=mysql_db_query($basedatos,$sSQL151);
   $myrow151 = mysql_fetch_array($result151);
 	  if($myrow151['codigo']){
-	  $ventanita='/sima/cargos/ventanitaCambiaPVyP.php';
+	  $ventanita=CONSTANT_PATH_SIMA_RAIZ.'/cargos/ventanitaCambiaPVyP.php';
 	  } else {
-	  $ventanita='/sima/ADMINHOSPITALARIAS/inventarios/ventanitaCambiaPrecio.php';
+	  $ventanita=CONSTANT_PATH_SIMA_RAIZ.'/ADMINHOSPITALARIAS/inventarios/ventanitaCambiaPrecio.php';
 	  }
 	  ?>
 	  
@@ -267,9 +269,9 @@ group by articulos.codigo
 	  
       <td bgcolor="<?php echo $color;?>" class="style12"><span class="style71">
         <?php if($myrow['activo']=='A'){ ?>
-      </span> <span class="Estilo24"> <a href="catalogoAlmacen.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>"> <img src="/sima/imagenes/surtido.png" alt="ACTIVO" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
+      </span> <span class="Estilo24"> <a href="catalogoAlmacen.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/surtido.png" alt="ACTIVO" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
       <?php } else { ?>
-      <a href="catalogoAlmacen.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C?>"> <img src="/sima/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
+      <a href="catalogoAlmacen.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
       <?php } ?>
       </span></td>
     </tr>

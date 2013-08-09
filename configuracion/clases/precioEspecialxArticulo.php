@@ -23,7 +23,7 @@ function checkIt(evt) {
     evt = (evt) ? evt : window.event
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        status = "Este campo sólo acepta números."
+        status = "Este campo sï¿½lo acepta nï¿½meros."
         return false
     }
     status = ""
@@ -200,15 +200,15 @@ setTimeout("jump0()",50)}}
 <?php 
 }
 ?>
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 
-<script src="/sima/js/prototype.js" type="text/javascript"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/prototype.js" type="text/javascript"></script>
 <!-- set focus to a field with the name "searchcontent" in my form -->
 
 
 <script language="JavaScript1.2">
 
-//Highlight form element- © Dynamic Drive (www.dynamicdrive.com)
+//Highlight form element- ï¿½ Dynamic Drive (www.dynamicdrive.com)
 //For full source code, 100's more DHTML scripts, and TOS,
 //visit http://www.dynamicdrive.com
 
@@ -260,13 +260,13 @@ echo $_GET['buscar'];
 
 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
-  <!-- librería principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
- <!-- librería para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
-  <!-- librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <!-- librerï¿½a principal del calendario --> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
+ <!-- librerï¿½a para cargar el lenguaje deseado --> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
+  <!-- librerï¿½a que declara la funciï¿½n Calendar.setup, que ayuda a generar un calendario en unas pocas lï¿½neas de cï¿½digo --> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script>
 
 
 
@@ -381,7 +381,7 @@ document.Form2.criterio.focus();
 </script>
       </span></td>
       <td width="95"><span class="negro">
-        <input type="image" src="/sima/imagenes/btns/searcharticles.png"  value="Buscar" />
+        <input type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png"  value="Buscar" />
       </span></td>
       <td width="113"><span class="negro">Mostrar Registros</span></td>
       <td width="143"><span class="negro">
@@ -445,7 +445,7 @@ $TAMANO_PAGINA = 30;
 } else {
 $TAMANO_PAGINA=$_GET['registros'];
 }
-//examino la página a mostrar y el inicio del registro a mostrar
+//examino la pï¿½gina a mostrar y el inicio del registro a mostrar
 $pagina = $_GET["pagina"];
 if (!$pagina) {
 		$inicio = 0;
@@ -455,9 +455,9 @@ else {
 	$inicio = ($pagina - 1) * $TAMANO_PAGINA;
 }
 
-//miro a ver el número total de campos que hay en la tabla con esa búsqueda
+//miro a ver el nï¿½mero total de campos que hay en la tabla con esa bï¿½squeda
 
-//calculo el total de páginas
+//calculo el total de pï¿½ginas
 $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
 
 if($_GET['criterio']){
@@ -589,11 +589,11 @@ $myrow39d = mysql_fetch_array($result39d);
 			<label>
 			<?php 
 	  if(!$bali){
-	   echo '<img src="/sima/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
+	   echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
 	   }
 	  ?>
             <?php if($myrow['generico']=='si'){?>
-            <blink> <img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
+            <blink> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
             <?php } else { echo '';}?>   
             </label>      <span class="codigos">
             <?php //echo $myrow['codigo'];?>
@@ -646,7 +646,7 @@ WHERE keyPA='".$myrow['keyPA']."' order by keyAPN
       <td bgcolor="<?php echo $color;?>" class="normal" ><?php echo '$'.number_format($myrow6['nivel3'],2);?></td>
       <td bgcolor="<?php echo $color;?>" class="normal"><div align="center">
         <?php if($myrow39d['precioEspecial']){ ?>
-        <span class="Estilo24"> <a   href="pEspeciales.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;criterio=<?php echo $_GET["criterio"];?>&keyPA=<?php echo $myrow['keyPA'];?>"> <img src="/sima/imagenes/btns/checkbtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
+        <span class="Estilo24"> <a   href="pEspeciales.php?codigo5=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;codigo=<?php echo $C; ?>&amp;criterio=<?php echo $_GET["criterio"];?>&keyPA=<?php echo $myrow['keyPA'];?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="18" height="18" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
         <?php } else { 
         echo '---';
 		} ?>
@@ -657,7 +657,7 @@ WHERE keyPA='".$myrow['keyPA']."' order by keyAPN
   <p align="center">
     <input name="bandera" type="hidden" id="bandera" value="<?php echo $totalRegistros; ?>" />
     <label>
-    <input name="actualizar" type="image" src="/sima/imagenes/btns/refresh.png"  id="actualizar" value="Actualizar" />
+    <input name="actualizar" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/refresh.png"  id="actualizar" value="Actualizar" />
     <input name="criterios" type="hidden" value="<?php echo $_GET["criterio"];?>" />
     
     </label>
@@ -669,10 +669,10 @@ WHERE keyPA='".$myrow['keyPA']."' order by keyAPN
 <div align="center" class="normal"><?php
 
 
-//pongo el número de registros total, el tamaño de página y la página que se muestra
-echo "Número de registros encontrados: " . $num_total_registros . "<br>";
-echo "Se muestran páginas de " . $TAMANO_PAGINA . " registros cada una<br>";
-echo "Mostrando la página " . $pagina . " de " . $total_paginas . "<p>";
+//pongo el nï¿½mero de registros total, el tamaï¿½o de pï¿½gina y la pï¿½gina que se muestra
+echo "Nï¿½mero de registros encontrados: " . $num_total_registros . "<br>";
+echo "Se muestran pï¿½ginas de " . $TAMANO_PAGINA . " registros cada una<br>";
+echo "Mostrando la pï¿½gina " . $pagina . " de " . $total_paginas . "<p>";
 
 
 //construyo la sentencia SQL
@@ -686,23 +686,23 @@ $rs = mysql_query($ssql);
 	echo $fila->descripcion . "<br>";
 } */
 
-//cerramos el conjunto de resultados y la conexión con la base de datos
+//cerramos el conjunto de resultados y la conexiï¿½n con la base de datos
 /* mysql_free_result($rs);
 mysql_close($conn); 
  */
 //echo "<p>";
 
-//muestro los distintos índices de las páginas, si es que hay varias páginas
+//muestro los distintos ï¿½ndices de las pï¿½ginas, si es que hay varias pï¿½ginas
 //echo $res=$i/$total_paginas;
 $palabrasABC=32;
 
 if ($total_paginas > 1){
 	for ($i=1;$i<=$total_paginas;$i++){
 		if ($pagina == $i) 
-			//si muestro el índice de la página actual, no coloco enlace
+			//si muestro el ï¿½ndice de la pï¿½gina actual, no coloco enlace
 			echo $pagina . "  ";
 		else
-			//si el índice no corresponde con la página mostrada actualmente, coloco el enlace para ir a esa página
+			//si el ï¿½ndice no corresponde con la pï¿½gina mostrada actualmente, coloco el enlace para ir a esa pï¿½gina
 			echo "<a href='precios.php?pagina=" . $i . "&criterio=" . $txt_criterio . "&registros=" . $_GET['registros'] . "'>" . $i . "</a> ";
 	}
 }
@@ -731,14 +731,14 @@ echo mysql_error();
    Calendar.setup({ 
     inputField     :    "campo_fecha",     // id del campo de texto 
      ifFormat     :    "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
  <script type="text/javascript"> 
    Calendar.setup({ 
     inputField     :    "campo_fecha1",     // id del campo de texto 
      ifFormat     :     "%Y-%m-%d",      // formato de la fecha que se escriba en el campo de texto 
-     button     :    "lanzador1"     // el id del botón que lanzará el calendario 
+     button     :    "lanzador1"     // el id del botï¿½n que lanzarï¿½ el calendario 
 }); 
 </script> 
 

@@ -1,5 +1,7 @@
 
-<?php  class listaPX{ 
+<?php  
+require('/Constantes.php');
+class listaPX{ 
 public function mostrarPacientes($ventana1,$ventana,$entidad,$TITULO,$almacen,$usuario,$numeroE,$basedatos){ 
 $ALMACEN=$almacen;
 ?>
@@ -127,8 +129,8 @@ if(win.window.focus){win.window.focus();}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 
 <?php 
 $estilo= new muestraEstilos();
@@ -159,7 +161,7 @@ $estilo->styles();
          
 				<?php echo '</br>';?>
 		<a href="javascript:ventanaSecundaria1(
-		'/sima/cargos/busquedaAvanzada.php?reload=si')" class="normal">
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/busquedaAvanzada.php?reload=si')" class="normal">
 		Busqueda Avanzada 
 		</a>
         
@@ -286,7 +288,7 @@ $myrow6 = mysql_fetch_array($result6);
           <?php } ?>
         </span></td>
         <td align="center"  class="normal">  <a href="javascript:nueva('<?php echo $ventana;?>?numeroE=<?php echo $myrow['numCliente'];?>&amp;codigoPaquete=<?php echo $myrow['codigoPaquete'];?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>','ventana7','800','800','yes');"> Agregar Paquete </a> </span><!--</div>--></td>
-        <td align="center"  class="normal"><a href="#" onClick="ventanaSecundaria3('/sima/cargos/listaPacientesPaquetes.php?numeroE=<?php echo $myrow['numCliente'];?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')">Ver Lista</a>&nbsp;</div></td>
+        <td align="center"  class="normal"><a href="#" onClick="ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaPacientesPaquetes.php?numeroE=<?php echo $myrow['numCliente'];?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')">Ver Lista</a>&nbsp;</div></td>
         <td align="center"  class="normal"><span class="style12"> <a href="javascript:ventanaSecundaria1('<?php echo $ventana1;?>?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $myrow['numCliente']; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')">Editar Expediente </a> </span></div></td>
       </tr>
 	  <?php  }}}?>
@@ -320,7 +322,7 @@ $myrow6 = mysql_fetch_array($result6);
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/pacientesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/pacientesx.php?entidad=<?php echo $entidad;?>&q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

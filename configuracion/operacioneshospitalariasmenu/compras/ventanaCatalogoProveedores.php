@@ -137,7 +137,7 @@ $estilos-> styles();
    <p>
      <label></label>
    </p>
-   <img src="/sima/imagenes/bordestablas/borde1.png" width="744" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="744" height="24" />
    <table width="744" border="0" align="center" cellpadding="4" cellspacing="0" style="border: 0px solid #000000;">
      <tr>
        <th width="12" bgcolor="#CCCCCC" class="normal" >&nbsp;</th>
@@ -328,7 +328,7 @@ size="60" <?php if($myrow2['id_proveedor']){ echo 'readonly=""';}?>/>
 </label></td>
      </tr>
    </table>
-   <img src="/sima/imagenes/bordestablas/borde2.png" width="744" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="744" height="24" />
 <p>&nbsp;</p>
  </form>
 </body>

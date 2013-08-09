@@ -1,4 +1,5 @@
 <?php 
+require('/Constantes.php');
 class consultaArticulosPrecio{
 public function consultarArticulos($almacen,$entidad,$basedatos){
 ?>
@@ -183,9 +184,9 @@ setTimeout("jump0()",50)}}
 <?php 
 }
 ?>
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>  
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>  
 
-<script src="/sima/js/prototype.js" type="text/javascript"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/prototype.js" type="text/javascript"></script>
 <!-- set focus to a field with the name "searchcontent" in my form -->
 
 
@@ -391,7 +392,7 @@ document.Form2.criterio.focus();
 </script>
       </span></td>
       <td width="102"><span >
-        <input type="image" src="/sima/imagenes/btns/searcharticles.png"  value="Buscar" />
+        <input type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png"  value="Buscar" />
       </span></td>
       <td width="98"><span >Mostrar Registros</span></td>
       <td width="54"><span >
@@ -579,11 +580,11 @@ $myrow39 = mysql_fetch_array($result39);
           <label>
           <?php 
 	  if(!$bali){ ?>
-<a href="#" onMouseover="showhint('ESTE SERVICIO NO TIENE NINGUN ALMACEN ASIGNADO...', this, event, '150px')"><img src="/sima/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN"  width="13" height="13" border="0" /></a>
+<a href="#" onMouseover="showhint('ESTE SERVICIO NO TIENE NINGUN ALMACEN ASIGNADO...', this, event, '150px')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN"  width="13" height="13" border="0" /></a>
 	   <?php }
 	  ?>
           <?php if($myrow['generico']=='si'){?>
-          <blink> <img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
+          <blink> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
           <?php } else { echo '';}?>
           </label>
       </span></td>
@@ -620,7 +621,7 @@ $result7=mysql_db_query($basedatos,$sSQL7);
 	  echo '$'.number_format($myrow6['nivel3'],2);
 	  }	  
 	  ?></td>
-      <td ><a onMouseover="showhint('Presiona aqui para asignar almacenes a este servicio...', this, event, '150px')"  href="javascript:ventanaSecundaria2('/sima/cargos/listaAlmacenesTodos.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>&amp;gpoProducto=<?php echo $myrow['gpoProducto'];?>')"><img src="../imagenes/btns/precio.png" alt="Almacenes" width="20" height="20" border="0" /></a></td>
+      <td ><a onMouseover="showhint('Presiona aqui para asignar almacenes a este servicio...', this, event, '150px')"  href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenesTodos.php?main=<?php echo $_GET['main'];?>&warehouse=<?php echo $_GET['warehouse'];?>&codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>&amp;gpoProducto=<?php echo $myrow['gpoProducto'];?>')"><img src="../imagenes/btns/precio.png" alt="Almacenes" width="20" height="20" border="0" /></a></td>
       <td ><?php 
 
  $modifica=$myrow39['rutaModifica'];

@@ -119,16 +119,16 @@ height: 400px;
 <p>
   <?php 
 $imagen='ventapublicourgencias.jpg';
-$ventana1='/sima/OPERACIONESHOSPITALARIAS/urgencias/ventaPublico.php';
-$ventana11='/sima/cargos/listadoPacientes.php';
+$ventana1=CONSTANT_PATH_SIMA_RAIZ.'/OPERACIONESHOSPITALARIAS/urgencias/ventaPublico.php';
+$ventana11=CONSTANT_PATH_SIMA_RAIZ.'/cargos/listadoPacientes.php';
 //include("/configuracion/formas/ventaPublicoMenu.php"); 
 ?>
 </p>
 <p>&nbsp; </p>
 <div id="leftcolumn">
-<a href="javascript:ajaxpage('/sima/OPERACIONESHOSPITALARIAS/urgencias/ventaPublico.php?cargos=si&almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Venta al P�blico</a>
-<a href="javascript:ajaxpage('/sima/OPERACIONESHOSPITALARIAS/urgencias/ventaPublico.php?paquetes=si&almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Cargar Paquetes</a>
-<a href="javascript:ajaxpage('/sima/cargos/listadoPacientes.php?almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Listado de Pacientes</a>
+<a href="javascript:ajaxpage('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/urgencias/ventaPublico.php?cargos=si&almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Venta al P�blico</a>
+<a href="javascript:ajaxpage('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/urgencias/ventaPublico.php?paquetes=si&almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Cargar Paquetes</a>
+<a href="javascript:ajaxpage('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listadoPacientes.php?almacen=<?php echo $ALMACEN;?>', 'rightcolumn');">Listado de Pacientes</a>
 
 
 </div>

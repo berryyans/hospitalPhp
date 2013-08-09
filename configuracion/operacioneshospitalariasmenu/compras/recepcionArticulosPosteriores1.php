@@ -4,16 +4,16 @@ include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/compras/menuc
 <?php include(CONSTANT_PATH_CONFIGURACION."/funciones.php"); ?>
 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 <script language=javascript> 
 function ventanaSecundaria (URL){ 
    window.open(URL,"ventana1","width=630,height=700,scrollbars=YES") 
@@ -58,7 +58,7 @@ CONTENT="30">
   <input name="fecha" type="text" class="Estilo24" id="campo_fecha"
 	  value="<?php echo $fecha1;?>" size="10" readonly="" />
   <span class="Estilo25">
-  <input name="button" type="image"  id="lanzador" value="fecha"  src="/sima/imagenes/btns/fechadate.png"/>
+  <input name="button" type="image"  id="lanzador" value="fecha"  src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/fechadate.png"/>
   </span>  </span></span>
     <input name="busca" type="submit" class="style7" id="busca" value="Buscar" />
   </div>
@@ -66,7 +66,7 @@ CONTENT="30">
 </form>
 <p align="center">&nbsp;</p>
 <form id="form1" name="form1" method="post" action="recepcionArticulosPosteriores2.php">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="383" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="383" height="24" />
   <table width="383" border="0" align="center" cellpadding="4" cellspacing="0">
     <tr>
       <th width="142" bgcolor="#FFFF00" scope="col"><span class="style11"># REQUISICION </span></th>
@@ -136,7 +136,7 @@ $myrow2 = mysql_fetch_array($result2);
     </tr>
     <?php }} //cierra while ?>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="383" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="383" height="24" />
 <div align="center"><strong>
     <?php if($as){ 
 	echo "Se encontraron $as Registros..!!"; 

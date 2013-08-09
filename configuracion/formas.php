@@ -171,23 +171,23 @@ function ventanaSecundaria3 (URL){
 
 <!-Hoja de estilos del calendario --> 
 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-tas.css" title="win2k-cold-1" /> 
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-tas.css" title="win2k-cold-1" /> 
 
   <!-- librer�a principal del calendario --> 
 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
 
 
 
  <!-- librer�a para cargar el lenguaje deseado --> 
 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
 
 
 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script> 
 
   
 
@@ -265,7 +265,7 @@ function checkIt(evt) {
 
 </SCRIPT>
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 
 
 
@@ -1690,7 +1690,7 @@ function ventanaSecundaria (URL){
 
 
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -1769,7 +1769,7 @@ $estilo->styles();
 
     <tr>
 
-      <td colspan="8"><img src="/sima/imagenes/bordestablas/borde1.png" width="620" height="28" /></td>
+      <td colspan="8"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="620" height="28" /></td>
 
     </tr>
 
@@ -1964,7 +1964,7 @@ if($myrow3113c['numCliente']){
 
       <td colspan="8" bgcolor="#CCCCCC" align="center">
 
-       <input name="buscar" type="submit"  id="buscar" value="Buscar Articulo o Servicio" class="boton" src="/sima/imagenes/btns/new_busca.png" />
+       <input name="buscar" type="submit"  id="buscar" value="Buscar Articulo o Servicio" class="boton" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/new_busca.png" />
 
           <?php if($_POST['buscar']){  ?>
 
@@ -1984,7 +1984,7 @@ if($myrow3113c['numCliente']){
 
       <td height="39" colspan="8" align="center" bgcolor="#CCCCCC" valign="middle">
 
-        <input name="insertarArticulos" type="submit" id="insertarArticulos" value="Agregar Art&iacute;culos o Servicios" src="/sima/imagenes/btns/new_agregaarticulo.png" />
+        <input name="insertarArticulos" type="submit" id="insertarArticulos" value="Agregar Art&iacute;culos o Servicios" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/new_agregaarticulo.png" />
 
         <?php } ?>
 
@@ -3140,7 +3140,7 @@ echo $descripcionDescuentoGlobal= 'Descuento '. $P.'%';
 
       <td class="normalmid" align="right">
 
-      <a  href="javascript:ventanaSecundaria('/sima/ADMINHOSPITALARIAS/inventarios/ventanitaCambiaPrecioFormas.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>')"><?php echo '$'.number_format($ventaPublico,2);?></a>
+      <a  href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/ventanitaCambiaPrecioFormas.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>')"><?php echo '$'.number_format($ventaPublico,2);?></a>
 
 
 
@@ -3250,7 +3250,7 @@ $mouseOut='onMouseOut';
 
     <tr>
 
-      <td colspan="8"><img src="/sima/imagenes/bordestablas/borde2.png" width="620" height="28" /></td>
+      <td colspan="8"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="620" height="28" /></td>
 
     </tr>
 

@@ -1,4 +1,6 @@
-<?php class modificarMedicos{
+<?php 
+require('/Constantes.php');
+class modificarMedicos{
 
 public function modificaMedico($entidad,$numMedico,$basedatos){
 $_GET['numMedico']=$numMedico;
@@ -339,13 +341,13 @@ $myrow = mysql_fetch_array($result);
 
 
  <!-Hoja de estilos del calendario --> 
-  <link rel="stylesheet" type="text/css" media="all" href="/sima/calendario/calendar-brown.css" title="win2k-cold-1" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-brown.css" title="win2k-cold-1" />
   <!-- librer�a principal del calendario --> 
- <script type="text/javascript" src="/sima/calendario/calendar.js"></script> 
+ <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar.js"></script> 
  <!-- librer�a para cargar el lenguaje deseado --> 
-  <script type="text/javascript" src="/sima/calendario/lang/calendar-es.js"></script> 
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/lang/calendar-es.js"></script> 
   <!-- librer�a que declara la funci�n Calendar.setup, que ayuda a generar un calendario en unas pocas l�neas de c�digo --> 
-  <script type="text/javascript" src="/sima/calendario/calendar-setup.js"></script>
+  <script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/calendario/calendar-setup.js"></script>
 
 
 
@@ -370,7 +372,7 @@ $estilos->styles();
 ?>
 </head>
 
-<body onLoad="MM_preloadImages('/sima/imagenes/bordestablas/btns/newbtn.png')">
+<body onLoad="MM_preloadImages('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/newbtn.png')">
 
 <br />
 <h3>Formato alta medico</h3>
@@ -1643,7 +1645,7 @@ if($myrow['especialidad']==$resCombo['codigo']){
 <br>
 
 
-<div align="center"><input name="actualizar" type="submit" src='/sima/imagenes/bordestablas/btns/refreshbtn.png'  id="actualizar" value="Modificar/Grabar" />
+<div align="center"><input name="actualizar" type="submit" src='<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/btns/refreshbtn.png'  id="actualizar" value="Modificar/Grabar" />
     </div>
     
 

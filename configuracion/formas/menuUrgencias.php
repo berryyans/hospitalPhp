@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language=javascript> 
 function ventanaSecundaria1 (URL){ 
    window.open(URL,"ventana1","width=900,height=800,scrollbars=YES") 
@@ -21,7 +24,7 @@ function ventanaSecundaria11 (URL){
    window.open(URL,"ventana11","width=600,height=600,scrollbars=YES") 
 } 
 </script>
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 <div class="page_right">
 <div align="center">
 

@@ -110,7 +110,7 @@ CONTENT="30">
 <h1 align="center">Recibir OC </h1>
 <p>&nbsp;</p>
 <form id="form1" name="form1" method="post" action="recepcionArticulos1.php">
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="557" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="557" height="24" />
   <table width="557" border="0" align="center" cellpadding="4" cellspacing="0">
     <tr>
       <th width="146" bgcolor="#FFFF00" scope="col"><span class="style11"># REQUISICION </span></th>
@@ -173,7 +173,7 @@ $myrow2 = mysql_fetch_array($result2);
     </tr>
     <?php }} //cierra while ?>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="557" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="557" height="24" />
 <div align="center"><strong>
     <?php if($as){ 
 	echo "Se encontraron $as Registros..!!"; 

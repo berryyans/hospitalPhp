@@ -233,7 +233,7 @@ echo mysql_error();
 //***********************************
 ?>
 <script>
-javascript:ventanaSecundaria2('/sima/cargos/imprimirReciboPaquetes.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>&codigoPaquete=<?php echo $_POST['codigoPaquete'];?>&numRecibo=<?php echo $myrowC['numRecibo'];?>&paciente=<?php echo $_POST['paciente'];?>&cantidadRecibida=<?php echo $cantidadRecibida;?>&folioVenta=<?php echo $myrow333['folioVentas'];?>');
+javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirReciboPaquetes.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos']; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&cajero=<?php echo $usuario;?>&codigoPaquete=<?php echo $_POST['codigoPaquete'];?>&numRecibo=<?php echo $myrowC['numRecibo'];?>&paciente=<?php echo $_POST['paciente'];?>&cantidadRecibida=<?php echo $cantidadRecibida;?>&folioVenta=<?php echo $myrow333['folioVentas'];?>');
 window.opener.document.forms["form1"].submit();
 close();
 
@@ -313,7 +313,7 @@ PAGO DE PAQUETES
 		  ?>" size="60" readonly="">
       <span class="style122"><span class="Estilo25"><span class="style121">
 	  
-	  <a href="javascript:ventanaSecundaria2('/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a>
+	  <a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a>
 	  <input name="keyClientesInternos" type="hidden" class="Estilo24" id="keyClientesInternos"   readonly="" value="<?php echo $_GET['keyClientesInternos'];?>" />
       </span></span></span></label></td>
     </tr>
@@ -345,7 +345,7 @@ echo 'Activar Transaccion';
 		   readonly=""/>
 		   
         <a href="javascript:ventanaSecundaria1(
-		'/sima/INGRESOS%20HLC/caja/ventanaTTSP.php?campoDespliega=<?php echo "campoDespliega"; ?>&amp;campo1=<?php echo "cantidadRecibida"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "tipoTransaccion"; ?>&amp;numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;tipoPago=<?php echo $_POST['tipoPago']; ?>&amp;almacenFuente=<?php echo $almacen; ?>')"></a>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaTTSP.php?campoDespliega=<?php echo "campoDespliega"; ?>&amp;campo1=<?php echo "cantidadRecibida"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "tipoTransaccion"; ?>&amp;numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;tipoPago=<?php echo $_POST['tipoPago']; ?>&amp;almacenFuente=<?php echo $almacen; ?>')"></a>
 <input name="tipoTransaccion" type="hidden" class="Estilo24" id="tipoTransaccion" 
 value="<?php echo $myrow31['codigoTT'];?>"   readonly="" />
         </a>
@@ -406,7 +406,7 @@ value="<?php echo $myrow31['codigoTT'];?>"   readonly="" />
 		 echo $myrow2['ultimosDigitos']; 
 		 
 		 ?>" size="10" />
-          <a href="javascript:ventanaSecundaria3('/sima/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&amp;descripcion=<?php echo "descripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;comision=<?php echo "comision"; ?>&amp;tipoPago=<?php echo $_GET['tipoPago'];?>')"><img src="/sima/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></span></td>
+          <a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaTC.php?nombreCampo=<?php echo "codigo"; ?>&amp;descripcion=<?php echo "descripcion"; ?>&amp;forma=<?php echo "form1"; ?>&amp;comision=<?php echo "comision"; ?>&amp;tipoPago=<?php echo $_GET['tipoPago'];?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="Laboratorio Fabricante" width="15" height="15" border="0" /></a></span></td>
       </tr>
       <tr>
         <th class="Estilo24" scope="col">&nbsp;</th>

@@ -1,4 +1,6 @@
-<?php class solicitudesxSurtir{
+<?php 
+require('/Constantes.php');
+class solicitudesxSurtir{
 public function serviciosxSurtir($usuario,$entidad,$ventana,$titulo,$ALMACEN,$fecha1,$hora1,$basedatos){
 ?>
 <script language=javascript> 
@@ -20,7 +22,7 @@ function ventanaSecundaria2 (URL){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -65,7 +67,7 @@ echo mysql_error();
 }
 } ?>
 <script>
-javascript:ventanaSecundaria('/sima/cargos/imprimirServiciosPendientes.php?usuario=<?php echo $usuario;?>&numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&bandera=<?php echo $iS;?>');
+javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirServiciosPendientes.php?usuario=<?php echo $usuario;?>&numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta ?>&medico=<?php echo $_POST['medico']; ?>&usuario=<?php echo $usuario; ?>&bandera=<?php echo $iS;?>');
 </script>
 <?php 
 }
@@ -198,7 +200,7 @@ $myrow31 = mysql_fetch_array($result31);
       </a>
 
 
-<a href="javascript:ventanaSecundaria('/sima/cargos/imprimirServiciosPendientes.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta ?>&amp;keyCAP=<?php echo $E; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"></a>
+<a href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/imprimirServiciosPendientes.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta ?>&amp;keyCAP=<?php echo $E; ?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>')"></a>
 
 	  <label>
 

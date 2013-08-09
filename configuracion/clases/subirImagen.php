@@ -1,10 +1,12 @@
-<?php class subeImagen{
+<?php 
+require('/Constantes.php');
+class subeImagen{
 public function subirImagen($keyCAP,$usuario,$fecha1,$hora1,$basedatos){ ?>
 
 
 <?php
 $random=rand(1, 2000);
-$ruta='/sima/OPERACIONESHOSPITALARIAS/rayosx/';
+$ruta=CONSTANT_PATH_SIMA_RAIZ.'/OPERACIONESHOSPITALARIAS/rayosx/';
 $sql2= "
 SELECT *
 FROM
@@ -78,9 +80,9 @@ echo '</script>';
 }
 ?>
 
-	<script src="/sima/js/prototype.js" type="text/javascript"></script>
-	<script src="/sima/js/scriptaculous.js?load=effects" type="text/javascript"></script>
-	<script src="/sima/js/lightboxXL.js" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/prototype.js" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scriptaculous.js?load=effects" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/lightboxXL.js" type="text/javascript"></script>
 <style type="text/css">
 <!--
 .Estilo24 {font-size: 10px}

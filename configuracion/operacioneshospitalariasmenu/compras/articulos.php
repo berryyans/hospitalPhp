@@ -178,7 +178,7 @@ setTimeout("jump0()",50)}}
 ?>
 
 
-<script src="/sima/js/prototype.js" type="text/javascript"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/prototype.js" type="text/javascript"></script>
 <!-- set focus to a field with the name "searchcontent" in my form -->
 
 
@@ -297,7 +297,7 @@ document.Form2.criterio.focus();
 </script>
       </span></td>
       <td width="95"><span class="negro">
-        <input type="image" src="/sima/imagenes/btns/searcharticles.png"  value="Buscar" />
+        <input type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/searcharticles.png"  value="Buscar" />
       </span></td>
       <td width="113"><span class="negro">Mostrar Registros</span></td>
       <td width="143"><span class="negro">
@@ -496,11 +496,11 @@ $myrow39 = mysql_fetch_array($result39);
 			<label>
 			<?php 
 	  if(!$bali){
-	   echo '<img src="/sima/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
+	   echo '<img src="'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/stop.png" alt="NO TIENE ASIGNADO NINGUN PRECIO O ALMACEN" width="13" height="13" border="0" />';
 	   }
 	  ?>
             <?php if($myrow['generico']=='si'){?>
-            <blink> <img src="/sima/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
+            <blink> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/g.jpg" alt="MEDICAMENTO GENERICO..." width="12" height="12" border="0" /> </blink>
             <?php } else { echo '';}?>   
             </label>      </td>
             
@@ -518,15 +518,15 @@ keyPA = '".$myrow['keyPA']."' order by keyAPN DESC";
 <?php echo $myrow['gpoProducto']; ?>	    </td>
       <td bgcolor="<?php echo $color;?>" class="style71" ><?php echo '$'.number_format($myrow6['nivel1'],2);?></td>
       <td bgcolor="<?php echo $color;?>" class="style71" ><?php echo '$'.number_format($myrow6['nivel3'],2);?></td>
-      <td bgcolor="<?php echo $color;?>" class="style71" ><div align="center"><span class=""> <a  href="javascript:ventanaSecundaria2('/sima/cargos/listaAlmacenes.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>')"> <img src="/sima/imagenes/almacen.jpeg" alt="Almacenes" width="20" height="20" border="0" /></a> </span></div></td>
-      <td bgcolor="<?php echo $color;?>" class="style71" ><div align="center"><span class=""><a  href="javascript:ventanaSecundaria('/sima/ADMINHOSPITALARIAS/inventarios/ventanitaCambiaPrecio.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_GET['seguro']; ?>&medico=<?php echo $_GET['medico']; ?>&usuario=<?php echo $usuario; ?>&keyPA=<?php echo $myrow['keyPA']; ?>')"><img src="/sima/imagenes/btns/precio.png" alt="Almacenes" width="20" height="20" border="0" /></a></span></div></td>
+      <td bgcolor="<?php echo $color;?>" class="style71" ><div align="center"><span class=""> <a  href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/listaAlmacenes.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_GET['seguro']; ?>&amp;medico=<?php echo $_GET['medico']; ?>&amp;usuario=<?php echo $usuario; ?>&amp;keyPA=<?php echo $myrow['keyPA']; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/almacen.jpeg" alt="Almacenes" width="20" height="20" border="0" /></a> </span></div></td>
+      <td bgcolor="<?php echo $color;?>" class="style71" ><div align="center"><span class=""><a  href="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/ADMINHOSPITALARIAS/inventarios/ventanitaCambiaPrecio.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_GET['seguro']; ?>&medico=<?php echo $_GET['medico']; ?>&usuario=<?php echo $usuario; ?>&keyPA=<?php echo $myrow['keyPA']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/precio.png" alt="Almacenes" width="20" height="20" border="0" /></a></span></div></td>
     </tr>
     <?php }?>
   </table>
   <p align="center">
     <input name="bandera" type="hidden" id="bandera" value="<?php echo $totalRegistros; ?>" />
     <label>
-    <input name="actualizar" type="image" src="/sima/imagenes/btns/refresh.png"  id="actualizar" value="Actualizar" />
+    <input name="actualizar" type="image" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/refresh.png"  id="actualizar" value="Actualizar" />
     <input name="criterios" type="hidden" value="<?php echo $_GET["criterio"];?>" />
     
     </label>

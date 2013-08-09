@@ -3566,7 +3566,7 @@ numMedico='".$medico."'
 ";
 $result18=mysql_db_query($basedatos,$sSQL18);
 $myrow18 = mysql_fetch_array($result18);
-echo '/sima/OPERACIONESHOSPITALARIAS/admisiones/medicos/'.$myrow18['ruta'];
+echo CONSTANT_PATH_SIMA_RAIZ.'/OPERACIONESHOSPITALARIAS/admisiones/medicos/'.$myrow18['ruta'];
 }
 
 
@@ -6130,9 +6130,9 @@ keyCAP='".$keyCAP."'
 ";
 $result17=mysql_db_query($basedatos,$sSQL17);
 $myrow17 = mysql_fetch_array($result17); 
-$pendiente='<img src=/sima/imagenes/pendiente.png width="15" height="15" />';
-$surtido='<img src=/sima/imagenes/surtido.png width="15" height="15" />';
-$request='<img src=/sima/imagenes/stop.png width="15" height="15" alt="No ha sido liberado desde sala" />';
+$pendiente='<img src='.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/pendiente.png width="15" height="15" />';
+$surtido='<img src='.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/surtido.png width="15" height="15" />';
+$request='<img src='.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/stop.png width="15" height="15" alt="No ha sido liberado desde sala" />';
  if($myrow17['statusCargo']=='standby'){ 
 
 		return $pendiente;
@@ -7223,21 +7223,21 @@ class ventanasPrototype{
 
 public function links(){
 ?>
-<script type="text/javascript" src="/sima/js/window/javascripts/prototype-1.6.0.3.js"> </script> 
-<script type="text/javascript" src="/sima/js/window/javascripts/window.js"> </script> 
-<script type="text/javascript" src="/sima/js/window/javascripts/window_ext.js"> </script> 
-<script type="text/javascript" src="/sima/js/window/javascripts/effects.js"> </script> 
-<script type="text/javascript" src="/sima/js/window/javascripts/debug.js"> </script> 
-<script type="text/javascript" src="/sima/js/window/javascripts/tooltip.js"> </script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/javascripts/prototype-1.6.0.3.js"> </script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/javascripts/window.js"> </script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/javascripts/window_ext.js"> </script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/javascripts/effects.js"> </script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/javascripts/debug.js"> </script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/javascripts/tooltip.js"> </script> 
 
-	<link href="/sima/js/window/themes/default.css" rel="stylesheet" type="text/css" >	 </link>
-	<link href="/sima/js/window/themes/theme1.css" rel="stylesheet" type="text/css" >	 </link>
-	<link href="/sima/js/window/themes/mac_os_x.css" rel="stylesheet" type="text/css" >	 </link>
-	<link href="/sima/js/window/themes/alphacube.css" rel="stylesheet" type="text/css" >	 </link>
-	<link href="/sima/js/window/themes/darkX.css" rel="stylesheet" type="text/css" >	 </link>
-	<link href="/sima/js/window/themes/spread.css" rel="stylesheet" type="text/css" >	 </link>
-	<link href="/sima/js/window/themes/alert.css" rel="stylesheet" type="text/css" >	 </link>
-	<link href="/sima/js/window/themes/alert_lite.css" rel="stylesheet" type="text/css" >	 </link>
+	<link href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/themes/default.css" rel="stylesheet" type="text/css" >	 </link>
+	<link href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/themes/theme1.css" rel="stylesheet" type="text/css" >	 </link>
+	<link href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/themes/mac_os_x.css" rel="stylesheet" type="text/css" >	 </link>
+	<link href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/themes/alphacube.css" rel="stylesheet" type="text/css" >	 </link>
+	<link href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/themes/darkX.css" rel="stylesheet" type="text/css" >	 </link>
+	<link href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/themes/spread.css" rel="stylesheet" type="text/css" >	 </link>
+	<link href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/themes/alert.css" rel="stylesheet" type="text/css" >	 </link>
+	<link href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/themes/alert_lite.css" rel="stylesheet" type="text/css" >	 </link>
 <?php 
 }
 
@@ -7334,7 +7334,7 @@ public function submitSinBoton($url,$variable1,$valorVariable1,$forma,$imagen){ 
 
 <a href="<?php echo $url;?>?<?php echo $variable1;?>=<?php echo $valorVariable1;?>" 
 onclick="javascript:document.<?php echo $forma;?>.submit();">
-<img src="/sima/imagenes/expandir.gif" width="12" height="12" border="0">
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/expandir.gif" width="12" height="12" border="0">
 <?php echo $valorVariable1;?>
 </a>
 <?php 
@@ -8228,7 +8228,7 @@ return $myrow17['sumaCargos'];
 <?php 
 class ventanasCentro{
 public function despliegaVentanaCentro($background,$opacidad,$ancho,$altura,$anchoFrame,$alturaFrame,$anchoDiv,$alturaDiv){?>
-<script type="text/javascript" src="/sima/js/window/javascripts/prototype-1.6.0.3.js"> </script> 
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/window/javascripts/prototype-1.6.0.3.js"> </script> 
 <script type="text/javascript">
 	var theWidth = <?php echo $ancho;?>, theHeigth = <?php echo $altura;?>;
 
@@ -9096,7 +9096,7 @@ while($myrowmp = mysql_fetch_array($resultmp)){
     
     
     
- echo '<link type="text/css" rel="stylesheet" href="/sima/js/taskbar.css" />';
+ echo '<link type="text/css" rel="stylesheet" href="'.CONSTANT_PATH_SIMA_RAIZ.'/js/taskbar.css" />';
 echo '<style type="text/css">
 <!--
 pre{
@@ -9317,7 +9317,7 @@ print $classS->step($myrow1E['descripcionEntidad'],$cadena,$usuario,$entidad);
 public function mainmenu($reservado1,$reservado2,$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,$tipomodulo,$rutaimagen,$basedatos){
 
     
-echo '<link type="text/css" rel="stylesheet" href="/sima/js/taskbar.css" />';
+echo '<link type="text/css" rel="stylesheet" href="'.CONSTANT_PATH_SIMA_RAIZ.'/js/taskbar.css" />';
 echo '<style type="text/css">
 <!--
 pre{
@@ -9337,16 +9337,16 @@ A.ssmItems:visited	{color:black;text-decoration:none;}
 //-->
 </style>';
 
-echo '<SCRIPT SRC="/sima/js/ssm.js" language="JavaScript1.2"></SCRIPT>';
-require("../sima/js/utilerias.php");    
+echo '<SCRIPT SRC="'.CONSTANT_PATH_SIMA_RAIZ.'/js/ssm.js" language="JavaScript1.2"></SCRIPT>';
+require(CONSTANT_PATH_SIMA_RAIZ."/js/utilerias.php");    
   
     
-echo '<script type="text/javascript"  src="/sima/js/new/stmenu.js"></script>';
+echo '<script type="text/javascript"  src="'.CONSTANT_PATH_SIMA_RAIZ.'/js/new/stmenu.js"></script>';
 //encabezado
 print '<script type="text/javascript">';
 
-print 'stm_bm(["menu3ba5",900,"","/sima/imagenes/blank.gif",0,"","",1,0,250,0,1000,1,0,0,"","",0,0,1,2,"default","hand","",1,25],this);
-stm_bp("p0",[0,4,0,0,0,5,0,0,100,"",-2,"",-2,50,0,0,"#999999","#E6EFF9","/sima/imagenes/bg_02.png",3,0,0,"#000000","",-1,-1,0,"#FFFFF7","",3,"/sima/imagenes/bg_03.png",37,3,0,"#FFFFF7","",3,"",-1,-1,0,"#FFFFF7","",3,"/sima/imagenes/bg_01.png",37,3,0,"#FFFFF7","",3,"","","","",20,20,20,20,20,20,20,20]);';
+print 'stm_bm(["menu3ba5",900,"","'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/blank.gif",0,"","",1,0,250,0,1000,1,0,0,"","",0,0,1,2,"default","hand","",1,25],this);
+stm_bp("p0",[0,4,0,0,0,5,0,0,100,"",-2,"",-2,50,0,0,"#999999","#E6EFF9","'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/bg_02.png",3,0,0,"#000000","",-1,-1,0,"#FFFFF7","",3,"'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/bg_03.png",37,3,0,"#FFFFF7","",3,"",-1,-1,0,"#FFFFF7","",3,"'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/bg_01.png",37,3,0,"#FFFFF7","",3,"","","","",20,20,20,20,20,20,20,20]);';
 
  //TODOS LOS MODULOS PRINCIPALES
 $sSQLmp= "Select * From usersmodules WHERE (entidad='".$entidad."' and usuario='".$usuario."'
@@ -9401,7 +9401,7 @@ stm_bp("p1",[1,4,-64,2,0,5,0,0,100,"",-2,"",-2,50,2,3,"#29ABE2","#6bb5d5","",3,1
 
 
 
-stm_aix("p1i0","p0i1",[0,"Salir del Sistema","","",-1,-1,0,"/sima/salir.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#808080","#FFFFFF","#434142"],165,20);
+stm_aix("p1i0","p0i1",[0,"Salir del Sistema","","",-1,-1,0,"'.CONSTANT_PATH_SIMA_RAIZ.'/salir.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#808080","#FFFFFF","#434142"],165,20);
 
 stm_ep();
 //---------------FIN --------------->
@@ -9443,7 +9443,7 @@ print $classS->step($myrow1E['descripcionEntidad'],$cadena,$usuario,$entidad);
 
 public function menuOperaciones($mainmenu,$reservado2,$rutasalir,$rutapasswd,$usuario,$entidad,$rutamenuprincipal,$tipomodulo,$rutaimagen,$basedatos){
 
-echo '<link type="text/css" rel="stylesheet" href="/sima/js/taskbar.css" />';
+echo '<link type="text/css" rel="stylesheet" href="'.CONSTANT_PATH_SIMA_RAIZ.'/js/taskbar.css" />';
 echo '<style type="text/css">
 <!--
 pre{
@@ -9463,7 +9463,7 @@ A.ssmItems:visited	{color:black;text-decoration:none;}
 //-->
 </style>';
 
-echo '<SCRIPT SRC="/sima/js/ssm.js" language="JavaScript1.2"></SCRIPT>';
+echo '<SCRIPT SRC="'.CONSTANT_PATH_SIMA_RAIZ.'/js/ssm.js" language="JavaScript1.2"></SCRIPT>';
 require("../js/utilerias.php");    
 
 //VALIDACIONES
@@ -9480,14 +9480,14 @@ $resultmp=mysql_db_query($basedatos,$sSQLmp);
 $myrowmp = mysql_fetch_array($resultmp);
 if($myrowmp[0]!=NULL){
 
-echo '<script type="text/javascript"  src="/sima/js/new/stmenu.js"></script>';
+echo '<script type="text/javascript"  src="'.CONSTANT_PATH_SIMA_RAIZ.'/js/new/stmenu.js"></script>';
 echo '<script type="text/javascript">';
 //encabezado
 print '
 
 
-stm_bm(["menu3ba5",900,"","/sima/imagenes/blank.gif",0,"","",1,0,250,0,1000,1,0,0,"","",0,0,1,2,"default","hand","",1,25],this);
-stm_bp("p0",[0,4,0,0,0,5,0,0,100,"",-2,"",-2,50,0,0,"#999999","#E6EFF9","/sima/imagenes/bg_02.png",3,0,0,"#000000","",-1,-1,0,"#FFFFF7","",3,"/sima/imagenes/bg_03.png",37,3,0,"#FFFFF7","",3,"",-1,-1,0,"#FFFFF7","",3,"/sima/imagenes/bg_01.png",37,3,0,"#FFFFF7","",3,"","","","",20,20,20,20,20,20,20,20]);
+stm_bm(["menu3ba5",900,"","'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/blank.gif",0,"","",1,0,250,0,1000,1,0,0,"","",0,0,1,2,"default","hand","",1,25],this);
+stm_bp("p0",[0,4,0,0,0,5,0,0,100,"",-2,"",-2,50,0,0,"#999999","#E6EFF9","'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/bg_02.png",3,0,0,"#000000","",-1,-1,0,"#FFFFF7","",3,"'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/bg_03.png",37,3,0,"#FFFFF7","",3,"",-1,-1,0,"#FFFFF7","",3,"'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/bg_01.png",37,3,0,"#FFFFF7","",3,"","","","",20,20,20,20,20,20,20,20]);
 stm_aix("p0i1","p0i0",[0,"'.$_GET['main'].'","","",-1,-1,0,"","_self","","","","",0,0,0,"","",0,0,0,1,1,"#E6EFF9",1,"#E6EFF9",1,"",,3,0,0,0,"#E6EFF9","#000000","#FFFFFF","#434142","bold 8pt Verdana","bold 8pt Verdana"],100,33);
 stm_bp("p1",[1,4,-20,2,0,5,0,0,100,"",-2,"",-2,50,2,3,"#000000","#6bb5d5","",3,1,1,"#6bb5d5"]);
 ';
@@ -9541,9 +9541,9 @@ stm_aix("p0i1","p0i0",[0,"SALIR","","",-1,-1,0,"","_self","","","","",0,0,0,"","
 stm_bp("p1",[1,4,-20,2,0,5,0,0,100,"",-2,"",-2,50,2,3,"#5a8fbb","#6bb5d5","",3,1,1,"#6bb5d5"]);
 
 
-stm_aix("p1i0","p0i1",[0,"Menu Principal","","",-1,-1,0,"/sima/MenuIndex.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#808080","#FFFFFF","#434142"],120,20);
+stm_aix("p1i0","p0i1",[0,"Menu Principal","","",-1,-1,0,"'.CONSTANT_PATH_SIMA_RAIZ.'/MenuIndex.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#808080","#FFFFFF","#434142"],120,20);
 
-stm_aix("p1i0","p0i1",[0,"Salir del Sistema","","",-1,-1,0,"/sima/salir.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#808080","#FFFFFF","#434142"],120,20);
+stm_aix("p1i0","p0i1",[0,"Salir del Sistema","","",-1,-1,0,"'.CONSTANT_PATH_SIMA_RAIZ.'/salir.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#808080","#FFFFFF","#434142"],120,20);
 
 stm_ep();
 //---------------FIN --------------->
@@ -9566,7 +9566,7 @@ print $classS->step($myrow1E['descripcionEntidad'],$cadena,$usuario,$entidad);
 }else{?>
 <script type="text/javascript">
 window.alert("NO TIENES PERMISOS PARA ESTAR EN ESTE LUGAR");    
-window.location = "/sima/MenuIndex.php";
+window.location = "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/MenuIndex.php";
 </script>
 <?php 
 
@@ -9596,7 +9596,7 @@ public function menuOperacionesF($mainmenu,$primario,$rutasalir,$rutapasswd,$usu
     $fecha1=date("Y-m-d");
     $hora1=date("H:i:s");
 
-echo '<link type="text/css" rel="stylesheet" href="/sima/js/taskbar.css" />';
+echo '<link type="text/css" rel="stylesheet" href="'.CONSTANT_PATH_SIMA_RAIZ.'/js/taskbar.css" />';
 echo '<style type="text/css">
 <!--
 pre{
@@ -9632,12 +9632,12 @@ $resultmp=mysql_db_query($basedatos,$sSQLmp);
 $myrowmp = mysql_fetch_array($resultmp);
 if($myrowmp[0]!=NULL){
 
-echo '<script type="text/javascript"  src="/sima/js/new/stmenu.js"></script>';
+echo '<script type="text/javascript"  src="'.CONSTANT_PATH_SIMA_RAIZ.'/js/new/stmenu.js"></script>';
 echo '<script>
 
 
-stm_bm(["menu3ba5",900,"","/sima/imagenes/blank.gif",0,"","",1,0,250,0,1000,1,0,0,"","",0,0,1,2,"default","hand","",1,25],this);
-stm_bp("p0",[0,4,0,0,0,5,0,0,100,"",-2,"",-2,50,0,0,"#999999","#E6EFF9","/sima/imagenes/bg_02.png",3,0,0,"#000000","",-1,-1,0,"#FFFFF7","",3,"",37,3,0,"#FFFFF7","",3,"",-1,-1,0,"#FFFFF7","",3,,37,3,0,"#FFFFF7","",3,"","","","",20,20,20,20,20,20,20,20]);
+stm_bm(["menu3ba5",900,"","'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/blank.gif",0,"","",1,0,250,0,1000,1,0,0,"","",0,0,1,2,"default","hand","",1,25],this);
+stm_bp("p0",[0,4,0,0,0,5,0,0,100,"",-2,"",-2,50,0,0,"#999999","#E6EFF9","'.CONSTANT_PATH_SIMA_RAIZ.'/imagenes/bg_02.png",3,0,0,"#000000","",-1,-1,0,"#FFFFF7","",3,"",37,3,0,"#FFFFF7","",3,"",-1,-1,0,"#FFFFF7","",3,,37,3,0,"#FFFFF7","",3,"","","","",20,20,20,20,20,20,20,20]);
 stm_ai("p0i0",[0,"Ir Atras","","",-1,-1,0,"javascript:history.go(-1)","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#E6EFF9",1,"","",3,3,0,0,"#E6EFF9","#434142","#FFFFFF","#434142","bold 8pt Verdana","bold 8pt Verdana",0,0,"","","","",0,0,0],150,33);';
 
 $sSQLmp= "Select * From usersmodules WHERE entidad='".$entidad."' and usuario='".$usuario."'  and primario='".$mainmenu."' 
@@ -9712,10 +9712,10 @@ stm_bp("p1",[1,4,-20,2,0,5,0,0,100,"",-2,"",-2,50,2,3,"#6bb5d5","#6bb5d5","",3,1
 
 
 
-stm_aix("p1i0","p0i1",[0,"Menu Principal","","",-1,-1,0,"/sima/MenuIndex.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#29ABE2","#FFFFFF","#434142"],120,20);
+stm_aix("p1i0","p0i1",[0,"Menu Principal","","",-1,-1,0,"'.CONSTANT_PATH_SIMA_RAIZ.'/MenuIndex.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#29ABE2","#FFFFFF","#434142"],120,20);
 
 
-stm_aix("p1i0","p0i1",[0,"Salir del Sistema","","",-1,-1,0,"/sima/salir.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#29ABE2","#FFFFFF","#434142"],120,20);
+stm_aix("p1i0","p0i1",[0,"Salir del Sistema","","",-1,-1,0,"'.CONSTANT_PATH_SIMA_RAIZ.'/salir.php","_self","","","","",0,0,0,"","",0,0,0,0,1,"#E6EFF9",1,"#6bb5d5",0,"","",3,3,0,0,"#E6EFF9","#29ABE2","#FFFFFF","#434142"],120,20);
 
 stm_ep();
 //---------------FIN ESTUDIOS------------------>
@@ -9730,7 +9730,7 @@ stm_em();
 }else{?>
 <script type="text/javascript">
 window.alert("NO TIENES PERMISOS PARA ESTAR EN ESTE LUGAR");    
-window.location = "/sima/MenuIndex.php";
+window.location = "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/MenuIndex.php";
 </script>
 <?php 
 }

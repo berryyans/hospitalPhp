@@ -164,7 +164,7 @@ echo mysql_error();
 		onchange="javascript:this.form.submit();" />
           <span class="Estilo24">
             <input name="agregarCargos3" type="submit" class="Estilo24" id="agregarCargos3"  onclick="javascript:ventanaSecundaria1(
-		'/sima/cargos/agregarProveedores.php?campoDespliega=<?php echo "nombreProveedor"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campoProveedor=<?php echo "id_proveedor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="P">
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregarProveedores.php?campoDespliega=<?php echo "nombreProveedor"; ?>&amp;forma=<?php echo "form2"; ?>&amp;campoProveedor=<?php echo "id_proveedor"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')" value="P">
             </span></p>
         <p><span class="Estilo24">
           

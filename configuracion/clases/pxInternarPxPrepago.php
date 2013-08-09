@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class pacientesInternosPrepago{
 public function listadoPIT($entidad,$TITULO,$ventana,$ventana1,$bali,$basedatos){
 ?>
@@ -11,7 +12,7 @@ public function listadoPIT($entidad,$TITULO,$ventana,$ventana1,$bali,$basedatos)
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -119,7 +120,7 @@ $col = 1;
 
 	  <?php echo $myrow['paciente'];
 	  if($myrow['status']=='ontransfer'){
-	  echo '   [Se solicitó la transferencia de éste paciente]';
+	  echo '   [Se solicitï¿½ la transferencia de ï¿½ste paciente]';
 	  }
 	  ?>
       </span></td>
@@ -128,7 +129,7 @@ $col = 1;
 		
       <td width="37" bgcolor="<?php echo $color?>" class="style12"><a href="#" onClick="javascript:ventanaSecundaria('<?php echo $ventana;?>?numeroE=<?php echo $myrow['numeroE']; ?>
 		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $bali; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;keyClientesInternos=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>')">
-	  <img src="/sima/imagenes/siguiente.png" alt="Aplicar Cargos" width="12" height="12" border="0" /></a></td>
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/siguiente.png" alt="Aplicar Cargos" width="12" height="12" border="0" /></a></td>
     </tr>
     <?php  }}?>
     <input name="nombres" type="hidden" value="<?php echo $nombrePaciente; ?>" />

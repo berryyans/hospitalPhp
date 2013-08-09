@@ -72,7 +72,7 @@ if(win.window.focus){win.window.focus();}
 
 
 
-<script type="text/javascript" src="/sima/js/wz_tooltip.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/wz_tooltip.js"></script>
 <?php
 $estilos= new muestraEstilos();
 $estilos->styles();
@@ -143,11 +143,11 @@ if($myrowu['puntoVenta']=='si') { ?>
   <p>
     <label>
    
-    <input type="submit" name="button" id="button" value="Apertura de Caja" onclick="ventanaSecundaria511('/sima/INGRESOS HLC/caja/aperturaCajaModulos.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $myrow7ab['random'];?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>')" />
+    <input type="submit" name="button" id="button" value="Apertura de Caja" onclick="ventanaSecundaria511('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/aperturaCajaModulos.php?numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&paciente=<?php echo $_POST['paciente']; ?>&numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&hora1=<?php echo $hora1; ?>&keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&random=<?php echo $myrow7ab['random'];?>&fechaInicial=<?php echo $_POST['fechaInicial'];?>&fechaFinal=<?php echo $_POST['fechaFinal'];?>')" />
     </label>
    
    
-    <input type="submit" name="button2" id="button2" value="Corte de Caja" onclick="ventanaSecundaria511a('/sima/INGRESOS HLC/caja/corteCajaModulo.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;random=<?php echo $myrow7ab['random'];?>&amp;fechaInicial=<?php echo $_POST['fechaInicial'];?>&amp;fechaFinal=<?php echo $_POST['fechaFinal'];?>')" />
+    <input type="submit" name="button2" id="button2" value="Corte de Caja" onclick="ventanaSecundaria511a('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS HLC/caja/corteCajaModulo.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;random=<?php echo $myrow7ab['random'];?>&amp;fechaInicial=<?php echo $_POST['fechaInicial'];?>&amp;fechaFinal=<?php echo $_POST['fechaFinal'];?>')" />
     
     
     <input type="submit" name="button3" id="button3" value="Lista de Ordenes Pendientes" onclick="ventanaSecundaria511b('../ventanas/listadoOrdenesCaja.php?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta; ?>&amp;paciente=<?php echo $_POST['paciente']; ?>&amp;numeroConfirmacion=<?php echo $numeroConfirmacion; ?>&amp;hora1=<?php echo $hora1; ?>&amp;keyClientesInternos=<?php echo $myrow3['keyClientesInternos'];?>&amp;random=<?php echo $myrow7ab['random'];?>&amp;fechaInicial=<?php echo $_POST['fechaInicial'];?>&amp;fechaFinal=<?php echo $_POST['fechaFinal'];?>&almacen=<?php echo $ALMACEN;?>')" />

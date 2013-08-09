@@ -1,4 +1,6 @@
-
+<?php
+require('/Constantes.php');
+?>
 <script language="javascript" type="text/javascript">   
 
 function vacio(q) {   
@@ -176,8 +178,8 @@ echo mysql_error();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<script src="/sima/js/scripts/autocomplete.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/sima/js/stylesheets/autocomplete.css" type="text/css" />
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scripts/autocomplete.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/stylesheets/autocomplete.css" type="text/css" />
 <?php
 
 $estilos= new muestraEstilos();
@@ -315,7 +317,7 @@ $estilos->styles();
 	  
      <tr valign="middle"  >
         <td >&nbsp;</td>
-        <td colspan="2"><p><span ><a href="javascript:ventanaSecundaria3('/sima/cargos/agregarSeguros.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "seguro"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></p>        </td>
+        <td colspan="2"><p><span ><a href="javascript:ventanaSecundaria3('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/agregarSeguros.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoSeguro=<?php echo "seguro"; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"></a></span></p>        </td>
       </tr>
       <tr valign="middle"  >
         <td >&nbsp;</td>
@@ -335,7 +337,7 @@ $estilos->styles();
         <br />
         <?php if($myrow9['keyClientesInternos']){ ?>
         <a href="javascript:ventanaSecundaria7(
-		'impresionInternamiento.php?campoDespliega=<?php echo "campoDespliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoCuarto=<?php echo "cuarto"; ?>&amp;nT=<?php echo $myrow9['keyClientesInternos']; ?>&edadPaciente=<?php echo $_POST['edadPaciente']?>&descripcionCuarto=<?php echo $_POST['descripcionCuarto']?>&medico=<?php echo $_POST['medico']?>&anomSeguro=<?php echo $_POST['seguro']?>&especialidad=<?php echo $_POST['especialidad']?>')"><img src="/sima/imagenes/impresora.jpg" alt="Imprimir solicitud de Internamiento <?php echo $nombrePaciente; ?>" width="87" height="49" border="0" /></a>
+		'impresionInternamiento.php?campoDespliega=<?php echo "campoDespliega"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campoCuarto=<?php echo "cuarto"; ?>&amp;nT=<?php echo $myrow9['keyClientesInternos']; ?>&edadPaciente=<?php echo $_POST['edadPaciente']?>&descripcionCuarto=<?php echo $_POST['descripcionCuarto']?>&medico=<?php echo $_POST['medico']?>&anomSeguro=<?php echo $_POST['seguro']?>&especialidad=<?php echo $_POST['especialidad']?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/impresora.jpg" alt="Imprimir solicitud de Internamiento <?php echo $nombrePaciente; ?>" width="87" height="49" border="0" /></a>
         <?php } ?>
         <br />
         </label>
@@ -360,7 +362,7 @@ $estilos->styles();
 			
 			// Replace .html to .php to get dynamic results.
 			// .html is just a sample for you
-			return "/sima/cargos/clientesSoloInternosx.php?q=" + this.value;
+			return "<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/clientesSoloInternosx.php?q=" + this.value;
 			// return "completeEmpName.php?q=" + this.value;
 		});	
 	</script>

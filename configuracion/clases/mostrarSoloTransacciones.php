@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <table width="642" border="0" align="center" class="normal" cellspacing="0" style="border: 1px solid #000000;">
   <tr bgcolor="#FFFF00">
     <td align="center" class="negromid">Particular</td>
@@ -51,7 +54,7 @@ $tipoPago='Efectivo';
 
 <?php echo '$'.number_format($totalParticular,2);?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18">
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18">
         <?php } ?>
 	</td>
 	
@@ -86,7 +89,7 @@ $my = mysql_fetch_array($rs);
         <?php echo '$'.number_format($totalAseguradora,2);?>
         <?php } ?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18">
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18">
         <?php } ?>
 	</td>
     
@@ -101,7 +104,7 @@ $tA=$totalAseguradora*-1;
 	<?php echo '$'.number_format($tA,2);?>
 </a> 
   <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18">
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18">
         <?php } ?>
 	</td>
 	
@@ -115,7 +118,7 @@ $tP=$totalParticular*-1;
 ?>
 	<?php echo '$'.number_format($tP,2);?>
 <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18">
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18">
         <?php } ?>
 	
 	</td>
@@ -126,7 +129,7 @@ $tP=$totalParticular*-1;
 		<?php if($totalCoaseguro1>1){ 	?>
  <?php echo '$'.number_format($totalCoaseguro1,2);?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18">
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18">
         <?php } ?>
 	</td>
     
@@ -136,7 +139,7 @@ $tP=$totalParticular*-1;
 		<?php if($totalCoaseguro2>1){ ?>
       <?php echo '$'.number_format($totalCoaseguro2,2);?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18">
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18">
         <?php } ?>
 	</td>
     
@@ -146,7 +149,7 @@ $tP=$totalParticular*-1;
 		<?php if($totalDeducible1>1){ ?>
         <?php echo '$'.number_format($totalDeducible1,2);?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18">
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18">
         <?php } ?>
 	</td>
 
@@ -155,7 +158,7 @@ $tP=$totalParticular*-1;
 		<?php if($totalDeducible2>1){ ?>
         <?php echo '$'.number_format($totalDeducible2,2);?>
         <?php } else{?>
-        <img src="/sima/imagenes/btns/checkbtn.png" width="18" height="18">
+        <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/checkbtn.png" width="18" height="18">
         <?php } ?>
 	</td>
   

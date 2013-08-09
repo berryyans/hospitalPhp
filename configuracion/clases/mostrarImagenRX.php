@@ -1,4 +1,6 @@
-<?php class DXRX{
+<?php 
+require('/Constantes.php');
+class DXRX{
 public function diagnosticosRX($numeroE,$nCuenta,$ruta,$seguro,$numeroPaciente,$keyCAP,$usuario,$hora1,$fecha1,$basedatos){ 
 
 ?>
@@ -65,9 +67,9 @@ function valida(F) {
 .style121 {font-size: 10px}
 -->
 </style>
-	<script src="/sima/js/prototype.js" type="text/javascript"></script>
-	<script src="/sima/js/scriptaculous.js?load=effects" type="text/javascript"></script>
-	<script src="/sima/js/lightboxXL.js" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/prototype.js" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/scriptaculous.js?load=effects" type="text/javascript"></script>
+	<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/lightboxXL.js" type="text/javascript"></script>
 </head>
 
 <body>

@@ -265,10 +265,10 @@ if($_POST['nuevo']){$disabled='';}
 		  ?>" size="60" readonly="">
       <span class="style122">
       <input name="M2" type="button" class="style7" id="M2"  onclick="javascript:ventanaSecundaria6(
-		'/sima/cargos/ventanaBuscaExpediente.php?campoDespliega=<?php echo "paciente"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "numeroEx"; ?>&amp;fechaNac=<?php echo "fechaNac"; ?>&amp;edad=<?php echo "edad"; ?>')" value="E" />
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/ventanaBuscaExpediente.php?campoDespliega=<?php echo "paciente"; ?>&amp;forma=<?php echo "form1"; ?>&amp;campo=<?php echo "numeroEx"; ?>&amp;fechaNac=<?php echo "fechaNac"; ?>&amp;edad=<?php echo "edad"; ?>')" value="E" />
       <span class="Estilo25"><span class="style121">
 	  
-	  <a href="javascript:ventanaSecundaria2('/sima/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="/sima/imagenes/Save.png" alt="AGREGAR PACIENTE" width="19" height="19" border="0" />	  </a>
+	  <a href="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/OPERACIONESHOSPITALARIAS/admisiones/modificarP.php?campoDespliega=<?php echo "nomSeguro"; ?>&amp;forma=<?php echo "F"; ?>&amp;numeroExpediente=<?php echo $E; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>')"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/Save.png" alt="AGREGAR PACIENTE" width="19" height="19" border="0" />	  </a>
       <input name="fechaNac" type="hidden" class="style7" id="fechaNac" size="10"  readonly="" value="<?php 
 		  if($_POST['fechaNac'] and !$_POST['fechaNac'] AND !$_POST['nuevo']){
 		  echo $_POST['fechaNac'];
@@ -315,7 +315,7 @@ $myrow31 = mysql_fetch_array($result31);
 		   readonly=""/>
 		   
         <a href="javascript:ventanaSecundaria1(
-		'/sima/INGRESOS%20HLC/caja/ventanaTT.php?campoDespliega=<?php echo "campoDespliega"; ?>&campo1=<?php echo "cantidadRecibida"; ?>&forma=<?php echo "form1"; ?>&campoSeguro=<?php echo "tipoTransaccion"; ?>&numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPago=<?php echo 'efectivo'; ?>&almacenFuente=<?php echo $almacen; ?>')"> <img src="/sima/imagenes/expandir.gif" alt="Tipo de Transacci&oacute;n" width="12" height="12" border="0" /></a>
+		'<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/INGRESOS%20HLC/caja/ventanaTT.php?campoDespliega=<?php echo "campoDespliega"; ?>&campo1=<?php echo "cantidadRecibida"; ?>&forma=<?php echo "form1"; ?>&campoSeguro=<?php echo "tipoTransaccion"; ?>&numeroE=<?php echo $numeroE; ?>&nCuenta=<?php echo $nCuenta; ?>&seguro=<?php echo $_POST['seguro']; ?>&tipoPago=<?php echo 'efectivo'; ?>&almacenFuente=<?php echo $almacen; ?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/expandir.gif" alt="Tipo de Transacci&oacute;n" width="12" height="12" border="0" /></a>
         <input name="tipoTransaccion" type="hidden" class="Estilo24" id="tipoTransaccion" 
 				value="<?php 
 				if(!$_POST['nuevo']){

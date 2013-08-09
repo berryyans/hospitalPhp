@@ -93,7 +93,7 @@ $result=mysql_db_query($basedatos,$sSQL);
 ?> 
  </h2>
  <form id="form2" name="form2" method="post" action="">
-   <img src="/sima/imagenes/bordestablas/borde1.png" width="560" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="560" height="24" />
    <table width="560" align="center" cellpadding="4" cellspacing="0" style="border: 0px solid #000000;">
      <tr>
        <th width="73" bgcolor="#FFFF00" ><div align="left"><span class="normal">C&oacute;digo </span></div></th>
@@ -123,7 +123,7 @@ $A=$myrow['id_proveedor'];
 	 
 	   </span></td>
        <td  class="normal"><div align="left"><span class="style7"> <a href="#" onClick="ventanaSecundaria1('<?php echo $ventana1;?>?numeroE=<?php echo $myrow['numeroE']; ?>
-		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;id_proveedor2=<?php echo $A?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')"> <img src="/sima/imagenes/edit.jpg" alt="Editar a: <?php echo $myrow['razonSocial'];?>" width="12" height="12" border="0" /> </a> 
+		&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;id_proveedor2=<?php echo $A?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;numCliente=<?php echo $N?>')"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/edit.jpg" alt="Editar a: <?php echo $myrow['razonSocial'];?>" width="12" height="12" border="0" /> </a> 
 		
 		</span></div></td>
        <td  class="normal"><span class="normal">
@@ -133,15 +133,15 @@ $A=$myrow['id_proveedor'];
 
 <a href="catalogoProveedores.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;inactiva=<?php echo'inactiva'; ?>&amp;id_proveedor=<?php echo $A; ?>&amp;almacen=<?php echo $A; ?>">
          
-         <img src="/sima/imagenes/surtido.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
+         <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/surtido.png" alt="Almac&eacute;n &oacute; M&eacute;dico Activo" width="12" height="12" border="0" onClick="if(confirm('&iquest;Est&aacute;s seguro que deseas inactivar este registro?') == false){return false;}" /></a>
          <?php } else { ?>
-         <a href="catalogoProveedores.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;id_proveedor=<?php echo $A?>"> <img src="/sima/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
+         <a href="catalogoProveedores.php?codigo=<?php echo $code; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;activa=<?php echo "activa"; ?>&amp;usuario=<?php echo $E; ?>&amp;tipoAlmacen=<?php echo $_POST['tipoAlmacen']; ?>&amp;id_proveedor=<?php echo $A?>"> <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/candado.png" alt="INACTIVO" width="12" height="12" border="0"  onclick="if(confirm('Esta seguro que deseas activar este registro?') == false){return false;}" /></a>
          <?php } ?>
        </span></div></td>
      </tr>
      <?php }?>
    </table>
-   <img src="/sima/imagenes/bordestablas/borde2.png" width="560" height="24" />
+   <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="560" height="24" />
    <p align="center">
      <label>
      <input name="Submit" type="button" class="normal" value="Agregar Nuevo Proveedor" onClick="ventanaSecundaria1('<?php echo $ventana1;?>?numeroE=<?php echo $myrow['numeroE']; ?>

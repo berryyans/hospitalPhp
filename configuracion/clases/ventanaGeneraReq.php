@@ -1,4 +1,6 @@
-<?php class comprasDirectas{ 
+<?php 
+require('/Constantes.php');
+class comprasDirectas{ 
 public function compraDirecta($fecha1,$hora1,$departamento,$basedatos,$usuario,$entidad){ ?>
 <?php  
 if($_GET['keyR'] AND ($_GET['inactiva'] or $_GET['activa'])){
@@ -34,7 +36,7 @@ $agregaSaldo = "INSERT INTO OC ( codigo,id_almacen,usuario,fecha,hora,ID_EJERCIC
 '".$_POST['prioridad']."','comprar','".$_POST['proveedor']."','".$entidad."','".$_POST['proveedor1']."','".$_POST['descripcion']."','".$_POST['precioUnitario']."')";
 mysql_db_query($basedatos,$agregaSaldo);
 echo mysql_error();
-print '<p class="style1">'.'Se solicitó el artículo: '.$_POST['descripcion'].'</p>';
+print '<p class="style1">'.'Se solicitï¿½ el artï¿½culo: '.$_POST['descripcion'].'</p>';
 
 
 
@@ -76,7 +78,7 @@ $estilos->styles();
   <div align="center"><?php //echo $departamento;?>
   </div>
  
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="435" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="435" height="24" />
   <table width="310" border="0" align="center" cellpadding="4" cellspacing="0">
 
     <tr bgcolor="#FFFF00">
@@ -109,7 +111,7 @@ $estilos->styles();
       </div></td>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="435" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="435" height="24" />
 </form>
 
 

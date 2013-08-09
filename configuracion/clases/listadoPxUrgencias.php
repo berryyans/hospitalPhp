@@ -1,3 +1,6 @@
+<?php
+require('/Constantes.php');
+?>
 <script language=javascript> 
 function ventanaSecundaria11 (URL){ 
    window.open(URL,"ventana11","width=800,height=600,scrollbars=YES,resizable=YES, maximizable=YES") 
@@ -154,7 +157,7 @@ $myrow1711s = mysql_fetch_array($result1711s);
 
         <div align="center"><a href="#" 
 onclick="javascript:ventanaSecundaria111('<?php echo $ventana;?>?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['keyClientesInternos']; ?>&almacen=<?php echo $ALMACEN; ?>&almacenFuente=<?php echo $ALMACEN; ?>&nT=<?php echo $nT; ?>&tipoCliente=<?php echo $tipoCliente;?>&tipoMovimiento=<?php echo 'transaccion';?>&tipoPaciente=<?php echo 'interno';?>&abono=si&random=<?php echo rand(5000,500000);?>&folioVenta=<?php echo $myrow['folioVenta'];?>')">
-          <img src="/sima/imagenes/agregar.gif" alt="" width="12" height="12" border="0" /></a></div></td>
+          <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/agregar.gif" alt="" width="12" height="12" border="0" /></a></div></td>
 
     </tr>
     <?php  }}?>

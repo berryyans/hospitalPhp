@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class muestraInternos{
 public function listaInternos($estado,$fecha1,$hora1,$usuario,$ALMACEN,$entidad,$TITULO,$ventana,$basedatos){
 
@@ -201,14 +202,14 @@ echo $cierreCuentaReporte->cierreCuentaReportes($entidad,$nT,$numeroE,$nCuenta,$
 	  
 		  <?php 
 		  if($myrow11['status']=='standby') { ?>
-	  <a href='procesoAltaPx.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo 								$_POST['medico']; ?>&alta=<?php echo $_GET['alta']; ?>&nT=<?php echo $nT; ?>'"><img src="/sima/imagenes/btns/reservbtn.png" alt="	ALTA" width="24" height="22" border="0"  onclick="if(confirm('Esta seguro que deseas correr el proceso del paciente <?php echo 		$myrow['paciente'];?>?') == false){return false;}" />	  </a>
+	  <a href='procesoAltaPx.php?codigo=<?php echo $code; ?>&seguro=<?php echo $_POST['seguro']; ?>&medico=<?php echo 								$_POST['medico']; ?>&alta=<?php echo $_GET['alta']; ?>&nT=<?php echo $nT; ?>'"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/btns/reservbtn.png" alt="	ALTA" width="24" height="22" border="0"  onclick="if(confirm('Esta seguro que deseas correr el proceso del paciente <?php echo 		$myrow['paciente'];?>?') == false){return false;}" />	  </a>
 
 	  <?php } else if($myrow11['status']=='request'){  ?>
-	  <img src="/sima/imagenes/iconosSima/lock_icon.jpg" alt="LA CUENTA ESTA PREPARADA" width="12" height="12" border="0" />
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/iconosSima/lock_icon.jpg" alt="LA CUENTA ESTA PREPARADA" width="12" height="12" border="0" />
 	  <?php } else if($myrow11['status']=='cargado'){ ?>
-	  <img src="/sima/imagenes/iconosSima/unlock_icon.jpg" alt="LA CUENTA ESTA LISTA" width="12" height="12" border="0" />
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/iconosSima/unlock_icon.jpg" alt="LA CUENTA ESTA LISTA" width="12" height="12" border="0" />
 	  <?php } else { ?>
-	  <img src="/sima/imagenes/pregunta.png" alt="	ALTA" width="12" height="12" border="0" />
+	  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/pregunta.png" alt="	ALTA" width="12" height="12" border="0" />
 	  <?php } ?>	  </td>
     </tr>
     <?php  }}?>
@@ -280,7 +281,7 @@ public function listaExternos($entidad,$TITULO,$fecha1,$ventana,$basedatos){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 

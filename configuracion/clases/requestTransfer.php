@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class pacientesInternosUrgencias{
 public function listadoPI($entidad,$TITULO,$ventana,$bali,$basedatos){
 ?>
@@ -11,7 +12,7 @@ public function listadoPI($entidad,$TITULO,$ventana,$bali,$basedatos){
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -142,7 +143,7 @@ $col = 1;
 
 	  <?php echo $myrow['paciente'];
 	  if($myrow['status']=='ontransfer'){
-	  echo '   [Se solicitó la transferencia de éste paciente]';
+	  echo '   [Se solicitï¿½ la transferencia de ï¿½ste paciente]';
 	  } 
 	  ?>
       </span></td>
@@ -153,11 +154,11 @@ $col = 1;
 
 <?php if($myrow['status']=='activa'){ ?>
 
-<img src="/sima/imagenes/solicitado.png" alt="TRANSFERIR" width="12" height="12" border="0"/>
+<img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/solicitado.png" alt="TRANSFERIR" width="12" height="12" border="0"/>
 
 <?php } else {?>
 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?numeroE=<?php echo $numeroE; ?>&amp;nCuenta=<?php echo $nCuenta ?>&amp;transfer=<?php echo $transfer ?>&amp;keyCI=<?php echo $myrow['keyClientesInternos'];
-?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>"><img src="/sima/imagenes/recibir.jpeg" alt="TRANSFERIR" width="33" height="33" border="0" onClick="if(confirm('Estas seguro que deseas transferir la cuenta?') == false){return false;}" /></a>
+?>&amp;medico=<?php echo $_POST['medico']; ?>&amp;usuario=<?php echo $usuario; ?>"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/recibir.jpeg" alt="TRANSFERIR" width="33" height="33" border="0" onClick="if(confirm('Estas seguro que deseas transferir la cuenta?') == false){return false;}" /></a>
 
 
 

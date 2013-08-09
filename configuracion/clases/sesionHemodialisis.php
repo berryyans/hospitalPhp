@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class sesionH {
 
 
@@ -159,11 +160,11 @@ $estilos->styles();
 <body>
 <form id="form1" name="form1" method="post" action="" onSubmit="return valida(this);">
   <p align="center">&nbsp;  </p>
-  <h1 align="center" class="titulos">Sesión de Hemodialisis</h1>
+  <h1 align="center" class="titulos">Sesiï¿½n de Hemodialisis</h1>
   <p>
     <label></label>
   </p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="358" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="358" height="24" />
   <table width="358" border="0" align="center" cellpadding="4" cellspacing="0">
     <tr>
       <th width="1" bgcolor="#CCCCCC" class="style12" scope="col">&nbsp;</th>
@@ -188,10 +189,10 @@ $estilos->styles();
       <td bgcolor="#CCCCCC" class="style12"><?php echo $myrow1['fecha1'];?></td>
     </tr>
   </table>
-  <img src="/sima/imagenes/bordestablas/borde2.png" width="358" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="358" height="24" />
 <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <img src="/sima/imagenes/bordestablas/borde1.png" width="908" height="24" />
+  <img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde1.png" width="908" height="24" />
   <table width="908" border="0" align="center" cellpadding="4" cellspacing="0">
     <tr bgcolor="#FFFF00">
       <td width="130" class="style12">INDICACIONES </td>
@@ -280,7 +281,7 @@ $estilos->styles();
       <td bgcolor="#CCCCCC" class="style12">&nbsp;</td>
     </tr>
   </table>
-  <span class="style12"><img src="/sima/imagenes/bordestablas/borde2.png" width="908" height="24" /></span>
+  <span class="style12"><img src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/imagenes/bordestablas/borde2.png" width="908" height="24" /></span>
   <p align="center">
     <input name="numCliente1" type="hidden" id="numCliente1" value="<?php echo $myrow2['numCliente']; ?>" />
     <span class="style12">

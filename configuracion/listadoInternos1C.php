@@ -1,4 +1,7 @@
- <script language="JavaScript" type="text/javascript">
+<?php
+require('/Constantes.php');
+?>
+<script language="JavaScript" type="text/javascript">
     /**
     * funcion demo del evento onclick en la tabla
     */
@@ -7,7 +10,7 @@
       document.forms[0].submit();
     }
     /**
-    * funcion de captura de pulsación de tecla en Internet Explorer
+    * funcion de captura de pulsaciï¿½n de tecla en Internet Explorer
     */ 
     var tecla;
     function capturaTecla(e) 
@@ -58,7 +61,7 @@ function ventanaSecundaria2 (URL){
 <!--
 function comprueba()
 {
-if (confirm('Estas seguro que ya revisaste la cuenta? la operación es irreversible')) return true;
+if (confirm('Estas seguro que ya revisaste la cuenta? la operaciï¿½n es irreversible')) return true;
 return false;
 }
 -->
@@ -159,7 +162,7 @@ $nT=$myrow['keyClientesInternos'];
     <tr bgcolor="#ffffff" onMouseOver="bgColor='#cccccc'" onMouseOut="bgColor='#ffffff'" >
       <td height="48" class="codigos"><?php echo $myrow['folioVenta'];
 ?></td>
-      <td class="normalmid"><a href="javascript:nueva('/sima/cargos/discrimina1.php?folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>','ventana1','1024','1000','yes')"> <?php echo $myrow['paciente'];?></a>
+      <td class="normalmid"><a href="javascript:nueva('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/discrimina1.php?folioVenta=<?php echo $myrow['folioVenta'];?>&entidad=<?php echo $entidad;?>','ventana1','1024','1000','yes')"> <?php echo $myrow['paciente'];?></a>
           <span class="normal"> Departamento: </span><span class="negro">
 <?php
 $al=$myrow['almacen'];

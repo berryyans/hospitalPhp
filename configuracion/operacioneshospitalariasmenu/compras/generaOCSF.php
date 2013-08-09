@@ -3,7 +3,7 @@ require('/Constantes.php');
 include(CONSTANT_PATH_CONFIGURACION."/operacioneshospitalariasmenu/compras/menucompras.php"); ?>
 <?php 
 $imagen='ordencompra.jpg';
-$ventana1='/sima/OPERACIONESHOSPITALARIAS/compras/ventanaOCSF.php';
-$ventana11='/sima/OPERACIONESHOSPITALARIAS/compras/despliegaOrdenes.php';
+$ventana1=CONSTANT_PATH_SIMA_RAIZ.'/OPERACIONESHOSPITALARIAS/compras/ventanaOCSF.php';
+$ventana11=CONSTANT_PATH_SIMA_RAIZ.'/OPERACIONESHOSPITALARIAS/compras/despliegaOrdenes.php';
 include(CONSTANT_PATH_CONFIGURACION."/formas/ordenCompra.php"); 
 ?>

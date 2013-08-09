@@ -1,4 +1,5 @@
 <?php
+require('/Constantes.php');
 class pacientesInternosUrgencias{
 public function listadoPI($entidad,$TITULO,$ventana,$ventana1,$bali,$basedatos){
 ?>
@@ -125,14 +126,14 @@ window.open('popup','width=' + popwid + ',height='+pophei+',top='+topPos+',left=
 
 
         
-<script src="/sima/jquery/lib/jquery.bgiframe.js" type="text/javascript"></script>
-<script src="/sima/jquery/lib/jquery.dimensions.js" type="text/javascript"></script>
-<script src="/sima/jquery/jquery.tooltip.js" type="text/javascript"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/jquery/lib/jquery.bgiframe.js" type="text/javascript"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/jquery/lib/jquery.dimensions.js" type="text/javascript"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/jquery/jquery.tooltip.js" type="text/javascript"></script>
 
-<script src="/sima/jquery/chili-1.7.pack.js" type="text/javascript"></script>
-<script type="text/javascript" src="/sima/js/editp/spec/support/jquery.js"></script>
-<script type="text/javascript" src="/sima/js/editp/spec/support/jquery.ui.js"></script>
-<script type="text/javascript" src="/sima/js/editp/lib/jquery.editinplace.js"></script>
+<script src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/jquery/chili-1.7.pack.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/spec/support/jquery.ui.js"></script>
+<script type="text/javascript" src="<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/js/editp/lib/jquery.editinplace.js"></script>
 
 
 <?php
@@ -244,7 +245,7 @@ echo  'Sin Exp';
             </p>
       </td>
 <td  align="center" title="Estado de cuenta el paciente">
-<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('/sima/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $_GET['datawarehouse']; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
+<a href="#lista<?php echo $guia;?>" name="lista<?php echo $guia;?>" onClick="javascript:ventanaSecundaria2('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/estadoCuenta.php?numeroE=<?php echo $myrow['numeroE']; ?>&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $_GET['datawarehouse']; ?>&seguro=<?php echo $_POST['seguro']; ?>&nT=<?php echo $myrow['keyClientesInternos']; ?>&tipoPaciente=<?php echo "interno"; ?>&folioVenta=<?php echo $myrow['folioVenta'];?>')"><?php 
 
 echo $myrow['folioVenta'];
 
@@ -358,7 +359,7 @@ echo '---';
         
 	  
 	  
-	  <a href="#" onClick="javascript:ventanaSecundaria111('/sima/cargos/enviarUrg.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;ali=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&paciente=<?php echo $myrow['paciente'];?>')">
+	  <a href="#" onClick="javascript:ventanaSecundaria111('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/enviarUrg.php?numeroE=<?php echo $myrow['numeroE']; ?>&amp;nCuenta=<?php echo $myrow['nCuenta']; ?>&amp;almacen=<?php echo $ALMACEN; ?>&amp;ali=<?php echo $ALMACEN; ?>&amp;seguro=<?php echo $_POST['seguro']; ?>&amp;nT=<?php echo $myrow['keyClientesInternos']; ?>&amp;tipoPaciente=<?php echo "interno"; ?>&amp;folioVenta=<?php echo $myrow['folioVenta'];?>&paciente=<?php echo $myrow['paciente'];?>')">
               Enviar
           </a>
 	 

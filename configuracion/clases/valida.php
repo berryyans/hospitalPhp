@@ -33,7 +33,7 @@ return $myrow1['entidad'];
 
 
 
-var $url='/sima/index.php';
+var $url=CONSTANT_PATH_SIMA_RAIZ.'/index.php';
 var $ID_EJERCICIO;
 
 static function sesionesActivas($usuario,$llavePrimaria,$basedatos){
@@ -62,7 +62,7 @@ session_destroy();
 	
 ?>	
 <META HTTP-EQUIV="Refresh" 
-      CONTENT="0; URL=/sima/index.php?usuario=<?php echo $ipRes3['usuario'];?>">';
+      CONTENT="0; URL=<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/index.php?usuario=<?php echo $ipRes3['usuario'];?>">';
 
 <?php
 	 echo exit; 
@@ -249,7 +249,7 @@ error en tu usuario o password escribelos nuevamente
 
 
 echo '<META HTTP-EQUIV="Refresh"
-      CONTENT="0; URL=/sima/index.php">';
+      CONTENT="0; URL='.CONSTANT_PATH_SIMA_RAIZ.'/index.php">';
 	  exit;   
 }
 
@@ -260,7 +260,7 @@ msgbox "USUARIO NO VALIDO !"
 </script>';  
 
 echo '<META HTTP-EQUIV="Refresh"
-      CONTENT="0; URL=/sima/index.php">';
+      CONTENT="0; URL='.CONSTANT_PATH_SIMA_RAIZ.'/index.php">';
 	  exit;   
 }
 
@@ -289,7 +289,7 @@ session_destroy();
 }
 
 static public function javascript(){
-echo '<script type="text/javascript"  src="/sima/js/stmenu.js"></script>';
+echo '<script type="text/javascript"  src="'.CONSTANT_PATH_SIMA_RAIZ.'/js/stmenu.js"></script>';
 echo '<script type="text/javascript">
 window.onerror=function(m,u,l)
 {
@@ -423,8 +423,8 @@ class informacion{
 
 
 
-echo '<link rel=\"stylesheet\" type=\"text/css\" href=\"/sima/style/style.css\" />';
-echo '<link rel="stylesheet" type="text/css" href="/sima/css/styles.css" />';
+echo '<link rel=\"stylesheet\" type=\"text/css\" href=\"'.CONSTANT_PATH_SIMA_RAIZ.'/style/style.css\" />';
+echo '<link rel="stylesheet" type="text/css" href="'.CONSTANT_PATH_SIMA_RAIZ.'/css/styles.css" />';
 /*
 echo '<table broder="0">';
 echo '<tr>';

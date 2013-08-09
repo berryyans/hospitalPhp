@@ -111,7 +111,7 @@ $col = 1;
       <td height="24" bgcolor="<?php echo $color?>" class="normalmid"><?php echo $myrow['keyClientesInternos'];
 ?></span></td>
       <td width="288" bgcolor="<?php echo $color?>" class="normalmid">
-	  <a href="#" onClick="javascript:ventanaSecundaria('/sima/cargos/despliegaSolicitudesDirectas.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&numeroE=<?php echo $myrow['numeroE']; ?>
+	  <a href="#" onClick="javascript:ventanaSecundaria('<?php echo CONSTANT_PATH_SIMA_RAIZ;?>/cargos/despliegaSolicitudesDirectas.php?keyClientesInternos=<?php echo $myrow['keyClientesInternos'];?>&numeroE=<?php echo $myrow['numeroE']; ?>
 		&nCuenta=<?php echo $myrow['nCuenta']; ?>&almacen=<?php echo $bali; ?>&seguro=<?php echo $_POST['seguro']; ?>&almacenDestino=<?php echo $bali; ?>')"><?php echo $myrow['paciente'];?></a>
       </span></td>
       <td width="138" bgcolor="<?php echo $color?>" class="normalmid">
