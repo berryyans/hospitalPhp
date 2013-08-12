@@ -1,4 +1,6 @@
-<?php $llavePrimaria = session_id(); session_start();?><?php require("baseDatos.php"); ?><?php require('clases/valida.php');?>
+<?php
+require("/Constantes.php");
+$llavePrimaria = session_id(); session_start();?><?php require(CONSTANT_PATH_CONFIGURACION."/baseDatos.php"); ?><?php require(CONSTANT_PATH_CONFIGURACION.'clases/valida.php');?>
 <?php 
 $db_conn=validator::conectaOracle($db_conecta);
 $hora1=validator::hora1();
