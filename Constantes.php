@@ -10,7 +10,7 @@ define("CONSTANT_PATH_CONFIGURACION", "/var/www/simaVT/configuracion");
  *
  */
 
-define("CONSTANT_PATH_SIMA", "/var/www/simaV3");
-define("CONSTANT_PATH_SIMA_RAIZ", "/simaV3");
-define("CONSTANT_PATH_CONFIGURACION", "/configuracionV3");
+define("CONSTANT_PATH_SIMA", "/var/www/simaV2");
+define("CONSTANT_PATH_SIMA_RAIZ", "/simaV2");
+define("CONSTANT_PATH_CONFIGURACION", "/configuracionV2");
 ?>
